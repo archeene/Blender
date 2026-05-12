@@ -1941,9 +1941,15 @@
             document.body.appendChild(bar);
         }
 
-        tagEditableNodes();
-        loadEdits();
-        buildToolbar();
+        // Toolbar is hidden by default. Append `?edit` to the URL to enable
+        // in-place editing (e.g. archeene.github.io/Blender/?edit).
+        const editMode = new URLSearchParams(window.location.search).has('edit');
+
+        if (editMode) {
+            tagEditableNodes();
+            loadEdits();
+            buildToolbar();
+        }
     })();
 </script>
 
