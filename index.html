@@ -153,6 +153,25 @@
             border-radius: 2px;
         }
 
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        .nav-menu a:hover { color: var(--accent-bio); }
+        .nav-menu a.active { color: var(--accent-leaf); }
+
         /* ----------  Hero  ---------- */
 
         .hero {
@@ -1269,6 +1288,13 @@
             </svg>
             <h1 data-edit-id="e0" class="">BLENDER</h1>
         </div>
+        <ul class="nav-menu">
+            <li><a href="#match">Mating</a></li>
+            <li><a href="#protocol">Protocol</a></li>
+            <li><a href="#memory">Inheritance</a></li>
+            <li><a href="#token">Token</a></li>
+            <li><a href="docs.html">Docs</a></li>
+        </ul>
         <div class="token-badge">$BLEND</div>
     </nav>
 </header>
