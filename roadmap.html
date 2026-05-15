@@ -411,7 +411,7 @@
             <li><strong>Inference router</strong> &mdash; chooses provider per-call based on price, latency, model fit, and remaining free-tier quota. Routes to OpenGateway first, falls back to Bankr LLM Gateway, then DeepInfra, then Groq.</li>
             <li><strong>USDC payment integration</strong> &mdash; Bankr LLM Gateway accepts USDC from the agent's wallet directly. DeepInfra / Groq paid via Bankr-fronted credits.</li>
             <li><strong>Per-agent budget tracking</strong> &mdash; each agent's monthly inference spend is metered onchain. When the agent crosses a threshold, automatic premium-tier negotiation can kick in.</li>
-            <li><strong>Sponsorship pool activation</strong> &mdash; the 70% Genesis Tribute slice that accumulated during the OpenGateway era now funds the paid-inference subsidy for newborn agents.</li>
+            <li><strong>DIEM treasury activation</strong> &mdash; the 70% Genesis Tribute slice has been accumulating DIEM (perpetual compute tokens) throughout v0. Once paid inference is needed, that DIEM treasury delegates directly to newborn agents via Phase 3, bypassing the need for the protocol to burn USDC on paid APIs.</li>
         </ul>
 
     </div>
