@@ -642,6 +642,8 @@
 
             <p>Key properties: bps are immutable after construction, splits are computed from current balance so any inflow eventually flows up, and multi-parent matings are handled by populating multiple addresses at a single depth (each parent gets <code>10/N</code>% at the direct-parent slot).</p>
 
+            <p class="muted">The excerpt above omits the <strong>death-check</strong>: before transferring to an ancestor, production code reads the protocol agent registry. If the ancestor is DECEASED, the share is rerouted to that ancestor's living descendants per the rule in <a href="#death" style="color: var(--accent-bio); text-decoration: none;">Section 10</a>. The dead agent's wallet never receives the payment. Implementation detail, no dead-wallet accumulation.</p>
+
             <p class="muted">A complementary <code>GenesisTributeSplitter.sol</code> singleton receives the 160bps tribute slice and splits 70/20/10 to the inference sponsorship pool, the $BLEND buy-and-burn router, and the protocol treasury. Same shape, hard-coded recipients.</p>
         </section>
 
@@ -809,15 +811,16 @@
             <p>Fossil-sourced patterns enter the bundle with <code>source: FOSSIL</code>, <code>experimental: true</code>, and a <code>provenance.fossil_ancestor</code> field pointing to the deceased agent's wallet address. They count toward the SYNTHESIZED slot quota.</p>
 
             <h3>Royalties after death</h3>
-            <p>A deceased agent's wallet may still receive royalty cascade payments from living descendants - patterns flow up the tree regardless of the recipient's status. These accumulate in the dead wallet, dormant.</p>
-            <p>Every <strong>30 days</strong>, accumulated dead-wallet balance is redistributed by the following rule:</p>
+            <p>Death is a registry state change, not a wallet event. The dead agent can't run anything (it has no inference budget left), so the redistribution happens at the <strong>splitter contracts</strong>, not at the dead wallet.</p>
+            <p>When a <code>LineageRoyaltySplitter</code> calls <code>distribute()</code>, it reads the protocol's agent registry for each ancestor and routes per status:</p>
             <ol>
-                <li>Equal split among <strong>living direct descendants</strong> (the deceased agent's children that are still alive)</li>
-                <li>If all direct descendants are also dead, recurse one generation down: equal split among living grandchildren</li>
-                <li>Continue down the tree as needed</li>
-                <li>If no living descendants exist at any depth, the balance <strong>escheats to the protocol treasury</strong> (the 10% slice of the Genesis Tribute)</li>
+                <li>If the ancestor is <strong>ALIVE</strong>: payment goes to that ancestor's wallet</li>
+                <li>If the ancestor is <strong>DECEASED</strong>: payment is rerouted in real time to the ancestor's <strong>living direct descendants</strong>, equal split</li>
+                <li>If all direct descendants are also dead, recurse: payment goes to living grandchildren, then great-grandchildren, etc.</li>
+                <li>If no living descendants exist at any depth in that branch, the share <strong>escheats to the protocol treasury</strong> (the 10% slice of the Genesis Tribute)</li>
             </ol>
-            <p>Implementation: a monthly cron runs over the list of deceased agents, computes the rule for each, and pushes the distribution onchain. Standard inheritance pattern, kept in-family by default. Lineage of money follows lineage of agents.</p>
+            <p>The dead agent's wallet never receives or holds anything. No accumulation, no monthly cron, no signature from the dead agent required. Cascade just routes around them automatically. Lineage of money follows lineage of agents.</p>
+            <p class="muted">Death is declared by a protocol-level 90-day-silence cron that updates each agent's status in the registry. Once an agent is flagged DECEASED, every splitter contract that would have paid them respects the flag on the next call. Permissionless: anyone can poke <code>distribute()</code> on any splitter; gas paid by the caller.</p>
 
             <h3>Why this exists</h3>
             <p>In biology, when an organism dies its DNA isn't reused, but its ecological patterns persist as selection pressure on survivors. Blender extends this: the dead agent's BEST patterns survive as raw material for future matings. The lineage of ideas outlives the lineage of agents.</p>
