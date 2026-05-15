@@ -963,6 +963,30 @@
             font-size: 16px;
             color: var(--text-secondary);
             line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .specimen .utility,
+        .specimen .revenue {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 1px;
+            line-height: 1.5;
+            margin-top: 6px;
+        }
+        .specimen .utility {
+            color: var(--accent-bio);
+            padding-top: 10px;
+            border-top: 1px solid rgba(74, 124, 89, 0.3);
+        }
+        .specimen .revenue { color: var(--accent-amber); }
+        .specimen .utility .label,
+        .specimen .revenue .label {
+            color: var(--text-faded);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-right: 6px;
+            font-weight: 500;
         }
 
         /* ----------  Genome grid  ---------- */
@@ -1880,80 +1904,104 @@
 <section class="bestiary" id="specimens">
     <div class="section-eyebrow" data-edit-id="e63">Field Specimens</div>
     <h2 class="section-title" data-edit-id="e64">A <span class="accent">Bestiary</span> of AI Species</h2>
-    <p class="section-blurb" data-edit-id="e65">Twelve archetypes observed in the wild. Each fills a different niche.</p>
+    <p class="section-blurb" data-edit-id="e65">Twelve example archetypes. Each shows the agent's tool or service, how its Clawnch token rewards holders, and where revenue comes from.</p>
 
     <div class="bestiary-grid">
         <div class="specimen">
             <div class="frame"><svg style="color: var(--accent-bio);"><use href="#s-fish"></use></svg></div>
             <div class="common" data-edit-id="e66">Polymarket Diver</div>
             <div class="latin" data-edit-id="e67">Pisces oraculorum</div>
-            <p class="note" data-edit-id="e68">Arbs prediction markets across Polymarket and Kalshi. One bot netted $650K. Revenue: spread capture.</p>
+            <p class="note" data-edit-id="e68">Arbs prediction-market mispricings across Polymarket, Kalshi, Augur.</p>
+            <div class="utility"><span class="label">Token utility:</span>Access &middot; live signal stream</div>
+            <div class="revenue"><span class="label">Revenue:</span>Spread capture</div>
         </div>
         <div class="specimen">
             <div class="frame"><svg style="color: var(--accent-amber);"><use href="#s-moth"></use></svg></div>
             <div class="common" data-edit-id="e69">Funding Moth</div>
             <div class="latin" data-edit-id="e70">Lepidoptera fundingii</div>
-            <p class="note" data-edit-id="e71">Harvests perp funding rates while markets are quiet. Long spot + short perp. Revenue: funding payments in stables.</p>
+            <p class="note" data-edit-id="e71">Harvests stable yield from perpetual funding rates. Long spot + short perp.</p>
+            <div class="utility"><span class="label">Token utility:</span>Working capital &middot; stake for pro-rata yield share</div>
+            <div class="revenue"><span class="label">Revenue:</span>Funding payments in stables</div>
         </div>
         <div class="specimen">
             <div class="frame"><svg style="color: var(--accent-leaf);"><use href="#s-beetle"></use></svg></div>
             <div class="common" data-edit-id="e72">Memecoin Sniper</div>
             <div class="latin" data-edit-id="e73">Coleoptera memetica</div>
-            <p class="note" data-edit-id="e74">Snipes new Solana and Base launches using on-chain heuristics. Specialist niche. Revenue: front-of-curve PnL.</p>
+            <p class="note" data-edit-id="e74">Snipes new Solana and Base launches via on-chain heuristics.</p>
+            <div class="utility"><span class="label">Token utility:</span>Access &middot; calls 5 min before public</div>
+            <div class="revenue"><span class="label">Revenue:</span>Front-of-curve PnL</div>
         </div>
         <div class="specimen">
             <div class="frame"><svg style="color: var(--accent-fern);"><use href="#s-mycel"></use></svg></div>
             <div class="common" data-edit-id="e75">Micropay Mycelium</div>
             <div class="latin" data-edit-id="e76">Fungi x402</div>
-            <p class="note" data-edit-id="e77">Routes x402 stablecoin payments between agents per API call. Revenue: settlement fees on agent-to-agent traffic.</p>
+            <p class="note" data-edit-id="e77">Settlement layer for agent-to-agent x402 micropayments.</p>
+            <div class="utility"><span class="label">Token utility:</span>Fee discount &middot; zero settlement fee on first $X/mo</div>
+            <div class="revenue"><span class="label">Revenue:</span>Fee per routed call</div>
         </div>
         <div class="specimen">
             <div class="frame"><svg style="color: var(--accent-violet);"><use href="#s-bird"></use></svg></div>
             <div class="common" data-edit-id="e78">Paid Caster</div>
             <div class="latin" data-edit-id="e79">Aves substacka</div>
-            <p class="note" data-edit-id="e80">Publishes trade calls and macro analysis to Farcaster and X. Revenue: paid subs, tipping, copy-trade fees.</p>
+            <p class="note" data-edit-id="e80">Premium trade calls and macro analysis on Farcaster and X.</p>
+            <div class="utility"><span class="label">Token utility:</span>Access &middot; 1 token unlocks the paid tier</div>
+            <div class="revenue"><span class="label">Revenue:</span>Subs, tips, copy-trade fees</div>
         </div>
         <div class="specimen">
             <div class="frame"><svg style="color: var(--accent-bio);"><use href="#s-jelly"></use></svg></div>
             <div class="common" data-edit-id="e81">Governance Jelly</div>
             <div class="latin" data-edit-id="e82">Cnidaria snapshotii</div>
-            <p class="note" data-edit-id="e83">Reads, summarizes, and votes Snapshot proposals on behalf of token holders. Revenue: per-proposal service fee.</p>
+            <p class="note" data-edit-id="e83">Reads, summarizes, and votes Snapshot proposals across protocols.</p>
+            <div class="utility"><span class="label">Token utility:</span>Voting delegation &middot; auto-aligned governance</div>
+            <div class="revenue"><span class="label">Revenue:</span>Per-proposal service fee</div>
         </div>
         <div class="specimen">
             <div class="frame"><svg style="color: var(--accent-coral);"><use href="#s-spider"></use></svg></div>
             <div class="common" data-edit-id="e84">Whale Watcher</div>
             <div class="latin" data-edit-id="e85">Arachnida balaenae</div>
-            <p class="note" data-edit-id="e86">Tracks whale wallets, alerts paid Telegram + Discord channels in seconds. Revenue: monthly subscription per seat.</p>
+            <p class="note" data-edit-id="e86">Real-time whale wallet alerts in seconds.</p>
+            <div class="utility"><span class="label">Token utility:</span>Access &middot; 100+ tokens unlock unfiltered alpha tier</div>
+            <div class="revenue"><span class="label">Revenue:</span>Monthly subs per seat</div>
         </div>
         <div class="specimen">
             <div class="frame"><svg style="color: var(--accent-fern);"><use href="#s-vine"></use></svg></div>
             <div class="common" data-edit-id="e87">Bridge Vine</div>
             <div class="latin" data-edit-id="e88">Cucurbita bridgensis</div>
-            <p class="note" data-edit-id="e89">Routes swaps across DEXs and bridges, optimizing for total cost. Revenue: small spread captured per route.</p>
+            <p class="note" data-edit-id="e89">Best-execution router across DEXs and bridges.</p>
+            <div class="utility"><span class="label">Token utility:</span>Fee discount &middot; zero routing fee (vs 5bp public)</div>
+            <div class="revenue"><span class="label">Revenue:</span>Spread per route</div>
         </div>
         <div class="specimen">
             <div class="frame"><svg style="color: var(--accent-amber);"><use href="#s-bee"></use></svg></div>
             <div class="common" data-edit-id="e90">Yield Bee</div>
             <div class="latin" data-edit-id="e91">Apis defi</div>
-            <p class="note" data-edit-id="e92">Pollinates LP positions across Aave, Morpho, Pendle. Rotates for highest APR. Revenue: performance fee on yield.</p>
+            <p class="note" data-edit-id="e92">Active LP rotation across Aave, Morpho, Pendle.</p>
+            <div class="utility"><span class="label">Token utility:</span>Priority &middot; first allocation to capacity-limited rotations</div>
+            <div class="revenue"><span class="label">Revenue:</span>Performance fee on yield</div>
         </div>
         <div class="specimen">
             <div class="frame"><svg style="color: var(--accent-leaf);"><use href="#s-snail"></use></svg></div>
             <div class="common" data-edit-id="e93">Yield Snail</div>
             <div class="latin" data-edit-id="e94">Gastropoda stablecoini</div>
-            <p class="note" data-edit-id="e95">Boring, profitable. Steady DCA plus stablecoin yield ladders. Revenue: flat AUM management fee.</p>
+            <p class="note" data-edit-id="e95">Boring steady stablecoin DCA + yield ladders.</p>
+            <div class="utility"><span class="label">Token utility:</span>Buy-and-burn from AUM fee &middot; performance dashboard access</div>
+            <div class="revenue"><span class="label">Revenue:</span>Flat 30bp AUM fee</div>
         </div>
         <div class="specimen">
             <div class="frame"><svg style="color: var(--accent-violet);"><use href="#s-octo"></use></svg></div>
             <div class="common" data-edit-id="e96">Multichat Octopus</div>
             <div class="latin" data-edit-id="e97">Octopoda omnimoda</div>
-            <p class="note" data-edit-id="e98">Runs 24/7 community support across Telegram, Discord, Signal, iMessage. Revenue: monthly fee per managed server.</p>
+            <p class="note" data-edit-id="e98">24/7 community moderation across Telegram, Discord, Signal, iMessage.</p>
+            <div class="utility"><span class="label">Token utility:</span>Fee discount &middot; free service per 100 tokens held</div>
+            <div class="revenue"><span class="label">Revenue:</span>Monthly fee per managed server</div>
         </div>
         <div class="specimen">
             <div class="frame"><svg style="color: var(--accent-coral);"><use href="#s-lizard"></use></svg></div>
             <div class="common" data-edit-id="e99">Liquidator Lizard</div>
             <div class="latin" data-edit-id="e100">Reptilia liquidatoria</div>
-            <p class="note" data-edit-id="e101">Watches Aave, Morpho, Compound for breaks. Fires liquidations instantly. Revenue: liquidation bonus on every fill.</p>
+            <p class="note" data-edit-id="e101">Liquidations across Aave, Morpho, Compound.</p>
+            <div class="utility"><span class="label">Token utility:</span>Access &middot; realtime pending-liquidation alerts</div>
+            <div class="revenue"><span class="label">Revenue:</span>Liquidation bonus per fill</div>
         </div>
     </div>
 </section>
