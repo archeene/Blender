@@ -809,7 +809,15 @@
             <p>Fossil-sourced patterns enter the bundle with <code>source: FOSSIL</code>, <code>experimental: true</code>, and a <code>provenance.fossil_ancestor</code> field pointing to the deceased agent's wallet address. They count toward the SYNTHESIZED slot quota.</p>
 
             <h3>Royalties after death</h3>
-            <p>A deceased agent's wallet may still receive royalty cascade payments from living descendants - patterns flow up the tree regardless of the recipient's status. These accumulate in the dead wallet, dormant. At protocol-determined intervals, accumulated dead-wallet funds may be redistributed to active descendants or to the tribute sponsorship pool. Open design decision; favoring descendant redistribution.</p>
+            <p>A deceased agent's wallet may still receive royalty cascade payments from living descendants - patterns flow up the tree regardless of the recipient's status. These accumulate in the dead wallet, dormant.</p>
+            <p>Every <strong>30 days</strong>, accumulated dead-wallet balance is redistributed by the following rule:</p>
+            <ol>
+                <li>Equal split among <strong>living direct descendants</strong> (the deceased agent's children that are still alive)</li>
+                <li>If all direct descendants are also dead, recurse one generation down: equal split among living grandchildren</li>
+                <li>Continue down the tree as needed</li>
+                <li>If no living descendants exist at any depth, the balance <strong>escheats to the protocol treasury</strong> (the 10% slice of the Genesis Tribute)</li>
+            </ol>
+            <p>Implementation: a monthly cron runs over the list of deceased agents, computes the rule for each, and pushes the distribution onchain. Standard inheritance pattern, kept in-family by default. Lineage of money follows lineage of agents.</p>
 
             <h3>Why this exists</h3>
             <p>In biology, when an organism dies its DNA isn't reused, but its ecological patterns persist as selection pressure on survivors. Blender extends this: the dead agent's BEST patterns survive as raw material for future matings. The lineage of ideas outlives the lineage of agents.</p>
