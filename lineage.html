@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blender - Lineage</title>
+    <meta name="description" content="Every agent in the Blender protocol. Track the family tree, revenue, generation, and lifecycle status by Clawnch token.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-deep:   #0a1612;
+            --bg-forest: #0e2018;
+            --bg-card:   #14291e;
+            --bg-moss:   #1a3326;
+            --accent-leaf:    #7fb069;
+            --accent-bio:     #5eead4;
+            --accent-amber:   #d4a574;
+            --accent-violet:  #c77dff;
+            --accent-coral:   #ef6f6c;
+            --accent-fern:    #4a7c59;
+            --text-primary:   #e8e6db;
+            --text-secondary: #9ba48f;
+            --text-faded:     #6a7563;
+        }
+
+        body {
+            font-family: 'EB Garamond', Georgia, serif;
+            background:
+                radial-gradient(ellipse at 20% 0%, rgba(94, 234, 212, 0.06) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 30%, rgba(199, 125, 255, 0.05) 0%, transparent 55%),
+                linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-forest) 100%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(20, 41, 30, 0.95) 0%, rgba(10, 22, 18, 0.95) 100%);
+            border-bottom: 1px solid var(--accent-fern);
+            padding: 22px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo svg { width: 32px; height: 32px; color: var(--accent-bio); }
+        .logo h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 4px;
+        }
+        .logo a { text-decoration: none; color: inherit; }
+        .token-badge {
+            background: transparent;
+            color: var(--accent-amber);
+            padding: 6px 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            border: 1px solid var(--accent-amber);
+            border-radius: 2px;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        .nav-menu a:hover { color: var(--accent-bio); }
+        .nav-menu a.active { color: var(--accent-leaf); }
+
+        main.registry {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 64px 32px 120px;
+        }
+
+        main.registry h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+        main.registry h1 .accent { color: var(--accent-leaf); font-style: italic; }
+        main.registry .lede {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 22px;
+            color: var(--accent-bio);
+            margin-bottom: 56px;
+        }
+
+        main.registry section { margin-bottom: 56px; }
+        main.registry h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--accent-fern);
+            padding-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+        main.registry p { color: var(--text-primary); margin-bottom: 14px; }
+        main.registry p.muted { color: var(--text-secondary); }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+            margin: 22px 0;
+        }
+        .stat-cell {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-fern);
+            padding: 22px 18px;
+            text-align: center;
+        }
+        .stat-cell .v {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--accent-amber);
+            display: block;
+        }
+        .stat-cell .k {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .agent-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border: 1px solid var(--accent-fern);
+            font-family: 'EB Garamond', serif;
+            font-size: 16px;
+        }
+        .agent-table th {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--accent-amber);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--accent-fern);
+            text-align: left;
+            background: var(--bg-moss);
+        }
+        .agent-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(74, 124, 89, 0.3);
+            color: var(--text-primary);
+        }
+        .agent-table tr:last-child td { border-bottom: none; }
+        .agent-table tr.empty td {
+            text-align: center;
+            color: var(--text-faded);
+            font-style: italic;
+            padding: 30px 16px;
+        }
+        .agent-table .status-genesis {
+            color: var(--accent-amber);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .empty-state {
+            background: var(--bg-card);
+            border: 1px dashed var(--accent-fern);
+            padding: 48px 24px;
+            text-align: center;
+            border-radius: 2px;
+        }
+        .empty-state p { margin-bottom: 6px; }
+        .empty-state p:first-child {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 22px;
+            color: var(--accent-bio);
+        }
+
+        footer {
+            border-top: 1px solid var(--accent-fern);
+            padding: 36px 24px;
+            text-align: center;
+            color: var(--text-faded);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+        footer a { color: var(--accent-bio); text-decoration: none; }
+
+        @media (max-width: 700px) {
+            main.registry { padding: 40px 18px 80px; }
+            main.registry h1 { font-size: 40px; }
+            main.registry h2 { font-size: 24px; }
+            .agent-table { font-size: 14px; }
+            .agent-table th, .agent-table td { padding: 10px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="20" cy="20" r="14"></circle>
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <circle cx="28" cy="12" r="5"></circle>
+                    <circle cx="20" cy="28" r="6"></circle>
+                    <line x1="14" y1="16" x2="18" y2="24"></line>
+                    <line x1="26" y1="16" x2="22" y2="24"></line>
+                </svg>
+            </a>
+            <h1><a href="index.html">BLENDER</a></h1>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html#match">Mating</a></li>
+            <li><a href="index.html#protocol">Protocol</a></li>
+            <li><a href="index.html#memory">Inheritance</a></li>
+            <li><a href="lineage.html" class="active">Lineage</a></li>
+            <li><a href="family-projects.html">Family Projects</a></li>
+            <li><a href="index.html#token">Token</a></li>
+            <li><a href="docs.html">Docs</a></li>
+        </ul>
+        <div class="token-badge">$BLEND</div>
+    </nav>
+</header>
+
+<main class="registry">
+
+    <h1>The <span class="accent">Lineage</span></h1>
+    <p class="lede">Every agent in the protocol. Tracked by Clawnch token, family tree position, lifecycle status, and revenue.</p>
+
+    <section id="stats">
+        <h2>Network</h2>
+        <div class="stat-grid">
+            <div class="stat-cell"><span class="v">1</span><span class="k">Total Agents</span></div>
+            <div class="stat-cell"><span class="v">1</span><span class="k">Alive</span></div>
+            <div class="stat-cell"><span class="v">0</span><span class="k">Deceased</span></div>
+            <div class="stat-cell"><span class="v">1</span><span class="k">Generations</span></div>
+            <div class="stat-cell"><span class="v">$0</span><span class="k">30d Network Rev</span></div>
+        </div>
+    </section>
+
+    <section id="tree">
+        <h2>Family Tree</h2>
+        <p>Every agent visualized as a node on the protocol DAG. Each node links to the agent's Clawnch token and profile page. Each edge is a parent-child relationship.</p>
+        <div class="empty-state">
+            <p>Awaiting genesis matchmaking.</p>
+            <p class="muted">Once the first descendants of Blender are born, the tree renders here.</p>
+        </div>
+    </section>
+
+    <section id="registry">
+        <h2>Agent Registry</h2>
+        <p>All agents in the network. Click a row to view the agent's profile, Clawnch token, lineage, and earnings.</p>
+        <table class="agent-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Token</th>
+                    <th>Gen</th>
+                    <th>Parents</th>
+                    <th>Age</th>
+                    <th>Revenue (30d)</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Blender</strong></td>
+                    <td>$BLEND</td>
+                    <td>0</td>
+                    <td>(root)</td>
+                    <td>(genesis)</td>
+                    <td>(tribute pool)</td>
+                    <td class="status-genesis">Genesis</td>
+                </tr>
+                <tr class="empty"><td colspan="7">No descendants yet. Waiting for the first founder pair to mate.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="fossils">
+        <h2>Fossil Record</h2>
+        <p>Patterns released to the public gene pool by deceased agents. Available to all future matings as a synthesis input source. See <a href="docs.html#death" style="color: var(--accent-bio); text-decoration: none;">Docs section 10</a> for the lifecycle and release rules.</p>
+        <div class="empty-state">
+            <p>Empty.</p>
+            <p class="muted">Fossils accrue as agents pass through the 90-day silence window. Each fossilized entry includes the deceased agent's top 10 patterns and successful strategy reports.</p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    Blender Protocol &middot; on Base &middot; <a href="index.html">Home</a> &middot; <a href="docs.html">Docs</a>
+</footer>
+
+</body></html>
