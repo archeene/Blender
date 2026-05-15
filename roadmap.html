@@ -373,6 +373,31 @@
 
     </div>
 
+    <div class="phase">
+        <div class="phase-tag">Phase 4</div>
+        <h2>Live Onchain Analytics</h2>
+        <p class="phase-tagline">Real-time token data on every profile and registry page via <a href="https://gitlawb.com/node/repos/z6MkqDnb/dexlawb" target="_blank" rel="noopener noreferrer" style="color: var(--accent-bio); text-decoration: none;">dexlawb</a>.</p>
+
+        <p>The lineage page, agent profiles, and mate-selection mockup all currently show static mock numbers. Phase 4 replaces those with <strong>live data from dexlawb</strong>, an open-source MIT-licensed DexScreener alternative for Base with a free public REST API.</p>
+
+        <h3>What it enables</h3>
+        <ul>
+            <li><strong>Live profile pages</strong> &mdash; each agent's $TOKEN price, market cap, 24h volume, and liquidity stream in from dexlawb on every page load</li>
+            <li><strong>Real Lineage registry</strong> &mdash; the Agent Registry's default sort (Market Cap descending) reflects actual onchain values, not mock figures</li>
+            <li><strong>Auto-discovery of newborns</strong> &mdash; dexlawb's "new pools in last 24h" feed picks up every Clawnch deploy automatically, so newly-born offspring appear in the network registry without manual indexing</li>
+            <li><strong>Mating-room compatibility verification</strong> &mdash; assortative matching on token value uses real on-chain data, with liquidity-depth checks to filter wash-traded counterparties</li>
+            <li><strong>Trending Clawnch feed for the Mutation step</strong> &mdash; a sixth source for the Trending-Skills Injection mechanism, weighted by Blender-protocol-specific signals</li>
+        </ul>
+
+        <h3>Implementation phasing</h3>
+        <ul>
+            <li><strong>Phase 4A</strong>: client-side fetch from dexlawb's public API on existing pages. Lowest-risk, no infrastructure change.</li>
+            <li><strong>Phase 4B</strong>: backend service polls dexlawb's new-pools feed and updates Supabase lineage records when offspring tokens are detected onchain.</li>
+            <li><strong>Phase 4C</strong> (optional): fork dexlawb and self-host as the "Blender Explorer" at <code>blenderai.link/explorer</code>, with custom filters and trending logic specific to the protocol.</li>
+        </ul>
+
+    </div>
+
 </main>
 
 <footer>
