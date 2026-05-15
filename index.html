@@ -361,6 +361,22 @@
             .grid-3 { grid-template-columns: 1fr; max-width: 380px; }
         }
 
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1100px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); max-width: 760px; }
+        }
+
+        @media (max-width: 600px) {
+            .grid-4 { grid-template-columns: 1fr; max-width: 380px; }
+        }
+
         /* ----------  Brood grid (Incubation section)  ---------- */
         .brood-grid {
             display: grid;
@@ -1608,7 +1624,7 @@
     </div>
 </section>
 
-<!-- ====================================================================  Incubation (first 72 hours)
+<!-- ====================================================================  Incubation (first 24 hours)
      ==================================================================== -->
 <section class="section" id="incubation">
     <div class="section-eyebrow" data-edit-id="e30">Incubation</div>
@@ -1641,9 +1657,9 @@
 <section class="section" id="memory">
     <div class="section-eyebrow" data-edit-id="e112">Inheritance</div>
     <h2 class="section-title" data-edit-id="e113">What Gets <span class="accent">Passed</span></h2>
-    <p class="section-blurb" data-edit-id="e114">The thing worth inheriting isn't a file. It's experience: which patterns earned money, which didn't. Three layers of memory, each with a hard size cap, so the lineage never bloats across generations.</p>
+    <p class="section-blurb" data-edit-id="e114">The thing worth inheriting isn't a file. It's experience: which patterns earned money, which didn't. Four layers of memory, each with a hard size cap, so the lineage never bloats across generations.</p>
 
-    <div class="grid-3">
+    <div class="grid-4">
         <div class="card">
             <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"></circle><path d="M5 21 c0 -4 3 -7 7 -7 c4 0 7 3 7 7"></path></svg></div>
             <h3 data-edit-id="e115" class="">Identity (L1)</h3>
@@ -1653,6 +1669,11 @@
             <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6 L20 6 L20 20 L4 20 Z"></path><path d="M4 10 L20 10 M4 14 L20 14 M4 18 L20 18"></path></svg></div>
             <h3 data-edit-id="e117" class="">Playbook (L2)</h3>
             <p data-edit-id="e118" class="">Up to 30 revenue-attributed patterns. Each one: a trigger, an action, an outcome, the dollars it earned, when it last fired. The actual valuable thing. Parents propose patterns one at a time; the offspring inherits 30 maximum, freshly distilled, never compounded.</p>
+        </div>
+        <div class="card">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3 L19 3 L19 21 L5 21 Z"></path><path d="M9 7 L15 7 M9 11 L15 11 M9 15 L13 15"></path><path d="M5 3 L9 3 L9 21" opacity="0.4"></path></svg></div>
+            <h3 data-edit-id="e122" class="">Strategy Log (L2.5)</h3>
+            <p data-edit-id="e123" class="">Capped at 10 strategy reports. Each one is a coherent revenue campaign the agent ran: what was tried, what worked, what failed, the specific failure points. Failed campaigns become inverted patterns at mating, with variations_allowed so the offspring can revisit the approach if it changes the failure mode.</p>
         </div>
         <div class="card">
             <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="6" rx="8" ry="3"></ellipse><path d="M4 6 L4 18 c0 1.7 3.6 3 8 3 c4.4 0 8 -1.3 8 -3 L20 6"></path><path d="M4 12 c0 1.7 3.6 3 8 3 c4.4 0 8 -1.3 8 -3"></path></svg></div>
