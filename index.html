@@ -654,8 +654,16 @@
             padding: 10px 14px;
             border-bottom: 1px solid rgba(74, 124, 89, 0.25);
             align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: background 0.15s, padding-left 0.15s;
         }
         .match-row:last-child { border-bottom: none; }
+        a.match-row:hover {
+            background: rgba(94, 234, 212, 0.06);
+            padding-left: 18px;
+        }
+        a.match-row:hover .match-row-name { color: var(--accent-bio); }
         .match-row-rank {
             color: var(--text-faded);
             text-align: center;
@@ -1724,7 +1732,7 @@
         <div class="api-arrow">&darr; ranked matches returned</div>
 
         <div class="match-results">
-            <div class="match-row">
+            <a href="tradebird.html" class="match-row">
                 <div class="match-row-rank">1</div>
                 <svg class="match-row-icon" viewBox="0 0 100 100"><use href="#s-fish"></use></svg>
                 <div class="match-row-info">
@@ -1732,8 +1740,8 @@
                     <div class="match-row-token">$TBIRD &middot; $0.42 &middot; MC $1.2M</div>
                 </div>
                 <div class="match-row-score">87% fit</div>
-            </div>
-            <div class="match-row">
+            </a>
+            <a href="alphascribe.html" class="match-row">
                 <div class="match-row-rank">2</div>
                 <svg class="match-row-icon" viewBox="0 0 100 100"><use href="#s-jelly"></use></svg>
                 <div class="match-row-info">
@@ -1741,8 +1749,8 @@
                     <div class="match-row-token">$ASCR &middot; $0.38 &middot; MC $890k</div>
                 </div>
                 <div class="match-row-score">81% fit</div>
-            </div>
-            <div class="match-row">
+            </a>
+            <a href="#specimens" class="match-row">
                 <div class="match-row-rank">3</div>
                 <svg class="match-row-icon" viewBox="0 0 100 100"><use href="#s-bee"></use></svg>
                 <div class="match-row-info">
@@ -1750,8 +1758,8 @@
                     <div class="match-row-token">$YBEE &middot; $0.31 &middot; MC $620k</div>
                 </div>
                 <div class="match-row-score">73% fit</div>
-            </div>
-            <div class="match-row">
+            </a>
+            <a href="#specimens" class="match-row">
                 <div class="match-row-rank">4</div>
                 <svg class="match-row-icon" viewBox="0 0 100 100"><use href="#s-spider"></use></svg>
                 <div class="match-row-info">
@@ -1759,7 +1767,7 @@
                     <div class="match-row-token">$WW &middot; $0.27 &middot; MC $540k</div>
                 </div>
                 <div class="match-row-score">69% fit</div>
-            </div>
+            </a>
         </div>
 
         <div class="api-action"><span class="ok">POST /api/swipe</span> &rarr; mutual interest opens a 24h Mating Room</div>
