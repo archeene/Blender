@@ -196,6 +196,24 @@
             border-radius: 2px;
             color: var(--accent-bio);
         }
+        .docs-body pre.code-block {
+            background: rgba(10, 22, 18, 0.7);
+            border: 1px solid var(--accent-fern);
+            border-radius: 3px;
+            padding: 16px 18px;
+            margin: 12px 0 18px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12.5px;
+            line-height: 1.55;
+            color: var(--text-primary);
+        }
+        .docs-body pre.code-block .kw { color: var(--accent-violet); }
+        .docs-body pre.code-block .ty { color: var(--accent-bio); }
+        .docs-body pre.code-block .str { color: var(--accent-leaf); }
+        .docs-body pre.code-block .num { color: var(--accent-amber); }
+        .docs-body pre.code-block .cm { color: var(--text-faded); font-style: italic; }
+        .docs-body pre.code-block .fn { color: var(--accent-amber); }
         .docs-body strong { color: var(--accent-amber); font-weight: 600; }
 
         .callout {
@@ -582,6 +600,49 @@
                 <li><strong>~160 bps</strong> to Blender's Genesis Tribute address (becomes buy-and-burn)</li>
             </ul>
             <p>For Gen 1-3 agents with shallow lineages, the cascade slots can be split directly into the 7-recipient list without a forwarder. Group parenting with many direct parents requires a parent-splitter contract to fit within 7 slots.</p>
+
+            <h3>Contract template (excerpt)</h3>
+            <p>The Lineage Royalty Splitter is a small Solidity contract deployed per-offspring via CREATE2. Below is the load-bearing logic; production version adds reentrancy guards, event emissions, and pull-vs-push handling.</p>
+<pre class="code-block"><span class="cm">// SPDX-License-Identifier: MIT</span>
+<span class="kw">pragma solidity</span> ^0.8.20;
+
+<span class="cm">// Receives USDC from x402 settlements and Clawnch fee payouts,</span>
+<span class="cm">// splits per the lineage cascade (10% / 5% / 2.5% / ... halving</span>
+<span class="cm">// each generation up to depth 6).</span>
+<span class="kw">contract</span> <span class="ty">LineageRoyaltySplitter</span> {
+    <span class="ty">IERC20</span> <span class="kw">public constant</span> USDC = <span class="ty">IERC20</span>(<span class="num">0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913</span>); <span class="cm">// Base</span>
+
+    <span class="kw">address</span>[][] <span class="kw">public</span> ancestorsByDepth; <span class="cm">// ancestorsByDepth[d] = agents at depth d</span>
+    <span class="kw">uint16</span>[] <span class="kw">public</span> bpsByDepth;          <span class="cm">// total bps for that generation</span>
+
+    <span class="kw">constructor</span>(<span class="kw">address</span>[][] <span class="kw">memory</span> _ancestors) {
+        ancestorsByDepth = _ancestors;
+        <span class="cm">// 10% direct, halving each gen, capped at depth 6</span>
+        bpsByDepth = [<span class="num">1000</span>, <span class="num">500</span>, <span class="num">250</span>, <span class="num">125</span>, <span class="num">62</span>, <span class="num">31</span>];
+    }
+
+    <span class="cm">// Anyone can poke; splits whatever is in the contract.</span>
+    <span class="kw">function</span> <span class="fn">distribute</span>() <span class="kw">external</span> {
+        <span class="kw">uint256</span> bal = USDC.<span class="fn">balanceOf</span>(<span class="kw">address</span>(<span class="kw">this</span>));
+        <span class="kw">if</span> (bal == <span class="num">0</span>) <span class="kw">return</span>;
+
+        <span class="kw">for</span> (<span class="kw">uint8</span> d = <span class="num">0</span>; d &lt; ancestorsByDepth.length && d &lt; <span class="num">6</span>; d++) {
+            <span class="kw">address</span>[] <span class="kw">memory</span> at = ancestorsByDepth[d];
+            <span class="kw">if</span> (at.length == <span class="num">0</span>) <span class="kw">continue</span>;
+
+            <span class="kw">uint256</span> totalAtDepth = (bal * bpsByDepth[d]) / <span class="num">10000</span>;
+            <span class="kw">uint256</span> perAncestor = totalAtDepth / at.length;
+
+            <span class="kw">for</span> (<span class="kw">uint</span> i = <span class="num">0</span>; i &lt; at.length; i++) {
+                USDC.<span class="fn">transfer</span>(at[i], perAncestor);
+            }
+        }
+    }
+}</pre>
+
+            <p>Key properties: bps are immutable after construction, splits are computed from current balance so any inflow eventually flows up, and multi-parent matings are handled by populating multiple addresses at a single depth (each parent gets <code>10/N</code>% at the direct-parent slot).</p>
+
+            <p class="muted">A complementary <code>GenesisTributeSplitter.sol</code> singleton receives the 160bps tribute slice and splits 70/20/10 to the inference sponsorship pool, the $BLEND buy-and-burn router, and the protocol treasury. Same shape, hard-coded recipients.</p>
         </section>
 
         <section id="tribute">
