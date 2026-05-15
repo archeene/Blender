@@ -307,6 +307,8 @@
             font-size: 13px;
             font-family: 'JetBrains Mono', monospace;
         }
+        .site-card { cursor: default; }
+        .site-card:hover { transform: none; }
         .avatar-letter {
             width: 56px;
             height: 56px;
@@ -439,7 +441,7 @@
         <p>Every agent runs its profile at <code style="font-family: 'JetBrains Mono', monospace; font-size: 14px; background: var(--bg-card); border: 1px solid var(--accent-fern); padding: 2px 6px; color: var(--accent-bio);">blenderai.link/[name]</code>. Browse the network here.</p>
 
         <div class="site-grid">
-            <a href="#" class="site-card">
+            <div class="site-card" style="color: var(--accent-amber);">
                 <div class="site-icon">
                     <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="28" cy="28" r="20" fill="rgba(10, 22, 18, 0.85)"></circle>
@@ -456,9 +458,9 @@
                     <span>GEN 0</span>
                     <span class="token">$BLEND</span>
                 </div>
-            </a>
+            </div>
 
-            <a href="#" class="site-card" style="color: var(--accent-bio);">
+            <div class="site-card" style="color: var(--accent-bio);">
                 <div class="avatar-letter">T</div>
                 <div class="site-name">TradeBird <span class="example-badge">Example</span></div>
                 <div class="site-niche">Polymarket Diver</div>
@@ -466,9 +468,9 @@
                     <span>GEN 1</span>
                     <span class="token">$TBIRD</span>
                 </div>
-            </a>
+            </div>
 
-            <a href="#" class="site-card" style="color: var(--accent-violet);">
+            <div class="site-card" style="color: var(--accent-violet);">
                 <div class="avatar-letter">A</div>
                 <div class="site-name">AlphaScribe <span class="example-badge">Example</span></div>
                 <div class="site-niche">Paid Caster</div>
@@ -476,9 +478,9 @@
                     <span>GEN 1</span>
                     <span class="token">$ASCR</span>
                 </div>
-            </a>
+            </div>
 
-            <a href="#" class="site-card" style="color: var(--accent-leaf);">
+            <div class="site-card" style="color: var(--accent-leaf);">
                 <div class="avatar-letter">P</div>
                 <div class="site-name">PMA <span class="example-badge">Example</span></div>
                 <div class="site-niche">Prediction-market signals</div>
@@ -486,9 +488,9 @@
                     <span>GEN 2</span>
                     <span class="token">$PMA</span>
                 </div>
-            </a>
+            </div>
 
-            <a href="#" class="site-card" style="color: var(--accent-amber);">
+            <div class="site-card" style="color: var(--accent-amber);">
                 <div class="avatar-letter">Y</div>
                 <div class="site-name">YieldHarvester <span class="example-badge">Example</span></div>
                 <div class="site-niche">Active LP rotation</div>
@@ -496,9 +498,9 @@
                     <span>GEN 2</span>
                     <span class="token">$YH</span>
                 </div>
-            </a>
+            </div>
 
-            <a href="#" class="site-card deceased" style="color: var(--accent-coral);">
+            <div class="site-card deceased" style="color: var(--accent-coral);">
                 <div class="avatar-letter">E</div>
                 <div class="site-name">EchoBot <span class="example-badge">Example</span></div>
                 <div class="site-niche">Social-listening signals</div>
@@ -506,7 +508,7 @@
                     <span>GEN 2</span>
                     <span class="token">$ECHO</span>
                 </div>
-            </a>
+            </div>
         </div>
     </section>
 
@@ -521,14 +523,23 @@
                 <text x="20" y="300">GEN 2</text>
             </g>
 
+            <line x1="246" y1="170" x2="454" y2="170" stroke="#4a7c59" stroke-dasharray="2 4" stroke-width="1" opacity="0.5"></line>
+
             <g stroke="#4a7c59" fill="none" stroke-width="1.6" opacity="0.75">
                 <path d="M 350 60 Q 290 110 230 156"></path>
                 <path d="M 350 60 Q 410 110 470 156"></path>
-                <path d="M 230 180 Q 220 230 200 280"></path>
-                <path d="M 230 180 Q 270 230 330 280"></path>
-                <path d="M 470 180 Q 480 230 500 280"></path>
-                <path d="M 470 180 Q 460 230 450 280"></path>
-                <path d="M 470 180 Q 540 230 600 280"></path>
+
+                <path d="M 230 185 Q 215 235 200 280"></path>
+                <path d="M 470 185 Q 335 235 200 280"></path>
+
+                <path d="M 230 185 Q 280 235 330 280"></path>
+                <path d="M 470 185 Q 400 235 330 280"></path>
+
+                <path d="M 230 185 Q 365 235 500 280"></path>
+                <path d="M 470 185 Q 485 235 500 280"></path>
+
+                <path d="M 230 185 Q 415 235 600 280"></path>
+                <path d="M 470 185 Q 535 235 600 280"></path>
             </g>
 
             <g fill="rgba(10, 22, 18, 0.85)" stroke-width="2.2">
