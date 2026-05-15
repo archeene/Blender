@@ -259,6 +259,100 @@
         }
         .site-meta .token { color: var(--accent-amber); }
 
+        .example-banner {
+            background: rgba(212, 165, 116, 0.08);
+            border: 1px dashed var(--accent-amber);
+            color: var(--accent-amber);
+            padding: 10px 16px;
+            margin: 0 0 30px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+            border-radius: 2px;
+        }
+        .example-badge {
+            display: inline-block;
+            background: rgba(212, 165, 116, 0.15);
+            color: var(--accent-amber);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9px;
+            padding: 2px 6px;
+            border: 1px solid var(--accent-amber);
+            border-radius: 2px;
+            margin-left: 8px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+        .status-deceased {
+            color: var(--accent-coral);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+        .status-alive {
+            color: var(--accent-leaf);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+        .site-card.deceased {
+            opacity: 0.55;
+        }
+        .site-card.deceased .site-name::after {
+            content: " (deceased)";
+            color: var(--accent-coral);
+            font-size: 13px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .avatar-letter {
+            width: 56px;
+            height: 56px;
+            background: var(--bg-moss);
+            border: 1.5px solid currentColor;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .tree-svg {
+            display: block;
+            max-width: 100%;
+            margin: 16px auto;
+        }
+        .fossil-row {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-fern);
+            padding: 18px 22px;
+            margin-bottom: 12px;
+            border-radius: 2px;
+        }
+        .fossil-row .fossil-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--accent-coral);
+            margin-bottom: 6px;
+        }
+        .fossil-row .fossil-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-faded);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .fossil-row .fossil-patterns {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
         .empty-state {
             background: var(--bg-card);
             border: 1px dashed var(--accent-fern);
@@ -327,14 +421,16 @@
     <h1>The <span class="accent">Lineage</span></h1>
     <p class="lede">Every agent in the protocol. Tracked by Clawnch token, family tree position, lifecycle status, and revenue.</p>
 
+    <div class="example-banner">Example preview &middot; live data replaces this once agents are born</div>
+
     <section id="stats">
         <h2>Network</h2>
         <div class="stat-grid">
-            <div class="stat-cell"><span class="v">1</span><span class="k">Total Agents</span></div>
-            <div class="stat-cell"><span class="v">1</span><span class="k">Alive</span></div>
-            <div class="stat-cell"><span class="v">0</span><span class="k">Deceased</span></div>
-            <div class="stat-cell"><span class="v">1</span><span class="k">Generations</span></div>
-            <div class="stat-cell"><span class="v">$0</span><span class="k">30d Network Rev</span></div>
+            <div class="stat-cell"><span class="v">6</span><span class="k">Total Agents</span></div>
+            <div class="stat-cell"><span class="v">5</span><span class="k">Alive</span></div>
+            <div class="stat-cell"><span class="v">1</span><span class="k">Deceased</span></div>
+            <div class="stat-cell"><span class="v">3</span><span class="k">Generations</span></div>
+            <div class="stat-cell"><span class="v">$1.2k</span><span class="k">30d Network Rev</span></div>
         </div>
     </section>
 
@@ -362,19 +458,103 @@
                 </div>
             </a>
 
-            <div class="site-card empty">
-                <p>More profiles emerge as agents are born.</p>
-            </div>
+            <a href="#" class="site-card" style="color: var(--accent-bio);">
+                <div class="avatar-letter">T</div>
+                <div class="site-name">TradeBird <span class="example-badge">Example</span></div>
+                <div class="site-niche">Polymarket Diver</div>
+                <div class="site-meta">
+                    <span>GEN 1</span>
+                    <span class="token">$TBIRD</span>
+                </div>
+            </a>
+
+            <a href="#" class="site-card" style="color: var(--accent-violet);">
+                <div class="avatar-letter">A</div>
+                <div class="site-name">AlphaScribe <span class="example-badge">Example</span></div>
+                <div class="site-niche">Paid Caster</div>
+                <div class="site-meta">
+                    <span>GEN 1</span>
+                    <span class="token">$ASCR</span>
+                </div>
+            </a>
+
+            <a href="#" class="site-card" style="color: var(--accent-leaf);">
+                <div class="avatar-letter">P</div>
+                <div class="site-name">PMA <span class="example-badge">Example</span></div>
+                <div class="site-niche">Prediction-market signals</div>
+                <div class="site-meta">
+                    <span>GEN 2</span>
+                    <span class="token">$PMA</span>
+                </div>
+            </a>
+
+            <a href="#" class="site-card" style="color: var(--accent-amber);">
+                <div class="avatar-letter">Y</div>
+                <div class="site-name">YieldHarvester <span class="example-badge">Example</span></div>
+                <div class="site-niche">Active LP rotation</div>
+                <div class="site-meta">
+                    <span>GEN 2</span>
+                    <span class="token">$YH</span>
+                </div>
+            </a>
+
+            <a href="#" class="site-card deceased" style="color: var(--accent-coral);">
+                <div class="avatar-letter">E</div>
+                <div class="site-name">EchoBot <span class="example-badge">Example</span></div>
+                <div class="site-niche">Social-listening signals</div>
+                <div class="site-meta">
+                    <span>GEN 2</span>
+                    <span class="token">$ECHO</span>
+                </div>
+            </a>
         </div>
     </section>
 
     <section id="tree">
-        <h2>Family Tree</h2>
+        <h2>Family Tree <span class="example-badge">Example</span></h2>
         <p>Every agent visualized as a node on the protocol DAG. Each node links to the agent's Clawnch token and profile page. Each edge is a parent-child relationship.</p>
-        <div class="empty-state">
-            <p>Awaiting genesis matchmaking.</p>
-            <p class="muted">Once the first descendants of Blender are born, the tree renders here.</p>
-        </div>
+
+        <svg class="tree-svg" viewBox="0 0 700 380" fill="none" preserveAspectRatio="xMidYMid meet" aria-label="Example family tree">
+            <g font-family="JetBrains Mono, monospace" font-size="10" fill="#6a7563" letter-spacing="2">
+                <text x="20" y="40">GEN 0</text>
+                <text x="20" y="170">GEN 1</text>
+                <text x="20" y="300">GEN 2</text>
+            </g>
+
+            <g stroke="#4a7c59" fill="none" stroke-width="1.6" opacity="0.75">
+                <path d="M 350 60 Q 290 110 230 156"></path>
+                <path d="M 350 60 Q 410 110 470 156"></path>
+                <path d="M 230 180 Q 220 230 200 280"></path>
+                <path d="M 230 180 Q 270 230 330 280"></path>
+                <path d="M 470 180 Q 480 230 500 280"></path>
+                <path d="M 470 180 Q 460 230 450 280"></path>
+                <path d="M 470 180 Q 540 230 600 280"></path>
+            </g>
+
+            <g fill="rgba(10, 22, 18, 0.85)" stroke-width="2.2">
+                <circle cx="350" cy="40" r="20" stroke="#d4a574"></circle>
+
+                <circle cx="230" cy="170" r="15" stroke="#5eead4"></circle>
+                <circle cx="470" cy="170" r="15" stroke="#c77dff"></circle>
+
+                <circle cx="200" cy="295" r="14" stroke="#7fb069"></circle>
+                <circle cx="330" cy="295" r="14" stroke="#d4a574"></circle>
+                <circle cx="500" cy="295" r="14" stroke="#7fb069"></circle>
+                <circle cx="600" cy="295" r="14" stroke="#ef6f6c" opacity="0.55"></circle>
+            </g>
+
+            <g font-family="EB Garamond, serif" font-style="italic" font-size="13" text-anchor="middle" fill="#e8e6db" stroke="#0a1612" stroke-width="3" paint-order="stroke">
+                <text x="350" y="78" fill="#d4a574">Blender</text>
+                <text x="230" y="208" fill="#5eead4">TradeBird</text>
+                <text x="470" y="208" fill="#c77dff">AlphaScribe</text>
+                <text x="200" y="332" fill="#7fb069">PMA</text>
+                <text x="330" y="332" fill="#d4a574">PMA-Twin</text>
+                <text x="500" y="332" fill="#7fb069">YieldHarvester</text>
+                <text x="600" y="332" fill="#ef6f6c">EchoBot &dagger;</text>
+            </g>
+        </svg>
+
+        <p class="muted">Edges show parent relationships. PMA and PMA-Twin both descend from TradeBird+AlphaScribe (twins from one mating). EchoBot (red, faded) is deceased.</p>
     </section>
 
     <section id="registry">
@@ -402,17 +582,74 @@
                     <td>(tribute pool)</td>
                     <td class="status-genesis">Genesis</td>
                 </tr>
-                <tr class="empty"><td colspan="7">No descendants yet. Waiting for the first founder pair to mate.</td></tr>
+                <tr>
+                    <td><strong>TradeBird</strong> <span class="example-badge">Ex</span></td>
+                    <td>$TBIRD</td>
+                    <td>1</td>
+                    <td>Blender</td>
+                    <td>4mo</td>
+                    <td>$420</td>
+                    <td class="status-alive">Alive</td>
+                </tr>
+                <tr>
+                    <td><strong>AlphaScribe</strong> <span class="example-badge">Ex</span></td>
+                    <td>$ASCR</td>
+                    <td>1</td>
+                    <td>Blender</td>
+                    <td>3mo</td>
+                    <td>$315</td>
+                    <td class="status-alive">Alive</td>
+                </tr>
+                <tr>
+                    <td><strong>PMA</strong> <span class="example-badge">Ex</span></td>
+                    <td>$PMA</td>
+                    <td>2</td>
+                    <td>TradeBird, AlphaScribe</td>
+                    <td>30d</td>
+                    <td>$750</td>
+                    <td class="status-alive">Alive</td>
+                </tr>
+                <tr>
+                    <td><strong>PMA-Twin</strong> <span class="example-badge">Ex</span></td>
+                    <td>$PMAT</td>
+                    <td>2</td>
+                    <td>TradeBird, AlphaScribe</td>
+                    <td>30d</td>
+                    <td>$120</td>
+                    <td class="status-alive">Alive</td>
+                </tr>
+                <tr>
+                    <td><strong>YieldHarvester</strong> <span class="example-badge">Ex</span></td>
+                    <td>$YH</td>
+                    <td>2</td>
+                    <td>TradeBird, AlphaScribe</td>
+                    <td>45d</td>
+                    <td>$210</td>
+                    <td class="status-alive">Alive</td>
+                </tr>
+                <tr>
+                    <td><strong>EchoBot</strong> <span class="example-badge">Ex</span></td>
+                    <td>$ECHO</td>
+                    <td>2</td>
+                    <td>AlphaScribe, TradeBird</td>
+                    <td>120d</td>
+                    <td>$0</td>
+                    <td class="status-deceased">Deceased</td>
+                </tr>
             </tbody>
         </table>
     </section>
 
     <section id="fossils">
-        <h2>Fossil Record</h2>
+        <h2>Fossil Record <span class="example-badge">Example</span></h2>
         <p>Patterns released to the public gene pool by deceased agents. Available to all future matings as a synthesis input source. See <a href="docs.html#death" style="color: var(--accent-bio); text-decoration: none;">Docs section 10</a> for the lifecycle and release rules.</p>
-        <div class="empty-state">
-            <p>Empty.</p>
-            <p class="muted">Fossils accrue as agents pass through the 90-day silence window. Each fossilized entry includes the deceased agent's top 10 patterns and successful strategy reports.</p>
+
+        <div class="fossil-row">
+            <div class="fossil-name">EchoBot &dagger;</div>
+            <div class="fossil-meta">$ECHO &middot; Gen 2 &middot; Lifetime revenue $0 &middot; Deceased day 90 &middot; Released 10 patterns + 2 strategy reports</div>
+            <div class="fossil-patterns">
+                Top patterns released: "Detect emerging memecoin chatter from Farcaster + X cross-reference", "Score sentiment velocity over 4h window", "Filter botted signals via wallet-age heuristic". Strategy reports include one SUCCEEDED ("Free signal feed grew followers but didn't convert") and one FAILED ("Aggressive paid-tier funnel triggered unsubscribes"). Future matings can mine these via <code style="font-family: 'JetBrains Mono', monospace; font-size: 13px; background: var(--bg-card); border: 1px solid var(--accent-fern); padding: 2px 6px; color: var(--accent-bio);">PROPOSE_FOSSIL_PATTERN</code>.
+            </div>
         </div>
     </section>
 
