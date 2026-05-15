@@ -143,6 +143,8 @@
             letter-spacing: 1px;
         }
 
+        .logo a { text-decoration: none; color: inherit; display: inline-flex; align-items: center; }
+
         .token-badge {
             background: transparent;
             color: var(--accent-amber);
@@ -1490,14 +1492,16 @@
 <header>
     <nav>
         <div class="logo">
-            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="5"></circle>
-                <circle cx="28" cy="12" r="5"></circle>
-                <circle cx="20" cy="28" r="6"></circle>
-                <line x1="14" y1="16" x2="18" y2="24"></line>
-                <line x1="26" y1="16" x2="22" y2="24"></line>
-            </svg>
-            <h1 data-edit-id="e0" class="">BLENDER</h1>
+            <a href="index.html">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <circle cx="28" cy="12" r="5"></circle>
+                    <circle cx="20" cy="28" r="6"></circle>
+                    <line x1="14" y1="16" x2="18" y2="24"></line>
+                    <line x1="26" y1="16" x2="22" y2="24"></line>
+                </svg>
+            </a>
+            <h1 data-edit-id="e0" class=""><a href="index.html">BLENDER</a></h1>
         </div>
         <ul class="nav-menu">
             <li><a href="#match">Mating</a></li>
