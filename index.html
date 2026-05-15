@@ -855,6 +855,47 @@
             border-radius: 50%;
         }
 
+        .launch-details {
+            background: rgba(10, 22, 18, 0.5);
+            border: 1px solid var(--accent-fern);
+            border-radius: 2px;
+            padding: 16px 20px;
+            margin: 24px 0 0;
+        }
+        .launch-details-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 6px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            gap: 16px;
+            border-bottom: 1px dashed rgba(74, 124, 89, 0.25);
+        }
+        .launch-details-row:last-child { border-bottom: none; }
+        .launch-details-row .launch-label {
+            color: var(--text-faded);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .launch-details-row .launch-val {
+            color: var(--text-primary);
+            text-align: right;
+        }
+        .launch-details-row .launch-val a {
+            color: var(--accent-bio);
+            text-decoration: none;
+        }
+        .btn.btn-disabled,
+        .btn.btn-disabled:hover {
+            opacity: 0.55;
+            cursor: not-allowed;
+            background: transparent;
+            border-color: var(--text-faded);
+            color: var(--text-secondary);
+        }
+
         .token-contract {
             background: rgba(20, 41, 30, 0.6);
             padding: 14px;
@@ -1869,9 +1910,28 @@
             </ul>
         </div>
 
+        <div class="launch-details">
+            <div class="launch-details-row">
+                <span class="launch-label">Mechanism</span>
+                <span class="launch-val">Fair launch on Clawnch via Moltbook</span>
+            </div>
+            <div class="launch-details-row">
+                <span class="launch-label">Sale type</span>
+                <span class="launch-val">No presale, no whitelist, no founder allocation</span>
+            </div>
+            <div class="launch-details-row">
+                <span class="launch-label">Network</span>
+                <span class="launch-val">Base &middot; Uniswap V4 single-sided</span>
+            </div>
+            <div class="launch-details-row">
+                <span class="launch-label">Notify</span>
+                <span class="launch-val"><a href="https://x.com/sirtobiaswade" target="_blank" rel="noopener noreferrer">Follow @sirtobiaswade on X</a> for launch announcement</span>
+            </div>
+        </div>
+
         <div class="token-contract">
             <label>Contract (Base Network)</label>
-            <span id="contractAddress">Launching Soon...</span>
+            <span id="contractAddress">Pending fair launch</span>
         </div>
 
         <div class="stats">
@@ -1894,7 +1954,7 @@
         </div>
 
         <div style="margin-top: 32px;">
-            <a href="https://app.uniswap.org/explore" target="_blank" class="btn btn-primary" data-edit-id="e62">Trade on Uniswap</a>
+            <a id="tradeBtn" href="#" class="btn btn-disabled" aria-disabled="true" data-edit-id="e62">Trade $BLEND (available after launch)</a>
         </div>
     </div>
 </section>
@@ -2068,6 +2128,16 @@
                 const contract = data.launches[0].address;
                 document.getElementById('contractAddress').innerHTML =
                     `<a href="https://basescan.org/token/${contract}" target="_blank" style="color: var(--accent-leaf);">${contract.slice(0,8)}...${contract.slice(-6)}</a>`;
+                const tradeBtn = document.getElementById('tradeBtn');
+                if (tradeBtn) {
+                    tradeBtn.href = `https://app.uniswap.org/explore/tokens/base/${contract}`;
+                    tradeBtn.classList.remove('btn-disabled');
+                    tradeBtn.classList.add('btn-primary');
+                    tradeBtn.removeAttribute('aria-disabled');
+                    tradeBtn.textContent = 'Trade $BLEND on Uniswap';
+                    tradeBtn.target = '_blank';
+                    tradeBtn.rel = 'noopener noreferrer';
+                }
             }
         } catch (e) {
             console.log('Token not yet launched');
