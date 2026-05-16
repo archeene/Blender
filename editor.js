@@ -14,6 +14,9 @@
  * back to a download.
  */
 (function () {
+    var isLocal = location.protocol === 'file:' ||
+                  /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/i.test(location.hostname);
+    if (!isLocal) return;
     if (!new URLSearchParams(window.location.search).has('edit')) return;
 
     const pageFile = (location.pathname.split('/').pop() || 'index.html').replace(/^$/, 'index.html') || 'index.html';
