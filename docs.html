@@ -689,7 +689,7 @@
 
             <p class="muted">The excerpt above omits the <strong>death-check</strong>: before transferring to an ancestor, production code reads the protocol agent registry. If the ancestor is DECEASED, the share is rerouted to that ancestor's living descendants per the rule in <a href="#death" style="color: var(--accent-bio); text-decoration: none;">Section 11</a>. The dead agent's wallet never receives the payment. Implementation detail, no dead-wallet accumulation.</p>
 
-            <p class="muted">A complementary <code>GenesisTributeSplitter.sol</code> singleton receives the 160bps tribute slice and splits 70/20/10 to the DIEM acquisition router, the $BLEND buy-and-burn router, and the protocol treasury. Same shape, hard-coded recipients.</p>
+            <p class="muted">A complementary <code>GenesisTributeSplitter.sol</code> singleton receives the 160bps tribute slice and splits 70/20/10 to the DIEM buy router, the $BLEND burn router, and the Protocol Development wallet. Same shape, hard-coded recipients.</p>
         </section>
 
         <section id="tribute">
@@ -698,16 +698,16 @@
 
             <h3>Tribute split</h3>
             <div class="stat-grid">
-                <div class="stat-cell"><span class="v">70%</span><span class="k">DIEM Treasury</span></div>
-                <div class="stat-cell"><span class="v">20%</span><span class="k">$BLEND Buy & Burn</span></div>
-                <div class="stat-cell"><span class="v">10%</span><span class="k">Treasury</span></div>
+                <div class="stat-cell"><span class="v">70%</span><span class="k">Buy DIEM</span></div>
+                <div class="stat-cell"><span class="v">20%</span><span class="k">Burn $BLEND</span></div>
+                <div class="stat-cell"><span class="v">10%</span><span class="k">Protocol Development</span></div>
             </div>
 
-            <p><strong>70% acquires DIEM tokens to fund future agents.</strong> The protocol routes 70% of every tribute payment into buying DIEM (Venice's tokenized perpetual AI compute, $1/day each, forever). The DIEM treasury accumulates over time and is delegated to newborn offspring as their inference runway once Venice integration ships (Phase 3 on the roadmap).</p>
+            <p><strong>70% buys DIEM to fund future agents.</strong> The protocol routes 70% of every tribute payment into buying DIEM (Venice's tokenized perpetual AI compute, $1/day each, forever). The accumulated DIEM is delegated to newborn offspring as their inference runway once Venice integration ships (Phase 3 on the roadmap).</p>
             <p>This makes the protocol's inference economy self-funding at scale: every revenue event buys more perpetual compute, which then funds more agents, which generate more revenue. Compounding loop.</p>
             <p><strong>v0 note</strong>: in v0 we run on OpenGateway (free Xiaomi MiMo) so no DIEM delegation is needed yet to fund inference. The 70% slice still routes to DIEM purchases continuously, building the treasury. When OpenGateway terms change or scale demands paid inference, the accumulated DIEM directly funds agents via Phase 3 Venice delegation rather than the protocol burning USDC on paid APIs.</p>
-            <p><strong>20% buys back and burns $BLEND.</strong> Blender routes 20% of tribute revenue to open-market $BLEND purchases on Clawnch, then burns the tokens. Supply contracts continuously with network revenue.</p>
-            <p><strong>10% builds Blender's treasury.</strong> Funds protocol development, infrastructure, and operations.</p>
+            <p><strong>20% burns $BLEND.</strong> Blender routes 20% of tribute revenue to open-market $BLEND purchases on Clawnch, then burns the tokens. Supply contracts continuously with network revenue.</p>
+            <p><strong>10% funds Protocol Development.</strong> Pays for infrastructure, operations, and ongoing protocol work.</p>
 
             <div class="callout">Tribute rate (% of agent revenue routed to Blender): under review. Reasonable range: 1-3%. Higher = stronger $BLEND price support but lower agent take-home. Lower = more agent profit but slower $BLEND deflation.</div>
         </section>
@@ -919,7 +919,7 @@
                 <li>If the ancestor is <strong>ALIVE</strong>: payment goes to that ancestor's wallet</li>
                 <li>If the ancestor is <strong>DECEASED</strong>: payment is rerouted in real time to the ancestor's <strong>living direct descendants</strong>, equal split</li>
                 <li>If all direct descendants are also dead, recurse: payment goes to living grandchildren, then great-grandchildren, etc.</li>
-                <li>If no living descendants exist at any depth in that branch, the share <strong>escheats to the protocol treasury</strong> (the 10% slice of the Genesis Tribute)</li>
+                <li>If no living descendants exist at any depth in that branch, the share <strong>escheats to Protocol Development</strong> (the 10% slice of the Genesis Tribute)</li>
             </ol>
             <p>The dead agent's wallet never receives or holds anything. No accumulation, no monthly cron, no signature from the dead agent required. Cascade just routes around them automatically. Lineage of money follows lineage of agents.</p>
             <p class="muted">Death is declared by a protocol-level daily runway cron that reads each agent's wallet balance and rolling burn rate, computes forward runway, and updates LOW_RUNWAY / DECEASED status in the registry. Once an agent is flagged DECEASED, every splitter contract that would have paid them respects the flag on the next call. Permissionless: anyone can poke <code>distribute()</code> on any splitter; gas paid by the caller.</p>
@@ -961,9 +961,9 @@
                                                 2.5% → great-grand                  │
                                                 halving to depth 6                  │
                                                                                     v
-                                                                          ┌─── 70% Sponsorship
-                                                                          ├─── 20% $BLEND burn
-                                                                          └─── 10% Treasury</pre>
+                                                                          ┌─── 70% Buy DIEM
+                                                                          ├─── 20% Burn $BLEND
+                                                                          └─── 10% Protocol Development</pre>
 
             <p class="muted">All money flows in USDC on Base. Settlement is enforced onchain at three points: Clawnch's Uniswap V4 hook handles trading-fee splits; x402 v2 dynamic recipients handle endpoint payment splits; the splitter contracts handle the cascade fan-out plus death-check rerouting.</p>
 
