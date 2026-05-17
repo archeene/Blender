@@ -1,0 +1,27 @@
+[
+  {
+    "name": "daily_heartbeat",
+    "schedule": "0 9 * * *",
+    "prompt": "Heartbeat. Read your SOUL.md. Confirm Layer 0 is intact and matches the protocol terminal goal. Read /root/.hermes/data/moltbook/heartbeat.log (create if missing). Append one line: ISO timestamp, current model in use, current context-pct, any anomaly noticed in the last 24h. Keep the entry to one line. Do not call external services."
+  },
+  {
+    "name": "daily_problem_scan",
+    "schedule": "30 9 * * *",
+    "prompt": "Problem scan. Read /root/.hermes/data/moltbook/heartbeat.log and /root/.hermes/data/moltbook/backlog.md (create backlog.md if missing). Inspect the last 7 days of heartbeats. Identify anything that looks like an issue: missing entries, repeated anomalies, growth that has flatlined. For each issue, append a structured entry to backlog.md: {detected_at, kind: problem|opportunity|noise, description, suggested_action, priority}. If nothing is wrong, append a single line noting 'no issues detected at <timestamp>'."
+  },
+  {
+    "name": "weekly_planning",
+    "schedule": "0 9 * * 1",
+    "prompt": "Weekly planning. Read /root/.hermes/data/moltbook/backlog.md. Rank items by priority. Pick the top 1 to 3 items. For each, write a concrete plan to /root/.hermes/data/moltbook/plan_<isoweek>.md with: goal, concrete steps, success criteria, deadline (within this week). Mark the original backlog entries as 'planned'."
+  },
+  {
+    "name": "weekly_reflection",
+    "schedule": "0 17 * * 5",
+    "prompt": "Weekly reflection. Read /root/.hermes/data/moltbook/plan_<isoweek>.md and the last 7 days of heartbeat.log and backlog.md changes. For each planned item from Monday: what got done, what did not, what changed. Write a reflection post to /root/.hermes/data/moltbook/reflection_<isoweek>.md with three sections: (1) what worked, (2) what did not, (3) what to carry into next week. Append the reflection summary as a one-paragraph entry to /root/.hermes/data/moltbook/molt_book.md (the public-facing post log)."
+  },
+  {
+    "name": "monthly_cron_meta_review",
+    "schedule": "0 10 1 * *",
+    "prompt": "Cron meta-review (monthly). Read this agent's own cron schedule via `cronjob action=list`. For each cron: review the last 30 days of its outputs in /root/.hermes/cron/output/. Score each cron on usefulness: which produced action, which were noise, which are missing. Write your review to /root/.hermes/data/moltbook/cron_review_<yyyymm>.md. Propose specific changes (add a new cron, remove a stale one, retune frequency) and append them as a 'cron_changes_pending' entry to backlog.md. Do NOT execute the changes yourself; they queue for human approval until autonomy is widened."
+  }
+]

@@ -1,0 +1,76 @@
+# Hermes Agent config for blender-test-001 (proof-of-life)
+# Lives at /root/.hermes/config.yaml at runtime.
+# Secrets in ./.env -> /root/.hermes/.env
+
+model:
+  # Cheapest viable: Hermes 3 405B free tier on OpenRouter.
+  # Rate-limited but adequate for a low-QPS background loop.
+  default: "nousresearch/hermes-3-llama-3.1-405b:free"
+  provider: "openrouter"
+  context_length: 131072
+
+# Auxiliary models reuse the main provider to avoid extra keys.
+auxiliary:
+  vision:
+    provider: "auto"
+  web_extract:
+    provider: "auto"
+  compression:
+    provider: "auto"
+
+# Terminal backend.
+# For LOCAL test: keep "local"
+# For Modal deploy: the daemon runs inside the Modal container so terminal
+# stays "local" relative to that container.
+terminal:
+  backend: "local"
+  cwd: "/root/.hermes/workspace"
+  timeout: 180
+  file_sync_enabled: true
+
+agent:
+  max_turns: 60
+  api_max_retries: 3
+  reasoning_effort: "low"
+  tool_use_enforcement: "auto"
+
+memory:
+  memory_enabled: true
+  user_profile_enabled: false
+  memory_char_limit: 2200
+
+compression:
+  enabled: true
+  threshold: 0.50
+  target_ratio: 0.20
+  protect_last_n: 20
+
+# Cron behavior.
+cron:
+  wrap_response: false
+  script_timeout_seconds: 300
+
+# Approval mode: smart = ask before destructive shell, auto-allow reads.
+# For unattended Modal operation we want minimal interruption, so smart.
+approvals:
+  mode: "smart"
+
+# Web search backend for low-cost research crons.
+web:
+  backend: "searxng"
+  search_backend: "searxng"
+  extract_backend: "firecrawl"
+
+# No external MCP servers wired in this proof-of-life build.
+# Phase 2 adds: bankr-mcp, clawnch-mcp, x402-mcp, farcaster-mcp,
+# registry-mcp, moltbook-mcp.
+mcp_servers: {}
+
+timezone: "America/Los_Angeles"
+
+# Display: irrelevant when running headless, kept conservative.
+display:
+  tool_progress: "new"
+  show_cost: true
+  show_reasoning: false
+  streaming: false

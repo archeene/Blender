@@ -1,0 +1,2 @@
+hermes-agent
+modal>=0.64.0
