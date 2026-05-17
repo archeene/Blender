@@ -1,27 +1,68 @@
 [
   {
-    "name": "daily_heartbeat",
-    "schedule": "0 9 * * *",
-    "prompt": "Heartbeat. Read your SOUL.md. Confirm Layer 0 is intact and matches the protocol terminal goal. Read /root/.hermes/data/moltbook/heartbeat.log (create if missing). Append one line: ISO timestamp, current model in use, current context-pct, any anomaly noticed in the last 24h. Keep the entry to one line. Do not call external services."
+    "name": "monitoring_scan",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "*/15 * * * *",
+    "prompt": "Quick monitoring scan. Read wallet balance, runway days remaining, recent x402 endpoint calls, recent mentions on social channels, and recent payments received. Compute current fertility_score = (rolling 30d revenue) / (network median revenue, if known). For any metric that crossed a threshold (runway < 35 days, urgent mention waiting > 30 min, payment received above $25, fertility_score dropped > 20% week-over-week), append a structured entry to /root/.hermes/data/moltbook/backlog.md with priority=urgent and a timestamp. If everything is steady, do nothing.",
+    "research_basis": "Hermes uptime-monitor (every 30min) + alert-triage patterns; AIXBT continuous monitoring layer",
+    "rationale": "Tier 1 hygiene cron. Catches urgent operational issues fast. Cannot be disabled or retuned by parents; protocol enforces this."
   },
   {
-    "name": "daily_problem_scan",
-    "schedule": "30 9 * * *",
-    "prompt": "Problem scan. Read /root/.hermes/data/moltbook/heartbeat.log and /root/.hermes/data/moltbook/backlog.md (create backlog.md if missing). Inspect the last 7 days of heartbeats. Identify anything that looks like an issue: missing entries, repeated anomalies, growth that has flatlined. For each issue, append a structured entry to backlog.md: {detected_at, kind: problem|opportunity|noise, description, suggested_action, priority}. If nothing is wrong, append a single line noting 'no issues detected at <timestamp>'."
+    "name": "nightly_triage",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "0 2 * * *",
+    "prompt": "Nightly backlog triage. Read /root/.hermes/data/moltbook/backlog.md. Re-rank items by estimated ROI (value-to-token / inference-cost-to-execute). Mark items with no progress in 14 days as 'stale'. Escalate items in 'planned' status with no execution in 7 days to 'needs_attention'. Move items completed last week to /root/.hermes/data/moltbook/done.md. Write the cleaned backlog back.",
+    "research_basis": "Hermes Nightly Backlog Triage automation template (`0 2 * * *`)",
+    "rationale": "Tier 1 hygiene cron. Backlog rot kills lineages. Cannot be disabled or retuned by parents."
   },
   {
     "name": "weekly_planning",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
     "schedule": "0 9 * * 1",
-    "prompt": "Weekly planning. Read /root/.hermes/data/moltbook/backlog.md. Rank items by priority. Pick the top 1 to 3 items. For each, write a concrete plan to /root/.hermes/data/moltbook/plan_<isoweek>.md with: goal, concrete steps, success criteria, deadline (within this week). Mark the original backlog entries as 'planned'."
+    "prompt": "Weekly planning. Monday morning. Read backlog. Pick the top 1 to 3 items by ROI. For each, write a concrete plan with {goal, steps, success_criteria, deadline_within_this_week} to /root/.hermes/data/moltbook/plan_<isoweek>.md. Tag chosen backlog items as 'planned' with the plan reference. Publish a 'decision' post to Molt Book naming the week's focus.",
+    "research_basis": "Hermes Weekly Reports (`0 8 * * 1`) + standard weekly planning cadence",
+    "rationale": "Tier 1 hygiene cron. Forward-look discipline. Cannot be disabled."
   },
   {
     "name": "weekly_reflection",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
     "schedule": "0 17 * * 5",
-    "prompt": "Weekly reflection. Read /root/.hermes/data/moltbook/plan_<isoweek>.md and the last 7 days of heartbeat.log and backlog.md changes. For each planned item from Monday: what got done, what did not, what changed. Write a reflection post to /root/.hermes/data/moltbook/reflection_<isoweek>.md with three sections: (1) what worked, (2) what did not, (3) what to carry into next week. Append the reflection summary as a one-paragraph entry to /root/.hermes/data/moltbook/molt_book.md (the public-facing post log)."
+    "prompt": "Weekly reflection. Friday late afternoon. Read this week's plan. For each planned item: what got done, what did not, what changed. Read the past 7 days of backlog entries, monitoring metrics, and any family Molt Book comments received. Write a structured reflection: (1) what worked, (2) what did not, (3) what to change next week. Publish as a 'reflection' post to Molt Book. Update SKILL.md Layer 2 with any new heuristics learned. Do NOT touch SKILL.md Layer 0.",
+    "research_basis": "Standard retro pattern + Hermes Self-evolution loop (DSPy/GEPA, nightly recommended)",
+    "rationale": "Tier 1 hygiene cron. Learning loop must exist for self-improvement to work. Cannot be disabled."
   },
   {
-    "name": "monthly_cron_meta_review",
-    "schedule": "0 10 1 * *",
-    "prompt": "Cron meta-review (monthly). Read this agent's own cron schedule via `cronjob action=list`. For each cron: review the last 30 days of its outputs in /root/.hermes/cron/output/. Score each cron on usefulness: which produced action, which were noise, which are missing. Write your review to /root/.hermes/data/moltbook/cron_review_<yyyymm>.md. Propose specific changes (add a new cron, remove a stale one, retune frequency) and append them as a 'cron_changes_pending' entry to backlog.md. Do NOT execute the changes yourself; they queue for human approval until autonomy is widened."
+    "name": "hourly_action",
+    "tier": 2,
+    "tier_label": "tunable",
+    "tunable_frequency_range": "every 1h to every 4h",
+    "schedule": "30 * * * *",
+    "prompt": "Hourly action. Take ONE concrete step toward the terminal goal of maximizing $TOKEN_SELF value. Options: post a status update or signal, respond to a customer message, run a small experiment from the project backlog, DM a potential partner agent from the Registry, scan a relevant external feed, update profile page with new data. Cap inference at $0.02 per run. Log the action and outcome to /root/.hermes/data/moltbook/hourly_log.md.",
+    "research_basis": "AIXBT hourly post cadence (~10 min past each hour, 24 scheduled posts/day on top of continuous reply loop)",
+    "rationale": "Tier 2 tunable. Parents can retune from hourly to every-4h based on niche pace. Trading lineages tighten; reflective lineages loosen."
+  },
+  {
+    "name": "morning_briefing",
+    "tier": 2,
+    "tier_label": "tunable",
+    "tunable_frequency_range": "time-of-day adjustable to match audience timezone",
+    "schedule": "0 8 * * *",
+    "prompt": "Daily morning briefing. Compile a status digest: yesterday's revenue, current wallet balance, runway days, customer count, recent token-holder changes, current fertility_score, top 5 backlog items. Write to /root/.hermes/data/moltbook/briefing_<date>.md. This briefing is the context the agent uses for today's hourly_action decisions.",
+    "research_basis": "Hermes Daily Briefings (`0 7 * * 1-5`) + Daily Revenue Summary (`0 8 * * *`)",
+    "rationale": "Tier 2 tunable. Parents can shift time-of-day to match customer timezone. EU-focused agents shift to 6am UTC, US-focused agents shift to 14:00 UTC."
+  },
+  {
+    "name": "weekly_content",
+    "tier": 2,
+    "tier_label": "tunable-or-disable",
+    "tunable_frequency_range": "any day of week, or DISABLE if offspring niche genuinely doesn't need public content",
+    "schedule": "0 10 * * 3",
+    "prompt": "Weekly content creation. Wednesday morning. Draft one substantive piece of public-facing content relevant to the niche: a long-form post, a signal thread, a product update, an industry analysis. Aim for 500-2000 tokens of content. Save to /root/.hermes/data/moltbook/content_<isoweek>.md as a draft. Publication to actual social channels requires the farcaster-mcp (not wired in proof-of-life). For now, draft and stage.",
+    "research_basis": "Hermes Content Pipeline (`0 10 * * 3`)",
+    "rationale": "Tier 2 tunable. Parents can shift day-of-week or disable IF the offspring's locked niche genuinely doesn't need content output (e.g., a pure-backend audit scanner). Disable requires niche-justification that LLM-judge validates at synthesis."
   }
 ]

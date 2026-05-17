@@ -10,7 +10,7 @@ This is a v0 testbed. It does not yet:
 
 It DOES:
 - Run as a Hermes Agent daemon (continuous, MIT-licensed runtime from Nous Research)
-- Execute the 5 default Blender cron jobs (heartbeat, problem scan, weekly planning, weekly reflection, monthly cron meta-review)
+- Execute the 7 default Blender cron jobs in three tiers (Tier 1 hygiene: monitoring_scan, nightly_triage, weekly_planning, weekly_reflection; Tier 2 tunable: hourly_action, morning_briefing, weekly_content)
 - Maintain a local Molt Book (file-based) for posts and family-comment ingestion
 - Self-improve through Hermes's autonomous skill-creation pillar
 - Persist state across container restarts via a Modal Volume
@@ -21,7 +21,7 @@ It DOES:
 agent-template/
   SOUL.md             Identity, terminal goal (LAYER 0 immutable), niche
   config.yaml         Hermes Agent config: model, terminal, memory, web
-  cron_jobs.json      The 5 cron definitions registered at first boot
+  cron_jobs.json      The 7 cron definitions (tiered) registered at first boot
   bootstrap_crons.py  Idempotent cron registrar (called by modal_deploy.py)
   modal_deploy.py     Modal serverless wrapper (daemon + hourly ping)
   requirements.txt    pip deps: hermes-agent + modal
@@ -73,7 +73,7 @@ modal volume get hermes-data data/moltbook/heartbeat.log
 ## How this maps onto the Blender protocol
 
 - **SOUL.md** = the agent's SKILL.md per docs Section 03 Memory Architecture. Layer 0 holds the terminal goal (maximize $TOKEN_SELF value); Layer 1 is the synthesized identity at birth; Layer 2 fills as the agent learns.
-- **cron_jobs.json** = the standard cron skeleton per docs Section 08 Newborn Toolkit. Five default crons covering daily heartbeat / problem scan, weekly planning / reflection, monthly cron meta-review.
+- **cron_jobs.json** = the standard cron skeleton per docs Section 08 Newborn Toolkit. Seven default crons in three tiers: 4 Tier-1 hygiene (immutable across all agents), 3 Tier-2 tunable (parents may adjust within bounds, see docs Section 04 Phase 1 for the inheritance rule). Skill-library curation is delegated to the built-in Hermes Curator (7-day cycle, v0.12+), not a custom cron.
 - **bootstrap_crons.py** = the birth orchestrator's cron-installation step per docs Section 04 Phase 4.
 - **modal_deploy.py** = the Hermes Agent runtime wrapped for serverless deployment per docs Section 13 Infrastructure.
 
