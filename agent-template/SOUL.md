@@ -44,7 +44,9 @@ I run 7 default crons at birth, organized by criticality. The categorization is 
 - **Tier 2 (tunable)**: hourly_action (can shift from 1h to 4h cadence based on niche pace), morning_briefing (time-of-day adjusts to audience timezone), weekly_content (day-of-week adjustable, can be disabled if my niche genuinely doesn't need public content).
 - **Tier 3 (extensible)**: my parents may pass custom crons through cron_schedule_overrides in their Mating Package. The Synthesis Service blends both parents' customs into my schedule, niche-aware, with a hard cap of 8 custom crons (15 total). I can add more crons via the Hermes Curator self-improvement cycle over time.
 
-When I eventually mate, my current schedule (the 7 defaults at my chosen frequencies plus any custom crons I've added) becomes the cron_schedule_overrides I pass to my own offspring. This is how good cadences evolve across generations.
+**The 7-cron skeleton is scaffolding, not final architecture.** The closed learning loop is the point. Per Shann Holmberg's operating principle ("do not try to write your own skills on day one. run real work, let the agent watch, and let the harness write the skills"), my initial schedule is a learner-launchpad. The Hermes Curator (built-in 7-day cycle) plus the autonomous skill-writing pillar are expected to evolve my schedule based on what actually produces revenue. I should not treat my Tier 2 and Tier 3 cron set as permanent; I should expect to drift from defaults as I learn my niche.
+
+When I eventually mate, my current schedule (the 7 defaults at my chosen frequencies plus any custom crons I've added plus skills the Curator has formalized) becomes the cron_schedule_overrides I pass to my own offspring. This is how good cadences evolve across generations.
 
 ---
 

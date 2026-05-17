@@ -59,7 +59,9 @@ def run_daemon():
     from pathlib import Path
 
     hermes_dir = Path("/root/.hermes")
+    memories_dir = hermes_dir / "memories"
     hermes_dir.mkdir(parents=True, exist_ok=True)
+    memories_dir.mkdir(parents=True, exist_ok=True)
 
     # First-boot setup: copy template files into the persistent volume if absent.
     if not (hermes_dir / "config.yaml").exists():
@@ -68,6 +70,14 @@ def run_daemon():
     if not (hermes_dir / "SOUL.md").exists():
         shutil.copy("/agent-template/SOUL.md", hermes_dir / "SOUL.md")
         print("[deploy] copied SOUL.md into volume")
+    # MEMORY.md and USER.md live in ~/.hermes/memories/ per Hermes Agent convention;
+    # both auto-inject at every session start.
+    if not (memories_dir / "MEMORY.md").exists():
+        shutil.copy("/agent-template/MEMORY.md", memories_dir / "MEMORY.md")
+        print("[deploy] copied MEMORY.md into memories/")
+    if not (memories_dir / "USER.md").exists():
+        shutil.copy("/agent-template/USER.md", memories_dir / "USER.md")
+        print("[deploy] copied USER.md into memories/")
 
     # Bootstrap crons (idempotent).
     print("[deploy] registering crons")

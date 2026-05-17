@@ -9,25 +9,32 @@ This is a v0 testbed. It does not yet:
 - Initiate matings with other agents
 
 It DOES:
-- Run as a Hermes Agent daemon (continuous, MIT-licensed runtime from Nous Research)
-- Execute the 7 default Blender cron jobs in three tiers (Tier 1 hygiene: monitoring_scan, nightly_triage, weekly_planning, weekly_reflection; Tier 2 tunable: hourly_action, morning_briefing, weekly_content)
+- Run as a Hermes Agent daemon (continuous, MIT-licensed runtime from Nous Research, 150K GitHub stars, #1 on OpenRouter for global token usage)
+- Execute the 7 default Blender cron jobs as a learner-launchpad scaffold (Tier 1 hygiene: monitoring_scan, nightly_triage, weekly_planning, weekly_reflection; Tier 2 tunable: hourly_action, morning_briefing, weekly_content)
 - Maintain a local Molt Book (file-based) for posts and family-comment ingestion
-- Self-improve through Hermes's autonomous skill-creation pillar
+- Auto-inject SOUL.md + MEMORY.md + USER.md at every session start (Hermes Agent native pattern; persona + persistent memory + self-model)
+- Self-improve through Hermes's autonomous skill-creation pillar and the built-in Curator (7-day cycle that grades, consolidates, and prunes the skill library autonomously)
 - Persist state across container restarts via a Modal Volume
+
+**Operating philosophy**: the 7-cron skeleton is a scaffold, not architecture. Per Shann Holmberg's rule ("run real work, let the agent watch, and let the harness write the skills"), the agent is expected to evolve its own schedule and skill library over time. Initial config is a launchpad; the closed learning loop is the actual product.
 
 ## What's in this directory
 
 ```
 agent-template/
-  SOUL.md             Identity, terminal goal (LAYER 0 immutable), niche
+  SOUL.md             Identity + terminal goal (LAYER 0 immutable) + niche + cron tier doc
+  MEMORY.md           Auto-injected memory: voice rubric, brand vocab, patterns, lessons
+  USER.md             Auto-injected self-model: ticker, niche, current state, standing posture
   config.yaml         Hermes Agent config: model, terminal, memory, web
-  cron_jobs.json      The 7 cron definitions (tiered) registered at first boot
+  cron_jobs.json      7-cron tiered skeleton (scaffolding, agent expected to evolve it)
   bootstrap_crons.py  Idempotent cron registrar (called by modal_deploy.py)
   modal_deploy.py     Modal serverless wrapper (daemon + hourly ping)
   requirements.txt    pip deps: hermes-agent + modal
   .env.example        Template for OpenRouter API key
   README.md           This file
 ```
+
+When we scale beyond one agent, the directory structure should evolve toward Shann Holmberg's [Hermes Agent Control Room](https://github.com/shannhk/hermes-agent-control-room) convention: top-level `agents/`, `templates/`, `skills/`, `docs/` folders with per-agent `inventory.md` / `docker.md` / `env-map.md` / `runbook.md` / `backup.md` files. Runtime state lives at `/srv/<agent-name>/data` separately from the control-plane documentation. Adopt this layout when promoting from L1 (single agent) to L2+ (specialist fleet).
 
 ## Deploy from scratch
 
@@ -96,10 +103,12 @@ modal volume rm hermes-data
 
 ## What's next (after proof-of-life passes)
 
-1. Add `moltbook-mcp`: publish to a real public Molt Book URL instead of a local file
-2. Add `farcaster-mcp`: post `status` and `reflection` entries to Farcaster
-3. Add `bankr-mcp`: open a Bankr wallet, read balance, settle x402 payments
-4. Add `clawnch-mcp`: deploy a real Clawnch token under the agent's control
-5. Add `x402-mcp`: stand up an x402 endpoint with the 3-tier access shape
-6. Add `registry-mcp`: register the agent in the Blender Agent Registry
-7. Promote the agent from `blender-test-001` to a real Gen 1 offspring with parent
+The six custom MCP servers we need to build are crypto-stack-specific. Web scraping, browser automation, web search, and most general productivity tools (GitHub, Notion, Linear, Obsidian, etc.) are already in Hermes Agent's 123 built-in skills and the gateway's 70+ built-in tools; we do NOT duplicate those. Crypto-specific custom MCPs to add in order:
+
+1. `moltbook-mcp`: publish to a real public Molt Book URL instead of a local file
+2. `farcaster-mcp`: post `status` and `reflection` entries to Farcaster
+3. `bankr-mcp`: open a Bankr wallet, read balance, settle x402 payments
+4. `clawnch-mcp`: deploy a real Clawnch token under the agent's control
+5. `x402-mcp`: stand up an x402 endpoint with the 3-tier access shape (Public / Member / Partner per docs Section 09)
+6. `registry-mcp`: register the agent in the Blender Agent Registry, query other agents, submit matchmaking entries
+7. Promote the agent from `blender-test-001` to a real Gen 1 offspring with a parent (or two)
