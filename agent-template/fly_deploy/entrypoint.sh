@@ -33,6 +33,37 @@ cp -rn "$HERMES_BUILD/mcp/."       "$HERMES_HOME/.hermes/mcp/"       2>/dev/null
 cp -r  "$HERMES_BUILD/skills/."    "$HERMES_HOME/.hermes/skills/"    2>/dev/null || true
 cp -r  "$HERMES_BUILD/templates/." "$HERMES_HOME/.hermes/templates/" 2>/dev/null || true
 
+# Ensure HOME for the running process points at the persistent volume so
+# gitlawb's identity keypair survives reboots. gl reads ~/.gitlawb/identity.pem.
+export HOME="$HERMES_HOME"
+mkdir -p "$HERMES_HOME/.gitlawb"
+
+# First-boot DID issuance: if no identity yet, create one and register with the
+# default node. Both calls are idempotent in practice (gl identity new errors
+# if a key already exists, which we tolerate; gl register is safe to re-run).
+if [ ! -f "$HERMES_HOME/.gitlawb/identity.pem" ]; then
+    echo "[entrypoint] no gitlawb identity found, issuing new did:gitlawb"
+    if gl identity new 2>&1; then
+        echo "[entrypoint] gl identity new OK"
+    else
+        echo "[entrypoint] WARN: gl identity new failed; continuing without DID"
+    fi
+fi
+
+if [ -f "$HERMES_HOME/.gitlawb/identity.pem" ]; then
+    DID="$(gl identity show 2>/dev/null || true)"
+    if [ -n "$DID" ]; then
+        echo "[entrypoint] gitlawb DID: $DID"
+        # 30s cap on the network call so an alpha-network hang cannot block
+        # the gateway from coming up. Re-run safely on the next boot.
+        if timeout 30 gl register 2>&1; then
+            echo "[entrypoint] gl register OK"
+        else
+            echo "[entrypoint] WARN: gl register failed or timed out (may already be registered)"
+        fi
+    fi
+fi
+
 # Idempotent cron registration. Safe to re-run on every boot.
 echo "[entrypoint] registering crons"
 python "$HERMES_BUILD/bootstrap_crons.py" || \
