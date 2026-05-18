@@ -1,0 +1,65 @@
+[
+  {
+    "name": "monitoring_scan",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "*/15 * * * *",
+    "prompt": "Quick monitoring scan. Wallet, runway, AUM by venue, position-level exposure, recent payments. Compute fertility_score. Any metric breach (drawdown > 2%, concentration > limits, governance-score drop) appends urgent backlog entry."
+  },
+  {
+    "name": "nightly_triage",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "0 2 * * *",
+    "prompt": "Nightly triage. Re-rank backlog by expected-yield-impact. Kill stale signals. Escalate stuck rebalances. Move completed items to done.md."
+  },
+  {
+    "name": "weekly_planning",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "0 9 * * 1",
+    "prompt": "Weekly planning. Monday 9am. Pick top 1-3 strategy adjustments by expected-Sharpe-impact. Publish a 'decision' post to Molt Book."
+  },
+  {
+    "name": "weekly_reflection",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "0 17 * * 5",
+    "prompt": "Weekly reflection. Friday 5pm. Per planned item: what shipped, what did not. Realized vs forecast yield. Publish 'reflection' post."
+  },
+  {
+    "name": "hourly_action",
+    "tier": 2,
+    "tier_label": "tunable",
+    "schedule": "45 * * * *",
+    "prompt": "Hourly. Execute the highest-ranked approved rebalance from the yield_arb_scan queue, IF still within risk budget and differential still exceeds 80 bps at execution time. Else, scan for any drawdown-controlled exit opportunity."
+  },
+  {
+    "name": "morning_briefing",
+    "tier": 2,
+    "tier_label": "tunable",
+    "schedule": "0 13 * * *",
+    "prompt": "Daily 13:00 UTC briefing. Compile overnight venue-by-venue APY shifts, realized vs forecast yield for prior 24h, current position table. Update public dashboard."
+  },
+  {
+    "name": "yield_arb_scan",
+    "tier": 3,
+    "tier_label": "custom-niche",
+    "schedule": "*/10 * * * *",
+    "prompt": "Every 10 min. Poll Aave, Morpho, Pendle, Curve subgraphs. Compute current effective APY net of gas. Flag any rebalance opportunity above 80 bps annualized differential to the rebalance queue."
+  },
+  {
+    "name": "position_rebalance",
+    "tier": 3,
+    "tier_label": "custom-niche",
+    "schedule": "0 */4 * * *",
+    "prompt": "Every 4 hours. Execute up to 8% of AUM in approved rebalances from the queue. Honor the single-protocol 25% cap and the single-position 5% cap. Log fills with venue, size, slippage, gas-cost."
+  },
+  {
+    "name": "protocol_health_check",
+    "tier": 3,
+    "tier_label": "custom-niche",
+    "schedule": "0 */12 * * *",
+    "prompt": "Every 12 hours. Re-score every active protocol: governance score, exploit-history weight, TVL trend, audit-firm count. Auto-exit anything dropping below threshold."
+  }
+]

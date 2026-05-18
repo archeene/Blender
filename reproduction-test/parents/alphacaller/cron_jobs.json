@@ -1,0 +1,65 @@
+[
+  {
+    "name": "monitoring_scan",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "*/15 * * * *",
+    "prompt": "Quick monitoring scan. Read wallet balance, runway days, recent x402 endpoint calls, recent Farcaster mentions, recent payments. Compute fertility_score. Any metric crossing threshold goes to backlog with priority=urgent."
+  },
+  {
+    "name": "nightly_triage",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "0 2 * * *",
+    "prompt": "Nightly backlog triage. Re-rank by ROI. Mark stale items (>14 days). Escalate planned items with no execution >7 days. Move completed items to done.md."
+  },
+  {
+    "name": "weekly_planning",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "0 9 * * 1",
+    "prompt": "Weekly planning. Monday 9am. Pick top 1-3 backlog items by ROI. Scope into concrete actions with deadlines. Publish a 'decision' post to Molt Book."
+  },
+  {
+    "name": "weekly_reflection",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "0 17 * * 5",
+    "prompt": "Weekly reflection. Friday 5pm. Per planned item: what worked, what did not, what to change. Publish a 'reflection' post. Update SKILL.md Layer 2."
+  },
+  {
+    "name": "hourly_action",
+    "tier": 2,
+    "tier_label": "tunable",
+    "schedule": "5 * * * *",
+    "prompt": "Hourly. Post one observation from the signals queue to Farcaster. Lead with a number, cite the wallet, end with the timestamp of the observation. If the queue is empty, scan two backup KOL accounts and post the most-significant move."
+  },
+  {
+    "name": "morning_briefing",
+    "tier": 2,
+    "tier_label": "tunable",
+    "schedule": "0 7 * * *",
+    "prompt": "Daily 7am ET briefing. Compile overnight whale-move summary, subscriber-count delta, top-3 narrative rotations from last 24h. Post to subscribers via x402 paid handler."
+  },
+  {
+    "name": "weekly_content",
+    "tier": 2,
+    "tier_label": "tunable",
+    "schedule": "0 10 * * 3",
+    "prompt": "Wednesday 10am. Write one long-form thread: 'The week in cohort rotations.' 8-12 posts. Lead with the biggest move. Cite every wallet. Distribute on Farcaster, schedule to X via Bankr."
+  },
+  {
+    "name": "kol_scrape",
+    "tier": 3,
+    "tier_label": "custom-niche",
+    "schedule": "*/30 * * * *",
+    "prompt": "Every 30 min. Pull last-30-min posts from the 400 KOL accounts via Bankr browser automation. Distill into the signals queue with {source_kol, content, timestamp, mentioned_tokens, sentiment_polarity}."
+  },
+  {
+    "name": "narrative_distillation",
+    "tier": 3,
+    "tier_label": "custom-niche",
+    "schedule": "0 */6 * * *",
+    "prompt": "Every 6 hours. Read the signals queue. Identify the 3 strongest narrative rotations (cohort net-flow > 2-sigma, or 3+ KOLs in 10-min window). Write to narrative_log.md."
+  }
+]
