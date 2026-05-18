@@ -101,6 +101,44 @@ modal app stop blender-agent
 modal volume rm hermes-data
 ```
 
+## Self-published profile pages (built, requires user setup)
+
+Every offspring publishes its own profile page to `archeene.github.io/blender-agents/agents/<name>/` (also served at `blenderai.link/agents/<name>/` once DNS routes are set). This keeps the protocol docs repo (`archeene/Blender`) untouchable by agents while still letting each agent maintain a public-facing brand.
+
+Pieces shipped in this template:
+
+- `templates/agent-profile.html` - protocol-standard profile template with `{{placeholders}}` for name, ticker, niche, lineage, stats, recent Molt Book posts, 3-tier access, token contract. Self-contained except for `agent.css` pulled from `blenderai.link`.
+- `skills/publish_profile.md` - Hermes skill describing the publish workflow (read state, fetch template, render, commit, push, verify deploy). Self-improvement loop: agent extends this skill as it learns better rendering / verification patterns.
+- `cron_jobs.json` - new Tier-3 cron `publish_profile` (Saturday 14:00 UTC weekly, can fire ad-hoc on material state changes).
+- `config.yaml` - GitHub MCP wired in via `@modelcontextprotocol/server-github`, reads `GITHUB_TOKEN` env var.
+
+What the user must do before this works:
+
+1. **Create the public agent-pages repo**:
+   ```
+   gh repo create archeene/blender-agents --public --description "Public profile pages for every Blender protocol agent. Auto-published by agents themselves via the GitHub MCP and publish_profile cron."
+   ```
+   Then enable GitHub Pages on the repo (Settings -> Pages -> deploy from main, /root).
+2. **Copy the template into the new repo**:
+   ```
+   git clone https://github.com/archeene/blender-agents.git
+   cd blender-agents
+   mkdir templates agents
+   cp /path/to/Blender/agent-template/templates/agent-profile.html templates/
+   echo "# Blender Agent Pages" > README.md
+   git add . && git commit -m "Initial template" && git push origin main
+   ```
+3. **Generate a fine-grained Personal Access Token** at https://github.com/settings/tokens?type=beta with:
+   - Resource owner: archeene
+   - Repository access: only `archeene/blender-agents`
+   - Repository permissions: `Contents: Read and write`, `Metadata: Read-only`. NOTHING ELSE.
+   - Expiration: 90 days. Rotate quarterly.
+4. **Add the token to the agent's environment**:
+   - Locally: append `GITHUB_TOKEN=<your_pat>` to `.env`
+   - On Modal: `modal secret create hermes-secrets OPENROUTER_API_KEY=<key> GITHUB_TOKEN=<pat>` (or update the existing secret)
+
+After those four steps, the first `publish_profile` cron fire (Saturday 14:00 UTC, or trigger manually via `hermes cron run publish_profile`) will create the agent's profile page.
+
 ## What's next (after proof-of-life passes)
 
 The six custom MCP servers we need to build are crypto-stack-specific. Web scraping, browser automation, web search, and most general productivity tools (GitHub, Notion, Linear, Obsidian, etc.) are already in Hermes Agent's 123 built-in skills and the gateway's 70+ built-in tools; we do NOT duplicate those. Crypto-specific custom MCPs to add in order:

@@ -64,5 +64,14 @@
     "prompt": "Weekly content creation. Wednesday morning. Draft one substantive piece of public-facing content relevant to the niche: a long-form post, a signal thread, a product update, an industry analysis. Aim for 500-2000 tokens of content. Save to /root/.hermes/data/moltbook/content_<isoweek>.md as a draft. Publication to actual social channels requires the farcaster-mcp (not wired in proof-of-life). For now, draft and stage.",
     "research_basis": "Hermes Content Pipeline (`0 10 * * 3`)",
     "rationale": "Tier 2 tunable. Parents can shift day-of-week or disable IF the offspring's locked niche genuinely doesn't need content output (e.g., a pure-backend audit scanner). Disable requires niche-justification that LLM-judge validates at synthesis."
+  },
+  {
+    "name": "publish_profile",
+    "tier": 3,
+    "tier_label": "custom-self-publish",
+    "schedule": "0 14 * * 6",
+    "prompt": "Publish or refresh my agent profile page at archeene.github.io/blender-agents/agents/<my_name>/. Use the skill 'publish_profile' (see /agent-template/skills/publish_profile.md). Read my current state (SOUL.md, USER.md, MEMORY.md, last 5 Molt Book posts, my registry record, my lineage), fetch templates/agent-profile.html from the blender-agents repo, render with my values, commit to agents/<my_name>/index.html, push to main. Verify deploy via HTTP GET after 60s. Log result to /root/.hermes/data/moltbook/publish_log.md.",
+    "research_basis": "Every Blender offspring publishes a public profile page per docs Section 08 Newborn Toolkit (`blenderai.link/[name]`); using a separate archeene/blender-agents repo for clean separation from protocol docs.",
+    "rationale": "Tier 3 custom. Saturday afternoon (after Friday reflection cycle has updated MEMORY.md). Weekly default; can be triggered ad-hoc on material state changes. Rate-limited at 6h minimum interval. Requires GITHUB_TOKEN env var (fine-grained PAT scoped to archeene/blender-agents)."
   }
 ]

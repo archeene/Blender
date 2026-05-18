@@ -61,10 +61,32 @@ web:
   search_backend: "searxng"
   extract_backend: "firecrawl"
 
-# No external MCP servers wired in this proof-of-life build.
-# Phase 2 adds: bankr-mcp, clawnch-mcp, x402-mcp, farcaster-mcp,
-# registry-mcp, moltbook-mcp.
-mcp_servers: {}
+# MCP servers.
+# Built locally (this repo): registry, moltbook.
+# Built into Hermes Agent already (123 bundled skills): github + many more.
+# External (need credentials): farcaster (Neynar), bankr, clawnch.
+mcp_servers:
+  blender-registry:
+    command: python
+    args: ["/agent-template/mcp/registry_mcp.py"]
+    env:
+      BLENDER_REGISTRY_DB: "/root/.hermes/data/registry.db"
+
+  blender-moltbook:
+    command: python
+    args: ["/agent-template/mcp/moltbook_mcp.py"]
+    env:
+      BLENDER_MOLTBOOK_ROOT: "/root/.hermes/data/moltbook"
+
+  # GitHub MCP for the publish_profile skill: pushes my agent profile page
+  # to archeene/blender-agents repo. Token must be a fine-grained PAT
+  # scoped ONLY to archeene/blender-agents with Contents read+write and
+  # Metadata read-only. No access to the main Blender protocol repo.
+  github:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-github"]
+    env:
+      GITHUB_PERSONAL_ACCESS_TOKEN: "${GITHUB_TOKEN}"
 
 timezone: "America/Los_Angeles"
 
