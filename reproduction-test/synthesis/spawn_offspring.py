@@ -55,6 +55,8 @@ COPY_FROM_TEMPLATE = [
 ]
 COPY_DIRS_FROM_TEMPLATE = ["mcp", "skills", "templates"]
 
+FLY_FILES = ["Dockerfile", "entrypoint.sh"]
+
 
 def read_offspring_identity(synth_dir: Path) -> dict:
     """Read the offspring's name and ticker from USER.md."""
@@ -279,11 +281,39 @@ def spawn(synth_dir: Path, deploy_dir: Path) -> int:
         f"VOLUME_NAME=hermes-data-{offspring['name']})"
     )
 
-    # 5. Write the deploy README.
+    # 5. Copy Fly.io deploy files from fly_deploy/ in agent-template.
+    fly_src_dir = AGENT_TEMPLATE / "fly_deploy"
+    if fly_src_dir.is_dir():
+        for f in FLY_FILES:
+            src = fly_src_dir / f
+            if src.exists():
+                shutil.copy2(src, deploy_dir / f)
+                print(f"[spawn] copied agent-template/fly_deploy/{f}")
+        # Render fly.toml from the template substituting the offspring's name.
+        fly_template = fly_src_dir / "fly.toml.template"
+        if fly_template.exists():
+            app_name = f"blender-{offspring['name']}"
+            volume_name = f"blender_{offspring['name'].replace('-', '_')}_data"
+            fly_toml = (
+                fly_template.read_text(encoding="utf-8")
+                .replace("{{app_name}}", app_name)
+                .replace("{{volume_name}}", volume_name)
+            )
+            (deploy_dir / "fly.toml").write_text(fly_toml, encoding="utf-8")
+            print(f"[spawn] rendered fly.toml (app={app_name}, volume={volume_name})")
+
+    # 6. Write the deploy README.
     (deploy_dir / "README.md").write_text(render_deploy_readme(offspring), encoding="utf-8")
     print(f"[spawn] wrote README.md")
 
-    print(f"\n[spawn] done. Deploy with:")
+    print(f"\n[spawn] done. Deploy options:")
+    print(f"\n  Fly.io (recommended, matches existing blender-agent pattern):")
+    print(f"    cd {deploy_dir}")
+    print(f"    flyctl apps create blender-{offspring['name']}")
+    print(f"    flyctl secrets set --app blender-{offspring['name']} \\")
+    print(f"        GLM_API_KEY=... GLM_BASE_URL=... BANKR_API_KEY=...")
+    print(f"    flyctl deploy --app blender-{offspring['name']}")
+    print(f"\n  Modal (alternative):")
     print(f"    cd {deploy_dir}")
     print(f"    modal deploy modal_deploy.py")
     return 0

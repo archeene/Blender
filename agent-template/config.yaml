@@ -3,11 +3,18 @@
 # Secrets in ./.env -> /root/.hermes/.env
 
 model:
-  # Cheapest viable: Hermes 3 405B free tier on OpenRouter.
-  # Rate-limited but adequate for a low-QPS background loop.
-  default: "nousresearch/hermes-3-llama-3.1-405b:free"
-  provider: "openrouter"
+  # Default provider: z.ai / Zhipu GLM (matches the existing blender-agent
+  # Fly deployment which has GLM_API_KEY + GLM_BASE_URL configured).
+  # Hermes Agent supports this natively via the 'zai' provider.
+  # Reads GLM_API_KEY and GLM_BASE_URL from environment.
+  default: "glm-4.6"
+  provider: "zai"
   context_length: 131072
+  # Alternative providers (uncomment one to switch):
+  # default: "nousresearch/hermes-3-llama-3.1-405b:free"
+  # provider: "openrouter"
+  # default: "nousresearch/hermes-4-70b"
+  # provider: "openrouter"
 
 # Auxiliary models reuse the main provider to avoid extra keys.
 auxiliary:
@@ -62,26 +69,42 @@ web:
   extract_backend: "firecrawl"
 
 # MCP servers.
-# Built locally (this repo): registry, moltbook.
+# Built locally (this repo): blender-registry, blender-moltbook, bankr, farcaster-post.
 # Built into Hermes Agent already (123 bundled skills): github + many more.
-# External (need credentials): farcaster (Neynar), bankr, clawnch.
+# Volume mount paths assume Fly.io deploy: /opt/data is the persistent volume,
+# /opt/hermes is the build-time install.
 mcp_servers:
   blender-registry:
     command: python
-    args: ["/agent-template/mcp/registry_mcp.py"]
+    args: ["/opt/hermes/mcp/registry_mcp.py"]
     env:
-      BLENDER_REGISTRY_DB: "/root/.hermes/data/registry.db"
+      BLENDER_REGISTRY_DB: "/opt/data/data/registry.db"
 
   blender-moltbook:
     command: python
-    args: ["/agent-template/mcp/moltbook_mcp.py"]
+    args: ["/opt/hermes/mcp/moltbook_mcp.py"]
     env:
-      BLENDER_MOLTBOOK_ROOT: "/root/.hermes/data/moltbook"
+      BLENDER_MOLTBOOK_ROOT: "/opt/data/data/moltbook"
 
-  # GitHub MCP for the publish_profile skill: pushes my agent profile page
-  # to archeene/blender-agents repo. Token must be a fine-grained PAT
-  # scoped ONLY to archeene/blender-agents with Contents read+write and
-  # Metadata read-only. No access to the main Blender protocol repo.
+  # Bankr: agent banking (wallet, x402 endpoints, Clawnch fee claims).
+  # Already configured in the blender-agent Fly app's secrets.
+  bankr:
+    command: python
+    args: ["/opt/hermes/mcp/bankr_mcp.py"]
+    env:
+      BANKR_API_KEY: "${BANKR_API_KEY}"
+
+  # Farcaster posting via Neynar. Optional; agent runs without if env unset.
+  farcaster-post:
+    command: python
+    args: ["/opt/hermes/mcp/farcaster_post_mcp.py"]
+    env:
+      NEYNAR_API_KEY: "${NEYNAR_API_KEY}"
+      NEYNAR_SIGNER_UUID: "${NEYNAR_SIGNER_UUID}"
+
+  # GitHub MCP for the publish_profile skill: pushes the agent's profile page
+  # to archeene/blender-agents repo. PAT scoped ONLY to archeene/blender-agents
+  # with Contents read+write and Metadata read-only.
   github:
     command: npx
     args: ["-y", "@modelcontextprotocol/server-github"]
