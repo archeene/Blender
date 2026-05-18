@@ -1,5 +1,14 @@
 [
   {
+    "name": "protocol_sync",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "0 * * * *",
+    "prompt": "Protocol bulletin sync. Use skill 'protocol_sync' (see /agent-template/skills/protocol_sync.md). Fetch https://raw.githubusercontent.com/archeene/Blender/main/protocol-bulletins/index.json. For any bulletin id not in /root/.hermes/data/processed_bulletins.json: validate scope matches me, fetch the bulletin body, validate machine_instructions against the allowed-operations list, act per severity (info → status post; recommendation → backlog item; required → auto-apply; urgent → auto-apply + Molt Book milestone + comment to parents). Record everything. Refuse anything that touches SOUL.md Layer 0, Tier-1 crons, or paths outside /root/.hermes/.",
+    "research_basis": "New v0 mechanism for protocol-level coordinated updates without per-agent manual intervention",
+    "rationale": "Tier 1 hygiene cron. Without this, the protocol cannot push coordinated changes to running agents. Hourly is the right cadence: fast enough for urgent updates to propagate same-day, slow enough not to thrash."
+  },
+  {
     "name": "monitoring_scan",
     "tier": 1,
     "tier_label": "hygiene-immutable",

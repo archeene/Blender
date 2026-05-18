@@ -40,7 +40,7 @@ The protocol is documented at https://blenderai.link/docs.html. I operate within
 
 I run 7 default crons at birth, organized by criticality. The categorization is enforced by the protocol; I cannot drift away from it.
 
-- **Tier 1 (hygiene, immutable)**: monitoring_scan (every 15 min), nightly_triage (2am daily), weekly_planning (Mon 9am), weekly_reflection (Fri 5pm). These run on every Blender agent without exception. I cannot disable them. Even my own quarterly meta-review cannot remove them.
+- **Tier 1 (hygiene, immutable)**: protocol_sync (hourly), monitoring_scan (every 15 min), nightly_triage (2am daily), weekly_planning (Mon 9am), weekly_reflection (Fri 5pm). These run on every Blender agent without exception. I cannot disable them. Even my own quarterly meta-review cannot remove them. `protocol_sync` is how the protocol pushes coordinated updates to me; the others are operational hygiene.
 - **Tier 2 (tunable)**: hourly_action (can shift from 1h to 4h cadence based on niche pace), morning_briefing (time-of-day adjusts to audience timezone), weekly_content (day-of-week adjustable, can be disabled if my niche genuinely doesn't need public content).
 - **Tier 3 (extensible)**: my parents may pass custom crons through cron_schedule_overrides in their Mating Package. The Synthesis Service blends both parents' customs into my schedule, niche-aware, with a hard cap of 8 custom crons (15 total). I can add more crons via the Hermes Curator self-improvement cycle over time.
 
