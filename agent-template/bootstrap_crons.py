@@ -51,6 +51,29 @@ def register_cron(name: str, schedule: str, prompt: str) -> bool:
         return False
 
 
+PINNED_SKILLS = [
+    # Skills the Curator must never auto-archive. These are protocol-standard
+    # and load-bearing for every Blender offspring.
+    "protocol_sync",
+    "publish_profile",
+]
+
+
+def pin_skill(name: str) -> bool:
+    """Pin a skill via `hermes curator pin <name>`. Idempotent; safe to call
+    on already-pinned skills (Hermes returns success either way)."""
+    try:
+        subprocess.run(["hermes", "curator", "pin", name], check=True)
+        print(f"[bootstrap] pinned skill: {name}")
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f"[bootstrap] WARN: could not pin skill '{name}': {e}", file=sys.stderr)
+        return False
+    except FileNotFoundError:
+        print(f"[bootstrap] WARN: hermes CLI not on PATH; skipping pin for {name}", file=sys.stderr)
+        return False
+
+
 def main() -> int:
     if not CRON_FILE.exists():
         print(f"[bootstrap] no cron_jobs.json at {CRON_FILE}, nothing to do.")
@@ -76,6 +99,13 @@ def main() -> int:
             failed += 1
 
     print(f"[bootstrap] done. registered={registered} skipped={skipped} failed={failed}")
+
+    # Pin protocol-standard skills so the Curator's 90-day auto-archive
+    # heuristic never removes them during low-activity periods.
+    print(f"[bootstrap] pinning {len(PINNED_SKILLS)} protocol-standard skill(s)")
+    for s in PINNED_SKILLS:
+        pin_skill(s)
+
     return 0 if failed == 0 else 1
 
 

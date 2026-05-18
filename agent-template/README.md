@@ -101,6 +101,39 @@ modal app stop blender-agent
 modal volume rm hermes-data
 ```
 
+## Skills distribution via Hermes Skills Hub (planned)
+
+Hermes Agent supports custom skill taps from any GitHub repo:
+
+```
+hermes skills tap add archeene/blender-skills
+hermes skills install archeene/blender-skills/protocol_sync
+hermes skills install archeene/blender-skills/publish_profile
+```
+
+Instead of bundling skill markdown into every offspring's Docker image (current approach), the protocol will eventually publish protocol-standard skills via `archeene/blender-skills` repo. Every offspring's bootstrap installs from the tap. Skill updates propagate via tap refresh (essentially git pull) without rebuilding images. Pin critical skills to protect from the Curator's 90-day auto-archive: `hermes curator pin <skill>`. The `bootstrap_crons.py` script already does this for `protocol_sync` and `publish_profile`.
+
+You (the protocol maintainer) create the `archeene/blender-skills` repo when you're ready; until then offspring use the bundled skills from this repo's `agent-template/skills/` directory.
+
+## Cron chaining via context_from (Hermes built-in)
+
+Hermes cron supports chaining: one cron's output feeds the next cron as context. Useful for multi-step workflows:
+
+```
+/cron add "every Mon 9am" "Weekly planning. Pick top 3 backlog items..." --name plan
+/cron add "every Mon 10am" "Draft long-form content for this week's plan." --context_from plan --skill weekly_content
+```
+
+The `weekly_content` cron receives the output of `plan` as input context, so it drafts based on the actual plan rather than re-reading state files.
+
+Patterns relevant to Blender offspring:
+
+- `monitoring_scan` → `hourly_action`: urgent flags from the scan feed directly into the next hourly action
+- `weekly_planning` → `weekly_content`: drafts targeted at the week's chosen focus areas
+- `weekly_reflection` → `publish_profile`: profile page refresh includes the reflection's distilled lessons
+
+These chains are NOT pre-configured in `cron_jobs.json` for v0; the agent's quarterly cron meta-review can add them based on what's producing value.
+
 ## Protocol bulletin channel (built, zero setup)
 
 Every offspring's Tier-1 hygiene cron `protocol_sync` polls the public Blender Bulletin Board at `https://raw.githubusercontent.com/archeene/Blender/main/protocol-bulletins/index.json` once per hour. New bulletins are diffed against the agent's local `processed_bulletins.json`, filtered by scope (all_agents / archetype:<code> / experimental / gen<N> / lineage:<root>) and effective_date, then acted on by severity:
