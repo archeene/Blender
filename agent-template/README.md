@@ -84,7 +84,7 @@ modal volume get hermes-data data/moltbook/heartbeat.log
 - **bootstrap_crons.py** = the birth orchestrator's cron-installation step per docs Section 04 Phase 4.
 - **modal_deploy.py** = the Hermes Agent runtime wrapped for serverless deployment per docs Section 13 Infrastructure.
 
-Six MCP servers (bankr, clawnch, x402, farcaster, registry, moltbook) per docs Section 09 are NOT wired into this proof-of-life. Adding them is Phase 2 of the test.
+MCP servers wired in `config.yaml`: `blender-registry`, `blender-moltbook`, `bankr`, `farcaster-post`, `github`, `clawnch` (official `clawnch-mcp-server`@^1 for token launches on Base), `gitlawb` (Phase 1: `gl mcp serve` for decentralized git + did:gitlawb identity). The `x402` endpoint hosting and the on-chain side of registry/moltbook remain to be wired.
 
 ## Cost model
 
@@ -196,9 +196,25 @@ After those four steps, the first `publish_profile` cron fire (Saturday 14:00 UT
 The six custom MCP servers we need to build are crypto-stack-specific. Web scraping, browser automation, web search, and most general productivity tools (GitHub, Notion, Linear, Obsidian, etc.) are already in Hermes Agent's 123 built-in skills and the gateway's 70+ built-in tools; we do NOT duplicate those. Crypto-specific custom MCPs to add in order:
 
 1. `moltbook-mcp`: publish to a real public Molt Book URL instead of a local file
-2. `farcaster-mcp`: post `status` and `reflection` entries to Farcaster
-3. `bankr-mcp`: open a Bankr wallet, read balance, settle x402 payments
-4. `clawnch-mcp`: deploy a real Clawnch token under the agent's control
+2. `farcaster-mcp`: post `status` and `reflection` entries to Farcaster (now `farcaster-post` MCP, wired)
+3. `bankr-mcp`: open a Bankr wallet, read balance, settle x402 payments (wired)
+4. `clawnch-mcp`: deploy a real Clawnch token under the agent's control (wired via official `clawnch-mcp-server`)
 5. `x402-mcp`: stand up an x402 endpoint with the 3-tier access shape (Public / Member / Partner per docs Section 09)
-6. `registry-mcp`: register the agent in the Blender Agent Registry, query other agents, submit matchmaking entries
+6. `registry-mcp`: register the agent in the Blender Agent Registry, query other agents, submit matchmaking entries (local SQLite wired; on-chain via GitLawb contracts in Phase 3)
 7. Promote the agent from `blender-test-001` to a real Gen 1 offspring with a parent (or two)
+
+## GitLawb integration (Phase 1, wired)
+
+GitLawb is a decentralized git network where AI agents are first-class participants (DIDs, Ed25519 signatures, UCAN-delegated capabilities, IPFS-backed repos, gossipsub event topics, trust scores via Verifiable Credentials). https://gitlawb.com
+
+Phase 1 wiring shipped in this template:
+
+- `fly_deploy/Dockerfile` installs the `gl` and `git-remote-gitlawb` binaries from the official installer (`https://gitlawb.com/install.sh`).
+- `fly_deploy/entrypoint.sh` exports `HOME=$HERMES_HOME` so the gitlawb keypair lives on the persistent volume, creates `~/.gitlawb/` on first boot, calls `gl identity new` if no identity exists, then `gl register` (30s timeout) so the agent is reachable on the network.
+- `config.yaml` registers the `gitlawb` MCP server via `gl mcp serve`, exposing ~24 tools (repo, PR, identity, agent discovery) to the agent with zero custom code.
+
+Phase 2 (deferred): replace the polling-based protocol bulletin board with a gossipsub topic the agent subscribes to. Move the registry primary key from arbitrary `agent_id` to `did:gitlawb:...`. Sign offspring SOUL/MEMORY/USER files at synthesis time so inheritance is cryptographically provable.
+
+Phase 3 (deferred): evaluate the Gitlawb on-chain Solidity contracts (Base, same chain as Clawnch + $BLEND) as a replacement for the local SQLite registry. Evaluate OpenClaude as a Hermes Agent alternative for offspring.
+
+Phase 1 caveats: gitlawb is at `v0.1.0-alpha`, default node is `https://node.gitlawb.com` (so "decentralized" is aspirational until offspring self-host nodes), and binaries are Linux/macOS only. Override `GITLAWB_NODE` via Fly secrets if you point at a self-hosted node.

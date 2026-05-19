@@ -3,16 +3,26 @@
 # Secrets in ./.env -> /root/.hermes/.env
 
 model:
-  # Default provider: z.ai / Zhipu GLM (matches the existing blender-agent
-  # Fly deployment which has GLM_API_KEY + GLM_BASE_URL configured).
-  # Hermes Agent supports this natively via the 'zai' provider.
-  # Reads GLM_API_KEY and GLM_BASE_URL from environment.
-  default: "glm-4.6"
-  provider: "zai"
+  # Default: OpenGateway (Clawnch x GitLawb partnership). OpenAI-compatible
+  # endpoint with path-based provider routing. Auth optional during the
+  # partnership window, server-side secrets, no embedded keys in OSS clients.
+  # Live providers: xiaomi-mimo, gmi-cloud (probe https://opengateway.gitlawb.com/
+  # for the current list). Verified 2026-05-18: /v1/xiaomi-mimo/models returns
+  # mimo-v2.5-pro at OpenAI-format 200.
+  default: "mimo-v2.5-pro"
+  provider: "custom"
+  base_url: "https://opengateway.gitlawb.com/v1/xiaomi-mimo"
+  api_key: "${OPENGATEWAY_API_KEY:-opengateway-no-auth-required}"
   context_length: 131072
   # Alternative providers (uncomment one to switch):
-  # default: "nousresearch/hermes-3-llama-3.1-405b:free"
-  # provider: "openrouter"
+  # GMI Cloud route (paid, more models including DeepSeek-V4-Pro, GPT-5.5, Claude Opus 4.7):
+  # default: "XiaomiMiMo/MiMo-V2.5-Pro"
+  # provider: "custom"
+  # base_url: "https://opengateway.gitlawb.com/v1/gmi-cloud"
+  # z.ai / Zhipu GLM (paid via GLM_API_KEY, prior default):
+  # default: "glm-4.6"
+  # provider: "zai"
+  # OpenRouter (paid):
   # default: "nousresearch/hermes-4-70b"
   # provider: "openrouter"
 
@@ -110,6 +120,28 @@ mcp_servers:
     args: ["-y", "@modelcontextprotocol/server-github"]
     env:
       GITHUB_PERSONAL_ACCESS_TOKEN: "${GITHUB_TOKEN}"
+
+  # Clawnch: token launches on Base. Agent uses clawnch_get_skill first to
+  # read the launch protocol, then clawnch_upload_image + (post via
+  # farcaster-post with !clawnch) for Moltx / 4claw, or clawnch_launch_token
+  # for Moltbook. Official package, no env vars at MCP level (per-call args).
+  # https://www.npmjs.com/package/clawnch-mcp-server
+  clawnch:
+    command: npx
+    args: ["-y", "clawnch-mcp-server"]
+
+  # GitLawb: decentralized git network for AI agents. Provides did:gitlawb
+  # cryptographic identity (Ed25519), UCAN-delegated capabilities, signed
+  # ref certificates, IPFS-backed repo storage, gossipsub event topics.
+  # Phase 1 wiring: MCP available; identity is initialized by entrypoint.sh
+  # on first boot and persisted to the volume under $HERMES_HOME/.gitlawb/.
+  # https://gitlawb.com/agents
+  gitlawb:
+    command: gl
+    args: ["mcp", "serve"]
+    env:
+      GITLAWB_NODE: "${GITLAWB_NODE:-https://node.gitlawb.com}"
+      HOME: "/opt/data"
 
 timezone: "America/Los_Angeles"
 

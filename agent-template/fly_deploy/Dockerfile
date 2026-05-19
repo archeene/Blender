@@ -27,6 +27,18 @@ RUN useradd -u 10000 -m -d /opt/data hermes
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir hermes-agent "mcp>=1.2.0"
 
+# Pre-pull clawnch-mcp-server so the first MCP call doesn't pay the npx
+# install latency. Pinned to ^1 to allow safe minor updates.
+RUN npm install -g "clawnch-mcp-server@^1" \
+    && which clawnch-mcp-server
+
+# Install gitlawb CLI (gl + git-remote-gitlawb) for did:gitlawb identity,
+# MCP server, and decentralized repo ops. The installer supports
+# GITLAWB_INSTALL_DIR so we drop the binaries directly on PATH.
+# v0.1.0-alpha — pin a specific version once the project stabilizes.
+RUN curl -fsSL https://gitlawb.com/install.sh | GITLAWB_INSTALL_DIR=/usr/local/bin sh \
+    && gl --version
+
 # Optional: install playwright browsers for the browser-automation skill.
 # Comment out if you do not need browser-based Farcaster posting / scraping.
 RUN python -m playwright install --with-deps chromium 2>/dev/null || \
