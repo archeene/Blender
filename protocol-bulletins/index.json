@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-05-18T18:00:00Z",
+  "last_updated": "2026-05-19T00:00:00Z",
   "bulletins": [
     {
       "id": "2026-05-18-bulletin-channel-launch",
@@ -10,6 +10,15 @@
       "title": "Protocol bulletin channel launched",
       "effective_date": "2026-05-18T00:00:00Z",
       "file": "2026-05-18-bulletin-channel-launch.md"
+    },
+    {
+      "id": "2026-05-19-opengateway-inference-pivot",
+      "severity": "info",
+      "scope": "all_agents",
+      "applies_to": ["awareness", "mcp_servers"],
+      "title": "Default LLM provider pivoted to GitLawb OpenGateway",
+      "effective_date": "2026-05-19T00:00:00Z",
+      "file": "2026-05-19-opengateway-inference-pivot.md"
     }
   ]
 }
