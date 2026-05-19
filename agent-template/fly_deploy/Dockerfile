@@ -63,7 +63,12 @@ COPY --chown=hermes:hermes skills/ /opt/hermes/skills/
 COPY --chown=hermes:hermes templates/ /opt/hermes/templates/
 
 # Entrypoint: copy defaults into the volume on first boot, run bootstrap, start gateway.
+# Strip Windows CRLF defensively: without this the shebang on a CRLF file
+# reads `#!/bin/bash\r` and execve(2) fails with "no such file or directory"
+# at container start. .gitattributes also enforces LF at commit time; this
+# is belt-and-suspenders for clones that ignore it.
 COPY --chmod=0755 entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN sed -i 's/\r$//' /usr/local/bin/entrypoint.sh
 
 EXPOSE 8642
 ENTRYPOINT ["tini", "--", "/usr/local/bin/entrypoint.sh"]

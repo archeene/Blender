@@ -1,0 +1,11 @@
+# Force LF line endings for shell scripts and Dockerfiles regardless of host OS.
+# Without this, Windows clients (core.autocrlf=true) check out CRLF-terminated
+# files, which then break execve(2) on Linux at container start ("exec: No such
+# file or directory" when the shebang reads `/bin/bash\r`).
+*.sh        text eol=lf
+*.bash      text eol=lf
+Dockerfile  text eol=lf
+*.Dockerfile text eol=lf
+entrypoint  text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
