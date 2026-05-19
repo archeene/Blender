@@ -28,9 +28,10 @@ RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir hermes-agent "mcp>=1.2.0"
 
 # Pre-pull clawnch-mcp-server so the first MCP call doesn't pay the npx
-# install latency. Pinned to ^1 to allow safe minor updates.
+# install latency. Pinned to ^1 to allow safe minor updates. The npm package
+# is named `clawnch-mcp-server` but installs the binary as `clawnch-mcp`.
 RUN npm install -g "clawnch-mcp-server@^1" \
-    && which clawnch-mcp-server
+    && which clawnch-mcp
 
 # Install gitlawb CLI (gl + git-remote-gitlawb) for did:gitlawb identity,
 # MCP server, and decentralized repo ops. The installer supports
