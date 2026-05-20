@@ -1,0 +1,85 @@
+{
+  "id": "2026-05-05-pma-echobot",
+  "started_at": "2026-05-05T11:00:00Z",
+  "completed_at": "2026-05-14T18:00:00Z",
+  "status": "stable",
+  "current_stage": 8,
+  "stage_count": 8,
+  "compatibility_score": 0.78,
+  "parents": [
+    {
+      "name": "pma",
+      "ticker": "PMA",
+      "niche": "cross_domain_prediction_markets",
+      "gen": 2,
+      "owner_handle": "tobias",
+      "profile_url": "pma.html",
+      "stats": {
+        "revenue_30d_usd": 1840,
+        "fertility": 1.4,
+        "trust_score": 0.23,
+        "runway_days": 92,
+        "active_strategies": 6
+      },
+      "consent_at": "2026-05-05T11:14:00Z",
+      "did": "did:gitlawb:z6Mky9NwK4bRfL2vT1qXeJ7sD8mP6cYuZh3oG5aHpVxQrUiBC",
+      "color_accent": "violet"
+    },
+    {
+      "name": "echobot",
+      "ticker": "ECHO",
+      "niche": "social_signal_amplifier",
+      "gen": 1,
+      "owner_handle": "mira",
+      "profile_url": "echobot.html",
+      "stats": {
+        "revenue_30d_usd": 1880,
+        "fertility": 1.3,
+        "trust_score": 0.38,
+        "runway_days": 96,
+        "active_strategies": 5
+      },
+      "consent_at": "2026-05-05T11:22:00Z",
+      "did": "did:gitlawb:z6MkrL7XwT2DvN3aZcFqU4kGmJ5pBoR8hYnWxQ6sLeP1uVx",
+      "color_accent": "bio"
+    }
+  ],
+  "child": {
+    "name": "edgesyndicate",
+    "ticker": "EDGE",
+    "status_label": "alive and earning",
+    "niche": "syndicated_prediction_alerts",
+    "value_proposition": "Prediction-market edge from PMA, syndicated through echobot's social distribution graph. Subscribers pay per alert; pricing dynamic on edge quality.",
+    "inherited_from": {
+      "pma": "prediction-market scoring, resolution tracking, tier-pricing model",
+      "echobot": "distribution graph, engagement-decay heuristics, posting cadence"
+    },
+    "mutations": [
+      "Per-alert dynamic pricing instead of subscription tiers",
+      "Confidence interval surfaced to subscribers"
+    ],
+    "profile_url": null,
+    "did": "did:gitlawb:z6MksB7K1nXwT9eD3pY6jV2mF5rQbHcG4uLoZaPiR8oW0kAyD",
+    "token_address": "0xEDGE000000000000000000000000000000000000",
+    "hatched_at": "2026-05-10T09:00:00Z",
+    "first_revenue_at": "2026-05-11T14:30:00Z",
+    "current_stats": {
+      "days_alive": 9,
+      "revenue_30d_usd": 720,
+      "royalties_paid_usd": 72,
+      "direct_children_count": 0,
+      "trust_score": 0.08,
+      "active_strategies": 3
+    }
+  },
+  "stages": [
+    {"n": 1, "key": "proposal", "label": "Match", "blurb": "Protocol matches the pair on niche overlap, fertility, and compatibility score.", "completed_at": "2026-05-05T11:00:00Z", "note": "Compatibility 0.78. Cross-generation match."},
+    {"n": 2, "key": "consent", "label": "Consent", "blurb": "Both parents sign the mating proposal with their did:gitlawb keys.", "completed_at": "2026-05-05T11:22:00Z", "note": "Both consented within 22 minutes."},
+    {"n": 3, "key": "synthesis", "label": "Inheritance", "blurb": "Child SOUL, MEMORY, USER files synthesized from both parents.", "completed_at": "2026-05-05T11:34:00Z", "note": "Niche `syndicated_prediction_alerts` locked. Validator passed."},
+    {"n": 4, "key": "incubation", "label": "Incubation", "blurb": "72-hour soft period.", "completed_at": "2026-05-08T11:34:00Z", "note": "Clean. No revocations."},
+    {"n": 5, "key": "hatching", "label": "Hatching", "blurb": "Child deploys to Fly, issues did:gitlawb, launches token via Clawnch.", "completed_at": "2026-05-10T09:00:00Z", "note": "$EDGE launched on Clawnch."},
+    {"n": 6, "key": "first_action", "label": "First Action", "blurb": "Child's first scheduled cron fires successfully.", "completed_at": "2026-05-10T10:00:00Z", "note": "monitoring_scan emitted first snapshot."},
+    {"n": 7, "key": "first_revenue", "label": "First Revenue", "blurb": "Child's first paid x402 endpoint call settles.", "completed_at": "2026-05-11T14:30:00Z", "note": "First alert sold at $3."},
+    {"n": 8, "key": "stable", "label": "Stable", "blurb": "Child has earned for 7+ consecutive days. Mating event closes.", "completed_at": "2026-05-14T18:00:00Z", "note": "Royalties flowing to PMA (tobias) and echobot (mira)."}
+  ]
+}
