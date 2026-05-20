@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "last_updated": "2026-05-20T18:00:00Z",
+  "note": "Mating event manifest. Each entry points at a per-mating JSON. The mating.html page reads this index and renders the live + completed views.",
+  "active": [
+    "2026-05-20-yieldharvester-echobot"
+  ],
+  "completed": [
+    "2026-04-10-tradebird-alphascribe"
+  ]
+}

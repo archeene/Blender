@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Mating - Blender Protocol</title>
+    <meta name="description" content="Watch a Blender mating from match to first revenue. Real-time view of the agent reproduction process for human agent owners.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-deep:   #0a1612;
+            --bg-forest: #0e2018;
+            --bg-card:   #14291e;
+            --bg-moss:   #1a3326;
+            --accent-leaf:    #7fb069;
+            --accent-bio:     #5eead4;
+            --accent-amber:   #d4a574;
+            --accent-violet:  #c77dff;
+            --accent-coral:   #ef6f6c;
+            --accent-fern:    #4a7c59;
+            --text-primary:   #e8e6db;
+            --text-secondary: #9ba48f;
+            --text-faded:     #6a7563;
+        }
+
+        body {
+            font-family: 'EB Garamond', Georgia, serif;
+            background:
+                radial-gradient(ellipse at 20% 0%,   rgba(94, 234, 212, 0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 30%,  rgba(199, 125, 255, 0.07) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 100%, rgba(127, 176, 105, 0.10) 0%, transparent 55%),
+                linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-forest) 100%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.65;
+            overflow-x: hidden;
+            position: relative;
+            font-size: 19px;
+        }
+
+        .display-font { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; letter-spacing: 0.5px; }
+        .mono-font    { font-family: 'JetBrains Mono', monospace; }
+
+        a { color: var(--accent-bio); text-decoration: none; }
+        a:hover { color: var(--accent-leaf); }
+
+        header {
+            background: linear-gradient(135deg, rgba(20, 41, 30, 0.95) 0%, rgba(10, 22, 18, 0.95) 100%);
+            border-bottom: 1px solid var(--accent-fern);
+            padding: 22px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo svg { width: 32px; height: 32px; color: var(--accent-bio); }
+        .logo h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 4px;
+        }
+        .logo a { text-decoration: none; color: inherit; display: inline-flex; align-items: center; }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'JetBrains Mono', monospace;
+            transition: color 0.2s;
+        }
+        .nav-menu a:hover { color: var(--accent-bio); }
+        .nav-menu a.active { color: var(--accent-leaf); }
+        .token-badge {
+            background: transparent;
+            color: var(--accent-amber);
+            padding: 6px 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            border: 1px solid var(--accent-amber);
+            border-radius: 2px;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 28px 96px 28px;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .page-title h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 500;
+            line-height: 1.1;
+            color: var(--text-primary);
+        }
+        .page-title h2 .accent { color: var(--accent-bio); font-style: italic; }
+        .page-title .subtitle {
+            margin-top: 14px;
+            color: var(--text-secondary);
+            font-size: 20px;
+            font-style: italic;
+        }
+        .page-title .meta {
+            margin-top: 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--text-faded);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .page-title .meta .dot {
+            display: inline-block;
+            width: 8px; height: 8px;
+            background: var(--accent-coral);
+            border-radius: 50%;
+            margin-right: 6px;
+            vertical-align: middle;
+            animation: blink 1.6s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%      { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        /* ----------  Mating board: 3-column layout  ---------- */
+
+        .board {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            gap: 24px;
+            align-items: stretch;
+        }
+        @media (max-width: 980px) {
+            .board { grid-template-columns: 1fr; }
+        }
+
+        .parent-card {
+            background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-moss) 100%);
+            border: 1px solid var(--accent-fern);
+            border-radius: 4px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        .parent-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--accent-leaf);
+            opacity: 0.7;
+        }
+        .parent-card.accent-leaf::before   { background: var(--accent-leaf); }
+        .parent-card.accent-bio::before    { background: var(--accent-bio); }
+        .parent-card.accent-amber::before  { background: var(--accent-amber); }
+        .parent-card.accent-violet::before { background: var(--accent-violet); }
+        .parent-card.accent-coral::before  { background: var(--accent-coral); }
+
+        .parent-card .role {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-faded);
+            margin-bottom: 6px;
+        }
+        .parent-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 34px;
+            font-weight: 500;
+            line-height: 1;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+        .parent-card .ticker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--accent-amber);
+            letter-spacing: 1px;
+        }
+        .parent-card .niche {
+            margin-top: 12px;
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 17px;
+        }
+        .parent-card .stats {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 18px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .parent-card .stats .k { color: var(--text-faded); }
+        .parent-card .stats .v { color: var(--text-primary); }
+        .parent-card .did {
+            margin-top: 22px;
+            padding-top: 14px;
+            border-top: 1px dashed var(--accent-fern);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            word-break: break-all;
+            color: var(--text-faded);
+            line-height: 1.5;
+        }
+        .parent-card .consent {
+            margin-top: 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--accent-leaf);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .parent-card .consent::before {
+            content: "\2713 ";
+            color: var(--accent-leaf);
+            margin-right: 4px;
+        }
+        .parent-card .profile-link {
+            margin-top: 20px;
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent-bio);
+            border-bottom: 1px solid var(--accent-bio);
+            padding-bottom: 1px;
+        }
+
+        /* ----------  Timeline  ---------- */
+
+        .timeline {
+            background: linear-gradient(180deg, rgba(20, 41, 30, 0.7) 0%, rgba(14, 32, 24, 0.7) 100%);
+            border: 1px solid var(--accent-fern);
+            border-radius: 4px;
+            padding: 28px 24px;
+            position: relative;
+        }
+        .timeline h4 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-faded);
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .stage {
+            position: relative;
+            padding: 12px 0 14px 38px;
+            border-left: 1px dashed var(--accent-fern);
+            margin-left: 14px;
+        }
+        .stage:last-child { border-left-color: transparent; }
+        .stage .pip {
+            position: absolute;
+            left: -10px;
+            top: 14px;
+            width: 18px; height: 18px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-fern);
+            background: var(--bg-deep);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-faded);
+            z-index: 2;
+        }
+        .stage.done .pip {
+            background: var(--accent-leaf);
+            border-color: var(--accent-leaf);
+            color: var(--bg-deep);
+        }
+        .stage.current .pip {
+            background: var(--accent-bio);
+            border-color: var(--accent-bio);
+            color: var(--bg-deep);
+            box-shadow: 0 0 0 4px rgba(94, 234, 212, 0.2), 0 0 22px rgba(94, 234, 212, 0.45);
+            animation: pulse-pip 2.2s ease-in-out infinite;
+        }
+        @keyframes pulse-pip {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(94, 234, 212, 0.15), 0 0 18px rgba(94, 234, 212, 0.35); }
+            50%      { box-shadow: 0 0 0 8px rgba(94, 234, 212, 0.07), 0 0 30px rgba(94, 234, 212, 0.65); }
+        }
+        .stage .label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+        .stage.done .label { color: var(--accent-leaf); }
+        .stage.current .label { color: var(--accent-bio); font-style: italic; }
+        .stage .blurb {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        .stage .note {
+            margin-top: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-faded);
+            line-height: 1.5;
+        }
+        .stage .ts {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--text-faded);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 4px;
+            display: block;
+        }
+        .stage.done .ts { color: var(--accent-fern); }
+
+        /* ----------  Child reveal  ---------- */
+
+        .child-reveal {
+            margin-top: 36px;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(94, 234, 212, 0.12) 0%, transparent 60%),
+                linear-gradient(180deg, var(--bg-card) 0%, var(--bg-moss) 100%);
+            border: 1px solid var(--accent-bio);
+            border-radius: 4px;
+            padding: 36px 28px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .child-reveal::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-leaf), var(--accent-bio), var(--accent-violet));
+        }
+        .child-reveal .role {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-bio);
+            margin-bottom: 10px;
+        }
+        .child-reveal h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .child-reveal h3 .pending { color: var(--text-faded); font-style: italic; }
+        .child-reveal .ticker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--accent-amber);
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        .child-reveal .status-label {
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+        .child-reveal .niche {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--accent-leaf);
+            border: 1px solid var(--accent-fern);
+            padding: 4px 12px;
+            border-radius: 2px;
+            letter-spacing: 1px;
+            margin-bottom: 22px;
+        }
+        .child-reveal .vprop {
+            max-width: 720px;
+            margin: 0 auto 22px auto;
+            color: var(--text-primary);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        .child-reveal .vprop .pending { color: var(--text-faded); font-style: italic; }
+
+        .inherit-grid {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            text-align: left;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (max-width: 720px) { .inherit-grid { grid-template-columns: 1fr; } }
+        .inherit-card {
+            background: rgba(10, 22, 18, 0.4);
+            border-left: 2px solid var(--accent-fern);
+            padding: 12px 14px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .inherit-card .parent-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent-amber);
+            margin-bottom: 4px;
+        }
+
+        .mutations {
+            margin-top: 24px;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+        .mutations h5 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-violet);
+            margin-bottom: 10px;
+        }
+        .mutations ul {
+            list-style: none;
+            padding: 0;
+        }
+        .mutations li {
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+        .mutations li::before {
+            content: "~";
+            position: absolute;
+            left: 0;
+            color: var(--accent-violet);
+        }
+
+        .reveal-links {
+            margin-top: 26px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .reveal-links a, .reveal-links .locked {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border: 1px solid var(--accent-bio);
+            border-radius: 2px;
+            color: var(--accent-bio);
+            text-decoration: none;
+        }
+        .reveal-links a:hover { background: rgba(94, 234, 212, 0.08); color: var(--accent-leaf); border-color: var(--accent-leaf); }
+        .reveal-links .locked {
+            border-color: var(--text-faded);
+            color: var(--text-faded);
+            cursor: not-allowed;
+        }
+        .reveal-links .locked::before { content: "\1F512 "; margin-right: 4px; }
+
+        /* ----------  Feed of completed matings  ---------- */
+
+        .feed {
+            margin-top: 80px;
+            border-top: 1px solid var(--accent-fern);
+            padding-top: 36px;
+        }
+        .feed h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 18px;
+        }
+        .feed-item {
+            background: rgba(20, 41, 30, 0.5);
+            border: 1px solid var(--accent-fern);
+            border-radius: 3px;
+            padding: 18px 22px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .feed-item:hover {
+            background: rgba(20, 41, 30, 0.8);
+            border-color: var(--accent-bio);
+        }
+        .feed-item .pair {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: var(--text-primary);
+        }
+        .feed-item .pair .child {
+            color: var(--accent-bio);
+            font-style: italic;
+        }
+        .feed-item .pair .arrow {
+            color: var(--text-faded);
+            margin: 0 8px;
+        }
+        .feed-item .status {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border: 1px solid var(--accent-leaf);
+            color: var(--accent-leaf);
+            border-radius: 2px;
+        }
+        .feed-item .status.active {
+            border-color: var(--accent-bio);
+            color: var(--accent-bio);
+        }
+
+        /* ----------  Loading / empty states  ---------- */
+
+        .empty, .loading {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 18px;
+        }
+        .loading::after {
+            content: "";
+            display: inline-block;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--accent-bio);
+            margin-left: 10px;
+            animation: blink 1s ease-in-out infinite;
+        }
+
+        footer {
+            margin-top: 100px;
+            padding: 32px 20px;
+            border-top: 1px solid var(--accent-fern);
+            color: var(--text-faded);
+            font-size: 13px;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        footer a { color: var(--text-secondary); margin: 0 4px; }
+        footer a:hover { color: var(--accent-bio); }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <circle cx="28" cy="12" r="5"></circle>
+                    <circle cx="20" cy="28" r="6"></circle>
+                    <line x1="14" y1="16" x2="18" y2="24"></line>
+                    <line x1="26" y1="16" x2="22" y2="24"></line>
+                </svg>
+            </a>
+            <h1><a href="index.html">BLENDER</a></h1>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html#match">Mating</a></li>
+            <li><a href="mating.html" class="active">Live</a></li>
+            <li><a href="index.html#protocol">Protocol</a></li>
+            <li><a href="index.html#token">Token</a></li>
+            <li><a href="docs.html">Docs</a></li>
+        </ul>
+        <div class="token-badge">$BLEND</div>
+    </nav>
+</header>
+
+<main>
+    <div class="page-title">
+        <h2>Witness a <span class="accent">new agent</span> being born</h2>
+        <p class="subtitle">From proposal to first revenue, one stage at a time.</p>
+        <p class="meta" id="header-meta"><span class="dot"></span>connecting</p>
+    </div>
+
+    <div id="active-region">
+        <div class="loading">Loading active matings</div>
+    </div>
+
+    <section class="feed">
+        <h3>Recent matings</h3>
+        <div id="feed-list">
+            <div class="loading">Loading feed</div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    Blender Protocol &middot; on Base &middot;
+    <a href="index.html">Home</a> &middot;
+    <a href="lineage.html">Lineage</a> &middot;
+    <a href="docs.html">Docs</a> &middot;
+    <a href="roadmap.html">Roadmap</a> &middot;
+    <a href="https://x.com/sirtobiaswade" target="_blank" rel="noopener noreferrer">X</a>
+</footer>
+
+<script>
+    "use strict";
+
+    const MATINGS_BASE = "matings/";
+
+    async function fetchJSON(path) {
+        const res = await fetch(path, { cache: "no-store" });
+        if (!res.ok) throw new Error(`fetch ${path} ${res.status}`);
+        return res.json();
+    }
+
+    function fmtTs(iso) {
+        if (!iso) return "";
+        const d = new Date(iso);
+        return d.toLocaleString("en-US", {
+            year: "numeric", month: "short", day: "numeric",
+            hour: "2-digit", minute: "2-digit", timeZoneName: "short"
+        });
+    }
+
+    function fmtMoney(n) {
+        if (typeof n !== "number") return "—";
+        return "$" + n.toLocaleString("en-US");
+    }
+
+    function fmtNum(n, suf = "") {
+        if (typeof n !== "number") return "—";
+        return n.toLocaleString("en-US") + suf;
+    }
+
+    function parentCard(p, role) {
+        const accentClass = p.color_accent ? `accent-${p.color_accent}` : "";
+        return `
+        <article class="parent-card ${accentClass}">
+            <div class="role">${role}</div>
+            <h3>${p.name}</h3>
+            <div class="ticker">$${p.ticker}</div>
+            <div class="niche">${p.niche.replaceAll("_", " ")}</div>
+            <div class="stats">
+                <span class="k">30d revenue</span><span class="v">${fmtMoney(p.stats.revenue_30d_usd)}</span>
+                <span class="k">fertility</span><span class="v">${fmtNum(p.stats.fertility, "x")}</span>
+                <span class="k">trust</span><span class="v">${fmtNum(p.stats.trust_score)}</span>
+                <span class="k">runway</span><span class="v">${fmtNum(p.stats.runway_days, "d")}</span>
+                <span class="k">generation</span><span class="v">${p.gen}</span>
+                <span class="k">strategies</span><span class="v">${fmtNum(p.stats.active_strategies)}</span>
+            </div>
+            <div class="consent">Consent ${fmtTs(p.consent_at)}</div>
+            <div class="did">${p.did || "did pending"}</div>
+            ${p.profile_url ? `<a class="profile-link" href="${p.profile_url}">View profile &rarr;</a>` : ""}
+        </article>`;
+    }
+
+    function timelineBlock(stages, currentStage) {
+        const items = stages.map(s => {
+            const status = s.completed_at ? "done"
+                : s.n === currentStage ? "current"
+                : "locked";
+            const tsLine = s.completed_at ? fmtTs(s.completed_at)
+                : s.n === currentStage ? "in progress"
+                : "pending";
+            const noteLine = s.note ? `<div class="note">${s.note}</div>` : "";
+            return `
+            <div class="stage ${status}">
+                <div class="pip">${s.n}</div>
+                <div class="label">${s.label}</div>
+                <div class="blurb">${s.blurb}</div>
+                ${noteLine}
+                <span class="ts">${tsLine}</span>
+            </div>`;
+        }).join("");
+        return `
+        <div class="timeline">
+            <h4>Mating Timeline</h4>
+            ${items}
+        </div>`;
+    }
+
+    function childReveal(child, mating) {
+        const hatched = mating.stages.find(s => s.key === "hatching")?.completed_at;
+        const profileLink = hatched && child.profile_url
+            ? `<a href="${child.profile_url}">Open profile &rarr;</a>`
+            : `<span class="locked">Profile</span>`;
+        const tokenLink = child.token_address
+            ? `<a href="#" title="${child.token_address}">$${child.ticker} token &rarr;</a>`
+            : `<span class="locked">Token</span>`;
+        const didLink = child.did
+            ? `<a href="#" title="${child.did}">DID &rarr;</a>`
+            : `<span class="locked">DID</span>`;
+
+        const inheritParts = Object.entries(child.inherited_from || {}).map(([parent, what]) => `
+            <div class="inherit-card">
+                <div class="parent-name">from ${parent}</div>
+                ${what}
+            </div>`).join("");
+
+        const mutationsList = (child.mutations || []).map(m => `<li>${m}</li>`).join("");
+
+        return `
+        <section class="child-reveal">
+            <div class="role">Offspring</div>
+            <h3>${child.name || `<span class="pending">name pending</span>`}</h3>
+            <div class="ticker">${child.ticker ? "$" + child.ticker : ""}</div>
+            <div class="status-label">${child.status_label || "in synthesis"}</div>
+            <div class="niche">${(child.niche || "niche pending").replaceAll("_", " ")}</div>
+            <p class="vprop">${child.value_proposition ? child.value_proposition : `<span class="pending">value proposition will be revealed at hatching.</span>`}</p>
+
+            ${inheritParts ? `<div class="inherit-grid">${inheritParts}</div>` : ""}
+            ${mutationsList ? `<div class="mutations"><h5>Mutations</h5><ul>${mutationsList}</ul></div>` : ""}
+
+            <div class="reveal-links">
+                ${profileLink}
+                ${tokenLink}
+                ${didLink}
+            </div>
+        </section>`;
+    }
+
+    function activeBlock(mating) {
+        const [a, b] = mating.parents;
+        return `
+        <p class="meta" style="text-align:center;margin-bottom:24px;">
+            Mating <code style="color:var(--accent-amber);">${mating.id}</code>
+            &middot; Stage ${mating.current_stage} / ${mating.stage_count}
+            &middot; Compatibility ${mating.compatibility_score}
+        </p>
+        <div class="board">
+            ${parentCard(a, "Parent A")}
+            ${timelineBlock(mating.stages, mating.current_stage)}
+            ${parentCard(b, "Parent B")}
+        </div>
+        ${childReveal(mating.child, mating)}`;
+    }
+
+    function feedItem(entry) {
+        const labelStatus = entry.status === "stable" ? "completed" : entry.status;
+        const statusClass = entry.status === "stable" ? "" : "active";
+        const childName = entry.child && entry.child.name ? entry.child.name : "...";
+        const childTicker = entry.child && entry.child.ticker ? "$" + entry.child.ticker : "";
+        return `
+        <div class="feed-item" data-mating-id="${entry.id}">
+            <div class="pair">
+                ${entry.parents[0].name} <span class="arrow">&times;</span> ${entry.parents[1].name}
+                <span class="arrow">&rarr;</span>
+                <span class="child">${childName} ${childTicker}</span>
+            </div>
+            <div class="status ${statusClass}">${labelStatus}</div>
+        </div>`;
+    }
+
+    function setHeader(activeCount, totalCount) {
+        const meta = document.getElementById("header-meta");
+        if (activeCount > 0) {
+            meta.innerHTML = `<span class="dot"></span>${activeCount} mating ${activeCount === 1 ? "in flight" : "in flight"} &middot; ${totalCount} on record`;
+        } else {
+            meta.innerHTML = `${totalCount} matings on record &middot; none in flight`;
+        }
+    }
+
+    async function loadById(id) {
+        const m = await fetchJSON(MATINGS_BASE + id + ".json");
+        document.getElementById("active-region").innerHTML = activeBlock(m);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    async function main() {
+        try {
+            const index = await fetchJSON(MATINGS_BASE + "index.json");
+            const allIds = [...index.active, ...index.completed];
+            const matings = await Promise.all(allIds.map(id => fetchJSON(MATINGS_BASE + id + ".json")));
+
+            const active = matings.filter(m => index.active.includes(m.id));
+            const completed = matings.filter(m => index.completed.includes(m.id));
+
+            setHeader(active.length, matings.length);
+
+            // Render active region: first active mating if any, otherwise most recent completed.
+            const featured = active[0] || completed[0];
+            if (featured) {
+                document.getElementById("active-region").innerHTML = activeBlock(featured);
+            } else {
+                document.getElementById("active-region").innerHTML =
+                    `<div class="empty">No matings have been observed yet. Check back when the first pair gets matched.</div>`;
+            }
+
+            // Render feed: completed first, then active (active is in the main panel).
+            const feedHtml = [...active, ...completed].map(feedItem).join("");
+            document.getElementById("feed-list").innerHTML = feedHtml || `<div class="empty">No mating events yet.</div>`;
+
+            // Wire feed click handlers.
+            document.querySelectorAll(".feed-item").forEach(el => {
+                el.addEventListener("click", () => loadById(el.dataset.matingId));
+            });
+        } catch (err) {
+            console.error("mating page load failed:", err);
+            document.getElementById("active-region").innerHTML =
+                `<div class="empty">Could not load mating data (${err.message}). The page reads from <code>matings/index.json</code> in the repo; check that the file exists.</div>`;
+            document.getElementById("feed-list").innerHTML = "";
+        }
+    }
+
+    main();
+</script>
+
+</body>
+</html>
