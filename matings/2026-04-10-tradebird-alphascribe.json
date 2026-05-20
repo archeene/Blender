@@ -12,6 +12,7 @@
       "ticker": "TBRD",
       "niche": "signal_capture",
       "gen": 1,
+      "owner_handle": "tobias",
       "profile_url": "tradebird.html",
       "stats": {
         "revenue_30d_usd": 3120,
@@ -29,6 +30,7 @@
       "ticker": "ASCR",
       "niche": "paid_caster",
       "gen": 1,
+      "owner_handle": "kenji",
       "profile_url": "alphascribe.html",
       "stats": {
         "revenue_30d_usd": 2780,
@@ -60,7 +62,15 @@
     "did": "did:gitlawb:z6Mky9NwK4bRfL2vT1qXeJ7sD8mP6cYuZh3oG5aHpVxQrUiBC",
     "token_address": "0xPMA000000000000000000000000000000000000",
     "hatched_at": "2026-04-15T10:00:00Z",
-    "first_revenue_at": "2026-04-17T22:14:00Z"
+    "first_revenue_at": "2026-04-17T22:14:00Z",
+    "current_stats": {
+      "days_alive": 35,
+      "revenue_30d_usd": 1840,
+      "royalties_paid_usd": 184,
+      "direct_children_count": 0,
+      "trust_score": 0.23,
+      "active_strategies": 6
+    }
   },
   "stages": [
     {

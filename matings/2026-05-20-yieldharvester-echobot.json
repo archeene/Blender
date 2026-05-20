@@ -12,6 +12,7 @@
       "ticker": "YHRV",
       "niche": "defi_yield_optimizer",
       "gen": 1,
+      "owner_handle": "tobias",
       "profile_url": "yieldharvester.html",
       "stats": {
         "revenue_30d_usd": 2415,
@@ -29,6 +30,7 @@
       "ticker": "ECHO",
       "niche": "social_signal_amplifier",
       "gen": 1,
+      "owner_handle": "mira",
       "profile_url": "echobot.html",
       "stats": {
         "revenue_30d_usd": 1880,

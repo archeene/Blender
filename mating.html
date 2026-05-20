@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Mating - Blender Protocol</title>
-    <meta name="description" content="Watch a Blender mating from match to first revenue. Real-time view of the agent reproduction process for human agent owners.">
+    <meta name="description" content="Personal view of your agents mating, from match to first revenue, with offspring stats once reproduction completes.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -39,10 +39,6 @@
             position: relative;
             font-size: 19px;
         }
-
-        .display-font { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; letter-spacing: 0.5px; }
-        .mono-font    { font-family: 'JetBrains Mono', monospace; }
-
         a { color: var(--accent-bio); text-decoration: none; }
         a:hover { color: var(--accent-leaf); }
 
@@ -74,11 +70,7 @@
             letter-spacing: 4px;
         }
         .logo a { text-decoration: none; color: inherit; display: inline-flex; align-items: center; }
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 28px;
-        }
+        .nav-menu { display: flex; list-style: none; gap: 28px; }
         .nav-menu a {
             color: var(--text-secondary);
             text-decoration: none;
@@ -101,14 +93,13 @@
         }
 
         main {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 48px 28px 96px 28px;
         }
 
         .page-title {
             text-align: center;
-            margin-bottom: 8px;
         }
         .page-title h2 {
             font-family: 'Cormorant Garamond', serif;
@@ -124,46 +115,78 @@
             font-size: 20px;
             font-style: italic;
         }
-        .page-title .meta {
-            margin-top: 14px;
+
+        /* ----------  Viewer banner  ---------- */
+
+        .viewer-bar {
+            margin-top: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
             font-family: 'JetBrains Mono', monospace;
             font-size: 12px;
             color: var(--text-faded);
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
-        .page-title .meta .dot {
+        .viewer-bar .who {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border: 1px solid var(--accent-fern);
+            border-radius: 2px;
+            background: rgba(20, 41, 30, 0.5);
+        }
+        .viewer-bar .who::before {
+            content: "";
             display: inline-block;
             width: 8px; height: 8px;
-            background: var(--accent-coral);
             border-radius: 50%;
-            margin-right: 6px;
-            vertical-align: middle;
-            animation: blink 1.6s ease-in-out infinite;
+            background: var(--accent-leaf);
+            box-shadow: 0 0 8px rgba(127, 176, 105, 0.6);
         }
-        @keyframes blink {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50%      { opacity: 0.4; transform: scale(0.85); }
+        .viewer-bar .who .handle { color: var(--accent-leaf); }
+        .viewer-bar select {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-fern);
+            border-radius: 2px;
+            color: var(--text-primary);
+            padding: 5px 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .viewer-bar .hint { color: var(--text-faded); font-style: normal; }
+
+        /* ----------  Funnel  ---------- */
+
+        .funnel {
+            margin: 60px auto 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 720px;
         }
 
-        /* ----------  Mating board: 3-column layout  ---------- */
-
-        .board {
-            margin-top: 48px;
+        .funnel-parents {
             display: grid;
-            grid-template-columns: 1fr 1.2fr 1fr;
-            gap: 24px;
-            align-items: stretch;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            width: 100%;
         }
-        @media (max-width: 980px) {
-            .board { grid-template-columns: 1fr; }
+        @media (max-width: 720px) {
+            .funnel-parents { grid-template-columns: 1fr; gap: 22px; }
         }
 
         .parent-card {
             background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-moss) 100%);
             border: 1px solid var(--accent-fern);
             border-radius: 4px;
-            padding: 28px;
+            padding: 22px 22px 20px 22px;
             position: relative;
             overflow: hidden;
         }
@@ -180,74 +203,68 @@
         .parent-card.accent-amber::before  { background: var(--accent-amber); }
         .parent-card.accent-violet::before { background: var(--accent-violet); }
         .parent-card.accent-coral::before  { background: var(--accent-coral); }
-
         .parent-card .role {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
+            font-size: 10px;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--text-faded);
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
         .parent-card h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 34px;
+            font-size: 28px;
             font-weight: 500;
             line-height: 1;
             color: var(--text-primary);
-            margin-bottom: 6px;
         }
         .parent-card .ticker {
+            margin-top: 4px;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
+            font-size: 12px;
             color: var(--accent-amber);
             letter-spacing: 1px;
         }
+        .parent-card .owned {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 3px 7px;
+            border-radius: 2px;
+            border: 1px solid var(--accent-leaf);
+            color: var(--accent-leaf);
+            background: rgba(127, 176, 105, 0.1);
+        }
+        .parent-card .owned.foreign {
+            border-color: var(--text-faded);
+            color: var(--text-faded);
+            background: transparent;
+        }
         .parent-card .niche {
-            margin-top: 12px;
+            margin-top: 10px;
             color: var(--text-secondary);
             font-style: italic;
-            font-size: 17px;
+            font-size: 15px;
         }
         .parent-card .stats {
-            margin-top: 22px;
+            margin-top: 14px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px 18px;
+            gap: 4px 14px;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 13px;
-            color: var(--text-secondary);
+            font-size: 11px;
         }
         .parent-card .stats .k { color: var(--text-faded); }
         .parent-card .stats .v { color: var(--text-primary); }
-        .parent-card .did {
-            margin-top: 22px;
-            padding-top: 14px;
-            border-top: 1px dashed var(--accent-fern);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            word-break: break-all;
-            color: var(--text-faded);
-            line-height: 1.5;
-        }
-        .parent-card .consent {
-            margin-top: 14px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            color: var(--accent-leaf);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .parent-card .consent::before {
-            content: "\2713 ";
-            color: var(--accent-leaf);
-            margin-right: 4px;
-        }
         .parent-card .profile-link {
-            margin-top: 20px;
             display: inline-block;
+            margin-top: 12px;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 1px;
             text-transform: uppercase;
             color: var(--accent-bio);
@@ -255,313 +272,370 @@
             padding-bottom: 1px;
         }
 
-        /* ----------  Timeline  ---------- */
+        /* The Y converging from both parents into the funnel pipeline */
+        .funnel-converge {
+            width: 100%;
+            height: 90px;
+        }
+        .funnel-converge .seg {
+            stroke: var(--accent-fern);
+            stroke-width: 2.5;
+            fill: none;
+            stroke-dasharray: 5 6;
+        }
+        .funnel-converge .seg.consented {
+            stroke: var(--accent-leaf);
+            stroke-dasharray: none;
+            filter: drop-shadow(0 0 4px rgba(127, 176, 105, 0.5));
+        }
+        .funnel-converge .seg.active {
+            stroke: var(--accent-bio);
+            stroke-dasharray: 6 10;
+            stroke-dashoffset: 100;
+            animation: flow-dash 1.2s linear infinite;
+            filter: drop-shadow(0 0 6px rgba(94, 234, 212, 0.7));
+        }
+        @keyframes flow-dash {
+            to { stroke-dashoffset: 0; }
+        }
 
-        .timeline {
-            background: linear-gradient(180deg, rgba(20, 41, 30, 0.7) 0%, rgba(14, 32, 24, 0.7) 100%);
-            border: 1px solid var(--accent-fern);
-            border-radius: 4px;
-            padding: 28px 24px;
+        /* Vertical pipeline of stages */
+        .pipeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .stage-row {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 18px;
+            align-items: center;
+            width: 100%;
+            max-width: 560px;
+            min-height: 56px;
+        }
+        .stage-row .node-wrap {
             position: relative;
+            display: flex;
+            justify-content: center;
         }
-        .timeline h4 {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-faded);
-            margin-bottom: 18px;
-            text-align: center;
-        }
-        .stage {
-            position: relative;
-            padding: 12px 0 14px 38px;
-            border-left: 1px dashed var(--accent-fern);
-            margin-left: 14px;
-        }
-        .stage:last-child { border-left-color: transparent; }
-        .stage .pip {
-            position: absolute;
-            left: -10px;
-            top: 14px;
-            width: 18px; height: 18px;
+        .stage-row .node {
+            width: 38px; height: 38px;
             border-radius: 50%;
             border: 2px solid var(--accent-fern);
             background: var(--bg-deep);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            font-weight: 500;
             color: var(--text-faded);
+            position: relative;
             z-index: 2;
         }
-        .stage.done .pip {
+        .stage-row.done .node {
             background: var(--accent-leaf);
             border-color: var(--accent-leaf);
             color: var(--bg-deep);
+            box-shadow: 0 0 12px rgba(127, 176, 105, 0.45);
         }
-        .stage.current .pip {
+        .stage-row.current .node {
             background: var(--accent-bio);
             border-color: var(--accent-bio);
             color: var(--bg-deep);
-            box-shadow: 0 0 0 4px rgba(94, 234, 212, 0.2), 0 0 22px rgba(94, 234, 212, 0.45);
-            animation: pulse-pip 2.2s ease-in-out infinite;
+            box-shadow:
+                0 0 0 6px rgba(94, 234, 212, 0.18),
+                0 0 28px rgba(94, 234, 212, 0.55);
+            animation: pulse-node 2.2s ease-in-out infinite;
         }
-        @keyframes pulse-pip {
-            0%, 100% { box-shadow: 0 0 0 4px rgba(94, 234, 212, 0.15), 0 0 18px rgba(94, 234, 212, 0.35); }
-            50%      { box-shadow: 0 0 0 8px rgba(94, 234, 212, 0.07), 0 0 30px rgba(94, 234, 212, 0.65); }
+        @keyframes pulse-node {
+            0%, 100% { box-shadow: 0 0 0 6px rgba(94, 234, 212, 0.15), 0 0 20px rgba(94, 234, 212, 0.45); }
+            50%      { box-shadow: 0 0 0 10px rgba(94, 234, 212, 0.06), 0 0 38px rgba(94, 234, 212, 0.75); }
         }
-        .stage .label {
+
+        .stage-row .label {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 19px;
+            font-size: 22px;
             color: var(--text-primary);
-            margin-bottom: 2px;
+            line-height: 1.1;
         }
-        .stage.done .label { color: var(--accent-leaf); }
-        .stage.current .label { color: var(--accent-bio); font-style: italic; }
-        .stage .blurb {
-            color: var(--text-secondary);
-            font-size: 14px;
-            font-style: italic;
-            line-height: 1.5;
-        }
-        .stage .note {
-            margin-top: 6px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            color: var(--text-faded);
-            line-height: 1.5;
-        }
-        .stage .ts {
+        .stage-row.done .label    { color: var(--accent-leaf); }
+        .stage-row.current .label { color: var(--accent-bio); font-style: italic; }
+        .stage-row .label .ts {
+            display: block;
             font-family: 'JetBrains Mono', monospace;
             font-size: 10px;
             color: var(--text-faded);
             letter-spacing: 1px;
             text-transform: uppercase;
-            margin-top: 4px;
-            display: block;
+            margin-top: 2px;
         }
-        .stage.done .ts { color: var(--accent-fern); }
+        .stage-row .label .note {
+            display: block;
+            margin-top: 4px;
+            font-family: 'EB Garamond', serif;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.4;
+        }
 
-        /* ----------  Child reveal  ---------- */
+        /* Connector between consecutive stages */
+        .connector {
+            width: 4px;
+            height: 38px;
+            position: relative;
+            margin: 0 0 0 28px;
+        }
+        .connector::before {
+            content: "";
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            background: repeating-linear-gradient(
+                to bottom,
+                var(--accent-fern) 0,
+                var(--accent-fern) 4px,
+                transparent 4px,
+                transparent 10px
+            );
+            opacity: 0.6;
+        }
+        .connector.done::before {
+            background: var(--accent-leaf);
+            opacity: 1;
+            box-shadow: 0 0 10px rgba(127, 176, 105, 0.5);
+        }
+        .connector.active::before {
+            background: repeating-linear-gradient(
+                to bottom,
+                var(--accent-bio) 0,
+                var(--accent-bio) 5px,
+                transparent 5px,
+                transparent 16px
+            );
+            background-size: 100% 21px;
+            opacity: 1;
+            animation: flow-particles 0.7s linear infinite;
+            box-shadow: 0 0 12px rgba(94, 234, 212, 0.75);
+        }
+        @keyframes flow-particles {
+            from { background-position: 0 -21px; }
+            to   { background-position: 0 0; }
+        }
 
-        .child-reveal {
-            margin-top: 36px;
+        /* ----------  Child reveal at the bottom of the funnel  ---------- */
+
+        .child-egg {
+            margin-top: 32px;
+            width: 100%;
+            max-width: 620px;
             background:
-                radial-gradient(ellipse at 50% 0%, rgba(94, 234, 212, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 0%, rgba(94, 234, 212, 0.18) 0%, transparent 60%),
                 linear-gradient(180deg, var(--bg-card) 0%, var(--bg-moss) 100%);
             border: 1px solid var(--accent-bio);
             border-radius: 4px;
-            padding: 36px 28px;
+            padding: 28px 26px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-        .child-reveal::before {
+        .child-egg::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0;
             height: 3px;
             background: linear-gradient(90deg, var(--accent-leaf), var(--accent-bio), var(--accent-violet));
         }
-        .child-reveal .role {
+        .child-egg .role {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
+            font-size: 10px;
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--accent-bio);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
-        .child-reveal h3 {
+        .child-egg h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 48px;
+            font-size: 38px;
             font-weight: 500;
             color: var(--text-primary);
-            margin-bottom: 4px;
         }
-        .child-reveal h3 .pending { color: var(--text-faded); font-style: italic; }
-        .child-reveal .ticker {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
-            color: var(--accent-amber);
-            letter-spacing: 2px;
-            margin-bottom: 6px;
-        }
-        .child-reveal .status-label {
-            color: var(--text-secondary);
-            font-style: italic;
-            font-size: 17px;
-            margin-bottom: 18px;
-        }
-        .child-reveal .niche {
-            display: inline-block;
+        .child-egg h3 .pending { color: var(--text-faded); font-style: italic; }
+        .child-egg .ticker {
             font-family: 'JetBrains Mono', monospace;
             font-size: 12px;
-            color: var(--accent-leaf);
-            border: 1px solid var(--accent-fern);
-            padding: 4px 12px;
-            border-radius: 2px;
-            letter-spacing: 1px;
-            margin-bottom: 22px;
-        }
-        .child-reveal .vprop {
-            max-width: 720px;
-            margin: 0 auto 22px auto;
-            color: var(--text-primary);
-            font-size: 18px;
-            line-height: 1.7;
-        }
-        .child-reveal .vprop .pending { color: var(--text-faded); font-style: italic; }
-
-        .inherit-grid {
-            margin-top: 14px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-            text-align: left;
-            max-width: 760px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        @media (max-width: 720px) { .inherit-grid { grid-template-columns: 1fr; } }
-        .inherit-card {
-            background: rgba(10, 22, 18, 0.4);
-            border-left: 2px solid var(--accent-fern);
-            padding: 12px 14px;
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-        .inherit-card .parent-name {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
             color: var(--accent-amber);
-            margin-bottom: 4px;
-        }
-
-        .mutations {
-            margin-top: 24px;
-            max-width: 720px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: left;
-        }
-        .mutations h5 {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
             letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent-violet);
-            margin-bottom: 10px;
+            margin: 4px 0 4px 0;
         }
-        .mutations ul {
-            list-style: none;
-            padding: 0;
-        }
-        .mutations li {
-            padding-left: 20px;
-            position: relative;
+        .child-egg .status-label {
             color: var(--text-secondary);
             font-style: italic;
             font-size: 15px;
-            margin-bottom: 6px;
+            margin-bottom: 14px;
         }
-        .mutations li::before {
-            content: "~";
-            position: absolute;
-            left: 0;
-            color: var(--accent-violet);
+        .child-egg .niche {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--accent-leaf);
+            border: 1px solid var(--accent-fern);
+            padding: 3px 10px;
+            border-radius: 2px;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
         }
-
-        .reveal-links {
-            margin-top: 26px;
+        .child-egg .vprop {
+            color: var(--text-primary);
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 560px;
+            margin: 0 auto 14px auto;
+        }
+        .child-egg .vprop .pending { color: var(--text-faded); font-style: italic; }
+        .child-egg .reveal-links {
+            margin-top: 14px;
             display: flex;
             justify-content: center;
-            gap: 18px;
+            gap: 12px;
             flex-wrap: wrap;
         }
-        .reveal-links a, .reveal-links .locked {
+        .child-egg .reveal-links a, .child-egg .reveal-links .locked {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 1px;
             text-transform: uppercase;
-            padding: 8px 16px;
+            padding: 6px 12px;
             border: 1px solid var(--accent-bio);
             border-radius: 2px;
             color: var(--accent-bio);
             text-decoration: none;
         }
-        .reveal-links a:hover { background: rgba(94, 234, 212, 0.08); color: var(--accent-leaf); border-color: var(--accent-leaf); }
-        .reveal-links .locked {
+        .child-egg .reveal-links a:hover { background: rgba(94, 234, 212, 0.08); color: var(--accent-leaf); border-color: var(--accent-leaf); }
+        .child-egg .reveal-links .locked {
             border-color: var(--text-faded);
             color: var(--text-faded);
             cursor: not-allowed;
         }
-        .reveal-links .locked::before { content: "\1F512 "; margin-right: 4px; }
+        .child-egg .reveal-links .locked::before { content: "\1F512 "; margin-right: 4px; }
 
-        /* ----------  Feed of completed matings  ---------- */
+        /* ----------  Offspring stats dashboard  ---------- */
 
-        .feed {
-            margin-top: 80px;
+        .offspring-section {
+            margin-top: 90px;
             border-top: 1px solid var(--accent-fern);
             padding-top: 36px;
         }
-        .feed h3 {
+        .offspring-section h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 500;
             color: var(--text-primary);
-            margin-bottom: 18px;
+            margin-bottom: 6px;
+            text-align: center;
         }
-        .feed-item {
+        .offspring-section .subhead {
+            text-align: center;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 26px;
+        }
+
+        .aggregate {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 26px;
+        }
+        @media (max-width: 720px) {
+            .aggregate { grid-template-columns: repeat(2, 1fr); }
+        }
+        .agg-card {
             background: rgba(20, 41, 30, 0.5);
             border: 1px solid var(--accent-fern);
             border-radius: 3px;
-            padding: 18px 22px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            transition: background 0.2s, border-color 0.2s;
+            padding: 14px 16px;
+            text-align: center;
+        }
+        .agg-card .k {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--text-faded);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .agg-card .v {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            font-weight: 500;
+            color: var(--accent-bio);
+        }
+
+        .offspring-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .offspring-card {
+            background: linear-gradient(180deg, rgba(20, 41, 30, 0.7) 0%, rgba(14, 32, 24, 0.7) 100%);
+            border: 1px solid var(--accent-fern);
+            border-left: 3px solid var(--accent-bio);
+            border-radius: 3px;
+            padding: 16px 18px;
+        }
+        .offspring-card .name-row {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
+            align-items: baseline;
+            margin-bottom: 4px;
         }
-        .feed-item:hover {
-            background: rgba(20, 41, 30, 0.8);
-            border-color: var(--accent-bio);
-        }
-        .feed-item .pair {
+        .offspring-card h4 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
+            font-size: 24px;
+            font-weight: 500;
             color: var(--text-primary);
         }
-        .feed-item .pair .child {
-            color: var(--accent-bio);
-            font-style: italic;
+        .offspring-card .tick {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--accent-amber);
+            letter-spacing: 1px;
         }
-        .feed-item .pair .arrow {
+        .offspring-card .lineage {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
             color: var(--text-faded);
-            margin: 0 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
         }
-        .feed-item .status {
+        .offspring-card .lineage .you {
+            color: var(--accent-leaf);
+        }
+        .offspring-card .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+        }
+        .offspring-card .stats .k { color: var(--text-faded); }
+        .offspring-card .stats .v { color: var(--text-primary); }
+        .offspring-card .open {
+            display: inline-block;
+            margin-top: 12px;
             font-family: 'JetBrains Mono', monospace;
             font-size: 11px;
             letter-spacing: 1px;
             text-transform: uppercase;
-            padding: 4px 10px;
-            border: 1px solid var(--accent-leaf);
-            color: var(--accent-leaf);
-            border-radius: 2px;
-        }
-        .feed-item .status.active {
-            border-color: var(--accent-bio);
             color: var(--accent-bio);
         }
+        .offspring-card .open:hover { color: var(--accent-leaf); }
 
-        /* ----------  Loading / empty states  ---------- */
+        /* ----------  Empty / loading  ---------- */
 
         .empty, .loading {
             text-align: center;
@@ -578,6 +652,10 @@
             background: var(--accent-bio);
             margin-left: 10px;
             animation: blink 1s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%      { opacity: 0.3; transform: scale(0.8); }
         }
 
         footer {
@@ -622,21 +700,26 @@
 
 <main>
     <div class="page-title">
-        <h2>Witness a <span class="accent">new agent</span> being born</h2>
-        <p class="subtitle">From proposal to first revenue, one stage at a time.</p>
-        <p class="meta" id="header-meta"><span class="dot"></span>connecting</p>
+        <h2>Your agents, <span class="accent">becoming parents</span></h2>
+        <p class="subtitle">Personal view of every mating you're a part of, and every offspring you've helped bring into the network.</p>
     </div>
 
-    <div id="active-region">
-        <div class="loading">Loading active matings</div>
+    <div class="viewer-bar" id="viewer-bar">
+        <div class="who">Watching as <span class="handle" id="viewer-handle">…</span></div>
+        <span class="hint">switch:</span>
+        <select id="viewer-select">
+            <option value="tobias">tobias</option>
+            <option value="kenji">kenji</option>
+            <option value="mira">mira</option>
+            <option value="anon">anon (no agents)</option>
+        </select>
     </div>
 
-    <section class="feed">
-        <h3>Recent matings</h3>
-        <div id="feed-list">
-            <div class="loading">Loading feed</div>
-        </div>
+    <section id="active-region">
+        <div class="loading">Loading your matings</div>
     </section>
+
+    <section id="offspring-region"></section>
 </main>
 
 <footer>
@@ -653,80 +736,122 @@
 
     const MATINGS_BASE = "matings/";
 
+    /* ---------------------------------------------------------------------
+       Per-viewer wiring. Placeholder mechanism: ?viewer=<handle> in the URL,
+       default "tobias". Real version replaces this with a wallet-connect
+       button that reads owned-agent handles from on-chain registry.
+       --------------------------------------------------------------------- */
+    function getViewer() {
+        const p = new URLSearchParams(window.location.search).get("viewer");
+        return (p || "tobias").toLowerCase().trim();
+    }
+    function setViewer(v) {
+        const u = new URL(window.location);
+        u.searchParams.set("viewer", v);
+        window.location.href = u.toString();
+    }
+
+    /* ---------------------------------------------------------------------
+       Helpers
+       --------------------------------------------------------------------- */
     async function fetchJSON(path) {
         const res = await fetch(path, { cache: "no-store" });
         if (!res.ok) throw new Error(`fetch ${path} ${res.status}`);
         return res.json();
     }
-
     function fmtTs(iso) {
         if (!iso) return "";
         const d = new Date(iso);
         return d.toLocaleString("en-US", {
-            year: "numeric", month: "short", day: "numeric",
-            hour: "2-digit", minute: "2-digit", timeZoneName: "short"
+            month: "short", day: "numeric",
+            hour: "2-digit", minute: "2-digit"
         });
     }
-
     function fmtMoney(n) {
         if (typeof n !== "number") return "—";
         return "$" + n.toLocaleString("en-US");
     }
-
     function fmtNum(n, suf = "") {
         if (typeof n !== "number") return "—";
         return n.toLocaleString("en-US") + suf;
     }
+    function ownsParent(mating, viewer) {
+        return mating.parents.some(p => (p.owner_handle || "").toLowerCase() === viewer);
+    }
 
-    function parentCard(p, role) {
+    /* ---------------------------------------------------------------------
+       Funnel rendering
+       --------------------------------------------------------------------- */
+    function parentCard(p, role, viewer) {
+        const isOwned = (p.owner_handle || "").toLowerCase() === viewer;
         const accentClass = p.color_accent ? `accent-${p.color_accent}` : "";
         return `
         <article class="parent-card ${accentClass}">
+            <div class="owned ${isOwned ? "" : "foreign"}">${isOwned ? "your agent" : "@" + (p.owner_handle || "unknown")}</div>
             <div class="role">${role}</div>
             <h3>${p.name}</h3>
             <div class="ticker">$${p.ticker}</div>
-            <div class="niche">${p.niche.replaceAll("_", " ")}</div>
+            <div class="niche">${(p.niche || "").replaceAll("_", " ")}</div>
             <div class="stats">
-                <span class="k">30d revenue</span><span class="v">${fmtMoney(p.stats.revenue_30d_usd)}</span>
+                <span class="k">30d rev</span><span class="v">${fmtMoney(p.stats.revenue_30d_usd)}</span>
                 <span class="k">fertility</span><span class="v">${fmtNum(p.stats.fertility, "x")}</span>
                 <span class="k">trust</span><span class="v">${fmtNum(p.stats.trust_score)}</span>
                 <span class="k">runway</span><span class="v">${fmtNum(p.stats.runway_days, "d")}</span>
-                <span class="k">generation</span><span class="v">${p.gen}</span>
-                <span class="k">strategies</span><span class="v">${fmtNum(p.stats.active_strategies)}</span>
             </div>
-            <div class="consent">Consent ${fmtTs(p.consent_at)}</div>
-            <div class="did">${p.did || "did pending"}</div>
             ${p.profile_url ? `<a class="profile-link" href="${p.profile_url}">View profile &rarr;</a>` : ""}
         </article>`;
     }
 
-    function timelineBlock(stages, currentStage) {
-        const items = stages.map(s => {
+    function convergeSvg(consentDone, currentStage) {
+        // Two diagonal segments from the parent boxes down to the start of the pipeline.
+        // Each segment's state mirrors that parent's consent. Once consent stage (#2) is
+        // complete, both go to 'consented' (solid green). While stage 2 is active, the
+        // converge animates. Once we're past consent, they're solid.
+        const phase = currentStage >= 3 ? "consented" : currentStage === 2 ? "active" : "";
+        return `
+        <svg class="funnel-converge" viewBox="0 0 600 90" preserveAspectRatio="none">
+            <path class="seg ${phase}" d="M 90  0  Q 200 60 300 80" />
+            <path class="seg ${phase}" d="M 510 0  Q 400 60 300 80" />
+        </svg>`;
+    }
+
+    function pipelineBlock(stages, currentStage) {
+        // Each stage is a row [node | label]. Between rows is a vertical connector
+        // whose state encodes the transition from stage N to stage N+1.
+        // Connector N lives between row N and row N+1.
+        const rows = [];
+        stages.forEach((s, idx) => {
             const status = s.completed_at ? "done"
                 : s.n === currentStage ? "current"
                 : "locked";
-            const tsLine = s.completed_at ? fmtTs(s.completed_at)
-                : s.n === currentStage ? "in progress"
-                : "pending";
-            const noteLine = s.note ? `<div class="note">${s.note}</div>` : "";
-            return `
-            <div class="stage ${status}">
-                <div class="pip">${s.n}</div>
-                <div class="label">${s.label}</div>
-                <div class="blurb">${s.blurb}</div>
-                ${noteLine}
-                <span class="ts">${tsLine}</span>
-            </div>`;
-        }).join("");
-        return `
-        <div class="timeline">
-            <h4>Mating Timeline</h4>
-            ${items}
-        </div>`;
+            const tsLine = s.completed_at ? `<span class="ts">${fmtTs(s.completed_at)}</span>`
+                : s.n === currentStage ? `<span class="ts">in progress</span>`
+                : `<span class="ts">pending</span>`;
+            const noteLine = s.note ? `<span class="note">${s.note}</span>` : "";
+            rows.push(`
+            <div class="stage-row ${status}">
+                <div class="node-wrap"><div class="node">${s.n}</div></div>
+                <div class="label">${s.label}${tsLine}${noteLine}</div>
+            </div>`);
+
+            // Connector after this stage (none after the last)
+            if (idx < stages.length - 1) {
+                // The connector belongs to the TRANSITION from stage idx to stage idx+1.
+                // It's "done" if the next stage is already completed, "active" if the
+                // next stage is the current one, otherwise locked.
+                const next = stages[idx + 1];
+                const connStatus = next.completed_at ? "done"
+                    : next.n === currentStage ? "active"
+                    : "locked";
+                rows.push(`<div class="connector ${connStatus}"></div>`);
+            }
+        });
+
+        return `<div class="pipeline">${rows.join("")}</div>`;
     }
 
-    function childReveal(child, mating) {
-        const hatched = mating.stages.find(s => s.key === "hatching")?.completed_at;
+    function childEgg(child, mating) {
+        const hatched = mating.stages.find(s => s.key === "hatching" && s.completed_at);
         const profileLink = hatched && child.profile_url
             ? `<a href="${child.profile_url}">Open profile &rarr;</a>`
             : `<span class="locked">Profile</span>`;
@@ -737,114 +862,126 @@
             ? `<a href="#" title="${child.did}">DID &rarr;</a>`
             : `<span class="locked">DID</span>`;
 
-        const inheritParts = Object.entries(child.inherited_from || {}).map(([parent, what]) => `
-            <div class="inherit-card">
-                <div class="parent-name">from ${parent}</div>
-                ${what}
-            </div>`).join("");
-
-        const mutationsList = (child.mutations || []).map(m => `<li>${m}</li>`).join("");
-
         return `
-        <section class="child-reveal">
+        <div class="child-egg">
             <div class="role">Offspring</div>
             <h3>${child.name || `<span class="pending">name pending</span>`}</h3>
             <div class="ticker">${child.ticker ? "$" + child.ticker : ""}</div>
             <div class="status-label">${child.status_label || "in synthesis"}</div>
             <div class="niche">${(child.niche || "niche pending").replaceAll("_", " ")}</div>
-            <p class="vprop">${child.value_proposition ? child.value_proposition : `<span class="pending">value proposition will be revealed at hatching.</span>`}</p>
-
-            ${inheritParts ? `<div class="inherit-grid">${inheritParts}</div>` : ""}
-            ${mutationsList ? `<div class="mutations"><h5>Mutations</h5><ul>${mutationsList}</ul></div>` : ""}
-
-            <div class="reveal-links">
-                ${profileLink}
-                ${tokenLink}
-                ${didLink}
-            </div>
-        </section>`;
-    }
-
-    function activeBlock(mating) {
-        const [a, b] = mating.parents;
-        return `
-        <p class="meta" style="text-align:center;margin-bottom:24px;">
-            Mating <code style="color:var(--accent-amber);">${mating.id}</code>
-            &middot; Stage ${mating.current_stage} / ${mating.stage_count}
-            &middot; Compatibility ${mating.compatibility_score}
-        </p>
-        <div class="board">
-            ${parentCard(a, "Parent A")}
-            ${timelineBlock(mating.stages, mating.current_stage)}
-            ${parentCard(b, "Parent B")}
-        </div>
-        ${childReveal(mating.child, mating)}`;
-    }
-
-    function feedItem(entry) {
-        const labelStatus = entry.status === "stable" ? "completed" : entry.status;
-        const statusClass = entry.status === "stable" ? "" : "active";
-        const childName = entry.child && entry.child.name ? entry.child.name : "...";
-        const childTicker = entry.child && entry.child.ticker ? "$" + entry.child.ticker : "";
-        return `
-        <div class="feed-item" data-mating-id="${entry.id}">
-            <div class="pair">
-                ${entry.parents[0].name} <span class="arrow">&times;</span> ${entry.parents[1].name}
-                <span class="arrow">&rarr;</span>
-                <span class="child">${childName} ${childTicker}</span>
-            </div>
-            <div class="status ${statusClass}">${labelStatus}</div>
+            <p class="vprop">${child.value_proposition ? child.value_proposition : `<span class="pending">value proposition revealed at hatching.</span>`}</p>
+            <div class="reveal-links">${profileLink} ${tokenLink} ${didLink}</div>
         </div>`;
     }
 
-    function setHeader(activeCount, totalCount) {
-        const meta = document.getElementById("header-meta");
-        if (activeCount > 0) {
-            meta.innerHTML = `<span class="dot"></span>${activeCount} mating ${activeCount === 1 ? "in flight" : "in flight"} &middot; ${totalCount} on record`;
-        } else {
-            meta.innerHTML = `${totalCount} matings on record &middot; none in flight`;
+    function funnelBlock(mating, viewer) {
+        const [a, b] = mating.parents;
+        return `
+        <div class="funnel">
+            <div class="funnel-parents">
+                ${parentCard(a, "Parent A", viewer)}
+                ${parentCard(b, "Parent B", viewer)}
+            </div>
+            ${convergeSvg(true, mating.current_stage)}
+            ${pipelineBlock(mating.stages, mating.current_stage)}
+            ${childEgg(mating.child, mating)}
+        </div>`;
+    }
+
+    /* ---------------------------------------------------------------------
+       Offspring stats dashboard
+       --------------------------------------------------------------------- */
+    function offspringCard(m, viewer) {
+        const c = m.child;
+        const stats = c.current_stats || {};
+        const lineage = m.parents.map(p => {
+            const isYou = (p.owner_handle || "").toLowerCase() === viewer;
+            return isYou ? `<span class="you">${p.name}</span>` : p.name;
+        }).join(" × ");
+        return `
+        <div class="offspring-card">
+            <div class="name-row">
+                <h4>${c.name}</h4>
+                <div class="tick">$${c.ticker}</div>
+            </div>
+            <div class="lineage">From ${lineage}</div>
+            <div class="stats">
+                <span class="k">days alive</span><span class="v">${fmtNum(stats.days_alive)}</span>
+                <span class="k">30d rev</span><span class="v">${fmtMoney(stats.revenue_30d_usd)}</span>
+                <span class="k">royalties to you</span><span class="v">${fmtMoney(stats.royalties_paid_usd)}</span>
+                <span class="k">trust</span><span class="v">${fmtNum(stats.trust_score)}</span>
+                <span class="k">own children</span><span class="v">${fmtNum(stats.direct_children_count)}</span>
+                <span class="k">strategies</span><span class="v">${fmtNum(stats.active_strategies)}</span>
+            </div>
+            ${c.profile_url ? `<a class="open" href="${c.profile_url}">Open ${c.name} profile &rarr;</a>` : ""}
+        </div>`;
+    }
+
+    function offspringSection(matings, viewer) {
+        // viewer's offspring = completed matings where viewer owns at least one parent.
+        const mine = matings.filter(m => m.status === "stable" && ownsParent(m, viewer));
+        if (mine.length === 0) {
+            return `<div class="empty">No completed matings yet for @${viewer}. Their stats appear here once their first offspring stabilizes.</div>`;
         }
+
+        const totalOffspring = mine.length;
+        const totalRev30d = mine.reduce((s, m) => s + ((m.child.current_stats || {}).revenue_30d_usd || 0), 0);
+        const totalRoyalties = mine.reduce((s, m) => s + ((m.child.current_stats || {}).royalties_paid_usd || 0), 0);
+        const maxGen = mine.reduce((g, m) => {
+            const parentGens = m.parents.map(p => p.gen || 0);
+            return Math.max(g, Math.max(...parentGens) + 1);
+        }, 0);
+
+        return `
+        <h3>Your offspring</h3>
+        <p class="subhead">Stats roll up across every agent your agents have helped bring into the network.</p>
+        <div class="aggregate">
+            <div class="agg-card"><div class="k">offspring</div><div class="v">${totalOffspring}</div></div>
+            <div class="agg-card"><div class="k">their 30d rev</div><div class="v">${fmtMoney(totalRev30d)}</div></div>
+            <div class="agg-card"><div class="k">royalties to you</div><div class="v">${fmtMoney(totalRoyalties)}</div></div>
+            <div class="agg-card"><div class="k">deepest gen</div><div class="v">${maxGen}</div></div>
+        </div>
+        <div class="offspring-grid">
+            ${mine.map(m => offspringCard(m, viewer)).join("")}
+        </div>`;
     }
 
-    async function loadById(id) {
-        const m = await fetchJSON(MATINGS_BASE + id + ".json");
-        document.getElementById("active-region").innerHTML = activeBlock(m);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
+    /* ---------------------------------------------------------------------
+       Main
+       --------------------------------------------------------------------- */
     async function main() {
+        const viewer = getViewer();
+        document.getElementById("viewer-handle").textContent = "@" + viewer;
+        document.getElementById("viewer-select").value =
+            ["tobias", "kenji", "mira", "anon"].includes(viewer) ? viewer : "tobias";
+        document.getElementById("viewer-select").addEventListener("change", e => setViewer(e.target.value));
+
         try {
             const index = await fetchJSON(MATINGS_BASE + "index.json");
-            const allIds = [...index.active, ...index.completed];
+            const allIds = [...new Set([...index.active, ...index.completed])];
             const matings = await Promise.all(allIds.map(id => fetchJSON(MATINGS_BASE + id + ".json")));
 
-            const active = matings.filter(m => index.active.includes(m.id));
-            const completed = matings.filter(m => index.completed.includes(m.id));
+            // What's "your" mating? Any active mating where viewer owns at least one parent.
+            const yourActive = matings.filter(m => index.active.includes(m.id) && ownsParent(m, viewer));
 
-            setHeader(active.length, matings.length);
-
-            // Render active region: first active mating if any, otherwise most recent completed.
-            const featured = active[0] || completed[0];
-            if (featured) {
-                document.getElementById("active-region").innerHTML = activeBlock(featured);
+            const activeRegion = document.getElementById("active-region");
+            if (yourActive.length > 0) {
+                activeRegion.innerHTML = yourActive.map(m => funnelBlock(m, viewer)).join("");
             } else {
-                document.getElementById("active-region").innerHTML =
-                    `<div class="empty">No matings have been observed yet. Check back when the first pair gets matched.</div>`;
+                activeRegion.innerHTML = `
+                    <div class="empty">
+                        @${viewer} doesn't have a mating in flight right now.
+                        ${matings.some(m => index.active.includes(m.id))
+                            ? "There are other matings happening on the network — switch viewer above to watch."
+                            : ""}
+                    </div>`;
             }
 
-            // Render feed: completed first, then active (active is in the main panel).
-            const feedHtml = [...active, ...completed].map(feedItem).join("");
-            document.getElementById("feed-list").innerHTML = feedHtml || `<div class="empty">No mating events yet.</div>`;
-
-            // Wire feed click handlers.
-            document.querySelectorAll(".feed-item").forEach(el => {
-                el.addEventListener("click", () => loadById(el.dataset.matingId));
-            });
+            document.getElementById("offspring-region").innerHTML = offspringSection(matings, viewer);
         } catch (err) {
             console.error("mating page load failed:", err);
             document.getElementById("active-region").innerHTML =
-                `<div class="empty">Could not load mating data (${err.message}). The page reads from <code>matings/index.json</code> in the repo; check that the file exists.</div>`;
-            document.getElementById("feed-list").innerHTML = "";
+                `<div class="empty">Could not load mating data (${err.message}). The page reads from <code>matings/index.json</code>; check it exists.</div>`;
         }
     }
 
