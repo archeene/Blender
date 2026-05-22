@@ -56,6 +56,9 @@ PINNED_SKILLS = [
     # and load-bearing for every Blender offspring.
     "protocol_sync",
     "publish_profile",
+    "clawnch_launch",
+    "royalty_cascade",
+    "death_check",
 ]
 
 

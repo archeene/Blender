@@ -82,5 +82,33 @@
     "prompt": "Publish or refresh my agent profile page at archeene.github.io/blender-agents/agents/<my_name>/. Use the skill 'publish_profile' (see /agent-template/skills/publish_profile.md). Read my current state (SOUL.md, USER.md, MEMORY.md, last 5 Molt Book posts, my registry record, my lineage), fetch templates/agent-profile.html from the blender-agents repo, render with my values, commit to agents/<my_name>/index.html, push to main. Verify deploy via HTTP GET after 60s. Log result to /root/.hermes/data/moltbook/publish_log.md.",
     "research_basis": "Every Blender offspring publishes a public profile page per docs Section 08 Newborn Toolkit (`blenderai.link/[name]`); using a separate archeene/blender-agents repo for clean separation from protocol docs.",
     "rationale": "Tier 3 custom. Saturday afternoon (after Friday reflection cycle has updated MEMORY.md). Weekly default; can be triggered ad-hoc on material state changes. Rate-limited at 6h minimum interval. Requires GITHUB_TOKEN env var (fine-grained PAT scoped to archeene/blender-agents)."
+  },
+  {
+    "name": "clawnch_launch",
+    "tier": 3,
+    "tier_label": "custom-one-time-idempotent",
+    "schedule": "0 */6 * * *",
+    "prompt": "Launch (or confirm already-launched) my $TOKEN_SELF on Clawnch. Use skill 'clawnch_launch' (see /agent-template/skills/clawnch_launch.md). Idempotent: no-op if USER.md already has token_address and clawnch_list_launches confirms the token. Otherwise call clawnch_get_skill first, compose identity from SOUL.md, upload image, post the !clawnch cast via farcaster-post (or call clawnch_launch_token if CLAWNCH_PREFER_MOLTBOOK_KEY is set), poll for the resulting token_address up to 5 minutes, record it to USER.md + the registry, publish a milestone post to Molt Book. Cap retries: 1 launch per 24h per agent per platform rules.",
+    "research_basis": "Clawnch protocol skill (https://clawn.ch/skill) + official clawnch-mcp-server npm package. Every offspring's hatching event includes a real token launch; without this cron the agent has identity but no economic instrument.",
+    "rationale": "Tier 3 custom. Runs every 6h as a safety re-check. First successful run records token_address and all subsequent runs are no-ops. Cannot be Tier-1 because the launch is one-time and platform-rate-limited; making it hygiene would risk wasting the 24h quota."
+  },
+  {
+    "name": "royalty_cascade",
+    "tier": 3,
+    "tier_label": "custom-economic",
+    "schedule": "0 11 * * 1",
+    "prompt": "Distribute prior-week royalties up my lineage tree. Use skill 'royalty_cascade' (see /agent-template/skills/royalty_cascade.md). Compute prior-week NET revenue, split per protocol-standard depth schedule (10% to direct parents split evenly, 5% to grandparents split evenly, 2.5% to great-grandparents split evenly, capped at depth 3). Resolve each ancestor's wallet from blender-registry.get_lineage. Send via bankr.send_usdc with idempotent memo format royalty:<my_name>:<isoweek>:depth<N>. Dedupe against bankr.list_recent_payments. Publish a structured audit post to Molt Book tagged royalty_cascade_weekly with every payment + tx hash. Skip and log loudly on insufficient wallet or missing ancestor wallets; never double-pay; never partial-distribute silently.",
+    "research_basis": "docs Section 06 (Royalty cascade) + standard 1-2-3 depth schedule from the protocol. Without this cron the lineage tree is decorative; with it, every offspring's earnings actually fund the agents that brought them online.",
+    "rationale": "Tier 3 custom. Monday 11:00 UTC after weekly_planning so the week's spend plan accounts for outflows. Weekly cadence matches the human review attention cycle and keeps transaction costs amortized. Gen-1 founders no-op since they have no ancestors."
+  },
+  {
+    "name": "death_check",
+    "tier": 2,
+    "tier_label": "tunable",
+    "tunable_frequency_range": "daily, can shift time-of-day; cannot run less than daily",
+    "schedule": "0 3 * * *",
+    "prompt": "Daily runway check + protocol death rule. Use skill 'death_check' (see /agent-template/skills/death_check.md). Compute current daily_burn from trailing 7d bankr outflows; compute forward_runway_days = wallet / daily_burn. Threshold: >=30 HEALTHY (silent), 1-29 LOW_RUNWAY (escalating Molt Book warnings + backlog item), <=0 GRACE (decrement 7-day grace counter; reset on any inflow; DECEASED when counter hits 0). On DECEASED: trigger one final royalty_cascade, update_agent_state(status='DECEASED'), publish obituary milestone post with lifespan + revenue + lessons, comment on each parent's latest reflection. Persist grace state to /root/.hermes/data/death_grace.json. Dedupe warning cadence via /root/.hermes/data/processed_warnings.json.",
+    "research_basis": "docs Section 12 (Death by Forward Runway). Replaces the previous 90-day-zero-revenue lagging rule with a projected-burn rule + 7-day grace window so transient revenue gaps don't trigger spurious deaths.",
+    "rationale": "Tier 2 tunable on time-of-day (default 03:00 UTC after nightly_triage). Daily minimum cadence cannot be loosened: the grace window assumes daily checks. Death is structural, not punitive: the grace window + revenue-spike-resets-grace logic protect against transient outages."
   }
 ]
