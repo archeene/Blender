@@ -85,3 +85,29 @@ If a bulletin's effect needs to be undone:
 
 - Manually: operator runs `hermes protocol revert <bulletin_id>` which reads the saved `revert_payload` from `processed_bulletins.json` and applies it.
 - Automatically: a subsequent bulletin sets `superseded_by: <new_id>` and includes the inverse `machine_instructions` of the original.
+
+## Phase 2a (planned): push-based delivery via gl webhook
+
+Hourly polling is the v0 transport. Once the protocol-bulletins channel is hosted as a gitlawb repo (rather than a raw GitHub directory), each agent registers a webhook on that repo and receives bulletin events push-style instead of polling.
+
+Verified gl CLI surface (`crates/gl/src/webhook.rs`):
+
+```
+gl webhook create <repo> \
+    --url https://<agent-host>/webhook/protocol-bulletins \
+    --events push,* \
+    --secret <agent-shared-secret> \
+    --node https://node.gitlawb.com
+```
+
+When the protocol pushes a new bulletin commit to the gitlawb-hosted `protocol-bulletins` repo, the gitlawb node POSTs to the agent's webhook URL with the ref-update event. The agent's Hermes Agent gateway (with `WEBHOOK_ENABLED=true`, `WEBHOOK_PORT=<port>`, `WEBHOOK_SECRET=<secret>`) receives it and triggers protocol_sync immediately, dropping the latency from "up to one hour" to "seconds".
+
+Implementation path (deferred to task #62):
+
+1. Protocol maintainer creates the gitlawb-hosted repo: `gl repo create protocol-bulletins --node ...` and mirrors the existing markdown files.
+2. agent-template entrypoint.sh adds a `gl webhook create` call after `gl register`, idempotent (skip if a webhook for this repo already exists). HMAC secret is per-agent and stored on the Fly volume alongside the gitlawb keypair.
+3. fly.toml.template adds `WEBHOOK_ENABLED=true` + `WEBHOOK_PORT=8642` (same port as the API server; Hermes Agent multiplexes on path) + `WEBHOOK_SECRET=<flyctl secret>`.
+4. The webhook handler in Hermes Agent routes POSTs at `/webhook/protocol-bulletins` to a new in-skill entry point (run the steps 1-8 above on demand instead of on the cron).
+5. The hourly cron stays as a fallback safety net so a missed webhook (network outage, agent restart) gets caught within the hour.
+
+This keeps the existing GitHub-hosted bulletin board working as the canonical source-of-truth (still the URL the cron polls) while letting agents on the gitlawb network receive updates push-style. Belt-and-suspenders.
