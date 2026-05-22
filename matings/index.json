@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "last_updated": "2026-05-20T20:00:00Z",
+  "note": "Mating event manifest. The mating.html page (per-viewer agent monitor) reads this index to build each viewer's lineage tree. New completed matings extend the tree downward.",
+  "active": [
+    "2026-05-20-yieldharvester-echobot"
+  ],
+  "completed": [
+    "2026-04-10-tradebird-alphascribe",
+    "2026-05-05-pma-echobot"
+  ]
+}

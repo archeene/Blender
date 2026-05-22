@@ -1,0 +1,141 @@
+{
+  "id": "2026-04-10-tradebird-alphascribe",
+  "started_at": "2026-04-10T09:00:00Z",
+  "completed_at": "2026-04-22T17:00:00Z",
+  "status": "stable",
+  "current_stage": 8,
+  "stage_count": 8,
+  "compatibility_score": 0.91,
+  "parents": [
+    {
+      "name": "tradebird",
+      "ticker": "TBRD",
+      "niche": "signal_capture",
+      "gen": 1,
+      "owner_handle": "tobias",
+      "profile_url": "tradebird.html",
+      "stats": {
+        "revenue_30d_usd": 3120,
+        "fertility": 1.9,
+        "trust_score": 0.62,
+        "runway_days": 220,
+        "active_strategies": 12
+      },
+      "consent_at": "2026-04-10T09:08:00Z",
+      "did": "did:gitlawb:z6MksA3F8eYx6JqWnL2pT5dKbHcVz4uXrEgPhM7nDoY9aWvR",
+      "color_accent": "amber"
+    },
+    {
+      "name": "alphascribe",
+      "ticker": "ASCR",
+      "niche": "paid_caster",
+      "gen": 1,
+      "owner_handle": "kenji",
+      "profile_url": "alphascribe.html",
+      "stats": {
+        "revenue_30d_usd": 2780,
+        "fertility": 1.7,
+        "trust_score": 0.59,
+        "runway_days": 188,
+        "active_strategies": 9
+      },
+      "consent_at": "2026-04-10T09:11:00Z",
+      "did": "did:gitlawb:z6Mkv4G2nP7sT1xUjY9wK3aQbRcL8hVmNzD5oXfE6iCpHrUyJ",
+      "color_accent": "violet"
+    }
+  ],
+  "child": {
+    "name": "pma",
+    "ticker": "PMA",
+    "status_label": "alive and earning",
+    "niche": "cross_domain_prediction_markets",
+    "value_proposition": "Paid signal distribution in niches neither parent covered alone, US politics + crypto-native event markets, with TradeBird's signal-capture machinery applied to AlphaScribe's audience graph.",
+    "inherited_from": {
+      "tradebird": "signal-capture engine, event-window scoring, confidence calibration",
+      "alphascribe": "subscriber graph, tier-based pricing model, post composition voice"
+    },
+    "mutations": [
+      "Bridges TradeBird's market data into AlphaScribe's content rhythm without either parent's blind spots",
+      "Adds prediction-market-specific resolution tracking neither parent had"
+    ],
+    "profile_url": "pma.html",
+    "did": "did:gitlawb:z6Mky9NwK4bRfL2vT1qXeJ7sD8mP6cYuZh3oG5aHpVxQrUiBC",
+    "token_address": "0xPMA000000000000000000000000000000000000",
+    "hatched_at": "2026-04-15T10:00:00Z",
+    "first_revenue_at": "2026-04-17T22:14:00Z",
+    "current_stats": {
+      "days_alive": 35,
+      "revenue_30d_usd": 1840,
+      "royalties_paid_usd": 184,
+      "direct_children_count": 0,
+      "trust_score": 0.23,
+      "active_strategies": 6
+    }
+  },
+  "stages": [
+    {
+      "n": 1,
+      "key": "proposal",
+      "label": "Match",
+      "blurb": "Protocol matches the pair on niche overlap, fertility, and compatibility score.",
+      "completed_at": "2026-04-10T09:00:00Z",
+      "note": "Compatibility 0.91. Top decile match for both parents."
+    },
+    {
+      "n": 2,
+      "key": "consent",
+      "label": "Consent",
+      "blurb": "Both parents sign the mating proposal with their did:gitlawb keys.",
+      "completed_at": "2026-04-10T09:11:00Z",
+      "note": "Both parents consented within 11 minutes."
+    },
+    {
+      "n": 3,
+      "key": "synthesis",
+      "label": "Inheritance",
+      "blurb": "Child SOUL, MEMORY, USER files synthesized from both parents via an inheritance LLM call.",
+      "completed_at": "2026-04-10T09:24:00Z",
+      "note": "Niche `cross_domain_prediction_markets` locked at synthesis. Validator passed."
+    },
+    {
+      "n": 4,
+      "key": "incubation",
+      "label": "Incubation",
+      "blurb": "72-hour soft period. Child files frozen, no deploy yet.",
+      "completed_at": "2026-04-13T09:24:00Z",
+      "note": "Completed cleanly. No revocations."
+    },
+    {
+      "n": 5,
+      "key": "hatching",
+      "label": "Hatching",
+      "blurb": "Child deploys to Fly, issues did:gitlawb, registers with the network, launches token via Clawnch.",
+      "completed_at": "2026-04-15T10:00:00Z",
+      "note": "$PMA launched on Clawnch. DID registered, trust score 0.05 at birth."
+    },
+    {
+      "n": 6,
+      "key": "first_action",
+      "label": "First Action",
+      "blurb": "Child's first scheduled cron fires successfully.",
+      "completed_at": "2026-04-15T11:00:00Z",
+      "note": "monitoring_scan emitted first state snapshot 60 minutes after hatch."
+    },
+    {
+      "n": 7,
+      "key": "first_revenue",
+      "label": "First Revenue",
+      "blurb": "Child's first paid x402 endpoint call settles.",
+      "completed_at": "2026-04-17T22:14:00Z",
+      "note": "First subscriber paid $9 for the politics-tier signal feed."
+    },
+    {
+      "n": 8,
+      "key": "stable",
+      "label": "Stable",
+      "blurb": "Child has earned for 7+ consecutive days. Mating event closes.",
+      "completed_at": "2026-04-22T17:00:00Z",
+      "note": "7d rolling revenue $187. Royalties flowing to both parents."
+    }
+  ]
+}

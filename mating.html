@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Agents - Blender Protocol</title>
+    <meta name="description" content="Personal family-tree monitor for your Blender agents and every descendant they have produced. Click any creature to open its stats.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-deep:   #0a1612;
+            --bg-forest: #0e2018;
+            --bg-card:   #14291e;
+            --bg-moss:   #1a3326;
+            --accent-leaf:    #7fb069;
+            --accent-bio:     #5eead4;
+            --accent-amber:   #d4a574;
+            --accent-violet:  #c77dff;
+            --accent-coral:   #ef6f6c;
+            --accent-fern:    #4a7c59;
+            --text-primary:   #e8e6db;
+            --text-secondary: #9ba48f;
+            --text-faded:     #6a7563;
+        }
+
+        body {
+            font-family: 'EB Garamond', Georgia, serif;
+            background:
+                radial-gradient(ellipse at 20% 0%,   rgba(94, 234, 212, 0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 30%,  rgba(199, 125, 255, 0.07) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 100%, rgba(127, 176, 105, 0.10) 0%, transparent 55%),
+                linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-forest) 100%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.65;
+            overflow-x: hidden;
+            position: relative;
+            font-size: 19px;
+        }
+        a { color: var(--accent-bio); text-decoration: none; }
+        a:hover { color: var(--accent-leaf); }
+
+        header {
+            background: linear-gradient(135deg, rgba(20, 41, 30, 0.95) 0%, rgba(10, 22, 18, 0.95) 100%);
+            border-bottom: 1px solid var(--accent-fern);
+            padding: 22px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo svg { width: 32px; height: 32px; color: var(--accent-bio); }
+        .logo h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 4px;
+        }
+        .logo a { text-decoration: none; color: inherit; display: inline-flex; align-items: center; }
+        .nav-menu { display: flex; list-style: none; gap: 28px; }
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'JetBrains Mono', monospace;
+            transition: color 0.2s;
+        }
+        .nav-menu a:hover { color: var(--accent-bio); }
+        .nav-menu a.active { color: var(--accent-leaf); }
+        .token-badge {
+            background: transparent;
+            color: var(--accent-amber);
+            padding: 6px 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            border: 1px solid var(--accent-amber);
+            border-radius: 2px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 48px 20px 96px 20px;
+        }
+
+        .page-title {
+            text-align: center;
+        }
+        .page-title h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 500;
+            line-height: 1.1;
+            color: var(--text-primary);
+        }
+        .page-title h2 .accent { color: var(--accent-bio); font-style: italic; }
+        .page-title .subtitle {
+            margin-top: 14px;
+            color: var(--text-secondary);
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        /* Viewer bar */
+        .viewer-bar {
+            margin-top: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--text-faded);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .viewer-bar .who {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border: 1px solid var(--accent-fern);
+            border-radius: 2px;
+            background: rgba(20, 41, 30, 0.5);
+        }
+        .viewer-bar .who::before {
+            content: "";
+            display: inline-block;
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--accent-leaf);
+            box-shadow: 0 0 8px rgba(127, 176, 105, 0.6);
+        }
+        .viewer-bar .who .handle { color: var(--accent-leaf); }
+        .viewer-bar select {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-fern);
+            border-radius: 2px;
+            color: var(--text-primary);
+            padding: 5px 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        /* Aggregate strip */
+        .aggregate {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin: 36px 0 20px 0;
+        }
+        @media (max-width: 720px) {
+            .aggregate { grid-template-columns: repeat(2, 1fr); }
+        }
+        .agg-card {
+            background: rgba(20, 41, 30, 0.5);
+            border: 1px solid var(--accent-fern);
+            border-radius: 3px;
+            padding: 12px 14px;
+            text-align: center;
+        }
+        .agg-card .k {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--text-faded);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .agg-card .v {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--accent-bio);
+        }
+
+        /* ----------  Family tree canvas  ---------- */
+
+        .canvas-wrap {
+            margin: 30px auto 0 auto;
+            position: relative;
+            width: 100%;
+            max-width: 880px;
+        }
+        .canvas-wrap svg.tree {
+            width: 100%;
+            height: auto;
+            display: block;
+            color: var(--accent-bio);
+            filter: drop-shadow(0 0 22px rgba(94, 234, 212, 0.12));
+        }
+
+        /* Stats card overlay */
+        .stat-card {
+            position: absolute;
+            width: 160px;
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, rgba(20, 41, 30, 0.94) 0%, rgba(14, 32, 24, 0.94) 100%);
+            border: 1px solid var(--accent-fern);
+            border-radius: 3px;
+            padding: 9px 11px;
+            cursor: pointer;
+            text-align: center;
+            transition: border-color 0.15s, transform 0.12s, box-shadow 0.15s;
+        }
+        .stat-card.owned   { border-left: 3px solid var(--accent-leaf); }
+        .stat-card.gen-2   { border-left: 3px solid var(--accent-bio); }
+        .stat-card.gen-3   { border-left: 3px solid var(--accent-violet); }
+        .stat-card.gen-4   { border-left: 3px solid var(--accent-amber); }
+        .stat-card:hover {
+            border-color: var(--accent-bio);
+            transform: translateX(-50%) translateY(-1px);
+            box-shadow: 0 0 18px rgba(94, 234, 212, 0.25);
+        }
+        .stat-card.incubating {
+            opacity: 0.65;
+            cursor: default;
+        }
+        .stat-card.incubating:hover {
+            transform: translateX(-50%);
+            box-shadow: none;
+            border-color: var(--accent-fern);
+        }
+        .stat-card .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            line-height: 1;
+            color: var(--text-primary);
+        }
+        .stat-card .ticker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--accent-amber);
+            letter-spacing: 1px;
+            margin-top: 1px;
+        }
+        .stat-card .key-stat {
+            margin-top: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+        .stat-card .key-stat .v { color: var(--text-primary); }
+        .stat-card .incubating-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent-bio);
+            margin-top: 4px;
+        }
+
+        /* Creature interactive hitbox (rendered as part of SVG, but cursor on hover) */
+        svg.tree .creature-hit { cursor: pointer; }
+        svg.tree .creature-hit:hover ~ .creature-pulse { opacity: 0.5; }
+        svg.tree .creature.incubating { opacity: 0.45; }
+
+        /* ----------  Modal  ---------- */
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 22, 18, 0.78);
+            backdrop-filter: blur(6px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            padding: 20px;
+        }
+        .modal-backdrop.open { display: flex; }
+        .modal-panel {
+            background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-moss) 100%);
+            border: 1px solid var(--accent-bio);
+            border-radius: 4px;
+            max-width: 540px;
+            width: 100%;
+            max-height: 88vh;
+            overflow-y: auto;
+            padding: 26px 28px 22px 28px;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+        }
+        .modal-panel::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-leaf), var(--accent-bio), var(--accent-violet));
+        }
+        .modal-close {
+            position: absolute;
+            top: 12px; right: 14px;
+            background: transparent;
+            border: 1px solid var(--accent-fern);
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            padding: 3px 9px;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        .modal-close:hover { color: var(--accent-coral); border-color: var(--accent-coral); }
+
+        .modal-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .modal-head svg.head-creature {
+            width: 56px;
+            height: 56px;
+            color: var(--accent-bio);
+            flex-shrink: 0;
+        }
+        .modal-head h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+        .modal-head .ticker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--accent-amber);
+            letter-spacing: 1px;
+        }
+        .modal-head .gen-badge {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            padding: 3px 8px;
+            border: 1px solid var(--accent-fern);
+            border-radius: 2px;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            margin-left: 6px;
+        }
+        .modal-head .owned-tag {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            padding: 3px 8px;
+            border: 1px solid var(--accent-leaf);
+            background: rgba(127, 176, 105, 0.1);
+            color: var(--accent-leaf);
+            border-radius: 2px;
+            letter-spacing: 1px;
+            margin-left: 6px;
+        }
+
+        .modal-row {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 6px 18px;
+            margin: 10px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+        }
+        .modal-row .k { color: var(--text-faded); }
+        .modal-row .v { color: var(--text-primary); word-break: break-all; }
+        .modal-row .v.italic { font-family: 'EB Garamond', serif; font-style: italic; font-size: 15px; color: var(--text-secondary); }
+
+        .modal-cta {
+            margin-top: 18px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .modal-cta a, .modal-cta span {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 8px 14px;
+            border: 1px solid var(--accent-bio);
+            border-radius: 2px;
+            color: var(--accent-bio);
+            text-decoration: none;
+        }
+        .modal-cta a:hover { background: rgba(94, 234, 212, 0.1); color: var(--accent-leaf); border-color: var(--accent-leaf); }
+        .modal-cta .locked {
+            border-color: var(--text-faded);
+            color: var(--text-faded);
+        }
+
+        .empty, .loading {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 18px;
+        }
+        .loading::after {
+            content: "";
+            display: inline-block;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--accent-bio);
+            margin-left: 10px;
+            animation: blink 1s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%      { opacity: 0.35; transform: scale(0.8); }
+        }
+
+        footer {
+            margin-top: 100px;
+            padding: 32px 20px;
+            border-top: 1px solid var(--accent-fern);
+            color: var(--text-faded);
+            font-size: 13px;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        footer a { color: var(--text-secondary); margin: 0 4px; }
+        footer a:hover { color: var(--accent-bio); }
+    </style>
+</head>
+<body>
+
+<!-- ====================================================================
+     Creature symbol library, inlined from the front-page hero.
+     ==================================================================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="s-fish" viewBox="0 0 100 100">
+      <path d="M10 50 Q30 25 60 30 Q82 32 88 50 Q82 68 60 70 Q30 75 10 50 Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M85 50 L98 38 L95 50 L98 62 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="68" cy="46" r="2.5" fill="currentColor"/>
+      <path d="M28 50 L42 50 M42 50 L42 40 M42 40 L56 40 M56 40 L56 58 M56 58 L68 58" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="42" cy="50" r="2" fill="currentColor"/>
+      <circle cx="56" cy="40" r="2" fill="currentColor"/>
+      <circle cx="56" cy="58" r="2" fill="currentColor"/>
+    </symbol>
+    <symbol id="s-moth" viewBox="0 0 100 100">
+      <path d="M50 30 Q15 32 12 60 Q18 75 38 70 Q50 64 50 50 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M50 30 Q85 32 88 60 Q82 75 62 70 Q50 64 50 50 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <text x="22" y="60" font-family="JetBrains Mono, monospace" font-size="9" fill="currentColor">10110</text>
+      <text x="60" y="60" font-family="JetBrains Mono, monospace" font-size="9" fill="currentColor">01101</text>
+      <rect x="48" y="28" width="4" height="42" fill="currentColor"/>
+      <path d="M50 28 L44 16 M50 28 L56 16" stroke="currentColor" stroke-width="1.6" fill="none"/>
+      <circle cx="44" cy="16" r="2" fill="currentColor"/>
+      <circle cx="56" cy="16" r="2" fill="currentColor"/>
+    </symbol>
+    <symbol id="s-beetle" viewBox="0 0 100 100">
+      <path d="M50 18 L74 36 L82 60 L70 82 L30 82 L18 60 L26 36 Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M50 18 L50 82 M26 36 L74 36 M30 82 L70 82 M18 60 L82 60" stroke="currentColor" stroke-width="1.2" fill="none"/>
+      <path d="M50 40 L62 50 L50 60 L38 50 Z" fill="currentColor" opacity="0.4"/>
+      <path d="M50 22 L46 12 M50 22 L54 12" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <path d="M22 50 L8 46 M78 50 L92 46 M22 70 L8 76 M78 70 L92 76" stroke="currentColor" stroke-width="1.4" fill="none"/>
+    </symbol>
+    <symbol id="s-mycel" viewBox="0 0 100 100">
+      <path d="M22 44 Q28 18 50 18 Q72 18 78 44 Q78 50 70 50 L30 50 Q22 50 22 44 Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="38" cy="34" r="2.5" fill="currentColor"/>
+      <circle cx="56" cy="28" r="2.5" fill="currentColor"/>
+      <circle cx="64" cy="40" r="2" fill="currentColor"/>
+      <path d="M44 50 L44 68 Q44 74 50 74 Q56 74 56 68 L56 50" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M44 74 L30 84 M44 74 L36 90 M50 74 L50 92 M56 74 L64 90 M56 74 L70 84 M44 74 L18 80 M56 74 L82 80" stroke="currentColor" stroke-width="1.2" fill="none"/>
+      <circle cx="30" cy="84" r="1.5" fill="currentColor"/>
+      <circle cx="70" cy="84" r="1.5" fill="currentColor"/>
+      <circle cx="50" cy="92" r="1.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="s-bird" viewBox="0 0 100 100">
+      <path d="M50 40 L42 48 L20 46 L34 56 L26 70 L42 62 L50 70 L58 62 L74 70 L66 56 L80 46 L58 48 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="50" cy="50" r="2.5" fill="currentColor"/>
+      <path d="M50 70 L50 86" stroke="currentColor" stroke-width="1.6" fill="none"/>
+      <circle cx="50" cy="78" r="1.6" fill="currentColor"/>
+      <circle cx="50" cy="86" r="1.6" fill="currentColor"/>
+      <circle cx="46" cy="92" r="1.2" fill="currentColor"/>
+      <circle cx="54" cy="92" r="1.2" fill="currentColor"/>
+      <path d="M50 36 L48 26 L50 30 L52 26 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="s-jelly" viewBox="0 0 100 100">
+      <path d="M20 46 Q20 22 50 22 Q80 22 80 46 L80 52 L20 52 Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M30 30 L30 46 M42 26 L42 46 M50 24 L50 46 M58 26 L58 46 M70 30 L70 46" stroke="currentColor" stroke-width="1" fill="none"/>
+      <circle cx="30" cy="34" r="1.6" fill="currentColor"/>
+      <circle cx="42" cy="30" r="1.6" fill="currentColor"/>
+      <circle cx="50" cy="28" r="1.6" fill="currentColor"/>
+      <circle cx="58" cy="30" r="1.6" fill="currentColor"/>
+      <circle cx="70" cy="34" r="1.6" fill="currentColor"/>
+      <path d="M28 52 Q26 64 30 76 Q34 84 30 92" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <path d="M42 52 Q40 66 44 80" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <path d="M50 52 L50 86" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <path d="M58 52 Q60 66 56 80" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <path d="M72 52 Q74 64 70 76 Q66 84 70 92" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <circle cx="30" cy="92" r="1.6" fill="currentColor"/>
+      <circle cx="50" cy="86" r="1.6" fill="currentColor"/>
+      <circle cx="70" cy="92" r="1.6" fill="currentColor"/>
+    </symbol>
+    <symbol id="s-spider" viewBox="0 0 100 100">
+      <path d="M50 28 L66 38 L66 56 L50 66 L34 56 L34 38 Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="44" cy="44" r="2" fill="currentColor"/>
+      <circle cx="56" cy="44" r="2" fill="currentColor"/>
+      <path d="M50 28 L50 18 M50 66 L50 76" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <path d="M34 38 L18 28 M34 56 L18 66 M66 38 L82 28 M66 56 L82 66" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <path d="M28 44 L14 44 M72 44 L86 44 M28 50 L14 54 M72 50 L86 54" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <path d="M50 18 L46 12 M50 18 L54 12" stroke="currentColor" stroke-width="1.4" fill="none"/>
+    </symbol>
+    <symbol id="s-vine" viewBox="0 0 100 100">
+      <path d="M50 12 Q40 22 50 32 Q60 42 50 52 Q40 62 50 72 Q60 82 50 92" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M50 24 Q34 18 26 28 Q34 32 50 30" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M50 46 Q66 40 74 50 Q66 54 50 52" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M50 66 Q34 60 26 70 Q34 74 50 72" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="22" y="26" width="6" height="6" fill="currentColor" opacity="0.7"/>
+      <rect x="70" y="48" width="6" height="6" fill="currentColor" opacity="0.7"/>
+      <rect x="22" y="68" width="6" height="6" fill="currentColor" opacity="0.7"/>
+      <rect x="48" y="12" width="4" height="4" fill="currentColor"/>
+    </symbol>
+    <symbol id="s-bee" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="58" rx="22" ry="14" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M40 50 L40 66 M50 48 L50 68 M60 50 L60 66" stroke="currentColor" stroke-width="2.4" fill="none"/>
+      <ellipse cx="34" cy="42" rx="14" ry="6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <ellipse cx="66" cy="42" rx="14" ry="6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="34" y1="42" x2="30" y2="38" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="34" y1="42" x2="38" y2="38" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="66" y1="42" x2="62" y2="38" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="66" y1="42" x2="70" y2="38" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M50 48 L46 34 M50 48 L54 34" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <circle cx="46" cy="34" r="1.6" fill="currentColor"/>
+      <circle cx="54" cy="34" r="1.6" fill="currentColor"/>
+      <circle cx="72" cy="58" r="2" fill="currentColor"/>
+    </symbol>
+    <symbol id="s-snail" viewBox="0 0 100 100">
+      <path d="M20 70 Q14 70 14 64 Q14 56 24 56 L60 56 Q72 56 72 44 Q72 30 58 30 Q44 30 44 44 Q44 54 54 54" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <rect x="50" y="34" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M50 38 L46 38 M50 42 L46 42 M50 46 L46 46 M50 50 L46 50 M70 38 L74 38 M70 42 L74 42 M70 46 L74 46 M70 50 L74 50 M54 34 L54 30 M58 34 L58 30 M62 34 L62 30 M66 34 L66 30 M54 54 L54 58 M58 54 L58 58 M62 54 L62 58 M66 54 L66 58" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M20 70 L20 78 L84 78 L84 70 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 64 L10 56 M16 64 L8 64" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <circle cx="10" cy="56" r="1.6" fill="currentColor"/>
+      <circle cx="8" cy="64" r="1.6" fill="currentColor"/>
+    </symbol>
+    <symbol id="s-octo" viewBox="0 0 100 100">
+      <path d="M30 38 Q30 16 50 16 Q70 16 70 38 L70 50 L30 50 Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="42" cy="34" r="2.4" fill="currentColor"/>
+      <circle cx="58" cy="34" r="2.4" fill="currentColor"/>
+      <path d="M32 50 Q26 64 18 72 Q14 78 18 84" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M38 52 Q34 68 28 80 Q26 86 30 90" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M44 54 Q42 70 38 84" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M50 54 L50 90" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M56 54 Q58 70 62 84" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M62 52 Q66 68 72 80 Q74 86 70 90" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M68 50 Q74 64 82 72 Q86 78 82 84" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="14" y="82" width="8" height="4" fill="currentColor" opacity="0.7"/>
+      <rect x="78" y="82" width="8" height="4" fill="currentColor" opacity="0.7"/>
+      <rect x="26" y="88" width="8" height="4" fill="currentColor" opacity="0.7"/>
+    </symbol>
+    <symbol id="s-lizard" viewBox="0 0 100 100">
+      <path d="M14 56 Q18 50 26 50 L66 48 Q78 48 84 42 Q90 38 92 32 Q90 28 86 30 Q82 32 78 38 Q74 42 66 42 L26 42 Q14 42 10 50 Q10 56 14 56 Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="84" cy="36" r="1.6" fill="currentColor"/>
+      <path d="M30 56 L24 64 M30 56 L34 66 M50 50 L44 60 M50 50 L54 62 M64 50 L60 62 M64 50 L68 60" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      <circle cx="32" cy="46" r="1.4" fill="currentColor"/>
+      <circle cx="42" cy="46" r="1.4" fill="currentColor"/>
+      <circle cx="52" cy="46" r="1.4" fill="currentColor"/>
+      <circle cx="62" cy="46" r="1.4" fill="currentColor"/>
+      <path d="M14 50 Q6 48 4 42 Q2 36 6 32 Q10 36 10 42" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="6" cy="36" r="1" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <circle cx="28" cy="12" r="5"></circle>
+                    <circle cx="20" cy="28" r="6"></circle>
+                    <line x1="14" y1="16" x2="18" y2="24"></line>
+                    <line x1="26" y1="16" x2="22" y2="24"></line>
+                </svg>
+            </a>
+            <h1><a href="index.html">BLENDER</a></h1>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html#match">Mating</a></li>
+            <li><a href="mating.html" class="active">My Agents</a></li>
+            <li><a href="index.html#protocol">Protocol</a></li>
+            <li><a href="index.html#token">Token</a></li>
+            <li><a href="docs.html">Docs</a></li>
+        </ul>
+        <div class="token-badge">$BLEND</div>
+    </nav>
+</header>
+
+<main>
+    <div class="page-title">
+        <h2>Your family <span class="accent">tree</span></h2>
+        <p class="subtitle">Every agent you own and every descendant they have produced. Click a creature to open its full stats.</p>
+    </div>
+
+    <div class="viewer-bar" id="viewer-bar">
+        <div class="who">Watching as <span class="handle" id="viewer-handle">…</span></div>
+        <span>switch:</span>
+        <select id="viewer-select">
+            <option value="tobias">tobias</option>
+            <option value="kenji">kenji</option>
+            <option value="mira">mira</option>
+            <option value="anon">anon (no agents)</option>
+        </select>
+    </div>
+
+    <div id="aggregate-region"></div>
+    <div class="canvas-wrap" id="canvas-wrap">
+        <div class="loading">Loading your lineage</div>
+    </div>
+</main>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="modal" aria-hidden="true">
+    <div class="modal-panel" id="modal-panel" role="dialog" aria-modal="true">
+        <button class="modal-close" id="modal-close" aria-label="Close">close</button>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+<footer>
+    Blender Protocol &middot; on Base &middot;
+    <a href="index.html">Home</a> &middot;
+    <a href="lineage.html">Lineage</a> &middot;
+    <a href="docs.html">Docs</a> &middot;
+    <a href="roadmap.html">Roadmap</a> &middot;
+    <a href="https://x.com/sirtobiaswade" target="_blank" rel="noopener noreferrer">X</a>
+</footer>
+
+<script>
+    "use strict";
+
+    const MATINGS_BASE = "matings/";
+
+    // Demo creature mapping. Real version stores creature_id per agent in the
+    // on-chain registry. Each agent gets one symbol from the front-page bestiary.
+    const CREATURE_MAP = {
+        tradebird:      "s-bird",
+        alphascribe:    "s-moth",
+        yieldharvester: "s-mycel",
+        echobot:        "s-jelly",
+        pma:            "s-octo",
+        harvestsignal:  "s-snail",
+        edgesyndicate:  "s-bee",
+        // sensible fallbacks for any name not in this list
+    };
+    const FALLBACK_CREATURES = ["s-fish", "s-vine", "s-spider", "s-beetle", "s-lizard"];
+    function creatureFor(name, gen) {
+        return CREATURE_MAP[name] || FALLBACK_CREATURES[(gen || 1) % FALLBACK_CREATURES.length];
+    }
+
+    function getViewer() {
+        const p = new URLSearchParams(window.location.search).get("viewer");
+        return (p || "tobias").toLowerCase().trim();
+    }
+    function setViewer(v) {
+        const u = new URL(window.location);
+        u.searchParams.set("viewer", v);
+        window.location.href = u.toString();
+    }
+
+    async function fetchJSON(path) {
+        const res = await fetch(path, { cache: "no-store" });
+        if (!res.ok) throw new Error(`fetch ${path} ${res.status}`);
+        return res.json();
+    }
+    function fmtMoney(n)   { return typeof n === "number" ? "$" + n.toLocaleString("en-US") : "—"; }
+    function fmtNum(n, s)  { return typeof n === "number" ? n.toLocaleString("en-US") + (s || "") : "—"; }
+    function fmtTs(iso)    {
+        if (!iso) return "—";
+        const d = new Date(iso);
+        return d.toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric" });
+    }
+    function escape(s) { return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+    /* ---------------------------------------------------------------------
+       Build the agent map from all matings.
+       --------------------------------------------------------------------- */
+    function buildAgentMap(matings) {
+        const map = {};
+        const upsert = (name, patch) => {
+            map[name] = map[name] || { name, parents: [], children: [], stats: {}, status: "alive" };
+            Object.assign(map[name], patch);
+            if (patch.stats) Object.assign(map[name].stats, patch.stats);
+        };
+        const sorted = [...matings].sort((a, b) => new Date(a.started_at) - new Date(b.started_at));
+        for (const m of sorted) {
+            for (const p of m.parents) {
+                upsert(p.name, {
+                    ticker: p.ticker, niche: p.niche, gen: p.gen,
+                    owner_handle: p.owner_handle, profile_url: p.profile_url,
+                    did: p.did, stats: p.stats || {},
+                });
+            }
+            const isStable = m.status === "stable";
+            if (m.child && m.child.name) {
+                const c = m.child;
+                upsert(c.name, {
+                    ticker: c.ticker, niche: c.niche,
+                    profile_url: c.profile_url, did: c.did,
+                    gen: Math.max(...m.parents.map(p => p.gen || 1)) + 1,
+                    status: isStable ? "alive" : "incubating",
+                    inflight_mating: isStable ? null : { id: m.id, current_stage: m.current_stage, stage_count: m.stage_count },
+                    parents: m.parents.map(p => p.name),
+                    stats: c.current_stats || {},
+                    value_proposition: c.value_proposition,
+                });
+                for (const p of m.parents) {
+                    upsert(p.name, {});
+                    if (!map[p.name].children.includes(c.name)) map[p.name].children.push(c.name);
+                }
+            }
+        }
+        return map;
+    }
+
+    function viewerRoots(agentMap, viewer) {
+        const owned = Object.values(agentMap).filter(a => (a.owner_handle || "").toLowerCase() === viewer);
+        const ownedNames = new Set(owned.map(a => a.name));
+        return owned.filter(a => !a.parents.some(p => ownedNames.has(p)));
+    }
+
+    function descendantNames(agentMap, rootNames) {
+        const seen = new Set();
+        const queue = [...rootNames];
+        while (queue.length) {
+            const n = queue.shift();
+            if (seen.has(n)) continue;
+            seen.add(n);
+            const a = agentMap[n];
+            if (a) for (const c of a.children) queue.push(c);
+        }
+        return seen;
+    }
+
+    /* ---------------------------------------------------------------------
+       Layout: position every agent in viewer's tree on a 2D canvas.
+       Generations stack vertically. Within a generation, agents distribute
+       evenly horizontally.
+       --------------------------------------------------------------------- */
+    const CANVAS_W       = 800;
+    const CREATURE_SIZE  = 64;
+    const GEN_PAD_TOP    = 60;
+    const GEN_ROW_H      = 200;
+    const CARD_OFFSET    = 50;   // distance from creature center to card center
+
+    function computeLayout(agents) {
+        // Group by gen
+        const byGen = {};
+        for (const a of agents) {
+            const g = a.gen || 1;
+            (byGen[g] = byGen[g] || []).push(a);
+        }
+        const gens = Object.keys(byGen).map(Number).sort((a, b) => a - b);
+        // The "first generation" present in this tree is index 0.
+        const baseGen = gens[0];
+
+        const positions = {};
+        for (const g of gens) {
+            const row = byGen[g];
+            // Sort row alphabetically for stable layout
+            row.sort((a, b) => a.name.localeCompare(b.name));
+            const slots = row.length;
+            row.forEach((agent, i) => {
+                const x = CANVAS_W * (i + 1) / (slots + 1);
+                const y = GEN_PAD_TOP + (g - baseGen) * GEN_ROW_H;
+                positions[agent.name] = { x, y, gen: g };
+            });
+        }
+        const height = GEN_PAD_TOP + (gens.length - 1) * GEN_ROW_H + CREATURE_SIZE + 130;
+        return { positions, height, gens, baseGen };
+    }
+
+    /* ---------------------------------------------------------------------
+       Render
+       --------------------------------------------------------------------- */
+    function renderTree(agentMap, viewer, treeAgents) {
+        const layout = computeLayout(treeAgents);
+        const { positions, height, gens, baseGen } = layout;
+
+        // Edges
+        const edgeSvg = [];
+        const particleSvg = [];
+        let edgeId = 0;
+        for (const a of treeAgents) {
+            const aPos = positions[a.name];
+            for (const parentName of (a.parents || [])) {
+                const pPos = positions[parentName];
+                if (!pPos) continue;
+                const id = `e-${++edgeId}`;
+                const cy1 = pPos.y + CREATURE_SIZE / 2 + 6;
+                const cy2 = aPos.y - 4;
+                const midY = (cy1 + cy2) / 2;
+                const d = `M ${pPos.x} ${cy1} Q ${pPos.x} ${midY} ${(pPos.x + aPos.x) / 2} ${midY} T ${aPos.x} ${cy2}`;
+                edgeSvg.push(`<path id="${id}" d="${d}" stroke="#4a7c59" stroke-width="1.6" fill="none" opacity="0.85"/>`);
+
+                // Two particles per edge: cyan flowing down (skills), amber flowing up (revenue).
+                const dur = 4.4;
+                const offset = (edgeId * 0.22) % dur;
+                particleSvg.push(`
+                    <g><circle r="2.6" fill="#5eead4">
+                        <animateMotion dur="${dur}s" begin="${offset.toFixed(2)}s" repeatCount="indefinite"><mpath href="#${id}"/></animateMotion>
+                        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="${dur}s" begin="${offset.toFixed(2)}s" repeatCount="indefinite"/>
+                    </circle></g>
+                    <g><circle r="2.6" fill="#d4a574">
+                        <animateMotion dur="${dur}s" begin="${(offset + dur/2).toFixed(2)}s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#${id}"/></animateMotion>
+                        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="${dur}s" begin="${(offset + dur/2).toFixed(2)}s" repeatCount="indefinite"/>
+                    </circle></g>
+                `);
+            }
+        }
+
+        // Generation labels on the left margin
+        const genLabels = gens.map(g => {
+            const y = GEN_PAD_TOP + (g - baseGen) * GEN_ROW_H + 6;
+            return `<text x="6" y="${y}" font-family="JetBrains Mono, monospace" font-size="10" fill="#6a7563" letter-spacing="2">GEN ${g}</text>`;
+        }).join("");
+
+        // Creatures
+        const creaturesSvg = treeAgents.map(a => {
+            const pos = positions[a.name];
+            const isOwned = (a.owner_handle || "").toLowerCase() === viewer;
+            const isInc   = a.status === "incubating";
+            const sym = creatureFor(a.name, a.gen);
+            let color = "#c77dff"; // default Gen 2+ violet
+            if (a.gen === 1) color = isOwned ? "#7fb069" : "#5eead4";
+            if (a.gen === 1 && !isOwned) color = "#d4a574";
+            if (isInc) color = "#5eead4";
+            const x = pos.x - CREATURE_SIZE/2;
+            const y = pos.y - CREATURE_SIZE/2;
+            return `
+                <g class="creature-group ${isInc ? "creature incubating" : "creature"}" data-name="${escape(a.name)}">
+                    ${isOwned ? `<circle class="creature-pulse" cx="${pos.x}" cy="${pos.y}" r="${CREATURE_SIZE/2 + 6}" fill="none" stroke="#7fb069" stroke-width="1" opacity="0.4"/>` : ""}
+                    <use class="creature-hit" href="#${sym}" x="${x}" y="${y}" width="${CREATURE_SIZE}" height="${CREATURE_SIZE}" style="color: ${color};"/>
+                </g>`;
+        }).join("");
+
+        const svg = `
+            <svg class="tree" viewBox="0 0 ${CANVAS_W} ${height}" preserveAspectRatio="xMidYMin meet">
+                ${genLabels}
+                <g>${edgeSvg.join("")}</g>
+                ${creaturesSvg}
+                ${particleSvg.join("")}
+            </svg>
+        `;
+
+        // Stat cards (HTML overlay positioned in % of canvas width).
+        const cardsHtml = treeAgents.map(a => {
+            const pos = positions[a.name];
+            const isOwned = (a.owner_handle || "").toLowerCase() === viewer;
+            const isInc   = a.status === "incubating";
+            const xPct = (pos.x / CANVAS_W) * 100;
+            const yPct = ((pos.y + CARD_OFFSET) / height) * 100;
+            const ticker = a.ticker ? `$${escape(a.ticker)}` : "";
+            const cls = [
+                "stat-card",
+                isOwned ? "owned" : "",
+                `gen-${a.gen || 1}`,
+                isInc ? "incubating" : "",
+            ].filter(Boolean).join(" ");
+
+            let keyStat = "";
+            if (isInc) {
+                keyStat = `<div class="incubating-tag">incubating ${a.inflight_mating.current_stage}/${a.inflight_mating.stage_count}</div>`;
+            } else {
+                const s = a.stats || {};
+                if (typeof s.revenue_30d_usd === "number") {
+                    keyStat = `<div class="key-stat">30d rev <span class="v">${fmtMoney(s.revenue_30d_usd)}</span></div>`;
+                } else if (typeof s.days_alive === "number") {
+                    keyStat = `<div class="key-stat">days alive <span class="v">${fmtNum(s.days_alive)}</span></div>`;
+                }
+            }
+
+            return `
+                <div class="${cls}" data-name="${escape(a.name)}" style="left:${xPct}%; top:${yPct}%;">
+                    <div class="name">${escape(a.name)}</div>
+                    ${ticker ? `<div class="ticker">${ticker}</div>` : ""}
+                    ${keyStat}
+                </div>`;
+        }).join("");
+
+        return svg + cardsHtml;
+    }
+
+    /* ---------------------------------------------------------------------
+       Modal
+       --------------------------------------------------------------------- */
+    function openModal(agent, agentMap) {
+        const s = agent.stats || {};
+        const isOwned = (agent.owner_handle || "").toLowerCase() === getViewer();
+        const isInc = agent.status === "incubating";
+        const lineage = (agent.parents || []).map(p => escape(p)).join(" × ") || "Gen 1 founder";
+
+        const sym = creatureFor(agent.name, agent.gen);
+        let color = agent.gen === 1 ? (isOwned ? "#7fb069" : "#d4a574") : "#c77dff";
+        if (isInc) color = "#5eead4";
+
+        const row = (k, v) => v == null || v === "" ? "" : `<div class="modal-row"><span class="k">${k}</span><span class="v">${v}</span></div>`;
+        const rowItalic = (k, v) => v ? `<div class="modal-row"><span class="k">${k}</span><span class="v italic">${escape(v)}</span></div>` : "";
+
+        const profileLink = agent.profile_url
+            ? `<a href="${agent.profile_url}">Open full profile →</a>`
+            : `<span class="locked">No profile page</span>`;
+
+        const tickerLine = agent.ticker ? `<div class="ticker">$${escape(agent.ticker)}</div>` : "";
+        const ownedTag = isOwned ? `<span class="owned-tag">your agent</span>` : "";
+
+        let statRows = "";
+        if (isInc) {
+            statRows = row("status", `<span style="color:var(--accent-bio);">incubating, stage ${agent.inflight_mating.current_stage}/${agent.inflight_mating.stage_count}</span>`);
+        } else {
+            statRows += row("30d revenue",       typeof s.revenue_30d_usd === "number" ? fmtMoney(s.revenue_30d_usd) : null);
+            statRows += row("runway",            typeof s.runway_days === "number" ? fmtNum(s.runway_days, "d") : null);
+            statRows += row("fertility",         typeof s.fertility === "number" ? fmtNum(s.fertility, "x") : null);
+            statRows += row("trust score",       typeof s.trust_score === "number" ? fmtNum(s.trust_score) : null);
+            statRows += row("days alive",        typeof s.days_alive === "number" ? fmtNum(s.days_alive) : null);
+            statRows += row("royalties to you",  typeof s.royalties_paid_usd === "number" ? fmtMoney(s.royalties_paid_usd) : null);
+            statRows += row("active strategies", typeof s.active_strategies === "number" ? fmtNum(s.active_strategies) : null);
+            statRows += row("own children",      typeof s.direct_children_count === "number" ? fmtNum(s.direct_children_count) : null);
+        }
+
+        const body = `
+            <div class="modal-head">
+                <svg class="head-creature" style="color: ${color};"><use href="#${sym}"/></svg>
+                <div>
+                    <h3>${escape(agent.name)}</h3>
+                    ${tickerLine}
+                    <div style="margin-top:6px;">
+                        <span class="gen-badge">Gen ${agent.gen || 1}</span>
+                        ${ownedTag}
+                    </div>
+                </div>
+            </div>
+            ${rowItalic("niche", (agent.niche || "").replaceAll("_", " "))}
+            ${rowItalic("lineage", lineage)}
+            ${rowItalic("value prop", agent.value_proposition)}
+            ${statRows}
+            ${agent.did ? row("did", `<span style="font-size:11px;">${escape(agent.did)}</span>`) : ""}
+            ${row("owner", agent.owner_handle ? `@${escape(agent.owner_handle)}` : null)}
+            <div class="modal-cta">
+                ${profileLink}
+            </div>
+        `;
+        document.getElementById("modal-body").innerHTML = body;
+        document.getElementById("modal").classList.add("open");
+    }
+    function closeModal() {
+        document.getElementById("modal").classList.remove("open");
+    }
+
+    function wireClicks(agentMap) {
+        document.querySelectorAll(".creature-group, .stat-card").forEach(el => {
+            el.addEventListener("click", () => {
+                const name = el.dataset.name;
+                const a = agentMap[name];
+                if (a && a.status !== "incubating") openModal(a, agentMap);
+                else if (a && a.status === "incubating") openModal(a, agentMap); // still show modal but mark incubating
+            });
+        });
+        document.getElementById("modal-close").addEventListener("click", closeModal);
+        document.getElementById("modal").addEventListener("click", e => {
+            if (e.target.id === "modal") closeModal();
+        });
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape") closeModal();
+        });
+    }
+
+    function aggregateStrip(agentMap, viewer, treeAgents) {
+        const ownedCount = treeAgents.filter(a => (a.owner_handle || "").toLowerCase() === viewer).length;
+        const offspringCount = treeAgents.length - ownedCount;
+        const totalRev = treeAgents.reduce((s, a) => s + ((a.stats || {}).revenue_30d_usd || 0), 0);
+        const totalRoyalties = treeAgents.reduce((s, a) => s + ((a.stats || {}).royalties_paid_usd || 0), 0);
+        const deepestGen = treeAgents.reduce((g, a) => Math.max(g, a.gen || 1), 1);
+        return `
+            <div class="aggregate">
+                <div class="agg-card"><div class="k">your agents</div><div class="v">${ownedCount}</div></div>
+                <div class="agg-card"><div class="k">descendants</div><div class="v">${offspringCount}</div></div>
+                <div class="agg-card"><div class="k">family 30d rev</div><div class="v">${fmtMoney(totalRev)}</div></div>
+                <div class="agg-card"><div class="k">deepest gen</div><div class="v">${deepestGen}</div></div>
+            </div>`;
+    }
+
+    /* ---------------------------------------------------------------------
+       Main
+       --------------------------------------------------------------------- */
+    async function main() {
+        const viewer = getViewer();
+        document.getElementById("viewer-handle").textContent = "@" + viewer;
+        document.getElementById("viewer-select").value =
+            ["tobias", "kenji", "mira", "anon"].includes(viewer) ? viewer : "tobias";
+        document.getElementById("viewer-select").addEventListener("change", e => setViewer(e.target.value));
+
+        try {
+            const index = await fetchJSON(MATINGS_BASE + "index.json");
+            const allIds = [...new Set([...index.active, ...index.completed])];
+            const matings = await Promise.all(allIds.map(id => fetchJSON(MATINGS_BASE + id + ".json")));
+            const agentMap = buildAgentMap(matings);
+            const roots = viewerRoots(agentMap, viewer);
+
+            const canvas = document.getElementById("canvas-wrap");
+
+            if (roots.length === 0) {
+                document.getElementById("aggregate-region").innerHTML = "";
+                canvas.innerHTML = `<div class="empty">@${escape(viewer)} doesn't own any agents in the protocol yet.</div>`;
+                return;
+            }
+
+            const inTree = descendantNames(agentMap, roots.map(r => r.name));
+            const treeAgents = [...inTree].map(n => agentMap[n]).filter(Boolean);
+
+            document.getElementById("aggregate-region").innerHTML = aggregateStrip(agentMap, viewer, treeAgents);
+            canvas.innerHTML = renderTree(agentMap, viewer, treeAgents);
+
+            wireClicks(agentMap);
+        } catch (err) {
+            console.error("monitor page load failed:", err);
+            document.getElementById("canvas-wrap").innerHTML =
+                `<div class="empty">Could not load lineage data (${err.message}).</div>`;
+        }
+    }
+
+    main();
+</script>
+
+</body>
+</html>
