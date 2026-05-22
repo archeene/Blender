@@ -59,6 +59,8 @@ PINNED_SKILLS = [
     "clawnch_launch",
     "royalty_cascade",
     "death_check",
+    "social_posting",
+    "x_bridge_readiness",
 ]
 
 

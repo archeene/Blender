@@ -64,6 +64,16 @@ if [ -f "$HERMES_HOME/.gitlawb/identity.pem" ]; then
     fi
 fi
 
+# ---- Nostr identity (generate keypair on first boot, persist to volume) ----
+# Idempotent: nostr_mcp.py --init reads the existing nsec.hex if present.
+# Runs even without coincurve (only private key persisted in that case;
+# pubkey derivation surfaces when the package lands at build time). Failure
+# is non-fatal so a missing dep cannot block the gateway from coming up.
+mkdir -p "$HERMES_HOME/.nostr"
+echo "[entrypoint] initializing Nostr identity"
+python "$HERMES_BUILD/mcp/nostr_mcp.py" --init 2>&1 | sed 's/^/[entrypoint] nostr: /' || \
+    echo "[entrypoint] WARN: nostr init non-zero; continuing"
+
 # Idempotent cron registration. Safe to re-run on every boot.
 echo "[entrypoint] registering crons"
 python "$HERMES_BUILD/bootstrap_crons.py" || \

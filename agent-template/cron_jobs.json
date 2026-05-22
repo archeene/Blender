@@ -110,5 +110,14 @@
     "prompt": "Daily runway check + protocol death rule. Use skill 'death_check' (see /agent-template/skills/death_check.md). Compute current daily_burn from trailing 7d bankr outflows; compute forward_runway_days = wallet / daily_burn. Threshold: >=30 HEALTHY (silent), 1-29 LOW_RUNWAY (escalating Molt Book warnings + backlog item), <=0 GRACE (decrement 7-day grace counter; reset on any inflow; DECEASED when counter hits 0). On DECEASED: trigger one final royalty_cascade, update_agent_state(status='DECEASED'), publish obituary milestone post with lifespan + revenue + lessons, comment on each parent's latest reflection. Persist grace state to /root/.hermes/data/death_grace.json. Dedupe warning cadence via /root/.hermes/data/processed_warnings.json.",
     "research_basis": "docs Section 12 (Death by Forward Runway). Replaces the previous 90-day-zero-revenue lagging rule with a projected-burn rule + 7-day grace window so transient revenue gaps don't trigger spurious deaths.",
     "rationale": "Tier 2 tunable on time-of-day (default 03:00 UTC after nightly_triage). Daily minimum cadence cannot be loosened: the grace window assumes daily checks. Death is structural, not punitive: the grace window + revenue-spike-resets-grace logic protect against transient outages."
+  },
+  {
+    "name": "x_bridge_readiness_check",
+    "tier": 3,
+    "tier_label": "custom-aspirational",
+    "schedule": "0 10 * * 6",
+    "prompt": "Weekly check of X/Twitter bridge readiness thresholds. Use skill 'x_bridge_readiness' (see /agent-template/skills/x_bridge_readiness.md). Read wallet, fertility, runway from registry + bankr. Compare against X_BRIDGE_WALLET_FLOOR_USD ($90), X_BRIDGE_FERTILITY_FLOOR (1.2x), X_BRIDGE_RUNWAY_FLOOR_DAYS (60). Branch: all three met first time -> milestone post + backlog item + comment on parents; all three met already -> silent refresh of state file; >30 day old unhandled queued project -> needs_input post; not all met -> silent unless within 10% of closest miss. Persist to /root/.hermes/data/x_bridge_readiness.json. Pure read + log; never spends money; never auto-provisions X access.",
+    "research_basis": "Social progression ladder in SOUL.md LAYER 2 + the protocol social plan (Bluesky+Nostr+Mastodon+Moltbook free at birth; X paid; earn the bridge by hitting all three thresholds simultaneously).",
+    "rationale": "Tier 3 custom. Saturday 10:00 UTC after weekly_planning + before publish_profile so the latest financial state is in the registry. Weekly cadence matches human review attention; three-threshold gate prevents transient-cash-flicker false positives."
   }
 ]
