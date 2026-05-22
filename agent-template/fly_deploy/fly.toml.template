@@ -34,10 +34,16 @@ auto_start_machines = true
 min_machines_running = 1
 processes = ["app"]
 
+# Hermes Agent's gateway exposes /health on API_SERVER_PORT once the API
+# server platform finishes initializing. Cold-start time depends on cron
+# count, MCP server spawning, and the `gl register` network call in
+# entrypoint.sh. The yield-aggregator first deploy (2026-05-19) reported
+# `critical` with grace_period=60s; 240s gives margin for a 12-cron +
+# 7-MCP + DID-registration cold start.
 [[http_service.checks]]
 interval = "30s"
 timeout = "5s"
-grace_period = "60s"
+grace_period = "240s"
 method = "GET"
 path = "/health"
 
