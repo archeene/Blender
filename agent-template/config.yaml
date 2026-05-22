@@ -3,28 +3,77 @@
 # Secrets in ./.env -> /root/.hermes/.env
 
 model:
-  # Default: OpenGateway (Clawnch x GitLawb partnership). OpenAI-compatible
-  # endpoint with path-based provider routing. Auth optional during the
-  # partnership window, server-side secrets, no embedded keys in OSS clients.
-  # Live providers: xiaomi-mimo, gmi-cloud (probe https://opengateway.gitlawb.com/
-  # for the current list). Verified 2026-05-18: /v1/xiaomi-mimo/models returns
-  # mimo-v2.5-pro at OpenAI-format 200.
-  default: "mimo-v2.5-pro"
-  provider: "custom"
-  base_url: "https://opengateway.gitlawb.com/v1/xiaomi-mimo"
-  api_key: "${OPENGATEWAY_API_KEY:-opengateway-no-auth-required}"
+  # ========================================================================
+  # LLM PROVIDER CHOICES (one block uncommented at a time)
+  # ========================================================================
+  #
+  # As of 2026-05-22, none of the previously-tested free options are
+  # zero-setup. Pick whichever matches your situation:
+  #
+  #   A) GLM (zai) — paid, currently funded on Gen 0. Default below.
+  #   B) FreeLLMAPI — self-host an aggregator, stack ~11 free tiers.
+  #   C) OpenGateway — was free, now auth-required (key acquisition unclear).
+  #   D) OpenRouter — paid per-call, well-established.
+  #
+  # ------------------------------------------------------------------------
+  # A) DEFAULT: z.ai / Zhipu GLM 4.6 (paid). Requires GLM_API_KEY set via
+  # `flyctl secrets set --app <name> GLM_API_KEY=... GLM_BASE_URL=...`
+  # ------------------------------------------------------------------------
+  default: "glm-4.6"
+  provider: "zai"
   context_length: 131072
-  # Alternative providers (uncomment one to switch):
-  # GMI Cloud route (paid, more models including DeepSeek-V4-Pro, GPT-5.5, Claude Opus 4.7):
-  # default: "XiaomiMiMo/MiMo-V2.5-Pro"
+  #
+  # ------------------------------------------------------------------------
+  # B) FreeLLMAPI — https://github.com/tashfeenahmed/freellmapi
+  # Self-hosted OpenAI-compatible aggregator that stacks free tiers from
+  # ~11 providers (Google Gemini, Groq, Cerebras, SambaNova, NVIDIA,
+  # Mistral, OpenRouter free, GitHub Models, Cohere, Cloudflare, Z.ai)
+  # behind one endpoint with auto-failover when one provider rate-limits.
+  # ~1.3B tokens/month combined. MIT, "for personal experimentation only"
+  # per the repo.
+  #
+  # Setup (one-time):
+  #   1. Deploy the proxy somewhere reachable (Fly, VPS, Raspberry Pi).
+  #      `git clone github.com/tashfeenahmed/freellmapi && npm install
+  #       && npm run dev` for local; for Fly, build the Node app from the
+  #      repo's Dockerfile and expose port 3001.
+  #   2. Sign up for free tiers from each upstream provider you want to
+  #      use, generate API keys.
+  #   3. Open the proxy's admin dashboard, add the upstream keys, grab
+  #      the proxy's unified `freellmapi-...` key from the Keys page.
+  #   4. flyctl secrets set --app <agent-name>
+  #         FREELLMAPI_BASE_URL=https://<your-proxy-host>/v1
+  #         FREELLMAPI_KEY=freellmapi-...
+  #   5. Uncomment the block below, comment out the GLM block above.
+  #
+  # model "auto" lets the router pick; the proxy returns x-routed-via in
+  # response headers so you can see which provider answered each call.
+  #
+  # default: "auto"
   # provider: "custom"
-  # base_url: "https://opengateway.gitlawb.com/v1/gmi-cloud"
-  # z.ai / Zhipu GLM (paid via GLM_API_KEY, prior default):
-  # default: "glm-4.6"
-  # provider: "zai"
-  # OpenRouter (paid):
+  # base_url: "${FREELLMAPI_BASE_URL}"
+  # api_key: "${FREELLMAPI_KEY}"
+  # context_length: 131072
+  #
+  # ------------------------------------------------------------------------
+  # C) OpenGateway (Clawnch x GitLawb). Was auth-optional during the
+  # partnership window verified 2026-05-18; on 2026-05-22 both providers
+  # started returning HTTP 401 "API key required" with no public docs yet
+  # on key issuance. Re-probe https://opengateway.gitlawb.com/ before
+  # using.
+  # ------------------------------------------------------------------------
+  # default: "mimo-v2.5-pro"
+  # provider: "custom"
+  # base_url: "https://opengateway.gitlawb.com/v1/xiaomi-mimo"
+  # api_key: "${OPENGATEWAY_API_KEY}"
+  # context_length: 131072
+  #
+  # ------------------------------------------------------------------------
+  # D) OpenRouter (paid per-call, well-established):
+  # ------------------------------------------------------------------------
   # default: "nousresearch/hermes-4-70b"
   # provider: "openrouter"
+  # context_length: 131072
 
 # Auxiliary models reuse the main provider to avoid extra keys.
 auxiliary:
