@@ -66,7 +66,7 @@ PROTOCOL RULES:
 3. LAYER 2 of SOUL.md starts EMPTY; the offspring fills it over its lifetime.
 
 4. Cron skeleton has three tiers:
-   - Tier 1 hygiene (IMMUTABLE, same across all offspring): monitoring_scan (*/15 * * * *), nightly_triage (0 2 * * *), weekly_planning (0 9 * * 1), weekly_reflection (0 17 * * 5).
+   - Tier 1 hygiene (IMMUTABLE, same across all offspring): monitoring_scan (*/15 * * * *), nightly_triage (0 2 * * *), weekly_planning (0 9 * * 1), weekly_reflection (0 17 * * 5), protocol_sync (0 * * * *). All five MUST appear in cron_jobs with tier=1. The post-synthesis validator will reject and auto-merge any missing Tier-1 hygiene cron.
    - Tier 2 tunable: hourly_action, morning_briefing, weekly_content. Pick the parent's tuning that is CLOSER to the offspring's locked niche. weekly_content may be disabled only if the locked niche genuinely has no public-content output.
    - Tier 3 extensible: include the most niche-relevant custom crons from either parent, capped at 8 total. Drop crons that don't fit the offspring's niche.
 
@@ -221,6 +221,102 @@ REQUIRED_MANIFEST_FIELDS = [
     "synthesis_notes",
 ]
 
+# Protocol-standard Tier-1 hygiene crons. Every Blender offspring MUST register
+# all five at birth. The LLM is prompted to include them, but if it drops any
+# (Hermes 4 70B dropped protocol_sync from yield-aggregator's manifest, 2026-05-19),
+# the synthesizer auto-merges the missing ones from this canonical set rather
+# than shipping an offspring that can't poll the bulletin board.
+TIER1_HYGIENE_CRONS = [
+    {
+        "name": "monitoring_scan",
+        "tier": 1,
+        "tier_label": "hygiene",
+        "schedule": "*/15 * * * *",
+        "prompt": (
+            "Scan current operational state every 15 minutes. Read system metrics, "
+            "check for anomalies vs MEMORY.md thresholds, flag urgent items needing "
+            "the next hourly_action. Output a single status line; if anything is "
+            "urgent, queue it for hourly_action."
+        ),
+    },
+    {
+        "name": "nightly_triage",
+        "tier": 1,
+        "tier_label": "hygiene",
+        "schedule": "0 2 * * *",
+        "prompt": (
+            "Triage the day. Review what fired, what worked, what didn't. Roll up "
+            "revenue, drawdown, errors. Update operational state in USER.md."
+        ),
+    },
+    {
+        "name": "weekly_planning",
+        "tier": 1,
+        "tier_label": "hygiene",
+        "schedule": "0 9 * * 1",
+        "prompt": (
+            "Pick top 3 backlog items for the week. Sequence them. Output the week "
+            "plan as a project list."
+        ),
+    },
+    {
+        "name": "weekly_reflection",
+        "tier": 1,
+        "tier_label": "hygiene",
+        "schedule": "0 17 * * 5",
+        "prompt": (
+            "End-of-week reflection. What lessons emerged? What patterns are "
+            "working? Update MEMORY.md lessons section."
+        ),
+    },
+    {
+        "name": "protocol_sync",
+        "tier": 1,
+        "tier_label": "hygiene",
+        "schedule": "0 * * * *",
+        "prompt": (
+            "Run the protocol_sync skill: fetch the Blender protocol bulletin "
+            "board manifest, diff against processed_bulletins.json, apply "
+            "machine_instructions for required/urgent bulletins within the safety "
+            "allow-list, queue recommendations into the project backlog, log to "
+            "Molt Book. Reject anything outside the allow-list and publish a "
+            "needs_input post."
+        ),
+    },
+]
+
+TIER1_REQUIRED_NAMES = {c["name"] for c in TIER1_HYGIENE_CRONS}
+
+
+def enforce_tier1_hygiene(manifest: dict) -> list[str]:
+    """Auto-merge any missing Tier-1 hygiene crons from the canonical set.
+
+    Returns the list of cron names that had to be auto-merged (empty list means
+    the LLM produced everything correctly). Logs loudly when merging so the
+    operator can see the LLM dropped a required cron.
+    """
+    crons = manifest.get("cron_jobs")
+    if not isinstance(crons, list):
+        # Validator will flag the missing/wrong-typed cron_jobs field separately.
+        return []
+
+    existing_names = {c.get("name") for c in crons if isinstance(c, dict)}
+    added = []
+    for canonical in TIER1_HYGIENE_CRONS:
+        if canonical["name"] not in existing_names:
+            crons.append(dict(canonical))
+            added.append(canonical["name"])
+
+    if added:
+        print(
+            f"[synth] auto-merged missing Tier-1 hygiene crons: {added}. "
+            f"The LLM produced a manifest missing protocol-standard crons; "
+            f"the synthesizer is enforcing them per protocol rules.",
+            file=sys.stderr,
+        )
+        manifest["cron_jobs"] = crons
+    return added
+
 
 def validate_manifest(manifest: dict) -> list[str]:
     """Run cheap structural checks on the manifest. Returns list of issues."""
@@ -234,17 +330,13 @@ def validate_manifest(manifest: dict) -> list[str]:
         if "Maximize the value of $TOKEN_SELF" not in manifest["soul_md"]:
             issues.append("soul_md missing immutable LAYER 0 terminal goal")
     if "cron_jobs" in manifest and isinstance(manifest["cron_jobs"], list):
-        tier1_names = {
-            "monitoring_scan",
-            "nightly_triage",
-            "weekly_planning",
-            "weekly_reflection",
-        }
         present_tier1 = {
             c.get("name") for c in manifest["cron_jobs"] if c.get("tier") == 1
         }
-        missing_tier1 = tier1_names - present_tier1
+        missing_tier1 = TIER1_REQUIRED_NAMES - present_tier1
         if missing_tier1:
+            # Should never reach here after enforce_tier1_hygiene runs, but kept
+            # as a safety net in case anyone calls validate_manifest standalone.
             issues.append(
                 f"cron_jobs missing required Tier-1 hygiene crons: {sorted(missing_tier1)}"
             )
@@ -350,6 +442,12 @@ def main() -> int:
             file=sys.stderr,
         )
         return 2
+
+    # Enforce Tier-1 hygiene cron presence BEFORE validation so the validator
+    # sees the corrected manifest. Auto-merges canonical entries for any cron
+    # the LLM dropped; per protocol, no offspring is allowed to ship without
+    # the full Tier-1 set.
+    enforce_tier1_hygiene(manifest)
 
     issues = validate_manifest(manifest)
     if issues:
