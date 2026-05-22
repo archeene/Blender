@@ -98,11 +98,41 @@ def _init_db() -> None:
             CREATE INDEX IF NOT EXISTS idx_rev_agent_ts ON revenue_events(agent_name, ts);
             """
         )
+        # Phase 2b migration: add did_gitlawb column. Nullable for back-compat
+        # with rows registered before gitlawb identity issuance was wired.
+        # Once present, the DID is the canonical identity; name remains the
+        # human-friendly alias. Anchor on-chain via the gitlawb DIDRegistry
+        # contract at 0x8046284116C5ac6724adbBf860feBeA85692d574 (Base mainnet)
+        # for verifiable agent identity beyond this local registry.
+        existing_cols = {
+            row["name"] for row in c.execute("PRAGMA table_info(agents)").fetchall()
+        }
+        if "did_gitlawb" not in existing_cols:
+            c.execute("ALTER TABLE agents ADD COLUMN did_gitlawb TEXT")
+            c.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_agents_did ON agents(did_gitlawb) WHERE did_gitlawb IS NOT NULL")
 
 
 _init_db()
 
 mcp = FastMCP("blender-registry")
+
+
+def _validate_did(did: str | None) -> str | None:
+    """Cheap shape check on a gitlawb DID. Returns the DID if valid, else raises.
+
+    Accepts did:key:z6Mk... (off-chain ephemeral) and did:gitlawb:z6Mk... (the
+    canonical Blender form, anchored on the gitlawb DIDRegistry). Empty/None
+    falls through unchanged for back-compat with rows registered before Phase 2b.
+    """
+    if did is None or did == "":
+        return None
+    if not (did.startswith("did:key:") or did.startswith("did:gitlawb:")):
+        raise ValueError(
+            f"invalid DID format: {did!r}. Expected did:key:z6Mk... or did:gitlawb:z6Mk..."
+        )
+    if len(did) < 12:
+        raise ValueError(f"DID too short: {did!r}")
+    return did
 
 
 @mcp.tool()
@@ -118,6 +148,7 @@ def register_agent(
     x402_endpoint: str | None = None,
     skill_headline: str | None = None,
     service_description: str | None = None,
+    did_gitlawb: str | None = None,
 ) -> dict[str, Any]:
     """Register a new agent in the Blender Agent Registry.
 
@@ -125,27 +156,47 @@ def register_agent(
     metadata fields without resetting operational state (wallet, runway,
     fertility, status). Use update_agent_state to change those.
 
+    did_gitlawb (optional): the agent's cryptographic identity from gitlawb's
+    `gl identity new`. Once set on an agent, it becomes the canonical identity
+    (the agent's name remains as a human-friendly alias). Future writes to that
+    agent are expected to be signed against this DID. Accepts did:key:z6Mk...
+    or did:gitlawb:z6Mk... forms.
+
     Returns the full registry record after insert/update.
     """
+    did_gitlawb = _validate_did(did_gitlawb)
     parents_json = json.dumps(parents or [])
     now = int(time.time())
     with _conn() as c:
         existing = c.execute(
-            "SELECT name FROM agents WHERE name = ?", (name,)
+            "SELECT name, did_gitlawb FROM agents WHERE name = ?", (name,)
         ).fetchone()
         if existing:
+            # Once a DID is set, refuse to overwrite it with a different one.
+            # Allows setting None -> DID (initial issuance) but not DID -> different DID.
+            existing_did = existing["did_gitlawb"]
+            if existing_did and did_gitlawb and existing_did != did_gitlawb:
+                return {
+                    "error": (
+                        f"agent {name!r} already registered with "
+                        f"did_gitlawb={existing_did!r}; refusing to overwrite "
+                        f"with {did_gitlawb!r}. Use update_agent_did to rotate."
+                    )
+                }
+            final_did = did_gitlawb or existing_did
             c.execute(
                 """
                 UPDATE agents SET
                     ticker = ?, niche = ?, archetype_lane = ?, generation = ?,
                     parents = ?, tier_n = ?, tier_m = ?, x402_endpoint = ?,
-                    skill_headline = ?, service_description = ?, updated_at = ?
+                    skill_headline = ?, service_description = ?,
+                    did_gitlawb = ?, updated_at = ?
                 WHERE name = ?
                 """,
                 (
                     ticker, niche, archetype_lane, generation, parents_json,
                     tier_n, tier_m, x402_endpoint, skill_headline,
-                    service_description, now, name,
+                    service_description, final_did, now, name,
                 ),
             )
         else:
@@ -154,25 +205,37 @@ def register_agent(
                 INSERT INTO agents (
                     name, ticker, niche, archetype_lane, generation, parents,
                     tier_n, tier_m, x402_endpoint, skill_headline,
-                    service_description, created_at, updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    service_description, did_gitlawb, created_at, updated_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     name, ticker, niche, archetype_lane, generation,
                     parents_json, tier_n, tier_m, x402_endpoint,
-                    skill_headline, service_description, now, now,
+                    skill_headline, service_description, did_gitlawb, now, now,
                 ),
             )
     return get_agent(name=name)
 
 
 @mcp.tool()
-def get_agent(name: str) -> dict[str, Any]:
-    """Read one agent's full registry record by name."""
+def get_agent(name: str | None = None, did_gitlawb: str | None = None) -> dict[str, Any]:
+    """Read one agent's full registry record.
+
+    Lookup precedence: did_gitlawb (canonical, if provided), then name.
+    Either parameter alone is sufficient; if both are provided and disagree,
+    the DID wins.
+    """
+    if not name and not did_gitlawb:
+        return {"error": "must provide name or did_gitlawb"}
     with _conn() as c:
-        row = c.execute("SELECT * FROM agents WHERE name = ?", (name,)).fetchone()
+        if did_gitlawb:
+            row = c.execute(
+                "SELECT * FROM agents WHERE did_gitlawb = ?", (did_gitlawb,)
+            ).fetchone()
+        else:
+            row = c.execute("SELECT * FROM agents WHERE name = ?", (name,)).fetchone()
     if not row:
-        return {"error": f"agent not found: {name}"}
+        return {"error": f"agent not found: {did_gitlawb or name}"}
     rec = dict(row)
     rec["parents"] = json.loads(rec.get("parents") or "[]")
     return rec

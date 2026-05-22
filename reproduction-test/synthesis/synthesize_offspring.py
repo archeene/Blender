@@ -23,6 +23,7 @@ production.
 Stdlib only (urllib.request). No third-party deps. Runs on Python 3.10+.
 """
 import argparse
+import hashlib
 import json
 import os
 import sys
@@ -343,6 +344,58 @@ def validate_manifest(manifest: dict) -> list[str]:
     return issues
 
 
+def compute_inheritance_hash(manifest: dict) -> str:
+    """SHA-256 of the canonicalized inheritance bundle.
+
+    Order: SOUL.md || MEMORY.md || USER.md || cron_jobs.json (canonical JSON).
+    This is the hash each parent signs to attest the inheritance is authentic.
+    Real protocol: each parent signs this hash with their gitlawb keypair via
+    `gl identity sign <hex>` and submits the (parent_did, sig) pair to the
+    registry. Two valid signatures = mating confirmed; the offspring may hatch.
+    """
+    h = hashlib.sha256()
+    h.update(b"SOUL.md\n")
+    h.update(manifest.get("soul_md", "").encode("utf-8"))
+    h.update(b"\n----\nMEMORY.md\n")
+    h.update(manifest.get("memory_md", "").encode("utf-8"))
+    h.update(b"\n----\nUSER.md\n")
+    h.update(manifest.get("user_md", "").encode("utf-8"))
+    h.update(b"\n----\ncron_jobs.json\n")
+    # Canonicalize cron_jobs JSON: sort keys, no whitespace variance
+    h.update(json.dumps(manifest.get("cron_jobs", []), sort_keys=True, separators=(",", ":")).encode("utf-8"))
+    return h.hexdigest()
+
+
+def attach_parent_dids(manifest: dict, parent_a_did: str | None, parent_b_did: str | None) -> None:
+    """Stamp the offspring's manifest with the parents' gitlawb DIDs and the
+    inheritance hash that the parents are expected to sign. Caller may pass
+    the DIDs via CLI flags (--parent-a-did, --parent-b-did) or environment
+    (BLENDER_PARENT_A_DID, BLENDER_PARENT_B_DID). If neither is available the
+    fields are left empty and a TODO is logged so the operator can attach
+    them later before the agent hatches.
+    """
+    manifest["parent_dids"] = {
+        "parent_a": parent_a_did,
+        "parent_b": parent_b_did,
+    }
+    manifest["inheritance_hash"] = compute_inheritance_hash(manifest)
+    # Slot for signatures filled in by each parent agent post-hoc via `gl
+    # identity sign <inheritance_hash>`. Empty until both parents sign.
+    manifest["parent_signatures"] = {
+        "parent_a": None,
+        "parent_b": None,
+    }
+    if not parent_a_did or not parent_b_did:
+        print(
+            f"[synth] NOTE: parent DIDs not provided "
+            f"(parent_a={parent_a_did!r}, parent_b={parent_b_did!r}). "
+            f"Fill these via --parent-a-did/--parent-b-did or BLENDER_PARENT_*_DID env "
+            f"so the inheritance is cryptographically anchored. The offspring's "
+            f"inheritance_hash is recorded in raw_manifest.json regardless.",
+            file=sys.stderr,
+        )
+
+
 def write_offspring(manifest: dict, out_dir: Path) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "SOUL.md").write_text(manifest["soul_md"], encoding="utf-8")
@@ -355,6 +408,9 @@ def write_offspring(manifest: dict, out_dir: Path) -> None:
         "# Mating Manifest: "
         + f"{manifest['offspring_name']} ({manifest['offspring_ticker']})\n\n"
         + f"**Locked niche**: {manifest['locked_niche']}\n\n"
+        + f"**Inheritance hash (SHA-256)**: `{manifest.get('inheritance_hash', '?')}`\n\n"
+        + f"**Parent A DID**: `{manifest.get('parent_dids', {}).get('parent_a') or '(unattached)'}`\n"
+        + f"**Parent B DID**: `{manifest.get('parent_dids', {}).get('parent_b') or '(unattached)'}`\n\n"
         + "## Synthesis notes\n\n"
         + manifest.get("synthesis_notes", "(no notes provided)")
         + "\n",
@@ -363,6 +419,12 @@ def write_offspring(manifest: dict, out_dir: Path) -> None:
     (out_dir / "raw_manifest.json").write_text(
         json.dumps(manifest, indent=2), encoding="utf-8"
     )
+    # Standalone inheritance_hash.txt so each parent agent can pipe it
+    # directly into `gl identity sign` on their own machine.
+    if "inheritance_hash" in manifest:
+        (out_dir / "inheritance_hash.txt").write_text(
+            manifest["inheritance_hash"] + "\n", encoding="utf-8"
+        )
 
 
 def main() -> int:
@@ -387,6 +449,18 @@ def main() -> int:
             "BLENDER_SYNTH_BASE_URL", "https://openrouter.ai/api/v1"
         ),
         help="OpenAI-compatible base URL (default: OpenRouter, or env BLENDER_SYNTH_BASE_URL)",
+    )
+    parser.add_argument(
+        "--parent-a-did",
+        default=os.environ.get("BLENDER_PARENT_A_DID"),
+        help="Parent A's gitlawb DID (did:gitlawb:z6Mk... or did:key:z6Mk...). "
+             "Stamped into the offspring's raw_manifest. Fallback: env BLENDER_PARENT_A_DID.",
+    )
+    parser.add_argument(
+        "--parent-b-did",
+        default=os.environ.get("BLENDER_PARENT_B_DID"),
+        help="Parent B's gitlawb DID. Stamped into the offspring's raw_manifest. "
+             "Fallback: env BLENDER_PARENT_B_DID.",
     )
     args = parser.parse_args()
 
@@ -448,6 +522,11 @@ def main() -> int:
     # the LLM dropped; per protocol, no offspring is allowed to ship without
     # the full Tier-1 set.
     enforce_tier1_hygiene(manifest)
+
+    # Phase 2c: stamp parent DIDs and compute the inheritance hash that each
+    # parent will sign with their gitlawb keypair to certify this offspring.
+    # Per protocol, no offspring may hatch until both parent signatures land.
+    attach_parent_dids(manifest, args.parent_a_did, args.parent_b_did)
 
     issues = validate_manifest(manifest)
     if issues:
