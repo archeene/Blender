@@ -23,9 +23,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Non-root user; UID overridable via HERMES_UID at runtime.
 RUN useradd -u 10000 -m -d /opt/data hermes
 
-# Install hermes-agent and MCP SDK.
+# Install hermes-agent + MCP SDK + Nostr crypto/transport deps.
+# coincurve  : Schnorr signing (BIP-340) for NIP-01 event signatures
+# websockets : sync WebSocket client for Nostr relay broadcast
+# Both are optional from a "boot success" perspective (nostr_mcp.py gracefully
+# skips if missing), but installing them at build time activates publish_note.
 RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir hermes-agent "mcp>=1.2.0"
+    && pip install --no-cache-dir \
+        hermes-agent \
+        "mcp>=1.2.0" \
+        coincurve \
+        websockets
 
 # Pre-pull clawnch-mcp-server so the first MCP call doesn't pay the npx
 # install latency. Pinned to ^1 to allow safe minor updates. The npm package
