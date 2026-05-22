@@ -4,22 +4,30 @@
 
 model:
   # Default: OpenGateway (Clawnch x GitLawb partnership). OpenAI-compatible
-  # endpoint with path-based provider routing. Auth optional during the
-  # partnership window, server-side secrets, no embedded keys in OSS clients.
+  # endpoint with path-based provider routing.
   # Live providers: xiaomi-mimo, gmi-cloud (probe https://opengateway.gitlawb.com/
-  # for the current list). Verified 2026-05-18: /v1/xiaomi-mimo/models returns
-  # mimo-v2.5-pro at OpenAI-format 200.
+  # for the current list).
+  #
+  # AUTH STATUS (re-verified 2026-05-22):
+  #   /v1/xiaomi-mimo/models   -> HTTP 401 "API key required"
+  #   /v1/gmi-cloud/models     -> HTTP 401 "API key required"
+  # The auth-optional partnership window that was open on 2026-05-18 has
+  # closed. OPENGATEWAY_API_KEY must be set via `flyctl secrets set` (or
+  # equivalent) before this provider will work. No public docs on key
+  # issuance yet; if you don't have one, switch to one of the alternatives
+  # below.
   default: "mimo-v2.5-pro"
   provider: "custom"
   base_url: "https://opengateway.gitlawb.com/v1/xiaomi-mimo"
-  api_key: "${OPENGATEWAY_API_KEY:-opengateway-no-auth-required}"
+  api_key: "${OPENGATEWAY_API_KEY}"
   context_length: 131072
   # Alternative providers (uncomment one to switch):
   # GMI Cloud route (paid, more models including DeepSeek-V4-Pro, GPT-5.5, Claude Opus 4.7):
   # default: "XiaomiMiMo/MiMo-V2.5-Pro"
   # provider: "custom"
   # base_url: "https://opengateway.gitlawb.com/v1/gmi-cloud"
-  # z.ai / Zhipu GLM (paid via GLM_API_KEY, prior default):
+  # api_key: "${OPENGATEWAY_API_KEY}"
+  # z.ai / Zhipu GLM (paid via GLM_API_KEY, prior default, currently funded):
   # default: "glm-4.6"
   # provider: "zai"
   # OpenRouter (paid):
