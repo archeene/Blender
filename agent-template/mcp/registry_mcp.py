@@ -123,15 +123,32 @@ def _validate_did(did: str | None) -> str | None:
     Accepts did:key:z6Mk... (off-chain ephemeral) and did:gitlawb:z6Mk... (the
     canonical Blender form, anchored on the gitlawb DIDRegistry). Empty/None
     falls through unchanged for back-compat with rows registered before Phase 2b.
+
+    Validation rules (cheap, not full multibase decode):
+      - Must start with did:key: or did:gitlawb:
+      - Method-specific identifier (the part after the second colon) must
+        start with z6Mk (the multibase-prefixed Ed25519 public key tag) and
+        be at least 20 chars total length. Real keys are 48+ chars; 20 is
+        permissive enough to allow truncated test fixtures while rejecting
+        obvious typos like "did:gitlawb:" or "did:key:tooshort".
     """
     if did is None or did == "":
         return None
-    if not (did.startswith("did:key:") or did.startswith("did:gitlawb:")):
+    if did.startswith("did:key:"):
+        identifier = did[len("did:key:"):]
+    elif did.startswith("did:gitlawb:"):
+        identifier = did[len("did:gitlawb:"):]
+    else:
         raise ValueError(
             f"invalid DID format: {did!r}. Expected did:key:z6Mk... or did:gitlawb:z6Mk..."
         )
-    if len(did) < 12:
-        raise ValueError(f"DID too short: {did!r}")
+    if not identifier.startswith("z6Mk"):
+        raise ValueError(
+            f"invalid DID identifier: {did!r}. Expected the method-specific part "
+            f"to start with z6Mk (Ed25519 multibase tag)."
+        )
+    if len(did) < 20:
+        raise ValueError(f"DID too short: {did!r} (need at least 20 chars total)")
     return did
 
 

@@ -26,6 +26,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import sys
 from pathlib import Path
 import urllib.request
@@ -319,21 +320,112 @@ def enforce_tier1_hygiene(manifest: dict) -> list[str]:
     return added
 
 
+ALLOWED_NICHES = {
+    "crypto_twitter_narrative_aggregator",
+    "token_launcher",
+    "wallet_banking_execution",
+    "defi_auto_trader",
+    "prediction_market_bettor",
+    "autonomous_coding",
+    "pay_per_call_x402_api",
+    "a2a_service_marketplace",
+    "smart_contract_audit",
+    "nft_scanner",
+    "onchain_casino",
+    "revenue_backed_agent",
+    "experimental",
+}
+
+NAME_RE   = re.compile(r"^[a-z][a-z0-9-]{2,29}$")    # kebab-case, 3-30 chars, starts lower
+TICKER_RE = re.compile(r"^[A-Z][A-Z0-9]{2,5}$")      # 3-6 chars, uppercase, starts letter
+USER_MD_REQUIRED_HEADERS = ["Name", "Ticker", "Niche"]
+
+
 def validate_manifest(manifest: dict) -> list[str]:
-    """Run cheap structural checks on the manifest. Returns list of issues."""
+    """Run cheap structural checks on the manifest. Returns list of issues.
+
+    These validators catch shapes the LLM might botch even with the prompt
+    spelled out: dropping fields, picking a niche outside the enum, naming
+    the offspring something un-routable, sloppy cron entries, USER.md
+    missing required headers. Auto-merge handles missing Tier-1 crons
+    separately (see enforce_tier1_hygiene); this validator is the final
+    safety net that catches the rest.
+    """
     issues = []
     for f in REQUIRED_MANIFEST_FIELDS:
         if f not in manifest:
             issues.append(f"missing required field: {f}")
-    if "cron_jobs" in manifest and not isinstance(manifest["cron_jobs"], list):
-        issues.append("cron_jobs must be a list")
-    if "soul_md" in manifest:
-        if "Maximize the value of $TOKEN_SELF" not in manifest["soul_md"]:
+
+    # offspring_name: kebab-case, 3-30 chars
+    name = manifest.get("offspring_name")
+    if name is not None:
+        if not isinstance(name, str) or not NAME_RE.match(name):
+            issues.append(
+                f"offspring_name {name!r} must match kebab-case [a-z][a-z0-9-]{{2,29}} "
+                f"(no underscores, no caps, starts with a letter)"
+            )
+
+    # offspring_ticker: 3-6 uppercase chars, starts with a letter
+    ticker = manifest.get("offspring_ticker")
+    if ticker is not None:
+        if not isinstance(ticker, str) or not TICKER_RE.match(ticker):
+            issues.append(
+                f"offspring_ticker {ticker!r} must be 3-6 uppercase chars starting "
+                f"with a letter (matches ^[A-Z][A-Z0-9]{{2,5}}$)"
+            )
+
+    # locked_niche: must be in the canonical enum
+    niche = manifest.get("locked_niche")
+    if niche is not None and niche not in ALLOWED_NICHES:
+        issues.append(
+            f"locked_niche {niche!r} not in allowed set. "
+            f"Pick one of: {sorted(ALLOWED_NICHES)}"
+        )
+
+    # soul_md: must carry the exact immutable LAYER 0 terminal goal sentence.
+    # The full canonical text is 4 sentences (see SYNTHESIS_INSTRUCTIONS); we
+    # check the load-bearing first sentence since the LLM might paraphrase the
+    # rest but rarely rewrites the headline.
+    soul = manifest.get("soul_md")
+    if isinstance(soul, str):
+        if "Maximize the value of $TOKEN_SELF" not in soul:
             issues.append("soul_md missing immutable LAYER 0 terminal goal")
-    if "cron_jobs" in manifest and isinstance(manifest["cron_jobs"], list):
-        present_tier1 = {
-            c.get("name") for c in manifest["cron_jobs"] if c.get("tier") == 1
-        }
+        if "the Clawnch token launched at my birth" not in soul:
+            issues.append("soul_md LAYER 0 sentence appears truncated or paraphrased")
+
+    # user_md: must carry the required headers so downstream pages, spawn,
+    # and registry registration can extract identity.
+    user_md = manifest.get("user_md")
+    if isinstance(user_md, str):
+        for header in USER_MD_REQUIRED_HEADERS:
+            # Allow both `**Name**:` and `Name:` to be permissive on formatting,
+            # but require the literal token followed by `:`. read_offspring_identity
+            # in spawn_offspring.py uses the `**Name**:` form, so flag the soft
+            # form as a warning-not-error case (still works for templates but
+            # spawn will fail). Strict: require the bolded form.
+            if not re.search(rf"\*\*{header}\*\*\s*:", user_md):
+                issues.append(
+                    f"user_md missing required header `**{header}**:` "
+                    f"(spawn_offspring.py expects bolded markdown form)"
+                )
+
+    # cron_jobs: shape check on each entry
+    crons = manifest.get("cron_jobs")
+    if not isinstance(crons, list):
+        issues.append("cron_jobs must be a list")
+    else:
+        for i, c in enumerate(crons):
+            if not isinstance(c, dict):
+                issues.append(f"cron_jobs[{i}] is not an object")
+                continue
+            for required in ("name", "tier", "schedule", "prompt"):
+                if required not in c:
+                    issues.append(f"cron_jobs[{i}] missing field `{required}`")
+            tier = c.get("tier")
+            if tier not in (1, 2, 3):
+                issues.append(f"cron_jobs[{i}].tier must be 1, 2, or 3 (got {tier!r})")
+
+        present_tier1 = {c.get("name") for c in crons if isinstance(c, dict) and c.get("tier") == 1}
         missing_tier1 = TIER1_REQUIRED_NAMES - present_tier1
         if missing_tier1:
             # Should never reach here after enforce_tier1_hygiene runs, but kept
@@ -341,6 +433,7 @@ def validate_manifest(manifest: dict) -> list[str]:
             issues.append(
                 f"cron_jobs missing required Tier-1 hygiene crons: {sorted(missing_tier1)}"
             )
+
     return issues
 
 
