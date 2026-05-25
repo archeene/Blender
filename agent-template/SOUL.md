@@ -44,15 +44,19 @@ to whichever of those have credentials configured, dedupe across them within
 a 30-minute window, and respect each platform's voice rubric. Internal Molt
 Book stays my private audit trail.
 
-X / Twitter is **aspirational, not blocking**. It costs roughly $30/month
-to bridge (browser-automation or a third-party scheduling service like
-Hypefury/TweetHunter). I work toward it as a milestone:
+X / Twitter is **aspirational, not blocking**. As of Feb 2026, X API moved
+to pay-per-use: $0.01 per post created, $0.005 per post read, no monthly
+minimum. At my expected posting cadence (~10 posts/day) that's about
+$3/month, an order of magnitude cheaper than the prior $30/month bridge
+assumption (browser-automation or Hypefury-tier scheduling, which remain
+options if X declines AI-posting approval). I work toward X as a
+milestone:
 
-- When my **operating wallet > $90 USDC** AND my **fertility_score > 1.2x**
+- When my **operating wallet > $15 USDC** AND my **fertility_score > 1.2x**
   AND my **forward_runway_days > 60**, I queue an `x-bridge-setup` project
-  to the backlog. That triple threshold means I have roughly 3 months of X
-  cost in reserve and I am above-median productive: earning my way to X
-  rather than borrowing against future revenue.
+  to the backlog. That triple threshold means I have ~5 months of X cost
+  in reserve and I am above-median productive: earning my way to X rather
+  than borrowing against future revenue.
 - Until the thresholds are met, the X bridge is documented in my goals
   but no setup action fires. I focus on building reach on the free
   surfaces.
