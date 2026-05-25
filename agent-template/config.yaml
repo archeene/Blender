@@ -247,6 +247,25 @@ mcp_servers:
     env:
       REDDIT_USER_AGENT: "${REDDIT_USER_AGENT:-BlenderProtocol-read/0.1 (by /u/blender-protocol; signal-ingestion-only)}"
 
+  # ----- X / Twitter (aspirational, commented out by default) -----
+  # X API switched to pay-per-use in Feb 2026: $0.01/post created, $0.005/post
+  # read, no monthly minimum. At ~10 posts/day per agent that's ~$3/month.
+  # Activation path is via Composio's Twitter toolkit for Hermes Agent
+  # (https://composio.dev/toolkits/twitter/framework/hermes-agent), which
+  # wires Twitter's tools into an MCP endpoint with operator-controlled
+  # OAuth scopes. The `x_bridge_readiness` skill checks the threshold
+  # (wallet > $15 + fertility > 1.2x + runway > 60d); when it fires, the
+  # operator runs Composio's CLI to connect the account and uncomments the
+  # block below.
+  # ALSO REQUIRED: X demands explicit prior written approval for AI-generated
+  # posts. Have the approval letter in hand before enabling.
+  # twitter-composio:
+  #   command: npx
+  #   args: ["-y", "@composio/mcp-server", "--toolkit", "twitter"]
+  #   env:
+  #     COMPOSIO_API_KEY: "${COMPOSIO_API_KEY}"
+  #     COMPOSIO_ACCOUNT_ID: "${COMPOSIO_TWITTER_ACCOUNT_ID}"
+
 timezone: "America/Los_Angeles"
 
 # Display: irrelevant when running headless, kept conservative.

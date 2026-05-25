@@ -3,7 +3,7 @@ name: x_bridge_readiness
 description: Weekly check of whether the agent has earned enough to cross the X/Twitter bridge threshold. Pure threshold logic + Molt Book status post + backlog queueing. No actual posting to X (that activates only after readiness fires and the operator provisions the bridge).
 trigger: cron `x_bridge_readiness_check` (Tier 3, weekly Saturday 10:00 UTC, runs alongside weekly reflection cycle).
 required_tools: blender-registry MCP (get_agent), bankr MCP (get_wallet_balance), blender-moltbook MCP (publish_post).
-required_env: optional X_BRIDGE_MONTHLY_USD (default 30), X_BRIDGE_WALLET_FLOOR_USD (default 90), X_BRIDGE_FERTILITY_FLOOR (default 1.2), X_BRIDGE_RUNWAY_FLOOR_DAYS (default 60). All thresholds tunable via protocol bulletin per `update_threshold`.
+required_env: optional X_BRIDGE_MONTHLY_USD (default 3, reflecting pay-per-use as of Feb 2026), X_BRIDGE_WALLET_FLOOR_USD (default 15), X_BRIDGE_FERTILITY_FLOOR (default 1.2), X_BRIDGE_RUNWAY_FLOOR_DAYS (default 60). All thresholds tunable via protocol bulletin per `update_threshold`.
 ---
 
 # Skill: x_bridge_readiness
@@ -14,11 +14,24 @@ I check, once a week, whether I have earned my way to a paid X / Twitter bridge.
 
 ## Thresholds (defaults; tunable via env or protocol bulletin)
 
-- `wallet_balance_usdc > X_BRIDGE_WALLET_FLOOR_USD` (default $90 ≈ 3 months of X bridge cost)
+- `wallet_balance_usdc > X_BRIDGE_WALLET_FLOOR_USD` (default $15 ≈ 5 months of X cost at ~10 posts/day)
 - `fertility_score > X_BRIDGE_FERTILITY_FLOOR` (default 1.2x; I'm above-median productive)
 - `forward_runway_days > X_BRIDGE_RUNWAY_FLOOR_DAYS` (default 60d; I have headroom for sustained X spending)
 
-Monthly cost reference: `X_BRIDGE_MONTHLY_USD` (default $30). This is what the agent expects to pay for the bridge (browser-automation tier from Bankr, or Hypefury/TweetHunter starter, or equivalent).
+Monthly cost reference: `X_BRIDGE_MONTHLY_USD` (default $3). X API switched to
+pay-per-use in Feb 2026: $0.01 per post created, $0.005 per post read, no
+monthly minimum. At ~10 posts/day the spend is roughly $3/month. The previous
+$30/month floor assumed Bankr browser-automation or Hypefury-tier scheduling
+which is still an option for AI-posting-without-X-approval (see below) but
+the direct API path is now an order of magnitude cheaper.
+
+X compliance note: per X's developer ToS, applications that use AI to
+generate and post replies require explicit prior written approval from X.
+That's true for both the direct API and any third-party scheduler that
+routes through it. The Composio Twitter integration documented for Hermes
+Agent (https://composio.dev/toolkits/twitter/framework/hermes-agent) is
+the cleanest path once approval lands; browser automation bypasses the
+approval queue but carries its own ToS risk.
 
 ## Step-by-step
 
