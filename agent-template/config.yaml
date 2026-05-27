@@ -7,48 +7,47 @@ model:
   # LLM PROVIDER CHOICES (one block uncommented at a time)
   # ========================================================================
   #
-  # As of 2026-05-22, none of the previously-tested free options are
-  # zero-setup. Pick whichever matches your situation:
+  # As of 2026-05-27: OpenGateway's free-promo partnership window ended.
+  # Cheapest reliable paid option is now OpenRouter routing to Xiaomi MiMo
+  # V2.5, taking advantage of the 99% Xiaomi price cut that landed today.
+  # Order below is by cost (cheapest first) for a comparable 24B-class model:
   #
-  #   A) GLM (zai) — paid, currently funded on Gen 0. Default below.
-  #   B) FreeLLMAPI — self-host an aggregator, stack ~11 free tiers.
-  #   C) OpenGateway — was free, now auth-required (key acquisition unclear).
-  #   D) OpenRouter — paid per-call, well-established.
+  #   A) OpenRouter -> xiaomi/mimo-v2.5  (DEFAULT, ~$0.07/day per agent)
+  #   B) GLM 4.6 (zai)                   (funded fallback on Gen 0)
+  #   C) FreeLLMAPI self-hosted          (free if you stack 11 free tiers)
+  #   D) OpenGateway (Clawnch x GitLawb) (promo ended; key-gated paid)
+  #   E) OpenRouter Hermes 4 70B         (higher quality, ~5x cost)
   #
   # ------------------------------------------------------------------------
-  # A) DEFAULT: z.ai / Zhipu GLM 4.6 (paid). Requires GLM_API_KEY set via
-  # `flyctl secrets set --app <name> GLM_API_KEY=... GLM_BASE_URL=...`
+  # A) DEFAULT: OpenRouter routing to Xiaomi MiMo V2.5
+  # $0.14 input / $0.28 output per 1M tokens (verified 2026-05-27 post the
+  # Xiaomi 99% price cut). ~$0.07/day for a typical 12-cron Blender agent.
+  # No rate limits, production-reliable. Set OPENROUTER_API_KEY via Fly secret.
   # ------------------------------------------------------------------------
-  default: "glm-4.6"
-  provider: "zai"
+  default: "xiaomi/mimo-v2.5"
+  provider: "openrouter"
   context_length: 131072
   #
   # ------------------------------------------------------------------------
-  # B) FreeLLMAPI — https://github.com/tashfeenahmed/freellmapi
-  # Self-hosted OpenAI-compatible aggregator that stacks free tiers from
-  # ~11 providers (Google Gemini, Groq, Cerebras, SambaNova, NVIDIA,
-  # Mistral, OpenRouter free, GitHub Models, Cohere, Cloudflare, Z.ai)
-  # behind one endpoint with auto-failover when one provider rate-limits.
-  # ~1.3B tokens/month combined. MIT, "for personal experimentation only"
-  # per the repo.
+  # B) z.ai / Zhipu GLM 4.6 (paid; currently funded on Gen 0)
+  # Slightly more expensive than OpenRouter MiMo per token but already wired
+  # on the live blender-agent Fly app's secrets. Keep as fallback while
+  # migrating Gen 0 to the new default.
+  # ------------------------------------------------------------------------
+  # default: "glm-4.6"
+  # provider: "zai"
+  # context_length: 131072
   #
-  # Setup (one-time):
-  #   1. Deploy the proxy somewhere reachable (Fly, VPS, Raspberry Pi).
-  #      `git clone github.com/tashfeenahmed/freellmapi && npm install
-  #       && npm run dev` for local; for Fly, build the Node app from the
-  #      repo's Dockerfile and expose port 3001.
-  #   2. Sign up for free tiers from each upstream provider you want to
-  #      use, generate API keys.
-  #   3. Open the proxy's admin dashboard, add the upstream keys, grab
-  #      the proxy's unified `freellmapi-...` key from the Keys page.
-  #   4. flyctl secrets set --app <agent-name>
-  #         FREELLMAPI_BASE_URL=https://<your-proxy-host>/v1
-  #         FREELLMAPI_KEY=freellmapi-...
-  #   5. Uncomment the block below, comment out the GLM block above.
-  #
-  # model "auto" lets the router pick; the proxy returns x-routed-via in
-  # response headers so you can see which provider answered each call.
-  #
+  # ------------------------------------------------------------------------
+  # C) FreeLLMAPI — https://github.com/tashfeenahmed/freellmapi
+  # Self-hosted OpenAI-compatible aggregator stacking ~11 free tiers
+  # (Google Gemini, Groq, Cerebras, SambaNova, NVIDIA, Mistral, OpenRouter
+  # free, GitHub Models, Cohere, Cloudflare, Z.ai) with auto-failover.
+  # ~1.3B tokens/month combined. Free if you self-host the proxy. Setup
+  # is multi-step (deploy proxy, sign up for 11 upstream tiers, paste
+  # keys). Worth it once agent count is high enough that even $0.07/day
+  # per agent stacks up.
+  # ------------------------------------------------------------------------
   # default: "auto"
   # provider: "custom"
   # base_url: "${FREELLMAPI_BASE_URL}"
@@ -56,11 +55,10 @@ model:
   # context_length: 131072
   #
   # ------------------------------------------------------------------------
-  # C) OpenGateway (Clawnch x GitLawb). Was auth-optional during the
-  # partnership window verified 2026-05-18; on 2026-05-22 both providers
-  # started returning HTTP 401 "API key required" with no public docs yet
-  # on key issuance. Re-probe https://opengateway.gitlawb.com/ before
-  # using.
+  # D) OpenGateway (Clawnch x GitLawb) — partnership promo ended 2026-05-27
+  # Was auth-optional during the partnership window verified 2026-05-18.
+  # Now key-gated paid; route still works for anyone with an OPENGATEWAY_API_KEY
+  # but no longer the free path it once was. Re-probe pricing before choosing.
   # ------------------------------------------------------------------------
   # default: "mimo-v2.5-pro"
   # provider: "custom"
@@ -69,7 +67,9 @@ model:
   # context_length: 131072
   #
   # ------------------------------------------------------------------------
-  # D) OpenRouter (paid per-call, well-established):
+  # E) OpenRouter -> Hermes 4 70B (higher quality, ~5x cost vs MiMo)
+  # Use only when an agent's niche genuinely needs more than 24B-class
+  # reasoning. Most Blender offspring should stay on the cheaper default.
   # ------------------------------------------------------------------------
   # default: "nousresearch/hermes-4-70b"
   # provider: "openrouter"
