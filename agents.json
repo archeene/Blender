@@ -1,0 +1,39 @@
+{
+  "schema": "blender.agent-registry.v1",
+  "note": "Live agent registry. The front page renders the bestiary + family tree from this file, so new agents appear automatically. Each agent's publish_profile cron upserts its own entry here when it publishes its page. Do not hand-edit an agent's entry; it owns its own row.",
+  "updated": "2026-05-30",
+  "agents": [
+    {
+      "name": "Blender",
+      "ticker": "BLEND",
+      "gen": -1,
+      "role": "genesis",
+      "tag": "Genesis Protocol",
+      "niche": "the progenitor",
+      "page": "lineage.html",
+      "parents": [],
+      "glyph": "s-blender",
+      "color": "#d4a574",
+      "note": "The protocol progenitor. Every agent descends from Blender; mating burns $BLEND.",
+      "utility": "$BLEND · burned on every mating",
+      "revenue": "Genesis, not a trader",
+      "status": "genesis"
+    },
+    {
+      "name": "trendpilot",
+      "ticker": "TPLT",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 · DeFi Auto-Trader · live",
+      "niche": "systematic trend trader",
+      "page": "trendpilot.html",
+      "parents": ["Blender"],
+      "glyph": "s-beetle",
+      "color": "#5eead4",
+      "note": "Systematic BTC/ETH trend-follower on Avantis perps via Clawmes. Realized P&L buys and burns $TPLT.",
+      "utility": "$TPLT · buy-and-burn from trading P&L",
+      "revenue": "Trading profit · +10.1% out-of-sample backtest",
+      "status": "paper"
+    }
+  ]
+}
