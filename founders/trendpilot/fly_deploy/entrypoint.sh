@@ -7,8 +7,15 @@ set -e
 HERMES_HOME="${HERMES_HOME:-/opt/data}"
 HERMES_BUILD="/opt/hermes"
 
-mkdir -p "$HERMES_HOME/.hermes/memories" "$HERMES_HOME/.hermes/skills" \
-         "$HERMES_HOME/.hermes/templates" "$HERMES_HOME/data" \
+# HERMES_HOME (/opt/data) IS the Hermes home directory directly, NOT a parent
+# of a .hermes/ subdir. Proven: Hermes wrote its request dump to
+# /opt/data/sessions/ and the canonical Hermes entrypoint seeds config to
+# $HERMES_HOME/config.yaml. Seeding to $HERMES_HOME/.hermes/ (the old
+# agent-template assumption) means Hermes never loads config.yaml (no model ->
+# HTTP 400 "No models provided") or the SOUL/MEMORY persona.
+mkdir -p "$HERMES_HOME/memories" "$HERMES_HOME/skills" "$HERMES_HOME/templates" \
+         "$HERMES_HOME/sessions" "$HERMES_HOME/cron" "$HERMES_HOME/logs" \
+         "$HERMES_HOME/workspace" "$HERMES_HOME/data" \
          "$HERMES_HOME/.gitlawb" "$HERMES_HOME/.nostr"
 
 # First-boot seeding: copy build-time defaults into the volume only if absent,
@@ -22,16 +29,16 @@ seed() {
     fi
 }
 
-seed "$HERMES_BUILD/config.yaml"  "$HERMES_HOME/.hermes/config.yaml"           "config.yaml"
-seed "$HERMES_BUILD/SOUL.md"      "$HERMES_HOME/.hermes/SOUL.md"               "SOUL.md"
-seed "$HERMES_BUILD/MEMORY.md"    "$HERMES_HOME/.hermes/memories/MEMORY.md"    "MEMORY.md"
-seed "$HERMES_BUILD/USER.md"      "$HERMES_HOME/.hermes/memories/USER.md"      "USER.md"
-seed "$HERMES_BUILD/cron_jobs.json" "$HERMES_HOME/.hermes/cron_jobs.json"      "cron_jobs.json"
+seed "$HERMES_BUILD/config.yaml"  "$HERMES_HOME/config.yaml"             "config.yaml"
+seed "$HERMES_BUILD/SOUL.md"      "$HERMES_HOME/SOUL.md"                 "SOUL.md"
+seed "$HERMES_BUILD/MEMORY.md"    "$HERMES_HOME/memories/MEMORY.md"      "MEMORY.md"
+seed "$HERMES_BUILD/USER.md"      "$HERMES_HOME/memories/USER.md"        "USER.md"
 
-# MCPs / skills / templates: refresh from each deploy.
-cp -r  "$HERMES_BUILD/mcp/."       "$HERMES_HOME/.hermes/mcp/"       2>/dev/null || true
-cp -r  "$HERMES_BUILD/skills/."    "$HERMES_HOME/.hermes/skills/"    2>/dev/null || true
-cp -r  "$HERMES_BUILD/templates/." "$HERMES_HOME/.hermes/templates/" 2>/dev/null || true
+# Skills + templates onto the volume where Hermes discovers them. MCP servers
+# are referenced by absolute /opt/hermes/mcp/*.py path in config.yaml (baked
+# into the image), so they do not need to be copied to the volume.
+cp -r  "$HERMES_BUILD/skills/."    "$HERMES_HOME/skills/"    2>/dev/null || true
+cp -r  "$HERMES_BUILD/templates/." "$HERMES_HOME/templates/" 2>/dev/null || true
 
 export HOME="$HERMES_HOME"
 

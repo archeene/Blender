@@ -136,6 +136,15 @@ def run_tests():
     sig = hl.compute_trend_signal([100, 101, 102], ma_period=24, momentum_lookback=12)
     _t("insufficient data -> flat with reason", sig["signal"] == "flat" and "insufficient_data" in sig.get("reason", ""), str(sig))
 
+    print("\n== _valid_agent_key (guards against unset/unexpanded env) ==")
+    _t("empty key invalid", not hl._valid_agent_key(""))
+    _t("None key invalid", not hl._valid_agent_key(None))
+    _t("unexpanded literal invalid", not hl._valid_agent_key("${HYPERLIQUID_AGENT_KEY}"))
+    _t("too-short key invalid", not hl._valid_agent_key("0xabc123"))
+    _t("non-hex 64 chars invalid", not hl._valid_agent_key("z" * 64))
+    _t("valid 64-hex key accepted", hl._valid_agent_key("a" * 64))
+    _t("valid 0x-prefixed key accepted", hl._valid_agent_key("0x" + "1" * 64))
+
     print("\n== active_limits / risk_limits reflect defaults ==")
     lim = hl.active_limits()
     _t("default whitelist is BTC/ETH/SOL", set(lim["market_whitelist"]) == {"BTC", "ETH", "SOL"}, str(lim["market_whitelist"]))

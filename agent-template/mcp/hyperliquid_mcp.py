@@ -199,7 +199,25 @@ def compute_trend_signal(
 # SDK layer (lazy, graceful-skip; exact calls verified live at deploy)
 # ---------------------------------------------------------------------------
 
-_sdk: dict[str, Any] = {"info": None, "exchange": None, "error": None, "init": False}
+_sdk: dict[str, Any] = {"info": None, "exchange": None, "error": None, "exchange_error": None, "init": False}
+
+
+def _valid_agent_key(k: str | None) -> bool:
+    """True only if k looks like a 32-byte hex private key. Guards against an
+    unset or unexpanded env var (e.g. the literal '${HYPERLIQUID_AGENT_KEY}'
+    when no Fly secret is set) reaching eth_account and crashing with
+    'Non-hexadecimal digit found' -- which would otherwise poison the
+    read-only path too."""
+    if not k:
+        return False
+    s = k[2:] if k.lower().startswith("0x") else k
+    if len(s) != 64:
+        return False
+    try:
+        int(s, 16)
+        return True
+    except ValueError:
+        return False
 
 
 def _base_url() -> str:
@@ -221,12 +239,15 @@ def _ensure_sdk() -> dict[str, Any]:
         _sdk["error"] = "sdk_missing: pip install hyperliquid-python-sdk"
         return _sdk
     base = _base_url()
+    # Info (read) needs no key. Read tools (market data, trend signals) work
+    # even with no agent key configured, so a missing/bad key must NOT block
+    # them. Exchange init failures go in exchange_error, never the global error.
     try:
         _sdk["info"] = Info(base, skip_ws=True)
-    except Exception as e:  # noqa: BLE001 - surface init failure to caller
+    except Exception as e:  # noqa: BLE001 - surface read-path init failure
         _sdk["error"] = f"info_init_failed: {e}"
         return _sdk
-    if AGENT_KEY:
+    if _valid_agent_key(AGENT_KEY):
         try:
             from eth_account import Account  # type: ignore
             wallet = Account.from_key(AGENT_KEY)
@@ -235,7 +256,9 @@ def _ensure_sdk() -> dict[str, Any]:
                 kwargs["account_address"] = MASTER_ADDRESS
             _sdk["exchange"] = Exchange(wallet, base, **kwargs)
         except Exception as e:  # noqa: BLE001
-            _sdk["error"] = f"exchange_init_failed: {e}"
+            _sdk["exchange_error"] = f"exchange_init_failed: {e}"
+    else:
+        _sdk["exchange_error"] = "no_valid_agent_key (read-only mode)"
     return _sdk
 
 
@@ -244,7 +267,7 @@ def _user_address() -> str:
     from the agent key."""
     if MASTER_ADDRESS:
         return MASTER_ADDRESS
-    if AGENT_KEY:
+    if _valid_agent_key(AGENT_KEY):
         try:
             from eth_account import Account  # type: ignore
             return Account.from_key(AGENT_KEY).address
@@ -416,8 +439,8 @@ def set_leverage(coin: str, leverage: float, cross: bool = False) -> dict[str, A
     if leverage > MAX_LEVERAGE:
         return {"error": f"leverage_exceeded: {leverage}x > max {MAX_LEVERAGE}x"}
     s = _ensure_sdk()
-    if s.get("error") or not s.get("exchange"):
-        return {"error": s.get("error") or "exchange_unavailable (no agent key?)"}
+    if not s.get("exchange"):
+        return {"error": s.get("exchange_error") or s.get("error") or "exchange_unavailable (no agent key?)"}
     try:
         resp = s["exchange"].update_leverage(int(leverage), coin.upper(), cross)
         return {"ok": True, "coin": coin.upper(), "leverage": leverage, "resp": resp}
@@ -446,8 +469,8 @@ def place_order(coin: str, is_buy: bool, size_usd: float, leverage: float | None
         return {"rejected": True, "reason": reason, "limits": active_limits()}
 
     s = _ensure_sdk()
-    if s.get("error") or not s.get("exchange"):
-        return {"error": s.get("error") or "exchange_unavailable (no agent key?)"}
+    if not s.get("exchange"):
+        return {"error": s.get("exchange_error") or s.get("error") or "exchange_unavailable (no agent key?)"}
 
     coin_u = coin.upper()
     try:
@@ -470,8 +493,8 @@ def close_position(coin: str) -> dict[str, Any]:
     """Fully close an open position (reduce-only market order). Always allowed
     by the gate since it lowers risk."""
     s = _ensure_sdk()
-    if s.get("error") or not s.get("exchange"):
-        return {"error": s.get("error") or "exchange_unavailable"}
+    if not s.get("exchange"):
+        return {"error": s.get("exchange_error") or s.get("error") or "exchange_unavailable"}
     try:
         resp = s["exchange"].market_close(coin.upper())
         return {"ok": True, "coin": coin.upper(), "resp": resp}
@@ -483,8 +506,8 @@ def close_position(coin: str) -> dict[str, Any]:
 def cancel_all() -> dict[str, Any]:
     """Cancel all resting orders. Risk-reducing; always permitted."""
     s = _ensure_sdk()
-    if s.get("error") or not s.get("exchange"):
-        return {"error": s.get("error") or "exchange_unavailable"}
+    if not s.get("exchange"):
+        return {"error": s.get("exchange_error") or s.get("error") or "exchange_unavailable"}
     addr = _user_address()
     try:
         open_orders = s["info"].open_orders(addr)
