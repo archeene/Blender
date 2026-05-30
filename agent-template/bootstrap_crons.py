@@ -61,6 +61,7 @@ PINNED_SKILLS = [
     "death_check",
     "social_posting",
     "x_bridge_readiness",
+    "hyperliquid_trade",
 ]
 
 

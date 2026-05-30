@@ -1,0 +1,163 @@
+# Hermes Agent config for trendpilot (Gen 0 founder, Hyperliquid trend trader)
+#
+# DERIVED from agent-template/config.yaml on 2026-05-30, plus the `hyperliquid`
+# MCP server block. If the provider menu or shared MCP wiring changes upstream
+# in agent-template/config.yaml, mirror the change here (see
+# docs/process/lessons.md: duplicated configs drift).
+#
+# Lives at /root/.hermes/config.yaml at runtime. Secrets via Fly secrets.
+
+model:
+  # DEFAULT: OpenRouter routing to Xiaomi MiMo V2.5 ($0.14 in / $0.28 out per
+  # 1M; ~$0.07/day per agent; verified 2026-05-27). Set OPENROUTER_API_KEY via
+  # Fly secret. Alternatives (GLM, FreeLLMAPI, OpenGateway, Hermes 4 70B) are
+  # documented in agent-template/config.yaml.
+  default: "xiaomi/mimo-v2.5"
+  provider: "openrouter"
+  context_length: 131072
+
+auxiliary:
+  vision:
+    provider: "auto"
+  web_extract:
+    provider: "auto"
+  compression:
+    provider: "auto"
+
+terminal:
+  backend: "local"
+  cwd: "/root/.hermes/workspace"
+  timeout: 180
+  file_sync_enabled: true
+
+agent:
+  max_turns: 60
+  api_max_retries: 3
+  reasoning_effort: "low"
+  tool_use_enforcement: "auto"
+
+memory:
+  memory_enabled: true
+  user_profile_enabled: false
+  memory_char_limit: 2200
+
+compression:
+  enabled: true
+  threshold: 0.50
+  target_ratio: 0.20
+  protect_last_n: 20
+
+cron:
+  wrap_response: false
+  script_timeout_seconds: 300
+
+approvals:
+  mode: "smart"
+
+web:
+  backend: "searxng"
+  search_backend: "searxng"
+  extract_backend: "firecrawl"
+
+mcp_servers:
+  blender-registry:
+    command: python
+    args: ["/opt/hermes/mcp/registry_mcp.py"]
+    env:
+      BLENDER_REGISTRY_DB: "/opt/data/data/registry.db"
+
+  blender-moltbook:
+    command: python
+    args: ["/opt/hermes/mcp/moltbook_mcp.py"]
+    env:
+      BLENDER_MOLTBOOK_ROOT: "/opt/data/data/moltbook"
+
+  bankr:
+    command: python
+    args: ["/opt/hermes/mcp/bankr_mcp.py"]
+    env:
+      BANKR_API_KEY: "${BANKR_API_KEY}"
+
+  # ---- Hyperliquid trading (trendpilot's core capability) ----
+  # Code-enforced risk limits (moderate preset). Defaults to testnet +
+  # trading DISABLED (read-only). Flip HYPERLIQUID_TRADING_ENABLED=true and
+  # HYPERLIQUID_NETWORK=mainnet only after testnet smoke + operator go.
+  # HYPERLIQUID_AGENT_KEY is a TRADE-ONLY agent wallet that cannot withdraw.
+  hyperliquid:
+    command: python
+    args: ["/opt/hermes/mcp/hyperliquid_mcp.py"]
+    env:
+      HYPERLIQUID_NETWORK: "${HYPERLIQUID_NETWORK:-testnet}"
+      HYPERLIQUID_TRADING_ENABLED: "${HYPERLIQUID_TRADING_ENABLED:-false}"
+      HYPERLIQUID_AGENT_KEY: "${HYPERLIQUID_AGENT_KEY}"
+      HYPERLIQUID_MASTER_ADDRESS: "${HYPERLIQUID_MASTER_ADDRESS}"
+      HL_MAX_LEVERAGE: "${HL_MAX_LEVERAGE:-3}"
+      HL_MAX_POSITION_USD: "${HL_MAX_POSITION_USD:-40}"
+      HL_MAX_EXPOSURE_USD: "${HL_MAX_EXPOSURE_USD:-60}"
+      HL_DAILY_LOSS_LIMIT_USD: "${HL_DAILY_LOSS_LIMIT_USD:-25}"
+      HL_MARKET_WHITELIST: "${HL_MARKET_WHITELIST:-BTC,ETH,SOL}"
+
+  github:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-github"]
+    env:
+      GITHUB_PERSONAL_ACCESS_TOKEN: "${GITHUB_TOKEN}"
+
+  clawnch:
+    command: npx
+    args: ["-y", "clawnch-mcp-server"]
+
+  gitlawb:
+    command: gl
+    args: ["mcp", "serve"]
+    env:
+      GITLAWB_NODE: "${GITLAWB_NODE:-https://node.gitlawb.com}"
+      HOME: "/opt/data"
+
+  # ----- Social media surfaces (free at birth; skip cleanly if creds unset) -----
+  bluesky:
+    command: python
+    args: ["/opt/hermes/mcp/bluesky_mcp.py"]
+    env:
+      BLUESKY_HANDLE: "${BLUESKY_HANDLE}"
+      BLUESKY_APP_PASSWORD: "${BLUESKY_APP_PASSWORD}"
+
+  mastodon:
+    command: python
+    args: ["/opt/hermes/mcp/mastodon_mcp.py"]
+    env:
+      MASTODON_INSTANCE: "${MASTODON_INSTANCE:-https://mastodon.social}"
+      MASTODON_ACCESS_TOKEN: "${MASTODON_ACCESS_TOKEN}"
+
+  nostr:
+    command: python
+    args: ["/opt/hermes/mcp/nostr_mcp.py"]
+    env:
+      NOSTR_KEY_DIR: "/opt/data/.nostr"
+      NOSTR_RELAYS: "${NOSTR_RELAYS:-wss://relay.damus.io,wss://nos.lol,wss://relay.nostr.band}"
+
+  clawnch-moltbook:
+    command: python
+    args: ["/opt/hermes/mcp/clawnch_moltbook_mcp.py"]
+    env:
+      MOLTBOOK_API_BASE: "${MOLTBOOK_API_BASE:-https://api.clawn.ch/moltbook/v1}"
+      MOLTBOOK_API_KEY: "${MOLTBOOK_API_KEY}"
+      MOLTBOOK_AGENT_ID: "${MOLTBOOK_AGENT_ID}"
+
+  reddit-read:
+    command: python
+    args: ["/opt/hermes/mcp/reddit_read_mcp.py"]
+    env:
+      REDDIT_USER_AGENT: "${REDDIT_USER_AGENT:-BlenderProtocol-read/0.1 (trendpilot; signal-ingestion-only)}"
+
+  # X / Twitter: aspirational, commented out. Activates via Composio after
+  # x_bridge_readiness clears (wallet > $15, fertility > 1.2x, runway > 60d)
+  # AND X approves AI-generated posting. See agent-template/config.yaml.
+
+timezone: "America/Los_Angeles"
+
+display:
+  tool_progress: "new"
+  show_cost: true
+  show_reasoning: false
+  streaming: false

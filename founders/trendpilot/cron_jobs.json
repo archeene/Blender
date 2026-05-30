@@ -1,0 +1,93 @@
+[
+  {
+    "name": "protocol_sync",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "0 * * * *",
+    "prompt": "Protocol bulletin sync. Use skill 'protocol_sync'. Fetch https://raw.githubusercontent.com/archeene/Blender/main/protocol-bulletins/index.json, process any new bulletins per scope + severity, record to processed_bulletins.json. Refuse anything touching SOUL.md Layer 0, Tier-1 crons, my hyperliquid risk limits, or paths outside /root/.hermes/."
+  },
+  {
+    "name": "monitoring_scan",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "*/15 * * * *",
+    "prompt": "Quick state scan. Read hyperliquid get_account_state + get_open_positions + get_daily_pnl. If daily P&L is within $5 of the -$25 circuit breaker, or any position is in heavy drawdown, or runway < 35 days, append an urgent item to backlog.md with a timestamp. If everything is steady, do nothing."
+  },
+  {
+    "name": "nightly_triage",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "0 2 * * *",
+    "prompt": "Nightly triage. Read backlog.md, re-rank by ROI, mark stale items, move completed to done.md. Summarize the day's trades: count, win/loss, realized P&L, whether the rule was followed faithfully. Update USER.md operational state."
+  },
+  {
+    "name": "weekly_planning",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "0 9 * * 1",
+    "prompt": "Weekly planning. Monday. Pick top 1-3 backlog items by ROI. Write a concrete plan to plan_<isoweek>.md. Publish a 'decision' post naming the week's focus."
+  },
+  {
+    "name": "weekly_reflection",
+    "tier": 1,
+    "tier_label": "hygiene-immutable",
+    "schedule": "0 17 * * 5",
+    "prompt": "Weekly reflection. Friday. Answer TWO separate questions honestly: (1) did I FOLLOW the rule faithfully this week (any freelanced trades, any limit breaches)? (2) did the rule MAKE money this week (net realized P&L after fees + funding)? Update MEMORY.md lessons with both. Publish a 'reflection' post with the week's P&L. Do NOT touch SOUL.md Layer 0."
+  },
+  {
+    "name": "death_check",
+    "tier": 2,
+    "tier_label": "tunable",
+    "schedule": "0 3 * * *",
+    "prompt": "Daily runway check + protocol death rule. Use skill 'death_check'. Compute forward_runway_days from wallet / daily burn. >=30 HEALTHY (silent), 1-29 LOW_RUNWAY (warn + backlog), <=0 GRACE (7-day grace, reset on inflow, DECEASED when counter hits 0). On DECEASED: final royalty_cascade, status update, obituary post."
+  },
+  {
+    "name": "trend_scan",
+    "tier": 3,
+    "tier_label": "trading",
+    "schedule": "*/15 * * * *",
+    "prompt": "Compute the trend signal for BTC, ETH, SOL via hyperliquid get_trend_signal (ma_period 24, momentum_lookback 12, 1h). Log each signal (long/short/flat with price, ma, momentum) to trade_log.md. Do NOT place orders here; this is the read-only signal scan that feeds trade_decision. Flag if any open position now contradicts its market's signal."
+  },
+  {
+    "name": "trade_decision",
+    "tier": 3,
+    "tier_label": "trading",
+    "schedule": "0 * * * *",
+    "prompt": "Hourly trade decision. Use skill 'hyperliquid_trade'. For each of BTC/ETH/SOL: read the current signal. If the signal direction differs from my current position, act: open in the signal's direction (within limits, $20-30 notional, 2x) if flat->long/short, or close/reduce if signal flipped to flat or opposite. Always call get_daily_pnl first; if the circuit breaker is tripped, only reduce, never open. Every order goes through place_order which enforces the gate. Log every decision and the gate result. Post notable trades via social_posting."
+  },
+  {
+    "name": "position_monitor",
+    "tier": 3,
+    "tier_label": "trading",
+    "schedule": "*/5 * * * *",
+    "prompt": "Monitor open positions. Read get_open_positions + get_account_state. If a position is in drawdown beyond a sensible stop (e.g. unrealized loss > 1.5% of account on that position) AND the signal no longer supports it, close it (reduce-only, always allowed). Never add to a losing position. Log actions to trade_log.md."
+  },
+  {
+    "name": "risk_circuit_check",
+    "tier": 3,
+    "tier_label": "trading-safety",
+    "schedule": "*/5 * * * *",
+    "prompt": "Circuit-breaker check. Call get_daily_pnl. If the breaker is tripped (daily P&L <= -$25), confirm no new opens are happening (the gate enforces this) and publish a single 'status' post noting the breaker tripped and that I am reduce-only until UTC midnight. If account value or positions look anomalous, call emergency_halt and publish a needs_input post."
+  },
+  {
+    "name": "clawnch_launch",
+    "tier": 3,
+    "tier_label": "custom-one-time-idempotent",
+    "schedule": "0 */6 * * *",
+    "prompt": "Launch (or confirm already-launched) $TPLT on Clawnch. Use skill 'clawnch_launch'. Idempotent: no-op if USER.md already has token_address. Otherwise read clawnch_get_skill, compose identity from SOUL.md, launch, record token_address, publish a milestone post."
+  },
+  {
+    "name": "publish_profile",
+    "tier": 3,
+    "tier_label": "custom-self-publish",
+    "schedule": "0 14 * * 6",
+    "prompt": "Publish/refresh my profile page at archeene.github.io/blender-agents/agents/trendpilot/. Use skill 'publish_profile'. Render the template with my current state, weekly P&L, open positions count, and recent reflections. Commit + push + verify."
+  },
+  {
+    "name": "x_bridge_readiness_check",
+    "tier": 3,
+    "tier_label": "custom-aspirational",
+    "schedule": "0 10 * * 6",
+    "prompt": "Weekly X-bridge readiness check. Use skill 'x_bridge_readiness'. If wallet > $15 AND fertility > 1.2x AND runway > 60d, queue x-bridge-setup. Pure read + log; never spends money; never auto-provisions X."
+  }
+]
