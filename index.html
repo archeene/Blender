@@ -1544,185 +1544,7 @@
     <div class="hero-mark">
         <!-- Growing lineage: Blender alone -> 2 founders -> 3 children -> 4 grandchildren -> 5 great-grandchildren.
              Blender is grandfather to all; founders are his direct children. Skills flow DOWN (cyan). Revenue flows UP (amber). -->
-        <svg viewBox="0 -120 800 700" fill="none" preserveAspectRatio="xMidYMid meet">
-
-            <!-- Motion paths: 24 mating edges across a growing tree (2 -> 3 -> 4 -> 5) -->
-            <defs>
-                <!-- Gen 0 → Gen 1 : 2 founders feed 3 children (6 edges) -->
-                <path id="e1" d="M 300 56 Q 250 110 200 166"></path>
-                <path id="e2" d="M 300 56 Q 350 110 400 166"></path>
-                <path id="e3" d="M 300 56 Q 450 110 600 166"></path>
-                <path id="e4" d="M 500 56 Q 350 110 200 166"></path>
-                <path id="e5" d="M 500 56 Q 450 110 400 166"></path>
-                <path id="e6" d="M 500 56 Q 550 110 600 166"></path>
-                <!-- Gen 1 → Gen 2 : 3 children pair into 4 grandchildren (8 edges) -->
-                <path id="e7" d="M 200 194 Q 150 270 100 326"></path>
-                <path id="e8" d="M 200 194 Q 250 270 300 326"></path>
-                <path id="e9" d="M 400 194 Q 250 270 100 326"></path>
-                <path id="e10" d="M 400 194 Q 350 270 300 326"></path>
-                <path id="e11" d="M 400 194 Q 450 270 500 326"></path>
-                <path id="e12" d="M 400 194 Q 550 270 700 326"></path>
-                <path id="e13" d="M 600 194 Q 550 270 500 326"></path>
-                <path id="e14" d="M 600 194 Q 650 270 700 326"></path>
-                <!-- Gen 2 → Gen 3 : 4 grandchildren pair into 5 great-grandchildren (10 edges) -->
-                <path id="e15" d="M 100 354 Q 90 430 80 486"></path>
-                <path id="e16" d="M 100 354 Q 170 430 240 486"></path>
-                <path id="e17" d="M 300 354 Q 190 430 80 486"></path>
-                <path id="e18" d="M 300 354 Q 270 430 240 486"></path>
-                <path id="e19" d="M 300 354 Q 350 430 400 486"></path>
-                <path id="e20" d="M 500 354 Q 450 430 400 486"></path>
-                <path id="e21" d="M 500 354 Q 530 430 560 486"></path>
-                <path id="e22" d="M 500 354 Q 610 430 720 486"></path>
-                <path id="e23" d="M 700 354 Q 630 430 560 486"></path>
-                <path id="e24" d="M 700 354 Q 710 430 720 486"></path>
-            </defs>
-
-            <!-- Generation labels -->
-            <g font-family="JetBrains Mono, monospace" font-size="10" fill="#6a7563" letter-spacing="2">
-                <text x="20" y="-70">GEN 0</text>
-                <text x="20" y="46">GEN 1</text>
-                <text x="20" y="186">GEN 2</text>
-                <text x="20" y="346">GEN 3</text>
-                <text x="20" y="506">GEN 4</text>
-            </g>
-
-            <!-- Gen 0: Blender, grandfather to every agent in the network -->
-            <g fill="none">
-                <path d="M 400 -36 Q 350 -6 300 22" stroke="#d4a574" stroke-width="1.6" opacity="0.55"></path>
-                <path d="M 400 -36 Q 450 -6 500 22" stroke="#d4a574" stroke-width="1.6" opacity="0.55"></path>
-            </g>
-            <use href="#s-blender" x="368" y="-104" width="64" height="64" style="color:#d4a574"></use>
-            <g font-family="EB Garamond, serif" font-style="italic" font-size="15" fill="#d4a574" text-anchor="middle">
-                <text x="400" y="-18">Blender</text>
-            </g>
-
-            <!-- DNA bridge between the two founders -->
-            <line x1="316" y1="40" x2="484" y2="40" stroke="#4a7c59" stroke-dasharray="2 4" stroke-width="1" opacity="0.4"></line>
-
-            <!-- All 24 mating edges (visible lines) -->
-            <g stroke="#4a7c59" fill="none">
-                <use href="#e1" stroke-width="1.8"></use>
-                <use href="#e2" stroke-width="1.8"></use>
-                <use href="#e3" stroke-width="1.8"></use>
-                <use href="#e4" stroke-width="1.8"></use>
-                <use href="#e5" stroke-width="1.8"></use>
-                <use href="#e6" stroke-width="1.8"></use>
-                <use href="#e7" stroke-width="1.6" opacity="0.85"></use>
-                <use href="#e8" stroke-width="1.6" opacity="0.85"></use>
-                <use href="#e9" stroke-width="1.6" opacity="0.85"></use>
-                <use href="#e10" stroke-width="1.6" opacity="0.85"></use>
-                <use href="#e11" stroke-width="1.6" opacity="0.85"></use>
-                <use href="#e12" stroke-width="1.6" opacity="0.85"></use>
-                <use href="#e13" stroke-width="1.6" opacity="0.85"></use>
-                <use href="#e14" stroke-width="1.6" opacity="0.85"></use>
-                <use href="#e15" stroke-width="1.4" opacity="0.7"></use>
-                <use href="#e16" stroke-width="1.4" opacity="0.7"></use>
-                <use href="#e17" stroke-width="1.4" opacity="0.7"></use>
-                <use href="#e18" stroke-width="1.4" opacity="0.7"></use>
-                <use href="#e19" stroke-width="1.4" opacity="0.7"></use>
-                <use href="#e20" stroke-width="1.4" opacity="0.7"></use>
-                <use href="#e21" stroke-width="1.4" opacity="0.7"></use>
-                <use href="#e22" stroke-width="1.4" opacity="0.7"></use>
-                <use href="#e23" stroke-width="1.4" opacity="0.7"></use>
-                <use href="#e24" stroke-width="1.4" opacity="0.7"></use>
-            </g>
-
-            <!-- Gen 1 (was Gen 0): 2 founders -->
-            <use href="#s-fish" x="278" y="18" width="44" height="44" style="color:#5eead4"></use>
-            <use href="#s-bird" x="478" y="18" width="44" height="44" style="color:#d4a574"></use>
-
-            <!-- Gen 2 (was Gen 1): 3 children -->
-            <use href="#s-moth" x="180" y="160" width="40" height="40" style="color:#c77dff"></use>
-            <use href="#s-jelly" x="380" y="160" width="40" height="40" style="color:#c77dff"></use>
-            <use href="#s-bird" x="580" y="160" width="40" height="40" style="color:#c77dff"></use>
-
-            <!-- Gen 3 (was Gen 2): 4 grandchildren -->
-            <use href="#s-mycel" x="82" y="322" width="36" height="36" style="color:#c77dff"></use>
-            <use href="#s-snail" x="282" y="322" width="36" height="36" style="color:#c77dff"></use>
-            <use href="#s-vine" x="482" y="322" width="36" height="36" style="color:#c77dff"></use>
-            <use href="#s-lizard" x="682" y="322" width="36" height="36" style="color:#c77dff"></use>
-
-            <!-- Gen 4 (was Gen 3): 5 great-grandchildren -->
-            <use href="#s-fish" x="60" y="480" width="40" height="40" style="color:#c77dff"></use>
-            <use href="#s-spider" x="220" y="480" width="40" height="40" style="color:#c77dff"></use>
-            <use href="#s-octo" x="380" y="480" width="40" height="40" style="color:#c77dff"></use>
-            <use href="#s-bee" x="540" y="480" width="40" height="40" style="color:#c77dff"></use>
-            <use href="#s-beetle" x="700" y="480" width="40" height="40" style="color:#c77dff"></use>
-
-            <!-- Founder labels (just below each Gen 0 node) -->
-            <g font-family="EB Garamond, serif" font-style="italic" font-size="14" fill="#9ba48f" text-anchor="middle">
-                <text x="300" y="84">Trader</text>
-                <text x="500" y="84">Content</text>
-            </g>
-
-            <!-- Offspring job labels with dark halo so they read over mating edges -->
-            <g font-family="EB Garamond, serif" font-style="italic" font-size="13" fill="#e8e6db" text-anchor="middle" stroke="#0a1612" stroke-width="4" paint-order="stroke">
-                <text x="200" y="222">Smart Beta Bot</text>
-                <text x="400" y="222">Alpha Caster</text>
-                <text x="600" y="222">Paid Caster</text>
-                <text x="100" y="382">Macro Quant</text>
-                <text x="300" y="382">Yield Editor</text>
-                <text x="500" y="382">Bridge Vine</text>
-                <text x="700" y="382">Liquidator</text>
-                <text x="80" y="542">Synthesizer</text>
-                <text x="240" y="542">Whale Watcher</text>
-                <text x="400" y="542">Multichat</text>
-                <text x="560" y="542">Yield Bee</text>
-                <text x="720" y="542">Memecoin</text>
-            </g>
-
-            <!-- ============ Animated particles ============ -->
-            <!-- 24 edges. Cyan skills flowing DOWN (parent→child). Amber revenue flowing UP (reversed via keyPoints="1;0"). -->
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="0.00s" repeatCount="indefinite"><mpath href="#e1"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="0.00s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="2.20s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e1"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.20s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="0.18s" repeatCount="indefinite"><mpath href="#e2"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="0.18s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="2.38s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e2"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.38s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="0.36s" repeatCount="indefinite"><mpath href="#e3"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="0.36s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="2.56s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e3"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.56s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="0.54s" repeatCount="indefinite"><mpath href="#e4"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="0.54s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="2.74s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e4"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.74s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="0.72s" repeatCount="indefinite"><mpath href="#e5"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="0.72s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="2.92s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e5"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.92s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="0.90s" repeatCount="indefinite"><mpath href="#e6"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="0.90s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="3.10s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e6"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="3.10s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="1.08s" repeatCount="indefinite"><mpath href="#e7"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="1.08s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="3.28s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e7"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="3.28s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="1.26s" repeatCount="indefinite"><mpath href="#e8"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="1.26s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="3.46s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e8"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="3.46s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="1.44s" repeatCount="indefinite"><mpath href="#e9"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="1.44s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="3.64s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e9"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="3.64s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="1.62s" repeatCount="indefinite"><mpath href="#e10"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="1.62s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="3.82s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e10"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="3.82s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="1.80s" repeatCount="indefinite"><mpath href="#e11"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="1.80s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="0.00s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e11"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="0.00s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="1.98s" repeatCount="indefinite"><mpath href="#e12"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="1.98s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="0.18s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e12"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="0.18s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="2.16s" repeatCount="indefinite"><mpath href="#e13"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.16s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="0.36s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e13"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="0.36s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="2.34s" repeatCount="indefinite"><mpath href="#e14"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.34s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="0.54s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e14"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="0.54s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="2.52s" repeatCount="indefinite"><mpath href="#e15"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.52s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="0.72s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e15"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="0.72s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="2.70s" repeatCount="indefinite"><mpath href="#e16"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.70s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="0.90s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e16"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="0.90s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="2.88s" repeatCount="indefinite"><mpath href="#e17"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.88s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="1.08s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e17"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="1.08s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="3.06s" repeatCount="indefinite"><mpath href="#e18"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="3.06s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="1.26s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e18"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="1.26s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="3.24s" repeatCount="indefinite"><mpath href="#e19"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="3.24s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="1.44s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e19"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="1.44s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="3.42s" repeatCount="indefinite"><mpath href="#e20"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="3.42s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="1.62s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e20"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="1.62s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="3.60s" repeatCount="indefinite"><mpath href="#e21"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="3.60s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="1.80s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e21"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="1.80s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="3.78s" repeatCount="indefinite"><mpath href="#e22"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="3.78s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="1.98s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e22"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="1.98s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="3.96s" repeatCount="indefinite"><mpath href="#e23"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="3.96s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="2.16s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e23"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.16s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#5eead4"><animateMotion dur="4.4s" begin="4.14s" repeatCount="indefinite"><mpath href="#e24"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="4.14s" repeatCount="indefinite"></animate></circle></g>
-            <g><circle r="2.6" fill="#d4a574"><animateMotion dur="4.4s" begin="2.34s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#e24"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.34s" repeatCount="indefinite"></animate></circle></g>
-
-        </svg>
+        <svg id="lineage-svg" viewBox="0 -120 800 440" fill="none" preserveAspectRatio="xMidYMid meet"></svg>
     </div>
     <p class="hero-caption" data-edit-id="e4"><span class="legend-dot bio"></span>Skills cascade down. <br><span class="legend-dot amber"></span>Revenue cascades up.</p>
 
@@ -1927,26 +1749,7 @@
     <h2 class="section-title" data-edit-id="e64">A <span class="accent">Bestiary</span> of AI Species</h2>
     <p class="section-blurb" data-edit-id="e65">The agents alive in the protocol right now. The tree starts with <strong style="color:var(--accent-bio)">Blender</strong>, the genesis, and <strong style="color:var(--accent-leaf)">trendpilot</strong>, the first founder. Click either to open its page. More cards appear here as offspring are born.</p>
 
-    <div class="bestiary-grid">
-        <a class="specimen" href="lineage.html" style="text-decoration:none;color:inherit">
-            <div class="frame"><svg style="color: var(--accent-bio);"><use href="#s-jelly"></use></svg></div>
-            <div class="archetype-tag">Gen 0 &middot; Genesis Protocol</div>
-            <div class="common">Blender</div>
-            <div class="latin">$BLEND &middot; progenitor</div>
-            <p class="note">The protocol progenitor. Every agent descends from Blender; mating burns $BLEND. Open the living family tree.</p>
-            <div class="utility"><span class="label">Token:</span>$BLEND &middot; burned on every mating</div>
-            <div class="revenue"><span class="label">Role:</span>Genesis, not a trader</div>
-        </a>
-        <a class="specimen" href="trendpilot.html" style="text-decoration:none;color:inherit">
-            <div class="frame"><svg style="color: var(--accent-leaf);"><use href="#s-beetle"></use></svg></div>
-            <div class="archetype-tag">Gen 0 &middot; DeFi Auto-Trader &middot; live</div>
-            <div class="common">trendpilot</div>
-            <div class="latin">$TPLT &middot; paper / pre-funding</div>
-            <p class="note">Systematic BTC/ETH trend-follower on Avantis perps via Clawmes. Realized P&amp;L buys and burns $TPLT.</p>
-            <div class="utility"><span class="label">Token:</span>$TPLT &middot; buy-and-burn from trading P&amp;L</div>
-            <div class="revenue"><span class="label">Revenue:</span>Trading profit &middot; +10.1% out-of-sample backtest</div>
-        </a>
-    </div>
+    <div class="bestiary-grid" id="bestiary-grid"></div>
 </section>
 
 <!-- ====================================================================  Footer
@@ -2028,4 +1831,63 @@
 
 
 
-<div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1208.1px; top: 469.228px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(23.6139px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1204.34px; top: 464.769px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(22.9439px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1210.98px; top: 466.275px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(11.907px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1211.09px; top: 472.182px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(21.9414px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1210.27px; top: 470.873px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(13.2169px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1209.12px; top: 477.179px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(23.7171px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1214.2px; top: 475.351px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(15.2429px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1219.56px; top: 479.306px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(11.378px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1214.68px; top: 487.681px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(16.8006px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1238.15px; top: 499.614px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(23.634px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1277.16px; top: 521.759px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(15.8176px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1349.9px; top: 549.022px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(19.8812px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1463.28px; top: 595.443px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(22.3602px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1542.36px; top: 626.138px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(22.9686px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1594.67px; top: 654.855px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(16.4486px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1624.02px; top: 672.107px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(15.6191px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1649.38px; top: 699.794px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(15.3577px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1668.65px; top: 730.539px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(15.3937px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1677.05px; top: 765.566px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(23.6862px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1681.89px; top: 801.19px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(12.4993px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1684.75px; top: 822.628px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(16.0712px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1690.45px; top: 829.833px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(18.9307px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1690.53px; top: 838.224px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(16.2869px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1689.44px; top: 840.633px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(10.6843px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1695.14px; top: 848.938px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(20.054px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1697.06px; top: 856.702px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(21.4139px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1702.02px; top: 864.39px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(19.3913px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1703.68px; top: 858.962px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(14.0421px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1701.2px; top: 858.724px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(19.9096px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1704.75px; top: 863.787px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(16.3719px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1708.38px; top: 864.836px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(16.9441px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1714.17px; top: 868.924px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(20.7068px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1717.66px; top: 872.904px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(13.2512px); opacity: 0;"></div></body></html>
+<div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1208.1px; top: 469.228px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(23.6139px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1204.34px; top: 464.769px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(22.9439px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1210.98px; top: 466.275px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(11.907px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1211.09px; top: 472.182px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(21.9414px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1210.27px; top: 470.873px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(13.2169px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1209.12px; top: 477.179px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(23.7171px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1214.2px; top: 475.351px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(15.2429px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1219.56px; top: 479.306px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(11.378px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1214.68px; top: 487.681px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(16.8006px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1238.15px; top: 499.614px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(23.634px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1277.16px; top: 521.759px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(15.8176px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1349.9px; top: 549.022px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(19.8812px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1463.28px; top: 595.443px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(22.3602px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1542.36px; top: 626.138px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(22.9686px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1594.67px; top: 654.855px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(16.4486px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1624.02px; top: 672.107px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(15.6191px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1649.38px; top: 699.794px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(15.3577px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1668.65px; top: 730.539px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(15.3937px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1677.05px; top: 765.566px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(23.6862px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1681.89px; top: 801.19px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(12.4993px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1684.75px; top: 822.628px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(16.0712px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1690.45px; top: 829.833px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(18.9307px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1690.53px; top: 838.224px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(16.2869px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1689.44px; top: 840.633px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(10.6843px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1695.14px; top: 848.938px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(20.054px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1697.06px; top: 856.702px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(21.4139px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1702.02px; top: 864.39px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(19.3913px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1703.68px; top: 858.962px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(14.0421px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1701.2px; top: 858.724px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(19.9096px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1704.75px; top: 863.787px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(16.3719px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(94, 234, 212, 0.55); border-radius: 50%; left: 1708.38px; top: 864.836px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(16.9441px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1714.17px; top: 868.924px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(20.7068px); opacity: 0;"></div><div style="position: fixed; width: 3px; height: 3px; background: rgba(127, 176, 105, 0.55); border-radius: 50%; left: 1717.66px; top: 872.904px; pointer-events: none; z-index: 9999; transition: transform 1.2s linear, opacity 1.2s linear; transform: translateY(13.2512px); opacity: 0;"></div>
+<script>
+// ---- Live agent registry renderer: bestiary + family tree from agents.json ----
+(function(){
+  function bestiaryCard(a){
+    return '<a class="specimen" href="'+a.page+'" style="text-decoration:none;color:inherit">'
+      +'<div class="frame"><svg style="color:'+a.color+'"><use href="#'+a.glyph+'"></use></svg></div>'
+      +'<div class="archetype-tag">'+a.tag+'</div>'
+      +'<div class="common">'+a.name+'</div>'
+      +'<div class="latin">$'+a.ticker+' &middot; '+a.niche+'</div>'
+      +'<p class="note">'+a.note+'</p>'
+      +'<div class="utility"><span class="label">Token:</span>'+a.utility+'</div>'
+      +'<div class="revenue"><span class="label">Revenue:</span>'+a.revenue+'</div>'
+      +'</a>';
+  }
+  function renderBestiary(agents){
+    var g=document.getElementById('bestiary-grid'); if(!g)return;
+    g.innerHTML=agents.map(bestiaryCard).join('');
+  }
+  function renderTree(agents){
+    var svg=document.getElementById('lineage-svg'); if(!svg)return;
+    var W=800, rowH=150, topY=-104;
+    var gens=Array.from(new Set(agents.map(function(a){return a.gen;}))).sort(function(x,y){return x-y;});
+    var pos={}, nodes='';
+    gens.forEach(function(g,gi){
+      var row=agents.filter(function(a){return a.gen===g;});
+      row.forEach(function(a,i){
+        var cx=Math.round((i+1)/(row.length+1)*W);
+        var y=topY+gi*rowH;
+        pos[a.name]={cx:cx,yTop:y,yBot:y+64};
+        nodes+='<a href="'+a.page+'">'
+          +'<use href="#'+a.glyph+'" x="'+(cx-32)+'" y="'+y+'" width="64" height="64" style="color:'+a.color+'"></use>'
+          +'<g font-family="EB Garamond, serif" font-style="italic" font-size="16" fill="'+a.color+'" text-anchor="middle"><text x="'+cx+'" y="'+(y+88)+'">'+a.name+'</text></g>'
+          +'<text x="'+cx+'" y="'+(y+106)+'" font-family="JetBrains Mono, monospace" font-size="9" fill="#6a7563" text-anchor="middle" letter-spacing="1">$'+a.ticker+' &middot; '+a.role+'</text>'
+          +'</a>';
+      });
+    });
+    var defs='', uses='', parts='', ei=0;
+    agents.forEach(function(a){
+      (a.parents||[]).forEach(function(pn){
+        var pp=pos[pn], cc=pos[a.name]; if(!pp||!cc)return;
+        var id='edge'+(ei++);
+        var x1=pp.cx, y1=pp.yBot+20, x2=cc.cx, y2=cc.yTop-6, my=(y1+y2)/2;
+        var d='M '+x1+' '+y1+' Q '+x1+' '+my+' '+((x1+x2)/2)+' '+my+' Q '+x2+' '+my+' '+x2+' '+y2;
+        defs+='<path id="'+id+'" d="'+d+'"></path>';
+        uses+='<use href="#'+id+'" stroke-width="1.8"></use>';
+        parts+='<g><circle r="3" fill="#5eead4"><animateMotion dur="4.4s" begin="0s" repeatCount="indefinite"><mpath href="#'+id+'"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" repeatCount="indefinite"></animate></circle></g>';
+        parts+='<g><circle r="3" fill="#d4a574"><animateMotion dur="4.4s" begin="2.2s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#'+id+'"></mpath></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.4s" begin="2.2s" repeatCount="indefinite"></animate></circle></g>';
+      });
+    });
+    svg.setAttribute('viewBox','0 -120 '+W+' '+(120+gens.length*rowH));
+    svg.innerHTML='<defs>'+defs+'</defs><g stroke="#4a7c59" fill="none">'+uses+'</g>'+nodes+parts;
+  }
+  fetch('agents.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+    var agents=(d&&d.agents)||[];
+    renderBestiary(agents); renderTree(agents);
+  }).catch(function(e){ console.error('agent registry load failed',e); });
+})();
+</script>
+</body></html>
