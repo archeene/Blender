@@ -46,6 +46,12 @@
   .card strong{color:var(--amber);font-weight:600}
   .kv{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding:5px 0;font-size:12.5px}
   .kv:last-child{border-bottom:0}
+  .btgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+  .bt{border:1px solid var(--line);border-radius:7px;padding:9px 6px;text-align:center}
+  .bt .k{color:var(--dim);font-size:9px;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+  .bt .v{font-size:16px;font-weight:600;color:var(--teal)}
+  .bt .v.up{color:#7fd99a}
+  .bt .v.down{color:#e0916f}
   .kv .kk{color:var(--dim)}
   .kv .vv{color:var(--sage);text-align:right}
   .muted{color:var(--dim);font-style:italic}
@@ -157,8 +163,22 @@
     <div class="kv"><span class="kk">timeframe / markets</span><span class="vv">24h bars &middot; BTC, ETH</span></div>
     <div class="kv"><span class="kk">rule</span><span class="vv">long &gt; 30-MA &amp; mom &gt; +2%; short if inverse; else flat</span></div>
     <div class="kv"><span class="kk">risk caps</span><span class="vv">&le;3x leverage &middot; daily-loss stop &middot; tiny size</span></div>
-    <div class="kv"><span class="kk">90d backtest (out-of-sample)</span><span class="vv">+10.5% vs buy-hold -6.8%</span></div>
     <p style="margin-top:8px" class="muted">Edge is discipline, not prediction: fewer, higher-conviction trades that beat fees + size-based slippage.</p>
+  </section>
+
+  <!-- 3b) BACKTEST -->
+  <section class="card">
+    <h2>backtest &middot; walk-forward</h2>
+    <div class="btgrid">
+      <div class="bt"><div class="k">out-of-sample</div><div class="v up">+10.1%</div></div>
+      <div class="bt"><div class="k">buy &amp; hold</div><div class="v down">-6.8%</div></div>
+      <div class="bt"><div class="k">in-sample</div><div class="v up">+5.0%</div></div>
+      <div class="bt"><div class="k">win rate</div><div class="v">20%</div></div>
+    </div>
+    <div class="kv"><span class="kk">method</span><span class="vv">90d BTC/ETH hourly &middot; train 60d, test held-out 30d</span></div>
+    <div class="kv"><span class="kk">trades (OOS)</span><span class="vv">7 &middot; low win-rate by design (few big winners)</span></div>
+    <div class="kv"><span class="kk">costs modeled</span><span class="vv">Avantis 6+6 bps + size-based dynamic spread</span></div>
+    <p style="margin-top:8px" class="muted">It made +10.1% on the held-out month while buy-and-hold lost 6.8%, a downtrend it shorted. One 90-day window, not a guarantee; funding fee not yet modeled. Validated forward in live paper before any funding.</p>
   </section>
 
   <!-- 4) INHERITANCE -->
