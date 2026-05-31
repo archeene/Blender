@@ -176,15 +176,15 @@
   <section class="card">
     <h2>backtest &middot; live config</h2>
     <div class="btgrid">
-      <div class="bt"><div class="k">90d return</div><div class="v up">+2.5%</div></div>
-      <div class="bt"><div class="k">buy &amp; hold</div><div class="v up">+2.8%</div></div>
-      <div class="bt"><div class="k">down month</div><div class="v up">positive</div></div>
+      <div class="bt"><div class="k">90d return</div><div class="v up">+5.9%</div></div>
+      <div class="bt"><div class="k">buy &amp; hold</div><div class="v up">+1.9%</div></div>
+      <div class="bt"><div class="k">max draw</div><div class="v down">9.0%</div></div>
       <div class="bt"><div class="k">win rate</div><div class="v">36%</div></div>
     </div>
-    <div class="kv"><span class="kk">config (exactly what runs live)</span><span class="vv">24h bars &middot; MA30 &middot; mom 10 &middot; 2% thr &middot; ~$200 size &middot; 2x</span></div>
+    <div class="kv"><span class="kk">config (exactly what runs live)</span><span class="vv">24h bars &middot; MA30 &middot; mom 10 &middot; 2% thr &middot; ~$800 size (40% margin) &middot; 2x</span></div>
     <div class="kv"><span class="kk">the edge</span><span class="vv">stayed positive in the held-out down month while buy-and-hold lost ~9.5%</span></div>
     <div class="kv"><span class="kk">costs modeled</span><span class="vv">Avantis 6+6 bps + size-based dynamic spread</span></div>
-    <p style="margin-top:8px" class="muted">Trend-following protects on the downside: it lags buy-and-hold in steady bull runs and earns its keep in chop and downtrends. Bigger position size scales both the return and the risk; the agent trades tiny by design (pre-alpha). One 90-day window, not a guarantee; funding fee not yet modeled.</p>
+    <p style="margin-top:8px" class="muted">Trend-following protects on the downside: it lags buy-and-hold in steady bull runs and earns its keep in chop and downtrends. Position size was raised on request: bigger size scales the return and the drawdown together (here 9% vs ~2.5% at the smaller size). One 90-day window, not a guarantee; funding fee not yet modeled.</p>
   </section>
 
   <!-- 3c) LIVE TRADES -->
