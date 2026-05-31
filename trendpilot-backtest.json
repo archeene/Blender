@@ -1,0 +1,136 @@
+{
+  "label": "90-day backtest track record (validated config, real BTC/ETH prices)",
+  "summary": {
+    "return_pct": 5.89,
+    "trades": 11,
+    "wins": 4,
+    "losses": 7,
+    "win_rate": 36.0,
+    "max_drawdown": 9.0,
+    "buy_hold": 1.91,
+    "days": 60
+  },
+  "trades": [
+    {
+      "ts": "bar-85",
+      "market": "BTC",
+      "side": "short",
+      "entry": 78046.5262,
+      "exit": 76591.6966,
+      "notional": 458.78,
+      "pnl": 8.2767,
+      "result": "win",
+      "reason": "signal_flat"
+    },
+    {
+      "ts": "bar-73",
+      "market": "BTC",
+      "side": "long",
+      "entry": 79840.6337,
+      "exit": 79593.6816,
+      "notional": 783.15,
+      "pnl": -2.8922,
+      "result": "loss",
+      "reason": "signal_flat"
+    },
+    {
+      "ts": "bar-71",
+      "market": "ETH",
+      "side": "long",
+      "entry": 2325.399,
+      "exit": 2285.1573,
+      "notional": 461.13,
+      "pnl": -8.2567,
+      "result": "loss",
+      "reason": "signal_flat"
+    },
+    {
+      "ts": "bar-66",
+      "market": "ETH",
+      "side": "long",
+      "entry": 2376.8931,
+      "exit": 2326.675,
+      "notional": 469.52,
+      "pnl": -10.2015,
+      "result": "loss",
+      "reason": "signal_flat"
+    },
+    {
+      "ts": "bar-59",
+      "market": "BTC",
+      "side": "long",
+      "entry": 77637.9391,
+      "exit": 76082.5606,
+      "notional": 796.69,
+      "pnl": -16.4386,
+      "result": "loss",
+      "reason": "signal_flat"
+    },
+    {
+      "ts": "bar-57",
+      "market": "BTC",
+      "side": "long",
+      "entry": 71308.3722,
+      "exit": 76574.2974,
+      "notional": 737.99,
+      "pnl": 54.0558,
+      "result": "win",
+      "reason": "signal_flat"
+    },
+    {
+      "ts": "bar-53",
+      "market": "ETH",
+      "side": "long",
+      "entry": 2215.826,
+      "exit": 2317.4239,
+      "notional": 442.44,
+      "pnl": 20.0209,
+      "result": "win",
+      "reason": "signal_flat"
+    },
+    {
+      "ts": "bar-36",
+      "market": "ETH",
+      "side": "long",
+      "entry": 2164.618,
+      "exit": 2079.2649,
+      "notional": 461.38,
+      "pnl": -18.4694,
+      "result": "loss",
+      "reason": "signal_flat"
+    },
+    {
+      "ts": "bar-36",
+      "market": "BTC",
+      "side": "long",
+      "entry": 69937.1008,
+      "exit": 68136.4211,
+      "notional": 769.58,
+      "pnl": -20.2762,
+      "result": "loss",
+      "reason": "signal_flat"
+    },
+    {
+      "ts": "bar-35",
+      "market": "BTC",
+      "side": "short",
+      "entry": 66788.7741,
+      "exit": 69937.1114,
+      "notional": 800.0,
+      "pnl": -38.191,
+      "result": "loss",
+      "reason": "signal_flip"
+    },
+    {
+      "ts": "bar-34",
+      "market": "ETH",
+      "side": "short",
+      "entry": 2058.4522,
+      "exit": 2053.2175,
+      "notional": 479.62,
+      "pnl": 0.9319,
+      "result": "win",
+      "reason": "signal_flat"
+    }
+  ]
+}
