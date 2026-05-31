@@ -192,6 +192,9 @@
     <h2>live trades &middot; <span id="trades-mode" class="muted" style="text-transform:none;font-weight:400">paper</span></h2>
     <div class="btgrid" id="trades-summary"></div>
     <div class="trades" id="trades-list"><div class="trow"><span class="muted">loading trades&hellip;</span></div></div>
+    <h2 style="margin-top:18px">track record &middot; <span class="muted" style="text-transform:none;font-weight:400">90d backtest, real prices</span></h2>
+    <div class="btgrid" id="bt-summary"></div>
+    <div class="trades" id="bt-list"><div class="trow"><span class="muted">loading&hellip;</span></div></div>
   </section>
 
   <!-- 4) INHERITANCE -->
@@ -249,6 +252,24 @@
     L.innerHTML=html;
     if(d.mode) document.getElementById('trades-mode').textContent=(d.mode.toLowerCase().indexOf('paper')>=0?'paper':'live');
   }).catch(function(e){ document.getElementById('trades-list').innerHTML='<div class="trow"><span class="muted">trades feed unavailable</span></div>'; });
+})();
+</script>
+<script>
+(function(){
+  function row(h){return '<div class="trow">'+h+'</div>';}
+  fetch('trendpilot-backtest.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+    var s=d.summary||{};
+    document.getElementById('bt-summary').innerHTML=
+      '<div class="bt"><div class="k">return</div><div class="v up">'+(s.return_pct>=0?'+':'')+s.return_pct+'%</div></div>'+
+      '<div class="bt"><div class="k">trades</div><div class="v">'+s.trades+'</div></div>'+
+      '<div class="bt"><div class="k">W / L</div><div class="v">'+s.wins+' / '+s.losses+'</div></div>'+
+      '<div class="bt"><div class="k">max draw</div><div class="v down">'+s.max_drawdown+'%</div></div>';
+    var L=document.getElementById('bt-list'),html='';
+    (d.trades||[]).forEach(function(c){
+      html+=row('<span><span class="tbadge">'+(c.result||'')+'</span> <span class="side-'+c.side+'">'+c.side.toUpperCase()+' '+c.market+'</span> '+c.entry+'→'+c.exit+'</span><span class="tpnl '+((c.pnl||0)>=0?'win':'loss')+'">'+((c.pnl||0)>=0?'+':'')+(c.pnl||0).toFixed(2)+'</span>');});
+    if(!html) html=row('<span class="muted">none</span>');
+    L.innerHTML=html;
+  }).catch(function(e){ document.getElementById('bt-list').innerHTML='<div class="trow"><span class="muted">unavailable</span></div>'; });
 })();
 </script>
 </body></html>
