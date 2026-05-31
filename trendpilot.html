@@ -192,7 +192,7 @@
     <h2>live trades &middot; <span id="trades-mode" class="muted" style="text-transform:none;font-weight:400">paper</span></h2>
     <div class="btgrid" id="trades-summary"></div>
     <div class="trades" id="trades-list"><div class="trow"><span class="muted">loading trades&hellip;</span></div></div>
-    <p style="margin-top:8px" class="muted">Virtual dollars, the validated strategy trading live on real prices. Open positions + closed wins/losses; scrolls as it grows. Real Avantis execution begins on operator go.</p>
+    <p style="margin-top:8px" class="muted">Virtual dollars on real prices. NOTE &mdash; currently running a HIGH-FREQUENCY test config (1h bars, ~hourly trades) to exercise the system end-to-end; this is NOT the validated 24h strategy described above and is expected to lose to trading costs. The profitable config trades rarely. Real Avantis execution begins on operator go.</p>
   </section>
 
   <!-- 4) INHERITANCE -->
@@ -237,8 +237,8 @@
   fetch('trendpilot-trades.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
     var s=d.summary||{};
     document.getElementById('trades-summary').innerHTML=
-      '<div class="bt"><div class="k">equity</div><div class="v">$'+(s.equity!=null?s.equity:'—')+'</div></div>'+
-      '<div class="bt"><div class="k">return</div><div class="v '+(((s.return_pct||0)>=0)?'up':'down')+'">'+(s.return_pct!=null?((s.return_pct>=0?'+':'')+s.return_pct+'%'):'—')+'</div></div>'+
+      '<div class="bt"><div class="k">equity</div><div class="v">$'+(s.equity!=null?s.equity:'&mdash;')+'</div></div>'+
+      '<div class="bt"><div class="k">return</div><div class="v '+(((s.return_pct||0)>=0)?'up':'down')+'">'+(s.return_pct!=null?((s.return_pct>=0?'+':'')+s.return_pct+'%'):'&mdash;')+'</div></div>'+
       '<div class="bt"><div class="k">W / L</div><div class="v">'+(s.wins||0)+' / '+(s.losses||0)+'</div></div>'+
       '<div class="bt"><div class="k">open</div><div class="v">'+(s.open_positions||0)+'</div></div>';
     var L=document.getElementById('trades-list'),html='';
