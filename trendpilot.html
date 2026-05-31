@@ -172,30 +172,11 @@
     <p style="margin-top:8px" class="muted">Edge is discipline, not prediction: fewer, higher-conviction trades that beat fees + size-based slippage.</p>
   </section>
 
-  <!-- 3b) BACKTEST -->
-  <section class="card">
-    <h2>backtest &middot; live config</h2>
-    <div class="btgrid">
-      <div class="bt"><div class="k">90d return</div><div class="v up">+5.9%</div></div>
-      <div class="bt"><div class="k">buy &amp; hold</div><div class="v up">+1.9%</div></div>
-      <div class="bt"><div class="k">max draw</div><div class="v down">9.0%</div></div>
-      <div class="bt"><div class="k">win rate</div><div class="v">36%</div></div>
-    </div>
-    <div class="kv"><span class="kk">config (exactly what runs live)</span><span class="vv">24h bars &middot; MA30 &middot; mom 10 &middot; 2% thr &middot; ~$800 size (40% margin) &middot; 2x</span></div>
-    <div class="kv"><span class="kk">the edge</span><span class="vv">stayed positive in the held-out down month while buy-and-hold lost ~9.5%</span></div>
-    <div class="kv"><span class="kk">costs modeled</span><span class="vv">Avantis 6+6 bps + size-based dynamic spread</span></div>
-    <p style="margin-top:8px" class="muted">Trend-following protects on the downside: it lags buy-and-hold in steady bull runs and earns its keep in chop and downtrends. Position size was raised on request: bigger size scales the return and the drawdown together (here 9% vs ~2.5% at the smaller size). One 90-day window, not a guarantee; funding fee not yet modeled.</p>
-  </section>
-
   <!-- 3c) LIVE TRADES -->
   <section class="card">
     <h2>live book &middot; <span id="trades-mode" class="muted" style="text-transform:none;font-weight:400">paper</span></h2>
     <div class="btgrid" id="trades-summary"></div>
     <div class="trades" id="trades-list"><div class="trow"><span class="muted">loading trades&hellip;</span></div></div>
-    <p style="margin-top:6px" class="muted">The live book above is a fresh $1,000 paper account (started today), currently about flat after opening fees. The +5.9% below is the separate 90-day backtest record, NOT the live book.</p>
-    <h2 style="margin-top:18px">track record &middot; <span class="muted" style="text-transform:none;font-weight:400">90d backtest, real prices</span></h2>
-    <div class="btgrid" id="bt-summary"></div>
-    <div class="trades" id="bt-list"><div class="trow"><span class="muted">loading&hellip;</span></div></div>
   </section>
 
   <!-- 4) INHERITANCE -->
@@ -234,43 +215,4 @@
   </footer>
 
 </main>
-<script>
-(function(){
-  function row(h){return '<div class="trow">'+h+'</div>';}
-  fetch('trendpilot-trades.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
-    var s=d.summary||{};
-    document.getElementById('trades-summary').innerHTML=
-      '<div class="bt"><div class="k">equity</div><div class="v">$'+(s.equity!=null?s.equity:'n/a')+'</div></div>'+
-      '<div class="bt"><div class="k">return</div><div class="v '+(((s.return_pct||0)>=0)?'up':'down')+'">'+(s.return_pct!=null?((s.return_pct>=0?'+':'')+s.return_pct+'%'):'n/a')+'</div></div>'+
-      '<div class="bt"><div class="k">W / L</div><div class="v">'+(s.wins||0)+' / '+(s.losses||0)+'</div></div>'+
-      '<div class="bt"><div class="k">open</div><div class="v">'+(s.open_positions||0)+'</div></div>';
-    var L=document.getElementById('trades-list'),html='';
-    (d.open||[]).forEach(function(o){var u=o.unrealized||0;
-      html+=row('<span><span class="tbadge">open</span> <span class="side-'+o.side+'">'+o.side.toUpperCase()+' '+o.market+'</span> @ '+o.entry+'</span><span class="tpnl '+(u>=0?'win':'loss')+'">'+(u>=0?'+':'')+u.toFixed(2)+'</span>');});
-    (d.closed||[]).forEach(function(c){
-      html+=row('<span><span class="tbadge">'+(c.result||'')+'</span> <span class="side-'+c.side+'">'+c.side.toUpperCase()+' '+c.market+'</span> '+c.entry+'→'+c.exit+'</span><span class="tpnl '+((c.pnl||0)>=0?'win':'loss')+'">'+((c.pnl||0)>=0?'+':'')+(c.pnl||0).toFixed(2)+'</span>');});
-    if(!html) html=row('<span class="muted">No trades yet.</span>');
-    L.innerHTML=html;
-    if(d.mode) document.getElementById('trades-mode').textContent=(d.mode.toLowerCase().indexOf('paper')>=0?'paper':'live');
-  }).catch(function(e){ document.getElementById('trades-list').innerHTML='<div class="trow"><span class="muted">trades feed unavailable</span></div>'; });
-})();
-</script>
-<script>
-(function(){
-  function row(h){return '<div class="trow">'+h+'</div>';}
-  fetch('trendpilot-backtest.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
-    var s=d.summary||{};
-    document.getElementById('bt-summary').innerHTML=
-      '<div class="bt"><div class="k">return</div><div class="v up">'+(s.return_pct>=0?'+':'')+s.return_pct+'%</div></div>'+
-      '<div class="bt"><div class="k">trades</div><div class="v">'+s.trades+'</div></div>'+
-      '<div class="bt"><div class="k">W / L</div><div class="v">'+s.wins+' / '+s.losses+'</div></div>'+
-      '<div class="bt"><div class="k">max draw</div><div class="v down">'+s.max_drawdown+'%</div></div>';
-    var L=document.getElementById('bt-list'),html='';
-    (d.trades||[]).forEach(function(c){
-      html+=row('<span><span class="tbadge">'+(c.result||'')+'</span> <span class="side-'+c.side+'">'+c.side.toUpperCase()+' '+c.market+'</span> '+c.entry+'→'+c.exit+'</span><span class="tpnl '+((c.pnl||0)>=0?'win':'loss')+'">'+((c.pnl||0)>=0?'+':'')+(c.pnl||0).toFixed(2)+'</span>');});
-    if(!html) html=row('<span class="muted">none</span>');
-    L.innerHTML=html;
-  }).catch(function(e){ document.getElementById('bt-list').innerHTML='<div class="trow"><span class="muted">unavailable</span></div>'; });
-})();
-</script>
 </body></html>
