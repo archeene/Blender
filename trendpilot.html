@@ -215,4 +215,25 @@
   </footer>
 
 </main>
+<script>
+(function(){
+  function row(h){return '<div class="trow">'+h+'</div>';}
+  fetch('trendpilot-trades.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+    var s=d.summary||{};
+    document.getElementById('trades-summary').innerHTML=
+      '<div class="bt"><div class="k">equity</div><div class="v">$'+(s.equity!=null?s.equity:'n/a')+'</div></div>'+
+      '<div class="bt"><div class="k">return</div><div class="v '+(((s.return_pct||0)>=0)?'up':'down')+'">'+(s.return_pct!=null?((s.return_pct>=0?'+':'')+s.return_pct+'%'):'n/a')+'</div></div>'+
+      '<div class="bt"><div class="k">W / L</div><div class="v">'+(s.wins||0)+' / '+(s.losses||0)+'</div></div>'+
+      '<div class="bt"><div class="k">open</div><div class="v">'+(s.open_positions||0)+'</div></div>';
+    var L=document.getElementById('trades-list'),html='';
+    (d.open||[]).forEach(function(o){var u=o.unrealized||0;
+      html+=row('<span><span class="tbadge">open</span> <span class="side-'+o.side+'">'+o.side.toUpperCase()+' '+o.market+'</span> @ '+o.entry+'</span><span class="tpnl '+(u>=0?'win':'loss')+'">'+(u>=0?'+':'')+u.toFixed(2)+'</span>');});
+    (d.closed||[]).forEach(function(c){
+      html+=row('<span><span class="tbadge">'+(c.result||'')+'</span> <span class="side-'+c.side+'">'+c.side.toUpperCase()+' '+c.market+'</span> '+c.entry+'→'+c.exit+'</span><span class="tpnl '+((c.pnl||0)>=0?'win':'loss')+'">'+((c.pnl||0)>=0?'+':'')+(c.pnl||0).toFixed(2)+'</span>');});
+    if(!html) html=row('<span class="muted">No trades yet.</span>');
+    L.innerHTML=html;
+    if(d.mode) document.getElementById('trades-mode').textContent=(d.mode.toLowerCase().indexOf('paper')>=0?'paper':'live');
+  }).catch(function(e){ document.getElementById('trades-list').innerHTML='<div class="trow"><span class="muted">trades feed unavailable</span></div>'; });
+})();
+</script>
 </body></html>
