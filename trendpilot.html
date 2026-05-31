@@ -237,8 +237,8 @@
   fetch('trendpilot-trades.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
     var s=d.summary||{};
     document.getElementById('trades-summary').innerHTML=
-      '<div class="bt"><div class="k">equity</div><div class="v">$'+(s.equity!=null?s.equity:'&mdash;')+'</div></div>'+
-      '<div class="bt"><div class="k">return</div><div class="v '+(((s.return_pct||0)>=0)?'up':'down')+'">'+(s.return_pct!=null?((s.return_pct>=0?'+':'')+s.return_pct+'%'):'&mdash;')+'</div></div>'+
+      '<div class="bt"><div class="k">equity</div><div class="v">$'+(s.equity!=null?s.equity:'n/a')+'</div></div>'+
+      '<div class="bt"><div class="k">return</div><div class="v '+(((s.return_pct||0)>=0)?'up':'down')+'">'+(s.return_pct!=null?((s.return_pct>=0?'+':'')+s.return_pct+'%'):'n/a')+'</div></div>'+
       '<div class="bt"><div class="k">W / L</div><div class="v">'+(s.wins||0)+' / '+(s.losses||0)+'</div></div>'+
       '<div class="bt"><div class="k">open</div><div class="v">'+(s.open_positions||0)+'</div></div>';
     var L=document.getElementById('trades-list'),html='';
