@@ -1861,7 +1861,7 @@
         var cx=Math.round((i+1)/(row.length+1)*W);
         var y=topY+gi*rowH;
         pos[a.name]={cx:cx,yTop:y,yBot:y+64};
-        nodes+='<a href="'+a.page+'">'
+        nodes+='<a href="'+a.page+'" style="cursor:pointer">'+'<rect x="'+(cx-40)+'" y="'+(y-8)+'" width="80" height="122" fill="#fff" opacity="0" pointer-events="all"></rect>'
           +'<use href="#'+a.glyph+'" x="'+(cx-32)+'" y="'+y+'" width="64" height="64" style="color:'+a.color+'"></use>'
           +'<g font-family="EB Garamond, serif" font-style="italic" font-size="16" fill="'+a.color+'" text-anchor="middle"><text x="'+cx+'" y="'+(y+88)+'">'+a.name+'</text></g>'
           +'<text x="'+cx+'" y="'+(y+106)+'" font-family="JetBrains Mono, monospace" font-size="9" fill="#6a7563" text-anchor="middle" letter-spacing="1">$'+a.ticker+' &middot; '+a.role+'</text>'
