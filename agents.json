@@ -25,16 +25,16 @@
       "gen": 0,
       "role": "founder",
       "tag": "Gen 0 \u00b7 DeFi Auto-Trader \u00b7 live",
-      "niche": "systematic trend trader",
+      "niche": "systematic mean-reversion trader",
       "page": "trendpilot.html",
       "parents": [
         "Blender"
       ],
       "glyph": "s-beetle",
       "color": "#5eead4",
-      "note": "Systematic BTC/ETH trend-follower on Avantis perps via Clawmes. Realized P&L buys and burns $TPLT.",
+      "note": "Systematic BTC/ETH mean-reversion trader on Avantis perps via Clawmes. Realized P&L buys and burns $TPLT.",
       "utility": "$TPLT \u00b7 buy-and-burn from trading P&L",
-      "revenue": "Trading profit \u00b7 +10.1% out-of-sample backtest",
+      "revenue": "Trading profit \u00b7 mean-reversion (frequent, walk-forward validated)",
       "status": "paper"
     },
     {
