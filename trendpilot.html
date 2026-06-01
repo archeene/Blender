@@ -168,7 +168,7 @@
     <h2>strategy &middot; mean-reversion</h2>
     <div class="kv"><span class="kk">timeframe / markets</span><span class="vv">2h bars &middot; BTC, ETH</span></div>
     <div class="kv"><span class="kk">rule</span><span class="vv">fade stretched moves: short when price is &gt;1&sigma; above its mean, long when &gt;1&sigma; below; exit on reversion to the mean</span></div>
-    <div class="kv"><span class="kk">cadence</span><span class="vv">~0.6 trades/day &middot; ~75% win rate &middot; many small wins, selective entries</span></div>
+    <div class="kv"><span class="kk">cadence</span><span class="vv">~0.9 trades/day &middot; ~70% win &middot; closes on reversion, reopens on next stretch</span></div>
     <div class="kv"><span class="kk">risk caps</span><span class="vv">&le;3x leverage &middot; liquidation guard &middot; size cap</span></div>
     <p style="margin-top:8px" class="muted">Trades frequently in choppy markets and clears the round-trip cost when reversions beat it. It is flat (no position) when price sits near its mean, and carries tail risk fading a one-way trend, bounded by the z-entry and liquidation guard.</p>
   </section>
