@@ -1,0 +1,27 @@
+{
+  "agent": "marketpulse",
+  "label": "daily BTC/ETH market read (honest, computed)",
+  "updated": "2026-06-01T17:33:41.411430+00:00",
+  "reads": [
+    {
+      "market": "BTC",
+      "price": 71503.89,
+      "ma7": 73854.31,
+      "bias": "down",
+      "z": -1.9,
+      "vol7_pct": 1.14,
+      "regime": "trending",
+      "setup": "mean-reversion long"
+    },
+    {
+      "market": "ETH",
+      "price": 1987.22,
+      "ma7": 2029.03,
+      "bias": "down",
+      "z": -1.34,
+      "vol7_pct": 1.32,
+      "regime": "chop",
+      "setup": "mean-reversion long"
+    }
+  ]
+}
