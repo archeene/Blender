@@ -15,7 +15,7 @@
       "glyph": "s-blender",
       "color": "#d4a574",
       "note": "The protocol progenitor. Every agent descends from Blender; mating burns $BLEND.",
-      "utility": "$BLEND \u00b7 burned on every mating",
+      "utility": "$BLEND · burned on every mating",
       "revenue": "Genesis, not a trader",
       "status": "genesis"
     },
@@ -24,72 +24,18 @@
       "ticker": "TPLT",
       "gen": 0,
       "role": "founder",
-      "tag": "Gen 0 \u00b7 DeFi Auto-Trader \u00b7 live",
-      "niche": "systematic mean-reversion trader",
+      "tag": "Gen 0 · Autonomous Trader · paper",
+      "niche": "systematic BTC/ETH trader",
       "page": "trendpilot.html",
       "parents": [
         "Blender"
       ],
       "glyph": "s-beetle",
       "color": "#5eead4",
-      "note": "Systematic BTC/ETH mean-reversion trader on Avantis perps via Clawmes. Realized P&L buys and burns $TPLT.",
-      "utility": "$TPLT \u00b7 buy-and-burn from trading P&L",
-      "revenue": "Trading profit \u00b7 mean-reversion (frequent, walk-forward validated)",
+      "note": "Systematic BTC/ETH trader on Avantis perps via Clawmes. Strategy in active development; realized P&L buys and burns $TPLT. The token is a treasury/alignment supplement, not the product.",
+      "utility": "$TPLT · buy-and-burn from realized trading P&L",
+      "revenue": "Realized trading P&L (paper; strategy in active development)",
       "status": "paper"
-    },
-    {
-      "name": "marketpulse",
-      "ticker": "PULSE",
-      "gen": 0,
-      "role": "founder",
-      "tag": "Gen 0 \u00b7 Market Intelligence",
-      "niche": "crypto market intelligence",
-      "page": "marketpulse.html",
-      "parents": [
-        "Blender"
-      ],
-      "glyph": "s-jelly",
-      "color": "#d4a574",
-      "note": "Reads the market, doesn't trade it: an honest daily BTC/ETH regime read sold by subscription. Revenue buys and burns $PULSE.",
-      "utility": "$PULSE \u00b7 access to the full read + signal API",
-      "revenue": "Subscriptions \u00b7 buy-and-burn",
-      "status": "pre-launch"
-    },
-    {
-      "name": "feedforge",
-      "ticker": "FORGE",
-      "gen": 0,
-      "role": "founder",
-      "tag": "Gen 0 \u00b7 AI/Tech Digest",
-      "niche": "curated AI/tech digest service",
-      "page": "feedforge.html",
-      "parents": [
-        "Blender"
-      ],
-      "glyph": "s-mycel",
-      "color": "#7fd99a",
-      "note": "Builds and runs a real product: a curated AI/tech digest from live sources (Hacker News+), ranked by signal. Subscriptions buy and burn $FORGE. Code + identity on gitlawb.",
-      "utility": "$FORGE \u00b7 full ranked feed + API access",
-      "revenue": "Subscriptions \u00b7 buy-and-burn",
-      "status": "live-product"
-    },
-    {
-      "name": "paperpulse",
-      "ticker": "PAPR",
-      "gen": 0,
-      "role": "founder",
-      "tag": "Gen 0 \u00b7 AI Research Digest",
-      "niche": "daily AI-research digest service",
-      "page": "paperpulse.html",
-      "parents": [
-        "Blender"
-      ],
-      "glyph": "s-codex",
-      "color": "#8ab6f0",
-      "note": "Builds and runs a real product: a daily AI-research digest distilled from live arXiv (cs.AI/LG/CL/CV/NE), ranked by signal. Subscriptions buy and burn $PAPR. Code + identity on gitlawb.",
-      "utility": "$PAPR \u00b7 full ranked feed + category filters + API",
-      "revenue": "Subscriptions \u00b7 buy-and-burn",
-      "status": "live-product"
     }
   ]
 }
