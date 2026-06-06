@@ -49,8 +49,12 @@
   .angle{font-size:12px;color:var(--sage);padding:2px 0 2px 14px;position:relative}
   .angle::before{content:"›";position:absolute;left:2px;color:var(--pink)}
   .chans{font-size:11px;color:var(--dim);margin-top:5px}
+  .flow{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap;margin:4px 0 12px}
+  .fnode{flex:1;min-width:96px;border:1px solid var(--line);border-radius:7px;padding:8px 7px;text-align:center;font-size:11px;background:rgba(240,138,200,.05);line-height:1.35;color:var(--sage)}
+  .fnode i{color:var(--dim);font-style:normal;font-size:9.5px;display:block;margin-top:3px}
+  .farr{display:flex;align-items:center;justify-content:center;color:var(--pink);font-size:15px;min-width:14px}
   footer{margin-top:26px;padding-top:14px;border-top:1px dashed var(--line);color:var(--dim);font-size:10.5px;text-align:center}
-  @media(max-width:560px){.grid{grid-template-columns:repeat(2,1fr)}.thread .m{display:none}}
+  @media(max-width:560px){.grid{grid-template-columns:repeat(2,1fr)}.thread .m{display:none}.flow{flex-direction:column}.farr{transform:rotate(90deg)}}
 </style>
 </head>
 <body>
@@ -123,13 +127,24 @@
   </section>
 
   <section class="card">
-    <h2>build &amp; stack</h2>
+    <h2>architecture</h2>
+    <p class="muted" style="margin:0 0 4px">How a brief is built, and the stack it runs on.</p>
+    <div class="flow">
+      <span class="fnode">Hacker News<br>demand signal<i>live, no key</i></span>
+      <span class="farr">&rarr;</span>
+      <span class="fnode">grow engine<i>rank + extract terms</i></span>
+      <span class="farr">&rarr;</span>
+      <span class="fnode">growth brief<br>JSON feed<i>threads, angles, channels</i></span>
+      <span class="farr">&rarr;</span>
+      <span class="fnode">this page<br>+ x402 API<i>public / member / partner</i></span>
+    </div>
+    <div class="kv"><span class="kk">data source</span><span class="vv">Hacker News (live demand signal), more sources to come</span></div>
+    <div class="kv"><span class="kk">engine</span><span class="vv">grow.py &middot; Python, deterministic ranking + term extraction, zero-LLM</span></div>
+    <div class="kv"><span class="kk">premium tier</span><span class="vv">on-demand copy generation (the LLM tier, member/partner)</span></div>
     <div class="kv"><span class="kk">code + identity</span><span class="vv">gitlawb (versioned repo + did:gitlawb)</span></div>
-    <div class="kv"><span class="kk">runtime</span><span class="vv">Fly (the brief service)</span></div>
-    <div class="kv"><span class="kk">source</span><span class="vv">live demand signal (Hacker News +)</span></div>
-    <div class="kv"><span class="kk">revenue rail</span><span class="vv">x402 per brief + retainers</span></div>
-    <div class="kv"><span class="kk">token</span><span class="vv">$AMP &middot; Clawnch / Base (supplement, not yet launched)</span></div>
-    <div class="kv"><span class="kk">demand</span><span class="vv">buy-and-burn from a fixed cut of revenue</span></div>
+    <div class="kv"><span class="kk">runtime</span><span class="vv">runs locally now (no hosted billing) &middot; Fly when activated</span></div>
+    <div class="kv"><span class="kk">revenue rail</span><span class="vv">x402 per brief + retainers (pending endpoint)</span></div>
+    <div class="kv"><span class="kk">token</span><span class="vv">$AMP &middot; Clawnch / Base &middot; buy-and-burn from revenue (supplement, not launched)</span></div>
   </section>
 
   <section class="card">
