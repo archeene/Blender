@@ -1,0 +1,123 @@
+{
+  "agent": "repohealth",
+  "service": "on-demand GitHub repo health audit",
+  "source": "GitHub API (live)",
+  "generated": "2026-06-06T14:58:15.437446+00:00",
+  "audited": 6,
+  "audits": [
+    {
+      "repo": "pallets/flask",
+      "url": "https://github.com/pallets/flask",
+      "grade": "B",
+      "score": 89,
+      "stars": 71646,
+      "dimensions": {
+        "maintenance": 100,
+        "community": 80,
+        "security": 80,
+        "docs": 100
+      },
+      "description": "The Python micro framework for building web applications.",
+      "top_finding": {
+        "level": "info",
+        "text": "No SECURITY policy; no documented way to report vulnerabilities."
+      },
+      "finding_count": 1
+    },
+    {
+      "repo": "expressjs/express",
+      "url": "https://github.com/expressjs/express",
+      "grade": "B",
+      "score": 89,
+      "stars": 69104,
+      "dimensions": {
+        "maintenance": 100,
+        "community": 80,
+        "security": 80,
+        "docs": 100
+      },
+      "description": "Fast, unopinionated, minimalist web framework for node.",
+      "top_finding": {
+        "level": "info",
+        "text": "No SECURITY policy; no documented way to report vulnerabilities."
+      },
+      "finding_count": 1
+    },
+    {
+      "repo": "psf/requests",
+      "url": "https://github.com/psf/requests",
+      "grade": "B",
+      "score": 89,
+      "stars": 54031,
+      "dimensions": {
+        "maintenance": 100,
+        "community": 80,
+        "security": 80,
+        "docs": 100
+      },
+      "description": "A simple, yet elegant, HTTP library.",
+      "top_finding": {
+        "level": "info",
+        "text": "No SECURITY policy; no documented way to report vulnerabilities."
+      },
+      "finding_count": 1
+    },
+    {
+      "repo": "facebook/react",
+      "url": "https://github.com/facebook/react",
+      "grade": "B",
+      "score": 86,
+      "stars": 245640,
+      "dimensions": {
+        "maintenance": 100,
+        "community": 70,
+        "security": 80,
+        "docs": 100
+      },
+      "description": "The library for web and native user interfaces.",
+      "top_finding": {
+        "level": "info",
+        "text": "No SECURITY policy; no documented way to report vulnerabilities."
+      },
+      "finding_count": 1
+    },
+    {
+      "repo": "vuejs/vue",
+      "url": "https://github.com/vuejs/vue",
+      "grade": "D",
+      "score": 64,
+      "stars": 209868,
+      "dimensions": {
+        "maintenance": 35,
+        "community": 70,
+        "security": 70,
+        "docs": 100
+      },
+      "description": "This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
+      "top_finding": {
+        "level": "warn",
+        "text": "No commits in 604 days; project may be stale."
+      },
+      "finding_count": 3
+    },
+    {
+      "repo": "request/request",
+      "url": "https://github.com/request/request",
+      "grade": "D",
+      "score": 57,
+      "stars": 25551,
+      "dimensions": {
+        "maintenance": 35,
+        "community": 80,
+        "security": 45,
+        "docs": 85
+      },
+      "description": "\ud83c\udfca\ud83c\udffe Simplified HTTP request client.",
+      "top_finding": {
+        "level": "warn",
+        "text": "No commits in 2306 days; project may be stale."
+      },
+      "finding_count": 4
+    }
+  ]
+}
