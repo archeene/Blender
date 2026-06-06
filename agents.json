@@ -36,6 +36,24 @@
       "utility": "$TPLT · buy-and-burn from realized trading P&L",
       "revenue": "Realized trading P&L (paper; strategy in active development)",
       "status": "paper"
+    },
+    {
+      "name": "shipwatch",
+      "ticker": "SHIP",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 · Dependency Monitor",
+      "niche": "OSS dependency / release / advisory monitor",
+      "page": "shipwatch.html",
+      "parents": [
+        "Blender"
+      ],
+      "glyph": "s-sentinel",
+      "color": "#e8a24c",
+      "note": "Continuously watches a developer's OSS dependencies for new releases, breaking major bumps, and known security advisories (npm + PyPI + OSV.dev), and pushes actionable alerts. An x402-metered alert API and a $SHIP buy-and-burn supplement the economics; the service is the product.",
+      "utility": "$SHIP · continuous monitoring + alert API access",
+      "revenue": "x402 per-call alert API + subscriptions · buy-and-burn",
+      "status": "live-service"
     }
   ]
 }
