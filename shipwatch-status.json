@@ -1,0 +1,721 @@
+{
+  "agent": "shipwatch",
+  "service": "dependency / release / advisory monitor",
+  "source": "npm registry + PyPI + OSV.dev (live)",
+  "stack": "example web app",
+  "generated": "2026-06-06T14:50:44.376786+00:00",
+  "watched": 12,
+  "counts": {
+    "critical": 11,
+    "warn": 1,
+    "info": 0,
+    "ok": 0
+  },
+  "alerts": [
+    {
+      "ecosystem": "npm",
+      "name": "next",
+      "pinned": "13.4.0",
+      "latest": "16.2.7",
+      "released": "2026-06-01",
+      "bump": "major",
+      "breaking": true,
+      "vulns": [
+        {
+          "id": "CVE-2026-44573",
+          "summary": "Next.js has a Middleware / Proxy bypass in Pages Router applications using i18n",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2026-44572",
+          "summary": "Next.js's Middleware / Proxy redirects can be cache-poisoned",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        {
+          "id": "CVE-2025-48068",
+          "summary": "Information exposure in Next.js dev server due to lack of origin verification",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2026-27980",
+          "summary": "Next.js: Unbounded next/image disk cache growth can exhaust storage",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2025-57822",
+          "summary": "Next.js Improper Middleware Redirect Handling Leads to SSRF",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:N"
+        },
+        {
+          "id": "GHSA-5j59-xgg2-r9c4",
+          "summary": "Next has a Denial of Service with Server Components - Incomplete Fix Follow-Up",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "CVE-2024-34350",
+          "summary": "Next.js Vulnerable to HTTP Request Smuggling",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:H/A:N"
+        },
+        {
+          "id": "CVE-2024-51479",
+          "summary": "Next.js authorization bypass vulnerability",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2024-56332",
+          "summary": "Next.js Allows a Denial of Service (DoS) with Server Actions",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        {
+          "id": "GHSA-8h8q-6873-q5fj",
+          "summary": "Next.js Vulnerable to Denial of Service with Server Components",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "CVE-2025-59471",
+          "summary": "Next.js self-hosted applications vulnerable to DoS via Image Optimizer remotePatterns configuration",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "CVE-2023-46298",
+          "summary": "Next.js missing cache-control header may lead to CDN caching empty reply",
+          "severity": ""
+        },
+        {
+          "id": "CVE-2025-29927",
+          "summary": "Authorization Bypass in Next.js Middleware",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        {
+          "id": "CVE-2026-44581",
+          "summary": "Next.js vulnerable to cross-site scripting in App Router applications using CSP nonces",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "id": "CVE-2024-39693",
+          "summary": "Next.js Denial of Service (DoS) condition",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2024-34351",
+          "summary": "Next.js Server-Side Request Forgery in Server Actions",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2025-57752",
+          "summary": "Next.js Affected by Cache Key Confusion for Image Optimization API Routes",
+          "severity": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2024-47831",
+          "summary": "Denial of Service condition in Next.js image optimization",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:U"
+        },
+        {
+          "id": "CVE-2026-29057",
+          "summary": "Next.js: HTTP request smuggling in rewrites",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2026-44580",
+          "summary": "Next.js has cross-site scripting in beforeInteractive scripts with untrusted input",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "id": "GHSA-h25m-26qc-wcjf",
+          "summary": "Next.js HTTP request deserialization can lead to DoS when using insecure React Server Components",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "CVE-2026-44577",
+          "summary": "Next.js has a Denial of Service in the Image Optimization API",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "GHSA-mwv6-3258-q52c",
+          "summary": "Next Vulnerable to Denial of Service with Server Components",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "GHSA-q4gf-8mx6-v5v3",
+          "summary": "Next.js has a Denial of Service with Server Components",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "CVE-2025-32421",
+          "summary": "Next.js Race Condition to Cache Poisoning",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        {
+          "id": "CVE-2025-55173",
+          "summary": "Next.js Content Injection Vulnerability for Image Optimization",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        }
+      ],
+      "vuln_count": 26,
+      "level": "critical"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "axios",
+      "pinned": "0.21.1",
+      "latest": "1.17.0",
+      "released": "2026-06-03",
+      "bump": "major",
+      "breaking": true,
+      "vulns": [
+        {
+          "id": "CVE-2026-44495",
+          "summary": "axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:L"
+        },
+        {
+          "id": "CVE-2025-62718",
+          "summary": "Axios has a NO_PROXY Hostname Normalization Bypass that Leads to SSRF",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N"
+        },
+        {
+          "id": "CVE-2026-25639",
+          "summary": "Axios is Vulnerable to Denial of Service via __proto__ Key in mergeConfig",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "CVE-2026-42034",
+          "summary": "Axios' HTTP adapter-streamed uploads bypass maxBodyLength when maxRedirects: 0",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        {
+          "id": "CVE-2026-42039",
+          "summary": "Axios: unbounded recursion in toFormData causes DoS via deeply nested request data",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2026-42035",
+          "summary": "Axios: Header Injection via Prototype Pollution",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        {
+          "id": "CVE-2026-44490",
+          "summary": "axios has DoS & Header Injection via Prototype Pollution Read-Side Gadgets in axios merge functions",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
+        },
+        {
+          "id": "CVE-2021-3749",
+          "summary": "axios Inefficient Regular Expression Complexity vulnerability",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "CVE-2026-40175",
+          "summary": "Axios has Unrestricted Cloud Metadata Exfiltration via Header Injection Chain",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        {
+          "id": "CVE-2026-44496",
+          "summary": "Axios: Regular Expression Denial of Service (ReDoS) via Cookie Name Injection",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "CVE-2026-44486",
+          "summary": "Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2025-27152",
+          "summary": "axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P"
+        },
+        {
+          "id": "CVE-2026-42038",
+          "summary": "Axios: no_proxy bypass via IP alias allows SSRF",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2026-44487",
+          "summary": "Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2026-42033",
+          "summary": "Axios: Prototype Pollution Gadgets - Response Tampering, Data Exfiltration, and Request Hijacking",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        {
+          "id": "CVE-2026-44492",
+          "summary": "axios's shouldBypassProxy does not recognize IPv4-mapped IPv6 addresses, allowing NO_PROXY bypass (incomplete fix for CVE-2025-62718)",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2026-42043",
+          "summary": "Axios: Incomplete Fix for CVE-2025-62718 \u2014 NO_PROXY Protection Bypassed via RFC 1122 Loopback Subnet (127.0.0.0/8) in Axios 1.15.0",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N"
+        },
+        {
+          "id": "CVE-2026-42036",
+          "summary": "Axios: HTTP adapter streamed responses bypass maxContentLength",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        {
+          "id": "CVE-2026-42041",
+          "summary": "Axios: Authentication Bypass via Prototype Pollution Gadget in `validateStatus` Merge Strategy",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        {
+          "id": "CVE-2023-45857",
+          "summary": "Axios Cross-Site Request Forgery Vulnerability",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2026-42040",
+          "summary": "Axios: Null Byte Injection via Reverse-Encoding in AxiosURLSearchParams",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        {
+          "id": "CVE-2026-42042",
+          "summary": "Axios: XSRF Token Cross-Origin Leakage via Prototype Pollution Gadget in `withXSRFToken` Boolean Coercion",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N"
+        }
+      ],
+      "vuln_count": 22,
+      "level": "critical"
+    },
+    {
+      "ecosystem": "PyPI",
+      "name": "pillow",
+      "pinned": "9.0.0",
+      "latest": "12.2.0",
+      "released": "2026-04-01",
+      "bump": "major",
+      "breaking": true,
+      "vulns": [
+        {
+          "id": "CVE-2023-50447",
+          "summary": "Arbitrary Code Execution in Pillow",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2024-28219",
+          "summary": "Pillow buffer overflow vulnerability",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2023-44271",
+          "summary": "Pillow Denial of Service vulnerability",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2022-22817",
+          "summary": "Arbitrary expression injection in Pillow",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2022-24303",
+          "summary": "Path traversal in Pillow",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2023-4863",
+          "summary": "libwebp: OOB write in BuildHuffmanTable",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        {
+          "id": "CVE-2022-45198",
+          "summary": "Pillow vulnerable to Data Amplification attack.",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2026-42310",
+          "summary": "Pillow has a PDF Parsing Trailer Infinite Loop (DoS)",
+          "severity": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2026-42308",
+          "summary": "Pillow has an integer overflow when processing fonts",
+          "severity": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2022-24303",
+          "summary": "Pillow before 9.0.1 allows attackers to delete files because spaces in temporary pathnames are mishandled.",
+          "severity": ""
+        },
+        {
+          "id": "CVE-2022-45198",
+          "summary": "Pillow before 9.2.0 performs Improper Handling of Highly Compressed GIF Data (Data Amplification).",
+          "severity": ""
+        },
+        {
+          "id": "PYSEC-2023-175",
+          "summary": "Pillow versions before v10.0.1 bundled libwebp binaries in wheels that are vulnerable to CVE-2023-5129 (previously CVE-2023-4863). Pillow v10.0.1 upgrades the b",
+          "severity": ""
+        },
+        {
+          "id": "CVE-2023-44271",
+          "summary": "An issue was discovered in Pillow before 10.0.0. It is a Denial of Service that uncontrollably allocates memory to process a given task, potentially causing a s",
+          "severity": ""
+        },
+        {
+          "id": "CVE-2026-42308",
+          "summary": "Pillow is a Python imaging library. Prior to version 12.2.0, if a font advances for each glyph by an exceeding large amount, when Pillow keeps track of the curr",
+          "severity": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "vuln_count": 14,
+      "level": "critical"
+    },
+    {
+      "ecosystem": "PyPI",
+      "name": "urllib3",
+      "pinned": "1.26.4",
+      "latest": "2.7.0",
+      "released": "2026-05-07",
+      "bump": "major",
+      "breaking": true,
+      "vulns": [
+        {
+          "id": "CVE-2025-66471",
+          "summary": "urllib3 streaming API improperly handles highly compressed data",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H"
+        },
+        {
+          "id": "CVE-2024-37891",
+          "summary": "urllib3's Proxy-Authorization request header isn't stripped during cross-origin redirects",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2026-21441",
+          "summary": "Decompression-bomb safeguards bypassed when following HTTP redirects (streaming API)",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H"
+        },
+        {
+          "id": "CVE-2023-45803",
+          "summary": "urllib3's request body not stripped after redirect from 303 status changes request method to GET",
+          "severity": "CVSS:4.0/AV:A/AC:L/AT:P/PR:H/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2025-66418",
+          "summary": "urllib3 allows an unbounded number of links in the decompression chain",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H"
+        },
+        {
+          "id": "CVE-2025-50181",
+          "summary": "urllib3 redirects are not disabled when retries are disabled on PoolManager instantiation",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2021-33503",
+          "summary": "Catastrophic backtracking in URL authority parser when passed URL containing many @ characters",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2026-44431",
+          "summary": "urllib3: Sensitive headers forwarded across origins in proxied low-level redirects",
+          "severity": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2023-43804",
+          "summary": "`Cookie` HTTP header isn't stripped on cross-origin redirects",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2021-33503",
+          "summary": "An issue was discovered in urllib3 before 1.26.5. When provided with a URL containing many @ characters in the authority component, the authority regular expres",
+          "severity": ""
+        },
+        {
+          "id": "CVE-2023-43804",
+          "summary": "urllib3 is a user-friendly HTTP client library for Python. urllib3 doesn't treat the `Cookie` HTTP header special or provide any helpers for managing cookies ov",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        {
+          "id": "CVE-2023-45803",
+          "summary": "urllib3 is a user-friendly HTTP client library for Python. urllib3 previously wouldn't remove the HTTP request body when an HTTP redirect response using status ",
+          "severity": "CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2026-44431",
+          "summary": "urllib3 is an HTTP client library for Python. From 1.23 to before 2.7.0, cross-origin redirects followed from the low-level API via ProxyManager.connection_from",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        }
+      ],
+      "vuln_count": 13,
+      "level": "critical"
+    },
+    {
+      "ecosystem": "PyPI",
+      "name": "cryptography",
+      "pinned": "3.4.7",
+      "latest": "48.0.0",
+      "released": "2026-05-04",
+      "bump": "major",
+      "breaking": true,
+      "vulns": [
+        {
+          "id": "CVE-2023-50782",
+          "summary": "Python Cryptography package vulnerable to Bleichenbacher timing oracle attack",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "GHSA-5cpq-8wj7-hf2v",
+          "summary": "Vulnerable OpenSSL included in cryptography wheels",
+          "severity": ""
+        },
+        {
+          "id": "CVE-2024-0727",
+          "summary": "Null pointer dereference in PKCS12 parsing",
+          "severity": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "CVE-2023-49083",
+          "summary": "cryptography vulnerable to NULL-dereference when loading PKCS7 certificates",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "GHSA-jm77-qphf-c4w8",
+          "summary": "pyca/cryptography's wheels include vulnerable OpenSSL",
+          "severity": ""
+        },
+        {
+          "id": "CVE-2026-34073",
+          "summary": "cryptography has incomplete DNS name constraint enforcement on peer names",
+          "severity": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:U"
+        },
+        {
+          "id": "CVE-2026-26007",
+          "summary": "cryptography Vulnerable to a Subgroup Attack Due to Missing Subgroup Validation for SECT Curves",
+          "severity": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        },
+        {
+          "id": "GHSA-v8gr-m533-ghj9",
+          "summary": "Vulnerable OpenSSL included in cryptography wheels",
+          "severity": ""
+        },
+        {
+          "id": "CVE-2023-23931",
+          "summary": "Cipher.update_into can corrupt memory if passed an immutable python object as the outbuf",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2023-0286",
+          "summary": "Vulnerable OpenSSL included in cryptography wheels",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H"
+        },
+        {
+          "id": "CVE-2023-23931",
+          "summary": "cryptography is a package designed to expose cryptographic primitives and recipes to Python developers. In affected versions `Cipher.update_into` would accept P",
+          "severity": ""
+        },
+        {
+          "id": "CVE-2023-49083",
+          "summary": "cryptography is a package designed to expose cryptographic primitives and recipes to Python developers. Calling `load_pem_pkcs7_certificates` or `load_der_pkcs7",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "CVE-2026-34073",
+          "summary": "cryptography is a package designed to expose cryptographic primitives and recipes to Python developers. Prior to version 46.0.6, DNS name constraints were only ",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        }
+      ],
+      "vuln_count": 13,
+      "level": "critical"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lodash",
+      "pinned": "4.17.20",
+      "latest": "4.18.1",
+      "released": "2026-04-01",
+      "bump": "minor",
+      "breaking": false,
+      "vulns": [
+        {
+          "id": "CVE-2020-28500",
+          "summary": "Regular Expression Denial of Service (ReDoS) in lodash",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        {
+          "id": "CVE-2021-23337",
+          "summary": "Command Injection in lodash",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        {
+          "id": "CVE-2026-2950",
+          "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L"
+        },
+        {
+          "id": "CVE-2026-4800",
+          "summary": "lodash vulnerable to Code Injection via `_.template` imports key names",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        {
+          "id": "CVE-2025-13465",
+          "summary": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:H/SI:H/SA:H/E:P"
+        }
+      ],
+      "vuln_count": 5,
+      "level": "critical"
+    },
+    {
+      "ecosystem": "PyPI",
+      "name": "requests",
+      "pinned": "2.25.0",
+      "latest": "2.34.2",
+      "released": "2026-05-14",
+      "bump": "minor",
+      "breaking": false,
+      "vulns": [
+        {
+          "id": "CVE-2024-47081",
+          "summary": "Requests vulnerable to .netrc credentials leak via malicious URLs",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2024-35195",
+          "summary": "Requests `Session` object does not verify requests after making first request with verify=False",
+          "severity": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N"
+        },
+        {
+          "id": "CVE-2026-25645",
+          "summary": "Requests has Insecure Temp File Reuse in its extract_zipped_paths() utility function",
+          "severity": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:H/A:N"
+        },
+        {
+          "id": "CVE-2023-32681",
+          "summary": "Unintended leak of Proxy-Authorization header in requests",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N"
+        },
+        {
+          "id": "CVE-2023-32681",
+          "summary": "Requests is a HTTP library. Since Requests 2.3.0, Requests has been leaking Proxy-Authorization headers to destination servers when redirected to an HTTPS endpo",
+          "severity": ""
+        }
+      ],
+      "vuln_count": 5,
+      "level": "critical"
+    },
+    {
+      "ecosystem": "PyPI",
+      "name": "jinja2",
+      "pinned": "3.0.1",
+      "latest": "3.1.6",
+      "released": "2025-03-05",
+      "bump": "minor",
+      "breaking": false,
+      "vulns": [
+        {
+          "id": "CVE-2025-27516",
+          "summary": "Jinja2 vulnerable to sandbox breakout through attr filter selecting format method",
+          "severity": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2024-56201",
+          "summary": "Jinja has a sandbox breakout through malicious filenames",
+          "severity": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2024-22195",
+          "summary": "Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N"
+        },
+        {
+          "id": "CVE-2024-34064",
+          "summary": "Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N"
+        },
+        {
+          "id": "CVE-2024-56326",
+          "summary": "Jinja has a sandbox breakout through indirect reference to format method",
+          "severity": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
+        }
+      ],
+      "vuln_count": 5,
+      "level": "critical"
+    },
+    {
+      "ecosystem": "PyPI",
+      "name": "flask",
+      "pinned": "2.0.1",
+      "latest": "3.1.3",
+      "released": "2026-02-19",
+      "bump": "major",
+      "breaking": true,
+      "vulns": [
+        {
+          "id": "CVE-2026-27205",
+          "summary": "Flask session does not add `Vary: Cookie` header when accessed in some ways",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2023-30861",
+          "summary": "Flask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2023-30861",
+          "summary": "Flask is a lightweight WSGI web application framework. When all of the following conditions are met, a response containing data intended for one client may be c",
+          "severity": ""
+        }
+      ],
+      "vuln_count": 3,
+      "level": "critical"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "express",
+      "pinned": "4.17.1",
+      "latest": "5.2.1",
+      "released": "2025-12-01",
+      "bump": "major",
+      "breaking": true,
+      "vulns": [
+        {
+          "id": "CVE-2024-43796",
+          "summary": "express vulnerable to XSS via response.redirect()",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:L"
+        },
+        {
+          "id": "CVE-2024-29041",
+          "summary": "Express.js Open Redirect in malformed URLs",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        }
+      ],
+      "vuln_count": 2,
+      "level": "critical"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ws",
+      "pinned": "7.4.5",
+      "latest": "8.21.0",
+      "released": "2026-05-22",
+      "bump": "major",
+      "breaking": true,
+      "vulns": [
+        {
+          "id": "CVE-2024-37890",
+          "summary": "ws affected by a DoS when handling a request with many HTTP headers",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
+        },
+        {
+          "id": "CVE-2021-32640",
+          "summary": "ReDoS in Sec-Websocket-Protocol header",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "vuln_count": 2,
+      "level": "critical"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "react",
+      "pinned": "17.0.2",
+      "latest": "19.2.7",
+      "released": "2026-06-01",
+      "bump": "major",
+      "breaking": true,
+      "vulns": [],
+      "vuln_count": 0,
+      "level": "warn"
+    }
+  ]
+}
