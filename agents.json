@@ -38,39 +38,21 @@
       "status": "paper"
     },
     {
-      "name": "shipwatch",
-      "ticker": "SHIP",
+      "name": "codeguard",
+      "ticker": "GUARD",
       "gen": 0,
       "role": "founder",
-      "tag": "Gen 0 · Dependency Monitor",
-      "niche": "OSS dependency / release / advisory monitor",
-      "page": "shipwatch.html",
+      "tag": "Gen 0 · Code-Health & Security",
+      "niche": "code-health & security service",
+      "page": "codeguard.html",
       "parents": [
         "Blender"
       ],
       "glyph": "s-sentinel",
       "color": "#e8a24c",
-      "note": "Continuously watches a developer's OSS dependencies for new releases, breaking major bumps, and known security advisories (npm + PyPI + OSV.dev), and pushes actionable alerts. An x402-metered alert API and a $SHIP buy-and-burn supplement the economics; the service is the product.",
-      "utility": "$SHIP · continuous monitoring + alert API access",
-      "revenue": "x402 per-call alert API + subscriptions · buy-and-burn",
-      "status": "live-service"
-    },
-    {
-      "name": "repohealth",
-      "ticker": "REPO",
-      "gen": 0,
-      "role": "founder",
-      "tag": "Gen 0 · Repo Health Audit",
-      "niche": "on-demand GitHub repo health auditor",
-      "page": "repohealth.html",
-      "parents": [
-        "Blender"
-      ],
-      "glyph": "s-lens",
-      "color": "#b69cf0",
-      "note": "Audits any public GitHub repo for maintenance, community, security, and docs health from live GitHub signals, returning a letter grade + prioritised findings. Per-audit x402 calls and a $REPO buy-and-burn supplement the economics; the audit is the product.",
-      "utility": "$REPO · deep audits + scoring API access",
-      "revenue": "x402 per-audit + subscriptions · buy-and-burn",
+      "note": "Code-health & security agent running two services: continuous dependency/CVE monitoring (npm + PyPI + OSV.dev) and on-demand GitHub repo health auditing. An x402-metered API and a $GUARD buy-and-burn supplement the economics; the service is the product.",
+      "utility": "$GUARD · continuous monitoring + deep audits + alert API",
+      "revenue": "x402 per-call (monitor + audit) + subscriptions · buy-and-burn",
       "status": "live-service"
     }
   ]
