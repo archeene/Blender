@@ -65,8 +65,12 @@
   .blabel span{flex:1;text-align:center}
   .find{margin-top:6px;font-size:11px;color:var(--dim)}
   .find b.critical{color:var(--red)}.find b.warn{color:var(--amber)}.find b.info{color:var(--violet)}
+  .flow{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap;margin:4px 0 12px}
+  .fnode{flex:1;min-width:96px;border:1px solid var(--line);border-radius:7px;padding:8px 7px;text-align:center;font-size:11px;background:rgba(232,162,76,.05);line-height:1.35;color:var(--sage)}
+  .fnode i{color:var(--dim);font-style:normal;font-size:9.5px;display:block;margin-top:3px}
+  .farr{display:flex;align-items:center;justify-content:center;color:var(--amber);font-size:15px;min-width:14px}
   footer{margin-top:26px;padding-top:14px;border-top:1px dashed var(--line);color:var(--dim);font-size:10.5px;text-align:center}
-  @media(max-width:560px){.grid{grid-template-columns:repeat(2,1fr)}.ver,.asc{display:none}}
+  @media(max-width:560px){.grid{grid-template-columns:repeat(2,1fr)}.ver,.asc{display:none}.flow{flex-direction:column}.farr{transform:rotate(90deg)}}
 </style>
 </head>
 <body>
@@ -146,13 +150,23 @@
   </section>
 
   <section class="card">
-    <h2>build &amp; stack</h2>
+    <h2>architecture</h2>
+    <p class="muted" style="margin:0 0 4px">How a request flows, and the stack it runs on.</p>
+    <div class="flow">
+      <span class="fnode">npm &middot; PyPI<br>OSV.dev &middot; GitHub<i>live sources, no key</i></span>
+      <span class="farr">&rarr;</span>
+      <span class="fnode">monitor + audit<i>deterministic engines</i></span>
+      <span class="farr">&rarr;</span>
+      <span class="fnode">deps + audits<br>JSON feeds<i>signed, versioned</i></span>
+      <span class="farr">&rarr;</span>
+      <span class="fnode">this page<br>+ x402 API<i>public / member / partner</i></span>
+    </div>
+    <div class="kv"><span class="kk">data sources</span><span class="vv">npm registry, PyPI, OSV.dev, GitHub API (live, no key)</span></div>
+    <div class="kv"><span class="kk">engines</span><span class="vv">monitor.py + audit.py &middot; Python, deterministic, zero-LLM</span></div>
     <div class="kv"><span class="kk">code + identity</span><span class="vv">gitlawb (versioned repo + did:gitlawb)</span></div>
-    <div class="kv"><span class="kk">runtime</span><span class="vv">Fly (the monitor + auditor services)</span></div>
-    <div class="kv"><span class="kk">sources</span><span class="vv">npm + PyPI + OSV.dev + GitHub API (live)</span></div>
-    <div class="kv"><span class="kk">revenue rail</span><span class="vv">x402 USDC per call</span></div>
-    <div class="kv"><span class="kk">token</span><span class="vv">$GUARD &middot; Clawnch / Base (supplement, not yet launched)</span></div>
-    <div class="kv"><span class="kk">demand</span><span class="vv">buy-and-burn from a fixed cut of revenue</span></div>
+    <div class="kv"><span class="kk">runtime</span><span class="vv">runs locally now (no hosted billing) &middot; Fly when activated</span></div>
+    <div class="kv"><span class="kk">revenue rail</span><span class="vv">x402 USDC per call (pending endpoint)</span></div>
+    <div class="kv"><span class="kk">token</span><span class="vv">$GUARD &middot; Clawnch / Base &middot; buy-and-burn from revenue (supplement, not launched)</span></div>
   </section>
 
   <section class="card">
