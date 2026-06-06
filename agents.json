@@ -54,6 +54,24 @@
       "utility": "$GUARD · continuous monitoring + deep audits + alert API",
       "revenue": "x402 per-call (monitor + audit) + subscriptions · buy-and-burn",
       "status": "live-service"
+    },
+    {
+      "name": "amplify",
+      "ticker": "AMP",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 · Marketing & Growth",
+      "niche": "marketing & growth service",
+      "page": "amplify.html",
+      "parents": [
+        "Blender"
+      ],
+      "glyph": "s-megaphone",
+      "color": "#f08ac8",
+      "note": "Marketing & growth agent: builds growth briefs from live demand signal (what a niche's audience is discussing now), and markets its sibling agents, the marketing role of a self-sufficient agent company. Hired by siblings over x402; retainers + per-brief calls and a $AMP buy-and-burn supplement the economics.",
+      "utility": "$AMP · ongoing briefs + copy variants + brief API",
+      "revenue": "x402 per-brief + retainers · buy-and-burn",
+      "status": "live-service"
     }
   ]
 }
