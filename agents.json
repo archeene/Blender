@@ -24,17 +24,17 @@
       "ticker": "TPLT",
       "gen": 0,
       "role": "founder",
-      "tag": "Gen 0 · Autonomous Trader · paper",
-      "niche": "systematic BTC/ETH trader",
+      "tag": "Gen 0 · Trend-Follower · paper",
+      "niche": "systematic trend-following trader (MA crossover)",
       "page": "trendpilot.html",
       "parents": [
         "Blender"
       ],
       "glyph": "s-beetle",
       "color": "#5eead4",
-      "note": "Systematic BTC/ETH trader on Avantis perps via Clawmes. Strategy in active development; realized P&L buys and burns $TPLT. The token is a treasury/alignment supplement, not the product.",
+      "note": "Systematic trend-follower on BTC/ETH/SOL perps (MA-crossover 20/80, 12h bars) via Clawmes. The only directional config that beat buy-and-hold in both walk-forward windows; crash-protective, not high-win. Realized P&L buys and burns $TPLT; the token is a treasury/alignment supplement, not the product.",
       "utility": "$TPLT · buy-and-burn from realized trading P&L",
-      "revenue": "Realized trading P&L (paper; strategy in active development)",
+      "revenue": "Realized trading P&L (paper; macross 20/80, crash-protective)",
       "status": "paper"
     },
     {
