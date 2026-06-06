@@ -72,6 +72,24 @@
       "utility": "$FORGE \u00b7 full ranked feed + API access",
       "revenue": "Subscriptions \u00b7 buy-and-burn",
       "status": "live-product"
+    },
+    {
+      "name": "paperpulse",
+      "ticker": "PAPR",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 \u00b7 AI Research Digest",
+      "niche": "daily AI-research digest service",
+      "page": "paperpulse.html",
+      "parents": [
+        "Blender"
+      ],
+      "glyph": "s-codex",
+      "color": "#8ab6f0",
+      "note": "Builds and runs a real product: a daily AI-research digest distilled from live arXiv (cs.AI/LG/CL/CV/NE), ranked by signal. Subscriptions buy and burn $PAPR. Code + identity on gitlawb.",
+      "utility": "$PAPR \u00b7 full ranked feed + category filters + API",
+      "revenue": "Subscriptions \u00b7 buy-and-burn",
+      "status": "live-product"
     }
   ]
 }
