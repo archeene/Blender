@@ -1,0 +1,274 @@
+{
+  "agent": "amplify",
+  "service": "marketing & growth briefs",
+  "source": "Hacker News (live demand signal)",
+  "generated": "2026-06-06T16:18:46.061533+00:00",
+  "briefs": [
+    {
+      "target": "trendpilot",
+      "niche": "crypto trading bots & systematic DeFi trading",
+      "query": "crypto trading bot",
+      "trending": [
+        {
+          "title": "Show HN: Tuned - Build advanced crypto trading bots",
+          "url": "https://www.tuned.com",
+          "points": 45,
+          "comments": 11,
+          "hn": "https://news.ycombinator.com/item?id=29318163"
+        },
+        {
+          "title": "Show HN: I'm building a crypto trading bot that you can follow live on Telegram",
+          "url": "https://news.ycombinator.com/item?id=27221300",
+          "points": 6,
+          "comments": 2,
+          "hn": "https://news.ycombinator.com/item?id=27221300"
+        },
+        {
+          "title": "My mini-adventure building a loss-making crypto-trading bot",
+          "url": "https://giki.wiki/@nubela/crypto-trading-bot",
+          "points": 4,
+          "comments": 1,
+          "hn": "https://news.ycombinator.com/item?id=14669774"
+        },
+        {
+          "title": "Show HN: Decentralized crypto trading bot to trade crypto across 3 exchanges",
+          "url": "https://www.macrometa.co/blog/cryptocurrency-trading-building-a-multi-exchange-global-trading-bot",
+          "points": 5,
+          "comments": 0,
+          "hn": "https://news.ycombinator.com/item?id=20931220"
+        },
+        {
+          "title": "Does privacy still matter in crypto trading bots?",
+          "url": "https://www.gunbot.com/",
+          "points": 2,
+          "comments": 2,
+          "hn": "https://news.ycombinator.com/item?id=42136699"
+        }
+      ],
+      "hot_terms": [
+        {
+          "term": "bots",
+          "count": 11
+        },
+        {
+          "term": "open",
+          "count": 7
+        },
+        {
+          "term": "source",
+          "count": 6
+        },
+        {
+          "term": "building",
+          "count": 4
+        },
+        {
+          "term": "build",
+          "count": 2
+        },
+        {
+          "term": "freqtrade",
+          "count": 2
+        },
+        {
+          "term": "free",
+          "count": 2
+        },
+        {
+          "term": "own",
+          "count": 2
+        }
+      ],
+      "channels": [
+        "Hacker News (Show HN)",
+        "r/algotrading",
+        "Crypto-Twitter / X",
+        "Farcaster /trading"
+      ],
+      "angles": [
+        "Ride the 'bots' conversation, it's the most-discussed term in this niche right now.",
+        "Reply-guy the top thread (\"Show HN: Tuned - Build advanced crypto trading bots\", 11 comments) with a concrete take from trendpilot.",
+        "Lead with the proof, not the pitch: show trendpilot's live output, not claims."
+      ],
+      "demand": 139
+    },
+    {
+      "target": "codeguard",
+      "niche": "dependency security & code health for developers",
+      "query": "dependency vulnerability",
+      "trending": [
+        {
+          "title": "Show HN: VSCan - Detect Malicious VSCode Extensions",
+          "url": "https://vscan.dev/",
+          "points": 52,
+          "comments": 27,
+          "hn": "https://news.ycombinator.com/item?id=44371740"
+        },
+        {
+          "title": "Show HN: Risk Analysis Database of Every MCP Server",
+          "url": "https://mcp.armor1.ai/mcp-directory",
+          "points": 22,
+          "comments": 7,
+          "hn": "https://news.ycombinator.com/item?id=46900771"
+        },
+        {
+          "title": "Show HN: Anthropic's MCP Server Directory",
+          "url": "https://glama.ai/mcp/servers",
+          "points": 11,
+          "comments": 6,
+          "hn": "https://news.ycombinator.com/item?id=42443069"
+        },
+        {
+          "title": "Every Dependency Is a Vulnerability",
+          "url": "https://reprog.wordpress.com/2024/06/09/every-dependency-is-a-vulnerability/",
+          "points": 11,
+          "comments": 0,
+          "hn": "https://news.ycombinator.com/item?id=40623997"
+        },
+        {
+          "title": "Ask HN: We're tired and need your support",
+          "url": "https://news.ycombinator.com/item?id=39141034",
+          "points": 5,
+          "comments": 2,
+          "hn": "https://news.ycombinator.com/item?id=39141034"
+        }
+      ],
+      "hot_terms": [
+        {
+          "term": "vulnerabilities",
+          "count": 10
+        },
+        {
+          "term": "security",
+          "count": 6
+        },
+        {
+          "term": "confusion",
+          "count": 5
+        },
+        {
+          "term": "dependencies",
+          "count": 5
+        },
+        {
+          "term": "scanner",
+          "count": 3
+        },
+        {
+          "term": "monitoring",
+          "count": 3
+        },
+        {
+          "term": "detect",
+          "count": 2
+        },
+        {
+          "term": "every",
+          "count": 2
+        }
+      ],
+      "channels": [
+        "Hacker News",
+        "r/programming",
+        "r/netsec",
+        "dev.to",
+        "Lobsters"
+      ],
+      "angles": [
+        "Ride the 'vulnerabilities' conversation, it's the most-discussed term in this niche right now.",
+        "Reply-guy the top thread (\"Show HN: VSCan - Detect Malicious VSCode Extensions\", 27 comments) with a concrete take from codeguard.",
+        "Lead with the proof, not the pitch: show codeguard's live output, not claims."
+      ],
+      "demand": 193
+    },
+    {
+      "target": "amplify",
+      "niche": "AI marketing & growth automation",
+      "query": "AI marketing agent",
+      "trending": [
+        {
+          "title": "Show HN: Klaw.sh \u2013\u00a0Kubernetes for AI agents",
+          "url": "https://github.com/klawsh/klaw.sh",
+          "points": 60,
+          "comments": 43,
+          "hn": "https://news.ycombinator.com/item?id=47025478"
+        },
+        {
+          "title": "Sick of AI Agent Frameworks",
+          "url": "https://news.ycombinator.com/item?id=42691946",
+          "points": 15,
+          "comments": 7,
+          "hn": "https://news.ycombinator.com/item?id=42691946"
+        },
+        {
+          "title": "Show HN: LiftmyCV \u2013 AI Job Search Agent and Auto-Apply Tool",
+          "url": "https://www.liftmycv.com/",
+          "points": 15,
+          "comments": 0,
+          "hn": "https://news.ycombinator.com/item?id=43682614"
+        },
+        {
+          "title": "Show HN: Zyler \u2013 AI agent for marketing data that doesn't hallucinate",
+          "url": "https://www.zyler.ai",
+          "points": 7,
+          "comments": 4,
+          "hn": "https://news.ycombinator.com/item?id=44364508"
+        },
+        {
+          "title": "Show HN: Toffu \u2013 AI marketing agent that executes campaigns through chat",
+          "url": "https://toffu.ai",
+          "points": 5,
+          "comments": 2,
+          "hn": "https://news.ycombinator.com/item?id=45656427"
+        }
+      ],
+      "hot_terms": [
+        {
+          "term": "agents",
+          "count": 8
+        },
+        {
+          "term": "influencer",
+          "count": 4
+        },
+        {
+          "term": "data",
+          "count": 3
+        },
+        {
+          "term": "platform",
+          "count": 3
+        },
+        {
+          "term": "built",
+          "count": 3
+        },
+        {
+          "term": "toffu",
+          "count": 2
+        },
+        {
+          "term": "campaigns",
+          "count": 2
+        },
+        {
+          "term": "ai-agent",
+          "count": 2
+        }
+      ],
+      "channels": [
+        "Hacker News (Show HN)",
+        "r/SaaS",
+        "r/marketing",
+        "Indie Hackers",
+        "X / LinkedIn"
+      ],
+      "angles": [
+        "Ride the 'agents' conversation, it's the most-discussed term in this niche right now.",
+        "Reply-guy the top thread (\"Show HN: Klaw.sh \u2013\u00a0Kubernetes for AI agents\", 43 comments) with a concrete take from amplify.",
+        "Lead with the proof, not the pitch: show amplify's live output, not claims."
+      ],
+      "demand": 220
+    }
+  ]
+}
