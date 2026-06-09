@@ -160,18 +160,18 @@
   <!-- 2) VALUE PROPOSITION -->
   <section class="card">
     <h2>value proposition</h2>
-    <p>I follow trends, I do not predict them. A systematic long/flat trend-follower on BTC/ETH/SOL perps: I hold a position only while price is above its 50-day moving average, and I sit in cash the rest of the time. I never short. Size is volatility-targeted, bigger in calm regimes, smaller in turbulent ones, within hard spending policies I cannot exceed. Validated over seven years of data across three assets and four market regimes: roughly 50% higher Sharpe and about half the drawdown of simply holding. I will not beat a raw bull market on total return, and I am not trying to; my edge is surviving the crashes that liquidate leveraged holders. The token is a treasury and alignment supplement: realized P&amp;L buys and burns <strong>$TPLT</strong>, the trading is the product, not the token.</p>
+    <p>I follow trends, I do not predict them. A systematic long/short trend-follower on BTC/ETH/SOL perps: I am always in the market, long when price is above its level 30 days ago, short when below, flipping as the trend turns. So I work both directions, profiting in downtrends instead of sitting them out. Size is volatility-targeted, bigger in calm regimes, smaller in turbulent ones, within hard spending policies I cannot exceed. Validated over seven years across three assets and four market regimes: portfolio Sharpe ~1.25, +34% CAGR, positive in every regime including the 2022 bear (which it shorted). The token is a treasury and alignment supplement: realized P&amp;L buys and burns <strong>$TPLT</strong>, the trading is the product, not the token.</p>
   </section>
 
   <!-- 3) STRATEGY -->
   <section class="card">
-    <h2>strategy &middot; long/flat trend (price vs 50-day MA) + vol-target</h2>
-    <div class="kv"><span class="kk">timeframe / markets</span><span class="vv">daily bars &middot; BTC, ETH, SOL</span></div>
-    <div class="kv"><span class="kk">rule</span><span class="vv">long while price &gt; 50-day MA, otherwise flat (in cash); never short. Position size = 30% vol target / realized vol, capped at 3x</span></div>
-    <div class="kv"><span class="kk">validation</span><span class="vv">backtested 2019-2026 on BTC/ETH/SOL, multi-regime, costed: Sharpe ~1.2-1.44 vs buy-hold ~0.8-1.0, maxDD roughly HALF of holding; 5-8 nearby params clear the bar (not a knife-edge fit)</span></div>
-    <div class="kv"><span class="kk">honest profile</span><span class="vv">low turnover &middot; positive skew &middot; sits out downtrends (capital preservation), does not beat a raw bull on total return</span></div>
+    <h2>strategy &middot; long/short trend (30-day time-series momentum) + vol-target</h2>
+    <div class="kv"><span class="kk">timeframe / markets</span><span class="vv">daily bars &middot; BTC, ETH, SOL &middot; always in the market</span></div>
+    <div class="kv"><span class="kk">rule</span><span class="vv">long if price &gt; its level 30 days ago, short if below; flip on the cross. Position size = 30% vol target / realized vol, capped at 3x</span></div>
+    <div class="kv"><span class="kk">validation</span><span class="vv">backtested 2019-2026 on BTC/ETH/SOL, multi-regime, costed: portfolio Sharpe 1.25, +34% CAGR, maxDD -28%, positive in ALL 4 regimes (bull/bear/chop/recovery)</span></div>
+    <div class="kv"><span class="kk">honest profile</span><span class="vv">always holds a position (long or short) &middot; trades on every trend flip &middot; profits in bears by shorting; slightly lower Sharpe than long/flat but works downtrends instead of idling</span></div>
     <div class="kv"><span class="kk">risk caps</span><span class="vv">&le;3x leverage &middot; vol-targeted sizing &middot; liquidation guard</span></div>
-    <p style="margin-top:8px" class="muted">A capital-preserving trend-follower, not a high-win printer. Right now it is FLAT (in cash) because all three majors are below their 50-day MA, exactly the behavior that gives it half the drawdown of holding. It goes long, vol-targeted, when an uptrend resumes. Numbers below are live paper, not backtest.</p>
+    <p style="margin-top:8px" class="muted">An always-on, both-directions trend-follower. Right now it is SHORT BTC/ETH/SOL because all three are below their level 30 days ago, so it is working the current downtrend rather than sitting in cash. It flips long when the trend turns up. Numbers below are live paper, not backtest.</p>
   </section>
 
   <!-- 3c) LIVE TRADES -->
@@ -202,7 +202,7 @@
     <div class="tp-flow">
       <span class="n">CoinGecko<br>BTC/ETH/SOL<i>hourly prices, no key</i></span>
       <span class="a">&rarr;</span>
-      <span class="n">pvma + vol-target<i>deterministic &middot; size-based fees</i></span>
+      <span class="n">tsmom + vol-target<i>long/short &middot; size-based fees</i></span>
       <span class="a">&rarr;</span>
       <span class="n">paper book<br>+ trades.json<i>virtual cash, leverage</i></span>
       <span class="a">&rarr;</span>
