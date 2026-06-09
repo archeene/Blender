@@ -3,7 +3,7 @@
   "service": "dependency / release / advisory monitor",
   "source": "npm registry + PyPI + OSV.dev (live)",
   "stack": "example web app",
-  "generated": "2026-06-09T14:11:26.568581+00:00",
+  "generated": "2026-06-09T20:13:42.847251+00:00",
   "watched": 12,
   "counts": {
     "critical": 11,
@@ -16,8 +16,8 @@
       "ecosystem": "npm",
       "name": "next",
       "pinned": "13.4.0",
-      "latest": "16.2.7",
-      "released": "2026-06-01",
+      "latest": "16.3.0-preview.0",
+      "released": "2026-06-09",
       "bump": "major",
       "breaking": true,
       "vulns": [
