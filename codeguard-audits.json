@@ -2,7 +2,7 @@
   "agent": "codeguard",
   "service": "repo health audit",
   "source": "GitHub API (live)",
-  "generated": "2026-06-09T00:05:17.006271+00:00",
+  "generated": "2026-06-09T02:08:09.440331+00:00",
   "audited": 6,
   "audits": [
     {
@@ -48,7 +48,7 @@
       "url": "https://github.com/psf/requests",
       "grade": "B",
       "score": 89,
-      "stars": 54037,
+      "stars": 54036,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -67,7 +67,7 @@
       "url": "https://github.com/facebook/react",
       "grade": "B",
       "score": 86,
-      "stars": 245667,
+      "stars": 245669,
       "dimensions": {
         "maintenance": 100,
         "community": 70,
@@ -86,7 +86,7 @@
       "url": "https://github.com/vuejs/vue",
       "grade": "D",
       "score": 64,
-      "stars": 209865,
+      "stars": 209864,
       "dimensions": {
         "maintenance": 35,
         "community": 70,
