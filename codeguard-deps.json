@@ -3,7 +3,7 @@
   "service": "dependency / release / advisory monitor",
   "source": "npm registry + PyPI + OSV.dev (live)",
   "stack": "example web app",
-  "generated": "2026-06-09T20:13:42.847251+00:00",
+  "generated": "2026-06-10T02:16:19.414804+00:00",
   "watched": 12,
   "counts": {
     "critical": 11,
@@ -16,7 +16,7 @@
       "ecosystem": "npm",
       "name": "next",
       "pinned": "13.4.0",
-      "latest": "16.3.0-preview.0",
+      "latest": "16.2.9",
       "released": "2026-06-09",
       "bump": "major",
       "breaking": true,
@@ -443,8 +443,8 @@
       "ecosystem": "PyPI",
       "name": "cryptography",
       "pinned": "3.4.7",
-      "latest": "48.0.0",
-      "released": "2026-05-04",
+      "latest": "48.0.1",
+      "released": "2026-06-09",
       "bump": "major",
       "breaking": true,
       "vulns": [
