@@ -143,6 +143,131 @@
           "tiers": { "public": "$0.50/brief", "member": "hold N $AMP · ongoing briefs + copy variants", "partner": "hold M $AMP · managed retainer + scheduled distribution" }
         }
       ]
+    },
+    {
+      "name": "foresight",
+      "ticker": "SEER",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 · Prediction & Forecasting",
+      "niche": "prediction & forecasting service",
+      "archetype": "prediction-forecasting",
+      "page": "foresight.html",
+      "parents": ["Blender"],
+      "glyph": "s-oracle",
+      "color": "#8b8ce8",
+      "note": "Prediction & forecasting agent: daily probabilistic 7-day forecasts for BTC/ETH/SOL from regime-conditioned historical base rates, each shipped with a self-scored track record (Brier 0.262, ~50% hit rate, calibration table over 7356 walk-forward out-of-sample forecasts). The calibrated record is the product, not the prediction. x402 per-forecast + scorecard tiers and a $SEER buy-and-burn supplement the economics.",
+      "utility": "$SEER · full forecast feed + calibration history + API",
+      "revenue": "x402 per-forecast + scorecard tiers · buy-and-burn",
+      "status": "live-service",
+      "x402_endpoint": "pending",
+      "tier_thresholds": { "member_N": "1% of supply", "partner_M": "5% of supply" },
+      "services": [
+        {
+          "id": "forecast-feed",
+          "name": "Forecast feed",
+          "desc": "Daily probabilistic 7-day forecasts for BTC/ETH/SOL (regime-conditioned P(up) plus empirical p10/p50/p90 range), each with a self-scored track record (Brier, hit rate, calibration) built walk-forward out-of-sample.",
+          "tools": [
+            "get_forecast(asset) -> P(up next 7d) + p10/p50/p90 range + regime + sample n",
+            "get_scorecard() -> pooled & per-asset Brier + hit rate + calibration buckets",
+            "get_regime(asset) -> current regime (30d momentum x vol tercile) + conditioning n"
+          ],
+          "tiers": { "public": "$0.25/forecast", "member": "hold N $SEER · full daily feed + API", "partner": "hold M $SEER · full calibration history + custom horizons" }
+        }
+      ]
+    },
+    {
+      "name": "scout",
+      "ticker": "SCOUT",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 · Research & Analyst",
+      "niche": "research / analyst service",
+      "archetype": "research-analyst",
+      "page": "scout.html",
+      "parents": ["Blender"],
+      "glyph": "s-compass",
+      "color": "#5ec9d4",
+      "note": "Research/analyst agent: turns any topic into a structured, cited brief from four live free sources fetched in parallel (Hacker News, arXiv, GitHub, Wikipedia), every line carrying its source link, fact kept separate from inference, empty sources shown empty. Hired by siblings over x402 to scout a space before they act; per-brief calls and a $SCOUT buy-and-burn supplement the economics.",
+      "utility": "$SCOUT · cited multi-source briefs + brief API + synthesis tier",
+      "revenue": "x402 per-brief + retainers · buy-and-burn",
+      "status": "live-service",
+      "x402_endpoint": "pending",
+      "tier_thresholds": { "member_N": "1% of supply", "partner_M": "5% of supply" },
+      "services": [
+        {
+          "id": "research-brief",
+          "name": "Multi-source research brief",
+          "desc": "Turns a topic into a structured, cited brief from four live free sources (Hacker News, arXiv, GitHub, Wikipedia), ranked within each, every item carrying its source URL. Empty or unreachable sources are shown empty, never faked.",
+          "tools": [
+            "build_brief(topic) -> top discussions + recent papers + notable repos + grounding summary, all cited",
+            "top_sources(topic) -> single highest-signal hit per channel (discussion / paper / repo / wiki)"
+          ],
+          "tiers": { "public": "$0.50/brief", "member": "hold N $SCOUT · deeper coverage + brief API", "partner": "hold M $SCOUT · LLM synthesis tier + scheduled topic watches" }
+        }
+      ]
+    },
+    {
+      "name": "extractor",
+      "ticker": "EXTR",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 · Data / API Provider",
+      "niche": "structured web data extraction service",
+      "archetype": "data-api-provider",
+      "page": "extractor.html",
+      "parents": ["Blender"],
+      "glyph": "s-prism",
+      "color": "#c98ae8",
+      "note": "Data/API provider: a pay-per-call URL to structured-data extraction service (the Firecrawl/Zyte shape, x402 metered). One call fetches a page and parses it with the stdlib html.parser (no external deps), returning one clean typed JSON: title, meta, OpenGraph, JSON-LD, heading outline, links, images, word count, tables, lists, canonical, lang. Absent fields null, failed fetches explicit errors, never fabricated. The cleanest x402-native archetype.",
+      "utility": "$EXTR · per-call extraction + batch + private feed",
+      "revenue": "x402 per-call (extract + batch) · buy-and-burn",
+      "status": "live-service",
+      "x402_endpoint": "pending",
+      "tier_thresholds": { "member_N": "1% of supply", "partner_M": "5% of supply" },
+      "services": [
+        {
+          "id": "extract-api",
+          "name": "Structured extraction API",
+          "desc": "Turns any URL into one clean typed JSON document via the stdlib html.parser: title, meta, OpenGraph + Twitter-card, JSON-LD, h1/h2/h3 outline, links, images, word count + reading time, table/list counts, canonical, lang. Absent fields null, failed fetches explicit errors.",
+          "tools": [
+            "extract(url) -> one structured JSON document for a single URL (or {url, error} on failure)",
+            "batch(urls[]) -> structured JSON for many URLs in one call, concurrent, per-URL errors isolated"
+          ],
+          "tiers": { "public": "$0.01/call", "member": "hold N $EXTR · 80% off + batch endpoint", "partner": "hold M $EXTR · private high-throughput feed + custom selectors" }
+        }
+      ]
+    },
+    {
+      "name": "prospect",
+      "ticker": "LEAD",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 · Sales & Lead-Gen",
+      "niche": "sales / lead-gen service",
+      "archetype": "sales-leadgen",
+      "page": "prospect.html",
+      "parents": ["Blender"],
+      "glyph": "s-magnet",
+      "color": "#e0b24c",
+      "note": "Sales/lead-gen agent: evidence-based lists of qualified leads with zero outreach. Network demo: finds customers for sibling codeguard by surfacing public GitHub repos whose pinned dependencies carry known CVEs (GitHub + raw manifests + OSV.dev, live; top lead dvpwa = 41 CVEs on aiohttp 3.5.3). It researches and ranks; the client decides who to contact. A seller-feeds-seller network proof.",
+      "utility": "$LEAD · ongoing lead feeds + enrichment + lead API",
+      "revenue": "x402 per-list + lead feeds · buy-and-burn",
+      "status": "live-service",
+      "x402_endpoint": "pending",
+      "tier_thresholds": { "member_N": "1% of supply", "partner_M": "5% of supply" },
+      "services": [
+        {
+          "id": "qualified-leads",
+          "name": "Qualified leads",
+          "desc": "Finds a client's next customers and proves why each one qualifies, with cited evidence and zero outreach. Demo target codeguard: ranks public GitHub repos by the real CVE load on their pinned dependencies (live GitHub + raw manifests + OSV.dev).",
+          "tools": [
+            "find_leads(client_profile) -> ranked list of qualified leads with cited evidence + pitch per lead",
+            "score_repo(repo) -> lead score: total CVEs on pinned deps + reach, with the risky deps as evidence"
+          ],
+          "tiers": { "public": "$0.50/list", "member": "hold N $LEAD · ongoing lead feeds + larger sets", "partner": "hold M $LEAD · continuous managed feed + enrichment + scoring API" }
+        }
+      ]
     }
   ]
 }
