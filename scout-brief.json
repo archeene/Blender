@@ -1,0 +1,772 @@
+{
+  "agent": "scout",
+  "service": "structured, cited research briefs",
+  "sources": "Hacker News + arXiv + GitHub + Wikipedia (live, no key)",
+  "generated": "2026-06-12T12:54:02.697036+00:00",
+  "briefs": [
+    {
+      "topic": "crypto trading bot",
+      "summary_sources": [
+        "Hacker News",
+        "arXiv",
+        "GitHub"
+      ],
+      "top_discussions": [
+        {
+          "title": "Show HN: Tuned - Build advanced crypto trading bots",
+          "url": "https://www.tuned.com",
+          "points": 45,
+          "comments": 11,
+          "hn": "https://news.ycombinator.com/item?id=29318163"
+        },
+        {
+          "title": "Show HN: I'm building a crypto trading bot that you can follow live on Telegram",
+          "url": "https://news.ycombinator.com/item?id=27221300",
+          "points": 6,
+          "comments": 2,
+          "hn": "https://news.ycombinator.com/item?id=27221300"
+        },
+        {
+          "title": "My mini-adventure building a loss-making crypto-trading bot",
+          "url": "https://giki.wiki/@nubela/crypto-trading-bot",
+          "points": 4,
+          "comments": 1,
+          "hn": "https://news.ycombinator.com/item?id=14669774"
+        },
+        {
+          "title": "Show HN: Decentralized crypto trading bot to trade crypto across 3 exchanges",
+          "url": "https://www.macrometa.co/blog/cryptocurrency-trading-building-a-multi-exchange-global-trading-bot",
+          "points": 5,
+          "comments": 0,
+          "hn": "https://news.ycombinator.com/item?id=20931220"
+        },
+        {
+          "title": "Does privacy still matter in crypto trading bots?",
+          "url": "https://www.gunbot.com/",
+          "points": 2,
+          "comments": 2,
+          "hn": "https://news.ycombinator.com/item?id=42136699"
+        }
+      ],
+      "recent_papers": [
+        {
+          "title": "World Tracing: Generative Pixel-Aligned Geometry Beyond the Visible",
+          "url": "https://arxiv.org/abs/2606.13652v1",
+          "authors": [
+            "Hao Zhang",
+            "Mohamed El Banani",
+            "Jen-Hao Cheng",
+            "Paul Zhang"
+          ],
+          "more_authors": 5,
+          "cats": [
+            "cs.CV",
+            "cs.GR"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Image-to-3D methods often trade off faithfulness and completeness: depth estimators are anchored to input pixels but stop at the visible surface, while image-to-3D models generate complete shapes that are often misaligned with the input. We introduce World Tracing, a generative p..."
+        },
+        {
+          "title": "Balancing label resolution and computational cost in dynamical models of lipid metabolism",
+          "url": "https://arxiv.org/abs/2606.13620v1",
+          "authors": [
+            "Paul Jonas Jost",
+            "Christoph Thiele",
+            "Jan Hasenauer"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "q-bio.QM"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Lipid metabolism is a central biological process that is commonly studied using destructive mass-spectrometry experiments. A recently proposed strategy, uses multiple labels to extract temporal information about lipid metabolism from a single destructive measurement. However, the..."
+        },
+        {
+          "title": "ReSCom: A Reconfigurable Spiking Neural Network Accelerator Using Stochastic Computing",
+          "url": "https://arxiv.org/abs/2606.13560v1",
+          "authors": [
+            "Ali Alipour Fereidani",
+            "Mohammad Rasoul Roshanshah",
+            "Saeed Safari"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.AR",
+            "cs.NE"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Spiking Neural Networks (SNNs) provide an attractive framework for energy-efficient inference due to their event-driven computation and biologically inspired dynamics. However, efficient hardware realization of SNNs remains challenging because neuronal computations incur signific..."
+        },
+        {
+          "title": "CloudCons: A Comprehensive End-to-End Benchmark for Cloud Resource Consolidation",
+          "url": "https://arxiv.org/abs/2606.13513v1",
+          "authors": [
+            "Xiaobin Zhang",
+            "Lefei Shen",
+            "Mouxiang Chen",
+            "Zhuo Li"
+          ],
+          "more_authors": 5,
+          "cats": [
+            "cs.AI"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Driven by conservative over-provisioning to guarantee service reliability, resource utilization in cloud data centers remains at low levels. To mitigate this, the forecast-then-optimize paradigm has emerged to optimize consolidation by anticipating future demands. While emerging ..."
+        },
+        {
+          "title": "SupraBench: A Benchmark for Supramolecular Chemistry",
+          "url": "https://arxiv.org/abs/2606.13477v1",
+          "authors": [
+            "Tianyi Ma",
+            "Yijun Ma",
+            "Zehong Wang",
+            "Weixiang Sun"
+          ],
+          "more_authors": 5,
+          "cats": [
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Supramolecular chemistry, which includes the study of non-covalent host-guest assemblies, has advanced various applications. However, designing host-guest systems remains time-consuming, requiring days of dry-lab verification per candidate pair. Although LLMs have emerged as a fa..."
+        },
+        {
+          "title": "Reduced basis algorithm for solving nonlinear differential equations on quantum computers",
+          "url": "https://arxiv.org/abs/2606.13457v1",
+          "authors": [
+            "Monica L\u0103c\u0103tu\u015f",
+            "Matthias M\u00f6ller",
+            "Sauro Succi"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "math.NA",
+            "quant-ph"
+          ],
+          "published": "2026-06-11",
+          "abstract": "As quantum computing moves toward scientific computing applications, nonlinear differential equations remain a central challenge since quantum evolution is intrinsically linear. In this work, we introduce a reduced basis algorithm (RBA) for polynomial nonlinear ordinary different..."
+        }
+      ],
+      "notable_repos": [
+        {
+          "full_name": "freqtrade/freqtrade",
+          "url": "https://github.com/freqtrade/freqtrade",
+          "stars": 51378,
+          "language": "Python",
+          "desc": "Free, open source crypto trading bot"
+        },
+        {
+          "full_name": "ccxt/ccxt",
+          "url": "https://github.com/ccxt/ccxt",
+          "stars": 42893,
+          "language": "Python",
+          "desc": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java "
+        },
+        {
+          "full_name": "hummingbot/hummingbot",
+          "url": "https://github.com/hummingbot/hummingbot",
+          "stars": 18862,
+          "language": "Python",
+          "desc": "Open source software that helps you create and deploy high-frequency crypto trading bots"
+        },
+        {
+          "full_name": "jesse-ai/jesse",
+          "url": "https://github.com/jesse-ai/jesse",
+          "stars": 8020,
+          "language": "JavaScript",
+          "desc": "An advanced crypto trading bot written in Python"
+        },
+        {
+          "full_name": "Drakkar-Software/OctoBot",
+          "url": "https://github.com/Drakkar-Software/OctoBot",
+          "stars": 6058,
+          "language": "Python",
+          "desc": "Free open source crypto trading bot to automate AI, Grid, DCA and TradingView strategies on Binance, Hyperliquid and 15+ exchanges, with a simple interface."
+        },
+        {
+          "full_name": "CryptoSignal/Crypto-Signal",
+          "url": "https://github.com/CryptoSignal/Crypto-Signal",
+          "stars": 5576,
+          "language": "Python",
+          "desc": "Github.com/CryptoSignal - Trading & Technical Analysis Bot - 4,100+ stars, 1,100+ forks"
+        }
+      ],
+      "wikipedia": null,
+      "generated": "2026-06-12T12:54:02.555418+00:00"
+    },
+    {
+      "topic": "dependency security",
+      "summary_sources": [
+        "Hacker News",
+        "arXiv",
+        "GitHub"
+      ],
+      "top_discussions": [
+        {
+          "title": "Firejail: Light, featureful and zero-dependency security sandbox for Linux",
+          "url": "https://firejail.wordpress.com/",
+          "points": 159,
+          "comments": 59,
+          "hn": "https://news.ycombinator.com/item?id=36681912"
+        },
+        {
+          "title": "Can we get the benefits of transitive dependencies without undermining security?",
+          "url": "https://tratt.net/laurie/blog/2024/can_we_retain_the_benefits_of_transitive_dependencies_without_undermining_security.html",
+          "points": 85,
+          "comments": 87,
+          "hn": "https://news.ycombinator.com/item?id=42857532"
+        },
+        {
+          "title": "Show HN: Octotrack \u2013 automatic dependency and security manager for Ruby apps",
+          "url": "http://octotrack.com",
+          "points": 46,
+          "comments": 33,
+          "hn": "https://news.ycombinator.com/item?id=15490917"
+        },
+        {
+          "title": "Eric Schmidt: Semiconductor Dependency Imperils American Security",
+          "url": "https://www.wsj.com/articles/semiconductor-dependency-imperils-american-security-chip-manufacturing-technology-sector-11655654650",
+          "points": 36,
+          "comments": 9,
+          "hn": "https://news.ycombinator.com/item?id=31825717"
+        },
+        {
+          "title": "Show HN: Anthropic's MCP Server Directory",
+          "url": "https://glama.ai/mcp/servers",
+          "points": 11,
+          "comments": 6,
+          "hn": "https://news.ycombinator.com/item?id=42443069"
+        }
+      ],
+      "recent_papers": [
+        {
+          "title": "Morphology control and low-temperature magnetotransport in chiral 2D perovskite R-(MBA)$_2$PbI$_4$",
+          "url": "https://arxiv.org/abs/2606.13664v1",
+          "authors": [
+            "Shehreen Aslam",
+            "Sam Saiter",
+            "Bradley Lloyd",
+            "Paul Kliewer"
+          ],
+          "more_authors": 3,
+          "cats": [
+            "cond-mat.mtrl-sci"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Two-dimensional chiral hybrid perovskites, such as R/S-(MBA)\\textsubscript{2}PbI\\textsubscript{4}, are leading candidates for realizing and studying chirality-dependent charge and spin transport. However, their prohibitive in-plane resistance has precluded the electrical characte..."
+        },
+        {
+          "title": "Spin-Polarized Oxygen Evolution in Chiral-Molecule-Modified Plasmonic Photoanodes",
+          "url": "https://arxiv.org/abs/2606.13660v1",
+          "authors": [
+            "Priscila Vensaus",
+            "Milad Sabzehparvar",
+            "Fatemeh Kiani",
+            "Germ\u00e1n Garc\u00eda Mart\u00ednez"
+          ],
+          "more_authors": 1,
+          "cats": [
+            "physics.chem-ph"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Photoelectrochemical oxygen evolution is limited not only by multi-electron charge-transfer kinetics but also by the spin constraints associated with forming triplet O2. Here, we integrate plasmonic hot-carrier generation, chiral molecular spin selectivity, and oxygen-evolution c..."
+        },
+        {
+          "title": "Orbital-optimized density functional calculations of excited electronic states: Recent advances and perspectives",
+          "url": "https://arxiv.org/abs/2606.13654v1",
+          "authors": [
+            "Lorenzo Restaino",
+            "Giulia Gamboni",
+            "Elli Selenius",
+            "Gianluca Levi"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "physics.chem-ph"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Orbital-optimized (OO) density functional calculations provide a time-independent, variational route to electronic excitations that complements the presently widely used time-dependent density functional theory (TDDFT). As the orbitals are optimized in a state specific way, these..."
+        },
+        {
+          "title": "Stochastic dominations for FK percolation and sharp thinning thresholds for the Ising energy field",
+          "url": "https://arxiv.org/abs/2606.13648v1",
+          "authors": [
+            "Paul Cahen",
+            "Avelio Sep\u00falveda"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "math.PR"
+          ],
+          "published": "2026-06-11",
+          "abstract": "At first glance, one would imagine that the energy field of the Ising model, the set of edges whose endpoints share the same spin, is stochastically monotone as a function of the coupling constants. However, this is not generally the case. In this paper, we introduce two weaker n..."
+        },
+        {
+          "title": "Observable Dependence of Viscous Corrections in QGP: Heavy Quarks and Dileptons in Chapman--Enskog Theory",
+          "url": "https://arxiv.org/abs/2606.13646v1",
+          "authors": [
+            "Lakshmi J. Naik",
+            "P. Parvathi",
+            "Nachiketa Sarkar",
+            "V. Sreekanth"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "nucl-th",
+            "hep-ph"
+          ],
+          "published": "2026-06-11",
+          "abstract": "We calculate, for the first time, heavy quark transport and thermal dilepton production from QGP using viscous correction up to second order in gradients. We use the form of viscous correction obtained from Chapman-Enskog like expansion of the Boltzmann transport equation in rela..."
+        },
+        {
+          "title": "Driven dynamics of an attractive Bose polaron",
+          "url": "https://arxiv.org/abs/2606.13645v1",
+          "authors": [
+            "Saptarshi Majumdar",
+            "Aleksandra Petkovi\u0107"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cond-mat.quant-gas"
+          ],
+          "published": "2026-06-11",
+          "abstract": "We study the out-of-equilibrium dynamics of an impurity driven by a constant external force through a system of homogeneous weakly-interacting bosons in one spatial dimension. The impurity-boson interaction is assumed to be attractive. We show that the impurity exhibits drifted B..."
+        }
+      ],
+      "notable_repos": [
+        {
+          "full_name": "dependency-check/DependencyCheck",
+          "url": "https://github.com/dependency-check/DependencyCheck",
+          "stars": 7579,
+          "language": "Java",
+          "desc": "OWASP dependency-check is a software composition analysis utility that detects publicly disclosed vulnerabilities in application dependencies."
+        },
+        {
+          "full_name": "DependencyTrack/dependency-track",
+          "url": "https://github.com/DependencyTrack/dependency-track",
+          "stars": 3905,
+          "language": "Java",
+          "desc": "Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain."
+        },
+        {
+          "full_name": "pyupio/safety",
+          "url": "https://github.com/pyupio/safety",
+          "stars": 1988,
+          "language": "Python",
+          "desc": "Safety checks Python dependencies for known security vulnerabilities and suggests the proper remediations for vulnerabilities detected."
+        },
+        {
+          "full_name": "vernu/vps-audit",
+          "url": "https://github.com/vernu/vps-audit",
+          "stars": 1966,
+          "language": "Shell",
+          "desc": "lightweight, dependency-free bash script for security, performance auditing and infrastructure monitoring of Linux servers."
+        },
+        {
+          "full_name": "murphysecurity/murphysec",
+          "url": "https://github.com/murphysecurity/murphysec",
+          "stars": 1744,
+          "language": "Go",
+          "desc": "An open source tool focused on software supply chain security. \u58a8\u83f2\u5b89\u5168\u4e13\u6ce8\u4e8e\u8f6f\u4ef6\u4f9b\u5e94\u94fe\u5b89\u5168\uff0c\u5177\u5907\u4e13\u4e1a\u7684\u8f6f\u4ef6\u6210\u5206\u5206\u6790\uff08SCA\uff09\u3001\u6f0f\u6d1e\u68c0\u6d4b\u3001\u4e13\u4e1a\u6f0f\u6d1e\u5e93\u3002"
+        },
+        {
+          "full_name": "lunasec-io/lunasec",
+          "url": "https://github.com/lunasec-io/lunasec",
+          "stars": 1469,
+          "language": "TypeScript",
+          "desc": "LunaSec - Dependency Security Scanner that automatically notifies you about vulnerabilities like Log4Shell or node-ipc in your Pull Requests and Builds. Protect"
+        }
+      ],
+      "wikipedia": null,
+      "generated": "2026-06-12T12:54:02.696035+00:00"
+    },
+    {
+      "topic": "AI marketing",
+      "summary_sources": [
+        "Hacker News",
+        "arXiv",
+        "GitHub"
+      ],
+      "top_discussions": [
+        {
+          "title": "The AI Marketing BS Index",
+          "url": "https://bastian.rieck.me/blog/2026/bs/",
+          "points": 109,
+          "comments": 21,
+          "hn": "https://news.ycombinator.com/item?id=47604218"
+        },
+        {
+          "title": "Lessons Learned from 2 Years Marketing AI Bots",
+          "url": "http://blog.talla.com/14-lessons-learned-from-2-years-of-marketing-enterprise-ai-bots-and-knowledge-bases-for-support-teams",
+          "points": 46,
+          "comments": 8,
+          "hn": "https://news.ycombinator.com/item?id=18394062"
+        },
+        {
+          "title": "Ask HN: Your thoughts on Linus Torvalds' view on AI: 90% marketing, 10% reality?",
+          "url": "https://news.ycombinator.com/item?id=42037251",
+          "points": 13,
+          "comments": 9,
+          "hn": "https://news.ycombinator.com/item?id=42037251"
+        },
+        {
+          "title": "Linus Torvalds: 90% of AI marketing is hype",
+          "url": "https://www.theregister.com/2024/10/29/linus_torvalds_ai_hype/",
+          "points": 11,
+          "comments": 2,
+          "hn": "https://news.ycombinator.com/item?id=41996054"
+        },
+        {
+          "title": "Show HN: Blaze \u2013 marketing AI tool for entrepreneurs",
+          "url": "https://www.blaze.ai",
+          "points": 8,
+          "comments": 2,
+          "hn": "https://news.ycombinator.com/item?id=37846236"
+        }
+      ],
+      "recent_papers": [
+        {
+          "title": "Before You Think: System 0, AI-Mediated Cognition and Cognitive Colonization",
+          "url": "https://arxiv.org/abs/2606.13658v1",
+          "authors": [
+            "Marianna Bergamaschi Ganapini",
+            "Massimo Chiriatti",
+            "Enrico Panai",
+            "Giuseppe Riva"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.AI"
+          ],
+          "published": "2026-06-11",
+          "abstract": "This paper examines three recent frameworks for understanding the cognitive and epistemic consequences of artificial intelligence: Tri-System Theory, Thinkframes, and System 0. It argues that while the first two capture important dimensions of AI's influence on individual reasoni..."
+        },
+        {
+          "title": "The Moving Drone: Negotiating Agency Between the Voice and the Virtual",
+          "url": "https://arxiv.org/abs/2606.13640v1",
+          "authors": [
+            "Nithya Shikarpur",
+            "Victor Arul",
+            "Anna Huang"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.SD"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Melodic material in Hindustani music is presented in relation to a tonic, usually sustained by the tanpura, a four-stringed drone instrument. Rooted in Hindustani music, 'The Moving Drone' sets the traditionally static drone into motion that, throughout the performance, gains inc..."
+        },
+        {
+          "title": "Valid Inference with Synthetic Data via Task Exchangeability",
+          "url": "https://arxiv.org/abs/2606.13629v1",
+          "authors": [
+            "Lezhi Tan",
+            "Tijana Zrnic"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "stat.ME",
+            "cs.AI",
+            "cs.LG"
+          ],
+          "published": "2026-06-11",
+          "abstract": "There is a proliferation of work arguing for the use of synthetic data in scientific research. For example, social scientists are arguing for the use of LLM-generated \"silicon samples\" in pilot studies; AI evaluations increasingly rely on \"LLM-as-a-judge\" outputs; and proteomics ..."
+        },
+        {
+          "title": "EpiBench: Verifiable Evaluation of AI Agents on Epigenomics Analysis",
+          "url": "https://arxiv.org/abs/2606.13602v1",
+          "authors": [
+            "Harihara Muralidharan",
+            "Reema Baskar",
+            "Soo Hee Lee",
+            "Tim Proctor"
+          ],
+          "more_authors": 1,
+          "cats": [
+            "cs.AI"
+          ],
+          "published": "2026-06-11",
+          "abstract": "We introduce EpiBench, a verifiable benchmark for short-horizon epigenomics analysis. EpiBench evaluates whether agents can make well-defined analysis decisions from realistic workflow states and return deterministically gradable answers. The benchmark includes 106 evaluations ac..."
+        },
+        {
+          "title": "LabVLA: Grounding Vision-Language-Action Models in Scientific Laboratories",
+          "url": "https://arxiv.org/abs/2606.13578v1",
+          "authors": [
+            "Baochang Ren",
+            "Xinjie Liu",
+            "Xi Chen",
+            "Yanshuo Liu"
+          ],
+          "more_authors": 14,
+          "cats": [
+            "cs.CL",
+            "cs.AI",
+            "cs.LG"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Scientific laboratories increasingly rely on AI systems to reason about experiments, but the physical act of doing science remains largely outside their reach. AI can help read literature, generate hypotheses, and plan protocols, yet the execution of those protocols at the bench ..."
+        },
+        {
+          "title": "ArogyaSutra: A Multi-Agent Framework for Multimodal Medical Reasoning in Indic Languages",
+          "url": "https://arxiv.org/abs/2606.13572v1",
+          "authors": [
+            "Tanmoy Kanti Halder",
+            "Akash Ghosh",
+            "Subhadip Baidya",
+            "Arijit Roy"
+          ],
+          "more_authors": 1,
+          "cats": [
+            "cs.CL",
+            "cs.AI"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Multimodal Large Language Models (MLLMs) have shown promising reasoning capabilities in general domains, yet their performance remains limited in specialized settings such as healthcare, especially in multilingual and low-resource scenarios. This gap is critical in regions like r..."
+        }
+      ],
+      "notable_repos": [
+        {
+          "full_name": "twentyhq/twenty",
+          "url": "https://github.com/twentyhq/twenty",
+          "stars": 49758,
+          "language": "TypeScript",
+          "desc": "The open alternative to Salesforce, designed for AI."
+        },
+        {
+          "full_name": "coreyhaines31/marketingskills",
+          "url": "https://github.com/coreyhaines31/marketingskills",
+          "stars": 32997,
+          "language": "JavaScript",
+          "desc": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering."
+        },
+        {
+          "full_name": "ParthJadhav/app-store-screenshots",
+          "url": "https://github.com/ParthJadhav/app-store-screenshots",
+          "stars": 5595,
+          "language": "TypeScript",
+          "desc": "end to end app store screenshot creation using AI"
+        },
+        {
+          "full_name": "YILS-LIN/short-video-factory",
+          "url": "https://github.com/YILS-LIN/short-video-factory",
+          "stars": 4069,
+          "language": "TypeScript",
+          "desc": "\u4e00\u952e\u751f\u6210\u4ea7\u54c1\u8425\u9500\u4e0e\u6cdb\u5185\u5bb9\u77ed\u89c6\u9891\uff0cAI\u6279\u91cf\u81ea\u52a8\u526a\u8f91\uff0c\u9ad8\u989c\u503c\u8de8\u5e73\u53f0\u684c\u9762\u7aef\u5de5\u5177 One click generation of product marketing and general content short videos, AI batch automatic cliping, beautiful cross pla"
+        },
+        {
+          "full_name": "ericosiu/ai-marketing-skills",
+          "url": "https://github.com/ericosiu/ai-marketing-skills",
+          "stars": 2575,
+          "language": "Python",
+          "desc": "Open-source AI marketing skills \u2014 growth experiments, sales pipeline, content ops, outbound, SEO, and finance automation"
+        },
+        {
+          "full_name": "aaron-he-zhu/seo-geo-claude-skills",
+          "url": "https://github.com/aaron-he-zhu/seo-geo-claude-skills",
+          "stars": 2101,
+          "language": "Python",
+          "desc": "20 SEO & GEO skills for Claude Code, Cursor, Codex, and 35+ AI agents. Keyword research, content writing, technical audits, rank tracking. CORE-EEAT + CITE fram"
+        }
+      ],
+      "wikipedia": null,
+      "generated": "2026-06-12T12:54:02.565418+00:00"
+    },
+    {
+      "topic": "autonomous agents",
+      "summary_sources": [
+        "Wikipedia",
+        "Hacker News",
+        "arXiv",
+        "GitHub"
+      ],
+      "top_discussions": [
+        {
+          "title": "The current hype around autonomous agents, and what actually works in production",
+          "url": "https://utkarshkanwat.com/writing/betting-against-agents/",
+          "points": 427,
+          "comments": 257,
+          "hn": "https://news.ycombinator.com/item?id=44623207"
+        },
+        {
+          "title": "LLM Powered Autonomous Agents",
+          "url": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+          "points": 285,
+          "comments": 176,
+          "hn": "https://news.ycombinator.com/item?id=36488871"
+        },
+        {
+          "title": "Memary: Open-Source Longterm Memory for Autonomous Agents",
+          "url": "https://github.com/kingjulio8238/memary",
+          "points": 216,
+          "comments": 66,
+          "hn": "https://news.ycombinator.com/item?id=40196879"
+        },
+        {
+          "title": "Microsoft announces Scout, an autonomous AI agent built on OpenClaw",
+          "url": "https://www.computerworld.com/article/4180103/microsoft-unveils-scout-an-autonomous-ai-agent-built-on-openclaw.html",
+          "points": 94,
+          "comments": 87,
+          "hn": "https://news.ycombinator.com/item?id=48374079"
+        },
+        {
+          "title": "Show HN: Nous \u2013 Open-Source Agent Framework with Autonomous, SWE Agents, WebUI",
+          "url": "https://github.com/TrafficGuard/nous",
+          "points": 155,
+          "comments": 37,
+          "hn": "https://news.ycombinator.com/item?id=41202064"
+        }
+      ],
+      "recent_papers": [
+        {
+          "title": "EvoArena: Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments",
+          "url": "https://arxiv.org/abs/2606.13681v1",
+          "authors": [
+            "Jundong Xu",
+            "Qingchuan Li",
+            "Jiaying Wu",
+            "Yihuai Lan"
+          ],
+          "more_authors": 10,
+          "cats": [
+            "cs.CL"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Large language model (LLM) agents have achieved strong performance on a wide range of benchmarks, yet most evaluations assume static environments. In contrast, real-world deployment is inherently dynamic, requiring agents to continually align their knowledge, skills, and behavior..."
+        },
+        {
+          "title": "InterleaveThinker: Reinforcing Agentic Interleaved Generation",
+          "url": "https://arxiv.org/abs/2606.13679v1",
+          "authors": [
+            "Dian Zheng",
+            "Harry Lee",
+            "Manyuan Zhang",
+            "Kaituo Feng"
+          ],
+          "more_authors": 3,
+          "cats": [
+            "cs.CV"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Recent image generators have demonstrated impressive photorealism and instruction-following capabilities in single-image generation and editing. However, constrained by their architectures, they cannot achieve interleaved generation (text-image sequence), which has crucial applic..."
+        },
+        {
+          "title": "SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning",
+          "url": "https://arxiv.org/abs/2606.13673v1",
+          "authors": [
+            "Seokju Cho",
+            "Ryo Hachiuma",
+            "Abhishek Badki",
+            "Hang Su"
+          ],
+          "more_authors": 7,
+          "cats": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Spatial reasoning, the ability to determine where objects are, how they relate, and how they move in 3D, remains a fundamental challenge for vision-language models (VLMs). Tool-augmented agents attempt to address this by augmenting VLMs with specialist perception modules, yet the..."
+        },
+        {
+          "title": "Agents-K1: Towards Agent-native Knowledge Orchestration",
+          "url": "https://arxiv.org/abs/2606.13669v1",
+          "authors": [
+            "Zongsheng Cao",
+            "Bihao Zhan",
+            "Jinxin Shi",
+            "Jiong Wang"
+          ],
+          "more_authors": 21,
+          "cats": [
+            "cs.AI"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Current LLM-based research agents have advanced through agent orchestration, yet largely overlook scientific knowledge orchestration. Existing works often reduce papers to abstracts, surface mentions, and flat \\texttt{cites} edges, omitting key entities, claims, evidence, mechani..."
+        },
+        {
+          "title": "HyperTool: Beyond Step-Wise Tool Calls for Tool-Augmented Agents",
+          "url": "https://arxiv.org/abs/2606.13663v1",
+          "authors": [
+            "Yaxin Du",
+            "Yifan Zhou",
+            "Yujie Ge",
+            "Jiajun Wang"
+          ],
+          "more_authors": 6,
+          "cats": [
+            "cs.CL"
+          ],
+          "published": "2026-06-11",
+          "abstract": "Tool-augmented LLM agents commonly rely on step-wise atomic tool calls, where each invocation, observation, and value transfer is exposed in the main reasoning trace. This creates an \\emph{execution-granularity mismatch}: locally deterministic tool workflows are unfolded into rep..."
+        },
+        {
+          "title": "EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery",
+          "url": "https://arxiv.org/abs/2606.13662v1",
+          "authors": [
+            "Amy Xin",
+            "Jiening Siow",
+            "Junjie Wang",
+            "Zijun Yao"
+          ],
+          "more_authors": 4,
+          "cats": [
+            "cs.AI",
+            "cs.CL"
+          ],
+          "published": "2026-06-11",
+          "abstract": "LLM-based agents have shown increasing potential in automating scientific discovery. Given an optimizable metric and an execution environment, they can propose, validate, and iterate scientific solutions, and have produced results that outperform human-designed approaches. As mod..."
+        }
+      ],
+      "notable_repos": [
+        {
+          "full_name": "cline/cline",
+          "url": "https://github.com/cline/cline",
+          "stars": 63111,
+          "language": "TypeScript",
+          "desc": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant."
+        },
+        {
+          "full_name": "ruvnet/ruflo",
+          "url": "https://github.com/ruvnet/ruflo",
+          "stars": 59077,
+          "language": "TypeScript",
+          "desc": "\ud83c\udf0a The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Featur"
+        },
+        {
+          "full_name": "crewAIInc/crewAI",
+          "url": "https://github.com/crewAIInc/crewAI",
+          "stars": 53321,
+          "language": "Python",
+          "desc": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tac"
+        },
+        {
+          "full_name": "CherryHQ/cherry-studio",
+          "url": "https://github.com/CherryHQ/cherry-studio",
+          "stars": 47237,
+          "language": "TypeScript",
+          "desc": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs"
+        },
+        {
+          "full_name": "reworkd/AgentGPT",
+          "url": "https://github.com/reworkd/AgentGPT",
+          "stars": 36186,
+          "language": "TypeScript",
+          "desc": "\ud83e\udd16 Assemble, configure, and deploy autonomous AI Agents in your browser."
+        },
+        {
+          "full_name": "khoj-ai/khoj",
+          "url": "https://github.com/khoj-ai/khoj",
+          "stars": 35089,
+          "language": "Python",
+          "desc": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or loca"
+        }
+      ],
+      "wikipedia": {
+        "title": "Autonomous agent",
+        "extract": "An autonomous agent is an artificial intelligence (AI) system that can perform complex tasks independently.",
+        "url": "https://en.wikipedia.org/wiki/Autonomous_agent"
+      },
+      "generated": "2026-06-12T12:54:02.569043+00:00"
+    }
+  ]
+}
