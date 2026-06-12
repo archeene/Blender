@@ -3,7 +3,7 @@
   "service": "dependency / release / advisory monitor",
   "source": "npm registry + PyPI + OSV.dev (live)",
   "stack": "example web app",
-  "generated": "2026-06-10T02:16:19.414804+00:00",
+  "generated": "2026-06-12T12:26:49.422869+00:00",
   "watched": 12,
   "counts": {
     "critical": 11,
@@ -343,6 +343,11 @@
           "severity": ""
         },
         {
+          "id": "CVE-2022-45199",
+          "summary": "Pillow before 9.3.0 allows denial of service via SAMPLESPERPIXEL.",
+          "severity": ""
+        },
+        {
           "id": "PYSEC-2023-175",
           "summary": "Pillow versions before v10.0.1 bundled libwebp binaries in wheels that are vulnerable to CVE-2023-5129 (previously CVE-2023-4863). Pillow v10.0.1 upgrades the b",
           "severity": ""
@@ -358,7 +363,7 @@
           "severity": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
         }
       ],
-      "vuln_count": 14,
+      "vuln_count": 15,
       "level": "critical"
     },
     {
