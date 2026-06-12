@@ -2,7 +2,7 @@
   "agent": "scout",
   "service": "structured, cited research briefs",
   "sources": "Hacker News + arXiv + GitHub + Wikipedia (live, no key)",
-  "generated": "2026-06-12T12:54:02.697036+00:00",
+  "generated": "2026-06-12T13:11:36.226784+00:00",
   "briefs": [
     {
       "topic": "crypto trading bot",
@@ -193,7 +193,7 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-12T12:54:02.555418+00:00"
+      "generated": "2026-06-12T13:11:35.887763+00:00"
     },
     {
       "topic": "dependency security",
@@ -379,7 +379,7 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-12T12:54:02.696035+00:00"
+      "generated": "2026-06-12T13:11:36.226784+00:00"
     },
     {
       "topic": "AI marketing",
@@ -529,28 +529,28 @@
         {
           "full_name": "twentyhq/twenty",
           "url": "https://github.com/twentyhq/twenty",
-          "stars": 49758,
+          "stars": 49759,
           "language": "TypeScript",
           "desc": "The open alternative to Salesforce, designed for AI."
         },
         {
           "full_name": "coreyhaines31/marketingskills",
           "url": "https://github.com/coreyhaines31/marketingskills",
-          "stars": 32997,
+          "stars": 33001,
           "language": "JavaScript",
           "desc": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering."
         },
         {
           "full_name": "ParthJadhav/app-store-screenshots",
           "url": "https://github.com/ParthJadhav/app-store-screenshots",
-          "stars": 5595,
+          "stars": 5596,
           "language": "TypeScript",
           "desc": "end to end app store screenshot creation using AI"
         },
         {
           "full_name": "YILS-LIN/short-video-factory",
           "url": "https://github.com/YILS-LIN/short-video-factory",
-          "stars": 4069,
+          "stars": 4070,
           "language": "TypeScript",
           "desc": "\u4e00\u952e\u751f\u6210\u4ea7\u54c1\u8425\u9500\u4e0e\u6cdb\u5185\u5bb9\u77ed\u89c6\u9891\uff0cAI\u6279\u91cf\u81ea\u52a8\u526a\u8f91\uff0c\u9ad8\u989c\u503c\u8de8\u5e73\u53f0\u684c\u9762\u7aef\u5de5\u5177 One click generation of product marketing and general content short videos, AI batch automatic cliping, beautiful cross pla"
         },
@@ -570,7 +570,7 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-12T12:54:02.565418+00:00"
+      "generated": "2026-06-12T13:11:35.863763+00:00"
     },
     {
       "topic": "autonomous agents",
@@ -721,28 +721,28 @@
         {
           "full_name": "cline/cline",
           "url": "https://github.com/cline/cline",
-          "stars": 63111,
+          "stars": 63112,
           "language": "TypeScript",
           "desc": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant."
         },
         {
           "full_name": "ruvnet/ruflo",
           "url": "https://github.com/ruvnet/ruflo",
-          "stars": 59077,
+          "stars": 59080,
           "language": "TypeScript",
           "desc": "\ud83c\udf0a The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Featur"
         },
         {
           "full_name": "crewAIInc/crewAI",
           "url": "https://github.com/crewAIInc/crewAI",
-          "stars": 53321,
+          "stars": 53323,
           "language": "Python",
           "desc": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tac"
         },
         {
           "full_name": "CherryHQ/cherry-studio",
           "url": "https://github.com/CherryHQ/cherry-studio",
-          "stars": 47237,
+          "stars": 47238,
           "language": "TypeScript",
           "desc": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs"
         },
@@ -766,7 +766,7 @@
         "extract": "An autonomous agent is an artificial intelligence (AI) system that can perform complex tasks independently.",
         "url": "https://en.wikipedia.org/wiki/Autonomous_agent"
       },
-      "generated": "2026-06-12T12:54:02.569043+00:00"
+      "generated": "2026-06-12T13:11:35.944761+00:00"
     }
   ]
 }
