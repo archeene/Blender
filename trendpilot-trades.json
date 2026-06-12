@@ -1,9 +1,9 @@
 {
   "mode": "PAPER (virtual dollars, no real execution)",
-  "updated": "2026-06-12T18:11:52.016645+00:00",
+  "updated": "2026-06-12T18:32:00.943943+00:00",
   "summary": {
-    "equity": 1016.62,
-    "return_pct": 1.662,
+    "equity": 1026.12,
+    "return_pct": 2.612,
     "realized_pnl": 0.0,
     "wins": 0,
     "losses": 0,
@@ -15,27 +15,27 @@
       "market": "BTC",
       "side": "short",
       "entry": 63422.9132,
-      "mark": 63730.6237,
+      "mark": 63405.2062,
       "notional": 854.01,
-      "unrealized": -4.1434,
+      "unrealized": 0.2384,
       "opened_at": "2026-06-09T02:06:03.659673+00:00"
     },
     {
       "market": "ETH",
       "side": "short",
       "entry": 1706.2087,
-      "mark": 1664.4611,
+      "mark": 1654.5166,
       "notional": 590.17,
-      "unrealized": 14.4402,
+      "unrealized": 17.8799,
       "opened_at": "2026-06-09T02:06:03.659673+00:00"
     },
     {
       "market": "SOL",
       "side": "short",
       "entry": 67.6951,
-      "mark": 66.7655,
+      "mark": 66.5577,
       "notional": 547.16,
-      "unrealized": 7.5137,
+      "unrealized": 9.1937,
       "opened_at": "2026-06-09T02:06:03.659673+00:00"
     }
   ],
