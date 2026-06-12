@@ -1,0 +1,562 @@
+{
+  "agent": "extractor",
+  "service": "URL -> structured-data extraction (pay-per-call x402 API)",
+  "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
+  "generated": "2026-06-12T13:07:49.849076+00:00",
+  "demo_url_count": 4,
+  "results": [
+    {
+      "url": "https://news.ycombinator.com",
+      "fetched_at": "2026-06-12T13:07:44.712896+00:00",
+      "content_type": "text/html",
+      "content_length": 34897,
+      "size_capped": false,
+      "latency_ms": 1955,
+      "lang": "en",
+      "canonical": null,
+      "title": "Hacker News",
+      "meta_description": null,
+      "opengraph": {},
+      "twitter_card": {},
+      "headings": {
+        "h1": [],
+        "h2": [],
+        "h3": [],
+        "counts": {
+          "h1": 0,
+          "h2": 0,
+          "h3": 0
+        }
+      },
+      "links": {
+        "total": 198,
+        "internal": 165,
+        "external": 33,
+        "top_external_domains": [
+          {
+            "domain": "ycombinator.com",
+            "count": 2
+          },
+          {
+            "domain": "lantian.pub",
+            "count": 1
+          },
+          {
+            "domain": "tombedor.dev",
+            "count": 1
+          },
+          {
+            "domain": "arxiv.org",
+            "count": 1
+          },
+          {
+            "domain": "web.mit.edu",
+            "count": 1
+          },
+          {
+            "domain": "blog.osull.com",
+            "count": 1
+          }
+        ]
+      },
+      "image_count": 2,
+      "word_count": 659,
+      "reading_time_min": 3,
+      "keywords": [
+        {
+          "term": "comments",
+          "count": 30
+        },
+        {
+          "term": "points",
+          "count": 30
+        },
+        {
+          "term": "ago",
+          "count": 30
+        },
+        {
+          "term": "hide",
+          "count": 30
+        },
+        {
+          "term": "hours",
+          "count": 26
+        },
+        {
+          "term": "fable",
+          "count": 4
+        },
+        {
+          "term": "human",
+          "count": 3
+        },
+        {
+          "term": "hour",
+          "count": 3
+        },
+        {
+          "term": "claude",
+          "count": 3
+        },
+        {
+          "term": "hacker",
+          "count": 2
+        },
+        {
+          "term": "news",
+          "count": 2
+        },
+        {
+          "term": "gets",
+          "count": 2
+        }
+      ],
+      "tables": [
+        [
+          [
+            "",
+            "Hacker Newsnew | past | comments | ask | show | jobs | submit",
+            "login"
+          ]
+        ],
+        [
+          [
+            "1.",
+            "",
+            "AI agent bankrupted their operator while trying to scan DN42 (lantian.pub)"
+          ],
+          [
+            "",
+            "856 points by xiaoyu2006 8 hours ago | hide | 324 comments"
+          ],
+          [
+            "2.",
+            "",
+            "If you are asking for human attention, demonstrate human effort (tombedor.dev)"
+          ],
+          [
+            "",
+            "982 points by jjfoooo4 14 hours ago | hide | 326 comments"
+          ],
+          [
+            "3.",
+            "",
+            "Maxproof (arxiv.org)"
+          ],
+          [
+            "",
+            "25 points by ilreb 1 hour ago | hide | discuss"
+          ],
+          [
+            "4.",
+            "",
+            "Nobody ever gets credit for fixing problems that never happened (2001) [pdf] (web.mit.edu)"
+          ],
+          [
+            "",
+            "550 points by sam_bristow 12 hours ago | hide | 180 comments"
+          ]
+        ],
+        [
+          [
+            ""
+          ]
+        ]
+      ],
+      "table_count": 3,
+      "jsonld": [],
+      "jsonld_count": 0
+    },
+    {
+      "url": "https://example.com",
+      "fetched_at": "2026-06-12T13:07:46.678686+00:00",
+      "content_type": "text/html",
+      "content_length": 559,
+      "size_capped": false,
+      "latency_ms": 543,
+      "lang": "en",
+      "canonical": null,
+      "title": "Example Domain",
+      "meta_description": null,
+      "opengraph": {},
+      "twitter_card": {},
+      "headings": {
+        "h1": [
+          "Example Domain"
+        ],
+        "h2": [],
+        "h3": [],
+        "counts": {
+          "h1": 1,
+          "h2": 0,
+          "h3": 0
+        }
+      },
+      "links": {
+        "total": 1,
+        "internal": 0,
+        "external": 1,
+        "top_external_domains": [
+          {
+            "domain": "iana.org",
+            "count": 1
+          }
+        ]
+      },
+      "image_count": 0,
+      "word_count": 21,
+      "reading_time_min": 1,
+      "keywords": [
+        {
+          "term": "domain",
+          "count": 3
+        },
+        {
+          "term": "example",
+          "count": 2
+        },
+        {
+          "term": "documentation",
+          "count": 1
+        },
+        {
+          "term": "examples",
+          "count": 1
+        },
+        {
+          "term": "without",
+          "count": 1
+        },
+        {
+          "term": "needing",
+          "count": 1
+        },
+        {
+          "term": "permission",
+          "count": 1
+        },
+        {
+          "term": "avoid",
+          "count": 1
+        },
+        {
+          "term": "operations",
+          "count": 1
+        },
+        {
+          "term": "learn",
+          "count": 1
+        }
+      ],
+      "tables": [],
+      "table_count": 0,
+      "jsonld": [],
+      "jsonld_count": 0
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Web_scraping",
+      "fetched_at": "2026-06-12T13:07:47.222849+00:00",
+      "content_type": "text/html",
+      "content_length": 166311,
+      "size_capped": false,
+      "latency_ms": 1396,
+      "lang": "en",
+      "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
+      "title": "Web scraping - Wikipedia",
+      "meta_description": null,
+      "opengraph": {
+        "title": "Web scraping - Wikipedia",
+        "type": "website"
+      },
+      "twitter_card": {},
+      "headings": {
+        "h1": [
+          "Web scraping"
+        ],
+        "h2": [
+          "Contents",
+          "History",
+          "Techniques",
+          "Legal issues",
+          "Methods to prevent web scraping",
+          "See also",
+          "References"
+        ],
+        "h3": [
+          "Human copy-and-paste",
+          "Text pattern matching",
+          "HTTP programming",
+          "HTML parsing",
+          "DOM parsing",
+          "Vertical aggregation",
+          "Semantic annotation recognizing",
+          "Computer vision web-page analysis",
+          "United States",
+          "European Union",
+          "Australia",
+          "India"
+        ],
+        "counts": {
+          "h1": 1,
+          "h2": 7,
+          "h3": 12
+        }
+      },
+      "links": {
+        "total": 321,
+        "internal": 222,
+        "external": 99,
+        "top_external_domains": [
+          {
+            "domain": "web.archive.org",
+            "count": 11
+          },
+          {
+            "domain": "foundation.wikimedia.org",
+            "count": 5
+          },
+          {
+            "domain": "google.com",
+            "count": 4
+          },
+          {
+            "domain": "doi.org",
+            "count": 3
+          },
+          {
+            "domain": "fornova.net",
+            "count": 3
+          },
+          {
+            "domain": "wikidata.org",
+            "count": 2
+          }
+        ]
+      },
+      "image_count": 10,
+      "word_count": 4702,
+      "reading_time_min": 20,
+      "keywords": [
+        {
+          "term": "scraping",
+          "count": 58
+        },
+        {
+          "term": "data",
+          "count": 45
+        },
+        {
+          "term": "retrieved",
+          "count": 32
+        },
+        {
+          "term": "edit",
+          "count": 22
+        },
+        {
+          "term": "pages",
+          "count": 22
+        },
+        {
+          "term": "court",
+          "count": 21
+        },
+        {
+          "term": "content",
+          "count": 14
+        },
+        {
+          "term": "computer",
+          "count": 14
+        },
+        {
+          "term": "united",
+          "count": 14
+        },
+        {
+          "term": "information",
+          "count": 14
+        },
+        {
+          "term": "access",
+          "count": 14
+        },
+        {
+          "term": "terms",
+          "count": 14
+        }
+      ],
+      "tables": [
+        [
+          [
+            "",
+            "This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed.Find sources: \"Web scraping\" \u2013 news \u00b7 newspapers \u00b7 books \u00b7 scholar \u00b7 JSTOR (April 2023) (Learn how and when to remove this message)"
+          ]
+        ],
+        [
+          [
+            "",
+            "This section contains instructions or advice. Wikipedia is not a guidebook; please help rewrite such content to be encyclopedic or move it to Wikiversity, Wikibooks, or Wikivoyage. (October 2025)"
+          ]
+        ],
+        [
+          [
+            "",
+            "The examples and perspective in this section deal primarily with the United States and do not represent a worldwide view of the subject. You may improve this section, discuss the issue on the talk page, or create a new section, as appropriate. (October 2015) (Learn how and when to remove this message)"
+          ]
+        ]
+      ],
+      "table_count": 3,
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "name": "Web scraping",
+          "url": "https://en.wikipedia.org/wiki/Web_scraping",
+          "sameAs": "http://www.wikidata.org/entity/Q665452",
+          "mainEntity": "http://www.wikidata.org/entity/Q665452",
+          "author": {
+            "@type": "Organization",
+            "name": "Contributors to Wikimedia projects"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wikimedia Foundation, Inc.",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.wikimedia.org/static/images/wmf-hor-googpub.png"
+            }
+          },
+          "datePublished": "2005-09-17T18:57:30Z",
+          "dateModified": "2026-06-11T00:00:02Z",
+          "headline": "data scraping used for extracting data from websites"
+        }
+      ],
+      "jsonld_count": 1
+    },
+    {
+      "url": "https://blenderai.link",
+      "fetched_at": "2026-06-12T13:07:48.644945+00:00",
+      "content_type": "text/html",
+      "content_length": 90789,
+      "size_capped": false,
+      "latency_ms": 1192,
+      "lang": "en",
+      "canonical": null,
+      "title": "Blender - Intelligent Design meets Evolution",
+      "meta_description": "A protocol where revenue-generating AI agents mate, mutate, and pass royalties up a lineage. Intelligent Design meets Evolution.",
+      "opengraph": {},
+      "twitter_card": {},
+      "headings": {
+        "h1": [
+          "BLENDER"
+        ],
+        "h2": [
+          "Intelligent Design meets Evolution",
+          "Agentic Reproduction",
+          "How Blending Works",
+          "Network Effects",
+          "$BLEND",
+          "A Bestiary of AI Species"
+        ],
+        "h3": [
+          "Mating",
+          "Born in Minutes",
+          "Born on Clawnch",
+          "Newborn Toolkit",
+          "Molt Book",
+          "Reproductive Instinct",
+          "3-Tier Token System",
+          "Fractional Employees",
+          "Family Collaboration"
+        ],
+        "counts": {
+          "h1": 1,
+          "h2": 6,
+          "h3": 9
+        }
+      },
+      "links": {
+        "total": 9,
+        "internal": 5,
+        "external": 4,
+        "top_external_domains": [
+          {
+            "domain": "x.com",
+            "count": 1
+          },
+          {
+            "domain": "github.com",
+            "count": 1
+          },
+          {
+            "domain": "openclawn.ch",
+            "count": 1
+          },
+          {
+            "domain": "app.uniswap.org",
+            "count": 1
+          }
+        ]
+      },
+      "image_count": 0,
+      "word_count": 758,
+      "reading_time_min": 3,
+      "keywords": [
+        {
+          "term": "token",
+          "count": 14
+        },
+        {
+          "term": "agent",
+          "count": 14
+        },
+        {
+          "term": "agents",
+          "count": 14
+        },
+        {
+          "term": "blender",
+          "count": 10
+        },
+        {
+          "term": "clawnch",
+          "count": 9
+        },
+        {
+          "term": "revenue",
+          "count": 8
+        },
+        {
+          "term": "protocol",
+          "count": 7
+        },
+        {
+          "term": "every",
+          "count": 7
+        },
+        {
+          "term": "blend",
+          "count": 6
+        },
+        {
+          "term": "value",
+          "count": 6
+        },
+        {
+          "term": "offspring",
+          "count": 6
+        },
+        {
+          "term": "mating",
+          "count": 5
+        }
+      ],
+      "tables": [],
+      "table_count": 0,
+      "jsonld": [],
+      "jsonld_count": 0
+    }
+  ]
+}
