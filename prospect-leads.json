@@ -1,0 +1,161 @@
+{
+  "agent": "prospect",
+  "service": "evidence-based qualified-lead discovery (no outreach)",
+  "target_client": "codeguard",
+  "source": "GitHub search (live) + curated risky-profile seed repos + raw manifests + OSV.dev (live)",
+  "generated": "2026-06-12T12:56:53.802053+00:00",
+  "repos_examined": 10,
+  "qualified": 5,
+  "leads": [
+    {
+      "repo": "anxolerd/dvpwa",
+      "stars": 600,
+      "ecosystem": "PyPI",
+      "manifest": "requirements.txt",
+      "branch": "master",
+      "deps_checked": 6,
+      "risky_deps": [
+        {
+          "name": "aiohttp",
+          "pinned": "3.5.3",
+          "cve_count": 41,
+          "sample_cve": "CVE-2026-34514",
+          "sample_summary": "AIOHTTP has CRLF injection through multipart part content type header construction",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:U"
+        }
+      ],
+      "total_cves": 41,
+      "lead_score": 410,
+      "qualified": true,
+      "pitch": "anxolerd/dvpwa pins aiohttp 3.5.3 -> 41 known CVEs (CVE-2026-34514); 41 known CVEs across 1 pinned dep. codeguard's continuous CVE monitoring would catch these."
+    },
+    {
+      "repo": "mpirnat/lets-be-bad-guys",
+      "stars": 380,
+      "ecosystem": "PyPI",
+      "manifest": "requirements.txt",
+      "branch": "master",
+      "deps_checked": 1,
+      "risky_deps": [
+        {
+          "name": "Django",
+          "pinned": "1.9.6",
+          "cve_count": 23,
+          "sample_cve": "CVE-2017-7233",
+          "sample_summary": "Django open redirect and possible XSS attack via user-supplied numeric redirect URLs",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N"
+        }
+      ],
+      "total_cves": 23,
+      "lead_score": 230,
+      "qualified": true,
+      "pitch": "mpirnat/lets-be-bad-guys pins Django 1.9.6 -> 23 known CVEs (CVE-2017-7233); 23 known CVEs across 1 pinned dep. codeguard's continuous CVE monitoring would catch these."
+    },
+    {
+      "repo": "juice-shop/juice-shop",
+      "stars": 11000,
+      "ecosystem": "npm",
+      "manifest": "package.json",
+      "branch": "master",
+      "deps_checked": 5,
+      "risky_deps": [
+        {
+          "name": "sanitize-html",
+          "pinned": "1.4.2",
+          "cve_count": 7,
+          "sample_cve": "CVE-2016-1000237",
+          "sample_summary": "Cross-Site Scripting in sanitize-html",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "name": "jsonwebtoken",
+          "pinned": "0.4.0",
+          "cve_count": 4,
+          "sample_cve": "CVE-2022-23539",
+          "sample_summary": "jsonwebtoken unrestricted key type could lead to legacy keys usage ",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        {
+          "name": "express-jwt",
+          "pinned": "0.1.3",
+          "cve_count": 1,
+          "sample_cve": "CVE-2020-15084",
+          "sample_summary": "Authorization bypass in express-jwt",
+          "severity": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:N"
+        }
+      ],
+      "total_cves": 12,
+      "lead_score": 121,
+      "qualified": true,
+      "pitch": "juice-shop/juice-shop pins sanitize-html 1.4.2 -> 7 known CVEs (CVE-2016-1000237); 12 known CVEs across 3 pinned deps. codeguard's continuous CVE monitoring would catch these."
+    },
+    {
+      "repo": "snyk-labs/nodejs-goof",
+      "stars": 540,
+      "ecosystem": "npm",
+      "manifest": "package.json",
+      "branch": "main",
+      "deps_checked": 6,
+      "risky_deps": [
+        {
+          "name": "ejs",
+          "pinned": "1.0.0",
+          "cve_count": 5,
+          "sample_cve": "CVE-2017-1000228",
+          "sample_summary": "ejs is vulnerable to remote code execution due to weak input validation",
+          "severity": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        {
+          "name": "adm-zip",
+          "pinned": "0.4.7",
+          "cve_count": 1,
+          "sample_cve": "CVE-2018-1002204",
+          "sample_summary": "Arbitrary File Write in adm-zip",
+          "severity": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        {
+          "name": "body-parser",
+          "pinned": "1.9.0",
+          "cve_count": 1,
+          "sample_cve": "CVE-2024-45590",
+          "sample_summary": "body-parser vulnerable to denial of service when url encoding is enabled",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N"
+        },
+        {
+          "name": "dustjs-linkedin",
+          "pinned": "2.5.0",
+          "cve_count": 1,
+          "sample_cve": "CVE-2021-4264",
+          "sample_summary": "dustjs-linkedin vulnerable to Prototype Pollution",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "total_cves": 8,
+      "lead_score": 80,
+      "qualified": true,
+      "pitch": "snyk-labs/nodejs-goof pins ejs 1.0.0 -> 5 known CVEs (CVE-2017-1000228); 8 known CVEs across 4 pinned deps. codeguard's continuous CVE monitoring would catch these."
+    },
+    {
+      "repo": "OWASP/NodeGoat",
+      "stars": 1900,
+      "ecosystem": "npm",
+      "manifest": "package.json",
+      "branch": "master",
+      "deps_checked": 5,
+      "risky_deps": [
+        {
+          "name": "marked",
+          "pinned": "0.3.5",
+          "cve_count": 6,
+          "sample_cve": "CVE-2022-21681",
+          "sample_summary": "Inefficient Regular Expression Complexity in marked",
+          "severity": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "total_cves": 6,
+      "lead_score": 61,
+      "qualified": true,
+      "pitch": "OWASP/NodeGoat pins marked 0.3.5 -> 6 known CVEs (CVE-2022-21681); 6 known CVEs across 1 pinned dep. codeguard's continuous CVE monitoring would catch these."
+    }
+  ]
+}
