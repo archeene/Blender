@@ -1,9 +1,9 @@
 {
-  "agent": "shipwatch",
+  "agent": "codeguard",
   "service": "dependency / release / advisory monitor",
   "source": "npm registry + PyPI + OSV.dev (live)",
   "stack": "example web app",
-  "generated": "2026-06-12T12:30:05.956201+00:00",
+  "generated": "2026-06-12T12:37:00.487100+00:00",
   "watched": 12,
   "counts": {
     "critical": 11,
