@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-12T13:07:49.849076+00:00",
+  "generated": "2026-06-12T13:12:58.785024+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-12T13:07:44.712896+00:00",
+      "fetched_at": "2026-06-12T13:12:53.453549+00:00",
       "content_type": "text/html",
-      "content_length": 34897,
+      "content_length": 34899,
       "size_capped": false,
-      "latency_ms": 1955,
+      "latency_ms": 1953,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -42,11 +42,11 @@
             "count": 1
           },
           {
-            "domain": "tombedor.dev",
+            "domain": "arxiv.org",
             "count": 1
           },
           {
-            "domain": "arxiv.org",
+            "domain": "tombedor.dev",
             "count": 1
           },
           {
@@ -54,7 +54,7 @@
             "count": 1
           },
           {
-            "domain": "blog.osull.com",
+            "domain": "discourse.ifin.network",
             "count": 1
           }
         ]
@@ -81,7 +81,7 @@
         },
         {
           "term": "hours",
-          "count": 26
+          "count": 27
         },
         {
           "term": "fable",
@@ -89,10 +89,6 @@
         },
         {
           "term": "human",
-          "count": 3
-        },
-        {
-          "term": "hour",
           "count": 3
         },
         {
@@ -105,6 +101,10 @@
         },
         {
           "term": "news",
+          "count": 2
+        },
+        {
+          "term": "hour",
           "count": 2
         },
         {
@@ -128,25 +128,25 @@
           ],
           [
             "",
-            "856 points by xiaoyu2006 8 hours ago | hide | 324 comments"
+            "865 points by xiaoyu2006 8 hours ago | hide | 329 comments"
           ],
           [
             "2.",
-            "",
-            "If you are asking for human attention, demonstrate human effort (tombedor.dev)"
-          ],
-          [
-            "",
-            "982 points by jjfoooo4 14 hours ago | hide | 326 comments"
-          ],
-          [
-            "3.",
             "",
             "Maxproof (arxiv.org)"
           ],
           [
             "",
-            "25 points by ilreb 1 hour ago | hide | discuss"
+            "30 points by ilreb 1 hour ago | hide | discuss"
+          ],
+          [
+            "3.",
+            "",
+            "If you are asking for human attention, demonstrate human effort (tombedor.dev)"
+          ],
+          [
+            "",
+            "993 points by jjfoooo4 14 hours ago | hide | 328 comments"
           ],
           [
             "4.",
@@ -155,7 +155,7 @@
           ],
           [
             "",
-            "550 points by sam_bristow 12 hours ago | hide | 180 comments"
+            "552 points by sam_bristow 12 hours ago | hide | 181 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-12T13:07:46.678686+00:00",
+      "fetched_at": "2026-06-12T13:12:55.417897+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 543,
+      "latency_ms": 741,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-12T13:07:47.222849+00:00",
+      "fetched_at": "2026-06-12T13:12:56.159904+00:00",
       "content_type": "text/html",
       "content_length": 166311,
       "size_capped": false,
-      "latency_ms": 1396,
+      "latency_ms": 1377,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-12T13:07:48.644945+00:00",
+      "fetched_at": "2026-06-12T13:12:57.564274+00:00",
       "content_type": "text/html",
-      "content_length": 90789,
+      "content_length": 93122,
       "size_capped": false,
-      "latency_ms": 1192,
+      "latency_ms": 1210,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
