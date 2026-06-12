@@ -2,7 +2,7 @@
   "agent": "codeguard",
   "service": "repo health audit",
   "source": "GitHub API (live)",
-  "generated": "2026-06-10T02:17:37.046855+00:00",
+  "generated": "2026-06-12T12:27:43.062160+00:00",
   "audited": 6,
   "audits": [
     {
@@ -10,7 +10,7 @@
       "url": "https://github.com/pallets/flask",
       "grade": "B",
       "score": 89,
-      "stars": 71629,
+      "stars": 71640,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -29,7 +29,7 @@
       "url": "https://github.com/expressjs/express",
       "grade": "B",
       "score": 89,
-      "stars": 69125,
+      "stars": 69148,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -67,7 +67,7 @@
       "url": "https://github.com/react/react",
       "grade": "B",
       "score": 86,
-      "stars": 245708,
+      "stars": 245786,
       "dimensions": {
         "maintenance": 100,
         "community": 70,
@@ -86,7 +86,7 @@
       "url": "https://github.com/vuejs/vue",
       "grade": "D",
       "score": 64,
-      "stars": 209836,
+      "stars": 209849,
       "dimensions": {
         "maintenance": 35,
         "community": 70,
@@ -96,7 +96,7 @@
       "description": "This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
       "top_finding": {
         "level": "warn",
-        "text": "No commits in 607 days; project may be stale."
+        "text": "No commits in 610 days; project may be stale."
       },
       "finding_count": 3
     },
@@ -105,7 +105,7 @@
       "url": "https://github.com/request/request",
       "grade": "D",
       "score": 57,
-      "stars": 25550,
+      "stars": 25549,
       "dimensions": {
         "maintenance": 35,
         "community": 80,
@@ -115,7 +115,7 @@
       "description": "\ud83c\udfca\ud83c\udffe Simplified HTTP request client.",
       "top_finding": {
         "level": "warn",
-        "text": "No commits in 2310 days; project may be stale."
+        "text": "No commits in 2312 days; project may be stale."
       },
       "finding_count": 4
     }
