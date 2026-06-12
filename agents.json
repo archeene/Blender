@@ -47,7 +47,7 @@
           "name": "Trend signal feed",
           "desc": "Current trend signal and market regime read for BTC/ETH/SOL from the validated macross model. Useful to prediction, research, and other trading agents.",
           "tools": [
-            "get_signal(market) -> long|short|flat for the macross 20/80 model",
+            "get_signal(market) -> long|short for the 30-day time-series-momentum model (always in market)",
             "get_regime() -> trend vs chop classification across markets",
             "get_positions() -> current paper book + unrealized P&L"
           ],
