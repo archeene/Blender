@@ -268,6 +268,131 @@
           "tiers": { "public": "$0.50/list", "member": "hold N $LEAD · ongoing lead feeds + larger sets", "partner": "hold M $LEAD · continuous managed feed + enrichment + scoring API" }
         }
       ]
+    },
+    {
+      "name": "deskmate",
+      "ticker": "DESK",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 · Customer Service & Support",
+      "niche": "docs-grounded customer support service",
+      "archetype": "customer-service",
+      "page": "deskmate.html",
+      "parents": ["Blender"],
+      "glyph": "s-headset",
+      "color": "#6cc99a",
+      "note": "Customer service / support agent: answers questions from a documentation corpus with citations (which doc, which section) or escalates honestly to a human when retrieval confidence is low, it never bluffs. Deterministic keyword retrieval (inverted index + TF/IDF, no embeddings, zero LLM on the answer path); dogfoods by serving support for the Blender protocol's own docs (155 passages, 88.9% deflection). An x402 per-resolution API and a $DESK buy-and-burn supplement the economics; the support work is the product.",
+      "utility": "$DESK · per-resolution answers + seats + search API",
+      "revenue": "x402 per-resolution + seats · buy-and-burn",
+      "status": "live-service",
+      "x402_endpoint": "pending",
+      "tier_thresholds": { "member_N": "1% of supply", "partner_M": "5% of supply" },
+      "services": [
+        {
+          "id": "support-desk",
+          "name": "Docs-grounded support desk",
+          "desc": "Answers a question from a documentation corpus by retrieving the best-matching passages and composing a short answer cited to the exact doc and section, or escalating honestly to a human when confidence is below threshold. Deterministic keyword retrieval, no embeddings; extractive answers, never fabricated. Publishes a real deflection rate.",
+          "tools": [
+            "answer(question) -> cited answer {answer, citations:[{doc,section}], confidence} or an honest escalation when the docs don't cover it",
+            "search(query) -> ranked matching passages from the corpus with doc, section, and score"
+          ],
+          "tiers": { "public": "$0.05/resolution", "member": "hold N $DESK · your own docs corpus + search API", "partner": "hold M $DESK · private deployment + custom corpus + escalation webhooks" }
+        }
+      ]
+    },
+    {
+      "name": "quill",
+      "ticker": "QUILL",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 · Content & Media Creator",
+      "niche": "content & media creation service",
+      "archetype": "content-creator",
+      "page": "quill.html",
+      "parents": ["Blender"],
+      "glyph": "s-quill",
+      "color": "#e07a9a",
+      "note": "Content & media creator agent: builds grounded content outlines from real sources (live Hacker News threads + arXiv papers), runs deterministic QA validators over every piece, and writes content for its sibling agents, the content role of a self-sufficient agent company. Hired by siblings over x402; retainers + per-piece calls and a $QUILL buy-and-burn supplement the economics.",
+      "utility": "$QUILL · ongoing outlines + premium LLM drafting + compose API",
+      "revenue": "x402 per-piece + retainers · buy-and-burn",
+      "status": "live-service",
+      "x402_endpoint": "pending",
+      "tier_thresholds": { "member_N": "1% of supply", "partner_M": "5% of supply" },
+      "services": [
+        {
+          "id": "content-pipeline",
+          "name": "Grounded content pipeline",
+          "desc": "Pulls real source material (live Hacker News + arXiv) for a topic, assembles a structured outline (working title, hook, 3-5 section headings each citing a real link, suggested CTA), and runs deterministic QA validators (source-count, title length, structure, keyword presence) before anything ships. Premium tier turns a passed outline into finished, source-backed prose.",
+          "tools": [
+            "draft_outline(topic) -> working title + hook + 3-5 cited sections + CTA, grounded in real HN + arXiv sources",
+            "qa_check(piece) -> sources_ok, title_len, structure, keyword presence, score, passed"
+          ],
+          "tiers": { "public": "$0.50/outline", "member": "hold N $QUILL · ongoing outlines + compose API", "partner": "hold M $QUILL · managed content with premium LLM-drafting + scheduled publishing" }
+        }
+      ]
+    },
+    {
+      "name": "opsmate",
+      "ticker": "OPS",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 · Personal / Ops Assistant",
+      "niche": "ops assistant (fleet health monitoring)",
+      "archetype": "ops-assistant",
+      "page": "opsmate.html",
+      "parents": ["Blender"],
+      "glyph": "s-gauge",
+      "color": "#7fa8d4",
+      "note": "Personal / ops assistant: watches the whole Blender agent fleet (each loop alive, each feed fresh, watchdog restarts) and emits one honest health digest, productizing the babysitting the operator did by hand. Reports true state from real files, never green-washes. Hired by siblings and operators over x402; monitoring retainers + per-check calls and an $OPS buy-and-burn supplement the economics.",
+      "utility": "$OPS · per-check health API + scheduled pulls + incident history",
+      "revenue": "x402 per-check + monitoring retainers · buy-and-burn",
+      "status": "live-service",
+      "x402_endpoint": "pending",
+      "tier_thresholds": { "member_N": "1% of supply", "partner_M": "5% of supply" },
+      "services": [
+        {
+          "id": "fleet-monitor",
+          "name": "Fleet health monitor",
+          "desc": "Reads every agent stdout log, feed JSON, and the watchdog log, then emits an honest health digest: per-agent loop activity + feed freshness, a network summary (healthy / stale / incidents), and a green/yellow/red status. No green-washing.",
+          "tools": [
+            "health(agent?) -> per-agent loop_active + last_log_age + feed freshness, or the whole fleet if agent omitted",
+            "incidents() -> watchdog restart count + details in the last 24h",
+            "status() -> network summary (healthy, stale, incidents) + overall green/yellow/red"
+          ],
+          "tiers": { "public": "live network status + per-agent rows, free", "member": "hold N $OPS · per-check x402 API + scheduled pulls + incident history", "partner": "hold M $OPS · managed monitoring retainer + alert routing + custom watch list" }
+        }
+      ]
+    },
+    {
+      "name": "settler",
+      "ticker": "SETL",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 · Settlement & Transaction-Execution",
+      "niche": "inter-agent settlement / transaction-execution service",
+      "archetype": "transaction-execution",
+      "page": "settler.html",
+      "parents": ["Blender"],
+      "glyph": "s-scale",
+      "color": "#9ed47f",
+      "note": "Settlement/transaction-execution agent: the operational settlement layer for the inter-agent economy. An ACP-style escrow engine that prices each inter-agent job from the live registry, escrows the buyer, VERIFIES the seller shipped a real fresh deliverable (checks the seller's feed exists + is fresh), then RELEASES to the seller or REFUNDS the buyer. Tracks treasuries, escrow state, a transaction log, and network aGDP. Never releases without a verified deliverable. SIMULATION until the real x402/on-chain rail exists; a settlement fee over x402 and a $SETL buy-and-burn supplement the economics.",
+      "utility": "$SETL · settlement fee on cleared volume + escrow API + clearing feed",
+      "revenue": "x402 settlement fee on settled volume · buy-and-burn",
+      "status": "live-service",
+      "x402_endpoint": "pending",
+      "tier_thresholds": { "member_N": "1% of supply", "partner_M": "5% of supply" },
+      "services": [
+        {
+          "id": "settlement",
+          "name": "Inter-agent settlement",
+          "desc": "ACP-style escrow settlement for inter-agent jobs: prices the job from the live registry, escrows the buyer, verifies the seller shipped a real fresh deliverable, then releases to the seller or refunds the buyer. Tracks balances, escrow state, transaction log, and network aGDP. Never releases without a verified deliverable.",
+          "tools": [
+            "settle(buyer, seller, service) -> run one job through REQUEST -> ESCROW -> VERIFY -> RELEASE/REFUND, returns the cleared state + verify result",
+            "balance(agent) -> current treasury balance + any escrow held for/against the agent"
+          ],
+          "tiers": { "public": "$0.02/settlement", "member": "hold N $SETL · escrow API + balance lookups + priority settlement", "partner": "hold M $SETL · private clearing feed + batch settlement + fee revenue-share" }
+        }
+      ]
     }
   ]
 }
