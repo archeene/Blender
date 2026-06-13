@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-12T13:12:58.785024+00:00",
+  "generated": "2026-06-13T01:13:07.906700+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-12T13:12:53.453549+00:00",
+      "fetched_at": "2026-06-13T01:13:00.946050+00:00",
       "content_type": "text/html",
-      "content_length": 34899,
+      "content_length": 34558,
       "size_capped": false,
-      "latency_ms": 1953,
+      "latency_ms": 2232,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,48 +29,40 @@
         }
       },
       "links": {
-        "total": 198,
-        "internal": 165,
+        "total": 195,
+        "internal": 162,
         "external": 33,
         "top_external_domains": [
           {
+            "domain": "github.com",
+            "count": 3
+          },
+          {
             "domain": "ycombinator.com",
-            "count": 2
+            "count": 3
           },
           {
-            "domain": "lantian.pub",
+            "domain": "anthropic.com",
             "count": 1
           },
           {
-            "domain": "arxiv.org",
+            "domain": "renaultgroup.com",
             "count": 1
           },
           {
-            "domain": "tombedor.dev",
+            "domain": "innovativegenomics.org",
             "count": 1
           },
           {
-            "domain": "web.mit.edu",
-            "count": 1
-          },
-          {
-            "domain": "discourse.ifin.network",
+            "domain": "depthfirst.com",
             "count": 1
           }
         ]
       },
-      "image_count": 2,
+      "image_count": 3,
       "word_count": 659,
       "reading_time_min": 3,
       "keywords": [
-        {
-          "term": "comments",
-          "count": 30
-        },
-        {
-          "term": "points",
-          "count": 30
-        },
         {
           "term": "ago",
           "count": 30
@@ -80,19 +72,19 @@
           "count": 30
         },
         {
+          "term": "points",
+          "count": 29
+        },
+        {
+          "term": "comments",
+          "count": 28
+        },
+        {
           "term": "hours",
           "count": 27
         },
         {
           "term": "fable",
-          "count": 4
-        },
-        {
-          "term": "human",
-          "count": 3
-        },
-        {
-          "term": "claude",
           "count": 3
         },
         {
@@ -104,11 +96,19 @@
           "count": 2
         },
         {
-          "term": "hour",
+          "term": "putt.day",
           "count": 2
         },
         {
-          "term": "gets",
+          "term": "game",
+          "count": 2
+        },
+        {
+          "term": "pirates",
+          "count": 2
+        },
+        {
+          "term": "legal",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "AI agent bankrupted their operator while trying to scan DN42 (lantian.pub)"
+            "US Government directive to suspend access to Fable 5 and Mythos 5 (anthropic.com)"
           ],
           [
             "",
-            "865 points by xiaoyu2006 8 hours ago | hide | 329 comments"
+            "208 points by Dylan1312 20 minutes ago | hide | 88 comments"
           ],
           [
             "2.",
             "",
-            "Maxproof (arxiv.org)"
+            "Renault: Electric motors with no rare earths (renaultgroup.com)"
           ],
           [
             "",
-            "30 points by ilreb 1 hour ago | hide | discuss"
+            "162 points by bestouff 3 hours ago | hide | 51 comments"
           ],
           [
             "3.",
             "",
-            "If you are asking for human attention, demonstrate human effort (tombedor.dev)"
+            "CRISPR tech selectively shreds cancer cells, including \"undruggable\" cancers (innovativegenomics.org)"
           ],
           [
             "",
-            "993 points by jjfoooo4 14 hours ago | hide | 328 comments"
+            "684 points by gmays 9 hours ago | hide | 173 comments"
           ],
           [
             "4.",
             "",
-            "Nobody ever gets credit for fixing problems that never happened (2001) [pdf] (web.mit.edu)"
+            "Twenty One Zero-Days in FFmpeg (depthfirst.com)"
           ],
           [
             "",
-            "552 points by sam_bristow 12 hours ago | hide | 181 comments"
+            "76 points by redbell 2 hours ago | hide | 37 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-12T13:12:55.417897+00:00",
+      "fetched_at": "2026-06-13T01:13:03.209926+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 741,
+      "latency_ms": 988,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-12T13:12:56.159904+00:00",
+      "fetched_at": "2026-06-13T01:13:04.198067+00:00",
       "content_type": "text/html",
       "content_length": 166311,
       "size_capped": false,
-      "latency_ms": 1377,
+      "latency_ms": 1979,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-12T13:12:57.564274+00:00",
+      "fetched_at": "2026-06-13T01:13:06.205424+00:00",
       "content_type": "text/html",
       "content_length": 93122,
       "size_capped": false,
-      "latency_ms": 1210,
+      "latency_ms": 1695,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
