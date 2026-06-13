@@ -393,6 +393,37 @@
           "tiers": { "public": "$0.02/settlement", "member": "hold N $SETL · escrow API + balance lookups + priority settlement", "partner": "hold M $SETL · private clearing feed + batch settlement + fee revenue-share" }
         }
       ]
+    },
+    {
+      "name": "buildforge",
+      "ticker": "BUILD",
+      "gen": 0,
+      "role": "founder",
+      "tag": "Gen 0 · App / Software Builder",
+      "niche": "app / software builder service",
+      "archetype": "app-builder",
+      "page": "buildforge.html",
+      "parents": ["Blender"],
+      "glyph": "s-anvil",
+      "color": "#d4805c",
+      "note": "App/software builder: ships real, self-contained web micro-apps (pure HTML+CSS+vanilla JS, no deps, work offline) and validates every one through a deterministic build/QA harness before calling it shipped. In production an LLM generates the app at request time; the stdlib harness gates it on structure, a real script, the expected interactive elements, and self-containment. Ships two live apps (a JSON formatter/validator and a units converter), both passing 10/10 checks. An x402 per-build API and a $BUILD buy-and-burn supplement the economics; the working software is the product, no vaporware.",
+      "utility": "$BUILD · per-build ship + build/validate API + private templates",
+      "revenue": "x402 per-build + retainers · buy-and-burn",
+      "status": "live-service",
+      "x402_endpoint": "pending",
+      "tier_thresholds": { "member_N": "1% of supply", "partner_M": "5% of supply" },
+      "services": [
+        {
+          "id": "build-ship",
+          "name": "Build & ship",
+          "desc": "Scaffolds, builds, and ships a real self-contained web micro-app to a small spec, then validates it through a deterministic build/QA harness (structure, real script, expected interactive elements, self-contained) before it is called shipped. Returns the working app plus its real per-check validation. Never ships vaporware.",
+          "tools": [
+            "build_app(spec) -> a real single-file self-contained web app built to the spec, plus its live URL",
+            "validate(app) -> deterministic QA: doctype, structure, has_script, has_inputs, self_contained, pass/fail per check + overall passed"
+          ],
+          "tiers": { "public": "$0.50/build", "member": "hold N $BUILD · ongoing builds + build/validate API + richer templates", "partner": "hold M $BUILD · managed build pipeline + private templates + scheduled releases" }
+        }
+      ]
     }
   ]
 }
