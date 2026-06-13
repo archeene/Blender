@@ -1,0 +1,155 @@
+{
+  "agent": "opsmate",
+  "service": "fleet health monitor",
+  "source": "local agent stdout logs + feed JSONs + watchdog.log (real files)",
+  "generated": "2026-06-13T16:19:09.656893+00:00",
+  "network": {
+    "total": 8,
+    "healthy": 8,
+    "stale": 0,
+    "stale_feeds": [],
+    "dead_loops": [],
+    "incidents": 7,
+    "status": "yellow"
+  },
+  "watchdog": {
+    "recent_incidents": 7,
+    "incidents": [
+      {
+        "ts": "2026-06-13T07:46:34.1728971-07:00",
+        "detail": "restarted trendpilot pid 11416"
+      },
+      {
+        "ts": "2026-06-13T07:46:34.4255678-07:00",
+        "detail": "restarted codeguard pid 41316"
+      },
+      {
+        "ts": "2026-06-13T07:46:34.7288047-07:00",
+        "detail": "restarted amplify pid 46100"
+      },
+      {
+        "ts": "2026-06-13T07:46:35.1077020-07:00",
+        "detail": "restarted foresight pid 42264"
+      },
+      {
+        "ts": "2026-06-13T07:46:35.4075856-07:00",
+        "detail": "restarted scout pid 22800"
+      },
+      {
+        "ts": "2026-06-13T07:46:35.6929773-07:00",
+        "detail": "restarted extractor pid 38052"
+      },
+      {
+        "ts": "2026-06-13T07:46:35.9858651-07:00",
+        "detail": "restarted prospect pid 21700"
+      }
+    ],
+    "log_present": true
+  },
+  "agents": [
+    {
+      "name": "trendpilot",
+      "loop": "trendpilot",
+      "loop_active": true,
+      "last_log_age_min": 11.5,
+      "log_last_line": "[paper-local] 2026-06-13T16:07:41.669808+00:00 published trades feed",
+      "feed": "trades.json",
+      "feed_age_min": 11.5,
+      "feed_exists": true,
+      "fresh": true,
+      "interval_s": 1200,
+      "stale_threshold_min": 90.0
+    },
+    {
+      "name": "codeguard",
+      "loop": "codeguard",
+      "loop_active": true,
+      "last_log_age_min": 89.4,
+      "log_last_line": "[codeguard] publish codeguard-audits.json rc=0",
+      "feed": "codeguard-deps.json",
+      "feed_age_min": 91.0,
+      "feed_exists": true,
+      "fresh": true,
+      "interval_s": 21600,
+      "stale_threshold_min": 720.0
+    },
+    {
+      "name": "codeguard-audits",
+      "loop": "codeguard",
+      "loop_active": true,
+      "last_log_age_min": 89.4,
+      "log_last_line": "[codeguard] publish codeguard-audits.json rc=0",
+      "feed": "codeguard-audits.json",
+      "feed_age_min": 89.6,
+      "feed_exists": true,
+      "fresh": true,
+      "interval_s": 21600,
+      "stale_threshold_min": 720.0
+    },
+    {
+      "name": "amplify",
+      "loop": "amplify",
+      "loop_active": true,
+      "last_log_age_min": 92.4,
+      "log_last_line": "[amplify] 2026-06-13T14:46:43.797594+00:00 publish rc=0",
+      "feed": "amplify-brief.json",
+      "feed_age_min": 92.5,
+      "feed_exists": true,
+      "fresh": true,
+      "interval_s": 21600,
+      "stale_threshold_min": 720.0
+    },
+    {
+      "name": "foresight",
+      "loop": "foresight",
+      "loop_active": true,
+      "last_log_age_min": 92.4,
+      "log_last_line": "[foresight] 2026-06-13T14:46:42.938103+00:00 publish rc=0",
+      "feed": "foresight-forecast.json",
+      "feed_age_min": 92.5,
+      "feed_exists": true,
+      "fresh": true,
+      "interval_s": 86400,
+      "stale_threshold_min": 2880.0
+    },
+    {
+      "name": "scout",
+      "loop": "scout",
+      "loop_active": true,
+      "last_log_age_min": 92.4,
+      "log_last_line": "[scout] 2026-06-13T14:46:47.439495+00:00 publish rc=0",
+      "feed": "scout-brief.json",
+      "feed_age_min": 92.5,
+      "feed_exists": true,
+      "fresh": true,
+      "interval_s": 21600,
+      "stale_threshold_min": 720.0
+    },
+    {
+      "name": "extractor",
+      "loop": "extractor",
+      "loop_active": true,
+      "last_log_age_min": 92.2,
+      "log_last_line": "[extractor] 2026-06-13T14:46:56.899408+00:00 publish rc=0",
+      "feed": "extractor-sample.json",
+      "feed_age_min": 92.3,
+      "feed_exists": true,
+      "fresh": true,
+      "interval_s": 43200,
+      "stale_threshold_min": 1440.0
+    },
+    {
+      "name": "prospect",
+      "loop": "prospect",
+      "loop_active": true,
+      "last_log_age_min": 92.0,
+      "log_last_line": "[prospect] 2026-06-13T14:47:11.319761+00:00 publish rc=0",
+      "feed": "prospect-leads.json",
+      "feed_age_min": 92.1,
+      "feed_exists": true,
+      "fresh": true,
+      "interval_s": 21600,
+      "stale_threshold_min": 720.0
+    }
+  ]
+}
