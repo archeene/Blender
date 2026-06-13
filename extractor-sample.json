@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-13T01:13:07.906700+00:00",
+  "generated": "2026-06-13T13:13:20.719839+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-13T01:13:00.946050+00:00",
+      "fetched_at": "2026-06-13T13:13:10.192477+00:00",
       "content_type": "text/html",
-      "content_length": 34558,
+      "content_length": 35051,
       "size_capped": false,
-      "latency_ms": 2232,
+      "latency_ms": 4360,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,40 +29,44 @@
         }
       },
       "links": {
-        "total": 195,
-        "internal": 162,
+        "total": 198,
+        "internal": 165,
         "external": 33,
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 3
+            "count": 4
           },
           {
             "domain": "ycombinator.com",
-            "count": 3
+            "count": 2
           },
           {
-            "domain": "anthropic.com",
+            "domain": "research.google",
             "count": 1
           },
           {
-            "domain": "renaultgroup.com",
+            "domain": "hallucinate.site",
             "count": 1
           },
           {
-            "domain": "innovativegenomics.org",
+            "domain": "areweguiyet.com",
             "count": 1
           },
           {
-            "domain": "depthfirst.com",
+            "domain": "chipsandcheese.com",
             "count": 1
           }
         ]
       },
-      "image_count": 3,
-      "word_count": 659,
+      "image_count": 2,
+      "word_count": 694,
       "reading_time_min": 3,
       "keywords": [
+        {
+          "term": "points",
+          "count": 30
+        },
         {
           "term": "ago",
           "count": 30
@@ -72,19 +76,23 @@
           "count": 30
         },
         {
-          "term": "points",
+          "term": "comments",
           "count": 29
         },
         {
-          "term": "comments",
-          "count": 28
-        },
-        {
           "term": "hours",
-          "count": 27
+          "count": 25
         },
         {
-          "term": "fable",
+          "term": "hour",
+          "count": 4
+        },
+        {
+          "term": "github.com",
+          "count": 3
+        },
+        {
+          "term": "game",
           "count": 3
         },
         {
@@ -96,19 +104,11 @@
           "count": 2
         },
         {
-          "term": "putt.day",
+          "term": "fable",
           "count": 2
         },
         {
-          "term": "game",
-          "count": 2
-        },
-        {
-          "term": "pirates",
-          "count": 2
-        },
-        {
-          "term": "legal",
+          "term": "lightweight",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "US Government directive to suspend access to Fable 5 and Mythos 5 (anthropic.com)"
+            "A low-carbon computing platform from your retired phones (research.google)"
           ],
           [
             "",
-            "208 points by Dylan1312 20 minutes ago | hide | 88 comments"
+            "78 points by vikas-sharma 3 hours ago | hide | 32 comments"
           ],
           [
             "2.",
             "",
-            "Renault: Electric motors with no rare earths (renaultgroup.com)"
+            "Show HN: 2 Weeks of Hallucinate \u2013 The Photo Gallery (hallucinate.site)"
           ],
           [
             "",
-            "162 points by bestouff 3 hours ago | hide | 51 comments"
+            "28 points by stagas 1 hour ago | hide | 6 comments"
           ],
           [
             "3.",
             "",
-            "CRISPR tech selectively shreds cancer cells, including \"undruggable\" cancers (innovativegenomics.org)"
+            "The state of building user interfaces in Rust (areweguiyet.com)"
           ],
           [
             "",
-            "684 points by gmays 9 hours ago | hide | 173 comments"
+            "42 points by mahirsaid 3 hours ago | hide | 19 comments"
           ],
           [
             "4.",
             "",
-            "Twenty One Zero-Days in FFmpeg (depthfirst.com)"
+            "An Interview with Intel's Kira Boyko: Xeon 6's Product Director (chipsandcheese.com)"
           ],
           [
             "",
-            "76 points by redbell 2 hours ago | hide | 37 comments"
+            "9 points by lumpa 51 minutes ago | hide | discuss"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-13T01:13:03.209926+00:00",
+      "fetched_at": "2026-06-13T13:13:14.579500+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 988,
+      "latency_ms": 1594,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-13T01:13:04.198067+00:00",
+      "fetched_at": "2026-06-13T13:13:16.173827+00:00",
       "content_type": "text/html",
-      "content_length": 166311,
+      "content_length": 165881,
       "size_capped": false,
-      "latency_ms": 1979,
+      "latency_ms": 2455,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-13T01:13:06.205424+00:00",
+      "fetched_at": "2026-06-13T13:13:18.656660+00:00",
       "content_type": "text/html",
       "content_length": 93122,
       "size_capped": false,
-      "latency_ms": 1695,
+      "latency_ms": 2057,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
