@@ -2,7 +2,7 @@
   "agent": "scout",
   "service": "structured, cited research briefs",
   "sources": "Hacker News + arXiv + GitHub + Wikipedia (live, no key)",
-  "generated": "2026-06-12T19:11:41.033043+00:00",
+  "generated": "2026-06-13T01:11:46.474184+00:00",
   "briefs": [
     {
       "topic": "crypto trading bot",
@@ -152,35 +152,35 @@
         {
           "full_name": "freqtrade/freqtrade",
           "url": "https://github.com/freqtrade/freqtrade",
-          "stars": 51387,
+          "stars": 51389,
           "language": "Python",
           "desc": "Free, open source crypto trading bot"
         },
         {
           "full_name": "ccxt/ccxt",
           "url": "https://github.com/ccxt/ccxt",
-          "stars": 42897,
+          "stars": 42899,
           "language": "Python",
           "desc": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java "
         },
         {
           "full_name": "hummingbot/hummingbot",
           "url": "https://github.com/hummingbot/hummingbot",
-          "stars": 18866,
+          "stars": 18870,
           "language": "Python",
           "desc": "Open source software that helps you create and deploy high-frequency crypto trading bots"
         },
         {
           "full_name": "jesse-ai/jesse",
           "url": "https://github.com/jesse-ai/jesse",
-          "stars": 8026,
+          "stars": 8027,
           "language": "JavaScript",
           "desc": "An advanced crypto trading bot written in Python"
         },
         {
           "full_name": "Drakkar-Software/OctoBot",
           "url": "https://github.com/Drakkar-Software/OctoBot",
-          "stars": 6059,
+          "stars": 6061,
           "language": "Python",
           "desc": "Free open source crypto trading bot to automate AI, Grid, DCA and TradingView strategies on Binance, Hyperliquid and 15+ exchanges, with a simple interface."
         },
@@ -193,7 +193,7 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-12T19:11:40.827182+00:00"
+      "generated": "2026-06-13T01:11:46.072085+00:00"
     },
     {
       "topic": "dependency security",
@@ -345,7 +345,7 @@
         {
           "full_name": "DependencyTrack/dependency-track",
           "url": "https://github.com/DependencyTrack/dependency-track",
-          "stars": 3904,
+          "stars": 3905,
           "language": "Java",
           "desc": "Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain."
         },
@@ -359,7 +359,7 @@
         {
           "full_name": "vernu/vps-audit",
           "url": "https://github.com/vernu/vps-audit",
-          "stars": 1966,
+          "stars": 1967,
           "language": "Shell",
           "desc": "lightweight, dependency-free bash script for security, performance auditing and infrastructure monitoring of Linux servers."
         },
@@ -379,7 +379,7 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-12T19:11:41.033043+00:00"
+      "generated": "2026-06-13T01:11:46.162115+00:00"
     },
     {
       "topic": "AI marketing",
@@ -529,28 +529,28 @@
         {
           "full_name": "twentyhq/twenty",
           "url": "https://github.com/twentyhq/twenty",
-          "stars": 49779,
+          "stars": 49794,
           "language": "TypeScript",
           "desc": "The open alternative to Salesforce, designed for AI."
         },
         {
           "full_name": "coreyhaines31/marketingskills",
           "url": "https://github.com/coreyhaines31/marketingskills",
-          "stars": 33044,
+          "stars": 33072,
           "language": "JavaScript",
           "desc": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering."
         },
         {
           "full_name": "ParthJadhav/app-store-screenshots",
           "url": "https://github.com/ParthJadhav/app-store-screenshots",
-          "stars": 5606,
+          "stars": 5611,
           "language": "TypeScript",
           "desc": "end to end app store screenshot creation using AI"
         },
         {
           "full_name": "YILS-LIN/short-video-factory",
           "url": "https://github.com/YILS-LIN/short-video-factory",
-          "stars": 4072,
+          "stars": 4073,
           "language": "TypeScript",
           "desc": "\u4e00\u952e\u751f\u6210\u4ea7\u54c1\u8425\u9500\u4e0e\u6cdb\u5185\u5bb9\u77ed\u89c6\u9891\uff0cAI\u6279\u91cf\u81ea\u52a8\u526a\u8f91\uff0c\u9ad8\u989c\u503c\u8de8\u5e73\u53f0\u684c\u9762\u7aef\u5de5\u5177 One click generation of product marketing and general content short videos, AI batch automatic cliping, beautiful cross pla"
         },
@@ -564,13 +564,13 @@
         {
           "full_name": "aaron-he-zhu/seo-geo-claude-skills",
           "url": "https://github.com/aaron-he-zhu/seo-geo-claude-skills",
-          "stars": 2101,
+          "stars": 2102,
           "language": "Python",
           "desc": "20 SEO & GEO skills for Claude Code, Cursor, Codex, and 35+ AI agents. Keyword research, content writing, technical audits, rank tracking. CORE-EEAT + CITE fram"
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-12T19:11:40.640374+00:00"
+      "generated": "2026-06-13T01:11:46.474184+00:00"
     },
     {
       "topic": "autonomous agents",
@@ -721,42 +721,42 @@
         {
           "full_name": "cline/cline",
           "url": "https://github.com/cline/cline",
-          "stars": 63128,
+          "stars": 63140,
           "language": "TypeScript",
           "desc": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant."
         },
         {
           "full_name": "ruvnet/ruflo",
           "url": "https://github.com/ruvnet/ruflo",
-          "stars": 59134,
+          "stars": 59164,
           "language": "TypeScript",
           "desc": "\ud83c\udf0a The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Featur"
         },
         {
           "full_name": "crewAIInc/crewAI",
           "url": "https://github.com/crewAIInc/crewAI",
-          "stars": 53355,
+          "stars": 53372,
           "language": "Python",
           "desc": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tac"
         },
         {
           "full_name": "CherryHQ/cherry-studio",
           "url": "https://github.com/CherryHQ/cherry-studio",
-          "stars": 47247,
+          "stars": 47251,
           "language": "TypeScript",
           "desc": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs"
         },
         {
           "full_name": "reworkd/AgentGPT",
           "url": "https://github.com/reworkd/AgentGPT",
-          "stars": 36185,
+          "stars": 36186,
           "language": "TypeScript",
           "desc": "\ud83e\udd16 Assemble, configure, and deploy autonomous AI Agents in your browser."
         },
         {
           "full_name": "khoj-ai/khoj",
           "url": "https://github.com/khoj-ai/khoj",
-          "stars": 35091,
+          "stars": 35095,
           "language": "Python",
           "desc": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or loca"
         }
@@ -766,7 +766,7 @@
         "extract": "An autonomous agent is an artificial intelligence (AI) system that can perform complex tasks independently.",
         "url": "https://en.wikipedia.org/wiki/Autonomous_agent"
       },
-      "generated": "2026-06-12T19:11:40.653977+00:00"
+      "generated": "2026-06-13T01:11:46.072085+00:00"
     }
   ]
 }
