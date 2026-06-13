@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit Converter</title>
+<style>
+  :root{--bg:#0f1012;--panel:#17191c;--line:#2a2d31;--fg:#e3e1dd;--dim:#8b8d91;--orange:#d4805c;--green:#7fd99a;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;background:var(--bg);color:var(--fg);font-size:14px;line-height:1.5}
+  .wrap{max-width:720px;margin:0 auto;padding:24px 18px 60px}
+  h1{font-size:18px;letter-spacing:1px;color:var(--orange);margin:0 0 2px}
+  .sub{color:var(--dim);font-size:12px;margin:0 0 18px}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+  .tab{font-size:12.5px;background:var(--panel);color:var(--dim);border:1px solid var(--line);border-radius:999px;
+    padding:6px 14px;cursor:pointer;letter-spacing:.5px}
+  .tab:hover{color:var(--fg)}
+  .tab.active{background:var(--orange);color:#1a1207;border-color:var(--orange);font-weight:600}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:18px}
+  .row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-bottom:12px}
+  input[type=number]{width:100%;font-family:inherit;font-size:17px;background:#101214;color:var(--fg);
+    border:1px solid var(--line);border-radius:8px;padding:11px 12px}
+  input[type=number]:focus{outline:none;border-color:var(--orange)}
+  select{font-family:inherit;font-size:13px;background:#101214;color:var(--fg);border:1px solid var(--line);
+    border-radius:8px;padding:11px 10px;min-width:150px}
+  .swap{display:flex;justify-content:center;margin:4px 0 12px}
+  .swap button{font-family:inherit;font-size:14px;background:none;border:1px solid var(--line);color:var(--dim);
+    border-radius:8px;padding:5px 14px;cursor:pointer}
+  .swap button:hover{color:var(--orange);border-color:var(--orange)}
+  .result{margin-top:6px;font-size:15px}
+  .result b{color:var(--green);font-weight:600}
+  .note{color:var(--dim);font-size:11.5px;margin-top:14px}
+  label.lab{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:5px}
+  .grp{margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Unit Converter</h1>
+  <p class="sub">Length, mass, temperature, data size. Converts live as you type. Runs entirely in your browser, offline.</p>
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="card">
+    <div class="grp">
+      <label class="lab">from</label>
+      <div class="row">
+        <input type="number" id="fromVal" value="1" step="any" autocomplete="off">
+        <select id="fromUnit"></select>
+      </div>
+    </div>
+    <div class="swap"><button id="swap" title="Swap units">&#8645; swap</button></div>
+    <div class="grp">
+      <label class="lab">to</label>
+      <div class="row">
+        <input type="number" id="toVal" step="any" autocomplete="off">
+        <select id="toUnit"></select>
+      </div>
+    </div>
+    <div class="result" id="result"></div>
+    <div class="note" id="note"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Linear units expressed as a factor to a base unit. Temperature is non-linear,
+  // handled with explicit to/from-base functions, so the model stays honest.
+  var CATS={
+    length:{
+      base:'meter',
+      units:{
+        'millimeter (mm)':0.001,'centimeter (cm)':0.01,'meter (m)':1,'kilometer (km)':1000,
+        'inch (in)':0.0254,'foot (ft)':0.3048,'yard (yd)':0.9144,'mile (mi)':1609.344,
+        'nautical mile':1852
+      }
+    },
+    mass:{
+      base:'gram',
+      units:{
+        'milligram (mg)':0.001,'gram (g)':1,'kilogram (kg)':1000,'metric tonne (t)':1000000,
+        'ounce (oz)':28.349523125,'pound (lb)':453.59237,'stone (st)':6350.29318
+      }
+    },
+    temperature:{
+      base:'kelvin',
+      // each entry: toBase(x) and fromBase(k)
+      units:{
+        'celsius (C)':{to:function(c){return c+273.15;}, from:function(k){return k-273.15;}},
+        'fahrenheit (F)':{to:function(f){return (f-32)*5/9+273.15;}, from:function(k){return (k-273.15)*9/5+32;}},
+        'kelvin (K)':{to:function(k){return k;}, from:function(k){return k;}}
+      }
+    },
+    'data size':{
+      base:'byte',
+      units:{
+        'bit (b)':0.125,'byte (B)':1,
+        'kilobyte (KB, 1000)':1000,'kibibyte (KiB, 1024)':1024,
+        'megabyte (MB)':1e6,'mebibyte (MiB)':1048576,
+        'gigabyte (GB)':1e9,'gibibyte (GiB)':1073741824,
+        'terabyte (TB)':1e12,'tebibyte (TiB)':1099511627776
+      }
+    }
+  };
+
+  var tabsEl=document.getElementById('tabs'),
+      fromUnit=document.getElementById('fromUnit'),
+      toUnit=document.getElementById('toUnit'),
+      fromVal=document.getElementById('fromVal'),
+      toVal=document.getElementById('toVal'),
+      resultEl=document.getElementById('result'),
+      noteEl=document.getElementById('note');
+
+  var current='length';
+
+  function buildTabs(){
+    tabsEl.innerHTML='';
+    Object.keys(CATS).forEach(function(cat){
+      var b=document.createElement('div');
+      b.className='tab'+(cat===current?' active':'');
+      b.textContent=cat;
+      b.onclick=function(){ current=cat; buildTabs(); fillUnits(); convert(); };
+      tabsEl.appendChild(b);
+    });
+  }
+
+  function fillUnits(){
+    var names=Object.keys(CATS[current].units);
+    fromUnit.innerHTML=''; toUnit.innerHTML='';
+    names.forEach(function(n,i){
+      var o1=document.createElement('option'); o1.value=n; o1.textContent=n; fromUnit.appendChild(o1);
+      var o2=document.createElement('option'); o2.value=n; o2.textContent=n; toUnit.appendChild(o2);
+    });
+    fromUnit.selectedIndex=0;
+    toUnit.selectedIndex=Math.min(1,names.length-1);
+  }
+
+  function toBase(cat,unit,x){
+    var u=CATS[cat].units[unit];
+    return (typeof u==='object') ? u.to(x) : x*u;
+  }
+  function fromBase(cat,unit,base){
+    var u=CATS[cat].units[unit];
+    return (typeof u==='object') ? u.from(base) : base/u;
+  }
+
+  // Trim float noise without lying about magnitude.
+  function fmt(n){
+    if(!isFinite(n)) return String(n);
+    if(n===0) return '0';
+    var abs=Math.abs(n);
+    if(abs>=1e15||abs<1e-6) return n.toExponential(6).replace(/\.?0+e/,'e');
+    var s=n.toPrecision(12);
+    return parseFloat(s).toString();
+  }
+
+  function convert(){
+    var raw=fromVal.value;
+    if(raw===''||isNaN(parseFloat(raw))){ toVal.value=''; resultEl.textContent=''; return; }
+    var x=parseFloat(raw);
+    var base=toBase(current,fromUnit.value,x);
+    var out=fromBase(current,toUnit.value,base);
+    toVal.value=fmt(out);
+    resultEl.innerHTML='<b>'+fmt(x)+'</b> '+stripParen(fromUnit.value)+' = <b>'+fmt(out)+'</b> '+stripParen(toUnit.value);
+    setNote();
+  }
+
+  // reverse direction: user edits the "to" field
+  function convertReverse(){
+    var raw=toVal.value;
+    if(raw===''||isNaN(parseFloat(raw))){ fromVal.value=''; resultEl.textContent=''; return; }
+    var x=parseFloat(raw);
+    var base=toBase(current,toUnit.value,x);
+    var out=fromBase(current,fromUnit.value,base);
+    fromVal.value=fmt(out);
+    resultEl.innerHTML='<b>'+fmt(out)+'</b> '+stripParen(fromUnit.value)+' = <b>'+fmt(x)+'</b> '+stripParen(toUnit.value);
+    setNote();
+  }
+
+  function stripParen(s){ return s.replace(/\s*\(.*\)\s*/,''); }
+
+  function setNote(){
+    if(current==='temperature'){ noteEl.textContent='Temperature uses exact affine conversions through kelvin.'; return; }
+    // show the 1-unit factor between the two selected units
+    var oneInBase=toBase(current,fromUnit.value,1);
+    var oneOut=fromBase(current,toUnit.value,oneInBase);
+    noteEl.textContent='1 '+stripParen(fromUnit.value)+' = '+fmt(oneOut)+' '+stripParen(toUnit.value);
+  }
+
+  document.getElementById('swap').onclick=function(){
+    var fi=fromUnit.selectedIndex, ti=toUnit.selectedIndex;
+    fromUnit.selectedIndex=ti; toUnit.selectedIndex=fi;
+    convert();
+  };
+  fromVal.addEventListener('input',convert);
+  toVal.addEventListener('input',convertReverse);
+  fromUnit.addEventListener('change',convert);
+  toUnit.addEventListener('change',convert);
+
+  buildTabs(); fillUnits(); convert();
+})();
+</script>
+</body></html>
