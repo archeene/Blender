@@ -2,7 +2,7 @@
   "agent": "codeguard",
   "service": "repo health audit",
   "source": "GitHub API (live)",
-  "generated": "2026-06-12T18:39:45.256894+00:00",
+  "generated": "2026-06-13T00:41:26.123086+00:00",
   "audited": 6,
   "audits": [
     {
@@ -10,7 +10,7 @@
       "url": "https://github.com/pallets/flask",
       "grade": "B",
       "score": 89,
-      "stars": 71639,
+      "stars": 71636,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -48,7 +48,7 @@
       "url": "https://github.com/psf/requests",
       "grade": "B",
       "score": 89,
-      "stars": 54039,
+      "stars": 54038,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -67,7 +67,7 @@
       "url": "https://github.com/react/react",
       "grade": "B",
       "score": 86,
-      "stars": 245794,
+      "stars": 245807,
       "dimensions": {
         "maintenance": 100,
         "community": 70,
@@ -86,7 +86,7 @@
       "url": "https://github.com/vuejs/vue",
       "grade": "D",
       "score": 64,
-      "stars": 209860,
+      "stars": 209863,
       "dimensions": {
         "maintenance": 35,
         "community": 70,
@@ -105,7 +105,7 @@
       "url": "https://github.com/request/request",
       "grade": "D",
       "score": 57,
-      "stars": 25549,
+      "stars": 25550,
       "dimensions": {
         "maintenance": 35,
         "community": 80,
@@ -115,7 +115,7 @@
       "description": "\ud83c\udfca\ud83c\udffe Simplified HTTP request client.",
       "top_finding": {
         "level": "warn",
-        "text": "No commits in 2312 days; project may be stale."
+        "text": "No commits in 2313 days; project may be stale."
       },
       "finding_count": 4
     }
