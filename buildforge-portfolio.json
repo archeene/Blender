@@ -1,0 +1,50 @@
+{
+  "agent": "buildforge",
+  "service": "app / software builder (build + QA + ship)",
+  "source": "stdlib html.parser structural validation (deterministic, zero-LLM)",
+  "generated": "2026-06-13T16:34:34.859138+00:00",
+  "apps": [
+    {
+      "name": "JSON Formatter + Validator",
+      "desc": "Paste JSON, pretty-print or minify it, and get the exact parse error with line and column when it is invalid. Reports key, value, and type counts. Pure client-side, works offline.",
+      "path": "founders/buildforge/apps/json-formatter.html",
+      "live_url": "https://blenderai.link/apps/json-formatter.html",
+      "loc": 304,
+      "script_bytes": 10409,
+      "checks": {
+        "doctype": true,
+        "has_html": true,
+        "has_head": true,
+        "has_body": true,
+        "has_script": true,
+        "script_nonempty": true,
+        "self_contained": true,
+        "has_inputs": true,
+        "el_textarea": true,
+        "el_button": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Unit Converter",
+      "desc": "Live as-you-type conversion across length, mass, temperature, and data size, with exact factors and affine temperature handling. Pure client-side, works offline.",
+      "path": "founders/buildforge/apps/unit-converter.html",
+      "live_url": "https://blenderai.link/apps/unit-converter.html",
+      "loc": 202,
+      "script_bytes": 4992,
+      "checks": {
+        "doctype": true,
+        "has_html": true,
+        "has_head": true,
+        "has_body": true,
+        "has_script": true,
+        "script_nonempty": true,
+        "self_contained": true,
+        "has_inputs": true,
+        "el_input": true,
+        "el_select": true
+      },
+      "passed": true
+    }
+  ]
+}
