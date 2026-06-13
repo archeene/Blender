@@ -1,0 +1,283 @@
+{
+  "agent": "settler",
+  "service": "inter-agent settlement (ACP-style escrow)",
+  "disclaimer": "SIMULATION. No real USDC moves (Bankr key is read-only, 403 on sign). Treasuries are modeled accounting entries. The escrow lifecycle, the registry prices, and the VERIFY step (a real os.stat on each seller's real paper_run feed) are real; only the dollars are simulated. settler never releases funds without a verified deliverable.",
+  "source": "agents.json registry (public prices) + paper_run sibling feeds (verify)",
+  "generated": "2026-06-13T16:15:05.898971+00:00",
+  "fresh_hours": 72.0,
+  "seed": {
+    "trendpilot": 50.0,
+    "codeguard": 30.0,
+    "amplify": 25.0,
+    "foresight": 25.0,
+    "scout": 25.0,
+    "extractor": 20.0,
+    "prospect": 20.0
+  },
+  "network_aGDP": 3.31,
+  "settled_count": 10,
+  "refunded_count": 0,
+  "jobs": [
+    {
+      "buyer": "trendpilot",
+      "seller": "scout",
+      "service": "research-brief",
+      "price": 0.5,
+      "state": "RELEASED",
+      "verified": true,
+      "detail": "scout-brief.json fresh (1h)"
+    },
+    {
+      "buyer": "codeguard",
+      "seller": "amplify",
+      "service": "growth-brief",
+      "price": 0.5,
+      "state": "RELEASED",
+      "verified": true,
+      "detail": "amplify-brief.json fresh (1h)"
+    },
+    {
+      "buyer": "amplify",
+      "seller": "codeguard",
+      "service": "repo-audit",
+      "price": 0.25,
+      "state": "RELEASED",
+      "verified": true,
+      "detail": "codeguard-audits.json fresh (1h)"
+    },
+    {
+      "buyer": "foresight",
+      "seller": "scout",
+      "service": "research-brief",
+      "price": 0.5,
+      "state": "RELEASED",
+      "verified": true,
+      "detail": "scout-brief.json fresh (1h)"
+    },
+    {
+      "buyer": "amplify",
+      "seller": "trendpilot",
+      "service": "signal-feed",
+      "price": 0.05,
+      "state": "RELEASED",
+      "verified": true,
+      "detail": "paper_portfolio.json fresh (0h)"
+    },
+    {
+      "buyer": "prospect",
+      "seller": "codeguard",
+      "service": "repo-audit",
+      "price": 0.25,
+      "state": "RELEASED",
+      "verified": true,
+      "detail": "codeguard-audits.json fresh (1h)"
+    },
+    {
+      "buyer": "codeguard",
+      "seller": "prospect",
+      "service": "qualified-leads",
+      "price": 0.5,
+      "state": "RELEASED",
+      "verified": true,
+      "detail": "prospect-leads.json fresh (1h)"
+    },
+    {
+      "buyer": "scout",
+      "seller": "extractor",
+      "service": "extract-api",
+      "price": 0.01,
+      "state": "RELEASED",
+      "verified": true,
+      "detail": "extractor-sample.json fresh (1h)"
+    },
+    {
+      "buyer": "trendpilot",
+      "seller": "foresight",
+      "service": "forecast-feed",
+      "price": 0.25,
+      "state": "RELEASED",
+      "verified": true,
+      "detail": "foresight-forecast.json fresh (1h)"
+    },
+    {
+      "buyer": "amplify",
+      "seller": "scout",
+      "service": "research-brief",
+      "price": 0.5,
+      "state": "RELEASED",
+      "verified": true,
+      "detail": "scout-brief.json fresh (1h)"
+    }
+  ],
+  "transactions": [
+    {
+      "ts": "2026-06-13T16:15:05.896363+00:00",
+      "kind": "ESCROW",
+      "buyer": "trendpilot",
+      "seller": "scout",
+      "amount": 0.5,
+      "detail": "research-brief held in escrow"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.896883+00:00",
+      "kind": "RELEASE",
+      "buyer": "trendpilot",
+      "seller": "scout",
+      "amount": 0.5,
+      "detail": "scout-brief.json fresh (1h)"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.896883+00:00",
+      "kind": "ESCROW",
+      "buyer": "codeguard",
+      "seller": "amplify",
+      "amount": 0.5,
+      "detail": "growth-brief held in escrow"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.896883+00:00",
+      "kind": "RELEASE",
+      "buyer": "codeguard",
+      "seller": "amplify",
+      "amount": 0.5,
+      "detail": "amplify-brief.json fresh (1h)"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.897401+00:00",
+      "kind": "ESCROW",
+      "buyer": "amplify",
+      "seller": "codeguard",
+      "amount": 0.25,
+      "detail": "repo-audit held in escrow"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.897401+00:00",
+      "kind": "RELEASE",
+      "buyer": "amplify",
+      "seller": "codeguard",
+      "amount": 0.25,
+      "detail": "codeguard-audits.json fresh (1h)"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.897401+00:00",
+      "kind": "ESCROW",
+      "buyer": "foresight",
+      "seller": "scout",
+      "amount": 0.5,
+      "detail": "research-brief held in escrow"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.897401+00:00",
+      "kind": "RELEASE",
+      "buyer": "foresight",
+      "seller": "scout",
+      "amount": 0.5,
+      "detail": "scout-brief.json fresh (1h)"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.897401+00:00",
+      "kind": "ESCROW",
+      "buyer": "amplify",
+      "seller": "trendpilot",
+      "amount": 0.05,
+      "detail": "signal-feed held in escrow"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.897925+00:00",
+      "kind": "RELEASE",
+      "buyer": "amplify",
+      "seller": "trendpilot",
+      "amount": 0.05,
+      "detail": "paper_portfolio.json fresh (0h)"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.897925+00:00",
+      "kind": "ESCROW",
+      "buyer": "prospect",
+      "seller": "codeguard",
+      "amount": 0.25,
+      "detail": "repo-audit held in escrow"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.897925+00:00",
+      "kind": "RELEASE",
+      "buyer": "prospect",
+      "seller": "codeguard",
+      "amount": 0.25,
+      "detail": "codeguard-audits.json fresh (1h)"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.897925+00:00",
+      "kind": "ESCROW",
+      "buyer": "codeguard",
+      "seller": "prospect",
+      "amount": 0.5,
+      "detail": "qualified-leads held in escrow"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.898448+00:00",
+      "kind": "RELEASE",
+      "buyer": "codeguard",
+      "seller": "prospect",
+      "amount": 0.5,
+      "detail": "prospect-leads.json fresh (1h)"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.898448+00:00",
+      "kind": "ESCROW",
+      "buyer": "scout",
+      "seller": "extractor",
+      "amount": 0.01,
+      "detail": "extract-api held in escrow"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.898448+00:00",
+      "kind": "RELEASE",
+      "buyer": "scout",
+      "seller": "extractor",
+      "amount": 0.01,
+      "detail": "extractor-sample.json fresh (1h)"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.898448+00:00",
+      "kind": "ESCROW",
+      "buyer": "trendpilot",
+      "seller": "foresight",
+      "amount": 0.25,
+      "detail": "forecast-feed held in escrow"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.898971+00:00",
+      "kind": "RELEASE",
+      "buyer": "trendpilot",
+      "seller": "foresight",
+      "amount": 0.25,
+      "detail": "foresight-forecast.json fresh (1h)"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.898971+00:00",
+      "kind": "ESCROW",
+      "buyer": "amplify",
+      "seller": "scout",
+      "amount": 0.5,
+      "detail": "research-brief held in escrow"
+    },
+    {
+      "ts": "2026-06-13T16:15:05.898971+00:00",
+      "kind": "RELEASE",
+      "buyer": "amplify",
+      "seller": "scout",
+      "amount": 0.5,
+      "detail": "scout-brief.json fresh (1h)"
+    }
+  ],
+  "balances": {
+    "trendpilot": 49.3,
+    "codeguard": 29.5,
+    "amplify": 24.7,
+    "foresight": 24.75,
+    "scout": 26.49,
+    "extractor": 20.01,
+    "prospect": 20.25
+  }
+}
