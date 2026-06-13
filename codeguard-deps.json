@@ -3,7 +3,7 @@
   "service": "dependency / release / advisory monitor",
   "source": "npm registry + PyPI + OSV.dev (live)",
   "stack": "example web app",
-  "generated": "2026-06-12T18:38:46.647263+00:00",
+  "generated": "2026-06-13T00:40:28.022835+00:00",
   "watched": 12,
   "counts": {
     "critical": 11,
@@ -448,8 +448,8 @@
       "ecosystem": "PyPI",
       "name": "cryptography",
       "pinned": "3.4.7",
-      "latest": "48.0.1",
-      "released": "2026-06-09",
+      "latest": "49.0.0",
+      "released": "2026-06-12",
       "bump": "major",
       "breaking": true,
       "vulns": [
