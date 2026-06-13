@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-13T13:13:20.719839+00:00",
+  "generated": "2026-06-13T14:46:49.128016+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-13T13:13:10.192477+00:00",
+      "fetched_at": "2026-06-13T14:46:35.893867+00:00",
       "content_type": "text/html",
-      "content_length": 35051,
+      "content_length": 34953,
       "size_capped": false,
-      "latency_ms": 4360,
+      "latency_ms": 5282,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -46,7 +46,7 @@
             "count": 1
           },
           {
-            "domain": "hallucinate.site",
+            "domain": "chipsandcheese.com",
             "count": 1
           },
           {
@@ -54,13 +54,13 @@
             "count": 1
           },
           {
-            "domain": "chipsandcheese.com",
+            "domain": "blog.unitedheroes.net",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 694,
+      "word_count": 702,
       "reading_time_min": 3,
       "keywords": [
         {
@@ -81,11 +81,7 @@
         },
         {
           "term": "hours",
-          "count": 25
-        },
-        {
-          "term": "hour",
-          "count": 4
+          "count": 29
         },
         {
           "term": "github.com",
@@ -104,11 +100,15 @@
           "count": 2
         },
         {
-          "term": "fable",
+          "term": "discuss",
           "count": 2
         },
         {
-          "term": "lightweight",
+          "term": "building",
+          "count": 2
+        },
+        {
+          "term": "fable",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "A low-carbon computing platform from your retired phones (research.google)"
+            "AI OSS tool repo goes archived over night after raising $7.3M Seed (github.com/tensorzero)"
           ],
           [
             "",
-            "78 points by vikas-sharma 3 hours ago | hide | 32 comments"
+            "94 points by hek2sch 2 hours ago | hide | 55 comments"
           ],
           [
             "2.",
             "",
-            "Show HN: 2 Weeks of Hallucinate \u2013 The Photo Gallery (hallucinate.site)"
+            "A low-carbon computing platform from your retired phones (research.google)"
           ],
           [
             "",
-            "28 points by stagas 1 hour ago | hide | 6 comments"
+            "121 points by vikas-sharma 5 hours ago | hide | 63 comments"
           ],
           [
             "3.",
-            "",
-            "The state of building user interfaces in Rust (areweguiyet.com)"
-          ],
-          [
-            "",
-            "42 points by mahirsaid 3 hours ago | hide | 19 comments"
-          ],
-          [
-            "4.",
             "",
             "An Interview with Intel's Kira Boyko: Xeon 6's Product Director (chipsandcheese.com)"
           ],
           [
             "",
-            "9 points by lumpa 51 minutes ago | hide | discuss"
+            "26 points by lumpa 2 hours ago | hide | discuss"
+          ],
+          [
+            "4.",
+            "",
+            "The state of building user interfaces in Rust (areweguiyet.com)"
+          ],
+          [
+            "",
+            "72 points by mahirsaid 4 hours ago | hide | 47 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-13T13:13:14.579500+00:00",
+      "fetched_at": "2026-06-13T14:46:41.194130+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 1594,
+      "latency_ms": 829,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-13T13:13:16.173827+00:00",
+      "fetched_at": "2026-06-13T14:46:42.024859+00:00",
       "content_type": "text/html",
       "content_length": 165881,
       "size_capped": false,
-      "latency_ms": 2455,
+      "latency_ms": 2743,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-13T13:13:18.656660+00:00",
+      "fetched_at": "2026-06-13T14:46:44.800379+00:00",
       "content_type": "text/html",
       "content_length": 93122,
       "size_capped": false,
-      "latency_ms": 2057,
+      "latency_ms": 4319,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
