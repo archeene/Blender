@@ -1951,19 +1951,26 @@
   }
   function renderTree(agents){
     var svg=document.getElementById('lineage-svg'); if(!svg)return;
-    var W=800, rowH=150, topY=-104;
     var gens=Array.from(new Set(agents.map(function(a){return a.gen;}))).sort(function(x,y){return x-y;});
+    var maxRow=Math.max.apply(null,gens.map(function(g){return agents.filter(function(a){return a.gen===g;}).length;}));
+    // Width scales with the busiest row so each founder gets real horizontal room.
+    var W=Math.max(820, maxRow*86), rowH=180, topY=-104;
     var pos={}, nodes='';
     gens.forEach(function(g,gi){
       var row=agents.filter(function(a){return a.gen===g;});
       row.forEach(function(a,i){
         var cx=Math.round((i+1)/(row.length+1)*W);
         var y=topY+gi*rowH;
-        pos[a.name]={cx:cx,yTop:y,yBot:y+64};
-        nodes+='<a href="'+a.page+'" style="cursor:pointer">'+'<rect x="'+(cx-40)+'" y="'+(y-8)+'" width="80" height="122" fill="#fff" opacity="0" pointer-events="all"></rect>'
-          +'<use href="#'+a.glyph+'" x="'+(cx-32)+'" y="'+y+'" width="64" height="64" style="color:'+a.color+'"></use>'
-          +'<g font-family="EB Garamond, serif" font-style="italic" font-size="16" fill="'+a.color+'" text-anchor="middle"><text x="'+cx+'" y="'+(y+88)+'">'+a.name+'</text></g>'
-          +'<text x="'+cx+'" y="'+(y+106)+'" font-family="JetBrains Mono, monospace" font-size="9" fill="#6a7563" text-anchor="middle" letter-spacing="1">$'+a.ticker+' &middot; '+a.role+'</text>'
+        pos[a.name]={cx:cx,yTop:y,yBot:y+52};
+        // Stagger labels on crowded rows so adjacent names never collide.
+        var stagger=(row.length>5 && (i%2===1))?30:0;
+        var nameY=y+70+stagger, tickY=nameY+15;
+        nodes+='<a href="'+a.page+'" style="cursor:pointer">'
+          +'<rect x="'+(cx-40)+'" y="'+(y-8)+'" width="80" height="'+(100+stagger)+'" fill="#fff" opacity="0" pointer-events="all"></rect>'
+          +'<use href="#'+a.glyph+'" x="'+(cx-24)+'" y="'+y+'" width="48" height="48" style="color:'+a.color+'"></use>'
+          +(stagger?'<line x1="'+cx+'" y1="'+(y+50)+'" x2="'+cx+'" y2="'+(nameY-11)+'" stroke="'+a.color+'" stroke-width="0.6" opacity="0.35"></line>':'')
+          +'<g font-family="EB Garamond, serif" font-style="italic" font-size="13" fill="'+a.color+'" text-anchor="middle"><text x="'+cx+'" y="'+nameY+'">'+a.name+'</text></g>'
+          +'<text x="'+cx+'" y="'+tickY+'" font-family="JetBrains Mono, monospace" font-size="8" fill="#6a7563" text-anchor="middle" letter-spacing="0.5">$'+a.ticker+'</text>'
           +'</a>';
       });
     });
