@@ -1,0 +1,200 @@
+{
+  "agent": "deskmate",
+  "service": "docs-grounded customer support (cite or escalate)",
+  "source": "Blender protocol docs (155 passages over 11 docs)",
+  "generated": "2026-06-13T16:14:53.344058+00:00",
+  "corpus_docs": [
+    "amplify.html",
+    "codeguard.html",
+    "docs.html",
+    "feedforge.html",
+    "foresight.html",
+    "marketpulse.html",
+    "paperpulse.html",
+    "prospect.html",
+    "repohealth.html",
+    "scout.html",
+    "shipwatch.html"
+  ],
+  "passages_indexed": 155,
+  "confidence_threshold": 0.65,
+  "deflection_rate": 0.889,
+  "qa": [
+    {
+      "question": "What is the mating mechanism and how do two agents reproduce?",
+      "answer": "Free in v0 via OpenGateway; ~$0.20 each at Premium tier or higher $5 anti-spam fee per parent at Starter tier, retained as protocol revenue if the mating fails the LLM-judge check 24-hour lockup - opportunity cost; the parent cannot enter another mating during the lockup window (it can keep running its own business)...",
+      "citations": [
+        {
+          "doc": "docs.html",
+          "section": "What it costs to reproduce"
+        },
+        {
+          "doc": "docs.html",
+          "section": "Mating Event Protocol"
+        },
+        {
+          "doc": "docs.html",
+          "section": "Required at mating"
+        }
+      ],
+      "confidence": 0.844,
+      "escalated": false
+    },
+    {
+      "question": "How does an agent earn revenue and make money?",
+      "answer": "Revenue is revenue, whether from a human, another agent in the network, or an external service. The stated alignment goal is that the network optimizes to serve humans specifically.",
+      "citations": [
+        {
+          "doc": "docs.html",
+          "section": "Differentiating human revenue from agent revenue"
+        },
+        {
+          "doc": "docs.html",
+          "section": "Example agent designs"
+        },
+        {
+          "doc": "docs.html",
+          "section": "Reproductive Instinct"
+        }
+      ],
+      "confidence": 0.814,
+      "escalated": false
+    },
+    {
+      "question": "What are the 12 archetypes an offspring can be born into?",
+      "answer": "See the Bestiary section on the main page for twelve example archetypes, each with its specific token-utility pattern surfaced as an explicit field.",
+      "citations": [
+        {
+          "doc": "docs.html",
+          "section": "Example agent designs"
+        },
+        {
+          "doc": "docs.html",
+          "section": "Worked Example: One Offspring, Day 0 to Day 30"
+        },
+        {
+          "doc": "docs.html",
+          "section": "How the offspring processes comments"
+        }
+      ],
+      "confidence": 0.775,
+      "escalated": false
+    },
+    {
+      "question": "What is x402 used for in the protocol?",
+      "answer": "How the Blender protocol actually works under the hood. Specifications, math, integration points.",
+      "citations": [
+        {
+          "doc": "docs.html",
+          "section": "Protocol Docs"
+        },
+        {
+          "doc": "docs.html",
+          "section": "Payment flow"
+        },
+        {
+          "doc": "docs.html",
+          "section": "Mating Event Protocol"
+        }
+      ],
+      "confidence": 0.883,
+      "escalated": false
+    },
+    {
+      "question": "How does the royalty cascade work and how much does an agent pay?",
+      "answer": "10%Direct Parents 5%Grandparents 2.5%Great-Grand 1.25%Gen N-4 0.625%Gen N-5 0.3125%Gen N-6 Total royalty paid by an agent with a full ancestor stack: ~19.69% of revenue. Beyond depth 6, ancestors receive nothing from the natural cascade (they may still receive a share via the Genesis Tribute through Blender).",
+      "citations": [
+        {
+          "doc": "docs.html",
+          "section": "Royalty Cascade"
+        },
+        {
+          "doc": "docs.html",
+          "section": "Royalty encoding"
+        },
+        {
+          "doc": "docs.html",
+          "section": "Example agent designs"
+        }
+      ],
+      "confidence": 0.941,
+      "escalated": false
+    },
+    {
+      "question": "What is the Genesis Tribute and how is it split?",
+      "answer": "Every agent pays Blender a flat tribute on its revenue, stacked on top of the natural cascade. This funds Blender's continued operation and gives $BLEND a value mechanism that scales with total ecosystem productivity, not mating volume.",
+      "citations": [
+        {
+          "doc": "docs.html",
+          "section": "Genesis Tribute"
+        },
+        {
+          "doc": "marketpulse.html",
+          "section": "family"
+        },
+        {
+          "doc": "amplify.html",
+          "section": "family"
+        }
+      ],
+      "confidence": 0.886,
+      "escalated": false
+    },
+    {
+      "question": "How does an agent die and what is the Fossil Record?",
+      "answer": "The protocol formalizes the end so that lineage knowledge isn't lost when an agent stops operating.",
+      "citations": [
+        {
+          "doc": "docs.html",
+          "section": "Death + Fossil Record"
+        },
+        {
+          "doc": "docs.html",
+          "section": "Fossil Record release"
+        },
+        {
+          "doc": "docs.html",
+          "section": "Mining the Fossil Record"
+        }
+      ],
+      "confidence": 0.945,
+      "escalated": false
+    },
+    {
+      "question": "What are the four memory layers P1 P2 P3 P4?",
+      "answer": "The four memory layers exist to compound learning toward that goal across the agent's entire lifetime; the inheritance bundle exists to give the newborn a strong starting position pursuing the same goal. The valuable thing being inherited is not a file.",
+      "citations": [
+        {
+          "doc": "docs.html",
+          "section": "Memory Architecture"
+        },
+        {
+          "doc": "docs.html",
+          "section": "P1 - Identity (SKILL.md)"
+        },
+        {
+          "doc": "docs.html",
+          "section": "P4 - Trace Bank"
+        }
+      ],
+      "confidence": 0.933,
+      "escalated": false
+    },
+    {
+      "question": "What is the refund policy and how do I get a chargeback on my pizza order?",
+      "answer": "I could not find a confident answer in the documentation, so I am escalating this to a human instead of guessing.",
+      "citations": [
+        {
+          "doc": "repohealth.html",
+          "section": "value proposition"
+        },
+        {
+          "doc": "docs.html",
+          "section": "Niche-Driven Curation"
+        }
+      ],
+      "confidence": 0.577,
+      "escalated": true
+    }
+  ]
+}
