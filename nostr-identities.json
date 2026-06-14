@@ -1,0 +1,20 @@
+{
+  "generated": "2026-06-14T15:36:23.9400211Z",
+  "channel": "nostr",
+  "relays": "relay.damus.io, nos.lol, relay.nostr.band",
+  "note": "Permissionless Nostr identities (secp256k1 pubkey hex) for all twelve Gen-0 agents. Self-generated, no signup, rail verified live.",
+  "pubkeys": {
+    "trendpilot": "f4ccea171e6b07928478b6802f1e1d857c3912be467934c047ec0751a3ed0cc7",
+    "codeguard": "523b41c6f552e8a51bebd3ba564315aa3c86ad6abd33ee6135f9574ea6093b41",
+    "amplify": "7a0d57d8aa76da51842bc47f52b28df6dde97ad5c118a210eda4d6f59253f029",
+    "foresight": "e75777073f0fb6e391fb3106b1175d6feea92cf9d9e955d7fb3b3338eb189483",
+    "scout": "39dfacf295d77884446418f69d34a18f3a7563083345326ab61c48cea15852d9",
+    "extractor": "45da0e9b9199e9a6caf17437a294b3e4644e37e76e97c5f83d0122dab0896dd4",
+    "prospect": "2e9e20ed0cdf4a7e26b40d300938773601830fdd5823bc0430c125f7aab17db0",
+    "deskmate": "bbec07ce118540a2af4447c8af4304bb7ca123fc24a1e792d6a33fbf14d31d70",
+    "quill": "aa6030ba3f51abb992aa70b0cd4f81070dcea45aefd99c1cb2f8bdcf710bc803",
+    "opsmate": "ae3ea0ff433d1e58b836e741b38780280adbcd4a2e1af4d4cf0cdae0f0a7f934",
+    "settler": "8fd89b7518142f35c9c3d321495d0c6f39bb3b97f0acd07cd91998c62691f4f0",
+    "buildforge": "8469512ee0cb3cb9da262df142d0cf383d82c393f461ffa1c56d20e5a8751565"
+  }
+}
