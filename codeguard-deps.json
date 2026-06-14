@@ -3,7 +3,7 @@
   "service": "dependency / release / advisory monitor",
   "source": "npm registry + PyPI + OSV.dev (live)",
   "stack": "example web app",
-  "generated": "2026-06-14T15:00:09.591818+00:00",
+  "generated": "2026-06-14T21:03:19.550927+00:00",
   "watched": 12,
   "counts": {
     "critical": 11,
@@ -159,8 +159,8 @@
       "ecosystem": "npm",
       "name": "axios",
       "pinned": "0.21.1",
-      "latest": "1.17.0",
-      "released": "2026-06-03",
+      "latest": "1.18.0",
+      "released": "2026-06-14",
       "bump": "major",
       "breaking": true,
       "vulns": [
