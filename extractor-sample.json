@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-14T02:47:03.601306+00:00",
+  "generated": "2026-06-14T14:47:15.696243+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-14T02:46:55.670078+00:00",
+      "fetched_at": "2026-06-14T14:47:08.253931+00:00",
       "content_type": "text/html",
-      "content_length": 35153,
+      "content_length": 34929,
       "size_capped": false,
-      "latency_ms": 2448,
+      "latency_ms": 2705,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,38 +29,38 @@
         }
       },
       "links": {
-        "total": 198,
-        "internal": 165,
+        "total": 196,
+        "internal": 163,
         "external": 33,
         "top_external_domains": [
           {
+            "domain": "garrit.xyz",
+            "count": 2
+          },
+          {
             "domain": "github.com",
-            "count": 3
+            "count": 2
           },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "desfontain.es",
+            "domain": "destroyallsoftware.com",
             "count": 1
           },
           {
-            "domain": "twitter.com",
+            "domain": "screen.toys",
             "count": 1
           },
           {
-            "domain": "tonsky.me",
-            "count": 1
-          },
-          {
-            "domain": "blog.pyodide.org",
+            "domain": "su3.io",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 675,
+      "word_count": 642,
       "reading_time_min": 3,
       "keywords": [
         {
@@ -77,15 +77,23 @@
         },
         {
           "term": "comments",
-          "count": 29
+          "count": 28
         },
         {
           "term": "hours",
-          "count": 27
+          "count": 18
         },
         {
           "term": "hour",
-          "count": 3
+          "count": 4
+        },
+        {
+          "term": "minutes",
+          "count": 4
+        },
+        {
+          "term": "day",
+          "count": 4
         },
         {
           "term": "hacker",
@@ -96,19 +104,11 @@
           "count": 2
         },
         {
-          "term": "python",
-          "count": 2
-        },
-        {
-          "term": "github.com",
-          "count": 2
-        },
-        {
           "term": "comment",
           "count": 2
         },
         {
-          "term": "rtx",
+          "term": "apply",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Noise infusion banned from statistical products published by Census Bureau (desfontain.es)"
+            "The Birth and Death of JavaScript (2014) (destroyallsoftware.com)"
           ],
           [
             "",
-            "752 points by nl 12 hours ago | hide | 475 comments"
+            "86 points by subset 2 hours ago | hide | 41 comments"
           ],
           [
             "2.",
             "",
-            "GLM 5.2 Is Out (twitter.com/jietang)"
+            "Firewood Splitting Simulator (screen.toys)"
           ],
           [
             "",
-            "384 points by aloknnikhil 10 hours ago | hide | 213 comments"
+            "160 points by memalign 4 hours ago | hide | 49 comments"
           ],
           [
             "3.",
             "",
-            "Every Frame Perfect (tonsky.me)"
+            "Caddy compatibility for zeroserve: 3x throughput and 70% lower latency (su3.io)"
           ],
           [
             "",
-            "586 points by ravenical 15 hours ago | hide | 191 comments"
+            "20 points by losfair 1 hour ago | hide | 3 comments"
           ],
           [
             "4.",
             "",
-            "Pyodide 314.0: Python packages can now publish WebAssembly wheels to PyPI (pyodide.org)"
+            "Lisp's Influence on Ruby (tacoda.dev)"
           ],
           [
             "",
-            "90 points by agriyakhetarpal 6 hours ago | hide | 16 comments"
+            "89 points by tacoda 1 hour ago | hide | 1 comment"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-14T02:46:58.150888+00:00",
+      "fetched_at": "2026-06-14T14:47:10.979099+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 905,
+      "latency_ms": 1249,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-14T02:46:59.056176+00:00",
+      "fetched_at": "2026-06-14T14:47:12.229066+00:00",
       "content_type": "text/html",
       "content_length": 165881,
       "size_capped": false,
-      "latency_ms": 1848,
+      "latency_ms": 1817,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-14T02:47:00.932218+00:00",
+      "fetched_at": "2026-06-14T14:47:14.086170+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 2660,
+      "latency_ms": 1603,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
