@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-13T14:46:49.128016+00:00",
+  "generated": "2026-06-14T02:47:03.601306+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-13T14:46:35.893867+00:00",
+      "fetched_at": "2026-06-14T02:46:55.670078+00:00",
       "content_type": "text/html",
-      "content_length": 34953,
+      "content_length": 35153,
       "size_capped": false,
-      "latency_ms": 5282,
+      "latency_ms": 2448,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -35,32 +35,32 @@
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 4
+            "count": 3
           },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "research.google",
+            "domain": "desfontain.es",
             "count": 1
           },
           {
-            "domain": "chipsandcheese.com",
+            "domain": "twitter.com",
             "count": 1
           },
           {
-            "domain": "areweguiyet.com",
+            "domain": "tonsky.me",
             "count": 1
           },
           {
-            "domain": "blog.unitedheroes.net",
+            "domain": "blog.pyodide.org",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 702,
+      "word_count": 675,
       "reading_time_min": 3,
       "keywords": [
         {
@@ -81,14 +81,10 @@
         },
         {
           "term": "hours",
-          "count": 29
+          "count": 27
         },
         {
-          "term": "github.com",
-          "count": 3
-        },
-        {
-          "term": "game",
+          "term": "hour",
           "count": 3
         },
         {
@@ -100,15 +96,19 @@
           "count": 2
         },
         {
-          "term": "discuss",
+          "term": "python",
           "count": 2
         },
         {
-          "term": "building",
+          "term": "github.com",
           "count": 2
         },
         {
-          "term": "fable",
+          "term": "comment",
+          "count": 2
+        },
+        {
+          "term": "rtx",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "AI OSS tool repo goes archived over night after raising $7.3M Seed (github.com/tensorzero)"
+            "Noise infusion banned from statistical products published by Census Bureau (desfontain.es)"
           ],
           [
             "",
-            "94 points by hek2sch 2 hours ago | hide | 55 comments"
+            "752 points by nl 12 hours ago | hide | 475 comments"
           ],
           [
             "2.",
             "",
-            "A low-carbon computing platform from your retired phones (research.google)"
+            "GLM 5.2 Is Out (twitter.com/jietang)"
           ],
           [
             "",
-            "121 points by vikas-sharma 5 hours ago | hide | 63 comments"
+            "384 points by aloknnikhil 10 hours ago | hide | 213 comments"
           ],
           [
             "3.",
             "",
-            "An Interview with Intel's Kira Boyko: Xeon 6's Product Director (chipsandcheese.com)"
+            "Every Frame Perfect (tonsky.me)"
           ],
           [
             "",
-            "26 points by lumpa 2 hours ago | hide | discuss"
+            "586 points by ravenical 15 hours ago | hide | 191 comments"
           ],
           [
             "4.",
             "",
-            "The state of building user interfaces in Rust (areweguiyet.com)"
+            "Pyodide 314.0: Python packages can now publish WebAssembly wheels to PyPI (pyodide.org)"
           ],
           [
             "",
-            "72 points by mahirsaid 4 hours ago | hide | 47 comments"
+            "90 points by agriyakhetarpal 6 hours ago | hide | 16 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-13T14:46:41.194130+00:00",
+      "fetched_at": "2026-06-14T02:46:58.150888+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 829,
+      "latency_ms": 905,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-13T14:46:42.024859+00:00",
+      "fetched_at": "2026-06-14T02:46:59.056176+00:00",
       "content_type": "text/html",
       "content_length": 165881,
       "size_capped": false,
-      "latency_ms": 2743,
+      "latency_ms": 1848,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-13T14:46:44.800379+00:00",
+      "fetched_at": "2026-06-14T02:47:00.932218+00:00",
       "content_type": "text/html",
-      "content_length": 93122,
+      "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 4319,
+      "latency_ms": 2660,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
