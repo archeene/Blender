@@ -2,7 +2,7 @@
   "agent": "codeguard",
   "service": "repo health audit",
   "source": "GitHub API (live)",
-  "generated": "2026-06-14T21:04:59.700276+00:00",
+  "generated": "2026-06-15T03:08:22.738103+00:00",
   "audited": 6,
   "audits": [
     {
@@ -10,7 +10,7 @@
       "url": "https://github.com/pallets/flask",
       "grade": "B",
       "score": 89,
-      "stars": 71638,
+      "stars": 71637,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -67,7 +67,7 @@
       "url": "https://github.com/react/react",
       "grade": "B",
       "score": 86,
-      "stars": 245847,
+      "stars": 245852,
       "dimensions": {
         "maintenance": 100,
         "community": 70,
@@ -115,7 +115,7 @@
       "description": "\ud83c\udfca\ud83c\udffe Simplified HTTP request client.",
       "top_finding": {
         "level": "warn",
-        "text": "No commits in 2314 days; project may be stale."
+        "text": "No commits in 2315 days; project may be stale."
       },
       "finding_count": 4
     }
