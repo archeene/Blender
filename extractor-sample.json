@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-15T02:47:29.933701+00:00",
+  "generated": "2026-06-15T14:47:40.434941+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-15T02:47:18.280852+00:00",
+      "fetched_at": "2026-06-15T14:47:34.485112+00:00",
       "content_type": "text/html",
-      "content_length": 34516,
+      "content_length": 34504,
       "size_capped": false,
-      "latency_ms": 4230,
+      "latency_ms": 2204,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,46 +29,42 @@
         }
       },
       "links": {
-        "total": 193,
+        "total": 194,
         "internal": 162,
-        "external": 31,
+        "external": 32,
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 4
+            "count": 5
           },
           {
             "domain": "ycombinator.com",
-            "count": 2
+            "count": 3
+          },
+          {
+            "domain": "crankgpt.com",
+            "count": 1
+          },
+          {
+            "domain": "salesforce.com",
+            "count": 1
           },
           {
             "domain": "andreklein.net",
             "count": 1
           },
           {
-            "domain": "wizardzines.com",
-            "count": 1
-          },
-          {
-            "domain": "screen.toys",
-            "count": 1
-          },
-          {
-            "domain": "bitsy.org",
+            "domain": "platform.claude.com",
             "count": 1
           }
         ]
       },
-      "image_count": 2,
-      "word_count": 657,
+      "image_count": 3,
+      "word_count": 637,
       "reading_time_min": 3,
       "keywords": [
         {
           "term": "comments",
-          "count": 31
-        },
-        {
-          "term": "points",
           "count": 30
         },
         {
@@ -80,20 +76,32 @@
           "count": 30
         },
         {
-          "term": "hours",
+          "term": "points",
           "count": 29
         },
         {
-          "term": "hacker",
-          "count": 3
+          "term": "hours",
+          "count": 24
         },
         {
-          "term": "news",
-          "count": 3
+          "term": "hour",
+          "count": 4
         },
         {
           "term": "github.com",
-          "count": 3
+          "count": 4
+        },
+        {
+          "term": "hacker",
+          "count": 2
+        },
+        {
+          "term": "news",
+          "count": 2
+        },
+        {
+          "term": "api",
+          "count": 2
         },
         {
           "term": "offline",
@@ -101,14 +109,6 @@
         },
         {
           "term": "tamnd",
-          "count": 2
-        },
-        {
-          "term": "tosh",
-          "count": 2
-        },
-        {
-          "term": "cpu",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Your ePub Is Fine. Kobo Disagrees. Blame Adobe (andreklein.net)"
+            "CrankGPT (crankgpt.com)"
           ],
           [
             "",
-            "211 points by sohkamyung 3 hours ago | hide | 82 comments"
+            "68 points by rishikeshs 1 hour ago | hide | 31 comments"
           ],
           [
             "2.",
             "",
-            "Write for One Person (wizardzines.com)"
+            "Salesforce to Acquire Fin (formerly Intercom) for $3.6BN (salesforce.com)"
           ],
           [
             "",
-            "101 points by evakhoury 3 hours ago | hide | 35 comments"
+            "160 points by colesantiago 2 hours ago | hide | 106 comments"
           ],
           [
             "3.",
             "",
-            "Show HN: Kage \u2013 Shadow any website to a single binary for offline viewing (github.com/tamnd)"
+            "Your ePub Is fine (andreklein.net)"
           ],
           [
             "",
-            "417 points by tamnd 9 hours ago | hide | 94 comments"
+            "772 points by sohkamyung 15 hours ago | hide | 254 comments"
           ],
           [
             "4.",
             "",
-            "Firewood Splitting Simulator (screen.toys)"
+            "Apple Foundation Models (claude.com)"
           ],
           [
             "",
-            "661 points by memalign 16 hours ago | hide | 217 comments"
+            "306 points by MehrdadKhnzd 9 hours ago | hide | 134 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-15T02:47:22.542202+00:00",
+      "fetched_at": "2026-06-15T14:47:36.715189+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 1419,
+      "latency_ms": 742,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-15T02:47:23.962063+00:00",
+      "fetched_at": "2026-06-15T14:47:37.457613+00:00",
       "content_type": "text/html",
-      "content_length": 165879,
+      "content_length": 165901,
       "size_capped": false,
-      "latency_ms": 3321,
+      "latency_ms": 1481,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-15T02:47:27.323286+00:00",
+      "fetched_at": "2026-06-15T14:47:38.966566+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 2599,
+      "latency_ms": 1461,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
