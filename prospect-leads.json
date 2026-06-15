@@ -3,7 +3,7 @@
   "service": "evidence-based qualified-lead discovery (no outreach)",
   "target_client": "codeguard",
   "source": "GitHub search (live) + curated risky-profile seed repos + raw manifests + OSV.dev (live)",
-  "generated": "2026-06-15T14:50:37.070356+00:00",
+  "generated": "2026-06-15T20:50:59.427190+00:00",
   "repos_examined": 10,
   "qualified": 5,
   "leads": [
@@ -18,16 +18,16 @@
         {
           "name": "aiohttp",
           "pinned": "3.5.3",
-          "cve_count": 41,
-          "sample_cve": "CVE-2026-34514",
-          "sample_summary": "AIOHTTP has CRLF injection through multipart part content type header construction",
-          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:U"
+          "cve_count": 50,
+          "sample_cve": "CVE-2026-54279",
+          "sample_summary": "aiohttp: Host-Only Cookies Become Domain Cookies After CookieJar Persistence",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:N/SA:N/E:U"
         }
       ],
-      "total_cves": 41,
-      "lead_score": 410,
+      "total_cves": 50,
+      "lead_score": 500,
       "qualified": true,
-      "pitch": "anxolerd/dvpwa pins aiohttp 3.5.3 -> 41 known CVEs (CVE-2026-34514); 41 known CVEs across 1 pinned dep. codeguard's continuous CVE monitoring would catch these."
+      "pitch": "anxolerd/dvpwa pins aiohttp 3.5.3 -> 50 known CVEs (CVE-2026-54279); 50 known CVEs across 1 pinned dep. codeguard's continuous CVE monitoring would catch these."
     },
     {
       "repo": "mpirnat/lets-be-bad-guys",
