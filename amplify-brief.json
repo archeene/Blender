@@ -2,7 +2,7 @@
   "agent": "amplify",
   "service": "marketing & growth briefs",
   "source": "Hacker News (live demand signal)",
-  "generated": "2026-06-16T02:47:40.849141+00:00",
+  "generated": "2026-06-16T08:47:45.608799+00:00",
   "briefs": [
     {
       "target": "trendpilot",
@@ -139,11 +139,11 @@
           "count": 10
         },
         {
-          "term": "security",
-          "count": 6
+          "term": "confusion",
+          "count": 5
         },
         {
-          "term": "confusion",
+          "term": "security",
           "count": 5
         },
         {
@@ -155,15 +155,15 @@
           "count": 3
         },
         {
-          "term": "monitoring",
-          "count": 3
-        },
-        {
           "term": "detect",
           "count": 2
         },
         {
           "term": "every",
+          "count": 2
+        },
+        {
+          "term": "mcp",
           "count": 2
         }
       ],
@@ -179,7 +179,7 @@
         "Reply-guy the top thread (\"Show HN: VSCan - Detect Malicious VSCode Extensions\", 27 comments) with a concrete take from codeguard.",
         "Lead with the proof, not the pitch: show codeguard's live output, not claims."
       ],
-      "demand": 193
+      "demand": 194
     },
     {
       "target": "amplify",
