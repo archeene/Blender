@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-16T02:47:49.178517+00:00",
+  "generated": "2026-06-16T14:47:57.272125+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-16T02:47:42.656928+00:00",
+      "fetched_at": "2026-06-16T14:47:51.598463+00:00",
       "content_type": "text/html",
-      "content_length": 34593,
+      "content_length": 34911,
       "size_capped": false,
-      "latency_ms": 2314,
+      "latency_ms": 1967,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,40 +29,44 @@
         }
       },
       "links": {
-        "total": 194,
-        "internal": 163,
-        "external": 31,
+        "total": 191,
+        "internal": 159,
+        "external": 32,
         "top_external_domains": [
+          {
+            "domain": "devblogs.microsoft.com",
+            "count": 2
+          },
+          {
+            "domain": "bbc.com",
+            "count": 2
+          },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "roman.pt",
+            "domain": "ciechanow.ski",
             "count": 1
           },
           {
-            "domain": "richardosgood.com",
+            "domain": "tck.mn",
             "count": 1
           },
           {
-            "domain": "iroh.computer",
-            "count": 1
-          },
-          {
-            "domain": "narracomm.com",
-            "count": 1
-          },
-          {
-            "domain": "tinywind.io",
+            "domain": "theartofdoingstuff.com",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 636,
+      "word_count": 687,
       "reading_time_min": 3,
       "keywords": [
+        {
+          "term": "comments",
+          "count": 30
+        },
         {
           "term": "points",
           "count": 30
@@ -76,12 +80,16 @@
           "count": 30
         },
         {
-          "term": "comments",
-          "count": 29
+          "term": "hours",
+          "count": 24
         },
         {
-          "term": "hours",
-          "count": 28
+          "term": "speckx",
+          "count": 3
+        },
+        {
+          "term": "hour",
+          "count": 3
         },
         {
           "term": "hacker",
@@ -92,23 +100,15 @@
           "count": 2
         },
         {
-          "term": "job",
+          "term": "google",
           "count": 2
         },
         {
-          "term": "book",
+          "term": "minutes",
           "count": 2
         },
         {
-          "term": "data",
-          "count": 2
-        },
-        {
-          "term": "tinywind",
-          "count": 2
-        },
-        {
-          "term": "game",
+          "term": "emulator",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "A backdoor in a LinkedIn job offer (roman.pt)"
+            "Mechanical Watch (2022) (ciechanow.ski)"
           ],
           [
             "",
-            "771 points by lwhsiao 6 hours ago | hide | 151 comments"
+            "324 points by razin 3 hours ago | hide | 49 comments"
           ],
           [
             "2.",
             "",
-            "Banned Book Library in a Wi-Fi Smart Light Bulb (richardosgood.com)"
+            "Correlated randomness in Slay the Spire 2 (tck.mn)"
           ],
           [
             "",
-            "182 points by sohkamyung 4 hours ago | hide | 67 comments"
+            "125 points by rdmuser 3 hours ago | hide | 48 comments"
           ],
           [
             "3.",
             "",
-            "Iroh 1.0 (iroh.computer)"
+            "I Fired Google (theartofdoingstuff.com)"
           ],
           [
             "",
-            "975 points by chadfowler 11 hours ago | hide | 290 comments"
+            "10 points by speckx 20 minutes ago | hide | 2 comments"
           ],
           [
             "4.",
             "",
-            "Amazon Announces Multibillion-Dollar Data Center in Missouri (narracomm.com)"
+            "The time the x86 emulator team found code so bad they fixed it during emulation (devblogs.microsoft.com/oldnewthing)"
           ],
           [
             "",
-            "46 points by thelonelyborg 2 hours ago | hide | 20 comments"
+            "401 points by paulmooreparks 9 hours ago | hide | 117 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-16T02:47:45.001061+00:00",
+      "fetched_at": "2026-06-16T14:47:53.593754+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 812,
+      "latency_ms": 771,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-16T02:47:45.812907+00:00",
+      "fetched_at": "2026-06-16T14:47:54.364729+00:00",
       "content_type": "text/html",
       "content_length": 166311,
       "size_capped": false,
-      "latency_ms": 1607,
+      "latency_ms": 1435,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-16T02:47:47.449811+00:00",
+      "fetched_at": "2026-06-16T14:47:55.826118+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1719,
+      "latency_ms": 1439,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
