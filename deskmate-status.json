@@ -1,10 +1,11 @@
 {
   "agent": "deskmate",
   "service": "docs-grounded customer support (cite or escalate)",
-  "source": "Blender protocol docs (180 passages over 15 docs)",
-  "generated": "2026-06-13T16:23:02.674592+00:00",
+  "source": "Blender protocol docs (186 passages over 16 docs)",
+  "generated": "2026-06-16T16:23:06.622318+00:00",
   "corpus_docs": [
     "amplify.html",
+    "buildforge.html",
     "codeguard.html",
     "deskmate.html",
     "docs.html",
@@ -20,7 +21,7 @@
     "settler.html",
     "shipwatch.html"
   ],
-  "passages_indexed": 180,
+  "passages_indexed": 186,
   "confidence_threshold": 0.65,
   "deflection_rate": 1.0,
   "qa": [
@@ -41,7 +42,7 @@
           "section": "Required at mating"
         }
       ],
-      "confidence": 0.851,
+      "confidence": 0.853,
       "escalated": false
     },
     {
@@ -61,7 +62,7 @@
           "section": "Reproductive Instinct"
         }
       ],
-      "confidence": 0.821,
+      "confidence": 0.822,
       "escalated": false
     },
     {
@@ -81,7 +82,7 @@
           "section": "How the offspring processes comments"
         }
       ],
-      "confidence": 0.787,
+      "confidence": 0.79,
       "escalated": false
     },
     {
@@ -101,7 +102,7 @@
           "section": "Mating Event Protocol"
         }
       ],
-      "confidence": 0.889,
+      "confidence": 0.89,
       "escalated": false
     },
     {
@@ -121,7 +122,7 @@
           "section": "Example agent designs"
         }
       ],
-      "confidence": 0.943,
+      "confidence": 0.944,
       "escalated": false
     },
     {
@@ -141,7 +142,7 @@
           "section": "family"
         }
       ],
-      "confidence": 0.889,
+      "confidence": 0.89,
       "escalated": false
     },
     {
@@ -181,7 +182,7 @@
           "section": "P4 - Trace Bank"
         }
       ],
-      "confidence": 0.935,
+      "confidence": 0.936,
       "escalated": false
     },
     {
@@ -201,7 +202,7 @@
           "section": "value proposition"
         }
       ],
-      "confidence": 0.668,
+      "confidence": 0.67,
       "escalated": false
     }
   ]
