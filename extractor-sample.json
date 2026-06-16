@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-15T14:47:40.434941+00:00",
+  "generated": "2026-06-16T02:47:49.178517+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-15T14:47:34.485112+00:00",
+      "fetched_at": "2026-06-16T02:47:42.656928+00:00",
       "content_type": "text/html",
-      "content_length": 34504,
+      "content_length": 34593,
       "size_capped": false,
-      "latency_ms": 2204,
+      "latency_ms": 2314,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -30,41 +30,41 @@
       },
       "links": {
         "total": 194,
-        "internal": 162,
-        "external": 32,
+        "internal": 163,
+        "external": 31,
         "top_external_domains": [
           {
-            "domain": "github.com",
-            "count": 5
-          },
-          {
             "domain": "ycombinator.com",
-            "count": 3
+            "count": 2
           },
           {
-            "domain": "crankgpt.com",
+            "domain": "roman.pt",
             "count": 1
           },
           {
-            "domain": "salesforce.com",
+            "domain": "richardosgood.com",
             "count": 1
           },
           {
-            "domain": "andreklein.net",
+            "domain": "iroh.computer",
             "count": 1
           },
           {
-            "domain": "platform.claude.com",
+            "domain": "narracomm.com",
+            "count": 1
+          },
+          {
+            "domain": "tinywind.io",
             "count": 1
           }
         ]
       },
-      "image_count": 3,
-      "word_count": 637,
+      "image_count": 2,
+      "word_count": 636,
       "reading_time_min": 3,
       "keywords": [
         {
-          "term": "comments",
+          "term": "points",
           "count": 30
         },
         {
@@ -76,20 +76,12 @@
           "count": 30
         },
         {
-          "term": "points",
+          "term": "comments",
           "count": 29
         },
         {
           "term": "hours",
-          "count": 24
-        },
-        {
-          "term": "hour",
-          "count": 4
-        },
-        {
-          "term": "github.com",
-          "count": 4
+          "count": 28
         },
         {
           "term": "hacker",
@@ -100,15 +92,23 @@
           "count": 2
         },
         {
-          "term": "api",
+          "term": "job",
           "count": 2
         },
         {
-          "term": "offline",
+          "term": "book",
           "count": 2
         },
         {
-          "term": "tamnd",
+          "term": "data",
+          "count": 2
+        },
+        {
+          "term": "tinywind",
+          "count": 2
+        },
+        {
+          "term": "game",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "CrankGPT (crankgpt.com)"
+            "A backdoor in a LinkedIn job offer (roman.pt)"
           ],
           [
             "",
-            "68 points by rishikeshs 1 hour ago | hide | 31 comments"
+            "771 points by lwhsiao 6 hours ago | hide | 151 comments"
           ],
           [
             "2.",
             "",
-            "Salesforce to Acquire Fin (formerly Intercom) for $3.6BN (salesforce.com)"
+            "Banned Book Library in a Wi-Fi Smart Light Bulb (richardosgood.com)"
           ],
           [
             "",
-            "160 points by colesantiago 2 hours ago | hide | 106 comments"
+            "182 points by sohkamyung 4 hours ago | hide | 67 comments"
           ],
           [
             "3.",
             "",
-            "Your ePub Is fine (andreklein.net)"
+            "Iroh 1.0 (iroh.computer)"
           ],
           [
             "",
-            "772 points by sohkamyung 15 hours ago | hide | 254 comments"
+            "975 points by chadfowler 11 hours ago | hide | 290 comments"
           ],
           [
             "4.",
             "",
-            "Apple Foundation Models (claude.com)"
+            "Amazon Announces Multibillion-Dollar Data Center in Missouri (narracomm.com)"
           ],
           [
             "",
-            "306 points by MehrdadKhnzd 9 hours ago | hide | 134 comments"
+            "46 points by thelonelyborg 2 hours ago | hide | 20 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-15T14:47:36.715189+00:00",
+      "fetched_at": "2026-06-16T02:47:45.001061+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 742,
+      "latency_ms": 812,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-15T14:47:37.457613+00:00",
+      "fetched_at": "2026-06-16T02:47:45.812907+00:00",
       "content_type": "text/html",
-      "content_length": 165901,
+      "content_length": 166311,
       "size_capped": false,
-      "latency_ms": 1481,
+      "latency_ms": 1607,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-15T14:47:38.966566+00:00",
+      "fetched_at": "2026-06-16T02:47:47.449811+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1461,
+      "latency_ms": 1719,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
