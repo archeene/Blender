@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-17T02:48:07.830528+00:00",
+  "generated": "2026-06-17T14:48:18.504341+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-17T02:48:00.001794+00:00",
+      "fetched_at": "2026-06-17T14:48:10.965927+00:00",
       "content_type": "text/html",
-      "content_length": 34897,
+      "content_length": 34985,
       "size_capped": false,
-      "latency_ms": 2402,
+      "latency_ms": 3034,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,12 +29,16 @@
         }
       },
       "links": {
-        "total": 198,
-        "internal": 165,
+        "total": 197,
+        "internal": 164,
         "external": 33,
         "top_external_domains": [
           {
             "domain": "github.com",
+            "count": 3
+          },
+          {
+            "domain": "artificialanalysis.ai",
             "count": 2
           },
           {
@@ -42,30 +46,26 @@
             "count": 2
           },
           {
-            "domain": "discuss.grapheneos.org",
+            "domain": "lutr.dev",
             "count": 1
           },
           {
-            "domain": "vickiboykis.com",
+            "domain": "lore.org",
             "count": 1
           },
           {
-            "domain": "mll.sh",
-            "count": 1
-          },
-          {
-            "domain": "reuters.com",
+            "domain": "wpvip.com",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 654,
+      "word_count": 658,
       "reading_time_min": 3,
       "keywords": [
         {
-          "term": "hide",
-          "count": 31
+          "term": "comments",
+          "count": 30
         },
         {
           "term": "points",
@@ -76,39 +76,39 @@
           "count": 30
         },
         {
-          "term": "comments",
-          "count": 29
+          "term": "hide",
+          "count": 30
         },
         {
           "term": "hours",
-          "count": 28
+          "count": 25
         },
         {
           "term": "hacker",
-          "count": 2
+          "count": 3
         },
         {
           "term": "news",
+          "count": 3
+        },
+        {
+          "term": "version",
           "count": 2
         },
         {
-          "term": "fun",
-          "count": 2
-        },
-        {
-          "term": "time",
-          "count": 2
-        },
-        {
-          "term": "language",
-          "count": 2
-        },
-        {
-          "term": "mechanical",
+          "term": "minutes",
           "count": 2
         },
         {
           "term": "model",
+          "count": 2
+        },
+        {
+          "term": "artificialanalysis.ai",
+          "count": 2
+        },
+        {
+          "term": "github.com",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "GrapheneOS has been ported to Android 17 (grapheneos.org)"
+            "Want your images back? Sure... That'll be $5! (lutr.dev)"
           ],
           [
             "",
-            "439 points by Cider9986 6 hours ago | hide | 174 comments"
+            "245 points by lutr 1 hour ago | hide | 104 comments"
           ],
           [
             "2.",
             "",
-            "Running local models is good now (vickiboykis.com)"
+            "Epic Games announces Lore version control system (lore.org)"
           ],
           [
             "",
-            "1053 points by jfb 12 hours ago | hide | 438 comments"
+            "35 points by regnerba 15 minutes ago | hide | 20 comments"
           ],
           [
             "3.",
             "",
-            "Humiliating IIS servers for fun and jail time (mll.sh)"
+            "GLM-5.2 is the new leading open weights model on Artificial Analysis (artificialanalysis.ai)"
           ],
           [
             "",
-            "113 points by denysvitali 3 hours ago | hide | 18 comments"
+            "434 points by himata4113 5 hours ago | hide | 237 comments"
           ],
           [
             "4.",
             "",
-            "SpaceX to buy Cursor for $60B (reuters.com)"
+            "Sixty percent of US consumers say 'AI' in brand messaging is a turnoff (wpvip.com)"
           ],
           [
             "",
-            "901 points by itsmarcelg 16 hours ago | hide | 1367 comments"
+            "434 points by thm 2 hours ago | hide | 238 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-17T02:48:02.435581+00:00",
+      "fetched_at": "2026-06-17T14:48:14.023574+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 908,
+      "latency_ms": 872,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-17T02:48:03.343775+00:00",
+      "fetched_at": "2026-06-17T14:48:14.897170+00:00",
       "content_type": "text/html",
       "content_length": 166311,
       "size_capped": false,
-      "latency_ms": 1951,
+      "latency_ms": 1747,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-17T02:48:05.321676+00:00",
+      "fetched_at": "2026-06-17T14:48:16.671623+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 2496,
+      "latency_ms": 1824,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
