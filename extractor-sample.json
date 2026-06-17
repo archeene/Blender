@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-16T14:47:57.272125+00:00",
+  "generated": "2026-06-17T02:48:07.830528+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-16T14:47:51.598463+00:00",
+      "fetched_at": "2026-06-17T02:48:00.001794+00:00",
       "content_type": "text/html",
-      "content_length": 34911,
+      "content_length": 34897,
       "size_capped": false,
-      "latency_ms": 1967,
+      "latency_ms": 2402,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,16 +29,12 @@
         }
       },
       "links": {
-        "total": 191,
-        "internal": 159,
-        "external": 32,
+        "total": 198,
+        "internal": 165,
+        "external": 33,
         "top_external_domains": [
           {
-            "domain": "devblogs.microsoft.com",
-            "count": 2
-          },
-          {
-            "domain": "bbc.com",
+            "domain": "github.com",
             "count": 2
           },
           {
@@ -46,26 +42,30 @@
             "count": 2
           },
           {
-            "domain": "ciechanow.ski",
+            "domain": "discuss.grapheneos.org",
             "count": 1
           },
           {
-            "domain": "tck.mn",
+            "domain": "vickiboykis.com",
             "count": 1
           },
           {
-            "domain": "theartofdoingstuff.com",
+            "domain": "mll.sh",
+            "count": 1
+          },
+          {
+            "domain": "reuters.com",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 687,
+      "word_count": 654,
       "reading_time_min": 3,
       "keywords": [
         {
-          "term": "comments",
-          "count": 30
+          "term": "hide",
+          "count": 31
         },
         {
           "term": "points",
@@ -76,20 +76,12 @@
           "count": 30
         },
         {
-          "term": "hide",
-          "count": 30
+          "term": "comments",
+          "count": 29
         },
         {
           "term": "hours",
-          "count": 24
-        },
-        {
-          "term": "speckx",
-          "count": 3
-        },
-        {
-          "term": "hour",
-          "count": 3
+          "count": 28
         },
         {
           "term": "hacker",
@@ -100,15 +92,23 @@
           "count": 2
         },
         {
-          "term": "google",
+          "term": "fun",
           "count": 2
         },
         {
-          "term": "minutes",
+          "term": "time",
           "count": 2
         },
         {
-          "term": "emulator",
+          "term": "language",
+          "count": 2
+        },
+        {
+          "term": "mechanical",
+          "count": 2
+        },
+        {
+          "term": "model",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Mechanical Watch (2022) (ciechanow.ski)"
+            "GrapheneOS has been ported to Android 17 (grapheneos.org)"
           ],
           [
             "",
-            "324 points by razin 3 hours ago | hide | 49 comments"
+            "439 points by Cider9986 6 hours ago | hide | 174 comments"
           ],
           [
             "2.",
             "",
-            "Correlated randomness in Slay the Spire 2 (tck.mn)"
+            "Running local models is good now (vickiboykis.com)"
           ],
           [
             "",
-            "125 points by rdmuser 3 hours ago | hide | 48 comments"
+            "1053 points by jfb 12 hours ago | hide | 438 comments"
           ],
           [
             "3.",
             "",
-            "I Fired Google (theartofdoingstuff.com)"
+            "Humiliating IIS servers for fun and jail time (mll.sh)"
           ],
           [
             "",
-            "10 points by speckx 20 minutes ago | hide | 2 comments"
+            "113 points by denysvitali 3 hours ago | hide | 18 comments"
           ],
           [
             "4.",
             "",
-            "The time the x86 emulator team found code so bad they fixed it during emulation (devblogs.microsoft.com/oldnewthing)"
+            "SpaceX to buy Cursor for $60B (reuters.com)"
           ],
           [
             "",
-            "401 points by paulmooreparks 9 hours ago | hide | 117 comments"
+            "901 points by itsmarcelg 16 hours ago | hide | 1367 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-16T14:47:53.593754+00:00",
+      "fetched_at": "2026-06-17T02:48:02.435581+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 771,
+      "latency_ms": 908,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-16T14:47:54.364729+00:00",
+      "fetched_at": "2026-06-17T02:48:03.343775+00:00",
       "content_type": "text/html",
       "content_length": 166311,
       "size_capped": false,
-      "latency_ms": 1435,
+      "latency_ms": 1951,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-16T14:47:55.826118+00:00",
+      "fetched_at": "2026-06-17T02:48:05.321676+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1439,
+      "latency_ms": 2496,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
