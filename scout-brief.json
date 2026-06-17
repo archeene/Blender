@@ -2,7 +2,7 @@
   "agent": "scout",
   "service": "structured, cited research briefs",
   "sources": "Hacker News + arXiv + GitHub + Wikipedia (live, no key)",
-  "generated": "2026-06-16T20:48:18.685636+00:00",
+  "generated": "2026-06-17T02:48:24.652959+00:00",
   "briefs": [
     {
       "topic": "crypto trading bot",
@@ -50,126 +50,126 @@
       ],
       "recent_papers": [
         {
-          "title": "Your Privacy My Cloak: Backdoor Attacks on Differentially Private Federated Learning",
-          "url": "https://arxiv.org/abs/2606.17035v1",
+          "title": "Beyond Failure Recovery: An Engagement-Aware Human-in-the-loop Framework for Robotic Systems",
+          "url": "https://arxiv.org/abs/2606.18189v1",
           "authors": [
-            "Xiaolin Li",
-            "Ning Wang",
-            "Ninghui Li",
-            "Wenhai Sun"
+            "Jiaying Fang",
+            "Joyce Yang",
+            "Zhanxin Wu",
+            "Bohan Yang"
           ],
-          "more_authors": 0,
+          "more_authors": 1,
           "cats": [
-            "cs.LG",
-            "cs.CR"
+            "cs.RO"
           ],
-          "published": "2026-06-15",
-          "abstract": "Prior research suggests that differential privacy (DP) inherently enhances the robustness of federated learning (FL) against backdoor attacks. In this paper, we challenge this assumption. Through an empirical analysis of two baseline attack strategies, we uncover a fundamental te..."
+          "published": "2026-06-16",
+          "abstract": "Conventional human-in-the-loop approaches typically involve users only when a robot encounters failure or uncertainty, treating humans primarily as tools for improving robot performance. However, in many human-centered robotics settings, interaction should support engagement by k..."
         },
         {
-          "title": "TokenPilot: Cache-Efficient Context Management for LLM Agents",
-          "url": "https://arxiv.org/abs/2606.17016v1",
+          "title": "IUU+DB: Tracking Illegal, Unreported, and Unregulated Fishing, Seafood Fraud, and Labor Abuse through LLM-driven Information Extraction",
+          "url": "https://arxiv.org/abs/2606.18181v1",
           "authors": [
-            "Buqiang Xu",
-            "Zirui Xue",
-            "Dianmou Chen",
-            "Chenyang Fu"
+            "Henry Bodwell",
+            "Hong Yang",
+            "John C. Simeone",
+            "Kelvin Gorospe"
           ],
-          "more_authors": 11,
+          "more_authors": 6,
           "cats": [
-            "cs.CL",
+            "cs.IR",
             "cs.AI",
-            "cs.LG"
+            "cs.CY"
           ],
-          "published": "2026-06-15",
-          "abstract": "As LLM agents are deployed in long-horizon sessions, context accumulation drives up inference costs. Existing approaches utilize text pruning or dynamic memory eviction to minimize token footprints; however, their unconstrained sequence mutations alter layouts, introducing prefix..."
+          "published": "2026-06-16",
+          "abstract": "Illegal, unreported, and unregulated fishing (IUU) traditionally refers to fishing activities that violate applicable laws or occur in areas that lack applicable laws. We propose the term IUU+ to capture a broader suite of fisheries sector environmental and associated supply chai..."
         },
         {
-          "title": "From Tokens to Policy: Causal and Interpretable Heterogeneous Treatment Effects Identification",
-          "url": "https://arxiv.org/abs/2606.17010v1",
+          "title": "Optimal Calibration of Quantum Network Links",
+          "url": "https://arxiv.org/abs/2606.18167v1",
           "authors": [
-            "Riccardo Cadei",
-            "Frank Otchere",
-            "Nyasha Tirivayi",
-            "Gustavo Angeles Tagliaferro"
-          ],
-          "more_authors": 2,
-          "cats": [
-            "cs.LG"
-          ],
-          "published": "2026-06-15",
-          "abstract": "Heterogeneous Treatment Effect (HTE) identification is crucial to explain the impact of an intervention and optimize our policies accordingly. Existing approaches trade expressivity for interpretability, but, if some active heterogeneity drivers are unmeasured, methods at both en..."
-        },
-        {
-          "title": "Consensus-based Agentic Large Language Model Framework for Harmonized Tariff Schedule Code Classification",
-          "url": "https://arxiv.org/abs/2606.16987v1",
-          "authors": [
-            "Truong Thanh Hung Nguyen",
-            "Khanh Van Quynh Nguyen",
-            "Hoang-Loc Cao",
-            "Tri Duong"
-          ],
-          "more_authors": 4,
-          "cats": [
-            "cs.AI"
-          ],
-          "published": "2026-06-15",
-          "abstract": "Accurate Harmonized Tariff Schedule (HTS) code classification is essential for customs clearance, duty assessment, trade statistics, and regulatory compliance in maritime logistics. However, exact HTS classification remains challenging because product descriptions are often short..."
-        },
-        {
-          "title": "How Many Shots Are Enough for a Quantum Circuit?",
-          "url": "https://arxiv.org/abs/2606.16965v1",
-          "authors": [
-            "Giuseppe Bisicchia",
-            "Alessandro Bocci",
-            "Ernesto Pimentel",
-            "Antonio Brogi"
+            "Vinay Kumar",
+            "Claudio Cicconetti",
+            "Marco Conti",
+            "Andrea Passarella"
           ],
           "more_authors": 0,
           "cats": [
             "quant-ph",
-            "cs.ET",
-            "cs.SE"
+            "cs.PF"
           ],
-          "published": "2026-06-15",
-          "abstract": "Quantum algorithms require repeated circuit executions, known as shots, to estimate output distributions accurately. Determining the minimal number of shots needed to meet a target accuracy is crucial to reduce costs and resource usage, especially on today's noisy and expensive q..."
+          "published": "2026-06-16",
+          "abstract": "The reliable distribution of entanglement is essential for the effective operation of quantum networks. Due to fundamental differences between quantum and classical communication systems, it is necessary to develop specialised algorithms and protocols that also account for quantu..."
         },
         {
-          "title": "Beyond the Smile: A Hybrid Convolutional VAE for Crypto Volatility Surfaces",
-          "url": "https://arxiv.org/abs/2606.16961v1",
+          "title": "OmniPlan: An Adaptive Framework for Timely and Near-Optimal Network Planning Optimization",
+          "url": "https://arxiv.org/abs/2606.18105v1",
           "authors": [
-            "Sadanand Singh",
-            "Allam Reddy",
-            "Manan Chopra"
+            "Longlong Zhu",
+            "Jiashuo Yu",
+            "Zedi Chen",
+            "Yuhan Wu"
+          ],
+          "more_authors": 11,
+          "cats": [
+            "cs.NI",
+            "cs.LG"
+          ],
+          "published": "2026-06-16",
+          "abstract": "Network planning optimization is a fundamental problem across diverse domains, including transportation systems, communication networks, and power grids. It requires simultaneous optimization of multiple competing objectives under complex constraints. Existing network planning op..."
+        },
+        {
+          "title": "S4oP: Operator-level Pruning of Structured State Space Models for Resource-Constrained Devices",
+          "url": "https://arxiv.org/abs/2606.18096v1",
+          "authors": [
+            "Marco Deano",
+            "Filippo Ziche",
+            "Nicola Bombieri"
           ],
           "more_authors": 0,
           "cats": [
             "cs.LG",
-            "q-fin.CP"
+            "cs.AI",
+            "cs.DC"
           ],
-          "published": "2026-06-15",
-          "abstract": "We present a convolutional variational autoencoder for cryptocurrency implied-volatility surfaces, together with a deployable predictor that combines it with a quadratic smile re-fit through a deterministic per-tenor routing rule. Trained on 6,034 fully-filled hourly Binance Opti..."
+          "published": "2026-06-16",
+          "abstract": "Structured State Space Models (SSMs), including the S4 and S4D architectures, have recently emerged as powerful alternatives to attention-based models for capturing long-range dependencies in sequential data. Despite their strong empirical performance, deploying these models in t..."
+        },
+        {
+          "title": "Sustainability as a design parameter in the early development of the Wide-field Spectroscopic Telescope",
+          "url": "https://arxiv.org/abs/2606.18079v1",
+          "authors": [
+            "L. Fr\u00e9our",
+            "E. Burtin",
+            "R. Bacon",
+            "B. Ziegler"
+          ],
+          "more_authors": 12,
+          "cats": [
+            "astro-ph.IM"
+          ],
+          "published": "2026-06-16",
+          "abstract": "The proposed Wide-field Spectroscopic Telescope, a next-generation telescope facility with a 12-meter primary mirror that may be operational in the 2040s, is integrating sustainable considerations from the early design stage. Our preliminary analysis identifies two primary source..."
         }
       ],
       "notable_repos": [
         {
           "full_name": "freqtrade/freqtrade",
           "url": "https://github.com/freqtrade/freqtrade",
-          "stars": 51539,
+          "stars": 51548,
           "language": "Python",
           "desc": "Free, open source crypto trading bot"
         },
         {
           "full_name": "ccxt/ccxt",
           "url": "https://github.com/ccxt/ccxt",
-          "stars": 42945,
+          "stars": 42947,
           "language": "Python",
           "desc": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java "
         },
         {
           "full_name": "hummingbot/hummingbot",
           "url": "https://github.com/hummingbot/hummingbot",
-          "stars": 18910,
+          "stars": 18912,
           "language": "Python",
           "desc": "Open source software that helps you create and deploy high-frequency crypto trading bots"
         },
@@ -183,20 +183,20 @@
         {
           "full_name": "Drakkar-Software/OctoBot",
           "url": "https://github.com/Drakkar-Software/OctoBot",
-          "stars": 6078,
+          "stars": 6077,
           "language": "Python",
           "desc": "Free open source crypto trading bot to automate AI, Grid, DCA and TradingView strategies on Binance, Hyperliquid and 15+ exchanges, with a simple interface."
         },
         {
           "full_name": "CryptoSignal/Crypto-Signal",
           "url": "https://github.com/CryptoSignal/Crypto-Signal",
-          "stars": 5579,
+          "stars": 5578,
           "language": "Python",
           "desc": "Github.com/CryptoSignal - Trading & Technical Analysis Bot - 4,100+ stars, 1,100+ forks"
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-16T20:48:18.684632+00:00"
+      "generated": "2026-06-17T02:48:24.652959+00:00"
     },
     {
       "topic": "dependency security",
@@ -244,97 +244,100 @@
       ],
       "recent_papers": [
         {
-          "title": "Nitsche-based FEM for the Laplace eigenvalue problem: spectral approximation and a posteriori error analysis",
-          "url": "https://arxiv.org/abs/2606.17052v1",
+          "title": "Superconductivity from interband coupling to ferroelectric quantum critical fluctuations in two dimensions",
+          "url": "https://arxiv.org/abs/2606.18251v1",
           "authors": [
-            "Arbaz Khan",
-            "David Mora",
-            "Jesus Vellojin"
+            "Sudip Kumar Saha",
+            "Jonathan Ruhman",
+            "Avraham Klein"
           ],
           "more_authors": 0,
           "cats": [
-            "math.NA"
+            "cond-mat.supr-con",
+            "cond-mat.str-el"
           ],
-          "published": "2026-06-15",
-          "abstract": "In this paper, we present the numerical analysis of an elliptic eigenvalue problem in which the essential boundary condition is imposed weakly by means of the Nitsche method. The resulting discrete eigenvalue problem is studied within the framework of compact operator theory. We ..."
+          "published": "2026-06-16",
+          "abstract": "Soft critical fluctuations associated with ferroelectric quantum phase transitions are typically transverse owing to their polar nature. This implies that the conventional density--density electron--phonon coupling to these modes is strongly suppressed, which is puzzling as a var..."
         },
         {
-          "title": "Optimal Bounded Thrust Powered Descent with Analytical Ground-Collision Avoidance",
-          "url": "https://arxiv.org/abs/2606.17050v1",
+          "title": "Twist-3 contributions to $\u03b3\u03b3\\to\u03c0^0\u03c0^0,\\,K_S^0K_S^0$ in $k_T$ factorization",
+          "url": "https://arxiv.org/abs/2606.18233v1",
           "authors": [
-            "Or Nataf",
-            "Vitaly Shaferman"
+            "Jun-Kang He",
+            "Cong Wang"
           ],
           "more_authors": 0,
           "cats": [
-            "eess.SY",
-            "math.OC"
+            "hep-ph"
           ],
-          "published": "2026-06-15",
-          "abstract": "The paper proposes a new approach to address the bounded-thrust powered-descent problem while ensuring ground-collision avoidance. A time-dependent polynomial approximation of the mass is employed to formulate a bounded linear-quadratic optimal-control problem that minimizes the ..."
+          "published": "2026-06-16",
+          "abstract": "We compute the cross sections for the two-photon processes $\u03b3\u03b3\\to\u03c0^0\u03c0^0$ and $\u03b3\u03b3\\to K_S^0K_S^0$ in $k_T$ factorization, including the chirally enhanced two-parton twist-3 light-cone distribution amplitudes. For these charge-suppressed neutral channels the twist-3 cross sections e..."
         },
         {
-          "title": "Exact Posterior Score Estimation for Solving Linear Inverse Problems",
-          "url": "https://arxiv.org/abs/2606.17048v1",
+          "title": "PAHSPECS: Polycyclic aromatic hydrocarbon properties at cosmic noon with JWST/MIRI MRS",
+          "url": "https://arxiv.org/abs/2606.18230v1",
           "authors": [
-            "Abbas Mammadov",
-            "Ozgur Kara",
-            "Kaan Oktay",
-            "Iskander Azangulov"
+            "Cristina Maria Lofaro",
+            "Tanio D\u00edaz Santos",
+            "Irene Shivaei",
+            "Leindert A. Boogaard"
           ],
-          "more_authors": 4,
+          "more_authors": 12,
           "cats": [
-            "cs.LG",
-            "cs.CV",
-            "stat.ML"
+            "astro-ph.GA"
           ],
-          "published": "2026-06-15",
-          "abstract": "Diffusion and flow-based models learn powerful data priors by training a denoiser to reverse Gaussian corruption. To use this prior to solve a linear inverse problem, one needs to sample from the posterior, but the score that the prior provides is the unconditional score, not the..."
+          "published": "2026-06-16",
+          "abstract": "Context. Cosmic noon (z ~ 1-3) marks the peak of the cosmic star-formation rate density, when dust-obscured star formation dominated galaxy growth. Mid-infrared spectroscopy probes the interstellar medium through PAH emission, whose band ratios trace PAH charge, size, and local r..."
         },
         {
-          "title": "Compact Spin-Charge Separated Neural Quantum States for Valence-Bond States",
-          "url": "https://arxiv.org/abs/2606.17045v1",
+          "title": "Coherent effects in quantum transport models and their classical counterparts",
+          "url": "https://arxiv.org/abs/2606.18224v1",
           "authors": [
-            "Ang-Kun Wu",
-            "Louis Primeau",
-            "Yixin Zhang",
-            "Jingtao Zhang"
-          ],
-          "more_authors": 2,
-          "cats": [
-            "cond-mat.str-el",
-            "cond-mat.dis-nn"
-          ],
-          "published": "2026-06-15",
-          "abstract": "Neural-network quantum states (NQS) provide a flexible nonlinear representation of quantum many-body wavefunctions, but their efficiency depends sensitively on whether the architecture reflects the sign structure and constrained Hilbert space of the target state. In this work, we..."
-        },
-        {
-          "title": "Galaxy-cluster-stacked Fermi-LAT, part IV: $\\sim70$ GeV WIMP annihilation lines",
-          "url": "https://arxiv.org/abs/2606.17044v1",
-          "authors": [
-            "Uri Keshet"
+            "N. S. Maslova",
+            "V. N. Mantsevich",
+            "I. M. Sokolov",
+            "P. I. Arseyev"
           ],
           "more_authors": 0,
           "cats": [
-            "astro-ph.HE"
+            "cond-mat.mes-hall"
           ],
-          "published": "2026-06-15",
-          "abstract": "The strongest constraints on the velocity-dependent ($p$-wave) annihilation of weakly interacting massive particle (WIMP) dark matter were derived from the deep potential wells of galaxy clusters. Even weaker signals can be extracted from sufficient aggregated clusters, by cross-..."
+          "published": "2026-06-16",
+          "abstract": "We analyze the transport properties of quasiparticles locally excited at an initial time moment in several exactly solvable quantum models. It is revealed that, in the investigated quantum systems, the time-dependent probability distribution function (PDF) exhibits behavior simil..."
         },
         {
-          "title": "The Importance of Phase in Neural Representations: An Internal Oppenheim-Lim Test of Image Classifiers",
-          "url": "https://arxiv.org/abs/2606.17037v1",
+          "title": "Learning Red Agent Policy from Observations for Neurosymbolic Autonomous Cyber Agents",
+          "url": "https://arxiv.org/abs/2606.18223v1",
           "authors": [
-            "Alper Y\u0131ld\u0131r\u0131m"
+            "Ankita Samaddar",
+            "Sandeep Neema",
+            "Daniel Balasubramanian",
+            "Xenofon Koutsoukos"
           ],
           "more_authors": 0,
           "cats": [
-            "cs.CV",
+            "cs.CR",
             "cs.AI",
             "cs.LG"
           ],
-          "published": "2026-06-15",
-          "abstract": "Oppenheim and Lim (1981) showed that natural images stay recognizable when reconstructed from their Fourier phase alone, while the magnitude carries little of their identity. We ask whether trained image classifiers reproduce this asymmetry inside their hidden layers, and we test..."
+          "published": "2026-06-16",
+          "abstract": "With sophisticated cyber-attacks becoming increasingly prevalent, modern networks require intelligent autonomous cyber-defense agents trained via Reinforcement Learning (RL). These agents employ neurosymbolic approaches such as behavior trees with learning-enabled components (LEC..."
+        },
+        {
+          "title": "Gatling: Rapid-Fire Consensus from Parallel Composition",
+          "url": "https://arxiv.org/abs/2606.18220v1",
+          "authors": [
+            "Giulia Scaffino",
+            "Max Resnick",
+            "Joachim Neu"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.CR",
+            "cs.DC"
+          ],
+          "published": "2026-06-16",
+          "abstract": "Consensus protocols form the core of blockchains and other replicated state machines, ensuring that all correct nodes process the same totally ordered log of input transactions. In fault-free executions, performance is driven by the good-case transaction latency -- the time betwe..."
         }
       ],
       "notable_repos": [
@@ -348,7 +351,7 @@
         {
           "full_name": "DependencyTrack/dependency-track",
           "url": "https://github.com/DependencyTrack/dependency-track",
-          "stars": 3919,
+          "stars": 3920,
           "language": "Java",
           "desc": "Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain."
         },
@@ -382,7 +385,7 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-16T20:48:15.505853+00:00"
+      "generated": "2026-06-17T02:48:24.650959+00:00"
     },
     {
       "topic": "AI marketing",
@@ -430,119 +433,122 @@
       ],
       "recent_papers": [
         {
-          "title": "Benchmarking LLM Agents on Meta-Analysis Articles from Nature Portfolio",
-          "url": "https://arxiv.org/abs/2606.17041v1",
+          "title": "RubricsTree: Scalable and Evolving Open-Ended Evaluation of Personal Health Agents across Health Memory and Medical Skills",
+          "url": "https://arxiv.org/abs/2606.18203v1",
           "authors": [
-            "Anzhe Xie",
-            "Weihang Su",
-            "Yujia Zhou",
-            "Yiqun Liu"
+            "Weizhi Zhang",
+            "Zechen Li",
+            "Hamid Palangi",
+            "Ben Graef"
           ],
-          "more_authors": 1,
+          "more_authors": 15,
           "cats": [
             "cs.CL",
-            "cs.IR"
+            "cs.AI"
           ],
-          "published": "2026-06-15",
-          "abstract": "Meta-analysis is a demanding form of evidence synthesis that combines literature retrieval, PI/ECO-guided study selection, and statistical aggregation. Its structured, verifiable workflow makes it an ideal substrate for evaluating systematic scientific reasoning, yet existing ben..."
+          "published": "2026-06-16",
+          "abstract": "The LLM-empowered personal health agents with user health (sensor) metrics have offered a promising pathway to alleviate global disparities in healthcare access. However, large-scale clinical deployment remains constrained by an open-ended evaluation bottleneck: physician annotat..."
         },
         {
-          "title": "Bayesian Inference and Decision Audits for Public Archives of Frontier AI Evaluations",
-          "url": "https://arxiv.org/abs/2606.17005v1",
+          "title": "The Stanford EDGAR Filings Dataset: Reconstructing U.S. Corporate and Financial Disclosures into Layout-Faithful and Token-Efficient Pretraining Data",
+          "url": "https://arxiv.org/abs/2606.18192v1",
           "authors": [
-            "Yanan Long"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.AI",
-            "stat.ME"
-          ],
-          "published": "2026-06-15",
-          "abstract": "Public AI evaluations are often read as terminal leaderboards, yet the underlying evidence is a selective time series shaped by reporting rules, benchmark revisions, and missingness. Repeated public archives for LiveBench and Open LLM Leaderboard v2 serve as the primary longitudi..."
-        },
-        {
-          "title": "ActiveSAM: Image-Conditional Class Pruning for Fast and Accurate Open-Vocabulary Segmentation",
-          "url": "https://arxiv.org/abs/2606.16996v1",
-          "authors": [
-            "Tran Dinh Tien",
-            "Zhiqiang Shen"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.CV",
-            "cs.AI",
-            "cs.LG"
-          ],
-          "published": "2026-06-15",
-          "abstract": "Segment Anything Model 3 (SAM 3) provides a strong frozen backbone for concept-prompted segmentation, but applying it directly to open-vocabulary semantic segmentation (OVSS) is inefficient: full-resolution decoding is typically run over the entire dataset vocabulary, whereas eac..."
-        },
-        {
-          "title": "Stable Menus of Public Goods: AI-Enabled Progress",
-          "url": "https://arxiv.org/abs/2606.16989v1",
-          "authors": [
-            "Sara Fish"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.GT",
-            "cs.AI",
-            "cs.CY"
-          ],
-          "published": "2026-06-15",
-          "abstract": "Using an open problem from the EC 2025 paper \"Stable Menus of Public Goods\" as a testbed, we conduct experiments to understand the effectiveness of different AI-for-EconCS research workflows. Specifically, we study three questions: Does providing human intuition in the prompt hel..."
-        },
-        {
-          "title": "From 911 to Hospital: Challenges and Opportunities for AI Integration in Emergency Medical Services",
-          "url": "https://arxiv.org/abs/2606.16984v1",
-          "authors": [
-            "Emily Hou",
-            "Marelyn Gonzalez",
-            "Andrew L. Kun",
-            "Osnat Mokryn"
-          ],
-          "more_authors": 1,
-          "cats": [
-            "cs.HC"
-          ],
-          "published": "2026-06-15",
-          "abstract": "Artificial Intelligence (AI) is increasingly introduced into healthcare settings, yet its integration into fast-paced, high-pressure domains such as Emergency Medical Services (EMS) remains limited. EMS work unfolds across distinct stages, each characterized by different informat..."
-        },
-        {
-          "title": "The embrace of open science: An analysis of a decade of AI research and 56 800 conference papers",
-          "url": "https://arxiv.org/abs/2606.16974v1",
-          "authors": [
-            "Kevin L Coakley",
-            "Thijs Snelleman",
-            "Holger Hoos",
-            "Odd Erik Gundersen"
+            "Nick Bettencourt",
+            "Xiaowei Ding",
+            "Kay Giesecke"
           ],
           "more_authors": 0,
           "cats": [
             "cs.AI"
           ],
-          "published": "2026-06-15",
-          "abstract": "The reproducibility crisis has directed the AI research community toward improving documentation practices. Several studies have identified methodological issues, and in response, the most impactful venues in the field have introduced reproducibility checklists. We seek to unders..."
+          "published": "2026-06-16",
+          "abstract": "As high-quality public web corpora become increasingly exhausted, clean long-context documents have become a scarce and expensive source of training data for large language models (LLMs). Existing long-context corpora are often proprietary and costly to acquire, synthetically gen..."
+        },
+        {
+          "title": "Group Commit Self-Clocks: Why Tuning Is Unnecessary Above a Device-Set Load Threshold",
+          "url": "https://arxiv.org/abs/2606.18187v1",
+          "authors": [
+            "Madhulatha Mandarapu",
+            "Sandeep Kunkunuru"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.DB",
+            "cs.PF"
+          ],
+          "published": "2026-06-16",
+          "abstract": "Group commit amortizes the fixed cost of a durable log flush across many committing transactions; the release rule - a timer, a batch size, or an adaptive policy - is a classic tuning knob. The textbook theory is open-loop: for Poisson arrivals the optimal timer is the EOQ square..."
+        },
+        {
+          "title": "IUU+DB: Tracking Illegal, Unreported, and Unregulated Fishing, Seafood Fraud, and Labor Abuse through LLM-driven Information Extraction",
+          "url": "https://arxiv.org/abs/2606.18181v1",
+          "authors": [
+            "Henry Bodwell",
+            "Hong Yang",
+            "John C. Simeone",
+            "Kelvin Gorospe"
+          ],
+          "more_authors": 6,
+          "cats": [
+            "cs.IR",
+            "cs.AI",
+            "cs.CY"
+          ],
+          "published": "2026-06-16",
+          "abstract": "Illegal, unreported, and unregulated fishing (IUU) traditionally refers to fishing activities that violate applicable laws or occur in areas that lack applicable laws. We propose the term IUU+ to capture a broader suite of fisheries sector environmental and associated supply chai..."
+        },
+        {
+          "title": "The Multipath Reliable Connection (MRC) Transport",
+          "url": "https://arxiv.org/abs/2606.18170v1",
+          "authors": [
+            "Rip Sohan",
+            "Eric Spada",
+            "Eric Davis",
+            "Mark Handley"
+          ],
+          "more_authors": 35,
+          "cats": [
+            "cs.NI"
+          ],
+          "published": "2026-06-16",
+          "abstract": "MRC is an open, production-grade transport designed for large-scale AI/ML training over best-effort Ethernet. It extends RoCEv2 with explicit, composable primitives for per-packet multipath and sender-based congestion control, decouples packet delivery from semantic processing, a..."
+        },
+        {
+          "title": "All Smoke, No Alarm: Oracle Signals in Agent-Authored Test Code",
+          "url": "https://arxiv.org/abs/2606.18168v1",
+          "authors": [
+            "Dipayan Banik",
+            "Kowshik Chowdhury",
+            "Shazibul Islam Shamim"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.SE",
+            "cs.AI"
+          ],
+          "published": "2026-06-16",
+          "abstract": "Software practitioners increasingly use AI coding agents that generate test code alongside production code in open source pull requests (PRs). Recent studies report more than 932,000 agent-authored PRs across more than 116,000 repositories, yet whether their test files contain me..."
         }
       ],
       "notable_repos": [
         {
           "full_name": "twentyhq/twenty",
           "url": "https://github.com/twentyhq/twenty",
-          "stars": 50154,
+          "stars": 50192,
           "language": "TypeScript",
           "desc": "The open alternative to Salesforce, designed for AI."
         },
         {
           "full_name": "coreyhaines31/marketingskills",
           "url": "https://github.com/coreyhaines31/marketingskills",
-          "stars": 33634,
+          "stars": 33660,
           "language": "JavaScript",
           "desc": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering."
         },
         {
           "full_name": "ParthJadhav/app-store-screenshots",
           "url": "https://github.com/ParthJadhav/app-store-screenshots",
-          "stars": 5758,
+          "stars": 5774,
           "language": "TypeScript",
           "desc": "end to end app store screenshot creation using AI"
         },
@@ -569,7 +575,7 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-16T20:48:18.213140+00:00"
+      "generated": "2026-06-17T02:48:24.431882+00:00"
     },
     {
       "topic": "autonomous agents",
@@ -618,145 +624,145 @@
       ],
       "recent_papers": [
         {
-          "title": "Context-Aware RL for Agentic and Multimodal LLMs",
-          "url": "https://arxiv.org/abs/2606.17053v1",
+          "title": "Future Dynamic 3D Reconstruction: A 3D World Model with Disentangled Ego-Motion",
+          "url": "https://arxiv.org/abs/2606.18250v1",
           "authors": [
-            "Peiyang Xu",
-            "Bangzheng Li",
-            "Sijia Liu",
-            "Karthik R. Narasimhan"
+            "Nils Morbitzer",
+            "Jonathan Evers",
+            "Artem Savkin",
+            "Thomas Stauner"
           ],
           "more_authors": 3,
           "cats": [
-            "cs.CL",
             "cs.CV"
           ],
-          "published": "2026-06-15",
-          "abstract": "Large language models (LLMs) often fail when answering requires identifying a small but decisive piece of evidence within a long or complex context, such as a single line in a tool trace or a subtle detail in an image. We propose ContextRL, a context-aware reinforcement learning ..."
+          "published": "2026-06-16",
+          "abstract": "Forecasting the evolution of dynamic environments is crucial for autonomous agents. While generative world models have recently achieved high photorealism in 2D video synthesis by mixing ego-motion and environmental dynamics within the image plane, they exhibit physical inconsist..."
         },
         {
-          "title": "BRDFusion: Physics Meets Generation for Urban Scene Inverse Rendering",
-          "url": "https://arxiv.org/abs/2606.17049v1",
+          "title": "Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement",
+          "url": "https://arxiv.org/abs/2606.18247v1",
           "authors": [
-            "Yi-Ruei Liu",
-            "Jie-Ying Lee",
-            "Zheng-Hui Huang",
-            "Yu-Lun Liu"
+            "Mingtong Zhang",
+            "Dhruv Shah"
           ],
-          "more_authors": 1,
+          "more_authors": 0,
           "cats": [
-            "cs.CV"
+            "cs.RO",
+            "cs.AI"
           ],
-          "published": "2026-06-15",
-          "abstract": "Inverse rendering of urban scenes from captured videos enables numerous applications, including content creation and autonomous driving simulation. Physically-based rendering methods follow and control lighting physics, but suffer from reconstruction and rendering artifacts. Whil..."
+          "published": "2026-06-16",
+          "abstract": "Robots deployed in the real world should learn from their experience and improve over time. This requires a mechanism of practicing and learning from feedback. In this paper, we propose VERITAS, a generator-verifier framework for generalist robot policies for inference-time polic..."
         },
         {
-          "title": "Hierarchical Advantage Weighting for Online RL Fine-Tuning of VLAs from Sparse Episode Outcomes",
-          "url": "https://arxiv.org/abs/2606.17043v1",
+          "title": "EventDrive: Event Cameras for Vision-Language Driving Intelligence",
+          "url": "https://arxiv.org/abs/2606.18242v1",
           "authors": [
-            "Tongyan Fang",
-            "Siyuan Huang",
-            "Naiyu Fang",
-            "Ganlong Zhao"
+            "Dongyue Lu",
+            "Rong Li",
+            "Ao Liang",
+            "Lingdong Kong"
           ],
           "more_authors": 5,
           "cats": [
-            "cs.RO",
-            "cs.LG"
-          ],
-          "published": "2026-06-15",
-          "abstract": "When pretrained VLA policies are fine-tuned through online RL, each rollout episode produces only a single binary outcome (success or failure), yet the actor update requires per-transition supervision. Existing approaches commonly reduce this sparse outcome to a single scalar rew..."
-        },
-        {
-          "title": "Benchmarking LLM Agents on Meta-Analysis Articles from Nature Portfolio",
-          "url": "https://arxiv.org/abs/2606.17041v1",
-          "authors": [
-            "Anzhe Xie",
-            "Weihang Su",
-            "Yujia Zhou",
-            "Yiqun Liu"
-          ],
-          "more_authors": 1,
-          "cats": [
-            "cs.CL",
-            "cs.IR"
-          ],
-          "published": "2026-06-15",
-          "abstract": "Meta-analysis is a demanding form of evidence synthesis that combines literature retrieval, PI/ECO-guided study selection, and statistical aggregation. Its structured, verifiable workflow makes it an ideal substrate for evaluating systematic scientific reasoning, yet existing ben..."
-        },
-        {
-          "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
-          "url": "https://arxiv.org/abs/2606.17030v1",
-          "authors": [
-            "Jie Zhang",
-            "Xiaoyue Chen",
-            "Anzhe Chen",
-            "Chenxu Lv"
-          ],
-          "more_authors": 34,
-          "cats": [
             "cs.CV"
           ],
-          "published": "2026-06-15",
-          "abstract": "We introduce Qwen-RobotWorld, a language-conditioned video world model for embodied intelligence. With natural language as a unified action interface, it predicts physically grounded future visual trajectories from current observations across robotic manipulation, autonomous driv..."
+          "published": "2026-06-16",
+          "abstract": "Event cameras sense the world through asynchronous brightness changes with microsecond latency and high dynamic range, offering motion fidelity far beyond frame-based sensors and capturing temporal structure that conventional exposures often miss. These properties make events a p..."
         },
         {
-          "title": "DEEPRUBRIC: Evidence-Tree Rubric Supervision for Efficient Reinforcement Learning of Deep Research Agents",
-          "url": "https://arxiv.org/abs/2606.17029v1",
+          "title": "ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues",
+          "url": "https://arxiv.org/abs/2606.18237v1",
           "authors": [
-            "Minghang Zhu",
-            "Chuyang Wei",
-            "Junhao Xu",
-            "Yilin Cheng"
+            "Shanda Li",
+            "Qiuhong Anna Wei",
+            "Jingwu Tang",
+            "Valerie Chen"
           ],
-          "more_authors": 2,
+          "more_authors": 4,
           "cats": [
-            "cs.CL"
+            "cs.CL",
+            "cs.AI",
+            "cs.LG"
           ],
-          "published": "2026-06-15",
-          "abstract": "Deep research agents synthesize long-form reports by searching and reasoning over retrieved evidence. Reinforcement learning with rubric-based rewards improves these agents by optimizing them against checkable criteria that translate report quality into reward signals, but its ef..."
+          "published": "2026-06-16",
+          "abstract": "Reproducing research results from papers and released code is central to scientific progress. Existing works have introduced benchmarks to evaluate whether LLM agents can assist with reproducibility, but they are difficult to scale due to their reliance on substantial manual effo..."
+        },
+        {
+          "title": "EvolveNav: Proactive Preflection and Self-Evolving Memory for Zero-Shot Object Goal Navigation",
+          "url": "https://arxiv.org/abs/2606.18235v1",
+          "authors": [
+            "Qi Chai",
+            "Wenhao Shen",
+            "Nanjie Yao",
+            "Yue Xia"
+          ],
+          "more_authors": 4,
+          "cats": [
+            "cs.AI"
+          ],
+          "published": "2026-06-16",
+          "abstract": "Zero-Shot Object-Goal Navigation (ZS-OGN) requires embodied agents to explore and locate target objects without any prior training. To this end, recent methods leverage foundation models. But they typically rely on static priors and lack adaptation, which leads to repeated errors..."
+        },
+        {
+          "title": "Learning Red Agent Policy from Observations for Neurosymbolic Autonomous Cyber Agents",
+          "url": "https://arxiv.org/abs/2606.18223v1",
+          "authors": [
+            "Ankita Samaddar",
+            "Sandeep Neema",
+            "Daniel Balasubramanian",
+            "Xenofon Koutsoukos"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.CR",
+            "cs.AI",
+            "cs.LG"
+          ],
+          "published": "2026-06-16",
+          "abstract": "With sophisticated cyber-attacks becoming increasingly prevalent, modern networks require intelligent autonomous cyber-defense agents trained via Reinforcement Learning (RL). These agents employ neurosymbolic approaches such as behavior trees with learning-enabled components (LEC..."
         }
       ],
       "notable_repos": [
         {
           "full_name": "cline/cline",
           "url": "https://github.com/cline/cline",
-          "stars": 63385,
+          "stars": 63400,
           "language": "TypeScript",
           "desc": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant."
         },
         {
           "full_name": "ruvnet/ruflo",
           "url": "https://github.com/ruvnet/ruflo",
-          "stars": 59819,
+          "stars": 59847,
           "language": "TypeScript",
           "desc": "\ud83c\udf0a The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Featur"
         },
         {
           "full_name": "crewAIInc/crewAI",
           "url": "https://github.com/crewAIInc/crewAI",
-          "stars": 53717,
+          "stars": 53730,
           "language": "Python",
           "desc": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tac"
         },
         {
           "full_name": "CherryHQ/cherry-studio",
           "url": "https://github.com/CherryHQ/cherry-studio",
-          "stars": 47427,
+          "stars": 47439,
           "language": "TypeScript",
           "desc": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs"
         },
         {
           "full_name": "reworkd/AgentGPT",
           "url": "https://github.com/reworkd/AgentGPT",
-          "stars": 36194,
+          "stars": 36196,
           "language": "TypeScript",
           "desc": "\ud83e\udd16 Assemble, configure, and deploy autonomous AI Agents in your browser."
         },
         {
           "full_name": "khoj-ai/khoj",
           "url": "https://github.com/khoj-ai/khoj",
-          "stars": 35165,
+          "stars": 35174,
           "language": "Python",
           "desc": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or loca"
         }
@@ -766,7 +772,7 @@
         "extract": "An autonomous agent is an artificial intelligence (AI) system that can perform complex tasks independently.",
         "url": "https://en.wikipedia.org/wiki/Autonomous_agent"
       },
-      "generated": "2026-06-16T20:48:15.317366+00:00"
+      "generated": "2026-06-17T02:48:24.431882+00:00"
     }
   ]
 }
