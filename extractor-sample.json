@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-18T02:48:29.928434+00:00",
+  "generated": "2026-06-18T14:48:40.310885+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-18T02:48:21.720963+00:00",
+      "fetched_at": "2026-06-18T14:48:32.789203+00:00",
       "content_type": "text/html",
-      "content_length": 34665,
+      "content_length": 35123,
       "size_capped": false,
-      "latency_ms": 2874,
+      "latency_ms": 2488,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -35,34 +35,38 @@
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 5
-          },
-          {
-            "domain": "ycombinator.com",
             "count": 3
           },
           {
-            "domain": "midjourney.com",
+            "domain": "ycombinator.com",
+            "count": 2
+          },
+          {
+            "domain": "rahuljuliato.com",
             "count": 1
           },
           {
-            "domain": "lore.org",
+            "domain": "blog.elenarossini.com",
             "count": 1
           },
           {
-            "domain": "horg.com",
+            "domain": "orchidfiles.com",
             "count": 1
           },
           {
-            "domain": "reuters.com",
+            "domain": "kcl.ac.uk",
             "count": 1
           }
         ]
       },
-      "image_count": 3,
-      "word_count": 683,
+      "image_count": 2,
+      "word_count": 650,
       "reading_time_min": 3,
       "keywords": [
+        {
+          "term": "points",
+          "count": 30
+        },
         {
           "term": "ago",
           "count": 30
@@ -72,23 +76,19 @@
           "count": 30
         },
         {
-          "term": "points",
+          "term": "comments",
           "count": 29
         },
         {
-          "term": "comments",
-          "count": 28
-        },
-        {
           "term": "hours",
-          "count": 27
-        },
-        {
-          "term": "github.com",
-          "count": 4
+          "count": 24
         },
         {
           "term": "built",
+          "count": 3
+        },
+        {
+          "term": "hour",
           "count": 3
         },
         {
@@ -100,15 +100,15 @@
           "count": 2
         },
         {
-          "term": "open",
+          "term": "source",
           "count": 2
         },
         {
-          "term": "security",
+          "term": "giuliomagnifico",
           "count": 2
         },
         {
-          "term": "colors",
+          "term": "minutes",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Midjourney Medical (midjourney.com)"
+            "Emacs 31 Is Around the Corner: The Changes I'm Daily Driving (rahuljuliato.com)"
           ],
           [
             "",
-            "85 points by ricochet11 48 minutes ago | hide | 97 comments"
+            "180 points by frou_dh 2 hours ago | hide | 68 comments"
           ],
           [
             "2.",
             "",
-            "Lore \u2013 Open source version control system designed for scalability (lore.org)"
+            "Has W Social switched to closed source? (elenarossini.com)"
           ],
           [
             "",
-            "998 points by regnerba 12 hours ago | hide | 543 comments"
+            "89 points by nemoniac 2 hours ago | hide | 44 comments"
           ],
           [
             "3.",
             "",
-            "Taxonomy of the Occlupanida (parasitoids on bread bag tags) (horg.com)"
+            "I found 10k GitHub repositories distributing Trojan malware (orchidfiles.com)"
           ],
           [
             "",
-            "69 points by beatthatflight 3 hours ago | hide | 11 comments"
+            "124 points by theorchid 3 hours ago | hide | 34 comments"
           ],
           [
             "4.",
             "",
-            "US holds off blacklisting DeepSeek, more than 100 firms deemed security risks (reuters.com)"
+            "Hospitals and universities repurposing drugs at 90% lower cost (kcl.ac.uk)"
           ],
           [
             "",
-            "373 points by giuliomagnifico 10 hours ago | hide | 404 comments"
+            "129 points by giuliomagnifico 4 hours ago | hide | 56 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-18T02:48:24.621436+00:00",
+      "fetched_at": "2026-06-18T14:48:35.298078+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 898,
+      "latency_ms": 908,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-18T02:48:25.519882+00:00",
+      "fetched_at": "2026-06-18T14:48:36.206556+00:00",
       "content_type": "text/html",
       "content_length": 166311,
       "size_capped": false,
-      "latency_ms": 1850,
+      "latency_ms": 2152,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-18T02:48:27.397008+00:00",
+      "fetched_at": "2026-06-18T14:48:38.384093+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 2524,
+      "latency_ms": 1919,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
