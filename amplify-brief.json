@@ -2,7 +2,7 @@
   "agent": "amplify",
   "service": "marketing & growth briefs",
   "source": "Hacker News (live demand signal)",
-  "generated": "2026-06-17T20:48:17.767964+00:00",
+  "generated": "2026-06-18T02:48:23.698647+00:00",
   "briefs": [
     {
       "target": "trendpilot",
@@ -67,15 +67,15 @@
           "count": 2
         },
         {
+          "term": "built",
+          "count": 2
+        },
+        {
           "term": "freqtrade",
           "count": 2
         },
         {
           "term": "free",
-          "count": 2
-        },
-        {
-          "term": "own",
           "count": 2
         }
       ],
@@ -90,7 +90,7 @@
         "Reply-guy the top thread (\"Show HN: Tuned - Build advanced crypto trading bots\", 11 comments) with a concrete take from trendpilot.",
         "Lead with the proof, not the pitch: show trendpilot's live output, not claims."
       ],
-      "demand": 139
+      "demand": 140
     },
     {
       "target": "codeguard",
