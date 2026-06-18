@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-17T14:48:18.504341+00:00",
+  "generated": "2026-06-18T02:48:29.928434+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-17T14:48:10.965927+00:00",
+      "fetched_at": "2026-06-18T02:48:21.720963+00:00",
       "content_type": "text/html",
-      "content_length": 34985,
+      "content_length": 34665,
       "size_capped": false,
-      "latency_ms": 3034,
+      "latency_ms": 2874,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,24 +29,20 @@
         }
       },
       "links": {
-        "total": 197,
-        "internal": 164,
+        "total": 196,
+        "internal": 163,
         "external": 33,
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 3
-          },
-          {
-            "domain": "artificialanalysis.ai",
-            "count": 2
+            "count": 5
           },
           {
             "domain": "ycombinator.com",
-            "count": 2
+            "count": 3
           },
           {
-            "domain": "lutr.dev",
+            "domain": "midjourney.com",
             "count": 1
           },
           {
@@ -54,23 +50,19 @@
             "count": 1
           },
           {
-            "domain": "wpvip.com",
+            "domain": "horg.com",
+            "count": 1
+          },
+          {
+            "domain": "reuters.com",
             "count": 1
           }
         ]
       },
-      "image_count": 2,
-      "word_count": 658,
+      "image_count": 3,
+      "word_count": 683,
       "reading_time_min": 3,
       "keywords": [
-        {
-          "term": "comments",
-          "count": 30
-        },
-        {
-          "term": "points",
-          "count": 30
-        },
         {
           "term": "ago",
           "count": 30
@@ -80,35 +72,43 @@
           "count": 30
         },
         {
+          "term": "points",
+          "count": 29
+        },
+        {
+          "term": "comments",
+          "count": 28
+        },
+        {
           "term": "hours",
-          "count": 25
-        },
-        {
-          "term": "hacker",
-          "count": 3
-        },
-        {
-          "term": "news",
-          "count": 3
-        },
-        {
-          "term": "version",
-          "count": 2
-        },
-        {
-          "term": "minutes",
-          "count": 2
-        },
-        {
-          "term": "model",
-          "count": 2
-        },
-        {
-          "term": "artificialanalysis.ai",
-          "count": 2
+          "count": 27
         },
         {
           "term": "github.com",
+          "count": 4
+        },
+        {
+          "term": "built",
+          "count": 3
+        },
+        {
+          "term": "hacker",
+          "count": 2
+        },
+        {
+          "term": "news",
+          "count": 2
+        },
+        {
+          "term": "open",
+          "count": 2
+        },
+        {
+          "term": "security",
+          "count": 2
+        },
+        {
+          "term": "colors",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Want your images back? Sure... That'll be $5! (lutr.dev)"
+            "Midjourney Medical (midjourney.com)"
           ],
           [
             "",
-            "245 points by lutr 1 hour ago | hide | 104 comments"
+            "85 points by ricochet11 48 minutes ago | hide | 97 comments"
           ],
           [
             "2.",
             "",
-            "Epic Games announces Lore version control system (lore.org)"
+            "Lore \u2013 Open source version control system designed for scalability (lore.org)"
           ],
           [
             "",
-            "35 points by regnerba 15 minutes ago | hide | 20 comments"
+            "998 points by regnerba 12 hours ago | hide | 543 comments"
           ],
           [
             "3.",
             "",
-            "GLM-5.2 is the new leading open weights model on Artificial Analysis (artificialanalysis.ai)"
+            "Taxonomy of the Occlupanida (parasitoids on bread bag tags) (horg.com)"
           ],
           [
             "",
-            "434 points by himata4113 5 hours ago | hide | 237 comments"
+            "69 points by beatthatflight 3 hours ago | hide | 11 comments"
           ],
           [
             "4.",
             "",
-            "Sixty percent of US consumers say 'AI' in brand messaging is a turnoff (wpvip.com)"
+            "US holds off blacklisting DeepSeek, more than 100 firms deemed security risks (reuters.com)"
           ],
           [
             "",
-            "434 points by thm 2 hours ago | hide | 238 comments"
+            "373 points by giuliomagnifico 10 hours ago | hide | 404 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-17T14:48:14.023574+00:00",
+      "fetched_at": "2026-06-18T02:48:24.621436+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 872,
+      "latency_ms": 898,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-17T14:48:14.897170+00:00",
+      "fetched_at": "2026-06-18T02:48:25.519882+00:00",
       "content_type": "text/html",
       "content_length": 166311,
       "size_capped": false,
-      "latency_ms": 1747,
+      "latency_ms": 1850,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-17T14:48:16.671623+00:00",
+      "fetched_at": "2026-06-18T02:48:27.397008+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1824,
+      "latency_ms": 2524,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
