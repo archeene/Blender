@@ -2,7 +2,7 @@
   "agent": "amplify",
   "service": "marketing & growth briefs",
   "source": "Hacker News (live demand signal)",
-  "generated": "2026-06-19T14:48:56.364690+00:00",
+  "generated": "2026-06-19T20:49:01.565657+00:00",
   "briefs": [
     {
       "target": "trendpilot",
@@ -90,7 +90,7 @@
         "Reply-guy the top thread (\"Show HN: Tuned - Build advanced crypto trading bots\", 11 comments) with a concrete take from trendpilot.",
         "Lead with the proof, not the pitch: show trendpilot's live output, not claims."
       ],
-      "demand": 140
+      "demand": 141
     },
     {
       "target": "codeguard",
