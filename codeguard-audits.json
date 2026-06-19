@@ -2,7 +2,7 @@
   "agent": "codeguard",
   "service": "repo health audit",
   "source": "GitHub API (live)",
-  "generated": "2026-06-19T15:48:37.179342+00:00",
+  "generated": "2026-06-19T21:50:43.211858+00:00",
   "audited": 6,
   "audits": [
     {
@@ -10,7 +10,7 @@
       "url": "https://github.com/pallets/flask",
       "grade": "B",
       "score": 89,
-      "stars": 71684,
+      "stars": 71680,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -29,7 +29,7 @@
       "url": "https://github.com/expressjs/express",
       "grade": "B",
       "score": 89,
-      "stars": 69207,
+      "stars": 69210,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -48,7 +48,7 @@
       "url": "https://github.com/psf/requests",
       "grade": "B",
       "score": 89,
-      "stars": 54045,
+      "stars": 54044,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -67,7 +67,7 @@
       "url": "https://github.com/react/react",
       "grade": "B",
       "score": 86,
-      "stars": 245961,
+      "stars": 245950,
       "dimensions": {
         "maintenance": 100,
         "community": 70,
@@ -86,7 +86,7 @@
       "url": "https://github.com/vuejs/vue",
       "grade": "D",
       "score": 64,
-      "stars": 209931,
+      "stars": 209927,
       "dimensions": {
         "maintenance": 35,
         "community": 70,
