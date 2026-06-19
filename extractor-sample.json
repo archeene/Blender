@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-19T02:48:50.966166+00:00",
+  "generated": "2026-06-19T14:49:00.376672+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-19T02:48:44.099558+00:00",
+      "fetched_at": "2026-06-19T14:48:53.667876+00:00",
       "content_type": "text/html",
-      "content_length": 34840,
+      "content_length": 34918,
       "size_capped": false,
-      "latency_ms": 2210,
+      "latency_ms": 2334,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,8 +29,8 @@
         }
       },
       "links": {
-        "total": 194,
-        "internal": 161,
+        "total": 198,
+        "internal": 165,
         "external": 33,
         "top_external_domains": [
           {
@@ -42,27 +42,35 @@
             "count": 2
           },
           {
-            "domain": "arun.is",
+            "domain": "jvm-weekly.com",
             "count": 1
           },
           {
-            "domain": "blog.modelcontextprotocol.io",
+            "domain": "vocabowl-870366514258.us-west1.run.app",
             "count": 1
           },
           {
-            "domain": "simonwillison.net",
+            "domain": "greybeam.ai",
             "count": 1
           },
           {
-            "domain": "orchidfiles.com",
+            "domain": "blog.jxmo.io",
             "count": 1
           }
         ]
       },
-      "image_count": 3,
-      "word_count": 664,
+      "image_count": 2,
+      "word_count": 657,
       "reading_time_min": 3,
       "keywords": [
+        {
+          "term": "comments",
+          "count": 30
+        },
+        {
+          "term": "points",
+          "count": 30
+        },
         {
           "term": "ago",
           "count": 30
@@ -72,24 +80,12 @@
           "count": 30
         },
         {
-          "term": "points",
-          "count": 29
-        },
-        {
-          "term": "comments",
-          "count": 27
-        },
-        {
           "term": "hours",
-          "count": 25
+          "count": 21
         },
         {
-          "term": "hour",
-          "count": 5
-        },
-        {
-          "term": "speckx",
-          "count": 3
+          "term": "day",
+          "count": 7
         },
         {
           "term": "hacker",
@@ -100,15 +96,19 @@
           "count": 2
         },
         {
-          "term": "datasette",
+          "term": "work",
           "count": 2
         },
         {
-          "term": "apps",
+          "term": "duckdb",
           "count": 2
         },
         {
           "term": "built",
+          "count": 2
+        },
+        {
+          "term": "toinbox",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "How Japan's railways stayed one while splitting apart (arun.is)"
+            "Project Valhalla, Explained: How a Decade of Work Arrives in JDK 28 (jvm-weekly.com)"
           ],
           [
             "",
-            "41 points by ddrmaxgt37 2 hours ago | hide | 24 comments"
+            "337 points by philonoist 8 hours ago | hide | 177 comments"
           ],
           [
             "2.",
             "",
-            "Zero-Touch OAuth for MCP (modelcontextprotocol.io)"
+            "How many of the 170k English words do you know? (run.app)"
           ],
           [
             "",
-            "108 points by niyikiza 4 hours ago | hide | 47 comments"
+            "8 points by abnry 57 minutes ago | hide | 5 comments"
           ],
           [
             "3.",
             "",
-            "Datasette Apps: Host custom HTML applications inside Datasette (simonwillison.net)"
+            "DuckDB Internals: Why Is DuckDB Fast? (Part 1) (greybeam.ai)"
           ],
           [
             "",
-            "28 points by lumpa 1 hour ago | hide | 6 comments"
+            "291 points by marklit 11 hours ago | hide | 85 comments"
           ],
           [
             "4.",
             "",
-            "I found 10k GitHub repositories distributing Trojan malware (orchidfiles.com)"
+            "Zen and the Art of Machine Learning Research (jxmo.io)"
           ],
           [
             "",
-            "676 points by theorchid 15 hours ago | hide | 153 comments"
+            "139 points by jxmorris12 9 hours ago | hide | 47 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-19T02:48:46.331672+00:00",
+      "fetched_at": "2026-06-19T14:48:56.022501+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 808,
+      "latency_ms": 851,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-19T02:48:47.140333+00:00",
+      "fetched_at": "2026-06-19T14:48:56.873186+00:00",
       "content_type": "text/html",
       "content_length": 166311,
       "size_capped": false,
-      "latency_ms": 1854,
+      "latency_ms": 1646,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-19T02:48:49.025396+00:00",
+      "fetched_at": "2026-06-19T14:48:58.550342+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1933,
+      "latency_ms": 1818,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
