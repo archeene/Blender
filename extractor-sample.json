@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-19T14:49:00.376672+00:00",
+  "generated": "2026-06-20T02:49:09.640717+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-19T14:48:53.667876+00:00",
+      "fetched_at": "2026-06-20T02:49:03.107579+00:00",
       "content_type": "text/html",
-      "content_length": 34918,
+      "content_length": 34783,
       "size_capped": false,
-      "latency_ms": 2334,
+      "latency_ms": 2225,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,10 +29,14 @@
         }
       },
       "links": {
-        "total": 198,
-        "internal": 165,
+        "total": 196,
+        "internal": 163,
         "external": 33,
         "top_external_domains": [
+          {
+            "domain": "theguardian.com",
+            "count": 2
+          },
           {
             "domain": "github.com",
             "count": 2
@@ -42,31 +46,23 @@
             "count": 2
           },
           {
-            "domain": "jvm-weekly.com",
+            "domain": "nochan.net",
             "count": 1
           },
           {
-            "domain": "vocabowl-870366514258.us-west1.run.app",
+            "domain": "overreacted.io",
             "count": 1
           },
           {
-            "domain": "greybeam.ai",
-            "count": 1
-          },
-          {
-            "domain": "blog.jxmo.io",
+            "domain": "theconversation.com",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 657,
+      "word_count": 645,
       "reading_time_min": 3,
       "keywords": [
-        {
-          "term": "comments",
-          "count": 30
-        },
         {
           "term": "points",
           "count": 30
@@ -80,12 +76,16 @@
           "count": 30
         },
         {
-          "term": "hours",
-          "count": 21
+          "term": "comments",
+          "count": 27
         },
         {
-          "term": "day",
-          "count": 7
+          "term": "hours",
+          "count": 27
+        },
+        {
+          "term": "discuss",
+          "count": 3
         },
         {
           "term": "hacker",
@@ -96,19 +96,19 @@
           "count": 2
         },
         {
-          "term": "work",
+          "term": "theguardian.com",
           "count": 2
         },
         {
-          "term": "duckdb",
+          "term": "hour",
           "count": 2
         },
         {
-          "term": "built",
+          "term": "real",
           "count": 2
         },
         {
-          "term": "toinbox",
+          "term": "ilreb",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Project Valhalla, Explained: How a Decade of Work Arrives in JDK 28 (jvm-weekly.com)"
+            "How to feed a dictator (theguardian.com)"
           ],
           [
             "",
-            "337 points by philonoist 8 hours ago | hide | 177 comments"
+            "59 points by Michelangelo11 1 hour ago | hide | 21 comments"
           ],
           [
             "2.",
             "",
-            "How many of the 170k English words do you know? (run.app)"
+            "XLibre XServer 25.2.0 Released (github.com/x11libre)"
           ],
           [
             "",
-            "8 points by abnry 57 minutes ago | hide | 5 comments"
+            "10 points by calvinmorrison 19 minutes ago | hide | 8 comments"
           ],
           [
             "3.",
             "",
-            "DuckDB Internals: Why Is DuckDB Fast? (Part 1) (greybeam.ai)"
+            "Think of the children: How to force real ID for all internet traffic (2023) (nochan.net)"
           ],
           [
             "",
-            "291 points by marklit 11 hours ago | hide | 85 comments"
+            "129 points by Bender 6 hours ago | hide | 70 comments"
           ],
           [
             "4.",
             "",
-            "Zen and the Art of Machine Learning Research (jxmo.io)"
+            "There are no instances in ATProto (overreacted.io)"
           ],
           [
             "",
-            "139 points by jxmorris12 9 hours ago | hide | 47 comments"
+            "353 points by danabramov 11 hours ago | hide | 195 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-19T14:48:56.022501+00:00",
+      "fetched_at": "2026-06-20T02:49:05.357715+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 851,
+      "latency_ms": 887,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-19T14:48:56.873186+00:00",
+      "fetched_at": "2026-06-20T02:49:06.245319+00:00",
       "content_type": "text/html",
-      "content_length": 166311,
+      "content_length": 168220,
       "size_capped": false,
-      "latency_ms": 1646,
+      "latency_ms": 1644,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -335,8 +335,8 @@
         ]
       },
       "image_count": 10,
-      "word_count": 4702,
-      "reading_time_min": 20,
+      "word_count": 4716,
+      "reading_time_min": 21,
       "keywords": [
         {
           "term": "scraping",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-19T14:48:58.550342+00:00",
+      "fetched_at": "2026-06-20T02:49:07.914399+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1818,
+      "latency_ms": 1717,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
