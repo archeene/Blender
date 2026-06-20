@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-20T02:49:09.640717+00:00",
+  "generated": "2026-06-20T14:49:17.857383+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-20T02:49:03.107579+00:00",
+      "fetched_at": "2026-06-20T14:49:12.212326+00:00",
       "content_type": "text/html",
-      "content_length": 34783,
+      "content_length": 34953,
       "size_capped": false,
-      "latency_ms": 2225,
+      "latency_ms": 1973,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,38 +29,38 @@
         }
       },
       "links": {
-        "total": 196,
-        "internal": 163,
+        "total": 197,
+        "internal": 164,
         "external": 33,
         "top_external_domains": [
-          {
-            "domain": "theguardian.com",
-            "count": 2
-          },
-          {
-            "domain": "github.com",
-            "count": 2
-          },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "nochan.net",
+            "domain": "cssquake.com",
             "count": 1
           },
           {
-            "domain": "overreacted.io",
+            "domain": "point.free",
             "count": 1
           },
           {
-            "domain": "theconversation.com",
+            "domain": "bootimus.com",
+            "count": 1
+          },
+          {
+            "domain": "techcrunch.com",
+            "count": 1
+          },
+          {
+            "domain": "timwehrle.de",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 645,
+      "word_count": 661,
       "reading_time_min": 3,
       "keywords": [
         {
@@ -81,11 +81,11 @@
         },
         {
           "term": "hours",
-          "count": 27
+          "count": 26
         },
         {
           "term": "discuss",
-          "count": 3
+          "count": 4
         },
         {
           "term": "hacker",
@@ -96,7 +96,7 @@
           "count": 2
         },
         {
-          "term": "theguardian.com",
+          "term": "old",
           "count": 2
         },
         {
@@ -104,11 +104,11 @@
           "count": 2
         },
         {
-          "term": "real",
+          "term": "favicon",
           "count": 2
         },
         {
-          "term": "ilreb",
+          "term": "theanonymousone",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "How to feed a dictator (theguardian.com)"
+            "CSSQuake (cssquake.com)"
           ],
           [
             "",
-            "59 points by Michelangelo11 1 hour ago | hide | 21 comments"
+            "198 points by msalsas 3 hours ago | hide | 40 comments"
           ],
           [
             "2.",
             "",
-            "XLibre XServer 25.2.0 Released (github.com/x11libre)"
+            "I restarted a 10 year old Xeon 174 times to delete 12 flags and gain 4 tps (point.free)"
           ],
           [
             "",
-            "10 points by calvinmorrison 19 minutes ago | hide | 8 comments"
+            "16 points by zdw 1 hour ago | hide | discuss"
           ],
           [
             "3.",
             "",
-            "Think of the children: How to force real ID for all internet traffic (2023) (nochan.net)"
+            "Bootimus \u2013 A Self-Contained PXE and HTTP Boot Server (bootimus.com)"
           ],
           [
             "",
-            "129 points by Bender 6 hours ago | hide | 70 comments"
+            "42 points by car 3 hours ago | hide | 11 comments"
           ],
           [
             "4.",
             "",
-            "There are no instances in ATProto (overreacted.io)"
+            "From PGP to Mythos: a brief history of export controls that didn't stop anyone (techcrunch.com)"
           ],
           [
             "",
-            "353 points by danabramov 11 hours ago | hide | 195 comments"
+            "33 points by Brajeshwar 1 hour ago | hide | 10 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-20T02:49:05.357715+00:00",
+      "fetched_at": "2026-06-20T14:49:14.208708+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 887,
+      "latency_ms": 743,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-20T02:49:06.245319+00:00",
+      "fetched_at": "2026-06-20T14:49:14.951752+00:00",
       "content_type": "text/html",
       "content_length": 168220,
       "size_capped": false,
-      "latency_ms": 1644,
+      "latency_ms": 1448,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-20T02:49:07.914399+00:00",
+      "fetched_at": "2026-06-20T14:49:16.424826+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1717,
+      "latency_ms": 1426,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
