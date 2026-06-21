@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-20T14:49:17.857383+00:00",
+  "generated": "2026-06-21T02:49:30.912437+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-20T14:49:12.212326+00:00",
+      "fetched_at": "2026-06-21T02:49:20.095851+00:00",
       "content_type": "text/html",
-      "content_length": 34953,
+      "content_length": 34757,
       "size_capped": false,
-      "latency_ms": 1973,
+      "latency_ms": 6475,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,40 +29,44 @@
         }
       },
       "links": {
-        "total": 197,
-        "internal": 164,
+        "total": 195,
+        "internal": 162,
         "external": 33,
         "top_external_domains": [
+          {
+            "domain": "github.com",
+            "count": 4
+          },
+          {
+            "domain": "bbc.com",
+            "count": 2
+          },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "cssquake.com",
+            "domain": "sibexi.co",
             "count": 1
           },
           {
-            "domain": "point.free",
+            "domain": "townsquare.cauenapier.com",
             "count": 1
           },
           {
-            "domain": "bootimus.com",
-            "count": 1
-          },
-          {
-            "domain": "techcrunch.com",
-            "count": 1
-          },
-          {
-            "domain": "timwehrle.de",
+            "domain": "bostonglobe.com",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 661,
+      "word_count": 658,
       "reading_time_min": 3,
       "keywords": [
+        {
+          "term": "comments",
+          "count": 30
+        },
         {
           "term": "points",
           "count": 30
@@ -76,16 +80,20 @@
           "count": 30
         },
         {
-          "term": "comments",
+          "term": "hours",
           "count": 27
         },
         {
-          "term": "hours",
-          "count": 26
+          "term": "github.com",
+          "count": 3
         },
         {
-          "term": "discuss",
-          "count": 4
+          "term": "zdw",
+          "count": 3
+        },
+        {
+          "term": "hour",
+          "count": 3
         },
         {
           "term": "hacker",
@@ -96,19 +104,11 @@
           "count": 2
         },
         {
-          "term": "old",
+          "term": "bbc.com",
           "count": 2
         },
         {
-          "term": "hour",
-          "count": 2
-        },
-        {
-          "term": "favicon",
-          "count": 2
-        },
-        {
-          "term": "theanonymousone",
+          "term": "linux",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "CSSQuake (cssquake.com)"
+            "Renting a sewing machine from the library (bbc.com)"
           ],
           [
             "",
-            "198 points by msalsas 3 hours ago | hide | 40 comments"
+            "112 points by sohkamyung 3 hours ago | hide | 52 comments"
           ],
           [
             "2.",
             "",
-            "I restarted a 10 year old Xeon 174 times to delete 12 flags and gain 4 tps (point.free)"
+            "Epoll vs. io_uring in Linux (sibexi.co)"
           ],
           [
             "",
-            "16 points by zdw 1 hour ago | hide | discuss"
+            "62 points by Sibexico 3 hours ago | hide | 20 comments"
           ],
           [
             "3.",
             "",
-            "Bootimus \u2013 A Self-Contained PXE and HTTP Boot Server (bootimus.com)"
+            "Show HN: TownSquare, a tiny presence layer for websites (cauenapier.com)"
           ],
           [
             "",
-            "42 points by car 3 hours ago | hide | 11 comments"
+            "81 points by cauenapier 4 hours ago | hide | 26 comments"
           ],
           [
             "4.",
             "",
-            "From PGP to Mythos: a brief history of export controls that didn't stop anyone (techcrunch.com)"
+            "15-minute at-home Lyme disease tick test (bostonglobe.com)"
           ],
           [
             "",
-            "33 points by Brajeshwar 1 hour ago | hide | 10 comments"
+            "45 points by bookofjoe 3 hours ago | hide | 13 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-20T14:49:14.208708+00:00",
+      "fetched_at": "2026-06-21T02:49:26.600154+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 743,
+      "latency_ms": 808,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-20T14:49:14.951752+00:00",
+      "fetched_at": "2026-06-21T02:49:27.409444+00:00",
       "content_type": "text/html",
       "content_length": 168220,
       "size_capped": false,
-      "latency_ms": 1448,
+      "latency_ms": 1648,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-20T14:49:16.424826+00:00",
+      "fetched_at": "2026-06-21T02:49:29.084603+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1426,
+      "latency_ms": 1820,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
