@@ -3,7 +3,7 @@
   "service": "evidence-based qualified-lead discovery (no outreach)",
   "target_client": "codeguard",
   "source": "GitHub search (live) + curated risky-profile seed repos + raw manifests + OSV.dev (live)",
-  "generated": "2026-06-22T09:00:25.102234+00:00",
+  "generated": "2026-06-22T15:00:46.468164+00:00",
   "repos_examined": 10,
   "qualified": 5,
   "leads": [
@@ -57,7 +57,7 @@
       "ecosystem": "npm",
       "manifest": "package.json",
       "branch": "master",
-      "deps_checked": 5,
+      "deps_checked": 4,
       "risky_deps": [
         {
           "name": "sanitize-html",
