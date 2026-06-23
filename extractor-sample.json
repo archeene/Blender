@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-23T02:50:06.136537+00:00",
+  "generated": "2026-06-23T14:50:14.837163+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-23T02:49:59.751972+00:00",
+      "fetched_at": "2026-06-23T14:50:08.214128+00:00",
       "content_type": "text/html",
-      "content_length": 34298,
+      "content_length": 34099,
       "size_capped": false,
-      "latency_ms": 2261,
+      "latency_ms": 2178,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,38 +29,38 @@
         }
       },
       "links": {
-        "total": 196,
-        "internal": 163,
+        "total": 194,
+        "internal": 161,
         "external": 33,
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 4
+            "count": 5
           },
           {
             "domain": "ycombinator.com",
             "count": 3
           },
           {
+            "domain": "status.claude.com",
+            "count": 1
+          },
+          {
+            "domain": "pluralistic.net",
+            "count": 1
+          },
+          {
             "domain": "store.steampowered.com",
             "count": 1
           },
           {
-            "domain": "openculture.com",
-            "count": 1
-          },
-          {
-            "domain": "unsloth.ai",
-            "count": 1
-          },
-          {
-            "domain": "jchri.st",
+            "domain": "404media.co",
             "count": 1
           }
         ]
       },
       "image_count": 3,
-      "word_count": 648,
+      "word_count": 622,
       "reading_time_min": 3,
       "keywords": [
         {
@@ -72,19 +72,27 @@
           "count": 30
         },
         {
-          "term": "comments",
-          "count": 29
-        },
-        {
           "term": "points",
           "count": 29
         },
         {
+          "term": "comments",
+          "count": 27
+        },
+        {
           "term": "hours",
-          "count": 26
+          "count": 24
+        },
+        {
+          "term": "minutes",
+          "count": 4
         },
         {
           "term": "github.com",
+          "count": 4
+        },
+        {
+          "term": "discuss",
           "count": 3
         },
         {
@@ -96,19 +104,11 @@
           "count": 2
         },
         {
-          "term": "minutes",
+          "term": "ocr",
           "count": 2
         },
         {
-          "term": "zero",
-          "count": 2
-        },
-        {
-          "term": "time",
-          "count": 2
-        },
-        {
-          "term": "model",
+          "term": "ingve",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Steam Machine launches today (steampowered.com)"
+            "Elevated error rate across multiple models (claude.com)"
           ],
           [
             "",
-            "1267 points by theschwa 9 hours ago | hide | 1139 comments"
+            "104 points by rob 28 minutes ago | hide | 54 comments"
           ],
           [
             "2.",
             "",
-            "1,700 Free Online Courses from Top Universities (openculture.com)"
+            "Unlimited OCR: One-Shot Long-Horizon Parsing (github.com/baidu)"
           ],
           [
             "",
-            "26 points by momentmaker 53 minutes ago | hide | 2 comments"
+            "197 points by ingve 3 hours ago | hide | 52 comments"
           ],
           [
             "3.",
             "",
-            "Runing GLM-5.2 on local hardware (unsloth.ai)"
+            "Spying on kids to save kids from spying is stupid (pluralistic.net)"
           ],
           [
             "",
-            "198 points by TechTechTech 5 hours ago | hide | 89 comments"
+            "72 points by hn_acker 43 minutes ago | hide | 15 comments"
           ],
           [
             "4.",
             "",
-            "In Praise of Memcached (jchri.st)"
+            "Steam Machine launches today (steampowered.com)"
           ],
           [
             "",
-            "44 points by j03b 1 hour ago | hide | 17 comments"
+            "1770 points by theschwa 21 hours ago | hide | 1510 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-23T02:50:02.038559+00:00",
+      "fetched_at": "2026-06-23T14:50:10.418142+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 897,
+      "latency_ms": 809,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-23T02:50:02.935915+00:00",
+      "fetched_at": "2026-06-23T14:50:11.228112+00:00",
       "content_type": "text/html",
       "content_length": 168220,
       "size_capped": false,
-      "latency_ms": 1645,
+      "latency_ms": 1855,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-23T02:50:04.604952+00:00",
+      "fetched_at": "2026-06-23T14:50:13.109204+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1524,
+      "latency_ms": 1719,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
