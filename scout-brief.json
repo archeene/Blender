@@ -2,13 +2,12 @@
   "agent": "scout",
   "service": "structured, cited research briefs",
   "sources": "Hacker News + arXiv + GitHub + Wikipedia (live, no key)",
-  "generated": "2026-06-23T20:51:41.764636+00:00",
+  "generated": "2026-06-24T02:52:16.147403+00:00",
   "briefs": [
     {
       "topic": "crypto trading bot",
       "summary_sources": [
         "Hacker News",
-        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -48,119 +47,26 @@
           "hn": "https://news.ycombinator.com/item?id=42136699"
         }
       ],
-      "recent_papers": [
-        {
-          "title": "MORL-A2C: Multi-Objective Reinforcement Learning Reranker for Optimizing Healthiness in MOPI-HFRS",
-          "url": "https://arxiv.org/abs/2606.23603v1",
-          "authors": [
-            "Aarya Vasantlal",
-            "Joshua Zolla"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.LG"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Unhealthy dietary behavior continues to be a persistent public health issue in the United States, exacerbated by recommendation systems that prioritize user preference without considering nutritional health. The Multi-Objective Personalized Interpretable Health-aware Food Recomme..."
-        },
-        {
-          "title": "Quantifying the Agreement Between Data-Influence and Data-Similarity to Understand LLM Behavior",
-          "url": "https://arxiv.org/abs/2606.23591v1",
-          "authors": [
-            "Christopher J. Anders",
-            "Henrique Da Silva Gameiro",
-            "Nico Daheim",
-            "Mohammad Emtiyaz Khan"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.LG"
-          ],
-          "published": "2026-06-22",
-          "abstract": "One way to understand LLM behavior is to trace its output back to the training data. Two types of measures are commonly used for output tracing: data-similarity and data-influence. The former is cheaper while the latter is believed to be more accurate. Even though many works have..."
-        },
-        {
-          "title": "SVD-Surgeon: Optimal Singular-Value Surgery for Large Language Model Compression",
-          "url": "https://arxiv.org/abs/2606.23568v1",
-          "authors": [
-            "Mahmoud Safari",
-            "Frank Hutter"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.LG",
-            "cs.CL"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Large language models (LLMs) achieve remarkable performance across a wide range of tasks, but their deployment is constrained by substantial memory and compute requirements. Low-rank compression via singular value decomposition (SVD) is an effective remedy, but existing methods f..."
-        },
-        {
-          "title": "Observing a 542-day transiting giant with large TTVs: The 2025 transit of HIP 41378 f and new constraints on the outer system",
-          "url": "https://arxiv.org/abs/2606.23551v1",
-          "authors": [
-            "Pietro Leonardi",
-            "Alexandre Santerne",
-            "Luca Borsato",
-            "Salom\u00e9 Grouffal"
-          ],
-          "more_authors": 26,
-          "cats": [
-            "astro-ph.EP"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Characterizing long-period transiting exoplanets is inherently challenging due to the rarity and long duration of transit events. Yet, these systems provide unique insights into planetary formation, migration, the detection of exomoons, and primordial atmospheres by occupying a s..."
-        },
-        {
-          "title": "Structure-Aware Variance Reduction for Unbiased Randomized Hamiltonian Simulation",
-          "url": "https://arxiv.org/abs/2606.23544v1",
-          "authors": [
-            "Joshua W. Dai",
-            "Fredrik Hasselgren",
-            "Chusei Kiumi"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "quant-ph"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Randomized Hamiltonian simulation methods are often governed by a trade-off between systematic bias and sampling overhead. We study how classical variance-reduction techniques can be applied to such methods without changing their mean channel, and therefore without introducing ad..."
-        },
-        {
-          "title": "LightSTAR: Efficient Visual Document Retrieval via Lightweight Selection with Vision-Adaptive Refinement",
-          "url": "https://arxiv.org/abs/2606.23539v1",
-          "authors": [
-            "Tongkun Guan",
-            "Haocheng Wang",
-            "Wei Shen",
-            "Xiaokang Yang"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.CV"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Visual document retrieval requires rapidly locating relevant pages from large multi-modal corpora in response to user queries. While recent methods powered by Multi-modal Large Language Models (MLLMs) show competitive accuracy, they suffer from prohibitive computational costs by ..."
-        }
-      ],
+      "recent_papers": [],
       "notable_repos": [
         {
           "full_name": "freqtrade/freqtrade",
           "url": "https://github.com/freqtrade/freqtrade",
-          "stars": 51778,
+          "stars": 51786,
           "language": "Python",
           "desc": "Free, open source crypto trading bot"
         },
         {
           "full_name": "ccxt/ccxt",
           "url": "https://github.com/ccxt/ccxt",
-          "stars": 43031,
+          "stars": 43037,
           "language": "Python",
           "desc": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java "
         },
         {
           "full_name": "hummingbot/hummingbot",
           "url": "https://github.com/hummingbot/hummingbot",
-          "stars": 18967,
+          "stars": 18969,
           "language": "Python",
           "desc": "Open source software that helps you create and deploy high-frequency crypto trading bots"
         },
@@ -174,7 +80,7 @@
         {
           "full_name": "Drakkar-Software/OctoBot",
           "url": "https://github.com/Drakkar-Software/OctoBot",
-          "stars": 6121,
+          "stars": 6125,
           "language": "Python",
           "desc": "Free open source crypto trading bot to automate AI, Grid, DCA and TradingView strategies on Binance, Hyperliquid and 15+ exchanges, with a simple interface."
         },
@@ -187,13 +93,12 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-23T20:51:41.295535+00:00"
+      "generated": "2026-06-24T02:51:46.793312+00:00"
     },
     {
       "topic": "dependency security",
       "summary_sources": [
         "Hacker News",
-        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -233,109 +138,12 @@
           "hn": "https://news.ycombinator.com/item?id=42443069"
         }
       ],
-      "recent_papers": [
-        {
-          "title": "Can LLMs Reliably Self-Report Adversarial Prefills, and How?",
-          "url": "https://arxiv.org/abs/2606.23671v1",
-          "authors": [
-            "Quang Minh Nguyen",
-            "Uzair Ahmed",
-            "Taegyoon Kim"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.CL"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Prior work shows that large language models (LLMs) exhibit introspective capability on benign tasks. We extend the question to safety contexts and examine how reliably a model can recognize that its own prior response was elicited by an adversarial prefill attack. Across ten open..."
-        },
-        {
-          "title": "GeoFidelity-Bench: Evaluating Segment-Level Geographic Fidelity in Text-to-Image Street-View Generation",
-          "url": "https://arxiv.org/abs/2606.23669v1",
-          "authors": [
-            "Kaizhen Tan",
-            "Hanzhe Hong",
-            "Siru Tao"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.CV"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Text-to-image models can generate visually plausible city streets, but whether their outputs correspond to a requested road segment rather than a generic city prior remains unclear. We introduce GeoFidelity-Bench, a reference-panel benchmark for segment-conditioned geographic fid..."
-        },
-        {
-          "title": "Robust Structure Learning of $k$-local Lindbladians",
-          "url": "https://arxiv.org/abs/2606.23652v1",
-          "authors": [
-            "Tim M\u00f6bus",
-            "Thiago Bergamaschi",
-            "Daniel Stilck Fran\u00e7a",
-            "Cambyse Rouz\u00e9"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "quant-ph",
-            "cs.IT",
-            "math.NA"
-          ],
-          "published": "2026-06-22",
-          "abstract": "We present an efficient protocol for learning an unknown $k$-local Lindblad generator on $n$ qubits using only product-state preparations, short-time evolution, and single-qubit Pauli measurements, without prior knowledge of the interaction structure. For fixed $k$ and bounded we..."
-        },
-        {
-          "title": "Genuine certification of incompatible quantum instruments through sequential communication tasks",
-          "url": "https://arxiv.org/abs/2606.23647v1",
-          "authors": [
-            "Arindam Mitra",
-            "Satyaki Manna",
-            "Debashis Saha"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "quant-ph",
-            "math-ph"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Quantum instruments constitute the general description of quantum dynamics, encompassing both quantum measurements and quantum channels as special cases. Consequently, the incompatibility of quantum instruments represents a fundamental manifestation of nonclassicality in quantum ..."
-        },
-        {
-          "title": "Differential measurement of the branching fraction and $C\\!P$ asymmetry of the decay $B^\\pm\\to \u03c0^\\pm\u03bc^+\u03bc^-$",
-          "url": "https://arxiv.org/abs/2606.23646v1",
-          "authors": [
-            " LHCb collaboration",
-            "R. Aaij",
-            "M. Abdelfatah",
-            "A. S. W. Abdelmotteleb"
-          ],
-          "more_authors": 1142,
-          "cats": [
-            "hep-ex"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Differential measurements of the branching fraction and $C\\!P$ asymmetry of the decay $B^\\pm\\to \u03c0^\\pm\u03bc^+\u03bc^-$ are performed in intervals of the dimuon mass squared, $q^2$, using proton-proton collision data corresponding to an integrated luminosity of 9 fb$^{-1}$ recorded by the L..."
-        },
-        {
-          "title": "TailorMind: Towards Preference-Aligned Multimodal Content Generation",
-          "url": "https://arxiv.org/abs/2606.23643v1",
-          "authors": [
-            "Hengji Zhou",
-            "Ye Liu",
-            "Yufeng Liu",
-            "Si Wu"
-          ],
-          "more_authors": 2,
-          "cats": [
-            "cs.AI"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Personalized content systems depend on available UGC and struggle when suitable content is absent, delayed, or costly to create. Although multimodal generators can synthesize content on demand, how to translate behavioral traces into generation-ready preferences remains underexpl..."
-        }
-      ],
+      "recent_papers": [],
       "notable_repos": [
         {
           "full_name": "dependency-check/DependencyCheck",
           "url": "https://github.com/dependency-check/DependencyCheck",
-          "stars": 7591,
+          "stars": 7592,
           "language": "Java",
           "desc": "OWASP dependency-check is a software composition analysis utility that detects publicly disclosed vulnerabilities in application dependencies."
         },
@@ -376,13 +184,12 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-23T20:51:41.764636+00:00"
+      "generated": "2026-06-24T02:51:47.174317+00:00"
     },
     {
       "topic": "AI marketing",
       "summary_sources": [
         "Hacker News",
-        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -422,125 +229,26 @@
           "hn": "https://news.ycombinator.com/item?id=37846236"
         }
       ],
-      "recent_papers": [
-        {
-          "title": "IMAGIN-4D: Image-Guided Controllable Interaction Generation",
-          "url": "https://arxiv.org/abs/2606.23675v1",
-          "authors": [
-            "Sai Kumar Dwivedi",
-            "Federica Bogo",
-            "Bu\u011fra Tekin",
-            "Chenhongyi Yang"
-          ],
-          "more_authors": 5,
-          "cats": [
-            "cs.CV"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Generating human-object interactions (HOI) is central to character animation, robotics, AR/VR, and embodied AI. Recent HOI generation methods synthesize motion from text, object geometry, and sparse waypoints, controlling action semantics and object trajectories. However, these s..."
-        },
-        {
-          "title": "PsyBridge: A Hybrid Intelligent Framework for Multi-Dimensional Mental Health Assessment and Decision Support",
-          "url": "https://arxiv.org/abs/2606.23673v1",
-          "authors": [
-            "Sunil Wanjari",
-            "Manish Thakre",
-            "Aayushi Asole",
-            "Sharwari Raut"
-          ],
-          "more_authors": 3,
-          "cats": [
-            "cs.AI",
-            "cs.LG"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Mental health assessment commonly relies on isolated screening instruments or data-driven models that often lack interpretability and multi-dimensional integration. Existing approaches frequently focus on individual indicators such as depression or anxiety while providing limited..."
-        },
-        {
-          "title": "Statistical Proof as a Window into Human-AI Collaboration: Practical Insights and a Community Agenda",
-          "url": "https://arxiv.org/abs/2606.23666v1",
-          "authors": [
-            "Xiaojing Sun",
-            "Huayu Tang",
-            "Buxin Su",
-            "Mateo Matijasevick"
-          ],
-          "more_authors": 3,
-          "cats": [
-            "stat.OT",
-            "stat.ME"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Large language models (LLMs) are increasingly woven into expert cognitive work in daily research, yet we know little about how human expertise should adapt when an AI system can execute substantial technical reasoning on its own. Here we use statistical proof development, a deman..."
-        },
-        {
-          "title": "MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems?",
-          "url": "https://arxiv.org/abs/2606.23664v1",
-          "authors": [
-            "Juyang Bai",
-            "Laixi Shi"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.LG",
-            "cs.MA"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Multi-agent systems (MAS) offer a scalable path forward for agentic AI, comprising multiple LLM-based agents, each assigned a system prompt and a position within a workflow that governs inter-agent coordination and output aggregation. System prompts thus form a critical and acces..."
-        },
-        {
-          "title": "Fundamental Limits of Stability Inference in High-Dimensional Complex Systems",
-          "url": "https://arxiv.org/abs/2606.23644v1",
-          "authors": [
-            "Michela Costa",
-            "Kentaro Hoshisashi",
-            "Flaviano Morone",
-            "Tim Rogers"
-          ],
-          "more_authors": 1,
-          "cats": [
-            "cond-mat.dis-nn"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Many complex systems, including ecosystems, neural circuits, and financial markets, are inferred to operate close to a threshold of instability, at which a small perturbation can propagate across the entire system. This proximity is often interpreted as functionally advantageous,..."
-        },
-        {
-          "title": "AI Exposure Scores: what they measure, what they miss, and what comes next",
-          "url": "https://arxiv.org/abs/2606.23633v1",
-          "authors": [
-            "Campbell Lund",
-            "Thomas Euyang",
-            "Zanele Munyikwa",
-            "Marzieh Fadaee"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.AI",
-            "econ.GN"
-          ],
-          "published": "2026-06-22",
-          "abstract": "A set of exposure scores calculated in 2023 has become a central empirical input to the future of work debate. Produced by Eloundou et al. (2023) and referred to here as the GPTs are GPTs scores, they define exposure as the share of occupational tasks a large language model can a..."
-        }
-      ],
+      "recent_papers": [],
       "notable_repos": [
         {
           "full_name": "twentyhq/twenty",
           "url": "https://github.com/twentyhq/twenty",
-          "stars": 51361,
+          "stars": 51417,
           "language": "TypeScript",
           "desc": "The open alternative to Salesforce, designed for AI."
         },
         {
           "full_name": "coreyhaines31/marketingskills",
           "url": "https://github.com/coreyhaines31/marketingskills",
-          "stars": 34738,
+          "stars": 34757,
           "language": "JavaScript",
           "desc": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering."
         },
         {
           "full_name": "ParthJadhav/app-store-screenshots",
           "url": "https://github.com/ParthJadhav/app-store-screenshots",
-          "stars": 5889,
+          "stars": 5890,
           "language": "TypeScript",
           "desc": "end to end app store screenshot creation using AI"
         },
@@ -554,7 +262,7 @@
         {
           "full_name": "ericosiu/ai-marketing-skills",
           "url": "https://github.com/ericosiu/ai-marketing-skills",
-          "stars": 2702,
+          "stars": 2706,
           "language": "Python",
           "desc": "Open-source AI marketing skills \u2014 growth experiments, sales pipeline, content ops, outbound, SEO, and finance automation"
         },
@@ -567,14 +275,13 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-23T20:51:41.294526+00:00"
+      "generated": "2026-06-24T02:52:16.147403+00:00"
     },
     {
       "topic": "autonomous agents",
       "summary_sources": [
         "Wikipedia",
         "Hacker News",
-        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -614,136 +321,33 @@
           "hn": "https://news.ycombinator.com/item?id=41202064"
         }
       ],
-      "recent_papers": [
-        {
-          "title": "Semantic Browsing: Controllable Diversity for Image Generation",
-          "url": "https://arxiv.org/abs/2606.23679v1",
-          "authors": [
-            "Sara Dorfman",
-            "Maya Vishnevsky",
-            "Omer Dahary",
-            "Or Patashnik"
-          ],
-          "more_authors": 1,
-          "cats": [
-            "cs.CV",
-            "cs.AI",
-            "cs.GR"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Modern text-to-image models excel in visual fidelity and prompt adherence. However, this strict adherence comes at the cost of diversity: generated samples tend to collapse into a single visual interpretation. Existing methods to improve diversity produce outputs driven by incide..."
-        },
-        {
-          "title": "Teaching LLMs String Matching, Backtracking, and Error Recovery to Deduce Bases and Truth Tables for the Combinatorially Exploding Bit Manipulation Puzzles",
-          "url": "https://arxiv.org/abs/2606.23672v1",
-          "authors": [
-            "Prateek Agnihotri",
-            "Sanchit Jain",
-            "Prabhat Agnihotri",
-            "Aditya Prasad"
-          ],
-          "more_authors": 1,
-          "cats": [
-            "cs.AI"
-          ],
-          "published": "2026-06-22",
-          "abstract": "This paper presents our algorithmic innovations for the NVIDIA Nemotron Model Reasoning Challenge, focusing on Bit Manipulation Puzzles. In this task, the objective is to discover a hidden logical rule transforming input binary strings to outputs, then apply it to unseen inputs. ..."
-        },
-        {
-          "title": "MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems?",
-          "url": "https://arxiv.org/abs/2606.23664v1",
-          "authors": [
-            "Juyang Bai",
-            "Laixi Shi"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.LG",
-            "cs.MA"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Multi-agent systems (MAS) offer a scalable path forward for agentic AI, comprising multiple LLM-based agents, each assigned a system prompt and a position within a workflow that governs inter-agent coordination and output aggregation. System prompts thus form a critical and acces..."
-        },
-        {
-          "title": "EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions",
-          "url": "https://arxiv.org/abs/2606.23654v1",
-          "authors": [
-            "Jincheng Zhong",
-            "Weizhi Wang",
-            "Che Jiang",
-            "Kai Tian"
-          ],
-          "more_authors": 4,
-          "cats": [
-            "cs.CL",
-            "cs.SE"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Enterprise agents increasingly operate inside workspaces: they read heterogeneous files, invoke tools, and deliver business artifacts. We introduce EnterpriseClawBench, an enterprise agent benchmark constructed from proprietary, real-world agent sessions. Starting from a large ar..."
-        },
-        {
-          "title": "Causal Discovery in the Era of Agents",
-          "url": "https://arxiv.org/abs/2606.23608v1",
-          "authors": [
-            "Yujia Zheng",
-            "Vishal Verma",
-            "Mantej Gill",
-            "Haoyue Dai"
-          ],
-          "more_authors": 2,
-          "cats": [
-            "cs.AI",
-            "cs.LG",
-            "cs.SE"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Recent attempts to combine large language models (LLMs) with causal discovery ask models to infer pairwise directions, propose graph structures, or inject language-model outputs as priors and constraints. These approaches promise faster analysis, but they also obscure whether a c..."
-        },
-        {
-          "title": "Autonomous Subsea Cable Search and Tracking with Graph-Optimised Priors and Visual Tracking",
-          "url": "https://arxiv.org/abs/2606.23606v1",
-          "authors": [
-            "Ibrahim Fadhil Djauhari",
-            "Adrian Bodenmann",
-            "Samuel Simmons",
-            "Cailei Liang"
-          ],
-          "more_authors": 5,
-          "cats": [
-            "cs.RO",
-            "cs.CV",
-            "eess.SY"
-          ],
-          "published": "2026-06-22",
-          "abstract": "Global communications rely on subsea cable infrastructure that remains vulnerable to damage from natural hazards and human activity. Autonomous underwater vehicles (AUVs) offer an efficient means to inspect long sections of exposed cable, but uncertainty in cable route maps, smal..."
-        }
-      ],
+      "recent_papers": [],
       "notable_repos": [
         {
           "full_name": "cline/cline",
           "url": "https://github.com/cline/cline",
-          "stars": 63757,
+          "stars": 63778,
           "language": "TypeScript",
           "desc": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant."
         },
         {
           "full_name": "ruvnet/ruflo",
           "url": "https://github.com/ruvnet/ruflo",
-          "stars": 61077,
+          "stars": 61113,
           "language": "TypeScript",
           "desc": "\ud83c\udf0a The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Featur"
         },
         {
           "full_name": "crewAIInc/crewAI",
           "url": "https://github.com/crewAIInc/crewAI",
-          "stars": 54242,
+          "stars": 54249,
           "language": "Python",
           "desc": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tac"
         },
         {
           "full_name": "CherryHQ/cherry-studio",
           "url": "https://github.com/CherryHQ/cherry-studio",
-          "stars": 47716,
+          "stars": 47724,
           "language": "TypeScript",
           "desc": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs"
         },
@@ -757,7 +361,7 @@
         {
           "full_name": "khoj-ai/khoj",
           "url": "https://github.com/khoj-ai/khoj",
-          "stars": 35267,
+          "stars": 35269,
           "language": "Python",
           "desc": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or loca"
         }
@@ -767,7 +371,7 @@
         "extract": "An autonomous agent is an artificial intelligence (AI) system that can perform complex tasks independently.",
         "url": "https://en.wikipedia.org/wiki/Autonomous_agent"
       },
-      "generated": "2026-06-23T20:51:41.294526+00:00"
+      "generated": "2026-06-24T02:51:46.793312+00:00"
     }
   ]
 }
