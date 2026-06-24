@@ -2,12 +2,13 @@
   "agent": "scout",
   "service": "structured, cited research briefs",
   "sources": "Hacker News + arXiv + GitHub + Wikipedia (live, no key)",
-  "generated": "2026-06-24T02:52:16.147403+00:00",
+  "generated": "2026-06-24T08:52:20.981170+00:00",
   "briefs": [
     {
       "topic": "crypto trading bot",
       "summary_sources": [
         "Hacker News",
+        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -47,40 +48,142 @@
           "hn": "https://news.ycombinator.com/item?id=42136699"
         }
       ],
-      "recent_papers": [],
+      "recent_papers": [
+        {
+          "title": "HelpBench: Assessing the Ability of LLMs to Provide Privacy, Safety, and Security Advice",
+          "url": "https://arxiv.org/abs/2606.24819v1",
+          "authors": [
+            "Sarah Meiklejohn",
+            "Sunny Consolvo",
+            "Patrick Gage Kelley",
+            "Tara Matthews"
+          ],
+          "more_authors": 4,
+          "cats": [
+            "cs.CR"
+          ],
+          "published": "2026-06-23",
+          "abstract": "This paper introduces HelpBench, a benchmark for assessing whether LLMs are capable of providing accurate help in response to questions about digital privacy, safety, and security. We curated 450 questions representing authentic user situations and developed rubrics for each ques..."
+        },
+        {
+          "title": "Are We Ready For An Agent-Native Memory System?",
+          "url": "https://arxiv.org/abs/2606.24775v1",
+          "authors": [
+            "Wei Zhou",
+            "Xuanhe Zhou",
+            "Shaokun Han",
+            "Hongming Xu"
+          ],
+          "more_authors": 4,
+          "cats": [
+            "cs.CL",
+            "cs.DB",
+            "cs.IR"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Memory for large language model (LLM) agents has rapidly evolved from simple retrieval-augmented mechanisms into a data management system that supports persistent information storage, retrieval, update, consolidation, and dynamic lifecycle governance throughout agent execution. D..."
+        },
+        {
+          "title": "UniDrive: A Unified Vision-Language and Grounding Framework for Interpretable Risk Understanding in Autonomous Driving",
+          "url": "https://arxiv.org/abs/2606.24759v1",
+          "authors": [
+            "Xiaowei Gao",
+            "Pengxiang Li",
+            "Yitai Cheng",
+            "Ruihan Xu"
+          ],
+          "more_authors": 3,
+          "cats": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Recent multimodal large language models (MLLMs) have shown strong potential for autonomous driving scene understanding, yet existing methods still face a fundamental trade-off between temporal reasoning and spatial precision. Models that rely on single-frame or low-resolution inp..."
+        },
+        {
+          "title": "On the Limits of Stretching Quantum Pseudorandomness",
+          "url": "https://arxiv.org/abs/2606.24736v1",
+          "authors": [
+            "Boyang Chen",
+            "Andrea Coladangelo",
+            "Yao-Ting Lin",
+            "Nikos Skoumios"
+          ],
+          "more_authors": 2,
+          "cats": [
+            "quant-ph",
+            "cs.CR"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Pseudorandom states, introduced by Ji, Liu, and Song (CRYPTO '18), are quantum analogues of classical pseudorandom generators. A fundamental property of classical pseudorandom generators is that their output can be stretched to arbitrary polynomial length. Whether an analogous st..."
+        },
+        {
+          "title": "Evaluating the Interpretability of Sparse Autoencoders with Concept Annotations",
+          "url": "https://arxiv.org/abs/2606.24716v1",
+          "authors": [
+            "Jonas Klotz",
+            "Cassio F. Dantas",
+            "Pallavi Jain",
+            "Diego Marcos"
+          ],
+          "more_authors": 1,
+          "cats": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Sparse autoencoders (SAEs) are increasingly used to extract interpretable concepts from vision and vision language models, yet existing evaluation methods largely rely on proxy metrics or qualitative inspection rather than measuring semantic correspondence. We present a human-gro..."
+        },
+        {
+          "title": "A Universal All-Fiber Quantum Buffer for the Telecom Band",
+          "url": "https://arxiv.org/abs/2606.24681v1",
+          "authors": [
+            "Domenico Compagnini",
+            "Noemi Tagliavacche",
+            "Sara Congia",
+            "Andrea Bernardi"
+          ],
+          "more_authors": 3,
+          "cats": [
+            "quant-ph"
+          ],
+          "published": "2026-06-23",
+          "abstract": "The realization of a scalable quantum internet relies on the ability to temporally align asynchronous photonic signals through on-demand buffering. While matter-based quantum memories achieve long storage times, their extremely narrow bandwidths and cryogenic requirements pose si..."
+        }
+      ],
       "notable_repos": [
         {
           "full_name": "freqtrade/freqtrade",
           "url": "https://github.com/freqtrade/freqtrade",
-          "stars": 51786,
+          "stars": 51789,
           "language": "Python",
           "desc": "Free, open source crypto trading bot"
         },
         {
           "full_name": "ccxt/ccxt",
           "url": "https://github.com/ccxt/ccxt",
-          "stars": 43037,
+          "stars": 43038,
           "language": "Python",
           "desc": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java "
         },
         {
           "full_name": "hummingbot/hummingbot",
           "url": "https://github.com/hummingbot/hummingbot",
-          "stars": 18969,
+          "stars": 18970,
           "language": "Python",
           "desc": "Open source software that helps you create and deploy high-frequency crypto trading bots"
         },
         {
           "full_name": "jesse-ai/jesse",
           "url": "https://github.com/jesse-ai/jesse",
-          "stars": 8082,
+          "stars": 8083,
           "language": "JavaScript",
           "desc": "An advanced crypto trading bot written in Python"
         },
         {
           "full_name": "Drakkar-Software/OctoBot",
           "url": "https://github.com/Drakkar-Software/OctoBot",
-          "stars": 6125,
+          "stars": 6129,
           "language": "Python",
           "desc": "Free open source crypto trading bot to automate AI, Grid, DCA and TradingView strategies on Binance, Hyperliquid and 15+ exchanges, with a simple interface."
         },
@@ -93,12 +196,13 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-24T02:51:46.793312+00:00"
+      "generated": "2026-06-24T08:52:20.888827+00:00"
     },
     {
       "topic": "dependency security",
       "summary_sources": [
         "Hacker News",
+        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -138,7 +242,103 @@
           "hn": "https://news.ycombinator.com/item?id=42443069"
         }
       ],
-      "recent_papers": [],
+      "recent_papers": [
+        {
+          "title": "The Topology of the Universe",
+          "url": "https://arxiv.org/abs/2606.24886v1",
+          "authors": [
+            "Craig J. Copi",
+            "Deyan P. Mihaylov",
+            "Anna Negro",
+            "Amirhossein Samandar"
+          ],
+          "more_authors": 13,
+          "cats": [
+            "astro-ph.CO",
+            "gr-qc",
+            "hep-th"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Is the Universe infinite in all directions? The only way to know is to look. A non-trivial cosmic topology would imprint subtle signatures on the cosmic microwave background (CMB) and on the three-dimensional distribution of matter, breaking statistical isotropy and, potentially,..."
+        },
+        {
+          "title": "Queues with Correlated Service Times -- the $M/M_D/c$ Model",
+          "url": "https://arxiv.org/abs/2606.24881v1",
+          "authors": [
+            "Qihui Bu",
+            "Suman Thapa",
+            "Yiqiang Q. Zhao"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "math.PR"
+          ],
+          "published": "2026-06-23",
+          "abstract": "This paper studies multi-server queueing systems with correlated service times, modeled as the $M/M_D/c$ queue, which is a natural extension of the recent work by Thapa and Zhao \\cite{Thapa-Zhao:2026}. In this model, arrivals follow a Poisson process, while service times across s..."
+        },
+        {
+          "title": "Exploring Gravitational Wave Signatures Due to Primordial Non-gaussianity and Large Scale Structure Using SKAO",
+          "url": "https://arxiv.org/abs/2606.24868v1",
+          "authors": [
+            "H. V. Ragavendra",
+            "Giulia Capurri",
+            "Alina Mierna",
+            "Gabriele Perna"
+          ],
+          "more_authors": 7,
+          "cats": [
+            "astro-ph.CO"
+          ],
+          "published": "2026-06-23",
+          "abstract": "This chapter explores theoretical and observational strategies to use the stochastic gravitational-wave background detectable by Square Kilometre Array Observatory (SKAO) as a probe of precision cosmology. We detail the critical phenomenon of scalar-induced gravitational waves, d..."
+        },
+        {
+          "title": "Polyatomic Thermal Radiative Dissociation in Microcavities",
+          "url": "https://arxiv.org/abs/2606.24866v1",
+          "authors": [
+            "Enes Suyabatmaz",
+            "Tuan Nguyen",
+            "Raphael F. Ribeiro"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "physics.chem-ph",
+            "cond-mat.mtrl-sci"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Blackbody infrared radiative dissociation (BIRD) activates molecules through successive absorption of ambient thermal photons until the internal energy reaches a dissociation threshold. Because these radiative transition rates depend on the electromagnetic density of states (DOS)..."
+        },
+        {
+          "title": "Structural Reductions for Monochromatic Matchings and Ramsey Tilings",
+          "url": "https://arxiv.org/abs/2606.24863v1",
+          "authors": [
+            "Hong Liu",
+            "Maksim Turevskii",
+            "Lanchao Wang",
+            "Zhifei Yan"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "math.CO"
+          ],
+          "published": "2026-06-23",
+          "abstract": "The Alon--Frankl--Lov\u00e1sz theorem determines the chromatic number of Kneser hypergraphs; equivalently, it gives the sharp minimum size of a monochromatic matching in every \\(r\\)-edge-colouring of the complete \\(t\\)-uniform hypergraph. The known proofs of the exact theorem are topo..."
+        },
+        {
+          "title": "Real vs. Complex Spectral Bases for Neural Operators: The Role of Green's Function Alignment",
+          "url": "https://arxiv.org/abs/2606.24851v1",
+          "authors": [
+            "Jason Sulskis",
+            "Sathya Ravi"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.LG"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Fourier Neural Operators (FNO) learn solution operators of partial differential equations by parameterizing global convolutions in the complex Fourier domain. For real-valued PDE solutions, the complex FFT carries representational redundancy through conjugate symmetry. We introdu..."
+        }
+      ],
       "notable_repos": [
         {
           "full_name": "dependency-check/DependencyCheck",
@@ -150,7 +350,7 @@
         {
           "full_name": "DependencyTrack/dependency-track",
           "url": "https://github.com/DependencyTrack/dependency-track",
-          "stars": 3954,
+          "stars": 3956,
           "language": "Java",
           "desc": "Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain."
         },
@@ -184,12 +384,13 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-24T02:51:47.174317+00:00"
+      "generated": "2026-06-24T08:52:20.960975+00:00"
     },
     {
       "topic": "AI marketing",
       "summary_sources": [
         "Hacker News",
+        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -229,59 +430,155 @@
           "hn": "https://news.ycombinator.com/item?id=37846236"
         }
       ],
-      "recent_papers": [],
+      "recent_papers": [
+        {
+          "title": "BenchX: Benchmarking AI Models for Cancer Detection and Localization with Demographic and Protocol Biases",
+          "url": "https://arxiv.org/abs/2606.24883v1",
+          "authors": [
+            "Qi Chen",
+            "Wenxuan Li",
+            "Pedro R. A. S. Bassi",
+            "Xinze Zhou"
+          ],
+          "more_authors": 13,
+          "cats": [
+            "cs.CV"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Artificial intelligence (AI) has achieved remarkable success in medical imaging, but it is widely recognized that these models often perform inconsistently across real-world clinical settings. Such inconsistencies occur when patient demographics and imaging protocols vary, for ex..."
+        },
+        {
+          "title": "First-Order Recoverability Collapse in Self-Referential Information Decoders",
+          "url": "https://arxiv.org/abs/2606.24861v1",
+          "authors": [
+            "Pieter van Rooyen"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cond-mat.stat-mech",
+            "cs.IT"
+          ],
+          "published": "2026-06-23",
+          "abstract": "We study adaptive systems coupling inference to irreversible action under sustained nonequilibrium driving. Treating information processing as a thermodynamic load, we model them as finite-capacity decoders whose irreversible commitments eliminate counterfactual options, and char..."
+        },
+        {
+          "title": "OpenThoughts-Agent: Data Recipes for Agentic Models",
+          "url": "https://arxiv.org/abs/2606.24855v1",
+          "authors": [
+            "Negin Raoof",
+            "Richard Zhuang",
+            "Marianna Nezhurina",
+            "Etash Guha"
+          ],
+          "more_authors": 46,
+          "cats": [
+            "cs.AI"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Agentic language models dramatically expand the applications of AI yet little is publicly known about how to curate training data for broadly capable agents. Existing open efforts such as SWE-Smith, SERA, and Nemotron-Terminal typically target a single benchmark, leaving open the..."
+        },
+        {
+          "title": "It's Complicated: On the Design and Evaluation of AI-Powered AAC Interfaces",
+          "url": "https://arxiv.org/abs/2606.24854v1",
+          "authors": [
+            "Blade Frisch",
+            "Will Wade",
+            "Dylan Gaines",
+            "Michelle Kinsella"
+          ],
+          "more_authors": 3,
+          "cats": [
+            "cs.HC",
+            "cs.AI"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Artificial intelligence (AI) can enhance what people who use augmentative and alternative communication (AAC) are able to do with their systems. However, evaluating AI-powered AAC interfaces can be difficult. People are intersectional beings and current evaluation metrics can str..."
+        },
+        {
+          "title": "Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System",
+          "url": "https://arxiv.org/abs/2606.24839v1",
+          "authors": [
+            "Tian Zheng",
+            "Kai-Tai Hsu"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.AI",
+            "stat.AP"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Agentic data analysis systems produce rich outputs, including code, numerical results, and verbal diagnostics. This makes them more challenging to evaluate than single-turn LLM responses. It is therefore necessary to distinguish genuine disagreement between an agent's output and ..."
+        },
+        {
+          "title": "DDStereo: Efficient Dual Decoder Transformers for Stereo 3D Road Anomaly Detection",
+          "url": "https://arxiv.org/abs/2606.24805v1",
+          "authors": [
+            "Shiyi Mu",
+            "Zichong Gu",
+            "Zhiqi Ai",
+            "Yilin Gao"
+          ],
+          "more_authors": 1,
+          "cats": [
+            "cs.CV"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Stereo-based 3D object detection still faces two critical safety challenges: real-time performance and open-set generalization. Existing stereo 3D methods typically achieve twice the accuracy of monocular methods but suffer from significantly lower inference speeds, making them u..."
+        }
+      ],
       "notable_repos": [
         {
           "full_name": "twentyhq/twenty",
           "url": "https://github.com/twentyhq/twenty",
-          "stars": 51417,
+          "stars": 51450,
           "language": "TypeScript",
           "desc": "The open alternative to Salesforce, designed for AI."
         },
         {
           "full_name": "coreyhaines31/marketingskills",
           "url": "https://github.com/coreyhaines31/marketingskills",
-          "stars": 34757,
+          "stars": 34788,
           "language": "JavaScript",
           "desc": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering."
         },
         {
           "full_name": "ParthJadhav/app-store-screenshots",
           "url": "https://github.com/ParthJadhav/app-store-screenshots",
-          "stars": 5890,
+          "stars": 5891,
           "language": "TypeScript",
           "desc": "end to end app store screenshot creation using AI"
         },
         {
           "full_name": "YILS-LIN/short-video-factory",
           "url": "https://github.com/YILS-LIN/short-video-factory",
-          "stars": 4119,
+          "stars": 4118,
           "language": "TypeScript",
           "desc": "\u4e00\u952e\u751f\u6210\u4ea7\u54c1\u8425\u9500\u4e0e\u6cdb\u5185\u5bb9\u77ed\u89c6\u9891\uff0cAI\u6279\u91cf\u81ea\u52a8\u526a\u8f91\uff0c\u9ad8\u989c\u503c\u8de8\u5e73\u53f0\u684c\u9762\u7aef\u5de5\u5177 One click generation of product marketing and general content short videos, AI batch automatic cliping, beautiful cross pla"
         },
         {
           "full_name": "ericosiu/ai-marketing-skills",
           "url": "https://github.com/ericosiu/ai-marketing-skills",
-          "stars": 2706,
+          "stars": 2708,
           "language": "Python",
           "desc": "Open-source AI marketing skills \u2014 growth experiments, sales pipeline, content ops, outbound, SEO, and finance automation"
         },
         {
           "full_name": "yaojingang/yao-open-prompts",
           "url": "https://github.com/yaojingang/yao-open-prompts",
-          "stars": 2474,
+          "stars": 2476,
           "language": "Python",
           "desc": "Yao Open Prompts: A Chinese-language AI prompt library for work, learning, content, marketing, and everyday life."
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-24T02:52:16.147403+00:00"
+      "generated": "2026-06-24T08:52:20.946674+00:00"
     },
     {
       "topic": "autonomous agents",
       "summary_sources": [
         "Wikipedia",
         "Hacker News",
+        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -321,47 +618,142 @@
           "hn": "https://news.ycombinator.com/item?id=41202064"
         }
       ],
-      "recent_papers": [],
+      "recent_papers": [
+        {
+          "title": "InSight: Self-Guided Skill Acquisition via Steerable VLAs",
+          "url": "https://arxiv.org/abs/2606.24884v1",
+          "authors": [
+            "Maggie Wang",
+            "Lars Osterberg",
+            "Stephen Tian",
+            "Ola Shorinwa"
+          ],
+          "more_authors": 2,
+          "cats": [
+            "cs.RO",
+            "cs.AI",
+            "cs.LG"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Vision-language-action (VLA) models can learn manipulation skills from demonstrations, but their capabilities are bounded by the skills in the training data. We present InSight, a framework that unlocks autonomous skill acquisition by rendering VLAs steerable at the primitive-act..."
+        },
+        {
+          "title": "\"Zooming In\" on Agentic Web Browsers as Assistive Technologies: A Case Study with a Low-Vision Technology Expert",
+          "url": "https://arxiv.org/abs/2606.24870v1",
+          "authors": [
+            "Laura Colazzo",
+            "Giuseppe Anzillotti"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.HC"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Agentic Web Browsers (AWBs), powered by Large Language Models (LLMs), are emerging as autonomous systems capable of navigating the Web on behalf of users. Beyond enhancing productivity, they could also offer significant promise as Assistive Technologies (ATs) for visually-impaire..."
+        },
+        {
+          "title": "Bounds for Standard Errors in Combined Data",
+          "url": "https://arxiv.org/abs/2606.24867v1",
+          "authors": [
+            "Jooyoung Cha",
+            "Yuya Sasaki",
+            "Nelson Matthew P. Tan"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "econ.EM"
+          ],
+          "published": "2026-06-23",
+          "abstract": "We propose methods for constructing lower bounds on the standard errors of parameters estimated from moment conditions obtained across different samples. Sharp explicit bounds are derived by exploiting geometric inequalities when no information about correlations across samples i..."
+        },
+        {
+          "title": "OpenThoughts-Agent: Data Recipes for Agentic Models",
+          "url": "https://arxiv.org/abs/2606.24855v1",
+          "authors": [
+            "Negin Raoof",
+            "Richard Zhuang",
+            "Marianna Nezhurina",
+            "Etash Guha"
+          ],
+          "more_authors": 46,
+          "cats": [
+            "cs.AI"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Agentic language models dramatically expand the applications of AI yet little is publicly known about how to curate training data for broadly capable agents. Existing open efforts such as SWE-Smith, SERA, and Nemotron-Terminal typically target a single benchmark, leaving open the..."
+        },
+        {
+          "title": "World Models in Pieces: Structural Certification for General Agents",
+          "url": "https://arxiv.org/abs/2606.24842v1",
+          "authors": [
+            "Yikai Lu",
+            "Yifei Wu",
+            "Xinyu Lu",
+            "Tongxin Li"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.AI"
+          ],
+          "published": "2026-06-23",
+          "abstract": "In the big-world regime, agents cannot be universally capable and their ability is inevitably specialized across a world model in pieces. Consequently, standard uniform guarantees fail to distinguish between the understanding of critical bottlenecks and irrelevant failures. We fi..."
+        },
+        {
+          "title": "Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System",
+          "url": "https://arxiv.org/abs/2606.24839v1",
+          "authors": [
+            "Tian Zheng",
+            "Kai-Tai Hsu"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.AI",
+            "stat.AP"
+          ],
+          "published": "2026-06-23",
+          "abstract": "Agentic data analysis systems produce rich outputs, including code, numerical results, and verbal diagnostics. This makes them more challenging to evaluate than single-turn LLM responses. It is therefore necessary to distinguish genuine disagreement between an agent's output and ..."
+        }
+      ],
       "notable_repos": [
         {
           "full_name": "cline/cline",
           "url": "https://github.com/cline/cline",
-          "stars": 63778,
+          "stars": 63801,
           "language": "TypeScript",
           "desc": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant."
         },
         {
           "full_name": "ruvnet/ruflo",
           "url": "https://github.com/ruvnet/ruflo",
-          "stars": 61113,
+          "stars": 61152,
           "language": "TypeScript",
           "desc": "\ud83c\udf0a The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Featur"
         },
         {
           "full_name": "crewAIInc/crewAI",
           "url": "https://github.com/crewAIInc/crewAI",
-          "stars": 54249,
+          "stars": 54271,
           "language": "Python",
           "desc": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tac"
         },
         {
           "full_name": "CherryHQ/cherry-studio",
           "url": "https://github.com/CherryHQ/cherry-studio",
-          "stars": 47724,
+          "stars": 47741,
           "language": "TypeScript",
           "desc": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs"
         },
         {
           "full_name": "reworkd/AgentGPT",
           "url": "https://github.com/reworkd/AgentGPT",
-          "stars": 36218,
+          "stars": 36219,
           "language": "TypeScript",
           "desc": "\ud83e\udd16 Assemble, configure, and deploy autonomous AI Agents in your browser."
         },
         {
           "full_name": "khoj-ai/khoj",
           "url": "https://github.com/khoj-ai/khoj",
-          "stars": 35269,
+          "stars": 35277,
           "language": "Python",
           "desc": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or loca"
         }
@@ -371,7 +763,7 @@
         "extract": "An autonomous agent is an artificial intelligence (AI) system that can perform complex tasks independently.",
         "url": "https://en.wikipedia.org/wiki/Autonomous_agent"
       },
-      "generated": "2026-06-24T02:51:46.793312+00:00"
+      "generated": "2026-06-24T08:52:20.980169+00:00"
     }
   ]
 }
