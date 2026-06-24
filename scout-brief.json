@@ -2,7 +2,7 @@
   "agent": "scout",
   "service": "structured, cited research briefs",
   "sources": "Hacker News + arXiv + GitHub + Wikipedia (live, no key)",
-  "generated": "2026-06-24T14:52:26.109483+00:00",
+  "generated": "2026-06-24T20:52:31.432420+00:00",
   "briefs": [
     {
       "topic": "crypto trading bot",
@@ -155,48 +155,48 @@
         {
           "full_name": "freqtrade/freqtrade",
           "url": "https://github.com/freqtrade/freqtrade",
-          "stars": 51798,
+          "stars": 51807,
           "language": "Python",
           "desc": "Free, open source crypto trading bot"
         },
         {
           "full_name": "ccxt/ccxt",
           "url": "https://github.com/ccxt/ccxt",
-          "stars": 43040,
+          "stars": 43041,
           "language": "Python",
           "desc": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java "
         },
         {
           "full_name": "hummingbot/hummingbot",
           "url": "https://github.com/hummingbot/hummingbot",
-          "stars": 18972,
+          "stars": 18973,
           "language": "Python",
           "desc": "Open source software that helps you create and deploy high-frequency crypto trading bots"
         },
         {
           "full_name": "jesse-ai/jesse",
           "url": "https://github.com/jesse-ai/jesse",
-          "stars": 8083,
+          "stars": 8085,
           "language": "JavaScript",
           "desc": "An advanced crypto trading bot written in Python"
         },
         {
           "full_name": "Drakkar-Software/OctoBot",
           "url": "https://github.com/Drakkar-Software/OctoBot",
-          "stars": 6134,
+          "stars": 6136,
           "language": "Python",
           "desc": "Free open source crypto trading bot to automate AI, Grid, DCA and TradingView strategies on Binance, Hyperliquid and 15+ exchanges, with a simple interface."
         },
         {
           "full_name": "CryptoSignal/Crypto-Signal",
           "url": "https://github.com/CryptoSignal/Crypto-Signal",
-          "stars": 5582,
+          "stars": 5584,
           "language": "Python",
           "desc": "Github.com/CryptoSignal - Trading & Technical Analysis Bot - 4,100+ stars, 1,100+ forks"
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-24T14:52:25.948684+00:00"
+      "generated": "2026-06-24T20:52:30.926888+00:00"
     },
     {
       "topic": "dependency security",
@@ -350,7 +350,7 @@
         {
           "full_name": "DependencyTrack/dependency-track",
           "url": "https://github.com/DependencyTrack/dependency-track",
-          "stars": 3959,
+          "stars": 3960,
           "language": "Java",
           "desc": "Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain."
         },
@@ -384,7 +384,7 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-24T14:52:25.948684+00:00"
+      "generated": "2026-06-24T20:52:31.432420+00:00"
     },
     {
       "topic": "AI marketing",
@@ -530,21 +530,21 @@
         {
           "full_name": "twentyhq/twenty",
           "url": "https://github.com/twentyhq/twenty",
-          "stars": 51486,
+          "stars": 51528,
           "language": "TypeScript",
           "desc": "The open alternative to Salesforce, designed for AI."
         },
         {
           "full_name": "coreyhaines31/marketingskills",
           "url": "https://github.com/coreyhaines31/marketingskills",
-          "stars": 34830,
+          "stars": 34870,
           "language": "JavaScript",
           "desc": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering."
         },
         {
           "full_name": "ParthJadhav/app-store-screenshots",
           "url": "https://github.com/ParthJadhav/app-store-screenshots",
-          "stars": 5887,
+          "stars": 5888,
           "language": "TypeScript",
           "desc": "end to end app store screenshot creation using AI"
         },
@@ -558,7 +558,7 @@
         {
           "full_name": "ericosiu/ai-marketing-skills",
           "url": "https://github.com/ericosiu/ai-marketing-skills",
-          "stars": 2708,
+          "stars": 2709,
           "language": "Python",
           "desc": "Open-source AI marketing skills \u2014 growth experiments, sales pipeline, content ops, outbound, SEO, and finance automation"
         },
@@ -571,7 +571,7 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-24T14:52:25.960212+00:00"
+      "generated": "2026-06-24T20:52:30.923544+00:00"
     },
     {
       "topic": "autonomous agents",
@@ -718,28 +718,28 @@
         {
           "full_name": "cline/cline",
           "url": "https://github.com/cline/cline",
-          "stars": 63821,
+          "stars": 63851,
           "language": "TypeScript",
           "desc": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant."
         },
         {
           "full_name": "ruvnet/ruflo",
           "url": "https://github.com/ruvnet/ruflo",
-          "stars": 61198,
+          "stars": 61246,
           "language": "TypeScript",
           "desc": "\ud83c\udf0a The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Featur"
         },
         {
           "full_name": "crewAIInc/crewAI",
           "url": "https://github.com/crewAIInc/crewAI",
-          "stars": 54291,
+          "stars": 54306,
           "language": "Python",
           "desc": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tac"
         },
         {
           "full_name": "CherryHQ/cherry-studio",
           "url": "https://github.com/CherryHQ/cherry-studio",
-          "stars": 47749,
+          "stars": 47751,
           "language": "TypeScript",
           "desc": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs"
         },
@@ -753,7 +753,7 @@
         {
           "full_name": "khoj-ai/khoj",
           "url": "https://github.com/khoj-ai/khoj",
-          "stars": 35281,
+          "stars": 35282,
           "language": "Python",
           "desc": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or loca"
         }
@@ -763,7 +763,7 @@
         "extract": "An autonomous agent is an artificial intelligence (AI) system that can perform complex tasks independently.",
         "url": "https://en.wikipedia.org/wiki/Autonomous_agent"
       },
-      "generated": "2026-06-24T14:52:26.109483+00:00"
+      "generated": "2026-06-24T20:52:31.122405+00:00"
     }
   ]
 }
