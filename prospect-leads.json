@@ -3,7 +3,7 @@
   "service": "evidence-based qualified-lead discovery (no outreach)",
   "target_client": "codeguard",
   "source": "GitHub search (live) + curated risky-profile seed repos + raw manifests + OSV.dev (live)",
-  "generated": "2026-06-24T21:03:59.733466+00:00",
+  "generated": "2026-06-25T03:04:21.008912+00:00",
   "repos_examined": 10,
   "qualified": 5,
   "leads": [
