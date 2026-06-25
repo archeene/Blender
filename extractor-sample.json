@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-24T14:50:31.524337+00:00",
+  "generated": "2026-06-25T02:50:40.530494+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-24T14:50:25.791075+00:00",
+      "fetched_at": "2026-06-25T02:50:33.178575+00:00",
       "content_type": "text/html",
-      "content_length": 34263,
+      "content_length": 34723,
       "size_capped": false,
-      "latency_ms": 1974,
+      "latency_ms": 2476,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,40 +29,44 @@
         }
       },
       "links": {
-        "total": 196,
-        "internal": 163,
+        "total": 197,
+        "internal": 164,
         "external": 33,
         "top_external_domains": [
+          {
+            "domain": "github.com",
+            "count": 3
+          },
+          {
+            "domain": "reuters.com",
+            "count": 2
+          },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "bunny.net",
+            "domain": "techcrunch.com",
             "count": 1
           },
           {
-            "domain": "ben-mini.com",
+            "domain": "blog.jim-nielsen.com",
             "count": 1
           },
           {
-            "domain": "krea.ai",
-            "count": 1
-          },
-          {
-            "domain": "astral-os.org",
-            "count": 1
-          },
-          {
-            "domain": "haystack.deepset.ai",
+            "domain": "crosscanon.com",
             "count": 1
           }
         ]
       },
-      "image_count": 3,
-      "word_count": 655,
+      "image_count": 2,
+      "word_count": 656,
       "reading_time_min": 3,
       "keywords": [
+        {
+          "term": "points",
+          "count": 30
+        },
         {
           "term": "ago",
           "count": 30
@@ -72,24 +76,16 @@
           "count": 30
         },
         {
-          "term": "points",
-          "count": 29
-        },
-        {
           "term": "comments",
-          "count": 27
+          "count": 28
         },
         {
           "term": "hours",
-          "count": 25
+          "count": 23
         },
         {
           "term": "hour",
-          "count": 3
-        },
-        {
-          "term": "discuss",
-          "count": 3
+          "count": 7
         },
         {
           "term": "hacker",
@@ -100,15 +96,19 @@
           "count": 2
         },
         {
-          "term": "free",
+          "term": "luajit",
           "count": 2
         },
         {
-          "term": "minutes",
+          "term": "github.com",
           "count": 2
         },
         {
-          "term": "production",
+          "term": "model",
+          "count": 2
+        },
+        {
+          "term": "reuters.com",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "We're making Bunny DNS free: because a faster internet won't build itself (bunny.net)"
+            "LuaJIT 3.0 proposed syntax extensions (github.com/luajit)"
           ],
           [
             "",
-            "503 points by dabinat 5 hours ago | hide | 169 comments"
+            "69 points by phreddypharkus 2 hours ago | hide | 34 comments"
           ],
           [
             "2.",
             "",
-            "Stealing Is a Skill (ben-mini.com)"
+            "OpenAI unveils its first custom chip, built by Broadcom (techcrunch.com)"
           ],
           [
             "",
-            "46 points by bewal416 1 hour ago | hide | 28 comments"
+            "560 points by jamdesk 9 hours ago | hide | 341 comments"
           ],
           [
             "3.",
             "",
-            "Krea 2 Technical Report (krea.ai)"
+            "Blogging can just be stating the obvious (jim-nielsen.com)"
           ],
           [
             "",
-            "97 points by mattnewton 3 hours ago | hide | 6 comments"
+            "88 points by Curiositry 3 hours ago | hide | 36 comments"
           ],
           [
             "4.",
             "",
-            "Running Windows Games on a Hobby OS with Wine (astral-os.org)"
+            "Bible as RAG Database (crosscanon.com)"
           ],
           [
             "",
-            "3 points by avaliosdev 11 minutes ago | hide | discuss"
+            "35 points by jacksonastone 1 hour ago | hide | 14 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-24T14:50:27.786493+00:00",
+      "fetched_at": "2026-06-25T02:50:35.683383+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 736,
+      "latency_ms": 949,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-24T14:50:28.529804+00:00",
+      "fetched_at": "2026-06-25T02:50:36.632802+00:00",
       "content_type": "text/html",
       "content_length": 168220,
       "size_capped": false,
-      "latency_ms": 1584,
+      "latency_ms": 1844,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-24T14:50:30.139999+00:00",
+      "fetched_at": "2026-06-25T02:50:38.507985+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1375,
+      "latency_ms": 2014,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
