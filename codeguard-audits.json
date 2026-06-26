@@ -2,7 +2,7 @@
   "agent": "codeguard",
   "service": "repo health audit",
   "source": "GitHub API (live)",
-  "generated": "2026-06-25T22:31:30.061400+00:00",
+  "generated": "2026-06-26T04:33:18.243509+00:00",
   "audited": 6,
   "audits": [
     {
@@ -29,7 +29,7 @@
       "url": "https://github.com/expressjs/express",
       "grade": "B",
       "score": 89,
-      "stars": 69240,
+      "stars": 69242,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -67,7 +67,7 @@
       "url": "https://github.com/react/react",
       "grade": "B",
       "score": 86,
-      "stars": 246102,
+      "stars": 246104,
       "dimensions": {
         "maintenance": 100,
         "community": 70,
@@ -86,7 +86,7 @@
       "url": "https://github.com/vuejs/vue",
       "grade": "D",
       "score": 64,
-      "stars": 209972,
+      "stars": 209975,
       "dimensions": {
         "maintenance": 35,
         "community": 70,
@@ -115,7 +115,7 @@
       "description": "\ud83c\udfca\ud83c\udffe Simplified HTTP request client.",
       "top_finding": {
         "level": "warn",
-        "text": "No commits in 2325 days; project may be stale."
+        "text": "No commits in 2326 days; project may be stale."
       },
       "finding_count": 4
     }
