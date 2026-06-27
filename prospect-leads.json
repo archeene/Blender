@@ -3,7 +3,7 @@
   "service": "evidence-based qualified-lead discovery (no outreach)",
   "target_client": "codeguard",
   "source": "GitHub search (live) + curated risky-profile seed repos + raw manifests + OSV.dev (live)",
-  "generated": "2026-06-27T09:07:48.255305+00:00",
+  "generated": "2026-06-27T15:08:09.977012+00:00",
   "repos_examined": 10,
   "qualified": 5,
   "leads": [
@@ -18,16 +18,16 @@
         {
           "name": "aiohttp",
           "pinned": "3.5.3",
-          "cve_count": 50,
+          "cve_count": 51,
           "sample_cve": "CVE-2026-54279",
           "sample_summary": "aiohttp: Host-Only Cookies Become Domain Cookies After CookieJar Persistence",
           "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:N/SA:N/E:U"
         }
       ],
-      "total_cves": 50,
-      "lead_score": 500,
+      "total_cves": 51,
+      "lead_score": 510,
       "qualified": true,
-      "pitch": "anxolerd/dvpwa pins aiohttp 3.5.3 -> 50 known CVEs (CVE-2026-54279); 50 known CVEs across 1 pinned dep. codeguard's continuous CVE monitoring would catch these."
+      "pitch": "anxolerd/dvpwa pins aiohttp 3.5.3 -> 51 known CVEs (CVE-2026-54279); 51 known CVEs across 1 pinned dep. codeguard's continuous CVE monitoring would catch these."
     },
     {
       "repo": "mpirnat/lets-be-bad-guys",
