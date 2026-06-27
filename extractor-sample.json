@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-27T02:51:16.748073+00:00",
+  "generated": "2026-06-27T14:51:26.563548+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-27T02:51:09.786150+00:00",
+      "fetched_at": "2026-06-27T14:51:19.522316+00:00",
       "content_type": "text/html",
-      "content_length": 34725,
+      "content_length": 34927,
       "size_capped": false,
-      "latency_ms": 2339,
+      "latency_ms": 2314,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,47 +29,51 @@
         }
       },
       "links": {
-        "total": 192,
-        "internal": 160,
-        "external": 32,
+        "total": 195,
+        "internal": 162,
+        "external": 33,
         "top_external_domains": [
           {
-            "domain": "github.com",
-            "count": 5
+            "domain": "ycombinator.com",
+            "count": 3
           },
           {
-            "domain": "ycombinator.com",
+            "domain": "github.com",
             "count": 2
           },
           {
-            "domain": "openai.com",
+            "domain": "openra.net",
             "count": 1
           },
           {
-            "domain": "physics.stackexchange.com",
+            "domain": "w.pitula.me",
             "count": 1
           },
           {
-            "domain": "popflame.quickish.space",
+            "domain": "cephalosec.com",
             "count": 1
           },
           {
-            "domain": "spectrum.ieee.org",
+            "domain": "economist.com",
             "count": 1
           }
         ]
       },
       "image_count": 3,
-      "word_count": 679,
+      "word_count": 659,
       "reading_time_min": 3,
       "keywords": [
         {
           "term": "ago",
-          "count": 31
+          "count": 30
         },
         {
           "term": "hide",
           "count": 30
+        },
+        {
+          "term": "comments",
+          "count": 29
         },
         {
           "term": "points",
@@ -77,38 +81,34 @@
         },
         {
           "term": "hours",
-          "count": 29
-        },
-        {
-          "term": "comments",
-          "count": 26
-        },
-        {
-          "term": "github.com",
-          "count": 4
+          "count": 27
         },
         {
           "term": "hacker",
-          "count": 3
+          "count": 2
         },
         {
           "term": "news",
-          "count": 3
-        },
-        {
-          "term": "model",
           "count": 2
         },
         {
-          "term": "discuss",
+          "term": "signa11",
           "count": 2
         },
         {
-          "term": "hash",
+          "term": "failed",
           "count": 2
         },
         {
-          "term": "set",
+          "term": "faster",
+          "count": 2
+        },
+        {
+          "term": "search",
+          "count": 2
+        },
+        {
+          "term": "u.s",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Previewing GPT\u20115.6 Sol: a next-generation model (openai.com)"
+            "DSpark: Speculative decoding accelerates LLM inference [pdf] (github.com/deepseek-ai)"
           ],
           [
             "",
-            "868 points by minimaxir 9 hours ago | hide | 521 comments"
+            "554 points by aurenvale 5 hours ago | hide | 215 comments"
           ],
           [
             "2.",
             "",
-            "Why does kinetic energy increase quadratically, not linearly, with speed? (2011) (physics.stackexchange.com)"
+            "OpenRA (openra.net)"
           ],
           [
             "",
-            "104 points by ProxyTracer 4 hours ago | hide | 44 comments"
+            "150 points by tosh 2 hours ago | hide | 40 comments"
           ],
           [
             "3.",
             "",
-            "Show HN: Hacker News on a Train Station Style Flip Board (quickish.space)"
+            "Fintech Engineering Handbook (pitula.me)"
           ],
           [
             "",
-            "15 points by PaybackTony 2 hours ago | hide | discuss"
+            "221 points by signa11 4 hours ago | hide | 71 comments"
           ],
           [
             "4.",
             "",
-            "A C++ implementation of a fast hash map and hash set using hopscotch hashing (github.com/tessil)"
+            "Post-Mythos Cybersecurity: Keep calm and carry on (cephalosec.com)"
           ],
           [
             "",
-            "70 points by gjvc 5 hours ago | hide | 11 comments"
+            "10 points by Versipelle 26 minutes ago | hide | 2 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-27T02:51:12.148376+00:00",
+      "fetched_at": "2026-06-27T14:51:21.863451+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 903,
+      "latency_ms": 1010,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-27T02:51:13.052369+00:00",
+      "fetched_at": "2026-06-27T14:51:22.874711+00:00",
       "content_type": "text/html",
       "content_length": 168220,
       "size_capped": false,
-      "latency_ms": 1744,
+      "latency_ms": 1948,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-27T02:51:14.828249+00:00",
+      "fetched_at": "2026-06-27T14:51:24.850863+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1911,
+      "latency_ms": 1705,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
