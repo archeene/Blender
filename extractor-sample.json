@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-25T14:50:49.598759+00:00",
+  "generated": "2026-06-27T02:51:16.748073+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-25T14:50:42.828499+00:00",
+      "fetched_at": "2026-06-27T02:51:09.786150+00:00",
       "content_type": "text/html",
-      "content_length": 34689,
+      "content_length": 34725,
       "size_capped": false,
-      "latency_ms": 2235,
+      "latency_ms": 2339,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,86 +29,86 @@
         }
       },
       "links": {
-        "total": 193,
-        "internal": 162,
-        "external": 31,
+        "total": 192,
+        "internal": 160,
+        "external": 32,
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 4
-          },
-          {
-            "domain": "reuters.com",
-            "count": 2
+            "count": 5
           },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "dev.karltryggvason.com",
+            "domain": "openai.com",
             "count": 1
           },
           {
-            "domain": "hl2.slqnt.dev",
+            "domain": "physics.stackexchange.com",
             "count": 1
           },
           {
-            "domain": "economist.com",
+            "domain": "popflame.quickish.space",
+            "count": 1
+          },
+          {
+            "domain": "spectrum.ieee.org",
             "count": 1
           }
         ]
       },
-      "image_count": 2,
-      "word_count": 665,
+      "image_count": 3,
+      "word_count": 679,
       "reading_time_min": 3,
       "keywords": [
         {
-          "term": "comments",
-          "count": 30
-        },
-        {
-          "term": "points",
-          "count": 30
-        },
-        {
           "term": "ago",
-          "count": 30
+          "count": 31
         },
         {
           "term": "hide",
           "count": 30
         },
         {
+          "term": "points",
+          "count": 29
+        },
+        {
           "term": "hours",
-          "count": 25
+          "count": 29
+        },
+        {
+          "term": "comments",
+          "count": 26
         },
         {
           "term": "github.com",
-          "count": 3
-        },
-        {
-          "term": "words",
-          "count": 3
+          "count": 4
         },
         {
           "term": "hacker",
-          "count": 2
+          "count": 3
         },
         {
           "term": "news",
+          "count": 3
+        },
+        {
+          "term": "model",
           "count": 2
         },
         {
-          "term": "reuters.com",
+          "term": "discuss",
           "count": 2
         },
         {
-          "term": "openai",
+          "term": "hash",
           "count": 2
         },
         {
-          "term": "hour",
+          "term": "set",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "You can't unit test for taste (karltryggvason.com)"
+            "Previewing GPT\u20115.6 Sol: a next-generation model (openai.com)"
           ],
           [
             "",
-            "106 points by kalli 2 hours ago | hide | 40 comments"
+            "868 points by minimaxir 9 hours ago | hide | 521 comments"
           ],
           [
             "2.",
             "",
-            "Half-Life 2 in a Browser (slqnt.dev)"
+            "Why does kinetic energy increase quadratically, not linearly, with speed? (2011) (physics.stackexchange.com)"
           ],
           [
             "",
-            "457 points by panza 8 hours ago | hide | 186 comments"
+            "104 points by ProxyTracer 4 hours ago | hide | 44 comments"
           ],
           [
             "3.",
             "",
-            "The Disappearance of Japan's Animators (economist.com)"
+            "Show HN: Hacker News on a Train Station Style Flip Board (quickish.space)"
           ],
           [
             "",
-            "36 points by andsoitis 2 hours ago | hide | 24 comments"
+            "15 points by PaybackTony 2 hours ago | hide | discuss"
           ],
           [
             "4.",
             "",
-            "Show HN: Turn native language audio into flashcards and shadowing practice (lingochunk.com)"
+            "A C++ implementation of a fast hash map and hash set using hopscotch hashing (github.com/tessil)"
           ],
           [
             "",
-            "24 points by alder 2 hours ago | hide | 10 comments"
+            "70 points by gjvc 5 hours ago | hide | 11 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-25T14:50:45.087698+00:00",
+      "fetched_at": "2026-06-27T02:51:12.148376+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 908,
+      "latency_ms": 903,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-25T14:50:45.996837+00:00",
+      "fetched_at": "2026-06-27T02:51:13.052369+00:00",
       "content_type": "text/html",
       "content_length": 168220,
       "size_capped": false,
-      "latency_ms": 1751,
+      "latency_ms": 1744,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-25T14:50:47.774471+00:00",
+      "fetched_at": "2026-06-27T02:51:14.828249+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1818,
+      "latency_ms": 1911,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
