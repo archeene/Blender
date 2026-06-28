@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-28T02:51:38.543896+00:00",
+  "generated": "2026-06-28T16:06:22.735174+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-28T02:51:31.148247+00:00",
+      "fetched_at": "2026-06-28T16:06:15.460010+00:00",
       "content_type": "text/html",
-      "content_length": 34670,
+      "content_length": 35556,
       "size_capped": false,
-      "latency_ms": 2360,
+      "latency_ms": 2496,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,40 +29,48 @@
         }
       },
       "links": {
-        "total": 194,
-        "internal": 161,
+        "total": 197,
+        "internal": 164,
         "external": 33,
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 5
+            "count": 8
           },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "marfapublicradio.org",
+            "domain": "pudding.cool",
             "count": 1
           },
           {
-            "domain": "decomp-academy.dev",
+            "domain": "aresluna.org",
             "count": 1
           },
           {
-            "domain": "evilbit.de",
+            "domain": "patrick-breyer.de",
             "count": 1
           },
           {
-            "domain": "openra.net",
+            "domain": "engadget.com",
             "count": 1
           }
         ]
       },
-      "image_count": 3,
-      "word_count": 654,
+      "image_count": 2,
+      "word_count": 687,
       "reading_time_min": 3,
       "keywords": [
+        {
+          "term": "comments",
+          "count": 30
+        },
+        {
+          "term": "points",
+          "count": 30
+        },
         {
           "term": "ago",
           "count": 30
@@ -72,32 +80,16 @@
           "count": 30
         },
         {
-          "term": "points",
-          "count": 29
-        },
-        {
           "term": "hours",
-          "count": 27
-        },
-        {
-          "term": "comments",
-          "count": 26
+          "count": 22
         },
         {
           "term": "github.com",
-          "count": 4
+          "count": 7
         },
         {
-          "term": "public",
-          "count": 3
-        },
-        {
-          "term": "comment",
-          "count": 3
-        },
-        {
-          "term": "keep",
-          "count": 3
+          "term": "hour",
+          "count": 6
         },
         {
           "term": "hacker",
@@ -108,7 +100,15 @@
           "count": 2
         },
         {
-          "term": "jobs",
+          "term": "open",
+          "count": 2
+        },
+        {
+          "term": "openai",
+          "count": 2
+        },
+        {
+          "term": "public",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "AMD Strix Halo RDMA Cluster Setup Guide (github.com/kyuz0)"
+            "EU Open Sources Ten-Year Network Development Planning Tools (github.com/open-energy-transition)"
           ],
           [
             "",
-            "45 points by jakogut 2 hours ago | hide | 2 comments"
+            "107 points by lyoncy 1 hour ago | hide | 26 comments"
           ],
           [
             "2.",
             "",
-            "Marfa Public Radio Puts You to Sleep (marfapublicradio.org)"
+            "5k Restaurant Menus, Years 1880-1920 (pudding.cool)"
           ],
           [
             "",
-            "9 points by reaperducer 26 minutes ago | hide | discuss"
+            "67 points by xbryanx 1 hour ago | hide | 16 comments"
           ],
           [
             "3.",
             "",
-            "Show HN: Decomp Academy \u2013 Learn to decompile GameCube games into matching C (decomp-academy.dev)"
+            "The curious case of the disappearing Polish S (2015) (aresluna.org)"
           ],
           [
             "",
-            "32 points by jackpriceburns 1 hour ago | hide | 10 comments"
+            "92 points by colinprince 3 hours ago | hide | 25 comments"
           ],
           [
             "4.",
             "",
-            "Choosing a Public DNS Resolver (evilbit.de)"
+            "EU to legislate about Chat Control behind closed doors (patrick-breyer.de)"
           ],
           [
             "",
-            "71 points by pawal 4 hours ago | hide | 23 comments"
+            "145 points by NeutralForest 1 hour ago | hide | 58 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-28T02:51:33.534555+00:00",
+      "fetched_at": "2026-06-28T16:06:18.018790+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 1207,
+      "latency_ms": 802,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-28T02:51:34.742701+00:00",
+      "fetched_at": "2026-06-28T16:06:18.821847+00:00",
       "content_type": "text/html",
       "content_length": 168220,
       "size_capped": false,
-      "latency_ms": 1949,
+      "latency_ms": 2055,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-28T02:51:36.718543+00:00",
+      "fetched_at": "2026-06-28T16:06:20.906283+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1818,
+      "latency_ms": 1821,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
