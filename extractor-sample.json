@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-27T14:51:26.563548+00:00",
+  "generated": "2026-06-28T02:51:38.543896+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-27T14:51:19.522316+00:00",
+      "fetched_at": "2026-06-28T02:51:31.148247+00:00",
       "content_type": "text/html",
-      "content_length": 34927,
+      "content_length": 34670,
       "size_capped": false,
-      "latency_ms": 2314,
+      "latency_ms": 2360,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,38 +29,38 @@
         }
       },
       "links": {
-        "total": 195,
-        "internal": 162,
+        "total": 194,
+        "internal": 161,
         "external": 33,
         "top_external_domains": [
           {
-            "domain": "ycombinator.com",
-            "count": 3
+            "domain": "github.com",
+            "count": 5
           },
           {
-            "domain": "github.com",
+            "domain": "ycombinator.com",
             "count": 2
           },
           {
+            "domain": "marfapublicradio.org",
+            "count": 1
+          },
+          {
+            "domain": "decomp-academy.dev",
+            "count": 1
+          },
+          {
+            "domain": "evilbit.de",
+            "count": 1
+          },
+          {
             "domain": "openra.net",
-            "count": 1
-          },
-          {
-            "domain": "w.pitula.me",
-            "count": 1
-          },
-          {
-            "domain": "cephalosec.com",
-            "count": 1
-          },
-          {
-            "domain": "economist.com",
             "count": 1
           }
         ]
       },
       "image_count": 3,
-      "word_count": 659,
+      "word_count": 654,
       "reading_time_min": 3,
       "keywords": [
         {
@@ -72,16 +72,32 @@
           "count": 30
         },
         {
-          "term": "comments",
-          "count": 29
-        },
-        {
           "term": "points",
           "count": 29
         },
         {
           "term": "hours",
           "count": 27
+        },
+        {
+          "term": "comments",
+          "count": 26
+        },
+        {
+          "term": "github.com",
+          "count": 4
+        },
+        {
+          "term": "public",
+          "count": 3
+        },
+        {
+          "term": "comment",
+          "count": 3
+        },
+        {
+          "term": "keep",
+          "count": 3
         },
         {
           "term": "hacker",
@@ -92,23 +108,7 @@
           "count": 2
         },
         {
-          "term": "signa11",
-          "count": 2
-        },
-        {
-          "term": "failed",
-          "count": 2
-        },
-        {
-          "term": "faster",
-          "count": 2
-        },
-        {
-          "term": "search",
-          "count": 2
-        },
-        {
-          "term": "u.s",
+          "term": "jobs",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "DSpark: Speculative decoding accelerates LLM inference [pdf] (github.com/deepseek-ai)"
+            "AMD Strix Halo RDMA Cluster Setup Guide (github.com/kyuz0)"
           ],
           [
             "",
-            "554 points by aurenvale 5 hours ago | hide | 215 comments"
+            "45 points by jakogut 2 hours ago | hide | 2 comments"
           ],
           [
             "2.",
             "",
-            "OpenRA (openra.net)"
+            "Marfa Public Radio Puts You to Sleep (marfapublicradio.org)"
           ],
           [
             "",
-            "150 points by tosh 2 hours ago | hide | 40 comments"
+            "9 points by reaperducer 26 minutes ago | hide | discuss"
           ],
           [
             "3.",
             "",
-            "Fintech Engineering Handbook (pitula.me)"
+            "Show HN: Decomp Academy \u2013 Learn to decompile GameCube games into matching C (decomp-academy.dev)"
           ],
           [
             "",
-            "221 points by signa11 4 hours ago | hide | 71 comments"
+            "32 points by jackpriceburns 1 hour ago | hide | 10 comments"
           ],
           [
             "4.",
             "",
-            "Post-Mythos Cybersecurity: Keep calm and carry on (cephalosec.com)"
+            "Choosing a Public DNS Resolver (evilbit.de)"
           ],
           [
             "",
-            "10 points by Versipelle 26 minutes ago | hide | 2 comments"
+            "71 points by pawal 4 hours ago | hide | 23 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-27T14:51:21.863451+00:00",
+      "fetched_at": "2026-06-28T02:51:33.534555+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 1010,
+      "latency_ms": 1207,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-27T14:51:22.874711+00:00",
+      "fetched_at": "2026-06-28T02:51:34.742701+00:00",
       "content_type": "text/html",
       "content_length": 168220,
       "size_capped": false,
-      "latency_ms": 1948,
+      "latency_ms": 1949,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-27T14:51:24.850863+00:00",
+      "fetched_at": "2026-06-28T02:51:36.718543+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1705,
+      "latency_ms": 1818,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
