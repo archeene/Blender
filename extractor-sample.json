@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-28T16:06:22.735174+00:00",
+  "generated": "2026-06-29T04:06:33.940260+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-28T16:06:15.460010+00:00",
+      "fetched_at": "2026-06-29T04:06:27.041801+00:00",
       "content_type": "text/html",
-      "content_length": 35556,
+      "content_length": 34984,
       "size_capped": false,
-      "latency_ms": 2496,
+      "latency_ms": 2469,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -35,38 +35,34 @@
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 8
+            "count": 6
           },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "pudding.cool",
+            "domain": "nonogra.ph",
             "count": 1
           },
           {
-            "domain": "aresluna.org",
+            "domain": "semgrep.dev",
             "count": 1
           },
           {
-            "domain": "patrick-breyer.de",
+            "domain": "betterimagesofai.org",
             "count": 1
           },
           {
-            "domain": "engadget.com",
+            "domain": "dam.stanford.edu",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 687,
+      "word_count": 674,
       "reading_time_min": 3,
       "keywords": [
-        {
-          "term": "comments",
-          "count": 30
-        },
         {
           "term": "points",
           "count": 30
@@ -80,16 +76,16 @@
           "count": 30
         },
         {
+          "term": "comments",
+          "count": 29
+        },
+        {
           "term": "hours",
-          "count": 22
+          "count": 28
         },
         {
           "term": "github.com",
-          "count": 7
-        },
-        {
-          "term": "hour",
-          "count": 6
+          "count": 5
         },
         {
           "term": "hacker",
@@ -100,15 +96,19 @@
           "count": 2
         },
         {
-          "term": "open",
+          "term": "age",
           "count": 2
         },
         {
-          "term": "openai",
+          "term": "comment",
           "count": 2
         },
         {
-          "term": "public",
+          "term": "claude",
+          "count": 2
+        },
+        {
+          "term": "code",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "EU Open Sources Ten-Year Network Development Planning Tools (github.com/open-energy-transition)"
+            "Age verification is just a precursor to automated attribution of speech (nonogra.ph)"
           ],
           [
             "",
-            "107 points by lyoncy 1 hour ago | hide | 26 comments"
+            "44 points by arkhiver 22 minutes ago | hide | 1 comment"
           ],
           [
             "2.",
             "",
-            "5k Restaurant Menus, Years 1880-1920 (pudding.cool)"
+            "GLM 5.2 beats Claude in our benchmarks (semgrep.dev)"
           ],
           [
             "",
-            "67 points by xbryanx 1 hour ago | hide | 16 comments"
+            "574 points by jms703 10 hours ago | hide | 269 comments"
           ],
           [
             "3.",
             "",
-            "The curious case of the disappearing Polish S (2015) (aresluna.org)"
+            "Better Images of AI (betterimagesofai.org)"
           ],
           [
             "",
-            "92 points by colinprince 3 hours ago | hide | 25 comments"
+            "36 points by Curiositry 4 hours ago | hide | 18 comments"
           ],
           [
             "4.",
             "",
-            "EU to legislate about Chat Control behind closed doors (patrick-breyer.de)"
+            "Historical memory prices 1960-2026 (stanford.edu)"
           ],
           [
             "",
-            "145 points by NeutralForest 1 hour ago | hide | 58 comments"
+            "220 points by vga1 9 hours ago | hide | 83 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-28T16:06:18.018790+00:00",
+      "fetched_at": "2026-06-29T04:06:29.537269+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 802,
+      "latency_ms": 804,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-28T16:06:18.821847+00:00",
+      "fetched_at": "2026-06-29T04:06:30.341468+00:00",
       "content_type": "text/html",
       "content_length": 168220,
       "size_capped": false,
-      "latency_ms": 2055,
+      "latency_ms": 1944,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-28T16:06:20.906283+00:00",
+      "fetched_at": "2026-06-29T04:06:32.312357+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1821,
+      "latency_ms": 1620,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
