@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-29T04:06:33.940260+00:00",
+  "generated": "2026-06-29T16:06:43.631933+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-29T04:06:27.041801+00:00",
+      "fetched_at": "2026-06-29T16:06:36.051943+00:00",
       "content_type": "text/html",
-      "content_length": 34984,
+      "content_length": 34861,
       "size_capped": false,
-      "latency_ms": 2469,
+      "latency_ms": 1955,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,38 +29,38 @@
         }
       },
       "links": {
-        "total": 197,
-        "internal": 164,
+        "total": 198,
+        "internal": 165,
         "external": 33,
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 6
+            "count": 2
           },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "nonogra.ph",
+            "domain": "investors.rocketlabcorp.com",
             "count": 1
           },
           {
-            "domain": "semgrep.dev",
+            "domain": "humphri.es",
             "count": 1
           },
           {
-            "domain": "betterimagesofai.org",
+            "domain": "fergusfinn.com",
             "count": 1
           },
           {
-            "domain": "dam.stanford.edu",
+            "domain": "cachyos.org",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 674,
+      "word_count": 643,
       "reading_time_min": 3,
       "keywords": [
         {
@@ -77,15 +77,23 @@
         },
         {
           "term": "comments",
-          "count": 29
+          "count": 27
         },
         {
           "term": "hours",
-          "count": 28
+          "count": 24
         },
         {
-          "term": "github.com",
+          "term": "hour",
           "count": 5
+        },
+        {
+          "term": "discuss",
+          "count": 3
+        },
+        {
+          "term": "memory",
+          "count": 3
         },
         {
           "term": "hacker",
@@ -96,19 +104,11 @@
           "count": 2
         },
         {
-          "term": "age",
+          "term": "beats",
           "count": 2
         },
         {
-          "term": "comment",
-          "count": 2
-        },
-        {
-          "term": "claude",
-          "count": 2
-        },
-        {
-          "term": "code",
+          "term": "library",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Age verification is just a precursor to automated attribution of speech (nonogra.ph)"
+            "Rocketlab acquires Iridium (rocketlabcorp.com)"
           ],
           [
             "",
-            "44 points by arkhiver 22 minutes ago | hide | 1 comment"
+            "84 points by everfrustrated 1 hour ago | hide | 47 comments"
           ],
           [
             "2.",
             "",
-            "GLM 5.2 beats Claude in our benchmarks (semgrep.dev)"
+            "WATaBoy: JIT-Ing Game Boy Instructions to WASM Beats a Native Interpreter (humphri.es)"
           ],
           [
             "",
-            "574 points by jms703 10 hours ago | hide | 269 comments"
+            "36 points by energeticbark 1 hour ago | hide | discuss"
           ],
           [
             "3.",
             "",
-            "Better Images of AI (betterimagesofai.org)"
+            "What happens when you run a CUDA kernel? (fergusfinn.com)"
           ],
           [
             "",
-            "36 points by Curiositry 4 hours ago | hide | 18 comments"
+            "76 points by mezark 2 hours ago | hide | 4 comments"
           ],
           [
             "4.",
             "",
-            "Historical memory prices 1960-2026 (stanford.edu)"
+            "CachyOS June 2026 Release (cachyos.org)"
           ],
           [
             "",
-            "220 points by vga1 9 hours ago | hide | 83 comments"
+            "36 points by simonpure 2 hours ago | hide | 11 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-29T04:06:29.537269+00:00",
+      "fetched_at": "2026-06-29T16:06:38.029137+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 804,
+      "latency_ms": 731,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-29T04:06:30.341468+00:00",
+      "fetched_at": "2026-06-29T16:06:38.761353+00:00",
       "content_type": "text/html",
-      "content_length": 168220,
+      "content_length": 167532,
       "size_capped": false,
-      "latency_ms": 1944,
+      "latency_ms": 2553,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -335,8 +335,8 @@
         ]
       },
       "image_count": 10,
-      "word_count": 4716,
-      "reading_time_min": 21,
+      "word_count": 4700,
+      "reading_time_min": 20,
       "keywords": [
         {
           "term": "scraping",
@@ -391,7 +391,7 @@
         [
           [
             "",
-            "This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed.Find sources: \"Web scraping\" \u2013 news \u00b7 newspapers \u00b7 books \u00b7 scholar \u00b7 JSTOR (April 2023) (Learn how and when to remove this message)"
+            "This article needs more citations. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed.Find sources: \"Web scraping\" \u2013 news \u00b7 newspapers \u00b7 books \u00b7 scholar \u00b7 JSTOR (April 2023) (Learn how and when to remove this message)"
           ]
         ],
         [
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-29T04:06:32.312357+00:00",
+      "fetched_at": "2026-06-29T16:06:41.339906+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1620,
+      "latency_ms": 2285,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
