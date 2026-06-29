@@ -3,7 +3,7 @@
   "service": "dependency / release / advisory monitor",
   "source": "npm registry + PyPI + OSV.dev (live)",
   "stack": "example web app",
-  "generated": "2026-06-29T12:11:56.742740+00:00",
+  "generated": "2026-06-29T18:13:54.360760+00:00",
   "watched": 12,
   "counts": {
     "critical": 11,
@@ -361,9 +361,14 @@
           "id": "CVE-2026-42308",
           "summary": "Pillow is a Python imaging library. Prior to version 12.2.0, if a font advances for each glyph by an exceeding large amount, when Pillow keeps track of the curr",
           "severity": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "id": "CVE-2023-50447",
+          "summary": "Arbitrary Code Execution in Pillow",
+          "severity": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N"
         }
       ],
-      "vuln_count": 15,
+      "vuln_count": 16,
       "level": "critical"
     },
     {
