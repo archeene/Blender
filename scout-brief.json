@@ -2,12 +2,13 @@
   "agent": "scout",
   "service": "structured, cited research briefs",
   "sources": "Hacker News + arXiv + GitHub + Wikipedia (live, no key)",
-  "generated": "2026-06-29T04:09:38.471227+00:00",
+  "generated": "2026-06-29T10:09:44.467610+00:00",
   "briefs": [
     {
       "topic": "crypto trading bot",
       "summary_sources": [
         "Hacker News",
+        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -47,40 +48,140 @@
           "hn": "https://news.ycombinator.com/item?id=42136699"
         }
       ],
-      "recent_papers": [],
+      "recent_papers": [
+        {
+          "title": "Towards Automating Scientific Review with Google's Paper Assistant Tool",
+          "url": "https://arxiv.org/abs/2606.28277v1",
+          "authors": [
+            "Rajesh Jayaram",
+            "Drew Tyler",
+            "David Woodruff",
+            "Corinna Cortes"
+          ],
+          "more_authors": 3,
+          "cats": [
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "published": "2026-06-26",
+          "abstract": "Artificial intelligence is driving a revolution in scientific discovery, accelerating everything from hypothesis generation to mathematical theorem proving. However, this rapid acceleration is creating a systemic challenge: traditional human peer review cannot scale to match the ..."
+        },
+        {
+          "title": "Agent-Native Immune System: Architecture, Taxonomy, and Engineering",
+          "url": "https://arxiv.org/abs/2606.28270v1",
+          "authors": [
+            "Bo Shen",
+            "Lifeng Chang",
+            "Tianyuan Wei",
+            "Yunpeng Li"
+          ],
+          "more_authors": 6,
+          "cats": [
+            "cs.AI",
+            "cs.MA"
+          ],
+          "published": "2026-06-26",
+          "abstract": "The transition from static chat bots to autonomous agents--equipped with persistent memory, tool-use protocols, and multi-agent collaboration--has fundamentally expanded the AI threat landscape. Current defense mechanisms, such as perimeter security and training-time alignment, r..."
+        },
+        {
+          "title": "Humanizing Automatically Generated Unit Test Suites with LLM-Based Refactoring",
+          "url": "https://arxiv.org/abs/2606.28229v1",
+          "authors": [
+            "Wendk\u00fbuni C. Ou\u00e9draogo",
+            "Yinghua Li",
+            "Xueqi Dang",
+            "Pawe\u0142 Borsukiewicz"
+          ],
+          "more_authors": 5,
+          "cats": [
+            "cs.SE"
+          ],
+          "published": "2026-06-26",
+          "abstract": "Search-based test generation tools such as EvoSuite produce compilable and high-coverage unit tests at scale, but their suites are often hard to read and maintain. LLMs can generate more natural tests, yet direct generation remains brittle, with compilation rates of only 51-78% i..."
+        },
+        {
+          "title": "Star Formation and Accretion in Nearby Galaxies",
+          "url": "https://arxiv.org/abs/2606.28191v1",
+          "authors": [
+            "J. Moldon",
+            "A. Alberdi",
+            "M. Perez-Torres",
+            "G. Lucatelli"
+          ],
+          "more_authors": 10,
+          "cats": [
+            "astro-ph.GA"
+          ],
+          "published": "2026-06-26",
+          "abstract": "The appearance of galaxies is strongly dominated by two physical phenomena: star formation and accretion of material onto compact objects, primarily supermassive black holes. Nearby galaxies offer a unique window to study these processes in detail and with high spatial resolution..."
+        },
+        {
+          "title": "Optimizing Resource Costs: A Practical Guide to Achieving Target Security in Verifiable Blind Quantum Computing",
+          "url": "https://arxiv.org/abs/2606.28139v1",
+          "authors": [
+            "Janice van Dam",
+            "Micha\u0142 van Hooft",
+            "Stephanie D. C. Wehner"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "quant-ph"
+          ],
+          "published": "2026-06-26",
+          "abstract": "Verifiable blind quantum computing (VBQC) enables a resource-limited client to securely delegate computations to an untrusted quantum server while maintaining privacy and detecting deviations from the prescribed computation. The noise-robust VBQC protocol of Leichtle et al. achie..."
+        },
+        {
+          "title": "Differentiable design of the PIAA-ZWFS: a flexible wavefront sensor that approaches the fundamental limit",
+          "url": "https://arxiv.org/abs/2606.28136v1",
+          "authors": [
+            "A. K. Taras",
+            "S. Y. Haffert",
+            "L. Desdoigts"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "astro-ph.IM",
+            "cs.CV",
+            "physics.optics"
+          ],
+          "published": "2026-06-26",
+          "abstract": "Extreme adaptive optics (AO) is necessary for high contrast astronomy at scales of the habitable zone of nearby systems. We seek to evaluate wavefront sensors that approach fundamental limits of wavefront sensing, enabling adaptive optics systems to run faster or on fainter targe..."
+        }
+      ],
       "notable_repos": [
         {
           "full_name": "freqtrade/freqtrade",
           "url": "https://github.com/freqtrade/freqtrade",
-          "stars": 51925,
+          "stars": 51933,
           "language": "Python",
           "desc": "Free, open source crypto trading bot"
         },
         {
           "full_name": "ccxt/ccxt",
           "url": "https://github.com/ccxt/ccxt",
-          "stars": 43106,
+          "stars": 43109,
           "language": "Python",
           "desc": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java "
         },
         {
           "full_name": "hummingbot/hummingbot",
           "url": "https://github.com/hummingbot/hummingbot",
-          "stars": 19016,
+          "stars": 19019,
           "language": "Python",
           "desc": "Open source software that helps you create and deploy high-frequency crypto trading bots"
         },
         {
           "full_name": "jesse-ai/jesse",
           "url": "https://github.com/jesse-ai/jesse",
-          "stars": 8118,
+          "stars": 8119,
           "language": "JavaScript",
           "desc": "An advanced crypto trading bot written in Python"
         },
         {
           "full_name": "Drakkar-Software/OctoBot",
           "url": "https://github.com/Drakkar-Software/OctoBot",
-          "stars": 6164,
+          "stars": 6167,
           "language": "Python",
           "desc": "Free open source crypto trading bot to automate AI, Grid, DCA and TradingView strategies on Binance, Hyperliquid and 15+ exchanges, with a simple interface."
         },
@@ -93,12 +194,13 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-29T04:09:38.471227+00:00"
+      "generated": "2026-06-29T10:09:44.467610+00:00"
     },
     {
       "topic": "dependency security",
       "summary_sources": [
         "Hacker News",
+        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -138,19 +240,114 @@
           "hn": "https://news.ycombinator.com/item?id=42443069"
         }
       ],
-      "recent_papers": [],
+      "recent_papers": [
+        {
+          "title": "Drift Behavior in a Bounded-Confidence Opinion Model with Media Influence",
+          "url": "https://arxiv.org/abs/2606.28318v1",
+          "authors": [
+            "Oliver Zheng",
+            "Mason A. Porter"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "physics.soc-ph",
+            "cs.SI"
+          ],
+          "published": "2026-06-26",
+          "abstract": "People's opinions can change both from their interactions with each other and from their interactions with media sources. Bounded-confidence models (BCMs) of opinion dynamics provide one framework to study such dynamics. In a BCM, the nodes of a network are agents with continuous..."
+        },
+        {
+          "title": "Which Nash Equilibrium? Solver-Dependent Selection on Zero-Sum Nash Polytopes",
+          "url": "https://arxiv.org/abs/2606.28308v1",
+          "authors": [
+            "Luis Leal"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.GT",
+            "cs.AI",
+            "cs.LG"
+          ],
+          "published": "2026-06-26",
+          "abstract": "Many two-player zero-sum games admit not a unique Nash equilibrium but a convex set of them: a polytope of profiles that all share the minimax value V* yet prescribe different behaviour. Standard solvers each converge to some equilibrium and are treated as interchangeable. We ask..."
+        },
+        {
+          "title": "Excitation of Collective Modes in a Chiral Superfluid by Thermal Quench",
+          "url": "https://arxiv.org/abs/2606.28306v1",
+          "authors": [
+            "Noble Gluscevich",
+            "J. A. Sauls"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cond-mat.supr-con",
+            "cond-mat.stat-mech"
+          ],
+          "published": "2026-06-26",
+          "abstract": "Based on time-dependent Ginzburg-Landau field theory we show that rapid cooling through the second-order phase transition into superfluid \\Hea\\ excites collective modes of newly formed chiral domains, in addition to topological defects that are formed via the Kibble-Zurek mechani..."
+        },
+        {
+          "title": "The impact of stellar binaries and star cluster dynamics on pair-instability supernovae",
+          "url": "https://arxiv.org/abs/2606.28299v1",
+          "authors": [
+            "Francesco Gabrielli",
+            "Cristiano Ugolini",
+            "Lavinia Paiella",
+            "Benedetta Mestichelli"
+          ],
+          "more_authors": 11,
+          "cats": [
+            "astro-ph.HE",
+            "astro-ph.GA",
+            "astro-ph.SR"
+          ],
+          "published": "2026-06-26",
+          "abstract": "Pair-instability supernovae (PISNe) are among the most luminous transients in the Universe. However, they have never been confidently observed. Solving this puzzle would have key implications for several astrophysical topics, including galaxy chemical enrichment, the interpretati..."
+        },
+        {
+          "title": "Memoirs of the curvaton: non-perturbative non-Gaussianity and supermassive primordial black holes",
+          "url": "https://arxiv.org/abs/2606.28296v1",
+          "authors": [
+            "S. Allegrini",
+            "A. J. Iovino",
+            "G. Perna",
+            "H. Veerm\u00e4e"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "astro-ph.CO",
+            "astro-ph.HE",
+            "gr-qc"
+          ],
+          "published": "2026-06-26",
+          "abstract": "The curvaton provides a simple mechanism for generating strongly non-Gaussian curvature perturbations after inflation, with potentially important consequences on small scales. We study curvaton dynamics beyond the standard quadratic potential and construct the local non-Gaussian ..."
+        },
+        {
+          "title": "Equilibrium as a Limit: The Competitive Canon Nested in an Adaptive, Information-Theoretic Economy",
+          "url": "https://arxiv.org/abs/2606.28295v1",
+          "authors": [
+            "Avishek Bhandari"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "econ.TH"
+          ],
+          "published": "2026-06-26",
+          "abstract": "The competitive equilibrium of general equilibrium theory exists as a fixed point and is, by the theorys own results on aggregate excess demand, in general silent on whether that fixed point is unique, stable, or attained. This paper takes the economy to be not a configuration to..."
+        }
+      ],
       "notable_repos": [
         {
           "full_name": "dependency-check/DependencyCheck",
           "url": "https://github.com/dependency-check/DependencyCheck",
-          "stars": 7599,
+          "stars": 7600,
           "language": "Java",
           "desc": "OWASP dependency-check is a software composition analysis utility that detects publicly disclosed vulnerabilities in application dependencies."
         },
         {
           "full_name": "DependencyTrack/dependency-track",
           "url": "https://github.com/DependencyTrack/dependency-track",
-          "stars": 3972,
+          "stars": 3974,
           "language": "Java",
           "desc": "Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain."
         },
@@ -171,7 +368,7 @@
         {
           "full_name": "murphysecurity/murphysec",
           "url": "https://github.com/murphysecurity/murphysec",
-          "stars": 1745,
+          "stars": 1744,
           "language": "Go",
           "desc": "An open source tool focused on software supply chain security. \u58a8\u83f2\u5b89\u5168\u4e13\u6ce8\u4e8e\u8f6f\u4ef6\u4f9b\u5e94\u94fe\u5b89\u5168\uff0c\u5177\u5907\u4e13\u4e1a\u7684\u8f6f\u4ef6\u6210\u5206\u5206\u6790\uff08SCA\uff09\u3001\u6f0f\u6d1e\u68c0\u6d4b\u3001\u4e13\u4e1a\u6f0f\u6d1e\u5e93\u3002"
         },
@@ -184,12 +381,13 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-29T04:09:09.904212+00:00"
+      "generated": "2026-06-29T10:09:44.163624+00:00"
     },
     {
       "topic": "AI marketing",
       "summary_sources": [
         "Hacker News",
+        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -229,59 +427,162 @@
           "hn": "https://news.ycombinator.com/item?id=37846236"
         }
       ],
-      "recent_papers": [],
+      "recent_papers": [
+        {
+          "title": "Democratic ICAI: Debating Our Way to Steering Principles from Preferences",
+          "url": "https://arxiv.org/abs/2606.28294v1",
+          "authors": [
+            "Kevin Kingslin",
+            "Anish Natekar",
+            "Ashutosh Ranjan",
+            "Vivek Srivastava"
+          ],
+          "more_authors": 2,
+          "cats": [
+            "cs.LG",
+            "cs.MA"
+          ],
+          "published": "2026-06-26",
+          "abstract": "Preference-based alignment often struggles to capture the reasoning that underlies human judgments. Many evaluations rely on multiple interacting criteria, yet pairwise labels reveal only the final choice rather than the considerations that shape preferences. Inverse Constitution..."
+        },
+        {
+          "title": "Agentic Hardware Design as Repository-Level Code Evolution",
+          "url": "https://arxiv.org/abs/2606.28279v1",
+          "authors": [
+            "Cunxi Yu",
+            "Chenhui Deng",
+            "Nathaniel Pinckney",
+            "Brucek Khailany"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.AR",
+            "cs.AI"
+          ],
+          "published": "2026-06-26",
+          "abstract": "We present HORIZON, a self-evolving agent framework that treats hardware design as repository-level code evolution. A Markdown harness is compiled into a project pack containing domain knowledge, an executable evaluator, an acceptance predicate, and a git/runtime policy; a hands-..."
+        },
+        {
+          "title": "Towards Automating Scientific Review with Google's Paper Assistant Tool",
+          "url": "https://arxiv.org/abs/2606.28277v1",
+          "authors": [
+            "Rajesh Jayaram",
+            "Drew Tyler",
+            "David Woodruff",
+            "Corinna Cortes"
+          ],
+          "more_authors": 3,
+          "cats": [
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "published": "2026-06-26",
+          "abstract": "Artificial intelligence is driving a revolution in scientific discovery, accelerating everything from hypothesis generation to mathematical theorem proving. However, this rapid acceleration is creating a systemic challenge: traditional human peer review cannot scale to match the ..."
+        },
+        {
+          "title": "Agent-Native Immune System: Architecture, Taxonomy, and Engineering",
+          "url": "https://arxiv.org/abs/2606.28270v1",
+          "authors": [
+            "Bo Shen",
+            "Lifeng Chang",
+            "Tianyuan Wei",
+            "Yunpeng Li"
+          ],
+          "more_authors": 6,
+          "cats": [
+            "cs.AI",
+            "cs.MA"
+          ],
+          "published": "2026-06-26",
+          "abstract": "The transition from static chat bots to autonomous agents--equipped with persistent memory, tool-use protocols, and multi-agent collaboration--has fundamentally expanded the AI threat landscape. Current defense mechanisms, such as perimeter security and training-time alignment, r..."
+        },
+        {
+          "title": "Parameter-Efficient Continuous-Variable Photonic Quantum Neural Networks for Edge Quantum AI: Demonstration in Oral Cancer Detection",
+          "url": "https://arxiv.org/abs/2606.28252v1",
+          "authors": [
+            "Akshay Bhagwan Sonawane",
+            "Sophie Choe",
+            "Lakshman Tamil"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "quant-ph",
+            "cs.LG"
+          ],
+          "published": "2026-06-26",
+          "abstract": "Early detection of oral cancer markedly improves clinical outcomes, yet specialized diagnostic tools remain scarce in low-resource settings. Smartphone-based screening is a scalable alternative but needs lightweight models that run within edge-hardware constraints. Hybrid classic..."
+        },
+        {
+          "title": "Functional outcomes and naturalistic engagement with a purpose-built conversational AI for mental health (Ash)",
+          "url": "https://arxiv.org/abs/2606.28241v1",
+          "authors": [
+            "Kristen M. Van Swearingen",
+            "Thomas D. Hull",
+            "Karthik V. Sarma",
+            "Caitlin A. Stamatis"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.HC"
+          ],
+          "published": "2026-06-26",
+          "abstract": "Background: Conversational AI chatbots designed for mental health may offer an accessible, scalable avenue for supporting psychological well-being, yet prior evaluations have largely focused on clinical symptom reduction rather than broader indicators of day-to-day functioning, a..."
+        }
+      ],
       "notable_repos": [
         {
           "full_name": "twentyhq/twenty",
           "url": "https://github.com/twentyhq/twenty",
-          "stars": 51872,
+          "stars": 51881,
           "language": "TypeScript",
           "desc": "The open alternative to Salesforce, designed for AI."
         },
         {
           "full_name": "coreyhaines31/marketingskills",
           "url": "https://github.com/coreyhaines31/marketingskills",
-          "stars": 35337,
+          "stars": 35376,
           "language": "JavaScript",
           "desc": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering."
         },
         {
           "full_name": "ParthJadhav/app-store-screenshots",
           "url": "https://github.com/ParthJadhav/app-store-screenshots",
-          "stars": 5929,
+          "stars": 5934,
           "language": "TypeScript",
           "desc": "end to end app store screenshot creation using AI"
         },
         {
           "full_name": "YILS-LIN/short-video-factory",
           "url": "https://github.com/YILS-LIN/short-video-factory",
-          "stars": 4130,
+          "stars": 4132,
           "language": "TypeScript",
           "desc": "\u4e00\u952e\u751f\u6210\u4ea7\u54c1\u8425\u9500\u4e0e\u6cdb\u5185\u5bb9\u77ed\u89c6\u9891\uff0cAI\u6279\u91cf\u81ea\u52a8\u526a\u8f91\uff0c\u9ad8\u989c\u503c\u8de8\u5e73\u53f0\u684c\u9762\u7aef\u5de5\u5177 One click generation of product marketing and general content short videos, AI batch automatic cliping, beautiful cross pla"
         },
         {
           "full_name": "ericosiu/ai-marketing-skills",
           "url": "https://github.com/ericosiu/ai-marketing-skills",
-          "stars": 2737,
+          "stars": 2741,
           "language": "Python",
           "desc": "Open-source AI marketing skills \u2014 growth experiments, sales pipeline, content ops, outbound, SEO, and finance automation"
         },
         {
           "full_name": "yaojingang/yao-open-prompts",
           "url": "https://github.com/yaojingang/yao-open-prompts",
-          "stars": 2531,
+          "stars": 2542,
           "language": "Python",
           "desc": "Yao Open Prompts: A Chinese-language AI prompt library for work, learning, content, marketing, and everyday life."
         }
       ],
       "wikipedia": null,
-      "generated": "2026-06-29T04:09:25.363978+00:00"
+      "generated": "2026-06-29T10:09:44.160625+00:00"
     },
     {
       "topic": "autonomous agents",
       "summary_sources": [
         "Wikipedia",
         "Hacker News",
+        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -321,33 +622,129 @@
           "hn": "https://news.ycombinator.com/item?id=41202064"
         }
       ],
-      "recent_papers": [],
+      "recent_papers": [
+        {
+          "title": "Drift Behavior in a Bounded-Confidence Opinion Model with Media Influence",
+          "url": "https://arxiv.org/abs/2606.28318v1",
+          "authors": [
+            "Oliver Zheng",
+            "Mason A. Porter"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "physics.soc-ph",
+            "cs.SI"
+          ],
+          "published": "2026-06-26",
+          "abstract": "People's opinions can change both from their interactions with each other and from their interactions with media sources. Bounded-confidence models (BCMs) of opinion dynamics provide one framework to study such dynamics. In a BCM, the nodes of a network are agents with continuous..."
+        },
+        {
+          "title": "Equilibrium as a Limit: The Competitive Canon Nested in an Adaptive, Information-Theoretic Economy",
+          "url": "https://arxiv.org/abs/2606.28295v1",
+          "authors": [
+            "Avishek Bhandari"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "econ.TH"
+          ],
+          "published": "2026-06-26",
+          "abstract": "The competitive equilibrium of general equilibrium theory exists as a fixed point and is, by the theorys own results on aggregate excess demand, in general silent on whether that fixed point is unique, stable, or attained. This paper takes the economy to be not a configuration to..."
+        },
+        {
+          "title": "Agentic Hardware Design as Repository-Level Code Evolution",
+          "url": "https://arxiv.org/abs/2606.28279v1",
+          "authors": [
+            "Cunxi Yu",
+            "Chenhui Deng",
+            "Nathaniel Pinckney",
+            "Brucek Khailany"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.AR",
+            "cs.AI"
+          ],
+          "published": "2026-06-26",
+          "abstract": "We present HORIZON, a self-evolving agent framework that treats hardware design as repository-level code evolution. A Markdown harness is compiled into a project pack containing domain knowledge, an executable evaluator, an acceptance predicate, and a git/runtime policy; a hands-..."
+        },
+        {
+          "title": "Towards Automating Scientific Review with Google's Paper Assistant Tool",
+          "url": "https://arxiv.org/abs/2606.28277v1",
+          "authors": [
+            "Rajesh Jayaram",
+            "Drew Tyler",
+            "David Woodruff",
+            "Corinna Cortes"
+          ],
+          "more_authors": 3,
+          "cats": [
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "published": "2026-06-26",
+          "abstract": "Artificial intelligence is driving a revolution in scientific discovery, accelerating everything from hypothesis generation to mathematical theorem proving. However, this rapid acceleration is creating a systemic challenge: traditional human peer review cannot scale to match the ..."
+        },
+        {
+          "title": "Agent-Native Immune System: Architecture, Taxonomy, and Engineering",
+          "url": "https://arxiv.org/abs/2606.28270v1",
+          "authors": [
+            "Bo Shen",
+            "Lifeng Chang",
+            "Tianyuan Wei",
+            "Yunpeng Li"
+          ],
+          "more_authors": 6,
+          "cats": [
+            "cs.AI",
+            "cs.MA"
+          ],
+          "published": "2026-06-26",
+          "abstract": "The transition from static chat bots to autonomous agents--equipped with persistent memory, tool-use protocols, and multi-agent collaboration--has fundamentally expanded the AI threat landscape. Current defense mechanisms, such as perimeter security and training-time alignment, r..."
+        },
+        {
+          "title": "Graphon Mean Field Game of mutual holding",
+          "url": "https://arxiv.org/abs/2606.28254v1",
+          "authors": [
+            "Daorong Cui",
+            "Shuoqing Deng",
+            "Yang Xiang"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "math.OC"
+          ],
+          "published": "2026-06-26",
+          "abstract": "This paper studies the mean field game of mutual holding proposed by Djete and Touzi(AAP, 2024), and consider the case where the interactions among agents are described by a graphon. We adopt the formulation on the enlarged space which is modeled using the joint law of the value ..."
+        }
+      ],
       "notable_repos": [
         {
           "full_name": "cline/cline",
           "url": "https://github.com/cline/cline",
-          "stars": 63995,
+          "stars": 64005,
           "language": "TypeScript",
           "desc": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant."
         },
         {
           "full_name": "ruvnet/ruflo",
           "url": "https://github.com/ruvnet/ruflo",
-          "stars": 61940,
+          "stars": 61980,
           "language": "TypeScript",
           "desc": "\ud83c\udf0a The leading agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptiv"
         },
         {
           "full_name": "crewAIInc/crewAI",
           "url": "https://github.com/crewAIInc/crewAI",
-          "stars": 54516,
+          "stars": 54542,
           "language": "Python",
           "desc": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tac"
         },
         {
           "full_name": "CherryHQ/cherry-studio",
           "url": "https://github.com/CherryHQ/cherry-studio",
-          "stars": 47943,
+          "stars": 47956,
           "language": "TypeScript",
           "desc": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs"
         },
@@ -361,7 +758,7 @@
         {
           "full_name": "khoj-ai/khoj",
           "url": "https://github.com/khoj-ai/khoj",
-          "stars": 35382,
+          "stars": 35388,
           "language": "Python",
           "desc": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or loca"
         }
@@ -371,7 +768,7 @@
         "extract": "An autonomous agent is an artificial intelligence (AI) system that can perform complex tasks independently.",
         "url": "https://en.wikipedia.org/wiki/Autonomous_agent"
       },
-      "generated": "2026-06-29T04:09:24.413932+00:00"
+      "generated": "2026-06-29T10:09:44.062716+00:00"
     }
   ]
 }
