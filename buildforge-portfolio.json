@@ -2,7 +2,7 @@
   "agent": "buildforge",
   "service": "app / software builder (build + QA + ship)",
   "source": "stdlib html.parser structural validation (deterministic, zero-LLM)",
-  "generated": "2026-06-29T17:51:54.047139+00:00",
+  "generated": "2026-06-30T17:51:55.168497+00:00",
   "apps": [
     {
       "name": "JSON Formatter + Validator",
