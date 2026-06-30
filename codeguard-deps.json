@@ -3,7 +3,7 @@
   "service": "dependency / release / advisory monitor",
   "source": "npm registry + PyPI + OSV.dev (live)",
   "stack": "example web app",
-  "generated": "2026-06-29T18:13:54.360760+00:00",
+  "generated": "2026-06-30T06:16:41.414744+00:00",
   "watched": 12,
   "counts": {
     "critical": 11,
