@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-29T16:06:43.631933+00:00",
+  "generated": "2026-06-30T04:06:54.372894+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-29T16:06:36.051943+00:00",
+      "fetched_at": "2026-06-30T04:06:46.211397+00:00",
       "content_type": "text/html",
-      "content_length": 34861,
+      "content_length": 35007,
       "size_capped": false,
-      "latency_ms": 1955,
+      "latency_ms": 2813,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -35,32 +35,32 @@
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 2
+            "count": 4
           },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "investors.rocketlabcorp.com",
+            "domain": "quesma.com",
             "count": 1
           },
           {
-            "domain": "humphri.es",
+            "domain": "hccf.onmy.cloud",
             "count": 1
           },
           {
-            "domain": "fergusfinn.com",
+            "domain": "weblog.rogueamoeba.com",
             "count": 1
           },
           {
-            "domain": "cachyos.org",
+            "domain": "fil-c.org",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 643,
+      "word_count": 667,
       "reading_time_min": 3,
       "keywords": [
         {
@@ -76,23 +76,19 @@
           "count": 30
         },
         {
-          "term": "comments",
-          "count": 27
-        },
-        {
           "term": "hours",
-          "count": 24
+          "count": 29
         },
         {
-          "term": "hour",
-          "count": 5
-        },
-        {
-          "term": "discuss",
-          "count": 3
+          "term": "comments",
+          "count": 28
         },
         {
           "term": "memory",
+          "count": 4
+        },
+        {
+          "term": "github.com",
           "count": 3
         },
         {
@@ -104,11 +100,15 @@
           "count": 2
         },
         {
-          "term": "beats",
+          "term": "free",
           "count": 2
         },
         {
-          "term": "library",
+          "term": "model",
+          "count": 2
+        },
+        {
+          "term": "ornith-1.0",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Rocketlab acquires Iridium (rocketlabcorp.com)"
+            "Qwen 3.6 27B is the sweet spot for local development (quesma.com)"
           ],
           [
             "",
-            "84 points by everfrustrated 1 hour ago | hide | 47 comments"
+            "704 points by stared 11 hours ago | hide | 543 comments"
           ],
           [
             "2.",
             "",
-            "WATaBoy: JIT-Ing Game Boy Instructions to WASM Beats a Native Interpreter (humphri.es)"
+            ".self: A new top-level domain designed to support self-hosting (onmy.cloud)"
           ],
           [
             "",
-            "36 points by energeticbark 1 hour ago | hide | discuss"
+            "379 points by HumanCCF 8 hours ago | hide | 216 comments"
           ],
           [
             "3.",
             "",
-            "What happens when you run a CUDA kernel? (fergusfinn.com)"
+            "Free the Icons (rogueamoeba.com)"
           ],
           [
             "",
-            "76 points by mezark 2 hours ago | hide | 4 comments"
+            "295 points by zdw 7 hours ago | hide | 80 comments"
           ],
           [
             "4.",
             "",
-            "CachyOS June 2026 Release (cachyos.org)"
+            "Memory Safe Context Switching (longjmp, setjmp) in Fil-C (fil-c.org)"
           ],
           [
             "",
-            "36 points by simonpure 2 hours ago | hide | 11 comments"
+            "52 points by modeless 3 hours ago | hide | 19 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-29T16:06:38.029137+00:00",
+      "fetched_at": "2026-06-30T04:06:49.049661+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 731,
+      "latency_ms": 1007,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-29T16:06:38.761353+00:00",
+      "fetched_at": "2026-06-30T04:06:50.057038+00:00",
       "content_type": "text/html",
-      "content_length": 167532,
+      "content_length": 167530,
       "size_capped": false,
-      "latency_ms": 2553,
+      "latency_ms": 2249,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-29T16:06:41.339906+00:00",
+      "fetched_at": "2026-06-30T04:06:52.334755+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 2285,
+      "latency_ms": 2029,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
