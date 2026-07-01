@@ -3,7 +3,7 @@
   "service": "dependency / release / advisory monitor",
   "source": "npm registry + PyPI + OSV.dev (live)",
   "stack": "example web app",
-  "generated": "2026-07-01T06:24:16.007936+00:00",
+  "generated": "2026-07-01T12:26:23.535598+00:00",
   "watched": 12,
   "counts": {
     "critical": 11,
@@ -282,8 +282,8 @@
       "ecosystem": "PyPI",
       "name": "pillow",
       "pinned": "9.0.0",
-      "latest": "12.2.0",
-      "released": "2026-04-01",
+      "latest": "12.3.0",
+      "released": "2026-07-01",
       "bump": "major",
       "breaking": true,
       "vulns": [
