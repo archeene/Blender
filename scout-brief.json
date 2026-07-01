@@ -2,13 +2,12 @@
   "agent": "scout",
   "service": "structured, cited research briefs",
   "sources": "Hacker News + arXiv + GitHub + Wikipedia (live, no key)",
-  "generated": "2026-07-01T10:11:13.841679+00:00",
+  "generated": "2026-07-01T16:11:49.084308+00:00",
   "briefs": [
     {
       "topic": "crypto trading bot",
       "summary_sources": [
         "Hacker News",
-        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -48,128 +47,33 @@
           "hn": "https://news.ycombinator.com/item?id=42136699"
         }
       ],
-      "recent_papers": [
-        {
-          "title": "On the Comparison of Reinforcement Learning and Adaptive Control for Linear Systems under Packet Loss and Uncertainty",
-          "url": "https://arxiv.org/abs/2606.32003v1",
-          "authors": [
-            "Moh Kamalul Wafi"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "eess.SY"
-          ],
-          "published": "2026-06-30",
-          "abstract": "This paper presents a comparative study between Adaptive Quantized Control (AQC) and Deep Deterministic Policy Gradient (DDPG) reinforcement learning for uncertain linear systems with input quantization over communication channels subject to packet loss. The considered setting al..."
-        },
-        {
-          "title": "Accelerating Conformal Prediction via Approximate Leave-One-Out",
-          "url": "https://arxiv.org/abs/2606.31915v1",
-          "authors": [
-            "Jiachen Cong",
-            "Jingbo Liu"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "stat.ML",
-            "cs.LG"
-          ],
-          "published": "2026-06-30",
-          "abstract": "While conformal prediction provides a general framework for uncertainty quantification in predictive inference, its application is often limited by computational cost. Recent methods, including Jackknife+ and Jackknife-minmax, achieve faster computation by trading a slight loss o..."
-        },
-        {
-          "title": "Trade-Offs in Decentralized Gigantic MIMO with Hard-Boundary Constraints",
-          "url": "https://arxiv.org/abs/2606.31911v1",
-          "authors": [
-            "Juan Vidal Alegr\u00eda",
-            "Joao Vieira",
-            "Ove Edfors"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "eess.SP",
-            "cs.IT"
-          ],
-          "published": "2026-06-30",
-          "abstract": "To maintain the antenna apertures offered by 5G massive MIMO systems operating at the sub-6GHz band, known as FR1, 6G base stations (BSs) using the upper-mid band, FR3, should increase the number of antennas by a factor 4-8, giving rise to gigantic MIMO. This poses challenges in ..."
-        },
-        {
-          "title": "Attend, Transform, or Silence: Operator-Level Visual Skipping for Efficient Multimodal LLM Inference",
-          "url": "https://arxiv.org/abs/2606.31903v1",
-          "authors": [
-            "Zhaoyang Luo",
-            "Runmin Dong",
-            "Miao Yang",
-            "Fan Wei"
-          ],
-          "more_authors": 3,
-          "cats": [
-            "cs.CV",
-            "cs.AI"
-          ],
-          "published": "2026-06-30",
-          "abstract": "Multimodal large language models (MLLMs) increasingly process long visual-token sequences, increasing the overall inference computation. Existing acceleration methods usually remove visual tokens or skip visual-token updates in entire layers, but these coarse strategies may disca..."
-        },
-        {
-          "title": "Real-Time Source-Free Object Detection",
-          "url": "https://arxiv.org/abs/2606.31834v1",
-          "authors": [
-            "Sairam VCR",
-            "Varun Gopal",
-            "Poornima Jain",
-            "Vineeth N Balasubramanian"
-          ],
-          "more_authors": 1,
-          "cats": [
-            "cs.CV",
-            "cs.AI"
-          ],
-          "published": "2026-06-30",
-          "abstract": "Real-world detectors for autonomous driving, surveillance, and robotics must handle domain-shifts under strict latency and memory constraints, yet existing source-free object detection (SFOD) methods rely on heavyweight architectures that prioritize accuracy alone. We show this t..."
-        },
-        {
-          "title": "Laser-based metrology systems vs wavefront sensing techniques: a comparative overview between the Large Binocular Telescope and the Vera C. Rubin Observatory for the telescope alignment and collimation tracking",
-          "url": "https://arxiv.org/abs/2606.31792v1",
-          "authors": [
-            "Luca Rosignoli",
-            "Gabriele Rodeghiero",
-            "Sandrine J. Thomas",
-            "Guillem Megias Homar"
-          ],
-          "more_authors": 25,
-          "cats": [
-            "astro-ph.IM"
-          ],
-          "published": "2026-06-30",
-          "abstract": "This work presents a comparative overview of the collimation and alignment strategies employed by two leading 8m-class facilities: the Large Binocular Telescope (LBT) and the Vera C. Rubin Observatory. While both telescopes share a challenging fast f-number of approximately f/1.2..."
-        }
-      ],
+      "recent_papers": [],
       "notable_repos": [
         {
           "full_name": "freqtrade/freqtrade",
           "url": "https://github.com/freqtrade/freqtrade",
-          "stars": 51961,
+          "stars": 51973,
           "language": "Python",
           "desc": "Free, open source crypto trading bot"
         },
         {
           "full_name": "ccxt/ccxt",
           "url": "https://github.com/ccxt/ccxt",
-          "stars": 43148,
+          "stars": 43153,
           "language": "Python",
           "desc": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java "
         },
         {
           "full_name": "hummingbot/hummingbot",
           "url": "https://github.com/hummingbot/hummingbot",
-          "stars": 19035,
+          "stars": 19036,
           "language": "Python",
           "desc": "Open source software that helps you create and deploy high-frequency crypto trading bots"
         },
         {
           "full_name": "jesse-ai/jesse",
           "url": "https://github.com/jesse-ai/jesse",
-          "stars": 8128,
+          "stars": 8131,
           "language": "JavaScript",
           "desc": "An advanced crypto trading bot written in Python"
         },
@@ -189,13 +93,12 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-07-01T10:11:13.742551+00:00"
+      "generated": "2026-07-01T16:11:49.084308+00:00"
     },
     {
       "topic": "dependency security",
       "summary_sources": [
         "Hacker News",
-        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -235,105 +138,7 @@
           "hn": "https://news.ycombinator.com/item?id=42443069"
         }
       ],
-      "recent_papers": [
-        {
-          "title": "Finite-range EFT for the $E1$ strength distribution of ${}^6$He",
-          "url": "https://arxiv.org/abs/2606.32037v1",
-          "authors": [
-            "Matthias G\u00f6bel",
-            "Hans-Werner Hammer",
-            "Daniel R. Phillips"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "nucl-th"
-          ],
-          "published": "2026-06-30",
-          "abstract": "Halo effective field theory (Halo EFT) is a powerful tool to describe halo nuclei and predict low-energy observables with quantified uncertainties. However, in the case that there is a leading-order interaction determined by two or more effective-range parameters, such as the $^2..."
-        },
-        {
-          "title": "Generative Skill Composition for LLM Agents",
-          "url": "https://arxiv.org/abs/2606.32025v1",
-          "authors": [
-            "Xinyu Zhao",
-            "Zhen Tan",
-            "Vaishnav Tadiparthi",
-            "Nakul Agarwal"
-          ],
-          "more_authors": 4,
-          "cats": [
-            "cs.CL"
-          ],
-          "published": "2026-06-30",
-          "abstract": "Recent LLM agents benefit from skills for solving complex tasks. Skills encapsulate modular packages of procedural knowledge and instructions for performing specialized tasks, such as setting up a sandboxed environment, running a test suite, or refactoring a function across multi..."
-        },
-        {
-          "title": "Dual-Regime Absorbing Markov Chain Theory in Remote Estimation: Age-Minimizing Push Policies",
-          "url": "https://arxiv.org/abs/2606.32010v1",
-          "authors": [
-            "Ismail Cosandal",
-            "Sennur Ulukus",
-            "Nail Akar"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.IT",
-            "cs.NI",
-            "eess.SP"
-          ],
-          "published": "2026-06-30",
-          "abstract": "For a remote estimation system, we study the optimization of age of incorrect information (AoII), which is a recently proposed semantic-aware information freshness metric. In particular, we assume an information source that observes a discrete-time finite-state Markov chain (DTMC..."
-        },
-        {
-          "title": "Efficient entanglement of three remote single-atom quantum-network nodes",
-          "url": "https://arxiv.org/abs/2606.32006v1",
-          "authors": [
-            "Matthias Seubert",
-            "Leonardo Ruscio",
-            "Tobias Frank",
-            "Philip Thomas"
-          ],
-          "more_authors": 5,
-          "cats": [
-            "quant-ph"
-          ],
-          "published": "2026-06-30",
-          "abstract": "Entanglement distributed over a set of individually addressable qubit nodes is the enabling resource for a plethora of applications ranging from tests of quantum physics to secure and modular quantum information networks. Entanglement between two memory qubits has been realized o..."
-        },
-        {
-          "title": "Self-Study Reconsidered: The Hidden Fragility of Learning from Self-Generated QA",
-          "url": "https://arxiv.org/abs/2606.32002v1",
-          "authors": [
-            "Ekaterina Alimaskina",
-            "Denis Shveykin",
-            "Gleb Molodtsov",
-            "Igor Shalygin"
-          ],
-          "more_authors": 2,
-          "cats": [
-            "cs.AI",
-            "cs.LG"
-          ],
-          "published": "2026-06-30",
-          "abstract": "Language models are increasingly taught from synthetic question--answer (QA) supervision: a model generates questions about a document, answers them from the same text, and the resulting pairs are used to fine-tune, distill, or compress knowledge into another model. We show that ..."
-        },
-        {
-          "title": "Radial Suppression Accelerates Algorithmic Generalization: A Geometric Analysis of Delayed Generalization",
-          "url": "https://arxiv.org/abs/2606.32000v1",
-          "authors": [
-            "Srijan Tiwari",
-            "Aditya Chauhan",
-            "Manjot Singh"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.LG",
-            "cs.AI"
-          ],
-          "published": "2026-06-30",
-          "abstract": "Why do neural networks memorize algorithmic training data long before they generalize? We present a geometric case study demonstrating that, on tasks where generalization requires discovering structured low-dimensional circuits, the memorization-generalization delay is driven by ..."
-        }
-      ],
+      "recent_papers": [],
       "notable_repos": [
         {
           "full_name": "dependency-check/DependencyCheck",
@@ -359,7 +164,7 @@
         {
           "full_name": "vernu/vps-audit",
           "url": "https://github.com/vernu/vps-audit",
-          "stars": 1977,
+          "stars": 1976,
           "language": "Shell",
           "desc": "lightweight, dependency-free bash script for security, performance auditing and infrastructure monitoring of Linux servers."
         },
@@ -379,13 +184,12 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-07-01T10:11:13.756396+00:00"
+      "generated": "2026-07-01T16:11:49.084308+00:00"
     },
     {
       "topic": "AI marketing",
       "summary_sources": [
         "Hacker News",
-        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -425,153 +229,59 @@
           "hn": "https://news.ycombinator.com/item?id=37846236"
         }
       ],
-      "recent_papers": [
-        {
-          "title": "CoMet: Context and Multiplicity Decomposition for Multimodal Uncertainty Estimation",
-          "url": "https://arxiv.org/abs/2606.32012v1",
-          "authors": [
-            "Sanghyuk Chun",
-            "William Yang",
-            "Amaya Dharmasiri",
-            "Olga Russakovsky"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.LG",
-            "cs.CV"
-          ],
-          "published": "2026-06-30",
-          "abstract": "Uncertainty estimation has been a long-standing challenge in AI models; it amounts to \"knowing what you don't know,\" and metacognition is notoriously difficult even for humans (cf. the Dunning-Kruger effect). Although it is still far from solved even in simpler classification sys..."
-        },
-        {
-          "title": "Competition and Anomalies Redux: Evidence from U.S. Auto Dealers",
-          "url": "https://arxiv.org/abs/2606.32011v1",
-          "authors": [
-            "David Huffman",
-            "Lamar Pierce",
-            "Germ\u00e1n Reyes",
-            "Alex Rees-Jones"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "econ.GN"
-          ],
-          "published": "2026-06-30",
-          "abstract": "We examine a choice between bonus contracts offered to dealers of a U.S. auto manufacturer. In our data, dealers select the non-profit-maximizing option in 20 percent of observations, costing the mistaken dealers $18,453 per year on average. We examine how the propensity to make ..."
-        },
-        {
-          "title": "World Narrative Model for Highly Controllable Video Generation: A Paradigm Shift from Pixel Sampling to Physical World Orchestration",
-          "url": "https://arxiv.org/abs/2606.31946v1",
-          "authors": [
-            "Ye Chen",
-            "Xuanhong Chen",
-            "Yupeng Zhu",
-            "Liming Tan"
-          ],
-          "more_authors": 22,
-          "cats": [
-            "cs.CV"
-          ],
-          "published": "2026-06-30",
-          "abstract": "The fundamental obstacle to industrial grade video generation is the lack of controllability: existing models treat video as a pixel distribution sampling problem, bypassing the explicit, instance level $4D$ $(3D + T)$ physical world. Consequently, content creators cannot specify..."
-        },
-        {
-          "title": "Delegation Rights: Property, Agency, and Investment Incentives in the Age of AI Agents",
-          "url": "https://arxiv.org/abs/2606.31935v1",
-          "authors": [
-            "Yukun Zhang",
-            "Kemu Xu"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "econ.EM"
-          ],
-          "published": "2026-06-30",
-          "abstract": "AI agents increasingly operate inside digital accounts by exercising privileges that users already hold, raising a new control question: whether an existing account entitlement must be exercised manually or may be exercised through a user-authorized automated proxy. We define \\em..."
-        },
-        {
-          "title": "Better Understanding, Understanding Better",
-          "url": "https://arxiv.org/abs/2606.31892v1",
-          "authors": [
-            "Yu Wei"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.LO",
-            "cs.AI"
-          ],
-          "published": "2026-06-30",
-          "abstract": "\"Any fool can know; the point is to understand.\" A well-known remark often attributed to Einstein captures a widely shared intuition: understanding is more than merely knowing. Yet epistemic logic has paid relatively little attention to understanding, despite its central role in ..."
-        },
-        {
-          "title": "Low-dimensional topology of deep neural networks",
-          "url": "https://arxiv.org/abs/2606.31856v1",
-          "authors": [
-            "Junyu Ren",
-            "Lek-Heng Lim"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.LG",
-            "math.GT"
-          ],
-          "published": "2026-06-30",
-          "abstract": "We study layered models, including feedforward networks, ResNets, and transformers, by limiting each layer to a width of $d = 3$, i.e., $\\mathbb{R}^3$ as representation space. This allows us to track how a neural network changes low-dimensional topological invariants through its ..."
-        }
-      ],
+      "recent_papers": [],
       "notable_repos": [
         {
           "full_name": "twentyhq/twenty",
           "url": "https://github.com/twentyhq/twenty",
-          "stars": 51997,
+          "stars": 52021,
           "language": "TypeScript",
           "desc": "The open alternative to Salesforce, designed for AI."
         },
         {
           "full_name": "coreyhaines31/marketingskills",
           "url": "https://github.com/coreyhaines31/marketingskills",
-          "stars": 35658,
+          "stars": 35691,
           "language": "JavaScript",
           "desc": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering."
         },
         {
           "full_name": "ParthJadhav/app-store-screenshots",
           "url": "https://github.com/ParthJadhav/app-store-screenshots",
-          "stars": 5951,
+          "stars": 5952,
           "language": "TypeScript",
           "desc": "end to end app store screenshot creation using AI"
         },
         {
           "full_name": "YILS-LIN/short-video-factory",
           "url": "https://github.com/YILS-LIN/short-video-factory",
-          "stars": 4137,
+          "stars": 4140,
           "language": "TypeScript",
           "desc": "\u4e00\u952e\u751f\u6210\u4ea7\u54c1\u8425\u9500\u4e0e\u6cdb\u5185\u5bb9\u77ed\u89c6\u9891\uff0cAI\u6279\u91cf\u81ea\u52a8\u526a\u8f91\uff0c\u9ad8\u989c\u503c\u8de8\u5e73\u53f0\u684c\u9762\u7aef\u5de5\u5177 One click generation of product marketing and general content short videos, AI batch automatic cliping, beautiful cross pla"
         },
         {
           "full_name": "ericosiu/ai-marketing-skills",
           "url": "https://github.com/ericosiu/ai-marketing-skills",
-          "stars": 2755,
+          "stars": 2757,
           "language": "Python",
           "desc": "Open-source AI marketing skills \u2014 growth experiments, sales pipeline, content ops, outbound, SEO, and finance automation"
         },
         {
           "full_name": "yaojingang/yao-open-prompts",
           "url": "https://github.com/yaojingang/yao-open-prompts",
-          "stars": 2565,
+          "stars": 2569,
           "language": "Python",
           "desc": "Yao Open Prompts: A Chinese-language AI prompt library for work, learning, content, marketing, and everyday life."
         }
       ],
       "wikipedia": null,
-      "generated": "2026-07-01T10:11:13.841679+00:00"
+      "generated": "2026-07-01T16:11:49.084308+00:00"
     },
     {
       "topic": "autonomous agents",
       "summary_sources": [
         "Wikipedia",
         "Hacker News",
-        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -611,149 +321,47 @@
           "hn": "https://news.ycombinator.com/item?id=41202064"
         }
       ],
-      "recent_papers": [
-        {
-          "title": "QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents",
-          "url": "https://arxiv.org/abs/2606.32034v1",
-          "authors": [
-            "Sergio Hern\u00e1ndez-Guti\u00e9rrez",
-            "Matteo Merler",
-            "Ilze Amanda Auzina",
-            "Joschka Str\u00fcber"
-          ],
-          "more_authors": 2,
-          "cats": [
-            "cs.LG",
-            "cs.AI",
-            "cs.CL"
-          ],
-          "published": "2026-06-30",
-          "abstract": "LLM agents increasingly act over long horizons, where a single trajectory can contain hundreds or thousands of actions. In these settings, outcome-only rewards provide too sparse guidance, failing to inform the model about the goodness of intermediate actions. Dense supervision m..."
-        },
-        {
-          "title": "Freeform Preference Learning for Robotic Manipulation",
-          "url": "https://arxiv.org/abs/2606.32027v1",
-          "authors": [
-            "Marcel Torne",
-            "Anubha Mahajan",
-            "Abhijnya Bhat",
-            "Chelsea Finn"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.RO",
-            "cs.AI",
-            "cs.LG"
-          ],
-          "published": "2026-06-30",
-          "abstract": "Reward design remains a central bottleneck for autonomous robot policy improvement, especially in long-horizon manipulation tasks where sparse success labels provide too little signal and binary preferences collapse many competing notions of quality into one ambiguous signal. We ..."
-        },
-        {
-          "title": "Generative Skill Composition for LLM Agents",
-          "url": "https://arxiv.org/abs/2606.32025v1",
-          "authors": [
-            "Xinyu Zhao",
-            "Zhen Tan",
-            "Vaishnav Tadiparthi",
-            "Nakul Agarwal"
-          ],
-          "more_authors": 4,
-          "cats": [
-            "cs.CL"
-          ],
-          "published": "2026-06-30",
-          "abstract": "Recent LLM agents benefit from skills for solving complex tasks. Skills encapsulate modular packages of procedural knowledge and instructions for performing specialized tasks, such as setting up a sandboxed environment, running a test suite, or refactoring a function across multi..."
-        },
-        {
-          "title": "TRIAGE: Role-Typed Credit Assignment for Agentic Reinforcement Learning",
-          "url": "https://arxiv.org/abs/2606.32017v1",
-          "authors": [
-            "Yuanda Xu",
-            "Zhengze Zhou",
-            "Hejian Sang",
-            "Xiaomin Li"
-          ],
-          "more_authors": 4,
-          "cats": [
-            "cs.LG",
-            "cs.AI"
-          ],
-          "published": "2026-06-30",
-          "abstract": "Agentic reinforcement learning requires assigning credit to environment-facing actions such as searches, clicks, edits, navigation commands, and object interactions. Standard GRPO uses the final verifier outcome as a uniform advantage over all action tokens. This outcome signal i..."
-        },
-        {
-          "title": "Scalable Behaviour Cloning on Browser Using via Skill Distillation",
-          "url": "https://arxiv.org/abs/2606.32014v1",
-          "authors": [
-            "Kaisen Yang",
-            "Zheng Jiang",
-            "Yuzhao Peng",
-            "Houde Qian"
-          ],
-          "more_authors": 10,
-          "cats": [
-            "cs.CL"
-          ],
-          "published": "2026-06-30",
-          "abstract": "Internet users collectively perform an enormous range of skilled work through web browsers, from software development and document editing to search, forms, and enterprise workflows, making human browsing a highly scalable but under-exploited source of reusable browser skills. We..."
-        },
-        {
-          "title": "AxDafny: Agentic Verified Code Generation in Dafny",
-          "url": "https://arxiv.org/abs/2606.32007v1",
-          "authors": [
-            "Benjamin Breen",
-            "Austin Letson",
-            "Borja Requena Pozo",
-            "Leopoldo Sarra"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.AI"
-          ],
-          "published": "2026-06-30",
-          "abstract": "We study agentic code generation in Dafny, where a model must generate both executable code and the proof artifacts for verification. We present AxDafny, a verifier-guided repair framework that iteratively generates implementations, invariants, assertions, and termination argumen..."
-        }
-      ],
+      "recent_papers": [],
       "notable_repos": [
         {
           "full_name": "cline/cline",
           "url": "https://github.com/cline/cline",
-          "stars": 64157,
+          "stars": 64170,
           "language": "TypeScript",
           "desc": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant."
         },
         {
           "full_name": "ruvnet/ruflo",
           "url": "https://github.com/ruvnet/ruflo",
-          "stars": 62304,
+          "stars": 62352,
           "language": "TypeScript",
           "desc": "\ud83c\udf0a The leading agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptiv"
         },
         {
           "full_name": "crewAIInc/crewAI",
           "url": "https://github.com/crewAIInc/crewAI",
-          "stars": 54678,
+          "stars": 54701,
           "language": "Python",
           "desc": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tac"
         },
         {
           "full_name": "CherryHQ/cherry-studio",
           "url": "https://github.com/CherryHQ/cherry-studio",
-          "stars": 48023,
+          "stars": 48026,
           "language": "TypeScript",
           "desc": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs"
         },
         {
           "full_name": "reworkd/AgentGPT",
           "url": "https://github.com/reworkd/AgentGPT",
-          "stars": 36233,
+          "stars": 36234,
           "language": "TypeScript",
           "desc": "\ud83e\udd16 Assemble, configure, and deploy autonomous AI Agents in your browser."
         },
         {
           "full_name": "khoj-ai/khoj",
           "url": "https://github.com/khoj-ai/khoj",
-          "stars": 35415,
+          "stars": 35421,
           "language": "Python",
           "desc": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or loca"
         }
@@ -763,7 +371,7 @@
         "extract": "An autonomous agent is an artificial intelligence (AI) system that can perform complex tasks independently.",
         "url": "https://en.wikipedia.org/wiki/Autonomous_agent"
       },
-      "generated": "2026-07-01T10:11:13.745550+00:00"
+      "generated": "2026-07-01T16:11:35.114422+00:00"
     }
   ]
 }
