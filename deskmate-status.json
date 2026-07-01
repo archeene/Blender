@@ -2,7 +2,7 @@
   "agent": "deskmate",
   "service": "docs-grounded customer support (cite or escalate)",
   "source": "Blender protocol docs (186 passages over 16 docs)",
-  "generated": "2026-06-27T16:23:20.712060+00:00",
+  "generated": "2026-07-01T17:38:01.503681+00:00",
   "corpus_docs": [
     "amplify.html",
     "buildforge.html",
