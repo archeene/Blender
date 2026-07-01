@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-07-01T04:07:20.090710+00:00",
+  "generated": "2026-07-01T16:07:29.290496+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-07-01T04:07:10.096456+00:00",
+      "fetched_at": "2026-07-01T16:07:22.635122+00:00",
       "content_type": "text/html",
-      "content_length": 34834,
+      "content_length": 34290,
       "size_capped": false,
-      "latency_ms": 4894,
+      "latency_ms": 1802,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,44 +29,40 @@
         }
       },
       "links": {
-        "total": 198,
-        "internal": 165,
-        "external": 33,
+        "total": 194,
+        "internal": 162,
+        "external": 32,
         "top_external_domains": [
           {
-            "domain": "github.com",
-            "count": 2
-          },
-          {
             "domain": "ycombinator.com",
-            "count": 2
+            "count": 3
           },
           {
-            "domain": "anthropic.com",
+            "domain": "github.com",
+            "count": 3
+          },
+          {
+            "domain": "quantamagazine.org",
             "count": 1
           },
           {
-            "domain": "thereallo.dev",
+            "domain": "biotic.org",
             "count": 1
           },
           {
-            "domain": "forbes.com",
+            "domain": "wangcong.org",
             "count": 1
           },
           {
-            "domain": "en.wikipedia.org",
+            "domain": "box2d.org",
             "count": 1
           }
         ]
       },
-      "image_count": 2,
-      "word_count": 633,
+      "image_count": 3,
+      "word_count": 615,
       "reading_time_min": 3,
       "keywords": [
-        {
-          "term": "points",
-          "count": 30
-        },
         {
           "term": "ago",
           "count": 30
@@ -76,16 +72,32 @@
           "count": 30
         },
         {
-          "term": "hours",
+          "term": "comments",
           "count": 29
         },
         {
-          "term": "comments",
-          "count": 28
+          "term": "points",
+          "count": 29
+        },
+        {
+          "term": "hours",
+          "count": 23
+        },
+        {
+          "term": "hour",
+          "count": 6
+        },
+        {
+          "term": "cell",
+          "count": 4
         },
         {
           "term": "claude",
-          "count": 4
+          "count": 3
+        },
+        {
+          "term": "code",
+          "count": 3
         },
         {
           "term": "hacker",
@@ -96,19 +108,7 @@
           "count": 2
         },
         {
-          "term": "past",
-          "count": 2
-        },
-        {
-          "term": "code",
-          "count": 2
-        },
-        {
-          "term": "google",
-          "count": 2
-        },
-        {
-          "term": "scratch",
+          "term": "first",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Claude Sonnet 5 (anthropic.com)"
+            "For first time, a cell built from scratch grows and divides (quantamagazine.org)"
           ],
           [
             "",
-            "957 points by marinesebastian 10 hours ago | hide | 543 comments"
+            "134 points by defrost 1 hour ago | hide | 31 comments"
           ],
           [
             "2.",
             "",
-            "Claude Code is steganographically marking requests (thereallo.dev)"
+            "SpudCell: The first synthetic cell with a complete cell cycle (biotic.org)"
           ],
           [
             "",
-            "1534 points by kirushik 12 hours ago | hide | 439 comments"
+            "59 points by godwinson__4-8 1 hour ago | hide | 2 comments"
           ],
           [
             "3.",
             "",
-            "Google copybara: moving code between repositories (github.com/google)"
+            "Why I Stopped Arguing with People (wangcong.org)"
           ],
           [
             "",
-            "106 points by reconnecting 4 hours ago | hide | 13 comments"
+            "465 points by backlit4034 2 hours ago | hide | 370 comments"
           ],
           [
             "4.",
             "",
-            "Supersonic flight returning to US after half-century ban (forbes.com/sites/suzannerowankelleher)"
+            "Announcing Box3D :: Box2D (box2d.org)"
           ],
           [
             "",
-            "16 points by lobbly 1 hour ago | hide | 8 comments"
+            "129 points by makepanic 3 hours ago | hide | 27 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-07-01T04:07:15.015629+00:00",
+      "fetched_at": "2026-07-01T16:07:24.460154+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 915,
+      "latency_ms": 1030,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-07-01T04:07:15.930832+00:00",
+      "fetched_at": "2026-07-01T16:07:25.491844+00:00",
       "content_type": "text/html",
       "content_length": 167530,
       "size_capped": false,
-      "latency_ms": 2333,
+      "latency_ms": 2041,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-07-01T04:07:18.292517+00:00",
+      "fetched_at": "2026-07-01T16:07:27.557846+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1790,
+      "latency_ms": 1726,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
