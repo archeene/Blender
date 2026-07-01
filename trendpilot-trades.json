@@ -1,9 +1,9 @@
 {
   "mode": "PAPER (virtual dollars, no real execution)",
-  "updated": "2026-07-01T09:27:02.687914+00:00",
+  "updated": "2026-07-01T09:47:12.296682+00:00",
   "summary": {
-    "equity": 1035.58,
-    "return_pct": 3.558,
+    "equity": 1034.7,
+    "return_pct": 3.47,
     "realized_pnl": 0.0,
     "wins": 0,
     "losses": 0,
@@ -33,9 +33,9 @@
       "market": "SOL",
       "side": "short",
       "entry": 67.6951,
-      "mark": 75.3781,
+      "mark": 75.4871,
       "notional": 547.16,
-      "unrealized": -62.0996,
+      "unrealized": -62.9806,
       "opened_at": "2026-06-09T02:06:03.659673+00:00"
     }
   ],
