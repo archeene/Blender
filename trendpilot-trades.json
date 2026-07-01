@@ -1,9 +1,9 @@
 {
   "mode": "PAPER (virtual dollars, no real execution)",
-  "updated": "2026-07-01T06:45:45.951064+00:00",
+  "updated": "2026-07-01T07:05:54.765668+00:00",
   "summary": {
-    "equity": 1062.14,
-    "return_pct": 6.214,
+    "equity": 1061.04,
+    "return_pct": 6.104,
     "realized_pnl": 0.0,
     "wins": 0,
     "losses": 0,
@@ -24,9 +24,9 @@
       "market": "ETH",
       "side": "short",
       "entry": 1706.2087,
-      "mark": 1572.5571,
+      "mark": 1575.7225,
       "notional": 590.17,
-      "unrealized": 46.2291,
+      "unrealized": 45.1342,
       "opened_at": "2026-06-09T02:06:03.659673+00:00"
     },
     {
