@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-06-30T04:06:54.372894+00:00",
+  "generated": "2026-07-01T04:07:20.090710+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-06-30T04:06:46.211397+00:00",
+      "fetched_at": "2026-07-01T04:07:10.096456+00:00",
       "content_type": "text/html",
-      "content_length": 35007,
+      "content_length": 34834,
       "size_capped": false,
-      "latency_ms": 2813,
+      "latency_ms": 4894,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -35,32 +35,32 @@
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 4
+            "count": 2
           },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "quesma.com",
+            "domain": "anthropic.com",
             "count": 1
           },
           {
-            "domain": "hccf.onmy.cloud",
+            "domain": "thereallo.dev",
             "count": 1
           },
           {
-            "domain": "weblog.rogueamoeba.com",
+            "domain": "forbes.com",
             "count": 1
           },
           {
-            "domain": "fil-c.org",
+            "domain": "en.wikipedia.org",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 667,
+      "word_count": 633,
       "reading_time_min": 3,
       "keywords": [
         {
@@ -84,12 +84,8 @@
           "count": 28
         },
         {
-          "term": "memory",
+          "term": "claude",
           "count": 4
-        },
-        {
-          "term": "github.com",
-          "count": 3
         },
         {
           "term": "hacker",
@@ -100,15 +96,19 @@
           "count": 2
         },
         {
-          "term": "free",
+          "term": "past",
           "count": 2
         },
         {
-          "term": "model",
+          "term": "code",
           "count": 2
         },
         {
-          "term": "ornith-1.0",
+          "term": "google",
+          "count": 2
+        },
+        {
+          "term": "scratch",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Qwen 3.6 27B is the sweet spot for local development (quesma.com)"
+            "Claude Sonnet 5 (anthropic.com)"
           ],
           [
             "",
-            "704 points by stared 11 hours ago | hide | 543 comments"
+            "957 points by marinesebastian 10 hours ago | hide | 543 comments"
           ],
           [
             "2.",
             "",
-            ".self: A new top-level domain designed to support self-hosting (onmy.cloud)"
+            "Claude Code is steganographically marking requests (thereallo.dev)"
           ],
           [
             "",
-            "379 points by HumanCCF 8 hours ago | hide | 216 comments"
+            "1534 points by kirushik 12 hours ago | hide | 439 comments"
           ],
           [
             "3.",
             "",
-            "Free the Icons (rogueamoeba.com)"
+            "Google copybara: moving code between repositories (github.com/google)"
           ],
           [
             "",
-            "295 points by zdw 7 hours ago | hide | 80 comments"
+            "106 points by reconnecting 4 hours ago | hide | 13 comments"
           ],
           [
             "4.",
             "",
-            "Memory Safe Context Switching (longjmp, setjmp) in Fil-C (fil-c.org)"
+            "Supersonic flight returning to US after half-century ban (forbes.com/sites/suzannerowankelleher)"
           ],
           [
             "",
-            "52 points by modeless 3 hours ago | hide | 19 comments"
+            "16 points by lobbly 1 hour ago | hide | 8 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-06-30T04:06:49.049661+00:00",
+      "fetched_at": "2026-07-01T04:07:15.015629+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 1007,
+      "latency_ms": 915,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-06-30T04:06:50.057038+00:00",
+      "fetched_at": "2026-07-01T04:07:15.930832+00:00",
       "content_type": "text/html",
       "content_length": 167530,
       "size_capped": false,
-      "latency_ms": 2249,
+      "latency_ms": 2333,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-06-30T04:06:52.334755+00:00",
+      "fetched_at": "2026-07-01T04:07:18.292517+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 2029,
+      "latency_ms": 1790,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
