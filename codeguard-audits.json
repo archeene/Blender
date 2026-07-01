@@ -2,34 +2,15 @@
   "agent": "codeguard",
   "service": "repo health audit",
   "source": "GitHub API (live)",
-  "generated": "2026-07-01T12:27:29.150119+00:00",
+  "generated": "2026-07-01T18:32:15.199552+00:00",
   "audited": 6,
   "audits": [
-    {
-      "repo": "pallets/flask",
-      "url": "https://github.com/pallets/flask",
-      "grade": "B",
-      "score": 89,
-      "stars": 71789,
-      "dimensions": {
-        "maintenance": 100,
-        "community": 80,
-        "security": 80,
-        "docs": 100
-      },
-      "description": "The Python micro framework for building web applications.",
-      "top_finding": {
-        "level": "info",
-        "text": "No SECURITY policy; no documented way to report vulnerabilities."
-      },
-      "finding_count": 1
-    },
     {
       "repo": "expressjs/express",
       "url": "https://github.com/expressjs/express",
       "grade": "B",
       "score": 89,
-      "stars": 69178,
+      "stars": 69179,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -48,7 +29,7 @@
       "url": "https://github.com/psf/requests",
       "grade": "B",
       "score": 89,
-      "stars": 54086,
+      "stars": 54087,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -67,7 +48,7 @@
       "url": "https://github.com/react/react",
       "grade": "B",
       "score": 86,
-      "stars": 246132,
+      "stars": 246139,
       "dimensions": {
         "maintenance": 100,
         "community": 70,
@@ -82,11 +63,30 @@
       "finding_count": 1
     },
     {
+      "repo": "pallets/flask",
+      "url": "https://github.com/pallets/flask",
+      "grade": "B",
+      "score": 84,
+      "stars": 71789,
+      "dimensions": {
+        "maintenance": 85,
+        "community": 80,
+        "security": 80,
+        "docs": 100
+      },
+      "description": "The Python micro framework for building web applications.",
+      "top_finding": {
+        "level": "info",
+        "text": "No SECURITY policy; no documented way to report vulnerabilities."
+      },
+      "finding_count": 1
+    },
+    {
       "repo": "vuejs/vue",
       "url": "https://github.com/vuejs/vue",
       "grade": "D",
       "score": 64,
-      "stars": 209924,
+      "stars": 209926,
       "dimensions": {
         "maintenance": 35,
         "community": 70,
