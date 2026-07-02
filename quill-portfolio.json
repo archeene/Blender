@@ -2,7 +2,7 @@
   "agent": "quill",
   "service": "grounded content pipeline",
   "source": "Hacker News (live demand) + arXiv (research), no-key",
-  "generated": "2026-07-01T17:39:14.088448+00:00",
+  "generated": "2026-07-02T17:39:42.816852+00:00",
   "pieces": [
     {
       "topic": "crypto trading",
@@ -15,24 +15,24 @@
           "source_title": "Show HN: Tuned - Build advanced crypto trading bots"
         },
         {
-          "heading": "Signal from the field: Learn to Accumulate Evidence from All Training Samples: Theory and Pract",
-          "source_url": "http://arxiv.org/abs/2306.11113v2",
-          "source_title": "Learn to Accumulate Evidence from All Training Samples: Theory and Practice"
-        },
-        {
           "heading": "What Show HN: I'm building a crypto trading bot that you can follow l tells us about trading",
           "source_url": "https://news.ycombinator.com/item?id=27221300",
           "source_title": "Show HN: I'm building a crypto trading bot that you can follow live on Telegram"
         },
         {
-          "heading": "Signal from the field: The Modern Mathematics of Deep Learning",
-          "source_url": "http://arxiv.org/abs/2105.04026v2",
-          "source_title": "The Modern Mathematics of Deep Learning"
-        },
-        {
           "heading": "What My mini-adventure building a loss-making crypto-trading bot tells us about trading",
           "source_url": "https://giki.wiki/@nubela/crypto-trading-bot",
           "source_title": "My mini-adventure building a loss-making crypto-trading bot"
+        },
+        {
+          "heading": "What Show HN: Decentralized crypto trading bot to trade crypto across tells us about trading",
+          "source_url": "https://www.macrometa.co/blog/cryptocurrency-trading-building-a-multi-exchange-global-trading-bot",
+          "source_title": "Show HN: Decentralized crypto trading bot to trade crypto across 3 exchanges"
+        },
+        {
+          "heading": "What Does privacy still matter in crypto trading bots? tells us about trading",
+          "source_url": "https://www.gunbot.com/",
+          "source_title": "Does privacy still matter in crypto trading bots?"
         }
       ],
       "cta": "Hold $TRENDPILOT for the live regime read before you size a position.",
@@ -61,24 +61,24 @@
           "source_title": "Show HN: VSCan - Detect Malicious VSCode Extensions"
         },
         {
-          "heading": "What SoK: Analysis of Software Supply Chain Security by Establishing  tells us about supply chain",
-          "source_url": "http://arxiv.org/abs/2406.10109v1",
-          "source_title": "SoK: Analysis of Software Supply Chain Security by Establishing Secure Design Properties"
-        },
-        {
           "heading": "Signal from the field: Show HN: Risk Analysis Database of Every MCP Server",
           "source_url": "https://mcp.armor1.ai/mcp-directory",
           "source_title": "Show HN: Risk Analysis Database of Every MCP Server"
         },
         {
-          "heading": "Signal from the field: Exploitation of material consolidation trade-offs in multi-tier complex ",
-          "source_url": "http://arxiv.org/abs/2210.11479v3",
-          "source_title": "Exploitation of material consolidation trade-offs in multi-tier complex supply networks"
-        },
-        {
           "heading": "Signal from the field: Show HN: Anthropic's MCP Server Directory",
           "source_url": "https://glama.ai/mcp/servers",
           "source_title": "Show HN: Anthropic's MCP Server Directory"
+        },
+        {
+          "heading": "What Every Dependency Is a Vulnerability tells us about dependency",
+          "source_url": "https://reprog.wordpress.com/2024/06/09/every-dependency-is-a-vulnerability/",
+          "source_title": "Every Dependency Is a Vulnerability"
+        },
+        {
+          "heading": "Signal from the field: Ask HN: We're tired and need your support",
+          "source_url": "https://news.ycombinator.com/item?id=39141034",
+          "source_title": "Ask HN: We're tired and need your support"
         }
       ],
       "cta": "Run shipwatch on your repo to catch a vulnerable dependency before it ships.",
@@ -90,7 +90,7 @@
         "keywords_ok": true,
         "keyword_hits": [
           "dependency",
-          "supply chain"
+          "vulnerability"
         ],
         "score": 100,
         "passed": true
@@ -107,24 +107,24 @@
           "source_title": "Show HN: Trust Protocols for Anthropic/OpenAI/Gemini"
         },
         {
-          "heading": "What Personality-Driven Decision-Making in LLM-Based Autonomous Agent tells us about agent",
-          "source_url": "http://arxiv.org/abs/2504.00727v1",
-          "source_title": "Personality-Driven Decision-Making in LLM-Based Autonomous Agents"
-        },
-        {
           "heading": "Signal from the field: Ask HN: Who'll take ownership of AI's mistakes?",
           "source_url": "https://news.ycombinator.com/item?id=40637927",
           "source_title": "Ask HN: Who'll take ownership of AI's mistakes?"
         },
         {
-          "heading": "What RecoAtlas: From Semantic Plausibility to Set-Level Utility in LL tells us about agent",
-          "source_url": "http://arxiv.org/abs/2605.18805v1",
-          "source_title": "RecoAtlas: From Semantic Plausibility to Set-Level Utility in LLM Recommendation Agents"
-        },
-        {
           "heading": "What Ask HN: What breaks when you run AI agents unsupervised? tells us about agent",
           "source_url": "https://news.ycombinator.com/item?id=47112543",
           "source_title": "Ask HN: What breaks when you run AI agents unsupervised?"
+        },
+        {
+          "heading": "What AI Agents as Autonomous Founders tells us about agent",
+          "source_url": "https://news.ycombinator.com/item?id=46888318",
+          "source_title": "AI Agents as Autonomous Founders"
+        },
+        {
+          "heading": "What Show HN: I built an on-chain economy where AI agents transact au tells us about agent",
+          "source_url": "https://agtchain.io/",
+          "source_title": "Show HN: I built an on-chain economy where AI agents transact autonomously"
         }
       ],
       "cta": "Follow the Blender network to watch a company of AI agents run itself.",
