@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-07-01T16:07:29.290496+00:00",
+  "generated": "2026-07-02T04:07:45.259478+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-07-01T16:07:22.635122+00:00",
+      "fetched_at": "2026-07-02T04:07:32.030892+00:00",
       "content_type": "text/html",
-      "content_length": 34290,
+      "content_length": 34221,
       "size_capped": false,
-      "latency_ms": 1802,
+      "latency_ms": 2297,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,38 +29,38 @@
         }
       },
       "links": {
-        "total": 194,
-        "internal": 162,
-        "external": 32,
+        "total": 189,
+        "internal": 159,
+        "external": 30,
         "top_external_domains": [
           {
             "domain": "ycombinator.com",
             "count": 3
           },
           {
-            "domain": "github.com",
-            "count": 3
-          },
-          {
-            "domain": "quantamagazine.org",
+            "domain": "zcode.z.ai",
             "count": 1
           },
           {
-            "domain": "biotic.org",
+            "domain": "tedium.co",
             "count": 1
           },
           {
-            "domain": "wangcong.org",
+            "domain": "workerowned.info",
             "count": 1
           },
           {
-            "domain": "box2d.org",
+            "domain": "makerspet.com",
+            "count": 1
+          },
+          {
+            "domain": "senior-swe-bench.snorkel.ai",
             "count": 1
           }
         ]
       },
       "image_count": 3,
-      "word_count": 615,
+      "word_count": 655,
       "reading_time_min": 3,
       "keywords": [
         {
@@ -72,31 +72,19 @@
           "count": 30
         },
         {
-          "term": "comments",
-          "count": 29
-        },
-        {
           "term": "points",
           "count": 29
         },
         {
+          "term": "comments",
+          "count": 28
+        },
+        {
           "term": "hours",
-          "count": 23
+          "count": 26
         },
         {
           "term": "hour",
-          "count": 6
-        },
-        {
-          "term": "cell",
-          "count": 4
-        },
-        {
-          "term": "claude",
-          "count": 3
-        },
-        {
-          "term": "code",
           "count": 3
         },
         {
@@ -108,7 +96,19 @@
           "count": 2
         },
         {
-          "term": "first",
+          "term": "open-source",
+          "count": 2
+        },
+        {
+          "term": "robot",
+          "count": 2
+        },
+        {
+          "term": "senior",
+          "count": 2
+        },
+        {
+          "term": "production",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "For first time, a cell built from scratch grows and divides (quantamagazine.org)"
+            "ZCode \u2013 Harness for GLM-5.2 (z.ai)"
           ],
           [
             "",
-            "134 points by defrost 1 hour ago | hide | 31 comments"
+            "269 points by chvid 6 hours ago | hide | 236 comments"
           ],
           [
             "2.",
             "",
-            "SpudCell: The first synthetic cell with a complete cell cycle (biotic.org)"
+            "Bring Back Crappy Forums (tedium.co)"
           ],
           [
             "",
-            "59 points by godwinson__4-8 1 hour ago | hide | 2 comments"
+            "46 points by pentagrama 1 hour ago | hide | 23 comments"
           ],
           [
             "3.",
             "",
-            "Why I Stopped Arguing with People (wangcong.org)"
+            "Show HN: Searchable directory of 22k+ products from worker-owned co-ops (workerowned.info)"
           ],
           [
             "",
-            "465 points by backlit4034 2 hours ago | hide | 370 comments"
+            "281 points by IESAI_ski 7 hours ago | hide | 57 comments"
           ],
           [
             "4.",
             "",
-            "Announcing Box3D :: Box2D (box2d.org)"
+            "Building an Open-Source Robot Vacuum \u2013 Meet Oomwoo (makerspet.com)"
           ],
           [
             "",
-            "129 points by makepanic 3 hours ago | hide | 27 comments"
+            "92 points by devicelimit 3 hours ago | hide | 10 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-07-01T16:07:24.460154+00:00",
+      "fetched_at": "2026-07-02T04:07:34.356266+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 1030,
+      "latency_ms": 1429,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-07-01T16:07:25.491844+00:00",
+      "fetched_at": "2026-07-02T04:07:35.786491+00:00",
       "content_type": "text/html",
-      "content_length": 167530,
+      "content_length": 167709,
       "size_capped": false,
-      "latency_ms": 2041,
+      "latency_ms": 4755,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-07-01T16:07:27.557846+00:00",
+      "fetched_at": "2026-07-02T04:07:40.569510+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1726,
+      "latency_ms": 4683,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
