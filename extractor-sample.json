@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-07-02T04:07:45.259478+00:00",
+  "generated": "2026-07-02T16:07:57.893297+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-07-02T04:07:32.030892+00:00",
+      "fetched_at": "2026-07-02T16:07:50.402440+00:00",
       "content_type": "text/html",
-      "content_length": 34221,
+      "content_length": 34635,
       "size_capped": false,
-      "latency_ms": 2297,
+      "latency_ms": 2039,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,38 +29,38 @@
         }
       },
       "links": {
-        "total": 189,
-        "internal": 159,
-        "external": 30,
+        "total": 195,
+        "internal": 162,
+        "external": 33,
         "top_external_domains": [
+          {
+            "domain": "github.com",
+            "count": 4
+          },
           {
             "domain": "ycombinator.com",
             "count": 3
           },
           {
-            "domain": "zcode.z.ai",
+            "domain": "mathstodon.xyz",
+            "count": 2
+          },
+          {
+            "domain": "manufact.com",
             "count": 1
           },
           {
-            "domain": "tedium.co",
+            "domain": "f-droid.org",
             "count": 1
           },
           {
-            "domain": "workerowned.info",
-            "count": 1
-          },
-          {
-            "domain": "makerspet.com",
-            "count": 1
-          },
-          {
-            "domain": "senior-swe-bench.snorkel.ai",
+            "domain": "mailmemories.com",
             "count": 1
           }
         ]
       },
       "image_count": 3,
-      "word_count": 655,
+      "word_count": 704,
       "reading_time_min": 3,
       "keywords": [
         {
@@ -72,19 +72,23 @@
           "count": 30
         },
         {
-          "term": "points",
+          "term": "comments",
           "count": 29
         },
         {
-          "term": "comments",
-          "count": 28
+          "term": "points",
+          "count": 29
         },
         {
           "term": "hours",
           "count": 26
         },
         {
-          "term": "hour",
+          "term": "code",
+          "count": 5
+        },
+        {
+          "term": "github.com",
           "count": 3
         },
         {
@@ -96,19 +100,15 @@
           "count": 2
         },
         {
-          "term": "open-source",
+          "term": "minutes",
           "count": 2
         },
         {
-          "term": "robot",
+          "term": "mathstodon.xyz",
           "count": 2
         },
         {
-          "term": "senior",
-          "count": 2
-        },
-        {
-          "term": "production",
+          "term": "hour",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "ZCode \u2013 Harness for GLM-5.2 (z.ai)"
+            "Launch HN: Manufact (YC S25) \u2013 MCP Cloud (manufact.com)"
           ],
           [
             "",
-            "269 points by chvid 6 hours ago | hide | 236 comments"
+            "35 points by pzullo 54 minutes ago | hide | 18 comments"
           ],
           [
             "2.",
             "",
-            "Bring Back Crappy Forums (tedium.co)"
+            "Since Linux 6.9, LUKS suspend stopped wiping disk-encryption keys from memory (mathstodon.xyz)"
           ],
           [
             "",
-            "46 points by pentagrama 1 hour ago | hide | 23 comments"
+            "30 points by IngoBlechschmid 40 minutes ago | hide | discuss"
           ],
           [
             "3.",
             "",
-            "Show HN: Searchable directory of 22k+ products from worker-owned co-ops (workerowned.info)"
+            "Android Developer Verification: Threat masquerading as protection (f-droid.org)"
           ],
           [
             "",
-            "281 points by IESAI_ski 7 hours ago | hide | 57 comments"
+            "1251 points by drewfax 13 hours ago | hide | 513 comments"
           ],
           [
             "4.",
             "",
-            "Building an Open-Source Robot Vacuum \u2013 Meet Oomwoo (makerspet.com)"
+            "Show HN: Mail Memories \u2013 A desktop app to rescue photos from Gmail (mailmemories.com)"
           ],
           [
             "",
-            "92 points by devicelimit 3 hours ago | hide | 10 comments"
+            "46 points by ltiger 1 hour ago | hide | 16 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-07-02T04:07:34.356266+00:00",
+      "fetched_at": "2026-07-02T16:07:52.466179+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 1429,
+      "latency_ms": 902,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-07-02T04:07:35.786491+00:00",
+      "fetched_at": "2026-07-02T16:07:53.369824+00:00",
       "content_type": "text/html",
-      "content_length": 167709,
+      "content_length": 167530,
       "size_capped": false,
-      "latency_ms": 4755,
+      "latency_ms": 1745,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-07-02T04:07:40.569510+00:00",
+      "fetched_at": "2026-07-02T16:07:55.140650+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 4683,
+      "latency_ms": 2746,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
