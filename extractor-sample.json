@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-07-03T04:08:06.919098+00:00",
+  "generated": "2026-07-03T16:08:16.762606+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-07-03T04:08:00.451131+00:00",
+      "fetched_at": "2026-07-03T16:08:09.244110+00:00",
       "content_type": "text/html",
-      "content_length": 34915,
+      "content_length": 35074,
       "size_capped": false,
-      "latency_ms": 1806,
+      "latency_ms": 2158,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,44 +29,40 @@
         }
       },
       "links": {
-        "total": 198,
-        "internal": 165,
+        "total": 197,
+        "internal": 164,
         "external": 33,
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 6
+            "count": 4
+          },
+          {
+            "domain": "arxiv.org",
+            "count": 2
           },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "hunton.com",
+            "domain": "weli.dev",
             "count": 1
           },
           {
-            "domain": "caseyliss.com",
+            "domain": "ubicloud.com",
             "count": 1
           },
           {
-            "domain": "righttointelligence.org",
-            "count": 1
-          },
-          {
-            "domain": "mathstodon.xyz",
+            "domain": "superuserdone.com",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 648,
+      "word_count": 672,
       "reading_time_min": 3,
       "keywords": [
-        {
-          "term": "comments",
-          "count": 30
-        },
         {
           "term": "points",
           "count": 30
@@ -80,35 +76,39 @@
           "count": 30
         },
         {
+          "term": "comments",
+          "count": 24
+        },
+        {
           "term": "hours",
-          "count": 29
+          "count": 18
+        },
+        {
+          "term": "hour",
+          "count": 6
+        },
+        {
+          "term": "discuss",
+          "count": 4
+        },
+        {
+          "term": "minutes",
+          "count": 3
         },
         {
           "term": "github.com",
-          "count": 5
+          "count": 3
+        },
+        {
+          "term": "comment",
+          "count": 3
+        },
+        {
+          "term": "day",
+          "count": 3
         },
         {
           "term": "hacker",
-          "count": 2
-        },
-        {
-          "term": "news",
-          "count": 2
-        },
-        {
-          "term": "video",
-          "count": 2
-        },
-        {
-          "term": "people",
-          "count": 2
-        },
-        {
-          "term": "order",
-          "count": 2
-        },
-        {
-          "term": "flow",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Virginia bans sale of geolocation data (hunton.com)"
+            "Markets are competitive if and only if P = NP (arxiv.org)"
           ],
           [
             "",
-            "600 points by toomuchtodo 7 hours ago | hide | 102 comments"
+            "40 points by kscarlet 26 minutes ago | hide | 16 comments"
           ],
           [
             "2.",
             "",
-            "CarPlay Is Additive (caseyliss.com)"
+            "Half-Baked Product (weli.dev)"
           ],
           [
             "",
-            "95 points by sprawl_ 3 hours ago | hide | 108 comments"
+            "853 points by weli 7 hours ago | hide | 255 comments"
           ],
           [
             "3.",
             "",
-            "crustc: entirety of `rustc`, translated to C (github.com/fractalfir)"
+            "Jamesob's guide to running SOTA LLMs locally (github.com/jamesob)"
           ],
           [
             "",
-            "180 points by Philpax 5 hours ago | hide | 31 comments"
+            "22 points by livestyle 1 hour ago | hide | 3 comments"
           ],
           [
             "4.",
             "",
-            "Right to Local Intelligence (righttointelligence.org)"
+            "PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit (ubicloud.com)"
           ],
           [
             "",
-            "75 points by thoughtpeddler 4 hours ago | hide | 32 comments"
+            "74 points by furkansahin 3 hours ago | hide | 16 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-07-03T04:08:02.281965+00:00",
+      "fetched_at": "2026-07-03T16:08:11.432097+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 811,
+      "latency_ms": 946,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-07-03T04:08:03.092820+00:00",
+      "fetched_at": "2026-07-03T16:08:12.378674+00:00",
       "content_type": "text/html",
-      "content_length": 167530,
+      "content_length": 226629,
       "size_capped": false,
-      "latency_ms": 1961,
+      "latency_ms": 2220,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -304,9 +304,9 @@
         }
       },
       "links": {
-        "total": 321,
-        "internal": 222,
-        "external": 99,
+        "total": 320,
+        "internal": 220,
+        "external": 100,
         "top_external_domains": [
           {
             "domain": "web.archive.org",
@@ -335,16 +335,16 @@
         ]
       },
       "image_count": 10,
-      "word_count": 4700,
+      "word_count": 4680,
       "reading_time_min": 20,
       "keywords": [
         {
           "term": "scraping",
-          "count": 58
+          "count": 57
         },
         {
           "term": "data",
-          "count": 45
+          "count": 44
         },
         {
           "term": "retrieved",
@@ -429,7 +429,7 @@
             }
           },
           "datePublished": "2005-09-17T18:57:30Z",
-          "dateModified": "2026-06-11T00:00:02Z",
+          "dateModified": "2026-07-03T06:13:37Z",
           "headline": "data scraping used for extracting data from websites"
         }
       ],
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-07-03T04:08:05.083589+00:00",
+      "fetched_at": "2026-07-03T16:08:14.629634+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1827,
+      "latency_ms": 2122,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
