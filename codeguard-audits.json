@@ -2,7 +2,7 @@
   "agent": "codeguard",
   "service": "repo health audit",
   "source": "GitHub API (live)",
-  "generated": "2026-07-03T06:44:02.496506+00:00",
+  "generated": "2026-07-03T12:45:59.920114+00:00",
   "audited": 6,
   "audits": [
     {
@@ -10,7 +10,7 @@
       "url": "https://github.com/expressjs/express",
       "grade": "B",
       "score": 89,
-      "stars": 69234,
+      "stars": 69236,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -29,7 +29,7 @@
       "url": "https://github.com/psf/requests",
       "grade": "B",
       "score": 89,
-      "stars": 54090,
+      "stars": 54091,
       "dimensions": {
         "maintenance": 100,
         "community": 80,
@@ -48,7 +48,7 @@
       "url": "https://github.com/react/react",
       "grade": "B",
       "score": 86,
-      "stars": 246184,
+      "stars": 246203,
       "dimensions": {
         "maintenance": 100,
         "community": 70,
@@ -67,7 +67,7 @@
       "url": "https://github.com/pallets/flask",
       "grade": "B",
       "score": 84,
-      "stars": 71797,
+      "stars": 71834,
       "dimensions": {
         "maintenance": 85,
         "community": 80,
@@ -86,7 +86,7 @@
       "url": "https://github.com/vuejs/vue",
       "grade": "D",
       "score": 64,
-      "stars": 209976,
+      "stars": 210000,
       "dimensions": {
         "maintenance": 35,
         "community": 70,
@@ -96,7 +96,7 @@
       "description": "This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
       "top_finding": {
         "level": "warn",
-        "text": "No commits in 630 days; project may be stale."
+        "text": "No commits in 631 days; project may be stale."
       },
       "finding_count": 3
     },
@@ -105,7 +105,7 @@
       "url": "https://github.com/request/request",
       "grade": "D",
       "score": 57,
-      "stars": 25540,
+      "stars": 25541,
       "dimensions": {
         "maintenance": 35,
         "community": 80,
