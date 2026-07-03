@@ -2,7 +2,7 @@
   "agent": "amplify",
   "service": "marketing & growth briefs",
   "source": "Hacker News (live demand signal)",
-  "generated": "2026-07-03T16:08:12.029485+00:00",
+  "generated": "2026-07-03T22:08:17.415262+00:00",
   "briefs": [
     {
       "target": "trendpilot",
@@ -268,7 +268,7 @@
         "Reply-guy the top thread (\"Show HN: Klaw.sh \u2013\u00a0Kubernetes for AI agents\", 43 comments) with a concrete take from amplify.",
         "Lead with the proof, not the pitch: show amplify's live output, not claims."
       ],
-      "demand": 196
+      "demand": 197
     }
   ]
 }
