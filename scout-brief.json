@@ -2,7 +2,7 @@
   "agent": "scout",
   "service": "structured, cited research briefs",
   "sources": "Hacker News + arXiv + GitHub + Wikipedia (live, no key)",
-  "generated": "2026-07-02T22:12:59.791736+00:00",
+  "generated": "2026-07-03T04:13:06.907389+00:00",
   "briefs": [
     {
       "topic": "crypto trading bot",
@@ -50,122 +50,117 @@
       ],
       "recent_papers": [
         {
-          "title": "Computationally Efficient Near-Optimal Control for Current Ripple Reduction and Optimization of Three-Phase Motors via LMIs",
-          "url": "https://arxiv.org/abs/2607.01215v1",
+          "title": "Combating Textual Noise and Redundancy: Entropy-Aware Dense Visual Token Pruning",
+          "url": "https://arxiv.org/abs/2607.02484v1",
           "authors": [
-            "Huu-Thinh Do",
-            "Trung B. Tran",
-            "Jing Sun",
-            "Ilya Kolmanovsky"
+            "Xuehui Wang",
+            "Xuankun Yang",
+            "Wei Shen"
           ],
           "more_authors": 0,
           "cats": [
-            "math.OC",
-            "eess.SY"
-          ],
-          "published": "2026-07-01",
-          "abstract": "The optimal control of three-phase permanent-magnet synchronous motors (PMSMs) is challenging due to their nonlinearity and the discrete nature of the control set. Existing approaches either rely on mixed-integer trajectory optimization or require computationally intensive value-..."
-        },
-        {
-          "title": "When large trades are not news: Liquidity tail risk and price discovery",
-          "url": "https://arxiv.org/abs/2607.01198v1",
-          "authors": [
-            "Umut \u00c7etin",
-            "Mingwei Lin",
-            "Giulia Livieri"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "q-fin.TR",
-            "q-fin.MF"
-          ],
-          "published": "2026-07-01",
-          "abstract": "When is a large trade news, and when is it a liquidity shock? We study this question in a sequential competitive limit order book with asymmetric information. In our model, liquidity suppliers observe aggregate order flow but not its decomposition into informed demand and uninfor..."
-        },
-        {
-          "title": "Muon as a Residual Connection",
-          "url": "https://arxiv.org/abs/2607.01124v1",
-          "authors": [
-            "Hao Huang"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.LG",
+            "cs.CV",
             "cs.AI"
           ],
-          "published": "2026-07-01",
-          "abstract": "Muon has recently emerged as one of the most effective optimizers for training large neural networks, yet its empirical success has been explained from several different perspectives. In this paper, we propose a simple mechanistic interpretation: Muon can be understood as an impl..."
+          "published": "2026-07-02",
+          "abstract": "Visual token pruning is a crucial strategy for accelerating VLMs by compressing redundant image patches, yet existing methods often fail to preserve critical cues under dense instructions and fine-grained queries. In this paper, we investigate this failure and identify two underl..."
         },
         {
-          "title": "Plenoptic imaging of particle interactions in scintillation detectors",
-          "url": "https://arxiv.org/abs/2607.01123v1",
+          "title": "Optimal stellar rank approximation of squeezed cat states with photon catalysis",
+          "url": "https://arxiv.org/abs/2607.02427v1",
           "authors": [
-            "Xiang Dai",
-            "Chi-Jui Ho",
-            "Kevin Tandi",
-            "Chang Lee"
+            "Julian K. Nauth",
+            "Nathan Walk",
+            "Ananga M. Datta",
+            "Kurt Busch"
           ],
-          "more_authors": 8,
+          "more_authors": 3,
           "cats": [
-            "physics.ins-det",
-            "eess.SP",
-            "physics.optics"
+            "quant-ph"
           ],
-          "published": "2026-07-01",
-          "abstract": "Accurate 3D localization of radiation interactions in scintillation detectors is essential for nuclear and particle physics, safeguards, and medical imaging, but remains difficult in light-starved regimes with limited photon statistics. We present PRISM, a multifocal plenoptic im..."
+          "published": "2026-07-02",
+          "abstract": "Non-Gaussian quantum states and operations constitute essential resources for achieving quantum computational advantage and enabling quantum error correction in bosonic platforms. However, their generation in optical settings remains a challenging experimental task, often relying..."
         },
         {
-          "title": "Balancing Expressivity and Learnability in Quantum Kernel Bandit Optimization",
-          "url": "https://arxiv.org/abs/2607.01080v1",
+          "title": "Coalesced Matrix-Free Finite Elements in Cell-Wise Storage",
+          "url": "https://arxiv.org/abs/2607.02335v1",
           "authors": [
-            "Yuqi Huang",
-            "Vincent Y. F. Tan",
-            "Sharu Theresa Jose"
+            "Micha\u0142 Wichrowski"
           ],
           "more_authors": 0,
           "cats": [
-            "cs.LG",
-            "cs.IT"
+            "math.NA"
           ],
-          "published": "2026-07-01",
-          "abstract": "We investigate Gaussian process (GP) bandit optimization with quantum kernels, assuming the mean reward function lies in the reproducing kernel Hilbert space (RKHS) induced by the quantum kernel. This setting is motivated by NISQ-era tasks such as quantum control, state preparati..."
+          "published": "2026-07-02",
+          "abstract": "We present a GPU-oriented formulation of continuous high-order finite elements in which the redundant, cell-wise (element-local) vector is the persistent primary representation of all field data, rather than a transient stage of matrix-free operator evaluation. We prove that, giv..."
         },
         {
-          "title": "AutoSpeed: Annotation-Free Stage-Adaptive Motion Speed Learning for Robot Manipulation",
-          "url": "https://arxiv.org/abs/2607.01051v1",
+          "title": "Refinement of Reliability Grid Codes in the Provision of Ancillary Services",
+          "url": "https://arxiv.org/abs/2607.02319v1",
           "authors": [
-            "Qingda Hu",
-            "Ziheng Qiu",
-            "Jieru Zhao",
-            "Zhongxue Gan"
+            "Torine R. Herstad",
+            "Jalal Kazempour",
+            "Lesia Mitridati",
+            "Steven A. Gabriel"
           ],
-          "more_authors": 1,
+          "more_authors": 0,
           "cats": [
-            "cs.RO"
+            "eess.SY",
+            "math.OC"
           ],
-          "published": "2026-07-01",
-          "abstract": "Different stages of manipulation tasks exhibit varying levels of difficulty, suggesting stage-dependent motion speeds and temporal prediction horizons. However, existing IL-based visuomotor policies typically imitate the execution speed of expert demonstrations and operate with a..."
+          "published": "2026-07-02",
+          "abstract": "Stochastic resources such as wind farms, electric vehicle aggregators, and demand-side assets are increasingly participating as reserve providers in ancillary service markets. To manage delivery uncertainty, system operators impose minimum reliability thresholds on such providers..."
+        },
+        {
+          "title": "Cone domains separate FS-domains from RB-domains",
+          "url": "https://arxiv.org/abs/2607.02251v1",
+          "authors": [
+            "Yuxu Chen"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "math.GN"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Let $C$ be a closed, convex, pointed and generating cone in a finite-dimensional real vector space $V$, and let \\( D_C=(-C)\\cup\\{\\bot\\}\\) be the negative cone with a new least element, ordered by the cone order. Keimel proved that these cone domains are FS-domains and asked wheth..."
+        },
+        {
+          "title": "Patagium and tail morphology shape aerodynamic performance and control authority in gliding-mammal-inspired wings",
+          "url": "https://arxiv.org/abs/2607.02246v1",
+          "authors": [
+            "Liming Zheng",
+            "Baihui Chen",
+            "Alexander van Zuijlen",
+            "Salua Hamaza"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "physics.flu-dyn",
+            "physics.bio-ph"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Gliding mammals exhibit diverse patagium and tail/uropatagium morphologies that may influence aerodynamic performance and maneuverability. Here, we use computational fluid dynamics to isolate the aerodynamic effects of representative gliding-mammal-inspired morphologies under con..."
         }
       ],
       "notable_repos": [
         {
           "full_name": "freqtrade/freqtrade",
           "url": "https://github.com/freqtrade/freqtrade",
-          "stars": 52011,
+          "stars": 52017,
           "language": "Python",
           "desc": "Free, open source crypto trading bot"
         },
         {
           "full_name": "ccxt/ccxt",
           "url": "https://github.com/ccxt/ccxt",
-          "stars": 43160,
+          "stars": 43161,
           "language": "Python",
           "desc": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java "
         },
         {
           "full_name": "hummingbot/hummingbot",
           "url": "https://github.com/hummingbot/hummingbot",
-          "stars": 19050,
+          "stars": 19051,
           "language": "Python",
           "desc": "Open source software that helps you create and deploy high-frequency crypto trading bots"
         },
@@ -179,7 +174,7 @@
         {
           "full_name": "Drakkar-Software/OctoBot",
           "url": "https://github.com/Drakkar-Software/OctoBot",
-          "stars": 6180,
+          "stars": 6182,
           "language": "Python",
           "desc": "Free open source crypto trading bot to automate AI, Grid, DCA and TradingView strategies on Binance, Hyperliquid and 15+ exchanges, with a simple interface."
         },
@@ -192,7 +187,7 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-07-02T22:12:59.505677+00:00"
+      "generated": "2026-07-03T04:13:06.907389+00:00"
     },
     {
       "topic": "dependency security",
@@ -240,93 +235,101 @@
       ],
       "recent_papers": [
         {
-          "title": "Distributed Containment of a Compromised Agent through Repulsive Cages",
-          "url": "https://arxiv.org/abs/2607.01230v1",
+          "title": "Distributed Attacks in Persistent-State AI Control",
+          "url": "https://arxiv.org/abs/2607.02514v1",
           "authors": [
-            "Luigi Petruzziello",
-            "Camilla Fioravanti",
-            "Gabriele Oliva"
+            "Josh Hills",
+            "Ida Caspary",
+            "Asa Cooper Stickland"
           ],
           "more_authors": 0,
           "cats": [
-            "eess.SY"
+            "cs.AI"
           ],
-          "published": "2026-07-01",
-          "abstract": "UAV swarms and cyber-physical multi-agent systems are increasingly deployed in safety-critical missions that require coordinated motion, distributed decision making, and autonomy. A major security risk arises when a legitimate agent is hijacked and driven by adversarial high-leve..."
+          "published": "2026-07-02",
+          "abstract": "As AI coding agents become more autonomous, they increasingly ship code iteratively, with the codebase persisting across sessions. This persistence creates a new attack surface: a misaligned or prompt-injected agent can distribute attacks across pull requests (PRs) and time its p..."
         },
         {
-          "title": "Beta-Particle Transport and Thermalization in Kilonova Ejecta with Detailed Atomic Microphysics",
-          "url": "https://arxiv.org/abs/2607.01228v1",
+          "title": "From SRA to Self-Flow: Data Augmentation or Self-Supervision?",
+          "url": "https://arxiv.org/abs/2607.02508v1",
           "authors": [
-            "Zachary L. Andalman",
-            "Christopher L. Fryer",
-            "Christopher J. Fontes",
-            "Matthew R. Mumpower"
-          ],
-          "more_authors": 1,
-          "cats": [
-            "astro-ph.HE"
-          ],
-          "published": "2026-07-01",
-          "abstract": "When two neutron stars collide, they eject material containing heavy nuclei formed by the rapid neutron capture process ($r$-process). As these nuclei decay, they power a bright optical/near-infrared transient known as a kilonova (KN). Modeling KN emission is a complex problem in..."
-        },
-        {
-          "title": "Polynomial equivalence of the global transverse-field Ising model and the gate model of quantum computation",
-          "url": "https://arxiv.org/abs/2607.01227v1",
-          "authors": [
-            "Matthias Werner"
+            "Dengyang Jiang",
+            "Mengmeng Wang",
+            "Harry Yang",
+            "Jingdong Wang"
           ],
           "more_authors": 0,
           "cats": [
-            "quant-ph",
-            "cond-mat.quant-gas"
+            "cs.CV"
           ],
-          "published": "2026-07-01",
-          "abstract": "The transverse-field Ising model has attracted a lot of attention in recent years, especially in the quantum simulation and quantum computation literature. This interest is driven by many platforms for analog quantum computation, which implement the transverse-field Ising model f..."
+          "published": "2026-07-02",
+          "abstract": "Representation alignment has become an effective way to accelerate diffusion transformer training and improve generation quality. Recent self-alignment methods, such as SRA and Self-Flow, further remove the dependency on external pretrained encoders by constructing alignment with..."
         },
         {
-          "title": "Intertwined Constraints in Extended Cosmologies: Dark Energy, Curvature, Neutrinos, and Inflation",
-          "url": "https://arxiv.org/abs/2607.01226v1",
+          "title": "On the emergence of quantum many-body chaos for tunably-broken integrability",
+          "url": "https://arxiv.org/abs/2607.02506v1",
           "authors": [
-            "William Giar\u00e8",
-            "Dong Ha Lee",
-            "Eleonora Di Valentino"
+            "Sounak Biswas",
+            "Sthitadhi Roy",
+            "Roderich Moessner"
           ],
           "more_authors": 0,
+          "cats": [
+            "cond-mat.stat-mech",
+            "cond-mat.dis-nn",
+            "cond-mat.str-el"
+          ],
+          "published": "2026-07-02",
+          "abstract": "We develop a quantitative theory for the emergence of quantum many-body chaos as integrability is broken via a tunable parameter. In a circuit model of free fermions, 'doped' with a tunable density of integrability-breaking gates, we uncover the microscopic mechanisms underpinnin..."
+        },
+        {
+          "title": "DemoPSD: Disagreement-Modulated Policy Self-Distillation",
+          "url": "https://arxiv.org/abs/2607.02502v1",
+          "authors": [
+            "Yunhe Li",
+            "Hao Shi",
+            "Wenhao Liu",
+            "Mengzhe Ruan"
+          ],
+          "more_authors": 4,
+          "cats": [
+            "cs.LG",
+            "cs.AI"
+          ],
+          "published": "2026-07-02",
+          "abstract": "On-policy self-distillation (OPSD) has emerged as a practical method for training large language models (LLMs) to reason, where a single model acts as both the teacher and the student with different levels of information access. However, recent studies have found that the teacher..."
+        },
+        {
+          "title": "Alleviating prior dependencies for DESI DR1 clustering fits through reparameterization",
+          "url": "https://arxiv.org/abs/2607.02498v1",
+          "authors": [
+            "Marco Bonici",
+            "Simone Paradiso",
+            "Glenn McGee",
+            "Guido D'Amico"
+          ],
+          "more_authors": 47,
           "cats": [
             "astro-ph.CO"
           ],
-          "published": "2026-07-01",
-          "abstract": "We present a systematic reassessment of cosmological constraints beyond $\u039b$CDM by progressively relaxing the assumptions underlying Dark Energy (DE), Curvature, Neutrinos, and Inflation. Using the latest CMB data together with DESI BAO and different SN catalogues, we show that th..."
+          "published": "2026-07-02",
+          "abstract": "Bayesian analyses of the full-shape clustering of Dark Energy Spectroscopic Instrument (DESI) Data Release 1 (DR1) exhibit prior-volume projection effects, whereby weakly constrained nuisance parameters of the Effective Field Theory of Large Scale Structure (EFTofLSS) shift margi..."
         },
         {
-          "title": "Diverse efficiency of observable optimization for four-level quantum systems with higher-order traps",
-          "url": "https://arxiv.org/abs/2607.01217v1",
+          "title": "G-RRM: Guiding Symbolic Solvers with Recurrent Reasoning Models",
+          "url": "https://arxiv.org/abs/2607.02491v1",
           "authors": [
-            "Alexander Pechen",
-            "Boris Volkov"
+            "Timo Bertram",
+            "Sidhant Bhavnani",
+            "Richard Freinschlag",
+            "Erich Kobler"
           ],
-          "more_authors": 0,
+          "more_authors": 2,
           "cats": [
-            "quant-ph"
+            "cs.AI"
           ],
-          "published": "2026-07-01",
-          "abstract": "In this work, we perform an analytical and numerical analysis of quantum landscapes for controlling special four-level quantum systems for which we prove that the null control is a five-order trap: a $V-V$ system and an anharmonic system. As a control goal, an observable optimiza..."
-        },
-        {
-          "title": "Query Complexity of Hypergraph Connectivity and Learnability using CUT Oracles",
-          "url": "https://arxiv.org/abs/2607.01216v1",
-          "authors": [
-            "Deeparnab Chakrabarty",
-            "Hang Liao"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.DS",
-            "cs.DM"
-          ],
-          "published": "2026-07-01",
-          "abstract": "We investigate the power of CUT queries to reveal the structure of unknown hypergraphs. While simple graphs allow for optimal $O(n)$-query connectivity algorithms, hypergraphs face a fundamental identifiability barrier in that distinct hypergraphs can share identical cut-profiles..."
+          "published": "2026-07-02",
+          "abstract": "In this work, we focus on SE-RRMs, a symbol-equivariant instantiation of RRMs that exhibits improved extrapolation to larger problem sizes. We propose a neuro-symbolic approach, ``Guiding with Recurrent Reasoning Models'' (G-RRM), which integrates SE-RRMs with symbolic solvers fo..."
         }
       ],
       "notable_repos": [
@@ -374,7 +377,7 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-07-02T22:12:59.790734+00:00"
+      "generated": "2026-07-03T04:13:06.804354+00:00"
     },
     {
       "topic": "AI marketing",
@@ -422,124 +425,130 @@
       ],
       "recent_papers": [
         {
-          "title": "Theoria: Rewrite-Acceptability Verification over Informal Reasoning States",
-          "url": "https://arxiv.org/abs/2607.01223v1",
+          "title": "Distributed Attacks in Persistent-State AI Control",
+          "url": "https://arxiv.org/abs/2607.02514v1",
           "authors": [
-            "Ben Slivinski",
-            "Michael Saldivar"
+            "Josh Hills",
+            "Ida Caspary",
+            "Asa Cooper Stickland"
           ],
           "more_authors": 0,
           "cats": [
-            "cs.AI",
-            "cs.CL",
-            "cs.LG"
+            "cs.AI"
           ],
-          "published": "2026-07-01",
-          "abstract": "When should an AI system's answer be trusted? Formal proof assistants offer certainty but cannot reach most of the problem distribution; scalar LLM judges offer coverage but produce opaque scores that cannot be audited after the fact and are subject to the same coherence issues a..."
+          "published": "2026-07-02",
+          "abstract": "As AI coding agents become more autonomous, they increasingly ship code iteratively, with the codebase persisting across sessions. This persistence creates a new attack surface: a misaligned or prompt-injected agent can distribute attacks across pull requests (PRs) and time its p..."
         },
         {
-          "title": "Linkify: Learning from Interface-Augmented Assembly Graphs",
-          "url": "https://arxiv.org/abs/2607.01205v1",
+          "title": "Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots",
+          "url": "https://arxiv.org/abs/2607.02501v1",
           "authors": [
-            "Anushrut Jignasu",
-            "Daniele Grandi"
+            "Ling Xu",
+            "Chuyu Han",
+            "Borui Li",
+            "Hao Wu"
           ],
-          "more_authors": 0,
+          "more_authors": 5,
+          "cats": [
+            "cs.RO",
+            "cs.CV",
+            "cs.OS"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Embodied AI models now span vision-language-action (VLA) models and world-action models (WAMs), but practical deployment remains fragmented across model-specific Python stacks, backend assumptions, and robot-side glue code, especially on heterogeneous edge devices. Existing infer..."
+        },
+        {
+          "title": "Beyond Adam: SOAP and Muon for Faster, Label-Efficient Training of Machine Learning Interatomic Potentials",
+          "url": "https://arxiv.org/abs/2607.02499v1",
+          "authors": [
+            "Gil Harari",
+            "Yoel Zimmermann",
+            "Ola Tangen Kulseng",
+            "Laura Zichi"
+          ],
+          "more_authors": 3,
+          "cats": [
+            "cs.LG",
+            "cs.AI",
+            "physics.chem-ph"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Machine learning interatomic potentials (MLIPs) have become a hallmark of AI for scientific simulation. While efforts on new architectures and datasets have led to increasingly accurate and general models, the choice of optimizer for training has largely remained unexplored, defa..."
+        },
+        {
+          "title": "Seek to Segment: Active Perception for Panoramic Referring Segmentation",
+          "url": "https://arxiv.org/abs/2607.02497v1",
+          "authors": [
+            "Song Tang",
+            "Shuming Hu",
+            "Xincheng Shuai",
+            "Henghui Ding"
+          ],
+          "more_authors": 1,
           "cats": [
             "cs.CV"
           ],
-          "published": "2026-07-01",
-          "abstract": "We present Linkify, a framework for learning from interface-augmented assembly graphs to enable context-aware part retrieval in mechanical assemblies. While recent generative AI methods for CAD have focused largely on isolated parts or monolithic assemblies, the rich geometric in..."
+          "published": "2026-07-02",
+          "abstract": "Existing referring segmentation models passively process static images captured from fixed perspectives, limiting their applicability in Embodied AI, where agents must perform active perception in the continuous 360$^\\circ$ environments. To bridge this gap, we introduce a novel t..."
         },
         {
-          "title": "When large trades are not news: Liquidity tail risk and price discovery",
-          "url": "https://arxiv.org/abs/2607.01198v1",
+          "title": "Human Capital, Not Model Benchmarks, Predicts Hybrid Intelligence in Forecasting",
+          "url": "https://arxiv.org/abs/2607.02467v1",
           "authors": [
-            "Umut \u00c7etin",
-            "Mingwei Lin",
-            "Giulia Livieri"
+            "Vivienne Ming"
           ],
           "more_authors": 0,
           "cats": [
-            "q-fin.TR",
-            "q-fin.MF"
+            "cs.CY",
+            "cs.AI"
           ],
-          "published": "2026-07-01",
-          "abstract": "When is a large trade news, and when is it a liquidity shock? We study this question in a sequential competitive limit order book with asymmetric information. In our model, liquidity suppliers observe aggregate order flow but not its decomposition into informed demand and uninfor..."
+          "published": "2026-07-02",
+          "abstract": "Whether pairing people with AI helps or hurts is usually reported as a single average effect. Using a real-money prediction market (Polymarket) as an objective, externally resolved benchmark, this pilot shows that the value of human-AI collaboration depends on a specific, measura..."
         },
         {
-          "title": "Optimal Resource Utilization for Autonomous Laboratory Orchestrators",
-          "url": "https://arxiv.org/abs/2607.01188v1",
+          "title": "Learning to Move Before Learning to Do: Task-Agnostic pretraining for VLAs",
+          "url": "https://arxiv.org/abs/2607.02466v1",
           "authors": [
-            "Austin McDannald",
-            "Julia Tisaranni",
-            "Howie Joress"
+            "Junhao Shi",
+            "Siyin Wang",
+            "Xiaopeng Yu",
+            "Li Ji"
           ],
-          "more_authors": 0,
+          "more_authors": 2,
           "cats": [
-            "cs.AI",
-            "cond-mat.mtrl-sci"
+            "cs.RO",
+            "cs.AI"
           ],
-          "published": "2026-07-01",
-          "abstract": "In autonomous laboratories, AI agents suggest the next batch of experiments to do. However, planning and executing those tasks taking full advantage of the available resources is a completely different question. This can be challenging when dealing with real-world hardware constr..."
-        },
-        {
-          "title": "A scheme for topological phases of the Weyl $C^*$-algebra",
-          "url": "https://arxiv.org/abs/2607.01183v1",
-          "authors": [
-            "Giuseppe De Nittis",
-            "Santiago G. Rendel"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "math-ph",
-            "math.OA"
-          ],
-          "published": "2026-07-01",
-          "abstract": "In this work, we introduce a classification scheme for topological phases of matter based on the topology of the space of pure states of a model $C^*$-algebra. Under it, topological phases are described by homotopy classes of sections of certain fiber bundles of (pure) states. Ap..."
-        },
-        {
-          "title": "The Decode-Work Law: Margin-Governed, Provably-Exact Spatial Joins over Compressed Geometry",
-          "url": "https://arxiv.org/abs/2607.01182v1",
-          "authors": [
-            "Madhulatha Mandarapu",
-            "Sandeep Kunkunuru"
-          ],
-          "more_authors": 0,
-          "cats": [
-            "cs.DB",
-            "cs.CG"
-          ],
-          "published": "2026-07-01",
-          "abstract": "Filter-and-refine spatial joins have always avoided touching exact geometry for certified candidate pairs, but the field never modeled the decompression cost of the pairs that survive the filter. When geometry is stored in a compressed, progressively-decodable multiresolution cod..."
+          "published": "2026-07-02",
+          "abstract": "Vision-Language-Action (VLA) models are fundamentally bottlenecked by the scarcity of expert demonstrations -- triplets of observations, instructions, and actions that are costly to collect at scale. We argue that this bottleneck stems from conflating two distinct learning object..."
         }
       ],
       "notable_repos": [
         {
           "full_name": "twentyhq/twenty",
           "url": "https://github.com/twentyhq/twenty",
-          "stars": 52091,
+          "stars": 52099,
           "language": "TypeScript",
           "desc": "The open alternative to Salesforce, designed for AI."
         },
         {
           "full_name": "coreyhaines31/marketingskills",
           "url": "https://github.com/coreyhaines31/marketingskills",
-          "stars": 35864,
+          "stars": 35894,
           "language": "JavaScript",
           "desc": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering."
         },
         {
           "full_name": "ParthJadhav/app-store-screenshots",
           "url": "https://github.com/ParthJadhav/app-store-screenshots",
-          "stars": 5966,
+          "stars": 5970,
           "language": "TypeScript",
           "desc": "end to end app store screenshot creation using AI"
         },
         {
           "full_name": "YILS-LIN/short-video-factory",
           "url": "https://github.com/YILS-LIN/short-video-factory",
-          "stars": 4205,
+          "stars": 4236,
           "language": "TypeScript",
           "desc": "\u4e00\u952e\u751f\u6210\u4ea7\u54c1\u8425\u9500\u4e0e\u6cdb\u5185\u5bb9\u77ed\u89c6\u9891\uff0cAI\u6279\u91cf\u81ea\u52a8\u526a\u8f91\uff0c\u9ad8\u989c\u503c\u8de8\u5e73\u53f0\u684c\u9762\u7aef\u5de5\u5177 One click generation of product marketing and general content short videos, AI batch automatic cliping, beautiful cross pla"
         },
@@ -553,13 +562,13 @@
         {
           "full_name": "yaojingang/yao-open-prompts",
           "url": "https://github.com/yaojingang/yao-open-prompts",
-          "stars": 2576,
+          "stars": 2577,
           "language": "Python",
           "desc": "Yao Open Prompts: A Chinese-language AI prompt library for work, learning, content, marketing, and everyday life."
         }
       ],
       "wikipedia": null,
-      "generated": "2026-07-02T22:12:58.969489+00:00"
+      "generated": "2026-07-03T04:13:06.702281+00:00"
     },
     {
       "topic": "autonomous agents",
@@ -608,145 +617,146 @@
       ],
       "recent_papers": [
         {
-          "title": "Is One Layer Enough? Training A Single Transformer Layer Can Match Full-Parameter RL Training",
-          "url": "https://arxiv.org/abs/2607.01232v1",
+          "title": "Distributed Attacks in Persistent-State AI Control",
+          "url": "https://arxiv.org/abs/2607.02514v1",
           "authors": [
-            "Zijian Zhang",
-            "Rizhen Hu",
-            "Athanasios Glentis",
-            "Dawei Li"
-          ],
-          "more_authors": 3,
-          "cats": [
-            "cs.LG",
-            "cs.CL"
-          ],
-          "published": "2026-07-01",
-          "abstract": "Reinforcement learning (RL) has become a central component of post-training large language models (LLMs), yet little is understood about how RL adaptation is distributed across transformer layers. Existing approaches typically update all model parameters uniformly, implicitly ass..."
-        },
-        {
-          "title": "Brownian ratchets and pumps universally simulate many-body active dynamics",
-          "url": "https://arxiv.org/abs/2607.01231v1",
-          "authors": [
-            "Charles Stahl",
-            "Ethan Lake",
-            "Vedika Khemani"
+            "Josh Hills",
+            "Ida Caspary",
+            "Asa Cooper Stickland"
           ],
           "more_authors": 0,
           "cats": [
-            "cond-mat.stat-mech",
-            "quant-ph"
+            "cs.AI"
           ],
-          "published": "2026-07-01",
-          "abstract": "Active systems can exhibit a broad range of phenomena forbidden in equilibrium. Their dynamics are often specified by abstract local update rules, and it is generally unclear when the same behavior can arise from physically natural driving. Here we show that two simple driving me..."
+          "published": "2026-07-02",
+          "abstract": "As AI coding agents become more autonomous, they increasingly ship code iteratively, with the codebase persisting across sessions. This persistence creates a new attack surface: a misaligned or prompt-injected agent can distribute attacks across pull requests (PRs) and time its p..."
         },
         {
-          "title": "Distributed Containment of a Compromised Agent through Repulsive Cages",
-          "url": "https://arxiv.org/abs/2607.01230v1",
+          "title": "What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates",
+          "url": "https://arxiv.org/abs/2607.02507v1",
           "authors": [
-            "Luigi Petruzziello",
-            "Camilla Fioravanti",
-            "Gabriele Oliva"
+            "Arman Ghaffarizadeh",
+            "Danyal Mohaddes",
+            "Aliakbar Izadkhah",
+            "Shahriar Noroozizadeh"
           ],
           "more_authors": 0,
-          "cats": [
-            "eess.SY"
-          ],
-          "published": "2026-07-01",
-          "abstract": "UAV swarms and cyber-physical multi-agent systems are increasingly deployed in safety-critical missions that require coordinated motion, distributed decision making, and autonomy. A major security risk arises when a legitimate agent is hijacked and driven by adversarial high-leve..."
-        },
-        {
-          "title": "AutoMem: Automated Learning of Memory as a Cognitive Skill",
-          "url": "https://arxiv.org/abs/2607.01224v1",
-          "authors": [
-            "Shengguang Wu",
-            "Hao Zhu",
-            "Yuhui Zhang",
-            "Xiaohan Wang"
-          ],
-          "more_authors": 1,
           "cats": [
             "cs.AI",
             "cs.CL",
-            "cs.MA"
+            "cs.LG"
           ],
-          "published": "2026-07-01",
-          "abstract": "Memory expertise is a learned skill: knowing what to encode, when to retrieve, and how to organize knowledge--a capacity known in cognitive science as metamemory. We bring this perspective to LLMs by treating memory management as a trainable skill. We promote file-system operatio..."
+          "published": "2026-07-02",
+          "abstract": "LLM agents will increasingly act in socially structured settings where role, audience, and relational context can shape what is advantageous or costly to say. We study whether such social structure, without any explicit objective in the prompt, changes what an agent expresses pub..."
         },
         {
-          "title": "RepoRescue: An Empirical Study of LLM Agents on Whole-Repository Compatibility Rescue",
-          "url": "https://arxiv.org/abs/2607.01213v1",
+          "title": "Reasoning LLM Improves Speaker Recognition in Long-form TV Dramas",
+          "url": "https://arxiv.org/abs/2607.02504v1",
           "authors": [
-            "Zhihao Lin",
-            "Mingyi Zhou",
-            "Zhensu Sun",
-            "Yizhuo Yang"
+            "Yuxuan Li",
+            "Lingxi Xie",
+            "Xinyue Huo",
+            "Jihao Qiu"
           ],
-          "more_authors": 3,
+          "more_authors": 5,
           "cats": [
-            "cs.SE"
+            "cs.CL",
+            "cs.AI",
+            "cs.CV"
           ],
-          "published": "2026-07-01",
-          "abstract": "Open-source libraries and tools are widely reused, but compatibility maintenance is expensive. Once maintainers leave, useful repositories can stop working as runtimes and dependencies evolve. We study whether LLM agents can adapt old repositories to modern environments, a task w..."
+          "published": "2026-07-02",
+          "abstract": "Long-form TV dramas present a formidable challenge for comprehensive video understanding, where deciphering complex storyline often relies on \\textbf{speaker recognition}, the task of accurately attributing each spoken utterance to its respective character. In this paper, we adva..."
         },
         {
-          "title": "Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents?",
-          "url": "https://arxiv.org/abs/2607.01211v1",
+          "title": "Seek to Segment: Active Perception for Panoramic Referring Segmentation",
+          "url": "https://arxiv.org/abs/2607.02497v1",
           "authors": [
-            "Zhi Chen",
-            "Zhensu Sun",
-            "Yuling Shi",
-            "David Lo"
+            "Song Tang",
+            "Shuming Hu",
+            "Xincheng Shuai",
+            "Henghui Ding"
           ],
           "more_authors": 1,
           "cats": [
-            "cs.SE",
-            "cs.AI"
+            "cs.CV"
           ],
-          "published": "2026-07-01",
-          "abstract": "Repository-level performance-optimization benchmarks such as GSO, SWE-Perf and SWE-fficiency evaluate coding agents by applying patches to real repositories and comparing runtime against unoptimized baselines and official reference patches. Their leaderboard scores are increasing..."
+          "published": "2026-07-02",
+          "abstract": "Existing referring segmentation models passively process static images captured from fixed perspectives, limiting their applicability in Embodied AI, where agents must perform active perception in the continuous 360$^\\circ$ environments. To bridge this gap, we introduce a novel t..."
+        },
+        {
+          "title": "Controllable Sim Agents with Behavior Latents",
+          "url": "https://arxiv.org/abs/2607.02496v1",
+          "authors": [
+            "Juanwu Lu",
+            "Junyu Zhu",
+            "Ziran Wang"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.RO",
+            "cs.LG"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Realistic traffic simulation requires agents that imitate logged behavior and can also be steered along interpretable axes. Such controllability enables engineers to isolate variables, reproduce specific edge cases, and test autonomous systems without real-world risk. We introduc..."
+        },
+        {
+          "title": "Towards Robustness against Typographic Attack with Training-free Concept Localization",
+          "url": "https://arxiv.org/abs/2607.02494v1",
+          "authors": [
+            "Bohan Liu",
+            "Wenqian Ye",
+            "Guangzhi Xiong",
+            "Zhenghao He"
+          ],
+          "more_authors": 2,
+          "cats": [
+            "cs.CV",
+            "cs.CL"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Models trained via Contrastive Language-Image Pretraining (CLIP) serve as the foundational vision encoders for most modern Large Vision Language Models (LVLMs). Despite their widespread adoption, CLIP models exhibit a critical yet underexplored failure mode: irrelevant text appea..."
         }
       ],
       "notable_repos": [
         {
           "full_name": "cline/cline",
           "url": "https://github.com/cline/cline",
-          "stars": 64218,
+          "stars": 64229,
           "language": "TypeScript",
           "desc": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant."
         },
         {
           "full_name": "ruvnet/ruflo",
           "url": "https://github.com/ruvnet/ruflo",
-          "stars": 62643,
+          "stars": 62689,
           "language": "TypeScript",
           "desc": "\ud83c\udf0a The leading agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptiv"
         },
         {
           "full_name": "crewAIInc/crewAI",
           "url": "https://github.com/crewAIInc/crewAI",
-          "stars": 54787,
+          "stars": 54800,
           "language": "Python",
           "desc": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tac"
         },
         {
           "full_name": "CherryHQ/cherry-studio",
           "url": "https://github.com/CherryHQ/cherry-studio",
-          "stars": 48073,
+          "stars": 48087,
           "language": "TypeScript",
           "desc": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs"
         },
         {
           "full_name": "reworkd/AgentGPT",
           "url": "https://github.com/reworkd/AgentGPT",
-          "stars": 36242,
+          "stars": 36243,
           "language": "TypeScript",
           "desc": "\ud83e\udd16 Assemble, configure, and deploy autonomous AI Agents in your browser."
         },
         {
           "full_name": "khoj-ai/khoj",
           "url": "https://github.com/khoj-ai/khoj",
-          "stars": 35446,
+          "stars": 35448,
           "language": "Python",
           "desc": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or loca"
         }
@@ -756,7 +766,7 @@
         "extract": "An autonomous agent is an artificial intelligence (AI) system that can perform complex tasks independently.",
         "url": "https://en.wikipedia.org/wiki/Autonomous_agent"
       },
-      "generated": "2026-07-02T22:12:58.975509+00:00"
+      "generated": "2026-07-03T04:13:06.615112+00:00"
     }
   ]
 }
