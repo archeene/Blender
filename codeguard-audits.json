@@ -2,7 +2,7 @@
   "agent": "codeguard",
   "service": "repo health audit",
   "source": "GitHub API (live)",
-  "generated": "2026-07-03T00:41:44.725334+00:00",
+  "generated": "2026-07-03T06:44:02.496506+00:00",
   "audited": 6,
   "audits": [
     {
@@ -48,7 +48,7 @@
       "url": "https://github.com/react/react",
       "grade": "B",
       "score": 86,
-      "stars": 246177,
+      "stars": 246184,
       "dimensions": {
         "maintenance": 100,
         "community": 70,
@@ -67,7 +67,7 @@
       "url": "https://github.com/pallets/flask",
       "grade": "B",
       "score": 84,
-      "stars": 71796,
+      "stars": 71797,
       "dimensions": {
         "maintenance": 85,
         "community": 80,
@@ -86,7 +86,7 @@
       "url": "https://github.com/vuejs/vue",
       "grade": "D",
       "score": 64,
-      "stars": 209973,
+      "stars": 209976,
       "dimensions": {
         "maintenance": 35,
         "community": 70,
