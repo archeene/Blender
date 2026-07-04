@@ -2,12 +2,13 @@
   "agent": "scout",
   "service": "structured, cited research briefs",
   "sources": "Hacker News + arXiv + GitHub + Wikipedia (live, no key)",
-  "generated": "2026-07-04T04:14:03.291309+00:00",
+  "generated": "2026-07-04T10:14:10.814382+00:00",
   "briefs": [
     {
       "topic": "crypto trading bot",
       "summary_sources": [
         "Hacker News",
+        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -47,40 +48,133 @@
           "hn": "https://news.ycombinator.com/item?id=42136699"
         }
       ],
-      "recent_papers": [],
+      "recent_papers": [
+        {
+          "title": "Combating Textual Noise and Redundancy: Entropy-Aware Dense Visual Token Pruning",
+          "url": "https://arxiv.org/abs/2607.02484v1",
+          "authors": [
+            "Xuehui Wang",
+            "Xuankun Yang",
+            "Wei Shen"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.CV",
+            "cs.AI"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Visual token pruning is a crucial strategy for accelerating VLMs by compressing redundant image patches, yet existing methods often fail to preserve critical cues under dense instructions and fine-grained queries. In this paper, we investigate this failure and identify two underl..."
+        },
+        {
+          "title": "Optimal stellar rank approximation of squeezed cat states with photon catalysis",
+          "url": "https://arxiv.org/abs/2607.02427v1",
+          "authors": [
+            "Julian K. Nauth",
+            "Nathan Walk",
+            "Ananga M. Datta",
+            "Kurt Busch"
+          ],
+          "more_authors": 3,
+          "cats": [
+            "quant-ph"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Non-Gaussian quantum states and operations constitute essential resources for achieving quantum computational advantage and enabling quantum error correction in bosonic platforms. However, their generation in optical settings remains a challenging experimental task, often relying..."
+        },
+        {
+          "title": "Coalesced Matrix-Free Finite Elements in Cell-Wise Storage",
+          "url": "https://arxiv.org/abs/2607.02335v1",
+          "authors": [
+            "Micha\u0142 Wichrowski"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "math.NA"
+          ],
+          "published": "2026-07-02",
+          "abstract": "We present a GPU-oriented formulation of continuous high-order finite elements in which the redundant, cell-wise (element-local) vector is the persistent primary representation of all field data, rather than a transient stage of matrix-free operator evaluation. We prove that, giv..."
+        },
+        {
+          "title": "Refinement of Reliability Grid Codes in the Provision of Ancillary Services",
+          "url": "https://arxiv.org/abs/2607.02319v1",
+          "authors": [
+            "Torine R. Herstad",
+            "Jalal Kazempour",
+            "Lesia Mitridati",
+            "Steven A. Gabriel"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "eess.SY",
+            "math.OC"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Stochastic resources such as wind farms, electric vehicle aggregators, and demand-side assets are increasingly participating as reserve providers in ancillary service markets. To manage delivery uncertainty, system operators impose minimum reliability thresholds on such providers..."
+        },
+        {
+          "title": "Cone domains separate FS-domains from RB-domains",
+          "url": "https://arxiv.org/abs/2607.02251v1",
+          "authors": [
+            "Yuxu Chen"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "math.GN"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Let $C$ be a closed, convex, pointed and generating cone in a finite-dimensional real vector space $V$, and let \\( D_C=(-C)\\cup\\{\\bot\\}\\) be the negative cone with a new least element, ordered by the cone order. Keimel proved that these cone domains are FS-domains and asked wheth..."
+        },
+        {
+          "title": "Patagium and tail morphology shape aerodynamic performance and control authority in gliding-mammal-inspired wings",
+          "url": "https://arxiv.org/abs/2607.02246v1",
+          "authors": [
+            "Liming Zheng",
+            "Baihui Chen",
+            "Alexander van Zuijlen",
+            "Salua Hamaza"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "physics.flu-dyn",
+            "physics.bio-ph"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Gliding mammals exhibit diverse patagium and tail/uropatagium morphologies that may influence aerodynamic performance and maneuverability. Here, we use computational fluid dynamics to isolate the aerodynamic effects of representative gliding-mammal-inspired morphologies under con..."
+        }
+      ],
       "notable_repos": [
         {
           "full_name": "freqtrade/freqtrade",
           "url": "https://github.com/freqtrade/freqtrade",
-          "stars": 52029,
+          "stars": 52035,
           "language": "Python",
           "desc": "Free, open source crypto trading bot"
         },
         {
           "full_name": "ccxt/ccxt",
           "url": "https://github.com/ccxt/ccxt",
-          "stars": 43168,
+          "stars": 43174,
           "language": "Python",
           "desc": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java "
         },
         {
           "full_name": "hummingbot/hummingbot",
           "url": "https://github.com/hummingbot/hummingbot",
-          "stars": 19059,
+          "stars": 19060,
           "language": "Python",
           "desc": "Open source software that helps you create and deploy high-frequency crypto trading bots"
         },
         {
           "full_name": "jesse-ai/jesse",
           "url": "https://github.com/jesse-ai/jesse",
-          "stars": 8135,
+          "stars": 8136,
           "language": "JavaScript",
           "desc": "An advanced crypto trading bot written in Python"
         },
         {
           "full_name": "Drakkar-Software/OctoBot",
           "url": "https://github.com/Drakkar-Software/OctoBot",
-          "stars": 6186,
+          "stars": 6187,
           "language": "Python",
           "desc": "Free open source crypto trading bot to automate AI, Grid, DCA and TradingView strategies on Binance, Hyperliquid and 15+ exchanges, with a simple interface."
         },
@@ -93,12 +187,13 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-07-04T04:14:03.291309+00:00"
+      "generated": "2026-07-04T10:14:10.814382+00:00"
     },
     {
       "topic": "dependency security",
       "summary_sources": [
         "Hacker News",
+        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -138,7 +233,105 @@
           "hn": "https://news.ycombinator.com/item?id=42443069"
         }
       ],
-      "recent_papers": [],
+      "recent_papers": [
+        {
+          "title": "Distributed Attacks in Persistent-State AI Control",
+          "url": "https://arxiv.org/abs/2607.02514v1",
+          "authors": [
+            "Josh Hills",
+            "Ida Caspary",
+            "Asa Cooper Stickland"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.AI"
+          ],
+          "published": "2026-07-02",
+          "abstract": "As AI coding agents become more autonomous, they increasingly ship code iteratively, with the codebase persisting across sessions. This persistence creates a new attack surface: a misaligned or prompt-injected agent can distribute attacks across pull requests (PRs) and time its p..."
+        },
+        {
+          "title": "From SRA to Self-Flow: Data Augmentation or Self-Supervision?",
+          "url": "https://arxiv.org/abs/2607.02508v1",
+          "authors": [
+            "Dengyang Jiang",
+            "Mengmeng Wang",
+            "Harry Yang",
+            "Jingdong Wang"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.CV"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Representation alignment has become an effective way to accelerate diffusion transformer training and improve generation quality. Recent self-alignment methods, such as SRA and Self-Flow, further remove the dependency on external pretrained encoders by constructing alignment with..."
+        },
+        {
+          "title": "On the emergence of quantum many-body chaos for tunably-broken integrability",
+          "url": "https://arxiv.org/abs/2607.02506v1",
+          "authors": [
+            "Sounak Biswas",
+            "Sthitadhi Roy",
+            "Roderich Moessner"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cond-mat.stat-mech",
+            "cond-mat.dis-nn",
+            "cond-mat.str-el"
+          ],
+          "published": "2026-07-02",
+          "abstract": "We develop a quantitative theory for the emergence of quantum many-body chaos as integrability is broken via a tunable parameter. In a circuit model of free fermions, 'doped' with a tunable density of integrability-breaking gates, we uncover the microscopic mechanisms underpinnin..."
+        },
+        {
+          "title": "DemoPSD: Disagreement-Modulated Policy Self-Distillation",
+          "url": "https://arxiv.org/abs/2607.02502v1",
+          "authors": [
+            "Yunhe Li",
+            "Hao Shi",
+            "Wenhao Liu",
+            "Mengzhe Ruan"
+          ],
+          "more_authors": 4,
+          "cats": [
+            "cs.LG",
+            "cs.AI"
+          ],
+          "published": "2026-07-02",
+          "abstract": "On-policy self-distillation (OPSD) has emerged as a practical method for training large language models (LLMs) to reason, where a single model acts as both the teacher and the student with different levels of information access. However, recent studies have found that the teacher..."
+        },
+        {
+          "title": "Alleviating prior dependencies for DESI DR1 clustering fits through reparameterization",
+          "url": "https://arxiv.org/abs/2607.02498v1",
+          "authors": [
+            "Marco Bonici",
+            "Simone Paradiso",
+            "Glenn McGee",
+            "Guido D'Amico"
+          ],
+          "more_authors": 47,
+          "cats": [
+            "astro-ph.CO"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Bayesian analyses of the full-shape clustering of Dark Energy Spectroscopic Instrument (DESI) Data Release 1 (DR1) exhibit prior-volume projection effects, whereby weakly constrained nuisance parameters of the Effective Field Theory of Large Scale Structure (EFTofLSS) shift margi..."
+        },
+        {
+          "title": "G-RRM: Guiding Symbolic Solvers with Recurrent Reasoning Models",
+          "url": "https://arxiv.org/abs/2607.02491v1",
+          "authors": [
+            "Timo Bertram",
+            "Sidhant Bhavnani",
+            "Richard Freinschlag",
+            "Erich Kobler"
+          ],
+          "more_authors": 2,
+          "cats": [
+            "cs.AI"
+          ],
+          "published": "2026-07-02",
+          "abstract": "In this work, we focus on SE-RRMs, a symbol-equivariant instantiation of RRMs that exhibits improved extrapolation to larger problem sizes. We propose a neuro-symbolic approach, ``Guiding with Recurrent Reasoning Models'' (G-RRM), which integrates SE-RRMs with symbolic solvers fo..."
+        }
+      ],
       "notable_repos": [
         {
           "full_name": "dependency-check/DependencyCheck",
@@ -184,7 +377,7 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-07-04T04:14:03.291309+00:00"
+      "generated": "2026-07-04T10:14:09.421654+00:00"
     },
     {
       "topic": "AI marketing",
@@ -334,28 +527,28 @@
         {
           "full_name": "twentyhq/twenty",
           "url": "https://github.com/twentyhq/twenty",
-          "stars": 52141,
+          "stars": 52144,
           "language": "TypeScript",
           "desc": "The open alternative to Salesforce, designed for AI."
         },
         {
           "full_name": "coreyhaines31/marketingskills",
           "url": "https://github.com/coreyhaines31/marketingskills",
-          "stars": 36001,
+          "stars": 36026,
           "language": "JavaScript",
           "desc": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering."
         },
         {
           "full_name": "ParthJadhav/app-store-screenshots",
           "url": "https://github.com/ParthJadhav/app-store-screenshots",
-          "stars": 5976,
+          "stars": 5977,
           "language": "TypeScript",
           "desc": "end to end app store screenshot creation using AI"
         },
         {
           "full_name": "YILS-LIN/short-video-factory",
           "url": "https://github.com/YILS-LIN/short-video-factory",
-          "stars": 4285,
+          "stars": 4292,
           "language": "TypeScript",
           "desc": "\u4e00\u952e\u751f\u6210\u4ea7\u54c1\u8425\u9500\u4e0e\u6cdb\u5185\u5bb9\u77ed\u89c6\u9891\uff0cAI\u6279\u91cf\u81ea\u52a8\u526a\u8f91\uff0c\u9ad8\u989c\u503c\u8de8\u5e73\u53f0\u684c\u9762\u7aef\u5de5\u5177 One click generation of product marketing and general content short videos, AI batch automatic cliping, beautiful cross pla"
         },
@@ -375,13 +568,14 @@
         }
       ],
       "wikipedia": null,
-      "generated": "2026-07-04T04:13:47.371170+00:00"
+      "generated": "2026-07-04T10:14:09.654478+00:00"
     },
     {
       "topic": "autonomous agents",
       "summary_sources": [
         "Wikipedia",
         "Hacker News",
+        "arXiv",
         "GitHub"
       ],
       "top_discussions": [
@@ -421,33 +615,134 @@
           "hn": "https://news.ycombinator.com/item?id=41202064"
         }
       ],
-      "recent_papers": [],
+      "recent_papers": [
+        {
+          "title": "Distributed Attacks in Persistent-State AI Control",
+          "url": "https://arxiv.org/abs/2607.02514v1",
+          "authors": [
+            "Josh Hills",
+            "Ida Caspary",
+            "Asa Cooper Stickland"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.AI"
+          ],
+          "published": "2026-07-02",
+          "abstract": "As AI coding agents become more autonomous, they increasingly ship code iteratively, with the codebase persisting across sessions. This persistence creates a new attack surface: a misaligned or prompt-injected agent can distribute attacks across pull requests (PRs) and time its p..."
+        },
+        {
+          "title": "What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates",
+          "url": "https://arxiv.org/abs/2607.02507v1",
+          "authors": [
+            "Arman Ghaffarizadeh",
+            "Danyal Mohaddes",
+            "Aliakbar Izadkhah",
+            "Shahriar Noroozizadeh"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.AI",
+            "cs.CL",
+            "cs.LG"
+          ],
+          "published": "2026-07-02",
+          "abstract": "LLM agents will increasingly act in socially structured settings where role, audience, and relational context can shape what is advantageous or costly to say. We study whether such social structure, without any explicit objective in the prompt, changes what an agent expresses pub..."
+        },
+        {
+          "title": "Reasoning LLM Improves Speaker Recognition in Long-form TV Dramas",
+          "url": "https://arxiv.org/abs/2607.02504v1",
+          "authors": [
+            "Yuxuan Li",
+            "Lingxi Xie",
+            "Xinyue Huo",
+            "Jihao Qiu"
+          ],
+          "more_authors": 5,
+          "cats": [
+            "cs.CL",
+            "cs.AI",
+            "cs.CV"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Long-form TV dramas present a formidable challenge for comprehensive video understanding, where deciphering complex storyline often relies on \\textbf{speaker recognition}, the task of accurately attributing each spoken utterance to its respective character. In this paper, we adva..."
+        },
+        {
+          "title": "Seek to Segment: Active Perception for Panoramic Referring Segmentation",
+          "url": "https://arxiv.org/abs/2607.02497v1",
+          "authors": [
+            "Song Tang",
+            "Shuming Hu",
+            "Xincheng Shuai",
+            "Henghui Ding"
+          ],
+          "more_authors": 1,
+          "cats": [
+            "cs.CV"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Existing referring segmentation models passively process static images captured from fixed perspectives, limiting their applicability in Embodied AI, where agents must perform active perception in the continuous 360$^\\circ$ environments. To bridge this gap, we introduce a novel t..."
+        },
+        {
+          "title": "Controllable Sim Agents with Behavior Latents",
+          "url": "https://arxiv.org/abs/2607.02496v1",
+          "authors": [
+            "Juanwu Lu",
+            "Junyu Zhu",
+            "Ziran Wang"
+          ],
+          "more_authors": 0,
+          "cats": [
+            "cs.RO",
+            "cs.LG"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Realistic traffic simulation requires agents that imitate logged behavior and can also be steered along interpretable axes. Such controllability enables engineers to isolate variables, reproduce specific edge cases, and test autonomous systems without real-world risk. We introduc..."
+        },
+        {
+          "title": "Towards Robustness against Typographic Attack with Training-free Concept Localization",
+          "url": "https://arxiv.org/abs/2607.02494v1",
+          "authors": [
+            "Bohan Liu",
+            "Wenqian Ye",
+            "Guangzhi Xiong",
+            "Zhenghao He"
+          ],
+          "more_authors": 2,
+          "cats": [
+            "cs.CV",
+            "cs.CL"
+          ],
+          "published": "2026-07-02",
+          "abstract": "Models trained via Contrastive Language-Image Pretraining (CLIP) serve as the foundational vision encoders for most modern Large Vision Language Models (LVLMs). Despite their widespread adoption, CLIP models exhibit a critical yet underexplored failure mode: irrelevant text appea..."
+        }
+      ],
       "notable_repos": [
         {
           "full_name": "cline/cline",
           "url": "https://github.com/cline/cline",
-          "stars": 64259,
+          "stars": 64264,
           "language": "TypeScript",
           "desc": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant."
         },
         {
           "full_name": "ruvnet/ruflo",
           "url": "https://github.com/ruvnet/ruflo",
-          "stars": 62882,
+          "stars": 62909,
           "language": "TypeScript",
           "desc": "\ud83c\udf0a The leading agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptiv"
         },
         {
           "full_name": "crewAIInc/crewAI",
           "url": "https://github.com/crewAIInc/crewAI",
-          "stars": 54860,
+          "stars": 54876,
           "language": "Python",
           "desc": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tac"
         },
         {
           "full_name": "CherryHQ/cherry-studio",
           "url": "https://github.com/CherryHQ/cherry-studio",
-          "stars": 48129,
+          "stars": 48135,
           "language": "TypeScript",
           "desc": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs"
         },
@@ -461,7 +756,7 @@
         {
           "full_name": "khoj-ai/khoj",
           "url": "https://github.com/khoj-ai/khoj",
-          "stars": 35460,
+          "stars": 35463,
           "language": "Python",
           "desc": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or loca"
         }
@@ -471,7 +766,7 @@
         "extract": "An autonomous agent is an artificial intelligence (AI) system that can perform complex tasks independently.",
         "url": "https://en.wikipedia.org/wiki/Autonomous_agent"
       },
-      "generated": "2026-07-04T04:14:03.291309+00:00"
+      "generated": "2026-07-04T10:14:09.366550+00:00"
     }
   ]
 }
