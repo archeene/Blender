@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-07-04T04:08:26.903586+00:00",
+  "generated": "2026-07-04T16:08:35.930055+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-07-04T04:08:19.193562+00:00",
+      "fetched_at": "2026-07-04T16:08:28.958876+00:00",
       "content_type": "text/html",
-      "content_length": 34626,
+      "content_length": 35130,
       "size_capped": false,
-      "latency_ms": 2064,
+      "latency_ms": 2131,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,8 +29,8 @@
         }
       },
       "links": {
-        "total": 190,
-        "internal": 157,
+        "total": 194,
+        "internal": 161,
         "external": 33,
         "top_external_domains": [
           {
@@ -39,32 +39,36 @@
           },
           {
             "domain": "ycombinator.com",
-            "count": 3
-          },
-          {
-            "domain": "news.exeter.ac.uk",
             "count": 2
           },
           {
-            "domain": "mistral.ai",
+            "domain": "peteris.rocks",
             "count": 1
           },
           {
-            "domain": "wafer.ai",
+            "domain": "wozniak.ca",
             "count": 1
           },
           {
-            "domain": "mrbruh.com",
+            "domain": "quantamagazine.org",
+            "count": 1
+          },
+          {
+            "domain": "marginalia.nu",
             "count": 1
           }
         ]
       },
-      "image_count": 3,
-      "word_count": 663,
+      "image_count": 2,
+      "word_count": 676,
       "reading_time_min": 3,
       "keywords": [
         {
           "term": "comments",
+          "count": 30
+        },
+        {
+          "term": "points",
           "count": 30
         },
         {
@@ -76,23 +80,15 @@
           "count": 30
         },
         {
-          "term": "points",
-          "count": 29
-        },
-        {
           "term": "hours",
-          "count": 29
-        },
-        {
-          "term": "system",
-          "count": 4
+          "count": 28
         },
         {
           "term": "github.com",
           "count": 4
         },
         {
-          "term": "zdw",
+          "term": "theanonymousone",
           "count": 3
         },
         {
@@ -104,11 +100,15 @@
           "count": 2
         },
         {
-          "term": "exeter.ac.uk",
+          "term": "top",
           "count": 2
         },
         {
-          "term": "hhs",
+          "term": "learn",
+          "count": 2
+        },
+        {
+          "term": "bookofjoe",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Giant trees have no trouble pumping water to top branches: new research (exeter.ac.uk)"
+            "Potential session/cache leakage between workspace instances or consumer accounts (github.com/anthropics)"
           ],
           [
             "",
-            "132 points by hhs 5 hours ago | hide | 65 comments"
+            "123 points by chatmasta 2 hours ago | hide | 46 comments"
           ],
           [
             "2.",
             "",
-            "Leanstral 1.5: Proof abundance for all (mistral.ai)"
+            "Explanation of everything you can see in htop/top on Linux (peteris.rocks)"
           ],
           [
             "",
-            "124 points by programLyrique 5 hours ago | hide | 31 comments"
+            "160 points by theanonymousone 4 hours ago | hide | 22 comments"
           ],
           [
             "3.",
             "",
-            "GLM5.2 on AMD MI355X at 2626 tok/s/node at over 2x lower cost than Blackwell (wafer.ai)"
+            "What ORMs have taught me: just learn SQL (2014) (wozniak.ca)"
           ],
           [
             "",
-            "139 points by latchkey 6 hours ago | hide | 42 comments"
+            "43 points by ciconia 2 hours ago | hide | 26 comments"
           ],
           [
             "4.",
             "",
-            "MSI Center \u2013 How to gain SYSTEM privileges in seconds (mrbruh.com)"
+            "Astrophysicists Puzzle over Webb\u2019s New Universe (quantamagazine.org)"
           ],
           [
             "",
-            "40 points by MrBruh 3 hours ago | hide | 9 comments"
+            "125 points by jnord 6 hours ago | hide | 69 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-07-04T04:08:21.284276+00:00",
+      "fetched_at": "2026-07-04T16:08:31.109654+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 1446,
+      "latency_ms": 1136,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-07-04T04:08:22.730921+00:00",
+      "fetched_at": "2026-07-04T16:08:32.243646+00:00",
       "content_type": "text/html",
       "content_length": 226629,
       "size_capped": false,
-      "latency_ms": 2270,
+      "latency_ms": 2054,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-07-04T04:08:25.029530+00:00",
+      "fetched_at": "2026-07-04T16:08:34.336089+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1865,
+      "latency_ms": 1579,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
