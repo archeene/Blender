@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-07-03T16:08:16.762606+00:00",
+  "generated": "2026-07-04T04:08:26.903586+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-07-03T16:08:09.244110+00:00",
+      "fetched_at": "2026-07-04T04:08:19.193562+00:00",
       "content_type": "text/html",
-      "content_length": 35074,
+      "content_length": 34626,
       "size_capped": false,
-      "latency_ms": 2158,
+      "latency_ms": 2064,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,42 +29,42 @@
         }
       },
       "links": {
-        "total": 197,
-        "internal": 164,
+        "total": 190,
+        "internal": 157,
         "external": 33,
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 4
-          },
-          {
-            "domain": "arxiv.org",
-            "count": 2
+            "count": 5
           },
           {
             "domain": "ycombinator.com",
+            "count": 3
+          },
+          {
+            "domain": "news.exeter.ac.uk",
             "count": 2
           },
           {
-            "domain": "weli.dev",
+            "domain": "mistral.ai",
             "count": 1
           },
           {
-            "domain": "ubicloud.com",
+            "domain": "wafer.ai",
             "count": 1
           },
           {
-            "domain": "superuserdone.com",
+            "domain": "mrbruh.com",
             "count": 1
           }
         ]
       },
-      "image_count": 2,
-      "word_count": 672,
+      "image_count": 3,
+      "word_count": 663,
       "reading_time_min": 3,
       "keywords": [
         {
-          "term": "points",
+          "term": "comments",
           "count": 30
         },
         {
@@ -76,39 +76,39 @@
           "count": 30
         },
         {
-          "term": "comments",
-          "count": 24
+          "term": "points",
+          "count": 29
         },
         {
           "term": "hours",
-          "count": 18
+          "count": 29
         },
         {
-          "term": "hour",
-          "count": 6
-        },
-        {
-          "term": "discuss",
+          "term": "system",
           "count": 4
         },
         {
-          "term": "minutes",
-          "count": 3
-        },
-        {
           "term": "github.com",
-          "count": 3
+          "count": 4
         },
         {
-          "term": "comment",
-          "count": 3
-        },
-        {
-          "term": "day",
+          "term": "zdw",
           "count": 3
         },
         {
           "term": "hacker",
+          "count": 2
+        },
+        {
+          "term": "news",
+          "count": 2
+        },
+        {
+          "term": "exeter.ac.uk",
+          "count": 2
+        },
+        {
+          "term": "hhs",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Markets are competitive if and only if P = NP (arxiv.org)"
+            "Giant trees have no trouble pumping water to top branches: new research (exeter.ac.uk)"
           ],
           [
             "",
-            "40 points by kscarlet 26 minutes ago | hide | 16 comments"
+            "132 points by hhs 5 hours ago | hide | 65 comments"
           ],
           [
             "2.",
             "",
-            "Half-Baked Product (weli.dev)"
+            "Leanstral 1.5: Proof abundance for all (mistral.ai)"
           ],
           [
             "",
-            "853 points by weli 7 hours ago | hide | 255 comments"
+            "124 points by programLyrique 5 hours ago | hide | 31 comments"
           ],
           [
             "3.",
             "",
-            "Jamesob's guide to running SOTA LLMs locally (github.com/jamesob)"
+            "GLM5.2 on AMD MI355X at 2626 tok/s/node at over 2x lower cost than Blackwell (wafer.ai)"
           ],
           [
             "",
-            "22 points by livestyle 1 hour ago | hide | 3 comments"
+            "139 points by latchkey 6 hours ago | hide | 42 comments"
           ],
           [
             "4.",
             "",
-            "PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit (ubicloud.com)"
+            "MSI Center \u2013 How to gain SYSTEM privileges in seconds (mrbruh.com)"
           ],
           [
             "",
-            "74 points by furkansahin 3 hours ago | hide | 16 comments"
+            "40 points by MrBruh 3 hours ago | hide | 9 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-07-03T16:08:11.432097+00:00",
+      "fetched_at": "2026-07-04T04:08:21.284276+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 946,
+      "latency_ms": 1446,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-07-03T16:08:12.378674+00:00",
+      "fetched_at": "2026-07-04T04:08:22.730921+00:00",
       "content_type": "text/html",
       "content_length": 226629,
       "size_capped": false,
-      "latency_ms": 2220,
+      "latency_ms": 2270,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-07-03T16:08:14.629634+00:00",
+      "fetched_at": "2026-07-04T04:08:25.029530+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 2122,
+      "latency_ms": 1865,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
