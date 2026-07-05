@@ -9,7 +9,7 @@
     "scoring": "walk-forward out-of-sample: Brier score + hit rate + calibration table"
   },
   "disclaimer": "Empirical historical base rates conditioned on the current regime, not a model and not investment advice. The probability is shipped with its track record (Brier, hit rate, calibration), never stated as a certainty.",
-  "generated": "2026-07-04T16:02:26.640055+00:00",
+  "generated": "2026-07-05T16:02:28.694803+00:00",
   "forecasts": [
     {
       "asset": "BTC",
