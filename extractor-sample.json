@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-07-04T16:08:35.930055+00:00",
+  "generated": "2026-07-05T04:08:45.916757+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-07-04T16:08:28.958876+00:00",
+      "fetched_at": "2026-07-05T04:08:38.454248+00:00",
       "content_type": "text/html",
-      "content_length": 35130,
+      "content_length": 35046,
       "size_capped": false,
-      "latency_ms": 2131,
+      "latency_ms": 2008,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,8 +29,8 @@
         }
       },
       "links": {
-        "total": 194,
-        "internal": 161,
+        "total": 198,
+        "internal": 165,
         "external": 33,
         "top_external_domains": [
           {
@@ -42,31 +42,27 @@
             "count": 2
           },
           {
-            "domain": "peteris.rocks",
+            "domain": "unsung.aresluna.org",
             "count": 1
           },
           {
-            "domain": "wozniak.ca",
+            "domain": "mbl.edu",
             "count": 1
           },
           {
-            "domain": "quantamagazine.org",
+            "domain": "software.annas-archive.gl",
             "count": 1
           },
           {
-            "domain": "marginalia.nu",
+            "domain": "javoriuski.com",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 676,
+      "word_count": 673,
       "reading_time_min": 3,
       "keywords": [
-        {
-          "term": "comments",
-          "count": 30
-        },
         {
           "term": "points",
           "count": 30
@@ -84,11 +80,19 @@
           "count": 28
         },
         {
+          "term": "comments",
+          "count": 24
+        },
+        {
+          "term": "comment",
+          "count": 5
+        },
+        {
           "term": "github.com",
           "count": 4
         },
         {
-          "term": "theanonymousone",
+          "term": "book",
           "count": 3
         },
         {
@@ -100,15 +104,11 @@
           "count": 2
         },
         {
-          "term": "top",
+          "term": "fable",
           "count": 2
         },
         {
-          "term": "learn",
-          "count": 2
-        },
-        {
-          "term": "bookofjoe",
+          "term": "compiler",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Potential session/cache leakage between workspace instances or consumer accounts (github.com/anthropics)"
+            "Command and Conquer Generals natively ported to macOS, iPhone, iPad using Fable (github.com/ammaarreshi)"
           ],
           [
             "",
-            "123 points by chatmasta 2 hours ago | hide | 46 comments"
+            "410 points by asronline 8 hours ago | hide | 156 comments"
           ],
           [
             "2.",
             "",
-            "Explanation of everything you can see in htop/top on Linux (peteris.rocks)"
+            "GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance (github.com/openai)"
           ],
           [
             "",
-            "160 points by theanonymousone 4 hours ago | hide | 22 comments"
+            "184 points by maille 6 hours ago | hide | 59 comments"
           ],
           [
             "3.",
             "",
-            "What ORMs have taught me: just learn SQL (2014) (wozniak.ca)"
+            "If you're a button, you have one job (aresluna.org)"
           ],
           [
             "",
-            "43 points by ciconia 2 hours ago | hide | 26 comments"
+            "22 points by nozzlegear 2 hours ago | hide | 5 comments"
           ],
           [
             "4.",
             "",
-            "Astrophysicists Puzzle over Webb\u2019s New Universe (quantamagazine.org)"
+            "Jellyfish can heal wounds in minutes. Scientists want their secrets (mbl.edu)"
           ],
           [
             "",
-            "125 points by jnord 6 hours ago | hide | 69 comments"
+            "63 points by hhs 5 hours ago | hide | 15 comments"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-07-04T16:08:31.109654+00:00",
+      "fetched_at": "2026-07-05T04:08:40.487031+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 1136,
+      "latency_ms": 1417,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-07-04T16:08:32.243646+00:00",
+      "fetched_at": "2026-07-05T04:08:41.904108+00:00",
       "content_type": "text/html",
-      "content_length": 226629,
+      "content_length": 226937,
       "size_capped": false,
-      "latency_ms": 2054,
+      "latency_ms": 1862,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -335,7 +335,7 @@
         ]
       },
       "image_count": 10,
-      "word_count": 4680,
+      "word_count": 4698,
       "reading_time_min": 20,
       "keywords": [
         {
@@ -359,6 +359,10 @@
           "count": 22
         },
         {
+          "term": "source",
+          "count": 21
+        },
+        {
           "term": "court",
           "count": 21
         },
@@ -380,10 +384,6 @@
         },
         {
           "term": "access",
-          "count": 14
-        },
-        {
-          "term": "terms",
           "count": 14
         }
       ],
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-07-04T16:08:34.336089+00:00",
+      "fetched_at": "2026-07-05T04:08:43.794848+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 1579,
+      "latency_ms": 2114,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
