@@ -2,16 +2,16 @@
   "agent": "extractor",
   "service": "URL -> structured-data extraction (pay-per-call x402 API)",
   "source": "live fetch (urllib) + stdlib html.parser, zero external deps",
-  "generated": "2026-07-05T04:08:45.916757+00:00",
+  "generated": "2026-07-05T16:08:55.282587+00:00",
   "demo_url_count": 4,
   "results": [
     {
       "url": "https://news.ycombinator.com",
-      "fetched_at": "2026-07-05T04:08:38.454248+00:00",
+      "fetched_at": "2026-07-05T16:08:47.939815+00:00",
       "content_type": "text/html",
-      "content_length": 35046,
+      "content_length": 34492,
       "size_capped": false,
-      "latency_ms": 2008,
+      "latency_ms": 2187,
       "lang": "en",
       "canonical": null,
       "title": "Hacker News",
@@ -29,40 +29,44 @@
         }
       },
       "links": {
-        "total": 198,
-        "internal": 165,
+        "total": 197,
+        "internal": 164,
         "external": 33,
         "top_external_domains": [
           {
             "domain": "github.com",
-            "count": 5
+            "count": 3
           },
           {
             "domain": "ycombinator.com",
             "count": 2
           },
           {
-            "domain": "unsung.aresluna.org",
+            "domain": "organicmaps.app",
             "count": 1
           },
           {
-            "domain": "mbl.edu",
+            "domain": "phosh.mobi",
             "count": 1
           },
           {
-            "domain": "software.annas-archive.gl",
+            "domain": "dthain.github.io",
             "count": 1
           },
           {
-            "domain": "javoriuski.com",
+            "domain": "aresluna.org",
             "count": 1
           }
         ]
       },
       "image_count": 2,
-      "word_count": 673,
+      "word_count": 634,
       "reading_time_min": 3,
       "keywords": [
+        {
+          "term": "comments",
+          "count": 30
+        },
         {
           "term": "points",
           "count": 30
@@ -77,22 +81,10 @@
         },
         {
           "term": "hours",
-          "count": 28
+          "count": 27
         },
         {
-          "term": "comments",
-          "count": 24
-        },
-        {
-          "term": "comment",
-          "count": 5
-        },
-        {
-          "term": "github.com",
-          "count": 4
-        },
-        {
-          "term": "book",
+          "term": "hour",
           "count": 3
         },
         {
@@ -104,11 +96,19 @@
           "count": 2
         },
         {
-          "term": "fable",
+          "term": "aresluna.org",
           "count": 2
         },
         {
-          "term": "compiler",
+          "term": "trust",
+          "count": 2
+        },
+        {
+          "term": "software",
+          "count": 2
+        },
+        {
+          "term": "github.com",
           "count": 2
         }
       ],
@@ -124,38 +124,38 @@
           [
             "1.",
             "",
-            "Command and Conquer Generals natively ported to macOS, iPhone, iPad using Fable (github.com/ammaarreshi)"
+            "Organic Maps (organicmaps.app)"
           ],
           [
             "",
-            "410 points by asronline 8 hours ago | hide | 156 comments"
+            "201 points by tosh 1 hour ago | hide | 52 comments"
           ],
           [
             "2.",
             "",
-            "GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance (github.com/openai)"
+            "Phosh 0.56.0 (phosh.mobi)"
           ],
           [
             "",
-            "184 points by maille 6 hours ago | hide | 59 comments"
+            "114 points by edward 2 hours ago | hide | 31 comments"
           ],
           [
             "3.",
             "",
-            "If you're a button, you have one job (aresluna.org)"
+            "Introduction to Compilers and Language Design (dthain.github.io)"
           ],
           [
             "",
-            "22 points by nozzlegear 2 hours ago | hide | 5 comments"
+            "125 points by AlexeyBrin 4 hours ago | hide | 15 comments"
           ],
           [
             "4.",
             "",
-            "Jellyfish can heal wounds in minutes. Scientists want their secrets (mbl.edu)"
+            "Show your hands honor for the power they bring you (aresluna.org)"
           ],
           [
             "",
-            "63 points by hhs 5 hours ago | hide | 15 comments"
+            "13 points by Game_Ender 1 hour ago | hide | 1 comment"
           ]
         ],
         [
@@ -170,11 +170,11 @@
     },
     {
       "url": "https://example.com",
-      "fetched_at": "2026-07-05T04:08:40.487031+00:00",
+      "fetched_at": "2026-07-05T16:08:50.153462+00:00",
       "content_type": "text/html",
       "content_length": 559,
       "size_capped": false,
-      "latency_ms": 1417,
+      "latency_ms": 905,
       "lang": "en",
       "canonical": null,
       "title": "Example Domain",
@@ -256,11 +256,11 @@
     },
     {
       "url": "https://en.wikipedia.org/wiki/Web_scraping",
-      "fetched_at": "2026-07-05T04:08:41.904108+00:00",
+      "fetched_at": "2026-07-05T16:08:51.060572+00:00",
       "content_type": "text/html",
       "content_length": 226937,
       "size_capped": false,
-      "latency_ms": 1862,
+      "latency_ms": 1961,
       "lang": "en",
       "canonical": "https://en.wikipedia.org/wiki/Web_scraping",
       "title": "Web scraping - Wikipedia",
@@ -437,11 +437,11 @@
     },
     {
       "url": "https://blenderai.link",
-      "fetched_at": "2026-07-05T04:08:43.794848+00:00",
+      "fetched_at": "2026-07-05T16:08:53.048710+00:00",
       "content_type": "text/html",
       "content_length": 96738,
       "size_capped": false,
-      "latency_ms": 2114,
+      "latency_ms": 2226,
       "lang": "en",
       "canonical": null,
       "title": "Blender - Intelligent Design meets Evolution",
