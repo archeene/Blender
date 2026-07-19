@@ -1,0 +1,73 @@
+# Fly.io config for trendpilot (Gen 0 Hyperliquid trend trader).
+# New "Tobias Wade / personal" account.
+#
+# Deploy from repo root:
+#   flyctl deploy --config founders/trendpilot/fly_deploy/fly.toml \
+#                 --dockerfile founders/trendpilot/fly_deploy/Dockerfile
+
+app = "blender-trendpilot"
+primary_region = "ord"
+
+[build]
+dockerfile = "Dockerfile"
+
+[env]
+HERMES_UID = "10000"
+HERMES_GID = "10000"
+HERMES_HOME = "/opt/data"
+API_SERVER_ENABLED = "true"
+API_SERVER_HOST = "0.0.0.0"
+API_SERVER_PORT = "8642"
+# Hyperliquid: SAFE DEFAULTS. testnet + trading DISABLED until operator
+# explicitly flips these via `flyctl secrets set` after testnet smoke.
+HYPERLIQUID_NETWORK = "testnet"
+HYPERLIQUID_TRADING_ENABLED = "false"
+HL_MAX_LEVERAGE = "3"
+HL_MAX_POSITION_USD = "40"
+HL_MAX_EXPOSURE_USD = "60"
+HL_DAILY_LOSS_LIMIT_USD = "25"
+HL_MARKET_WHITELIST = "BTC,ETH,SOL"
+
+[[mounts]]
+source = "blender_trendpilot_data"
+destination = "/opt/data"
+initial_size = "5gb"
+
+[[vm]]
+memory = "2gb"
+cpu_kind = "shared"
+cpus = 1
+
+[http_service]
+internal_port = 8642
+force_https = true
+auto_stop_machines = "off"
+auto_start_machines = true
+min_machines_running = 1
+processes = ["app"]
+
+# 240s grace for the cold-start bootstrap (crons + many MCPs + gitlawb +
+# nostr init). See the yield-aggregator lesson in PR #8.
+[[http_service.checks]]
+interval = "30s"
+timeout = "5s"
+grace_period = "240s"
+method = "GET"
+path = "/health"
+
+[deploy]
+strategy = "immediate"
+
+# Secrets to set before first deploy (flyctl secrets set --app blender-trendpilot ...):
+#   OPENROUTER_API_KEY          required (the agent's brain)
+#   API_SERVER_KEY              gateway access key
+#   BANKR_API_KEY              optional (banking)
+#   GITHUB_TOKEN               optional (publish_profile -> archeene/blender-agents)
+#   BLUESKY_HANDLE / BLUESKY_APP_PASSWORD       optional (social)
+#   MASTODON_INSTANCE / MASTODON_ACCESS_TOKEN   optional (social)
+#
+# Trading secrets — set ONLY for testnet first, then mainnet after the go:
+#   HYPERLIQUID_AGENT_KEY       trade-only agent wallet key (NOT the master key)
+#   HYPERLIQUID_MASTER_ADDRESS  the master account address the agent trades for
+# To go live: flyctl secrets set HYPERLIQUID_TRADING_ENABLED=true (and
+# HYPERLIQUID_NETWORK=mainnet for real money) AFTER testnet smoke + operator go.

@@ -15,6 +15,7 @@ HERE = Path(__file__).resolve().parent
 SUITES = [
     ("registry_mcp",       HERE / "test_registry.py"),
     ("synthesize_offspring", HERE / "test_synthesize.py"),
+    ("hyperliquid_limits", HERE / "test_hyperliquid_limits.py"),
 ]
 
 
